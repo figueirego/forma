@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 2,
+  "caseId": "book-polish-2026-10-26",
+  "distributionVersion": "1.13.2",
+  "purpose": "Brand-neutral summary of an approved original component and its validation. Full attributed audit is preserved externally.",
+  "asset": "../../book-object.js",
+  "approvedAssetSHA256": "17bf1f572d0eaabc8486866fcf4b8b0cb9524bf191151d20580cb881b54e7cd4",
+  "baselineSHA256": "0d34c0b4726e49060f065eb29c2704713c66b06bec20582cc2fe969576fcdbf3",
+  "matrixCaptureSHA256": "9a0553fcf44f1ffc1b32ed37a473200719bed370a2a238c943d3f35e22b7d27b",
+  "hashTransition": "Only provenance comment differs between matrix capture and approved asset; executable behavior unchanged.",
+  "reference": {
+    "id": "desktop-material-reference-v1",
+    "auditedBuild": "0.19.0",
+    "evidenceType": "Detached local renderer and static resource inspection; not native execution per pose",
+    "sourceIdentity": "Retained in external provenance record; neutral ID is a label for this observation, not a new product or original authorship claim."
+  },
+  "approval": {
+    "source": "Direct user message in this task",
+    "statement": "ficou perfeito!!",
+    "scope": "Visual result just presented after correction; does not certify all materials/devices or numerical 100percent parity."
+  },
+  "verification": {
+    "beforePoses": 32,
+    "afterPoses": 32,
+    "yaw": [
+      -135,
+      -90,
+      -45,
+      0,
+      45,
+      90,
+      135,
+      180
+    ],
+    "pitch": [
+      -60,
+      0,
+      28.65,
+      60
+    ],
+    "roll": -8.59,
+    "comparisonCSSViewport": [
+      828,
+      1143
+    ],
+    "responsiveCSSViewports": [
+      [
+        390,
+        844
+      ],
+      [
+        1280,
+        900
+      ]
+    ],
+    "responsiveMethod": "Actual iframe CSS dimensions because browser override did not apply",
+    "physicalDevice": false,
+    "windowsRuntime": false,
+    "gpuBenchmark": false
+  },
+  "historicalProductTests": {
+    "passed": 176,
+    "failed": 0,
+    "skipped": 0,
+    "evidenceLocation": "external audit fixed/tests-final.txt",
+    "reexecutedByThisMetadataUpdate": false
+  },
+  "limits": [
+    "Residual darker/thicker top rim at pitch -60",
+    "Slight stronger concavity at page/spine joint",
+    "Own mark and symbol proportions differ",
+    "JPEG/DPR/presentation differences limit subpixel claims",
+    "32 poses are finite sampling; color/material/size combinations not exhaustive"
+  ],
+  "externalEvidenceArchive": {
+    "workspaceRelativePath": "outputs/design-complete-provenance/1.13.1/book-polish-2026-10-26",
+    "manifestSHA256": "c95e327b0efe1b4148ca36f8300097b054f81f4a12b36b695db8c8a8bd2b5d44",
+    "preservedArtifactCount": 93,
+    "requiredAtRuntime": false,
+    "portableAvailability": "Full screenshots/reports are not bundled. If unavailable, rely on this as historical summary only and produce fresh evidence for adaptations."
+  },
+  "distributedEvidence": "Numerical/behavioral profile, original component, reusable regression tests and case-study synthesis; no branded screenshots or source product identity."
+}

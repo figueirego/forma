@@ -9,10 +9,11 @@ import tempfile
 
 sys.dont_write_bytecode = True
 from build_forma_plugin import build
+from build_other_hosts import build_other_hosts
 
 
 ROOT = Path(__file__).resolve().parents[1]
-GENERATED_ROOTS = (Path('plugins'), Path('.agents/plugins'))
+GENERATED_ROOTS = (Path('plugins'), Path('.agents/plugins'), Path('.claude-plugin'), Path('distributions'))
 
 
 def inventory(root):
@@ -45,6 +46,7 @@ def render(source):
         destination = Path(temporary) / 'forma-community'
         with redirect_stdout(StringIO()):
             build(source, destination)
+            build_other_hosts(destination)
         return inventory(destination)
 
 
@@ -75,7 +77,7 @@ def generate(root=ROOT, check=False):
         destination = root / relative
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_bytes(data)
-    print(f'Generated {len(expected)} files in plugins/ and .agents/plugins/.')
+    print(f'Generated {len(expected)} files across plugin catalogs and Agent Skills.')
     return 0
 
 

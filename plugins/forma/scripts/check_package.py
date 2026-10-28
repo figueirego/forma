@@ -19,11 +19,12 @@ LIMITS = [
     "External URLs and fragments in non-Markdown files are not validated.",
     "Hashes compare bytes, not authorship or trust. Source hashes are verified only with --source.",
     "Filesystem and ZIP comparisons ignore __pycache__, .pyc and .DS_Store. For wrapper ZIPs, equality covers the uniquely matched package subtree; all ZIP entry paths and symlinks are checked.",
-    "Catalog discovery models the Codex compatibility manifest, not native host activation or invocation.",
+    "Catalog discovery models Codex/Claude manifests or flat Agent Skills, not native host activation or invocation.",
 ]
 NAME = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 HASH = re.compile(r"[0-9a-f]{64}\Z")
 INVOCATION = re.compile(r"\$[a-z][a-z0-9-]*(?::[a-z][a-z0-9-]*)*\b")
+CLAUDE_INVOCATION = re.compile(r"(?<![\w/])/[a-z][a-z0-9-]*(?::[a-z][a-z0-9-]*)+\b")
 
 
 class InputError(ValueError):
@@ -126,11 +127,14 @@ def declared_path(value, files, errors, label, directory=False):
 
 
 def plugin_manifest(files, errors):
-    path = ".codex-plugin/plugin.json"
-    if path not in files:
-        if "SKILL.md" not in files:
-            error(errors, "entrypoint", "root", "Expected SKILL.md or .codex-plugin/plugin.json")
+    manifests = [name for name in (".codex-plugin/plugin.json", ".claude-plugin/plugin.json") if name in files]
+    if len(manifests) > 1:
+        error(errors, "manifest-ambiguous", "root", "Use one host manifest per package")
+    if not manifests:
+        if "SKILL.md" not in files and "forma/SKILL.md" not in files:
+            error(errors, "entrypoint", "root", "Expected SKILL.md, forma/SKILL.md or a supported plugin manifest")
         return None, []
+    path = manifests[0]
     manifest = json_object(files[path], path)
     name = manifest.get("name")
     if not isinstance(name, str) or not NAME.fullmatch(name):
@@ -205,13 +209,19 @@ def catalog(files, manifest, roots, errors):
         name = frontmatter(decode(files[path], path), path, errors)
         if not name:
             continue
+        if manifest is None and "SKILL.md" not in files:
+            parts = PurePosixPath(path).parts
+            if len(parts) != 2 or parts[0] != name:
+                error(errors, "skill-layout", path, "Flat Agent Skills require <name>/SKILL.md with matching folder name")
         if name in seen:
             error(errors, "duplicate-skill", path, "Duplicate skill name: " + name)
         seen.add(name)
-        invocation = "${}:{}".format(plugin_name, name) if plugin_name else "$" + name
+        prefix = "/" if ".claude-plugin/plugin.json" in files else "$"
+        invocation = "{}{}:{}".format(prefix, plugin_name, name) if plugin_name else "$" + name
         result.append({"name": name, "path": path, "invocation": invocation})
     if manifest:
         valid_invocations = {skill["invocation"] for skill in result}
+        invocation_pattern = CLAUDE_INVOCATION if ".claude-plugin/plugin.json" in files else INVOCATION
         for item in result:
             metadata = str(PurePosixPath(item["path"]).parent / "agents/openai.yaml")
             if metadata not in files:
@@ -220,7 +230,7 @@ def catalog(files, manifest, roots, errors):
             section = re.search(r"^interface:\s*\n((?:[ \t]+[^\n]*\n|\n)*)", text + "\n", re.M)
             values = re.findall(r"^[ \t]+default_prompt:[ \t]*([^\r\n]*)$", section.group(1), re.M) if section else []
             prompt = scalar(values[0]) if len(values) == 1 else None
-            tokens = set(INVOCATION.findall(prompt or ""))
+            tokens = set(invocation_pattern.findall(prompt or ""))
             if prompt is None or (tokens and (item["invocation"] not in tokens or not tokens.issubset(valid_invocations))):
                 error(errors, "prompt-namespace", metadata, "Skill tokens in default_prompt must include " + item["invocation"] + " and name known packaged skills")
         prompts = manifest.get("interface", {}).get("defaultPrompt", [])
@@ -229,7 +239,7 @@ def catalog(files, manifest, roots, errors):
         if not isinstance(prompts, list) or any(not isinstance(prompt, str) for prompt in prompts):
             raise InputError("Manifest interface.defaultPrompt must be a string or array of strings")
         for index, prompt in enumerate(prompts):
-            invalid = set(INVOCATION.findall(prompt)) - valid_invocations
+            invalid = set(invocation_pattern.findall(prompt)) - valid_invocations
             if invalid:
                 error(errors, "prompt-namespace", "manifest.interface.defaultPrompt[{}]".format(index),
                       "Unknown or unnamespaced skill invocation: " + ", ".join(sorted(invalid)))
@@ -308,7 +318,7 @@ def markdown_links(root, files, errors):
             if "\\" in local or "\x00" in local or PureWindowsPath(local).drive or PurePosixPath(local).is_absolute():
                 error(errors, "link-escape", name, "Nonportable local link: " + target)
                 continue
-            path = ((root / name).parent / local).resolve() if local else root / name
+            path = ((root / name).parent / local).resolve() if local else (root / name).resolve()
             try:
                 relative = path.relative_to(root.resolve()).as_posix()
             except ValueError:
@@ -387,7 +397,10 @@ def check_archive(archive, files, errors, plugin):
                 error(errors, "archive-duplicate", name, "Duplicate ZIP entry")
                 continue
             members[name] = zipped.read(info)
-    marker = ".codex-plugin/plugin.json" if plugin else "SKILL.md"
+    if plugin:
+        marker = ".claude-plugin/plugin.json" if ".claude-plugin/plugin.json" in files else ".codex-plugin/plugin.json"
+    else:
+        marker = "SKILL.md" if "SKILL.md" in files else "forma/SKILL.md"
     candidates = [name[:-len(marker)] for name, data in members.items()
                   if (name == marker or name.endswith("/" + marker)) and data == files.get(marker)]
     if len(candidates) != 1:

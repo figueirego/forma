@@ -2,9 +2,13 @@
 
 Leia ao instalar, atualizar, diagnosticar descoberta ou manter a própria Forma. Para criar uma interface, use a especialista pertinente; instalar novamente a ferramenta não corrige o produto.
 
-## Uma fonte, duas distribuições
+## Uma fonte, formatos por ambiente
 
 A fonte canônica organiza uma coordenadora e especialistas aninhadas. O plugin gera skills irmãs descobertas pelo Codex, com referências e assets compartilhados. A skill avulsa e o plugin podem coexistir, mas são cópias distintas: confira o caminho efetivamente carregado. Edite a fonte de autoria, gere o pacote e atualize a instalação; editar o cache perde a mudança na próxima atualização.
+
+A edição comunitária também gera um plugin Claude Code e um pacote Agent Skills plano. Neste último, `forma/` contém a coordenadora e os recursos, e as outras 11 pastas são suas irmãs. Todas devem ser mantidas juntas. A diferença é de descoberta, namespace e caminhos; não são 12 agentes em execução nem três implementações de design.
+
+O diretório `.agents/skills/` é compartilhado por versões compatíveis de Cursor, Copilot, OpenCode e Gemini CLI. Recursos pessoais podem não chegar a sessões cloud ou remotas: confirme o escopo efetivo. Use a [matriz de instalação pública](https://github.com/figueirego/forma/blob/main/docs/INSTALLATION.md) e a documentação atual do host. Não presuma que uma integração opcional existe só porque o pacote foi copiado.
 
 Na distribuição avulsa, selecione a skill de nome `forma`. No plugin, o host acrescenta seu namespace à entrada e às especialistas. Use o nome anunciado pelo catálogo atual; não invente uma ferramenta `invoke_skill`. O gerador adapta links e prompts à distribuição. Metadados de agentes são apresentação e instrução, não processos em execução.
 
@@ -12,11 +16,10 @@ O pacote inclui contratos, helpers, exemplos e os componentes declarados em [rec
 
 ## Verificação repetível
 
-Resolva a raiz que contém `references/`, `assets/`, `scripts/` e `tests/`. No plugin ela também contém `.codex-plugin/`; não use a pasta de uma especialista como raiz.
+Resolva a raiz que contém `references/`, `assets/`, `scripts/` e `tests/`. No plugin ela também contém `.codex-plugin/` ou `.claude-plugin/`; no pacote Agent Skills ela é `forma/`. Não use a pasta de uma especialista como raiz. A variável `<package-root>` significa a raiz do plugin ou da fonte canônica; para Agent Skills, é a pasta **acima de `forma/`**, contendo as 12 pastas. Essa pasta de auditoria deve conter somente a distribuição Forma, sem outras skills.
 
 ```sh
-python3 <skill-dir>/scripts/check_package.py --root <skill-dir>
-python3 -m unittest discover -s <skill-dir>/tests -p 'test_*.py' -v
+python3 <skill-dir>/scripts/check_package.py --root <package-root>
 ```
 
 O verificador é local e somente leitura. Deriva o catálogo dos arquivos, confere links/âncoras Markdown, nomes, campos escalares de metadados e, quando existe manifesto, paths e prompts do plugin. Não é um parser completo de YAML, scanner de segurança ou avaliador de significado. A validação de frontmatter do host continua sendo uma etapa separada.
@@ -32,6 +35,8 @@ python3 <skill-dir>/scripts/check_package.py --root <plugin-root> --source <cano
 ## Instalação e descoberta
 
 Use o gerenciador disponível no host e verifique seu help/retorno. No Codex CLI auditado, a sequência é `codex plugin marketplace add <marketplace-root>`, `codex plugin add forma@forma-community` e `codex plugin list --marketplace forma-community --json`. O nome `forma-community` pertence ao catálogo comunitário distribuído; outro catálogo pode anunciar outra identidade. Não copie caminhos privados de outra máquina.
+
+No Claude Code, os comandos de shell são `claude plugin marketplace add figueirego/forma`, `claude plugin install forma@forma-community` e `claude plugin list`. Use a entrada anunciada pelo host; a sintaxe de invocação difere do Codex. No pacote Agent Skills, use linguagem natural ou o comando efetivamente disponível no host. O pacote não instala runtimes de modelo.
 
 Depois da atualização, confira a descoberta em sessão nova ou reload suportado: entrada, especialistas, namespace, prompts e caminho do cache. Manifesto válido ou instalação habilitada não demonstra que uma conversa antiga recarregou a versão. Não apague a skill avulsa automaticamente; para evitar ambiguidade, selecione a entrada do plugin e confirme a origem.
 

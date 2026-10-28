@@ -1,0 +1,6 @@
+interface:
+  display_name: "Forma Motion"
+  short_description: "Animações, gestos e feedback com continuidade"
+  default_prompt: "Use $forma-motion para refinar animações e gestos com continuidade, interrupção e alternativa de movimento reduzido."
+policy:
+  allow_implicit_invocation: true

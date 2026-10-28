@@ -1,0 +1,6 @@
+interface:
+  display_name: "Forma Validation"
+  short_description: "Auditoria e verificação de design com evidências"
+  default_prompt: "Use $forma-validation para verificar esta experiência com achados reproduzíveis e limites de cobertura explícitos."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,26 @@
+{
+  "format": "design-complete-example-v1",
+  "purpose": "Exemplo para formulário web. Adaptar ao sistema existente; não é padrão DTCG.",
+  "space": {
+    "labelControl": { "value": 0.5, "unit": "rem" },
+    "controlHelp": { "value": 0.25, "unit": "rem" },
+    "fields": { "value": 1, "unit": "rem" },
+    "groups": { "value": 2, "unit": "rem" }
+  },
+  "color": {
+    "light": { "surface": "#ffffff", "text": "#111827", "action": "#1d4ed8", "onAction": "#ffffff", "error": "#b91c1c" },
+    "dark": { "surface": "#111827", "text": "#f9fafb", "action": "#93c5fd", "onAction": "#111827", "error": "#fca5a5" }
+  },
+  "type": {
+    "bodySize": { "value": 1, "unit": "rem" },
+    "bodyLineHeight": { "value": 1.5, "unit": "ratio" }
+  },
+  "contrastPairs": [
+    { "mode": "light", "foreground": "text", "background": "surface", "minimum": 4.5 },
+    { "mode": "light", "foreground": "onAction", "background": "action", "minimum": 4.5 },
+    { "mode": "light", "foreground": "error", "background": "surface", "minimum": 4.5 },
+    { "mode": "dark", "foreground": "text", "background": "surface", "minimum": 4.5 },
+    { "mode": "dark", "foreground": "onAction", "background": "action", "minimum": 4.5 },
+    { "mode": "dark", "foreground": "error", "background": "surface", "minimum": 4.5 }
+  ]
+}

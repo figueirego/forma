@@ -1,0 +1,65 @@
+{
+  "version": "1.23.0",
+  "skills": [
+    {
+      "name": "forma",
+      "path": "skills/forma/SKILL.md",
+      "invocation": "/forma:forma"
+    },
+    {
+      "name": "forma-brand",
+      "path": "skills/forma-brand/SKILL.md",
+      "invocation": "/forma:forma-brand"
+    },
+    {
+      "name": "forma-foundations",
+      "path": "skills/forma-foundations/SKILL.md",
+      "invocation": "/forma:forma-foundations"
+    },
+    {
+      "name": "forma-graphs-data",
+      "path": "skills/forma-graphs-data/SKILL.md",
+      "invocation": "/forma:forma-graphs-data"
+    },
+    {
+      "name": "forma-handoff",
+      "path": "skills/forma-handoff/SKILL.md",
+      "invocation": "/forma:forma-handoff"
+    },
+    {
+      "name": "forma-interface",
+      "path": "skills/forma-interface/SKILL.md",
+      "invocation": "/forma:forma-interface"
+    },
+    {
+      "name": "forma-motion",
+      "path": "skills/forma-motion/SKILL.md",
+      "invocation": "/forma:forma-motion"
+    },
+    {
+      "name": "forma-objects-3d",
+      "path": "skills/forma-objects-3d/SKILL.md",
+      "invocation": "/forma:forma-objects-3d"
+    },
+    {
+      "name": "forma-platforms",
+      "path": "skills/forma-platforms/SKILL.md",
+      "invocation": "/forma:forma-platforms"
+    },
+    {
+      "name": "forma-product",
+      "path": "skills/forma-product/SKILL.md",
+      "invocation": "/forma:forma-product"
+    },
+    {
+      "name": "forma-reference",
+      "path": "skills/forma-reference/SKILL.md",
+      "invocation": "/forma:forma-reference"
+    },
+    {
+      "name": "forma-validation",
+      "path": "skills/forma-validation/SKILL.md",
+      "invocation": "/forma:forma-validation"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "reference": "https://seuimposto.com/",
+  "observed_title": "Apuração 2026",
+  "review_date": "2026-10-25",
+  "date_timezone": "America/Fortaleza",
+  "scope": "Design reference observed in browser and selected shipped JavaScript inspected statically; not a default theme or validation of displayed election data.",
+  "runtime": {
+    "desktop": {
+      "dpr": 2,
+      "height": 720,
+      "width": 1280
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "dpr": 1
+    },
+    "fonts": {
+      "declared_ui": "Geist",
+      "declared_editorial": "Faustina",
+      "document_fonts_status": "loaded",
+      "actual_glyph_font_not_individually_instrumented": true
+    },
+    "tokens": {
+      "dark": {
+        "--panel-2": "#1B1A17",
+        "--fg-3": "#A6A39C",
+        "--line": "rgba(250,250,249,.08)",
+        "--bg": "#0F0E0D",
+        "--panel": "#151412",
+        "--apur": "#3DD68C",
+        "--fg": "#FAFAF9",
+        "--fg-2": "#D6D4CF"
+      },
+      "light": {
+        "--panel-2": "#EEECEB",
+        "--fg-3": "#53514F",
+        "--line": "rgba(17,16,16,.08)",
+        "--bg": "#F1F0EE",
+        "--panel": "#F8F6F5",
+        "--apur": "#0C8A4C",
+        "--fg": "#111010",
+        "--fg-2": "#302E2D"
+      }
+    },
+    "spatial_tokens_declared": {
+      "--pad": "16px",
+      "--gap": "12px",
+      "--m": "20px"
+    },
+    "spatial_limit": "Declared root values; HUD scaling and contextual layout mean final rectangles differ. Do not apply as universal spacing."
+  },
+  "static": {
+    "stack": [
+      "Preact/HTM entry",
+      "Canvas 2D",
+      "Path2D",
+      "inline SVG controls"
+    ],
+    "exact_library_versions": "not established",
+    "bundles": [
+      {
+        "url": "https://seuimposto.com/assets/app.be960ce506.js",
+        "bytes": 530703,
+        "sha256": "be960ce506e8a630c56849efc6ebcc467a70129a7b7e360e47042c0f4dc9cf7e"
+      },
+      {
+        "url": "https://seuimposto.com/assets/mapa.4d9d76173d.js",
+        "bytes": 1374362,
+        "sha256": "4d9d76173d5c93e84d43e082ba662a79537a3890173104b6d48c3312e65e1314"
+      }
+    ],
+    "css_sha256": "b85904fabc79695fa804926ad9513922ffe4f8f1a0212c122c1e3ab960d32f6a",
+    "rea_parent_evidence": [
+      "ev_504d5eac9bbddb3f96c16a8b491ff0e0372561f24f1fee87ca2b6c26f0bbb32b",
+      "ev_4f1e81afbec5297a93a056cf7fc46f851ad1ce67437985fa71b56cb83b688cfe"
+    ],
+    "limits": [
+      "App semantics truncated at 20000 nodes and 20000 unknowns.",
+      "Map source has no retention truncation but its semantic graph is partial, with 14 unknowns.",
+      "Only two sources selected separately; no complete dependency graph.",
+      "Public bundles reveal both simulation and live branches; branch identity and data authenticity not established by this static audit."
+    ]
+  },
+  "not_verified": [
+    "Election data or prediction accuracy",
+    "Full accessibility conformance",
+    "Physical mobile devices or screen readers",
+    "Reduced-motion execution",
+    "Chat/auth/payment/sharing services",
+    "All viewports and map modes"
+  ],
+  "redistribution": "No vendor code, fonts, logos, images, map geometry or chat content included; this file contains a factual reference profile."
+}

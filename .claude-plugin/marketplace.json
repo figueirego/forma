@@ -1,0 +1,15 @@
+{
+  "name": "forma-community",
+  "owner": {
+    "name": "Forma"
+  },
+  "description": "Forma: sistema comunitário de design, da intenção ao acabamento.",
+  "plugins": [
+    {
+      "name": "forma",
+      "source": "./plugins/forma-claude",
+      "version": "1.23.0",
+      "description": "Design com uma coordenadora e 11 especialistas, da intenção ao acabamento."
+    }
+  ]
+}
