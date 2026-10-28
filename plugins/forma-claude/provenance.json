@@ -1,0 +1,761 @@
+{
+  "version": "1.23.0",
+  "source": "canonical Forma skill",
+  "transformations": [
+    "Flatten skill directories",
+    "Rebase local Markdown links",
+    "Use Claude Code skill invocations"
+  ],
+  "files": [
+    {
+      "source": "LICENSE",
+      "packaged": "LICENSE",
+      "source_sha256": "a0d9d7a4430927551c14ae92f353ac10ac3b7b98c7953df601c7deadc55e7290",
+      "packaged_sha256": "a0d9d7a4430927551c14ae92f353ac10ac3b7b98c7953df601c7deadc55e7290"
+    },
+    {
+      "source": "SKILL.md",
+      "packaged": "skills/forma/SKILL.md",
+      "source_sha256": "948c5120241f858f467edace4ce9934eee2775ef78bd1a10bc1839155ae9aa47",
+      "packaged_sha256": "ffc9ed64ce2b0dc294723e901da6cb1d022302f34e4cc3e4cc052c132f566ade"
+    },
+    {
+      "source": "THIRD_PARTY_NOTICES.md",
+      "packaged": "THIRD_PARTY_NOTICES.md",
+      "source_sha256": "1ab0f2226347a45b62ce3326c45c2904165ede63e2df179f8c0b96da19c05118",
+      "packaged_sha256": "1ab0f2226347a45b62ce3326c45c2904165ede63e2df179f8c0b96da19c05118"
+    },
+    {
+      "source": "agents/openai.yaml",
+      "packaged": "skills/forma/agents/openai.yaml",
+      "source_sha256": "5ea81d3dcdc62e597b726a05d281b89b74ce90e5c28a9e83c3583d45ce5f0a66",
+      "packaged_sha256": "8e9181e52037b01a9f1267d7d49b9b9f4edcac9cd8d7635a1bf5f1c2565dc00e"
+    },
+    {
+      "source": "assets/audits/book-polish-2026-10-26/manifest.json",
+      "packaged": "assets/audits/book-polish-2026-10-26/manifest.json",
+      "source_sha256": "87d326ee29cec49b07de08e9ee231a18965c3f9a3cba5e43b7fbcc1e1d1d2146",
+      "packaged_sha256": "87d326ee29cec49b07de08e9ee231a18965c3f9a3cba5e43b7fbcc1e1d1d2146"
+    },
+    {
+      "source": "assets/audits/passport-polish-2026-10-27/manifest.json",
+      "packaged": "assets/audits/passport-polish-2026-10-27/manifest.json",
+      "source_sha256": "0295e605a6992fb9f54df8dcc05575474fd0de2660e3a8bcb56b37d63e0759de",
+      "packaged_sha256": "0295e605a6992fb9f54df8dcc05575474fd0de2660e3a8bcb56b37d63e0759de"
+    },
+    {
+      "source": "assets/book-object.js",
+      "packaged": "assets/book-object.js",
+      "source_sha256": "17bf1f572d0eaabc8486866fcf4b8b0cb9524bf191151d20580cb881b54e7cd4",
+      "packaged_sha256": "17bf1f572d0eaabc8486866fcf4b8b0cb9524bf191151d20580cb881b54e7cd4"
+    },
+    {
+      "source": "assets/clean-shell.css",
+      "packaged": "assets/clean-shell.css",
+      "source_sha256": "326379a9f2134646aac19e3077c623019761d255942371d80594fa830e66add4",
+      "packaged_sha256": "326379a9f2134646aac19e3077c623019761d255942371d80594fa830e66add4"
+    },
+    {
+      "source": "assets/clean-shell.html",
+      "packaged": "assets/clean-shell.html",
+      "source_sha256": "460101e5403ea423649af6b0db8bbd9461439e91d9727da50d6e910fa86f0a8f",
+      "packaged_sha256": "460101e5403ea423649af6b0db8bbd9461439e91d9727da50d6e910fa86f0a8f"
+    },
+    {
+      "source": "assets/clean-shell.js",
+      "packaged": "assets/clean-shell.js",
+      "source_sha256": "48bd770a2f91bd4679061ec1012882fd439a3a4387699255963b93fcf59a00d7",
+      "packaged_sha256": "48bd770a2f91bd4679061ec1012882fd439a3a4387699255963b93fcf59a00d7"
+    },
+    {
+      "source": "assets/evidence.example.json",
+      "packaged": "assets/evidence.example.json",
+      "source_sha256": "38b15f9c6ea23abea439d6fc28f3eabaa8f95f0f7939a7c256d590c8098831ff",
+      "packaged_sha256": "38b15f9c6ea23abea439d6fc28f3eabaa8f95f0f7939a7c256d590c8098831ff"
+    },
+    {
+      "source": "assets/layout.example.json",
+      "packaged": "assets/layout.example.json",
+      "source_sha256": "368cdddca5cf237d681f62ac0884cec9e56622949a4974c079d5a5c9d9707451",
+      "packaged_sha256": "368cdddca5cf237d681f62ac0884cec9e56622949a4974c079d5a5c9d9707451"
+    },
+    {
+      "source": "assets/library-colors.js",
+      "packaged": "assets/library-colors.js",
+      "source_sha256": "bfc43c3679b20686d7966180fb07fca4f004d120a56fb0fa5792880366b1819b",
+      "packaged_sha256": "bfc43c3679b20686d7966180fb07fca4f004d120a56fb0fa5792880366b1819b"
+    },
+    {
+      "source": "assets/plugin-brand/README.md",
+      "packaged": "assets/plugin-brand/README.md",
+      "source_sha256": "54a595dbf8a7f31108a5b63cf03ae38482a679e630e8a0b2d545924d8e362741",
+      "packaged_sha256": "54a595dbf8a7f31108a5b63cf03ae38482a679e630e8a0b2d545924d8e362741"
+    },
+    {
+      "source": "assets/plugin-brand/hero.png",
+      "packaged": "assets/plugin-brand/hero.png",
+      "source_sha256": "a07954c51662238cdd3225ab8dcbceaa0668da830b8fafdb6cb6860600d819ab",
+      "packaged_sha256": "a07954c51662238cdd3225ab8dcbceaa0668da830b8fafdb6cb6860600d819ab"
+    },
+    {
+      "source": "assets/plugin-brand/icon-dark.svg",
+      "packaged": "assets/plugin-brand/icon-dark.svg",
+      "source_sha256": "364eed667d3fc9633f20ddb3cb4f5a55664a9d0a8857b97526142981a7a48685",
+      "packaged_sha256": "364eed667d3fc9633f20ddb3cb4f5a55664a9d0a8857b97526142981a7a48685"
+    },
+    {
+      "source": "assets/plugin-brand/icon.svg",
+      "packaged": "assets/plugin-brand/icon.svg",
+      "source_sha256": "0f42ec2f2b8e274924e1e7907fc6d0e9d5d5dd455d5d09fcc06316e8d0c0c71c",
+      "packaged_sha256": "0f42ec2f2b8e274924e1e7907fc6d0e9d5d5dd455d5d09fcc06316e8d0c0c71c"
+    },
+    {
+      "source": "assets/plugin-brand/identidade.html",
+      "packaged": "assets/plugin-brand/identidade.html",
+      "source_sha256": "f10ae021b44c8c03b4eaa253f1f31a7aede38ea4c636931e2f34ed1c9fe83b21",
+      "packaged_sha256": "f10ae021b44c8c03b4eaa253f1f31a7aede38ea4c636931e2f34ed1c9fe83b21"
+    },
+    {
+      "source": "assets/plugin-brand/identity.css",
+      "packaged": "assets/plugin-brand/identity.css",
+      "source_sha256": "24ffa820bcd021c46d8df56f25a76e048f4c41c397ef26cdc96f4c9b81f9d8f3",
+      "packaged_sha256": "24ffa820bcd021c46d8df56f25a76e048f4c41c397ef26cdc96f4c9b81f9d8f3"
+    },
+    {
+      "source": "assets/plugin-brand/logo.png",
+      "packaged": "assets/plugin-brand/logo.png",
+      "source_sha256": "aac26f6e82d584dc409264679bc7e05af40c16531e67f046ac073d983275f1f4",
+      "packaged_sha256": "aac26f6e82d584dc409264679bc7e05af40c16531e67f046ac073d983275f1f4"
+    },
+    {
+      "source": "assets/plugin-brand/preview-desktop-top.png",
+      "packaged": "assets/plugin-brand/preview-desktop-top.png",
+      "source_sha256": "b6a8303a5ef78acb422a06f02c181c0a1a453dd252dd9d18c8b771cc5515a6de",
+      "packaged_sha256": "b6a8303a5ef78acb422a06f02c181c0a1a453dd252dd9d18c8b771cc5515a6de"
+    },
+    {
+      "source": "assets/plugin-brand/preview-mobile-top.png",
+      "packaged": "assets/plugin-brand/preview-mobile-top.png",
+      "source_sha256": "1974c04a112d949b849062bede31dcf5463b9cb4550d87b3ed4329fcdcbf4fed",
+      "packaged_sha256": "1974c04a112d949b849062bede31dcf5463b9cb4550d87b3ed4329fcdcbf4fed"
+    },
+    {
+      "source": "assets/plugin-brand/preview-symbols.png",
+      "packaged": "assets/plugin-brand/preview-symbols.png",
+      "source_sha256": "8ef759a8bd47b24ce444dbb2fb4a4203145b899835f07333f23f32647729e39c",
+      "packaged_sha256": "8ef759a8bd47b24ce444dbb2fb4a4203145b899835f07333f23f32647729e39c"
+    },
+    {
+      "source": "assets/plugin-brand/preview-usage.png",
+      "packaged": "assets/plugin-brand/preview-usage.png",
+      "source_sha256": "f15bf95a2ce6d9f00a8b681726bcb8b17d71178af8133c017ada79111aac079d",
+      "packaged_sha256": "f15bf95a2ce6d9f00a8b681726bcb8b17d71178af8133c017ada79111aac079d"
+    },
+    {
+      "source": "assets/plugin-brand/provenance.json",
+      "packaged": "assets/plugin-brand/provenance.json",
+      "source_sha256": "7b2e1754ab9d05d08fb632eb2770f5e5936f5af5792c2f7bba1ec86dc022fa14",
+      "packaged_sha256": "7b2e1754ab9d05d08fb632eb2770f5e5936f5af5792c2f7bba1ec86dc022fa14"
+    },
+    {
+      "source": "assets/plugin-brand/qa.json",
+      "packaged": "assets/plugin-brand/qa.json",
+      "source_sha256": "243d39c6c641c30a772c4cbcc4362f5f3d59e1d3212fc97c924d50f410bac146",
+      "packaged_sha256": "243d39c6c641c30a772c4cbcc4362f5f3d59e1d3212fc97c924d50f410bac146"
+    },
+    {
+      "source": "assets/plugin-brand/tokens.css",
+      "packaged": "assets/plugin-brand/tokens.css",
+      "source_sha256": "1611cd1f3b31bba6bb95f22024fdc9ca9b4e407e3935c44350991ee657c90746",
+      "packaged_sha256": "1611cd1f3b31bba6bb95f22024fdc9ca9b4e407e3935c44350991ee657c90746"
+    },
+    {
+      "source": "assets/plugin-brand/tokens.json",
+      "packaged": "assets/plugin-brand/tokens.json",
+      "source_sha256": "7202a8b250d69333f17ed3977eafee8e85b324f41cb69977a0cda90f2d85ac65",
+      "packaged_sha256": "7202a8b250d69333f17ed3977eafee8e85b324f41cb69977a0cda90f2d85ac65"
+    },
+    {
+      "source": "assets/plugin-brand/verify.cjs",
+      "packaged": "assets/plugin-brand/verify.cjs",
+      "source_sha256": "f567c2134fba64f5bdb66b7b78580a43787226c7a99397b69aa570874543eddf",
+      "packaged_sha256": "f567c2134fba64f5bdb66b7b78580a43787226c7a99397b69aa570874543eddf"
+    },
+    {
+      "source": "assets/plugin-brand/wordmark-dark.svg",
+      "packaged": "assets/plugin-brand/wordmark-dark.svg",
+      "source_sha256": "e24214cad34cc9773b8007b9920c6a02985395b954e179e41e99d491041ff9db",
+      "packaged_sha256": "e24214cad34cc9773b8007b9920c6a02985395b954e179e41e99d491041ff9db"
+    },
+    {
+      "source": "assets/plugin-brand/wordmark.svg",
+      "packaged": "assets/plugin-brand/wordmark.svg",
+      "source_sha256": "4a1a4042e60d042f920d17e1bf65226cfcf9e9eec84c5c3c0380aaea58f8628f",
+      "packaged_sha256": "4a1a4042e60d042f920d17e1bf65226cfcf9e9eec84c5c3c0380aaea58f8628f"
+    },
+    {
+      "source": "assets/reference-profiles/compact-appearance-v1.fidelity.json",
+      "packaged": "assets/reference-profiles/compact-appearance-v1.fidelity.json",
+      "source_sha256": "6676c87a8a19960788d56c4629c2575980983fa8e877c391d3e9c048ee65d538",
+      "packaged_sha256": "6676c87a8a19960788d56c4629c2575980983fa8e877c391d3e9c048ee65d538"
+    },
+    {
+      "source": "assets/reference-profiles/compact-appearance-v1.json",
+      "packaged": "assets/reference-profiles/compact-appearance-v1.json",
+      "source_sha256": "02d6e4aaf73dd376054009c6a50216ca99741f2ca0e026dd62e81137f6040b52",
+      "packaged_sha256": "02d6e4aaf73dd376054009c6a50216ca99741f2ca0e026dd62e81137f6040b52"
+    },
+    {
+      "source": "assets/reference-profiles/desktop-material-reference-v1.json",
+      "packaged": "assets/reference-profiles/desktop-material-reference-v1.json",
+      "source_sha256": "8f1f607b8aaaeda40b87ad1c20354722faf86105fbea703271b5a68fc3cabd99",
+      "packaged_sha256": "8f1f607b8aaaeda40b87ad1c20354722faf86105fbea703271b5a68fc3cabd99"
+    },
+    {
+      "source": "assets/reference-profiles/kimi-2026-10-26.json",
+      "packaged": "assets/reference-profiles/kimi-2026-10-26.json",
+      "source_sha256": "20e8d91ee37a0c95fc406dbe0bec5e91e1794ae25790c067a8cd401cc4991e7c",
+      "packaged_sha256": "20e8d91ee37a0c95fc406dbe0bec5e91e1794ae25790c067a8cd401cc4991e7c"
+    },
+    {
+      "source": "assets/reference-profiles/seuimposto-2026-10-25.json",
+      "packaged": "assets/reference-profiles/seuimposto-2026-10-25.json",
+      "source_sha256": "119f29e2b6a8cc557f0f066a0441bcb764ef128d244443ec3994f9f348fe7ccc",
+      "packaged_sha256": "119f29e2b6a8cc557f0f066a0441bcb764ef128d244443ec3994f9f348fe7ccc"
+    },
+    {
+      "source": "assets/reference-profiles/soda-2026-10-26.json",
+      "packaged": "assets/reference-profiles/soda-2026-10-26.json",
+      "source_sha256": "df7c5320daf93f7aab3e8d72b5324d5c49d66b25f05aabf3221c843058b5fac4",
+      "packaged_sha256": "df7c5320daf93f7aab3e8d72b5324d5c49d66b25f05aabf3221c843058b5fac4"
+    },
+    {
+      "source": "assets/tokens.example.json",
+      "packaged": "assets/tokens.example.json",
+      "source_sha256": "a5edaa55175439af64fc6737cd5e015bdde075e0f88fddb59fa0b2500515afd5",
+      "packaged_sha256": "a5edaa55175439af64fc6737cd5e015bdde075e0f88fddb59fa0b2500515afd5"
+    },
+    {
+      "source": "evals/routing-scenarios.md",
+      "packaged": "evals/routing-scenarios.md",
+      "source_sha256": "15a0fb0b4064603c30a9e24ded07706cfb313a1a3e325d03283bd0f557f5964e",
+      "packaged_sha256": "15a0fb0b4064603c30a9e24ded07706cfb313a1a3e325d03283bd0f557f5964e"
+    },
+    {
+      "source": "evals/scenarios.md",
+      "packaged": "evals/scenarios.md",
+      "source_sha256": "b0c59ed6ac221d6e97a9a606c41d4135c795fb1e95696845e3bf5551d2bbe340",
+      "packaged_sha256": "f80f55acd3ad761fed7df460581ddfbff5ec8eadae438ea9c9bd39bc55a9807d"
+    },
+    {
+      "source": "references/3d-reference-fidelity.md",
+      "packaged": "references/3d-reference-fidelity.md",
+      "source_sha256": "34514a2197ce62396a776148d4666918a62dca3e6517952e1be7a2fd983b8d88",
+      "packaged_sha256": "34514a2197ce62396a776148d4666918a62dca3e6517952e1be7a2fd983b8d88"
+    },
+    {
+      "source": "references/accessibility.md",
+      "packaged": "references/accessibility.md",
+      "source_sha256": "45c44852e41f9460160c79471e63997f6022e8ca90bee5e5f05461fb6300baa4",
+      "packaged_sha256": "45c44852e41f9460160c79471e63997f6022e8ca90bee5e5f05461fb6300baa4"
+    },
+    {
+      "source": "references/adaptive-visual-systems.md",
+      "packaged": "references/adaptive-visual-systems.md",
+      "source_sha256": "4bec95e01a2b5fd849fc4e663387a1f148c6878e3bf6b9d008cdff8e81594c02",
+      "packaged_sha256": "4bec95e01a2b5fd849fc4e663387a1f148c6878e3bf6b9d008cdff8e81594c02"
+    },
+    {
+      "source": "references/agent-production.md",
+      "packaged": "references/agent-production.md",
+      "source_sha256": "e7bfdc1448f8c796aef218d277cde0f8619869ac053ab29eff3f1be40ee33007",
+      "packaged_sha256": "e7bfdc1448f8c796aef218d277cde0f8619869ac053ab29eff3f1be40ee33007"
+    },
+    {
+      "source": "references/approved-product-evolution.md",
+      "packaged": "references/approved-product-evolution.md",
+      "source_sha256": "384eef45c9dee6ced47b1361fc4206622641ea68b35f7440b0f8fda999760015",
+      "packaged_sha256": "f9914613d306ad68af003c305f77b8a7a378b221e203cb8a0cae724cdf9f9572"
+    },
+    {
+      "source": "references/artifact-workflows.md",
+      "packaged": "references/artifact-workflows.md",
+      "source_sha256": "7f44d376958e7c8f864b09b7b9d130f89ccdbcab4e2565fa5751b54c152895e9",
+      "packaged_sha256": "7f44d376958e7c8f864b09b7b9d130f89ccdbcab4e2565fa5751b54c152895e9"
+    },
+    {
+      "source": "references/book-polish-case-study.md",
+      "packaged": "references/book-polish-case-study.md",
+      "source_sha256": "da9a7f8b2ee9f2abef6028eda2f1e7d1e719b6e72bee2864e00b6358bb1715bb",
+      "packaged_sha256": "da9a7f8b2ee9f2abef6028eda2f1e7d1e719b6e72bee2864e00b6358bb1715bb"
+    },
+    {
+      "source": "references/brand-marketing.md",
+      "packaged": "references/brand-marketing.md",
+      "source_sha256": "28356bc55cf4e731edcc02206c69dde7b78373292e91d3896ebda46d1e78eb03",
+      "packaged_sha256": "28356bc55cf4e731edcc02206c69dde7b78373292e91d3896ebda46d1e78eb03"
+    },
+    {
+      "source": "references/clean-shell.md",
+      "packaged": "references/clean-shell.md",
+      "source_sha256": "fa99e1b77cb366afb1cd5cf46437e4e09ec7b82e29c341d67ca2ea53867551f6",
+      "packaged_sha256": "f11c9f8ff10692fcb9a4bd3be070c181bb438157160d9ba84e6a19a79dcc8d5a"
+    },
+    {
+      "source": "references/color-refinement.md",
+      "packaged": "references/color-refinement.md",
+      "source_sha256": "c2055fcdab4bba12a175dd7022831a7325ac408af40d33dcfd48f59b1415e0ce",
+      "packaged_sha256": "c2055fcdab4bba12a175dd7022831a7325ac408af40d33dcfd48f59b1415e0ce"
+    },
+    {
+      "source": "references/component-patterns.md",
+      "packaged": "references/component-patterns.md",
+      "source_sha256": "80a419bb0d866710a627878e9878bfa80863ac7c09e568c8efbad6f6b9f88ec8",
+      "packaged_sha256": "80a419bb0d866710a627878e9878bfa80863ac7c09e568c8efbad6f6b9f88ec8"
+    },
+    {
+      "source": "references/conflicts.md",
+      "packaged": "references/conflicts.md",
+      "source_sha256": "39d4cc653f8b85ae71ebd5fd64bb33195d82461133aed533f8c1cf5f760c5dfb",
+      "packaged_sha256": "39d4cc653f8b85ae71ebd5fd64bb33195d82461133aed533f8c1cf5f760c5dfb"
+    },
+    {
+      "source": "references/contracts-trust.md",
+      "packaged": "references/contracts-trust.md",
+      "source_sha256": "668e47da1fdd79d280b56fbcd1582ef7645dcf612fbaa35d69f1b7e266ca7066",
+      "packaged_sha256": "668e47da1fdd79d280b56fbcd1582ef7645dcf612fbaa35d69f1b7e266ca7066"
+    },
+    {
+      "source": "references/data-dashboards.md",
+      "packaged": "references/data-dashboards.md",
+      "source_sha256": "078718459d5ec52b8dca478b30f6508ca74766d78fc80101831add9369362490",
+      "packaged_sha256": "078718459d5ec52b8dca478b30f6508ca74766d78fc80101831add9369362490"
+    },
+    {
+      "source": "references/design-directions.md",
+      "packaged": "references/design-directions.md",
+      "source_sha256": "043ee82c1eca63b62e66f0600c809a3777b3d318fea202dd5d2136f1a1a6f8eb",
+      "packaged_sha256": "043ee82c1eca63b62e66f0600c809a3777b3d318fea202dd5d2136f1a1a6f8eb"
+    },
+    {
+      "source": "references/desktop-distribution.md",
+      "packaged": "references/desktop-distribution.md",
+      "source_sha256": "d283899e07fc2e7b07b78e7c90e6a3948a726e6a100f1e50796d8480a484f008",
+      "packaged_sha256": "d283899e07fc2e7b07b78e7c90e6a3948a726e6a100f1e50796d8480a484f008"
+    },
+    {
+      "source": "references/fidelity-contracts.md",
+      "packaged": "references/fidelity-contracts.md",
+      "source_sha256": "a4dd28c3dcbd0c98476dce0b82d86df8944135e2130c78d6cfc4a6dd39c848b2",
+      "packaged_sha256": "b249834f7a777c1d72025b31cdea3f2e3e3f708eeb203af7d01795647ff9e6ff"
+    },
+    {
+      "source": "references/immersive-web-tech.md",
+      "packaged": "references/immersive-web-tech.md",
+      "source_sha256": "036b34644f79cee50eba08fdb8ead46a03eae3bcda9ca0a6cf86ae9abef3e335",
+      "packaged_sha256": "036b34644f79cee50eba08fdb8ead46a03eae3bcda9ca0a6cf86ae9abef3e335"
+    },
+    {
+      "source": "references/integrations.md",
+      "packaged": "references/integrations.md",
+      "source_sha256": "77a76d4ffa482dc9d50818322f9372ef43929c9e2c73b0e5e3096f6718ab87dd",
+      "packaged_sha256": "77a76d4ffa482dc9d50818322f9372ef43929c9e2c73b0e5e3096f6718ab87dd"
+    },
+    {
+      "source": "references/interaction-content.md",
+      "packaged": "references/interaction-content.md",
+      "source_sha256": "ce1c9ca5705624b4705b896ede5b3809e46ff052e00eb9dfc48cbfb166b30d8c",
+      "packaged_sha256": "ce1c9ca5705624b4705b896ede5b3809e46ff052e00eb9dfc48cbfb166b30d8c"
+    },
+    {
+      "source": "references/knowledge-graphs.md",
+      "packaged": "references/knowledge-graphs.md",
+      "source_sha256": "9993c9a873e34656276d14817605347e1cd6a339ff9a70eb1e152e5a057c021c",
+      "packaged_sha256": "9993c9a873e34656276d14817605347e1cd6a339ff9a70eb1e152e5a057c021c"
+    },
+    {
+      "source": "references/layout-spatial-contracts.md",
+      "packaged": "references/layout-spatial-contracts.md",
+      "source_sha256": "9908a12135b30dd50b613093e3674e857a9f23b35b042ddfddac320c1795e0d2",
+      "packaged_sha256": "c1e9a4689f65a3fd4f0ad7b832e92d9dd6df20456fb521a19e31f8c9d1ce5fce"
+    },
+    {
+      "source": "references/lighting-editors-icons.md",
+      "packaged": "references/lighting-editors-icons.md",
+      "source_sha256": "e44386e261d899a41df5087cb01ebfea18e8d426e36c84f36684b2afd270955f",
+      "packaged_sha256": "e44386e261d899a41df5087cb01ebfea18e8d426e36c84f36684b2afd270955f"
+    },
+    {
+      "source": "references/mascot-refinement.md",
+      "packaged": "references/mascot-refinement.md",
+      "source_sha256": "f1ee4ed6d2a4dae4358ba4e12c6638b08801a1c97241f45b1a58cd5048afa703",
+      "packaged_sha256": "f1ee4ed6d2a4dae4358ba4e12c6638b08801a1c97241f45b1a58cd5048afa703"
+    },
+    {
+      "source": "references/mobile.md",
+      "packaged": "references/mobile.md",
+      "source_sha256": "a0d9cb795e31012eaea7c9ca69639816f9db0dbda185189471caa547b63e6363",
+      "packaged_sha256": "a0d9cb795e31012eaea7c9ca69639816f9db0dbda185189471caa547b63e6363"
+    },
+    {
+      "source": "references/motion.md",
+      "packaged": "references/motion.md",
+      "source_sha256": "b424ad9c3dcd65eea2b3b23d3ca0e98098af659ce3ea50d92c9ed8797b71f8c0",
+      "packaged_sha256": "b424ad9c3dcd65eea2b3b23d3ca0e98098af659ce3ea50d92c9ed8797b71f8c0"
+    },
+    {
+      "source": "references/passport-polish-case-study.md",
+      "packaged": "references/passport-polish-case-study.md",
+      "source_sha256": "f921143c7532d22b23a42bc2fb3994edb7305bc00b535394c700e7656e5b7503",
+      "packaged_sha256": "f921143c7532d22b23a42bc2fb3994edb7305bc00b535394c700e7656e5b7503"
+    },
+    {
+      "source": "references/platform-adapters.md",
+      "packaged": "references/platform-adapters.md",
+      "source_sha256": "bf844af59b397c29db701ba4a413bd3b9d6128cab3737069f62b914ffc4c714f",
+      "packaged_sha256": "bf844af59b397c29db701ba4a413bd3b9d6128cab3737069f62b914ffc4c714f"
+    },
+    {
+      "source": "references/playbooks.md",
+      "packaged": "references/playbooks.md",
+      "source_sha256": "a9f015a590de132861f9f18b9f0c6e8d9465c66acfd827e111fcceafa4e88e3a",
+      "packaged_sha256": "a9f015a590de132861f9f18b9f0c6e8d9465c66acfd827e111fcceafa4e88e3a"
+    },
+    {
+      "source": "references/plugin-operation.md",
+      "packaged": "references/plugin-operation.md",
+      "source_sha256": "e056c814378212fd479e47129d1fa1eb7251130ccd9e9312d5a37206ba0d1464",
+      "packaged_sha256": "396bc686fb0bccf7076c3f0d87957d636f8e95de859f34aa336003352ed4d9bf"
+    },
+    {
+      "source": "references/product-research.md",
+      "packaged": "references/product-research.md",
+      "source_sha256": "e385755e9517911d9b2f362e0c1fbb3a4ada13949ff5a4f695a072ed87bd560c",
+      "packaged_sha256": "e385755e9517911d9b2f362e0c1fbb3a4ada13949ff5a4f695a072ed87bd560c"
+    },
+    {
+      "source": "references/rea.md",
+      "packaged": "references/rea.md",
+      "source_sha256": "cda88a8bf786668ec74c959b7d7ba52ea296549f5116957f32e8f21bbd788e0c",
+      "packaged_sha256": "cda88a8bf786668ec74c959b7d7ba52ea296549f5116957f32e8f21bbd788e0c"
+    },
+    {
+      "source": "references/reference-fidelity.md",
+      "packaged": "references/reference-fidelity.md",
+      "source_sha256": "3c7daac66e7e278f1eedc080c5822e1345c42c55830bf99733b695e1898ab1ca",
+      "packaged_sha256": "3c7daac66e7e278f1eedc080c5822e1345c42c55830bf99733b695e1898ab1ca"
+    },
+    {
+      "source": "references/rendered-validation.md",
+      "packaged": "references/rendered-validation.md",
+      "source_sha256": "df369b10e08d69973a393d418c42f5491f55176b4fb1a1e43076affae535cb8c",
+      "packaged_sha256": "df369b10e08d69973a393d418c42f5491f55176b4fb1a1e43076affae535cb8c"
+    },
+    {
+      "source": "references/research-protocol.md",
+      "packaged": "references/research-protocol.md",
+      "source_sha256": "b03e56186164637b8253c19393bdfc2d0d14cf901d4b538ba9f74dfb173ee26b",
+      "packaged_sha256": "b03e56186164637b8253c19393bdfc2d0d14cf901d4b538ba9f74dfb173ee26b"
+    },
+    {
+      "source": "references/resources.md",
+      "packaged": "references/resources.md",
+      "source_sha256": "6b62a837de91e5e9961bec5421a23987624976a44d5cdc0884e00052f62e8df0",
+      "packaged_sha256": "3b687ed5984703f302f5ba1be196ab7a3fc6227753b5081687b2453c137f9a2e"
+    },
+    {
+      "source": "references/reusable-objects.md",
+      "packaged": "references/reusable-objects.md",
+      "source_sha256": "03095678a001ca3510af92d212379508a2770aeaefe4e74ba8ebc2f59aae4d99",
+      "packaged_sha256": "03095678a001ca3510af92d212379508a2770aeaefe4e74ba8ebc2f59aae4d99"
+    },
+    {
+      "source": "references/routing.md",
+      "packaged": "references/routing.md",
+      "source_sha256": "c1743a55a462489f57c478d1b431d32edb45dac3baf0c394639ac504041557cd",
+      "packaged_sha256": "68b8fb9f80326337880379d19d84f7870cf4a51249ec6790863fed22a83a415d"
+    },
+    {
+      "source": "references/search-discovery.md",
+      "packaged": "references/search-discovery.md",
+      "source_sha256": "0d7a3655e3f07ddf206b21cb7daed07b65e1c35103ba88034e0e58a451b005b2",
+      "packaged_sha256": "0d7a3655e3f07ddf206b21cb7daed07b65e1c35103ba88034e0e58a451b005b2"
+    },
+    {
+      "source": "references/settings-modes.md",
+      "packaged": "references/settings-modes.md",
+      "source_sha256": "54fe8e0318be0c7ad5303f995b583847c35d860f271ad9c0c45df551844cd631",
+      "packaged_sha256": "54fe8e0318be0c7ad5303f995b583847c35d860f271ad9c0c45df551844cd631"
+    },
+    {
+      "source": "references/source-use-cases.md",
+      "packaged": "references/source-use-cases.md",
+      "source_sha256": "9afe9a5b79f3bf15c3677d361c305b2d21c57e28707b2d1c79d467ec60321f1b",
+      "packaged_sha256": "9afe9a5b79f3bf15c3677d361c305b2d21c57e28707b2d1c79d467ec60321f1b"
+    },
+    {
+      "source": "references/sources.md",
+      "packaged": "references/sources.md",
+      "source_sha256": "7110570e7febe56cb05d0c1fc37adc1c09552cb24e7db50cf989ca16d1de8a21",
+      "packaged_sha256": "4db508de046b87630d52a5ac23cb58a5879bc488dd2cfe173e4039ce7b60d021"
+    },
+    {
+      "source": "references/specialized-surfaces.md",
+      "packaged": "references/specialized-surfaces.md",
+      "source_sha256": "21bbe050d8c8977c7248acb41a77f9e495ac819583bd61a969388242f9706f99",
+      "packaged_sha256": "21bbe050d8c8977c7248acb41a77f9e495ac819583bd61a969388242f9706f99"
+    },
+    {
+      "source": "references/templates.md",
+      "packaged": "references/templates.md",
+      "source_sha256": "d1365b2f3d865f20b0df620400a23020606201c509013921a3bac49d5394b7c0",
+      "packaged_sha256": "d1365b2f3d865f20b0df620400a23020606201c509013921a3bac49d5394b7c0"
+    },
+    {
+      "source": "references/tokens-handoff.md",
+      "packaged": "references/tokens-handoff.md",
+      "source_sha256": "d11fb943081b3dba3e9f00820aa18c0f59c73c21eb827e914cda443d119d2e63",
+      "packaged_sha256": "d11fb943081b3dba3e9f00820aa18c0f59c73c21eb827e914cda443d119d2e63"
+    },
+    {
+      "source": "references/ux-heuristics.md",
+      "packaged": "references/ux-heuristics.md",
+      "source_sha256": "82414124be446b60b49be5f94a916c9d0ef6f0ccb0538c18c340d40426f661f1",
+      "packaged_sha256": "82414124be446b60b49be5f94a916c9d0ef6f0ccb0538c18c340d40426f661f1"
+    },
+    {
+      "source": "references/verification.md",
+      "packaged": "references/verification.md",
+      "source_sha256": "4e2b6c49d8d56ac70fa0a6124e98a411077f148ea4dd11cf4df984a4a4720cbf",
+      "packaged_sha256": "0432c7393c88b5dfc0e734198d16385f9102592c1affc5d2ec7bb0eef0e404e2"
+    },
+    {
+      "source": "references/visual-system.md",
+      "packaged": "references/visual-system.md",
+      "source_sha256": "12253fb1fc51c41368b1b87067b6507c28b23920dda751d7762d9b1d261bfc30",
+      "packaged_sha256": "12253fb1fc51c41368b1b87067b6507c28b23920dda751d7762d9b1d261bfc30"
+    },
+    {
+      "source": "references/web.md",
+      "packaged": "references/web.md",
+      "source_sha256": "cc2aade54f32a5b07d722f0f4932dd9f30579c2a4116b17ff0f306b3b227516d",
+      "packaged_sha256": "cc2aade54f32a5b07d722f0f4932dd9f30579c2a4116b17ff0f306b3b227516d"
+    },
+    {
+      "source": "references/workflow.md",
+      "packaged": "references/workflow.md",
+      "source_sha256": "be5bf592916e305293969fc889709a48397e8f89aa02285a5c4b3bb3b579c863",
+      "packaged_sha256": "be5bf592916e305293969fc889709a48397e8f89aa02285a5c4b3bb3b579c863"
+    },
+    {
+      "source": "scripts/check_contrast.py",
+      "packaged": "scripts/check_contrast.py",
+      "source_sha256": "712a3874b920041622b68829e4da42da5c97a43e55cde91e90bd4ea50f3f736f",
+      "packaged_sha256": "712a3874b920041622b68829e4da42da5c97a43e55cde91e90bd4ea50f3f736f"
+    },
+    {
+      "source": "scripts/check_evidence.py",
+      "packaged": "scripts/check_evidence.py",
+      "source_sha256": "d0904d4f90066d3a0fe1c2f61ee9531b3ed886496ab98b710fe5c9b40532b7f3",
+      "packaged_sha256": "d0904d4f90066d3a0fe1c2f61ee9531b3ed886496ab98b710fe5c9b40532b7f3"
+    },
+    {
+      "source": "scripts/check_fidelity.py",
+      "packaged": "scripts/check_fidelity.py",
+      "source_sha256": "539841328d8ffa9b39616e3c32e93ec438371f3ba74fcada947b14cef70712fd",
+      "packaged_sha256": "539841328d8ffa9b39616e3c32e93ec438371f3ba74fcada947b14cef70712fd"
+    },
+    {
+      "source": "scripts/check_layout.py",
+      "packaged": "scripts/check_layout.py",
+      "source_sha256": "e741ff9f938117864ae601fa6dd491567ba3a7d7b405caa2053cc71c963b97d7",
+      "packaged_sha256": "e741ff9f938117864ae601fa6dd491567ba3a7d7b405caa2053cc71c963b97d7"
+    },
+    {
+      "source": "scripts/check_package.py",
+      "packaged": "scripts/check_package.py",
+      "source_sha256": "3f111a227098b34a213b4ae4660bc6db7b78f84812aced9a485d33c14d823785",
+      "packaged_sha256": "3f111a227098b34a213b4ae4660bc6db7b78f84812aced9a485d33c14d823785"
+    },
+    {
+      "source": "skills/brand/SKILL.md",
+      "packaged": "skills/forma-brand/SKILL.md",
+      "source_sha256": "fb7800d592a3c7493200770e94e51497abeeacebb95c8f7873b0f4977734ac02",
+      "packaged_sha256": "fb7800d592a3c7493200770e94e51497abeeacebb95c8f7873b0f4977734ac02"
+    },
+    {
+      "source": "skills/brand/agents/openai.yaml",
+      "packaged": "skills/forma-brand/agents/openai.yaml",
+      "source_sha256": "21a0b6f202d88cfffc57779b05950a119f97dfbf1d70012176f705fc3bef2ed1",
+      "packaged_sha256": "986984d7887df3d207460c07eb9d929b6bd321675da6e1f1c0bd888370706afe"
+    },
+    {
+      "source": "skills/foundations/SKILL.md",
+      "packaged": "skills/forma-foundations/SKILL.md",
+      "source_sha256": "edd0cfa82783c0fb12cb2d9d040b041c249a55fcb0fc04c607a4c8ce7923ccb8",
+      "packaged_sha256": "edd0cfa82783c0fb12cb2d9d040b041c249a55fcb0fc04c607a4c8ce7923ccb8"
+    },
+    {
+      "source": "skills/foundations/agents/openai.yaml",
+      "packaged": "skills/forma-foundations/agents/openai.yaml",
+      "source_sha256": "2a0fc44ee6b86dab57024ef1ec77a6d0540fe224d4b612fbd26b79e2c0c65edc",
+      "packaged_sha256": "9d89b4d6bb5fea4db5c62d7f4443aaa5adc6841af8285e52c7d6b3db9009ae32"
+    },
+    {
+      "source": "skills/graphs-data/SKILL.md",
+      "packaged": "skills/forma-graphs-data/SKILL.md",
+      "source_sha256": "e854bbfb24014a9e87aa1b1fe23e2e7b63327c3121499ee8999f6c102d489116",
+      "packaged_sha256": "e854bbfb24014a9e87aa1b1fe23e2e7b63327c3121499ee8999f6c102d489116"
+    },
+    {
+      "source": "skills/graphs-data/agents/openai.yaml",
+      "packaged": "skills/forma-graphs-data/agents/openai.yaml",
+      "source_sha256": "9a5a3cb2c3d9179a841caa2c2ab10d8a313dd4f9dd6853646fffffd232ed8837",
+      "packaged_sha256": "23aa2eaa57c2f6aec0e39f347207115c10dbcd7a6c9e337125ba4a018af3ea69"
+    },
+    {
+      "source": "skills/handoff/SKILL.md",
+      "packaged": "skills/forma-handoff/SKILL.md",
+      "source_sha256": "7ae7d1c1a87546f74312acf0f9adc23b5b1ad5c1f41c57e0fae23d83f992d0d6",
+      "packaged_sha256": "7ae7d1c1a87546f74312acf0f9adc23b5b1ad5c1f41c57e0fae23d83f992d0d6"
+    },
+    {
+      "source": "skills/handoff/agents/openai.yaml",
+      "packaged": "skills/forma-handoff/agents/openai.yaml",
+      "source_sha256": "1ec7f40e407195ac821b331264b56b1c9561235a0e78abbbbfe3d616acccbdae",
+      "packaged_sha256": "77de9a27b9b2a6906179c0e120fccbbab48347121a3dcf8c9480caa1a18c92a0"
+    },
+    {
+      "source": "skills/interface/SKILL.md",
+      "packaged": "skills/forma-interface/SKILL.md",
+      "source_sha256": "7d243d96bc963a265d391f64e02e883d00773cbe1bbc8eb849b29b844d4d2010",
+      "packaged_sha256": "7d243d96bc963a265d391f64e02e883d00773cbe1bbc8eb849b29b844d4d2010"
+    },
+    {
+      "source": "skills/interface/agents/openai.yaml",
+      "packaged": "skills/forma-interface/agents/openai.yaml",
+      "source_sha256": "f2d67348d0b2c8923a7fb9a85ff996ce0089ec45439664c33347f10e49b6b69d",
+      "packaged_sha256": "a527d184a180ae564100363cec94dd5fcf8ed42955c8eb2b2e32bfb741d48df6"
+    },
+    {
+      "source": "skills/motion/SKILL.md",
+      "packaged": "skills/forma-motion/SKILL.md",
+      "source_sha256": "29bb83291f5e3adb0c8b7db360c54d5ce1aefc06116b23a83db467a045a82bed",
+      "packaged_sha256": "29bb83291f5e3adb0c8b7db360c54d5ce1aefc06116b23a83db467a045a82bed"
+    },
+    {
+      "source": "skills/motion/agents/openai.yaml",
+      "packaged": "skills/forma-motion/agents/openai.yaml",
+      "source_sha256": "c69a40281fb8cef1b43a9446a1280428496f6527548ebcc87f9489b311056a6f",
+      "packaged_sha256": "ac1cce3fc4ee3d6fce5604b81219def494247bb7df66252c9ebf73cfb8cb2122"
+    },
+    {
+      "source": "skills/objects-3d/SKILL.md",
+      "packaged": "skills/forma-objects-3d/SKILL.md",
+      "source_sha256": "b5ae359cf453fc44faf9c59035f09e00af32739e6e126aa9d6bbcc3986fbdafd",
+      "packaged_sha256": "b5ae359cf453fc44faf9c59035f09e00af32739e6e126aa9d6bbcc3986fbdafd"
+    },
+    {
+      "source": "skills/objects-3d/agents/openai.yaml",
+      "packaged": "skills/forma-objects-3d/agents/openai.yaml",
+      "source_sha256": "71322af87067985d9c0fafc04993f102f3d8ba8e666ba4f07c42587886baa856",
+      "packaged_sha256": "45d952c21edb09e400661f1d0bdf2f5543aef09165d0b53c12f96ca7cd59f4cf"
+    },
+    {
+      "source": "skills/platforms/SKILL.md",
+      "packaged": "skills/forma-platforms/SKILL.md",
+      "source_sha256": "2b442124c81360836676b00ab9711cbc70573bf4d2731afb9996ca349bec4a64",
+      "packaged_sha256": "2b442124c81360836676b00ab9711cbc70573bf4d2731afb9996ca349bec4a64"
+    },
+    {
+      "source": "skills/platforms/agents/openai.yaml",
+      "packaged": "skills/forma-platforms/agents/openai.yaml",
+      "source_sha256": "3db8147a77d1e7b94ad1d856d6648cc8fee1f859125414a521868c7957183fb6",
+      "packaged_sha256": "a4114d2fc14c8081f1bc23665d29441b308e2a87b35c33ccff8407340c74fd92"
+    },
+    {
+      "source": "skills/product/SKILL.md",
+      "packaged": "skills/forma-product/SKILL.md",
+      "source_sha256": "f34db5f75b055e7eb7cbeafe8b942492f8df96c65c35b64d289d8956d5528762",
+      "packaged_sha256": "f34db5f75b055e7eb7cbeafe8b942492f8df96c65c35b64d289d8956d5528762"
+    },
+    {
+      "source": "skills/product/agents/openai.yaml",
+      "packaged": "skills/forma-product/agents/openai.yaml",
+      "source_sha256": "1cb6e03043aadc076ae5c71142bdb123a2c3e89557eef889274f964d2fc23690",
+      "packaged_sha256": "c95bd23481cb0f0392774e5fa89276ad224f24c927459f59db848a694cc1b6b8"
+    },
+    {
+      "source": "skills/reference/SKILL.md",
+      "packaged": "skills/forma-reference/SKILL.md",
+      "source_sha256": "6ab290813004559df8c4b15350d4a87a2c6f63209bf8f105c4bda020bb28c1e3",
+      "packaged_sha256": "6ab290813004559df8c4b15350d4a87a2c6f63209bf8f105c4bda020bb28c1e3"
+    },
+    {
+      "source": "skills/reference/agents/openai.yaml",
+      "packaged": "skills/forma-reference/agents/openai.yaml",
+      "source_sha256": "bd8ba378f64f0fbe681ab6dde762de33e2d6c774ef794c6036ba167eb47a8393",
+      "packaged_sha256": "6ad306ce3a44919162022e3b85300be86f5ec3b62a4f4d70fd058aa0b339965e"
+    },
+    {
+      "source": "skills/validation/SKILL.md",
+      "packaged": "skills/forma-validation/SKILL.md",
+      "source_sha256": "82cf582fd7fc3162ae96b72476045b197424b3a53ff2ca7ca7ed427dfca3499c",
+      "packaged_sha256": "82cf582fd7fc3162ae96b72476045b197424b3a53ff2ca7ca7ed427dfca3499c"
+    },
+    {
+      "source": "skills/validation/agents/openai.yaml",
+      "packaged": "skills/forma-validation/agents/openai.yaml",
+      "source_sha256": "450b166b523e3ed0c9713b0fb0e94661345df9a215f7d1813e604d64f955e7d7",
+      "packaged_sha256": "b6a4e3bf3f9c0ce876c6369fb495282a65ba2093a521fe9c55a7cee82a5b0fa1"
+    },
+    {
+      "source": "tests/book-geometry.test.cjs",
+      "packaged": "tests/book-geometry.test.cjs",
+      "source_sha256": "a202bb496ca517eed40b1277a840d9e8a11bba23bd52d0997ea68641244092e6",
+      "packaged_sha256": "a202bb496ca517eed40b1277a840d9e8a11bba23bd52d0997ea68641244092e6"
+    },
+    {
+      "source": "tests/book-material-fidelity.test.cjs",
+      "packaged": "tests/book-material-fidelity.test.cjs",
+      "source_sha256": "45b3a84b305e8894a23a18893ce8d65fb10e9320df1dbfe98ff69b5dd3fa11bd",
+      "packaged_sha256": "45b3a84b305e8894a23a18893ce8d65fb10e9320df1dbfe98ff69b5dd3fa11bd"
+    },
+    {
+      "source": "tests/book-object.test.cjs",
+      "packaged": "tests/book-object.test.cjs",
+      "source_sha256": "3f4db762e774b4d85d239bf2f71c77bd631ab11102e70726e420010cb48f1069",
+      "packaged_sha256": "3f4db762e774b4d85d239bf2f71c77bd631ab11102e70726e420010cb48f1069"
+    },
+    {
+      "source": "tests/library-colors.test.cjs",
+      "packaged": "tests/library-colors.test.cjs",
+      "source_sha256": "ebe64c648d140fb75f34290062f277cc5c19554e048b0f5d2e42aeb3e4d870da",
+      "packaged_sha256": "ebe64c648d140fb75f34290062f277cc5c19554e048b0f5d2e42aeb3e4d870da"
+    },
+    {
+      "source": "tests/test_check_fidelity.py",
+      "packaged": "tests/test_check_fidelity.py",
+      "source_sha256": "f83807710fd07d41e1bdd9b589edebff44675350986253c4504a311fda578ffa",
+      "packaged_sha256": "f83807710fd07d41e1bdd9b589edebff44675350986253c4504a311fda578ffa"
+    },
+    {
+      "source": "tests/test_check_layout.py",
+      "packaged": "tests/test_check_layout.py",
+      "source_sha256": "3fdae467b41ab81c4622b1f18e5a0b3129d1feb8321ae8d72878c9ece37a389f",
+      "packaged_sha256": "3fdae467b41ab81c4622b1f18e5a0b3129d1feb8321ae8d72878c9ece37a389f"
+    },
+    {
+      "source": "tests/test_check_package.py",
+      "packaged": "tests/test_check_package.py",
+      "source_sha256": "993bf2aa9c77fc6494f0ad051d84d704be36940978a899167ad25c53592ea3ee",
+      "packaged_sha256": "993bf2aa9c77fc6494f0ad051d84d704be36940978a899167ad25c53592ea3ee"
+    },
+    {
+      "source": "tests/test_helpers.py",
+      "packaged": "tests/test_helpers.py",
+      "source_sha256": "85feaeff971e9af0c0ba9d8e307e0c6d6c3a6012701be206fdfbf72e9e857a41",
+      "packaged_sha256": "85feaeff971e9af0c0ba9d8e307e0c6d6c3a6012701be206fdfbf72e9e857a41"
+    }
+  ]
+}

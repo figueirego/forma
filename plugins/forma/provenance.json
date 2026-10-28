@@ -1,5 +1,5 @@
 {
-  "version": "1.22.1",
+  "version": "1.23.0",
   "source": "canonical Forma skill",
   "transformations": [
     "Flatten skill directories",
@@ -17,8 +17,8 @@
     {
       "source": "SKILL.md",
       "packaged": "skills/forma/SKILL.md",
-      "source_sha256": "eabaa4d63341fbb889b719beac82a88ada8ebf497715c06d2eb42c88a87b11ba",
-      "packaged_sha256": "22736871eb28c24f2538af1c6f25bf416a630808890ebab9eb777fa92185419e"
+      "source_sha256": "948c5120241f858f467edace4ce9934eee2775ef78bd1a10bc1839155ae9aa47",
+      "packaged_sha256": "80c7b49dbfcd8631b99113e2edbc21609ee72bde5962295b81b43e6a5ab5272e"
     },
     {
       "source": "THIRD_PARTY_NOTICES.md",
@@ -425,8 +425,8 @@
     {
       "source": "references/plugin-operation.md",
       "packaged": "references/plugin-operation.md",
-      "source_sha256": "ecf13d2a438844f204f7afba888529cb7e9326a6463b79eac7ec4ab2c7878817",
-      "packaged_sha256": "4bced3b7e14c2f54322e2c06e2d4c1df49119a09b0766da862741316b2ef9346"
+      "source_sha256": "e056c814378212fd479e47129d1fa1eb7251130ccd9e9312d5a37206ba0d1464",
+      "packaged_sha256": "feb85017752d257d9f1a5f8aec1912e1f20640439e0eddb1333fbede0cea70ad"
     },
     {
       "source": "references/product-research.md",
@@ -575,8 +575,8 @@
     {
       "source": "scripts/check_package.py",
       "packaged": "scripts/check_package.py",
-      "source_sha256": "fb2b31aa356ff07cd76c36b9d7605d2ca347216594725dc3c76d3b1385cd930c",
-      "packaged_sha256": "fb2b31aa356ff07cd76c36b9d7605d2ca347216594725dc3c76d3b1385cd930c"
+      "source_sha256": "3f111a227098b34a213b4ae4660bc6db7b78f84812aced9a485d33c14d823785",
+      "packaged_sha256": "3f111a227098b34a213b4ae4660bc6db7b78f84812aced9a485d33c14d823785"
     },
     {
       "source": "skills/brand/SKILL.md",

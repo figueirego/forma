@@ -1,6 +1,6 @@
 # Trabalho neste repositório
 
-- A fonte é `source/forma/`; `plugins/forma/` e `.agents/plugins/marketplace.json` são gerados por `python3 tools/build.py`.
+- A fonte é `source/forma/`; `plugins/`, `.agents/plugins/`, `.claude-plugin/` e `distributions/` são gerados por `python3 tools/build.py`.
 - Entenda o contrato afetado antes de editar. Preserve comportamento aprovado e faça a menor alteração completa.
 - Rode `npm ci --ignore-scripts`, `python3 tools/build.py` e `npm run check`. Não declare validação visual com base apenas nos testes de estrutura ou geometria.
 - Atualize documentação e cenários relevantes. Registre limitações e checagens não executadas.

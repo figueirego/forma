@@ -1,8 +1,8 @@
 {
   "name": "forma-community",
-  "version": "1.22.1",
+  "version": "1.23.0",
   "private": true,
-  "description": "Build and validation tooling for the Forma community Codex plugin",
+  "description": "Build and validation tooling for Forma plugins and portable Agent Skills",
   "license": "MIT",
   "engines": {
     "node": ">=24"

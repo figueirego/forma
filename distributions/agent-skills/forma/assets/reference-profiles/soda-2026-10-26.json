@@ -1,0 +1,255 @@
+{
+  "reference": "https://soda-landingpage.vercel.app/",
+  "review_date": "2026-10-26",
+  "date_timezone": "UTC",
+  "scope": "Snapshot estático público, metadados GLB e QA visual delimitado. Variante cromática não equivale a tema claro/escuro.",
+  "runtime": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "verified": [
+        "Lata e frutas visíveis",
+        "Next flavor muda Classic→Lime e aria-pressed",
+        "Material do produto e fundo ficam azuis"
+      ]
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "verified": [
+        "Lata/frutas visíveis após carregamento",
+        "Sem overflow horizontal observado",
+        "Menu abre e fecha"
+      ]
+    },
+    "dom": {
+      "model_viewer_elements": 15,
+      "webgl_context_count": null,
+      "navigation_href": "Home/Ingredients/Taste/Eco/Reviews usam #"
+    },
+    "operator": "Agente principal desta tarefa; desktop.png, blue-desktop.png e mobile.png em outputs/landing-rea/soda/"
+  },
+  "static": {
+    "confirmed_stack": [
+      {
+        "name": "Vite: assinatura do build",
+        "version": null,
+        "evidence": "__vite__mapDeps na entrada; versão da ferramenta desconhecida"
+      },
+      {
+        "name": "model-viewer: elemento personalizado",
+        "version": null,
+        "evidence": "customElements.define e exportação ModelViewerElement no chunk dinâmico"
+      },
+      {
+        "name": "GSAP",
+        "version": "3.15.0",
+        "evidence": "Literal Z.version no chunk GSAP"
+      },
+      {
+        "name": "Three.js",
+        "version": "r183",
+        "evidence": "Literais data-engine e window.__THREE__ no chunk model-viewer; dependência embutida"
+      },
+      {
+        "name": "Lit Element",
+        "version": "4.2.2",
+        "evidence": "Registro litElementVersions"
+      },
+      {
+        "name": "lit-html",
+        "version": "3.3.3",
+        "evidence": "Registro litHtmlVersions"
+      },
+      {
+        "name": "@lit/reactive-element",
+        "version": "2.1.2",
+        "evidence": "Registro reactiveElementVersions"
+      },
+      {
+        "name": "glTF-Transform",
+        "version": "4.5.1",
+        "evidence": "asset.generator nos quatro GLBs; declara exportador, não o pipeline completo de autoria"
+      }
+    ],
+    "fonts": [
+      {
+        "family": "Galada",
+        "weight": 400
+      },
+      {
+        "family": "Inter",
+        "weight": [
+          400,
+          500,
+          600,
+          700
+        ]
+      },
+      {
+        "family": "Manrope",
+        "weight": 500
+      }
+    ],
+    "tokens": {
+      "classic_gradient": [
+        "#0b8a78",
+        "#044e3b",
+        "#011411"
+      ],
+      "blue_gradient": [
+        "#0b4f8a",
+        "#04294e",
+        "#010c14"
+      ],
+      "highlight": "#fbcfe8",
+      "architecture": "Configuração de variante coordena material, fundo e decoração; tokens globais separados"
+    },
+    "composition": "Desktop em três regiões; abaixo de 900px produto ocupa espaço no fluxo. Breakpoints 1200/900/380 e ajuste de altura desktop 760px.",
+    "sources": [
+      {
+        "url": "https://soda-landingpage.vercel.app/assets/index-tSUMTbNt.js",
+        "bytes": 10153,
+        "sha256": "fd1b6219fb7dee41cbd04dd33e78e3b12541b74c19a1fc8f9c99eae95e1c41ef"
+      },
+      {
+        "url": "https://soda-landingpage.vercel.app/assets/preload-helper-BZ1Pz5am.js",
+        "bytes": 1218,
+        "sha256": "8820987e6a8afb54d776f21e305917e1ecf83cef678b4db38c2e5a405d04a8bf"
+      },
+      {
+        "url": "https://soda-landingpage.vercel.app/assets/index-Gz6I9djS.css",
+        "bytes": 12504,
+        "sha256": "29a6e2e95f3f56593b21ec1f2d894da5f9c86cf8af0b675c923d8b9e688811cb"
+      },
+      {
+        "url": "https://soda-landingpage.vercel.app/assets/model-viewer-C1aHFp41.js",
+        "bytes": 1024001,
+        "sha256": "51aa876dff90d5db4e49898e954cf64c0f2b30f3d65f4a3544b7a3021678cd5e"
+      },
+      {
+        "url": "https://soda-landingpage.vercel.app/assets/gsap-806FECi5.js",
+        "bytes": 69641,
+        "sha256": "64371183a54a8bf0ef41b08dafb57b429f1355ba2de6b69dbcfb788b74526e60"
+      },
+      {
+        "url": "https://soda-landingpage.vercel.app/assets/models/soda-can.glb",
+        "bytes": 347156,
+        "sha256": "30dc64399c09e40e8858cefd76b5dbcec7d9a08e7c0d592615d0bfd80791426e"
+      },
+      {
+        "url": "https://soda-landingpage.vercel.app/assets/models/leaves.glb",
+        "bytes": 76160,
+        "sha256": "55c3efaaed9a5eb5b08fa6182bed27c1616600eb32c622ab3e487fcc88ac9d8f"
+      },
+      {
+        "url": "https://soda-landingpage.vercel.app/assets/models/cherry.glb",
+        "bytes": 173108,
+        "sha256": "5dfa7dfee3f377ce95d0a82eb28a5a104d751d336eaf0d00b054f9357619625e"
+      },
+      {
+        "url": "https://soda-landingpage.vercel.app/assets/models/blueberry.glb",
+        "bytes": 254160,
+        "sha256": "9d7664a6deefbe24abf5cdade264addabe5dd4d632e0ffcbee5c6bf289d38ce4"
+      }
+    ],
+    "models": [
+      {
+        "name": "soda-can",
+        "bytes": 347156,
+        "triangles_static": 3934,
+        "animations": 0,
+        "meshes": 1,
+        "materials": 1,
+        "required_extensions": [
+          "EXT_meshopt_compression",
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ]
+      },
+      {
+        "name": "leaves",
+        "bytes": 76160,
+        "triangles_static": 128,
+        "animations": 0,
+        "meshes": 1,
+        "materials": 1,
+        "required_extensions": [
+          "EXT_meshopt_compression",
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ]
+      },
+      {
+        "name": "cherry",
+        "bytes": 173108,
+        "triangles_static": 2592,
+        "animations": 0,
+        "meshes": 1,
+        "materials": 1,
+        "required_extensions": [
+          "EXT_meshopt_compression",
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ]
+      },
+      {
+        "name": "blueberry",
+        "bytes": 254160,
+        "triangles_static": 4832,
+        "animations": 0,
+        "meshes": 1,
+        "materials": 1,
+        "required_extensions": [
+          "EXT_meshopt_compression",
+          "EXT_texture_webp",
+          "KHR_mesh_quantization"
+        ]
+      }
+    ],
+    "rea_parent_evidence": [
+      "ev_4e4d4da5aee2585eac7a2eb348bdb9664ccdc1637e92545ab6b2383d1250b303"
+    ],
+    "rea_coverage": {
+      "input": "index-tSUMTbNt.js",
+      "bytes": 10153,
+      "parse_failures": 0,
+      "application_unknowns": 2,
+      "semantic_unknowns": 714,
+      "status": "partial; dependências grandes inspecionadas por trechos, não totalmente decompostas"
+    }
+  },
+  "cost": {
+    "basis": "Bytes brutos e HEAD; sem waterfall, total inicial ou inferência de contextos GPU",
+    "model_viewer_js_bytes": 1024001,
+    "gsap_js_bytes": 69641,
+    "entry_plus_helper_bytes": 11371,
+    "four_glb_bytes": 850584,
+    "six_woff2_inventory_bytes": 131032,
+    "blue_texture_head_bytes": 327278,
+    "financial_cost": null,
+    "runtime_cost": "Não medido; instâncias, layout por frame, blur e texturas exigem perfil real"
+  },
+  "reuse_cases": [
+    "Caderno/produto com variantes de capa/material",
+    "model-viewer para GLB simples",
+    "Carregamento progressivo conteúdo→produto→decoração",
+    "Seleção transacional com cache e descarte de respostas atrasadas"
+  ],
+  "avoid_copying": [
+    "Somente esconder decoração que continua criada/baixada",
+    "Reduced-motion parcial e RAF sem teardown",
+    "Variante aplicada na UI antes de confirmar textura",
+    "CTAs # sem fluxo funcional",
+    "Ausência de poster de erro",
+    "Detalhe de decoder data: sem validar CSP da integração"
+  ],
+  "not_verified": [
+    "FPS, LCP, INP, GPU memory e custo financeiro não medidos",
+    "Aparelhos físicos, leitores de tela e todos os breakpoints não testados",
+    "Fallback WebGL/rede, reduced-motion completo e teardown não validados em runtime",
+    "Licença de redistribuição, preço/plano de hosting e pipeline original de modelagem",
+    "Versão exata model-viewer/Vite; sourcemap entry negou acesso"
+  ],
+  "redistribution": "Somente perfil factual e receitas originais. GLBs/texturas/fontes/código observados permaneceram na evidência local; não são incorporados à skill."
+}

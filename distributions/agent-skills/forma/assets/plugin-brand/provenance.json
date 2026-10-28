@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-28",
+  "identity": "Forma — identidade do plugin",
+  "hero": {
+    "file": "hero.png",
+    "tool": "image_gen__imagegen",
+    "transparent_background": false,
+    "prompt": "Create an original premium brand hero illustration for FORMA, a modular design assistant plugin. Landscape 3:2 composition, absolutely no text or lettering. Warm white studio background #F5F4F0, lots of negative space at left for future editorial typography. At right, a single sculptural uppercase F made from three precisely aligned geometric slabs: one vertical stem, a long horizontal top bar, and a shorter middle bar with clean rectangular negative space. Front surfaces deep cobalt #315BE8, beveled side surfaces dark ink #172238. This is a physical satin ceramic/aluminum object, NOT inflated bubble typography. Very restrained fine microtexture, softly rounded tiny chamfers, coherent realistic softbox reflections and ambient contact shadows, crisp edges, subtle paper-like warm-white pedestal. A single small flat blue color-sample tile near its base may reinforce a system of modular pieces. Camera front three-quarter, slight elevation, orthographic product photography. Elegant, precise, quiet and clean. No glow, no purple gradients, no glass, no extra symbols, no UI or logos of other companies. Original new mark, not based on any existing brand. High craftsmanship, professional design system editorial visual.",
+    "copy_policy": "Cópia byte a byte; nenhum pixel modificado. O layout pode recortar a imagem via CSS.",
+    "dimensions": {
+      "width": 1536,
+      "height": 1024
+    },
+    "role": "Imagem de apresentação gerada por IA. Não é o arquivo canônico do símbolo e não comprova geometria ou interação 3D.",
+    "sha256": "a07954c51662238cdd3225ab8dcbceaa0668da830b8fafdb6cb6860600d819ab",
+    "source_filename": "exec-7f1e0555-74e5-4fa8-8e13-83dc2a34f3bf.png",
+    "initial_copy_verified": true,
+    "initial_copy_verification": "SHA-256 do original e da cópia comparados na autoria. O arquivo original externo não é dependência do pacote."
+  },
+  "vector": {
+    "files": [
+      "icon.svg",
+      "icon-dark.svg",
+      "wordmark.svg",
+      "wordmark-dark.svg"
+    ],
+    "method": "SVG autoral determinístico, três retângulos em grade de 6 unidades; wordmark com texto editável do sistema.",
+    "font_files_redistributed": [],
+    "trademark_clearance": "Não realizada."
+  },
+  "palette": {
+    "blue": "#315BE8",
+    "ink": "#172238",
+    "paper": "#F5F4F0"
+  },
+  "scope": "Marca do plugin Forma. Não deve ser imposta à identidade dos projetos consumidores.",
+  "verification": "qa.json e verify.cjs"
+}

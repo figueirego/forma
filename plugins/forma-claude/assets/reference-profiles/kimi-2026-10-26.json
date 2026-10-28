@@ -1,0 +1,169 @@
+{
+  "reference": "https://kimi-landing-page-two.vercel.app/",
+  "review_date": "2026-10-26",
+  "date_timezone": "UTC",
+  "scope": "Snapshot estático público + QA visual delimitado; referência de mecanismos, não tema padrão ou validação de alegações editoriais.",
+  "runtime": {
+    "desktop": {
+      "width": 1280,
+      "height": 720,
+      "verified": [
+        "Retrato, capacete e contornos visíveis",
+        "Nenhuma imagem quebrada observada",
+        "Oito elementos canvas no DOM"
+      ]
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "verified": [
+        "Hero em composição vertical",
+        "Capacete visível",
+        "Sem overflow horizontal observado",
+        "Menu dialog abre e fecha"
+      ],
+      "gap": "Open não expõe aria-expanded"
+    },
+    "operator": "Agente principal desta tarefa; evidências visuais em outputs/landing-rea/kimi/desktop.png e mobile.png"
+  },
+  "static": {
+    "confirmed_stack": [
+      {
+        "name": "Lenis",
+        "version": "1.3.26",
+        "role": "Rolagem suave"
+      },
+      {
+        "name": "Three.js",
+        "version": "r185",
+        "role": "Cena WebGL; versão npm/patch não identificada"
+      },
+      {
+        "name": "GLTFLoader/DRACOLoader",
+        "version": null,
+        "role": "GLB com decoder WASM/worker configurado; compressão do arquivo não confirmada"
+      },
+      {
+        "name": "HDR/PMREM + ShaderMaterial",
+        "version": null,
+        "role": "Luz ambiente, plano 2.5D com diffuse/depth/alpha/normal, reveal de material"
+      },
+      {
+        "name": "Canvas 2D + SVG",
+        "version": null,
+        "role": "Contornos, trilha, dissolução, molduras e símbolos"
+      }
+    ],
+    "inferred_stack": [
+      {
+        "name": "Vite",
+        "confidence": "alta",
+        "basis": "modulepreload e vite:preloadError; versão/configuração desconhecidas"
+      }
+    ],
+    "fonts": [
+      {
+        "family": "Oswald",
+        "weights": "400–700",
+        "format": "WOFF2"
+      },
+      {
+        "family": "Space Grotesk",
+        "weights": "400–700",
+        "format": "WOFF2"
+      }
+    ],
+    "tokens": {
+      "background": "#f7fafb",
+      "foreground": "#090a0b",
+      "surface_dark": "#0e0f14",
+      "accent": "#02d2e3",
+      "architecture": "Valores brutos → papéis semânticos; contexto de campanha"
+    },
+    "quality_policy_declared": {
+      "max_dpr": {
+        "mobile": 1,
+        "tablet": 1.25,
+        "desktop": 1.5
+      },
+      "antialias": "desktop",
+      "pointer": "Ponteiro fino sem reduced-motion",
+      "freeze": "reduced-motion ou mobile com saveData/deviceMemory <=2; não evita downloads/render"
+    },
+    "sources": [
+      {
+        "url": "https://kimi-landing-page-two.vercel.app/",
+        "bytes": 18862,
+        "sha256": "1986e7e304b4148aebe52633e349d697843add5c73f06e2f37292b947e7c89a3"
+      },
+      {
+        "url": "https://kimi-landing-page-two.vercel.app/assets/index-CT6846cA.js",
+        "bytes": 56574,
+        "sha256": "4c8300a7acd377d644f9b8d17c4cc6b4ccb4a25ff5a2d1a0b6532eabc9887a5b"
+      },
+      {
+        "url": "https://kimi-landing-page-two.vercel.app/assets/index-BN2fcDBn.css",
+        "bytes": 37056,
+        "sha256": "271689f5beeb7c4c2f973378d7123022c146276e06b257a9fefa019855403ec8"
+      },
+      {
+        "url": "https://kimi-landing-page-two.vercel.app/assets/HeroScene-Dn7Uajjv.js",
+        "bytes": 618987,
+        "sha256": "9e6f8b84f88c3b3e1c205820159b8be5295635aad7ef1c6ca6e9a29fba3ddd3b"
+      }
+    ],
+    "rea_parent_evidence": [
+      "ev_dec89c0abdee5427bc2bdf2adb7a6fda77aa972ccd89bfc4236a122779183460",
+      "ev_f36e2280407f35c888d7bb199f11f8a07178de51c52ad3b5b1081b620c1c2fef"
+    ],
+    "rea_coverage": [
+      {
+        "input": "index-CT6846cA.js",
+        "bytes": 56574,
+        "parse_failures": 0,
+        "application_unknowns": 1,
+        "semantic_unknowns": 2922,
+        "status": "partial; alias expansion bounded at 512"
+      },
+      {
+        "input": "Sufixo exato HeroScene de 9346 bytes",
+        "bytes": 9346,
+        "parse_failures": 0,
+        "application_unknowns": 3,
+        "semantic_unknowns": 554,
+        "status": "partial; definições da biblioteca fora do recorte"
+      }
+    ]
+  },
+  "cost": {
+    "basis": "Bytes brutos GET/Content-Length HEAD; não total da navegação nem transferência comprimida",
+    "entry_js_bytes": 56574,
+    "hero_js_bytes": 618987,
+    "html_css_js_two_fonts_subtotal_bytes": 775239,
+    "configured_wasm_decoder_plus_wrapper_conditional_bytes": 344510,
+    "scene_assets_bytes": null,
+    "gpu_runtime_cost": "Não medido; shaders, PMREM, textura e loops criam custo que DPR sozinho não caracteriza",
+    "financial_cost": null
+  },
+  "reuse_cases": [
+    "Caderno/cartão: CSS perspective antes de WebGL",
+    "Retrato 2.5D + objeto GLB opcional",
+    "Timeline editorial com ordem móvel",
+    "SVG/Canvas para trajetória e contorno"
+  ],
+  "avoid_copying": [
+    "Escala raiz descontínua em 1279→1280 e 1440→1441",
+    "freeze que continua baixando e renderizando",
+    "Reduced-motion parcial",
+    "Ausência de poster útil em falha",
+    "Cleanup incompleto para adaptação SPA"
+  ],
+  "not_verified": [
+    "FPS, LCP, INP, GPU memory e custo financeiro não medidos",
+    "Aparelhos físicos, leitores de tela e todos os breakpoints não testados",
+    "Fallback WebGL/rede, reduced-motion completo e teardown não validados em runtime",
+    "Licenças de assets, preço/plano de hosting, pipeline original de autoria",
+    "Dimensões/pesos/triângulos do GLB e mapas: HEAD externo retornou 403, sem falha no QA do navegador"
+  ],
+  "redistribution": "Perfil factual e padrões originais. Nenhum asset, fonte, modelo, logo ou código do fornecedor incluído; direitos de redistribuição não estabelecidos."
+}

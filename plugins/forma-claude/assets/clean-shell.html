@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Ateliê: demonstração local de uma base de interface portátil para coleções.">
+  <title>Ateliê · Coleções</title>
+  <link rel="stylesheet" href="./clean-shell.css">
+  <style>html, body { margin: 0; padding: 0; } body { background: #f4f5f7; }</style>
+  <script src="./clean-shell.js" defer></script>
+</head>
+<body>
+  <!-- This demo uses synthetic data, in-memory mutations and preference-only storage. -->
+  <div class="dc-shell" data-dc-theme="light" data-dc-collapsed="false" data-dc-nav-open="false" data-dc-ambient="false">
+    <aside class="dc-sidebar" aria-label="Navegação do espaço">
+      <div class="dc-brand-row">
+        <div class="dc-brand" aria-label="Ateliê">
+          <span class="dc-brand-mark" aria-hidden="true"><svg class="dc-icon" data-dc-icon="atelier"></svg></span>
+          <span class="dc-brand-name">Ateliê</span>
+        </div>
+        <button class="dc-icon-button dc-mobile-toggle" type="button" aria-label="Abrir navegação" aria-expanded="false" aria-controls="dc-navigation dc-sidebar-footer" title="Abrir navegação"><svg class="dc-icon" data-dc-icon="menu"></svg></button>
+      </div>
+      <nav class="dc-sidebar-scroll" id="dc-navigation" aria-label="Coleções e marcadores">
+        <div class="dc-nav-group">
+          <div class="dc-section-label"><span class="dc-section-name">SEU ESPAÇO</span></div>
+          <button class="dc-nav-item" type="button" data-dc-filter="all" aria-label="Todas as coleções" aria-current="page" title="Todas as coleções"><svg class="dc-icon" data-dc-icon="layers"></svg><span class="dc-nav-text">Todas as coleções</span><span class="dc-count" data-dc-count="all">6</span></button>
+          <button class="dc-nav-item" type="button" data-dc-filter="favorites" aria-label="Favoritas" title="Favoritas"><svg class="dc-icon" data-dc-icon="star"></svg><span class="dc-nav-text">Favoritas</span><span class="dc-count" data-dc-count="favorites">2</span></button>
+          <button class="dc-nav-item" type="button" data-dc-filter="archived" aria-label="Arquivadas" title="Arquivadas"><svg class="dc-icon" data-dc-icon="archive"></svg><span class="dc-nav-text">Arquivadas</span><span class="dc-count" data-dc-count="archived">1</span></button>
+        </div>
+        <div class="dc-nav-group">
+          <div class="dc-section-label"><span class="dc-section-name">MARCADORES</span><button class="dc-icon-button" type="button" data-dc-action="add" aria-label="Adicionar coleção com marcador" title="Adicionar coleção com marcador"><svg class="dc-icon" data-dc-icon="plus"></svg></button></div>
+          <button class="dc-nav-item" type="button" data-dc-filter="Design" aria-label="Coleções de Design" title="Design"><span class="dc-marker dc-marker--blue" aria-hidden="true"></span><span class="dc-nav-text">Design</span><span class="dc-count" data-dc-count="Design">3</span></button>
+          <button class="dc-nav-item" type="button" data-dc-filter="Pesquisa" aria-label="Coleções de Pesquisa" title="Pesquisa"><span class="dc-marker dc-marker--green" aria-hidden="true"></span><span class="dc-nav-text">Pesquisa</span><span class="dc-count" data-dc-count="Pesquisa">2</span></button>
+          <button class="dc-nav-item" type="button" data-dc-filter="Produto" aria-label="Coleções de Produto" title="Produto"><span class="dc-marker dc-marker--lilac" aria-hidden="true"></span><span class="dc-nav-text">Produto</span><span class="dc-count" data-dc-count="Produto">1</span></button>
+        </div>
+      </nav>
+      <div class="dc-sidebar-footer" id="dc-sidebar-footer">
+        <button class="dc-nav-item" type="button" data-dc-action="settings" aria-label="Configurações de aparência" title="Configurações de aparência"><svg class="dc-icon" data-dc-icon="settings"></svg><span class="dc-nav-text">Configurações</span></button>
+        <div class="dc-profile" title="Marina Costa · perfil de demonstração">
+          <span class="dc-avatar" aria-hidden="true">MC</span>
+          <div class="dc-profile-copy"><strong>Marina Costa</strong><span>Espaço de demonstração</span></div>
+        </div>
+      </div>
+    </aside>
+    <main class="dc-main" id="dc-main">
+      <header class="dc-topbar">
+        <button class="dc-icon-button dc-sidebar-toggle" type="button" aria-label="Recolher barra lateral" aria-expanded="true" aria-controls="dc-navigation" title="Recolher barra lateral"><svg class="dc-icon" data-dc-icon="sidebar"></svg></button>
+        <div class="dc-breadcrumb" aria-label="Localização"><span>Seu espaço</span><svg class="dc-icon" data-dc-icon="chevron"></svg><strong id="dc-breadcrumb-label">Coleções</strong></div>
+        <span class="dc-demo-badge">Demonstração</span>
+      </header>
+      <div class="dc-content">
+        <div class="dc-heading">
+          <div><h1 id="dc-page-title">Coleções</h1><p id="dc-page-description">Um lugar para organizar o que inspira seu trabalho.</p></div>
+          <button class="dc-button dc-button--primary" type="button" data-dc-action="add"><svg class="dc-icon" data-dc-icon="plus"></svg>Nova coleção</button>
+        </div>
+        <div class="dc-toolbar">
+          <div class="dc-search"><svg class="dc-icon" data-dc-icon="search"></svg><label class="dc-sr-only" for="dc-search">Buscar coleções</label><input id="dc-search" type="search" placeholder="Buscar coleções" autocomplete="off" aria-describedby="dc-search-help"><kbd id="dc-shortcut" aria-hidden="true">⌘ K</kbd><span class="dc-sr-only" id="dc-search-help">Busca textual pelo nome, descrição ou marcador, dentro do filtro selecionado. Command K ou Control K foca este campo quando nenhum outro campo está em edição.</span></div>
+          <div class="dc-toolbar-end">
+            <label class="dc-sr-only" for="dc-sort">Ordenar coleções</label><select class="dc-sort" id="dc-sort"><option value="recent">Mais recentes</option><option value="name">Nome A–Z</option></select>
+            <div class="dc-view-switch" role="group" aria-label="Visualização das coleções"><button class="dc-icon-button" type="button" data-dc-view-button="grid" aria-label="Visualizar em grade" aria-pressed="true" title="Visualizar em grade"><svg class="dc-icon" data-dc-icon="grid"></svg></button><button class="dc-icon-button" type="button" data-dc-view-button="list" aria-label="Visualizar em lista" aria-pressed="false" title="Visualizar em lista"><svg class="dc-icon" data-dc-icon="list"></svg></button></div>
+          </div>
+        </div>
+        <div class="dc-result-line"><p id="dc-result-count" role="status" aria-live="polite" aria-atomic="true">6 coleções</p><span id="dc-filter-hint">Seu repertório, em construção.</span></div>
+        <div class="dc-collection-grid" id="dc-collections" data-dc-view="grid" aria-label="Coleções"></div>
+        <div class="dc-empty" id="dc-empty" hidden><svg class="dc-icon" data-dc-icon="search"></svg><h2>Nenhuma coleção por aqui</h2><p id="dc-empty-copy">Tente outro termo ou crie uma nova coleção.</p><button class="dc-button" id="dc-reset-search" type="button">Limpar busca e filtros</button></div>
+        <p class="dc-demo-note">Exemplo com dados fictícios. Novas coleções e alterações ficam apenas nesta sessão; recarregar restaura os exemplos.</p>
+        <p class="dc-live-message" id="dc-status" role="status" aria-live="polite" aria-atomic="true"></p>
+        <noscript><p>Ative o JavaScript para explorar a busca, os filtros e as coleções desta demonstração.</p></noscript>
+      </div>
+    </main>
+    <dialog class="dc-dialog" id="dc-add-dialog" aria-labelledby="dc-add-title" aria-describedby="dc-add-description">
+      <form id="dc-add-form">
+        <div class="dc-dialog-header"><div><h2 id="dc-add-title">Nova coleção</h2><p id="dc-add-description">Organize uma ideia. Ela ficará apenas nesta sessão.</p></div><button class="dc-icon-button" type="button" data-dc-close aria-label="Fechar criação de coleção"><svg class="dc-icon" data-dc-icon="close"></svg></button></div>
+        <label class="dc-field"><span class="dc-field-label">Nome</span><input class="dc-input" id="dc-name" name="name" placeholder="Ex.: Identidades que inspiram" required maxlength="64" autocomplete="off" autofocus></label>
+        <label class="dc-field"><span class="dc-field-label">Descrição <span>(opcional)</span></span><textarea class="dc-input" name="description" placeholder="O que você quer reunir aqui?" maxlength="180" rows="3"></textarea></label>
+        <label class="dc-field"><span class="dc-field-label">Marcador</span><select class="dc-input" name="category"><option>Design</option><option>Pesquisa</option><option>Produto</option></select><span class="dc-field-hint">Nesta demonstração, os marcadores são predefinidos.</span></label>
+        <p class="dc-form-error" id="dc-form-error" role="alert" hidden></p>
+        <div class="dc-dialog-actions"><button class="dc-button" type="button" data-dc-close>Cancelar</button><button class="dc-button dc-button--primary" type="submit">Criar coleção</button></div>
+      </form>
+    </dialog>
+    <dialog class="dc-dialog" id="dc-settings-dialog" aria-labelledby="dc-settings-title">
+      <div class="dc-dialog-header"><div><h2 id="dc-settings-title">Seu espaço, seu jeito</h2><p>Preferências de aparência deste navegador.</p></div><button class="dc-icon-button" type="button" data-dc-close aria-label="Fechar configurações" autofocus><svg class="dc-icon" data-dc-icon="close"></svg></button></div>
+      <fieldset class="dc-fieldset"><legend>Aparência</legend><div class="dc-theme-options"><label class="dc-radio"><input type="radio" name="dc-theme" value="light">Claro</label><label class="dc-radio"><input type="radio" name="dc-theme" value="dark">Escuro</label><label class="dc-radio"><input type="radio" name="dc-theme" value="system" checked>Sistema</label></div></fieldset>
+      <label class="dc-checkbox"><input type="checkbox" id="dc-ambient"><span>Luz ambiente<small>Um brilho discreto apenas na barra lateral.</small></span></label>
+      <p class="dc-storage-message" id="dc-storage-status" role="status" aria-live="polite">Somente tema, luz ambiente, visualização e estado da barra lateral são salvos neste navegador.</p>
+      <div class="dc-dialog-actions"><button class="dc-button" type="button" data-dc-close>Concluir</button></div>
+    </dialog>
+    <dialog class="dc-dialog" id="dc-detail-dialog" aria-labelledby="dc-detail-title">
+      <div class="dc-dialog-header"><div><h2 id="dc-detail-title">Coleção</h2><p id="dc-detail-meta"></p></div><button class="dc-icon-button" type="button" data-dc-close aria-label="Fechar detalhes da coleção" autofocus><svg class="dc-icon" data-dc-icon="close"></svg></button></div>
+      <p class="dc-detail-description" id="dc-detail-description"></p><ul class="dc-detail-list" id="dc-detail-list"></ul><p class="dc-detail-note" id="dc-detail-note"></p>
+      <div class="dc-dialog-actions"><button class="dc-button" id="dc-detail-favorite" type="button" aria-pressed="false">Favoritar</button><button class="dc-button" id="dc-detail-archive" type="button">Arquivar</button><button class="dc-button dc-button--primary" type="button" data-dc-close>Concluir</button></div>
+    </dialog>
+  </div>
+</body>
+</html>

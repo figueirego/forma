@@ -14,6 +14,8 @@ def main():
         ['node', 'tools/test-node.mjs'],
         [sys.executable, '-B', 'source/forma/scripts/check_package.py', '--root', 'source/forma'],
         [sys.executable, '-B', 'source/forma/scripts/check_package.py', '--root', 'plugins/forma', '--source', 'source/forma'],
+        [sys.executable, '-B', 'source/forma/scripts/check_package.py', '--root', 'plugins/forma-claude', '--source', 'source/forma'],
+        [sys.executable, '-B', 'source/forma/scripts/check_package.py', '--root', 'distributions/agent-skills'],
         [sys.executable, '-B', 'tools/build.py', '--check'],
     ]
     for command in commands:

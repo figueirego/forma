@@ -1,0 +1,1821 @@
+{
+  "target": "Desktop material reference v1 — audited build 0.19.0",
+  "evidenceType": "static resource inspection; no runtime-computed colors captured by this worker",
+  "offsetBasis": "zero-based Unicode character offsets in UTF-8 decoded text, not byte offsets",
+  "sources": [
+    {
+      "sha256": "038a8f7cbd96a203799799468673ce7bdb1e3f2c6ef32dcae36672876925a184",
+      "bytes": 923772,
+      "artifactRole": "renderer entry JavaScript"
+    },
+    {
+      "sha256": "fce4673ea10a877cc77ee8eefbf91a1ee6e72d2323d8c4f9c59030a9bf01ac5a",
+      "bytes": 310126,
+      "artifactRole": "renderer CSS"
+    }
+  ],
+  "accentPalette": {
+    "sourceOffset": 791876,
+    "applicationFunctionOffset": 793901,
+    "mapping": {
+      "hex": "--accent",
+      "ink": "--on-accent",
+      "text": "--accent-text"
+    },
+    "items": [
+      {
+        "id": "mono",
+        "label": "Mono",
+        "hex": {
+          "light": "#18181b",
+          "dark": "#ededef"
+        },
+        "ink": {
+          "light": "#ffffff",
+          "dark": "#111113"
+        },
+        "text": {
+          "light": "#18181b",
+          "dark": "#ededef"
+        },
+        "solid_fill_text_contrast": {
+          "light": 17.717,
+          "dark": 16.131
+        }
+      },
+      {
+        "id": "red",
+        "label": "Red",
+        "hex": {
+          "light": "#e5484d",
+          "dark": "#dc3e44"
+        },
+        "ink": {
+          "light": "#ffffff",
+          "dark": "#ffffff"
+        },
+        "text": {
+          "light": "#e5484d",
+          "dark": "#ff7a7a"
+        },
+        "solid_fill_text_contrast": {
+          "light": 3.914,
+          "dark": 4.361
+        }
+      },
+      {
+        "id": "amber",
+        "label": "Amber",
+        "hex": {
+          "light": "#e08a00",
+          "dark": "#e08a00"
+        },
+        "ink": {
+          "light": "#ffffff",
+          "dark": "#1f1300"
+        },
+        "text": {
+          "light": "#e08a00",
+          "dark": "#f5a524"
+        },
+        "solid_fill_text_contrast": {
+          "light": 2.691,
+          "dark": 6.779
+        }
+      },
+      {
+        "id": "yellow",
+        "label": "Yellow",
+        "hex": {
+          "light": "#d4a20b",
+          "dark": "#e0b020"
+        },
+        "ink": {
+          "light": "#1f1700",
+          "dark": "#1f1700"
+        },
+        "text": {
+          "light": "#a07800",
+          "dark": "#f2c94c"
+        },
+        "solid_fill_text_contrast": {
+          "light": 7.598,
+          "dark": 8.808
+        }
+      },
+      {
+        "id": "green",
+        "label": "Green",
+        "hex": {
+          "light": "#0f9d76",
+          "dark": "#0e8f6b"
+        },
+        "ink": {
+          "light": "#ffffff",
+          "dark": "#ffffff"
+        },
+        "text": {
+          "light": "#0f9d76",
+          "dark": "#34d399"
+        },
+        "solid_fill_text_contrast": {
+          "light": 3.44,
+          "dark": 4.07
+        }
+      },
+      {
+        "id": "teal",
+        "label": "Teal",
+        "hex": {
+          "light": "#0e98ae",
+          "dark": "#0b8599"
+        },
+        "ink": {
+          "light": "#ffffff",
+          "dark": "#ffffff"
+        },
+        "text": {
+          "light": "#0e98ae",
+          "dark": "#3cc6db"
+        },
+        "solid_fill_text_contrast": {
+          "light": 3.431,
+          "dark": 4.349
+        }
+      },
+      {
+        "id": "blue",
+        "label": "Blue",
+        "hex": {
+          "light": "#3b6fe0",
+          "dark": "#3d6fe6"
+        },
+        "ink": {
+          "light": "#ffffff",
+          "dark": "#ffffff"
+        },
+        "text": {
+          "light": "#3b6fe0",
+          "dark": "#7ea6ff"
+        },
+        "solid_fill_text_contrast": {
+          "light": 4.63,
+          "dark": 4.551
+        }
+      },
+      {
+        "id": "purple",
+        "label": "Purple",
+        "hex": {
+          "light": "#8b5cf6",
+          "dark": "#7c5cf0"
+        },
+        "ink": {
+          "light": "#ffffff",
+          "dark": "#ffffff"
+        },
+        "text": {
+          "light": "#8b5cf6",
+          "dark": "#b794ff"
+        },
+        "solid_fill_text_contrast": {
+          "light": 4.234,
+          "dark": 4.52
+        }
+      },
+      {
+        "id": "pink",
+        "label": "Pink",
+        "hex": {
+          "light": "#d6409f",
+          "dark": "#c93a93"
+        },
+        "ink": {
+          "light": "#ffffff",
+          "dark": "#ffffff"
+        },
+        "text": {
+          "light": "#d6409f",
+          "dark": "#f27ac6"
+        },
+        "solid_fill_text_contrast": {
+          "light": 4.123,
+          "dark": 4.656
+        }
+      },
+      {
+        "id": "brown",
+        "label": "Brown",
+        "hex": {
+          "light": "#9a6b46",
+          "dark": "#8a5f3d"
+        },
+        "ink": {
+          "light": "#ffffff",
+          "dark": "#ffffff"
+        },
+        "text": {
+          "light": "#9a6b46",
+          "dark": "#c99a76"
+        },
+        "solid_fill_text_contrast": {
+          "light": 4.6,
+          "dark": 5.548
+        }
+      },
+      {
+        "id": "grey",
+        "label": "Grey",
+        "hex": {
+          "light": "#7c7c84",
+          "dark": "#6e6e76"
+        },
+        "ink": {
+          "light": "#ffffff",
+          "dark": "#ffffff"
+        },
+        "text": {
+          "light": "#7c7c84",
+          "dark": "#a8a8b0"
+        },
+        "solid_fill_text_contrast": {
+          "light": 4.139,
+          "dark": 5.054
+        }
+      }
+    ]
+  },
+  "groundWash": {
+    "source_offset": 579052,
+    "schema": {
+      "hue": 181,
+      "chroma": 0.038,
+      "grain": 0,
+      "hold": false,
+      "stops": [
+        {
+          "d": 62,
+          "c": 0.75,
+          "x": -14,
+          "y": 62,
+          "w": 130,
+          "h": 46,
+          "fade": 72,
+          "light": {
+            "l": 0.9,
+            "a": 0.85
+          },
+          "dark": {
+            "l": 0.42,
+            "a": 0.7
+          }
+        },
+        {
+          "d": 0,
+          "c": 1,
+          "x": -10,
+          "y": 120,
+          "w": 124,
+          "h": 62,
+          "fade": 76,
+          "light": {
+            "l": 0.85,
+            "a": 1
+          },
+          "dark": {
+            "l": 0.48,
+            "a": 0.9
+          }
+        }
+      ]
+    },
+    "limits": {
+      "maxPools": 3,
+      "chroma": [
+        0,
+        0.09
+      ],
+      "grain": [
+        0,
+        1
+      ],
+      "positionMapping": [
+        -45,
+        145
+      ],
+      "distance": [
+        0,
+        150
+      ]
+    },
+    "layers": {
+      "light": {
+        "highlight": {
+          "kind": "elliptical radial light",
+          "sizePercent": [
+            74,
+            46
+          ],
+          "centerPercent": [
+            10,
+            -16
+          ],
+          "colorRGB": [
+            255,
+            255,
+            255
+          ],
+          "initialAlpha": 0.96,
+          "transparentAtPercent": 68
+        },
+        "base": {
+          "kind": "vertical linear color interpolation",
+          "angleDegrees": 180,
+          "stops": [
+            {
+              "percent": 0,
+              "color": "#fdfeff"
+            },
+            {
+              "percent": 100,
+              "color": "#eef3f6"
+            }
+          ]
+        },
+        "grainMultiplier": 0.42
+      },
+      "dark": {
+        "highlight": {
+          "kind": "elliptical radial light",
+          "sizePercent": [
+            74,
+            38
+          ],
+          "centerPercent": [
+            10,
+            -14
+          ],
+          "colorRGB": [
+            255,
+            255,
+            255
+          ],
+          "initialAlpha": 0.07,
+          "transparentAtPercent": 62
+        },
+        "base": {
+          "kind": "vertical linear color interpolation",
+          "angleDegrees": 180,
+          "stops": [
+            {
+              "percent": 0,
+              "color": "#141417"
+            },
+            {
+              "percent": 100,
+              "color": "#08080a"
+            }
+          ]
+        },
+        "grainMultiplier": 0.36
+      }
+    },
+    "algorithm": {
+      "sampleIntervals": 8,
+      "sampleCount": 9,
+      "fadeMultiplier": 1.25,
+      "fadeLimitPercent": 100,
+      "alpha": "modeAlpha * (1 - t*t*(3 - 2*t)), t=i/8",
+      "stopPercent": "t * min(100, fade*1.25)",
+      "poolHue": "rootHue + pool.d",
+      "poolChroma": "rootChroma * pool.c",
+      "poolLightness": "pool[resolvedMode].l",
+      "layerOrderTopToBottom": [
+        "grain when > .005",
+        "mode highlight",
+        "pools in array order",
+        "mode base"
+      ],
+      "grain": {
+        "kind": "SVG fractalNoise monochrome",
+        "size": [
+          160,
+          160
+        ],
+        "baseFrequency": 0.85,
+        "numOctaves": 3,
+        "stitchTiles": "stitch",
+        "opacity": "grain * mode grainMultiplier"
+      }
+    },
+    "functions": {
+      "PC": 582191,
+      "ap": 582605,
+      "ah": 582759,
+      "FC": 583557
+    },
+    "contextOverride": {
+      "function": "JN",
+      "sourceOffset": 861933,
+      "callSiteOffset": 904571,
+      "input": "oi?.color and persisted ground config Ee",
+      "hue": "When !hold and input OKLCH chroma > .02, use input hue; otherwise configured hue normalized to [0,360). Choose equivalent angle nearest previous hue to avoid a long transition.",
+      "chroma": "When input color applies: min(config.chroma * 1.45, .09); otherwise config.chroma",
+      "serialization": {
+        "hueDecimals": 1,
+        "chromaDecimals": 3
+      },
+      "hold": "Disables contextual color override; it does not disable the wash."
+    }
+  },
+  "composition": {
+    "cssOffsets": {
+      "app": 22614,
+      "topbar": 23191,
+      "scroller": 39303,
+      "sidebar": 97607,
+      "settingsSheet": 211062,
+      "settingsTabs": 211593
+    },
+    "app": {
+      "inset": "8px 8px 8px 16px",
+      "gap": "16px",
+      "background": "ground-color plus ground-wash",
+      "cssPropertyTransition": ".62s ease-out for hue/chroma/spread",
+      "tuning": "transition:none"
+    },
+    "sidebar": {
+      "width": "220px",
+      "background": "transparent",
+      "padding": "8px 0",
+      "gap": "24px"
+    },
+    "pane": {
+      "background": "--bg-raised",
+      "radius": "12px",
+      "shadow": "--card-shadow",
+      "overflow": "hidden"
+    },
+    "topbar": {
+      "height": "72px",
+      "padding": "0 16px",
+      "gap": "10px",
+      "position": "absolute",
+      "background": {
+        "role": "raised surface mixed with transparent veil",
+        "space": "sRGB",
+        "weightToken": "--veil",
+        "colorToken": "--bg-raised"
+      }
+    },
+    "settings": {
+      "width": "min(980px, 100vw - 56px)",
+      "height": "min(728px, 100vh - 72px)",
+      "radius": "12px",
+      "backgroundLight": "#fff",
+      "backgroundDark": "#161619",
+      "scrollPadding": "26px 28px 10px",
+      "tabMinimumWidth": "72px"
+    }
+  },
+  "comparisonBaseline": {
+    "path": "outputs/pauta/themes.css",
+    "sha256": "4a3f35bf5c68afc2263e1d172f3b862c43e1c8bb3c49af4671511c0e2fa7bfde",
+    "scope": "Snapshot before parent implementation changes; no CSS modified by this worker."
+  },
+  "search": {
+    "evidenceType": "Static distributed resources + user supplied focused-search screenshot; native observation idle only; no successful interactive search test in this revision",
+    "paletteSource": {
+      "symbol": "Kl",
+      "offset": 653332,
+      "scope": "image-pixel color filter; separate from accent, illumination and user assigned item color"
+    },
+    "palette": [
+      {
+        "label": "Red",
+        "hex": "#d63a3a"
+      },
+      {
+        "label": "Orange",
+        "hex": "#ec7a2c"
+      },
+      {
+        "label": "Amber",
+        "hex": "#f0a02a"
+      },
+      {
+        "label": "Yellow",
+        "hex": "#f2c230"
+      },
+      {
+        "label": "Lime",
+        "hex": "#8cc43a"
+      },
+      {
+        "label": "Green",
+        "hex": "#3fa34d"
+      },
+      {
+        "label": "Teal",
+        "hex": "#2aa6a0"
+      },
+      {
+        "label": "Cyan",
+        "hex": "#2aa5d0"
+      },
+      {
+        "label": "Blue",
+        "hex": "#2f6fd6"
+      },
+      {
+        "label": "Indigo",
+        "hex": "#4b4fc9"
+      },
+      {
+        "label": "Purple",
+        "hex": "#8a4fd1"
+      },
+      {
+        "label": "Magenta",
+        "hex": "#c24fc4"
+      },
+      {
+        "label": "Pink",
+        "hex": "#e25aa0"
+      },
+      {
+        "label": "Brown",
+        "hex": "#8a5a36"
+      },
+      {
+        "label": "White",
+        "hex": "#f4f4f4"
+      },
+      {
+        "label": "Grey",
+        "hex": "#8c8c8c"
+      },
+      {
+        "label": "Black",
+        "hex": "#111111"
+      }
+    ],
+    "inline": {
+      "symbol": "R3",
+      "heightPx": 40,
+      "minWidthPx": 240,
+      "maxWidthPx": 560,
+      "popoverGapPx": 8,
+      "popoverRadiusPx": 20,
+      "blurPx": 0,
+      "headerDebounceMs": 220,
+      "resultsDebounceMsWithQuery": 90,
+      "openCondition": "focused && !draft.trim() && !colorPickerOpen"
+    },
+    "commandPalette": {
+      "symbol": "S3",
+      "blurPx": 5,
+      "maxWidthPx": 620,
+      "viewportInsetTotalPx": 64,
+      "suggestionDebounceMs": 110,
+      "modal": true
+    },
+    "colorPicker": {
+      "symbol": "M3",
+      "position": "fixed below search, no viewport clamp in inspected build",
+      "minWidthPx": 380,
+      "svHeightPx": 240,
+      "hueBarHeightPx": 12,
+      "commit": "preset, Search, Enter",
+      "dismiss": "Escape or outside click discards temporary color"
+    },
+    "query": {
+      "lexical": "FTS5 unicode61 remove_diacritics 2; AND terms; prefix last term only",
+      "semantic": "local CLIP when installed and eligible; exact vector scan; score not calibrated probability",
+      "hybrid": "concatenation by type plus deduplication, not score fusion"
+    },
+    "history": {
+      "storedQueriesPerLibrary": 20,
+      "storedViewedPerLibrary": 24,
+      "displayedQueries": 8
+    },
+    "knownStaticRisks": [
+      "Different descendant scope between textual and semantic collection query",
+      "Vector cache not invalidated on all collection membership mutations",
+      "Async query not bound to initial library across awaits",
+      "Worker query lacks timeout/cancellation",
+      "Color picker minimum width and position are not clamped to viewport"
+    ],
+    "runtimeLimits": [
+      "No successful focus, typing, color application or ranking validation in this pass",
+      "No model download, fault injection or user data mutation performed"
+    ]
+  },
+  "book": {
+    "verifiedAt": "2026-10-26",
+    "artifact": {
+      "sha256": "93193b9cc8658ea072044a8d71325aca3f48fc65aa47e23d5da43d4b41380d3d",
+      "artifactRole": "Installed macOS application ASAR"
+    },
+    "authority": "Static selected-module inspection of installed app, matched byte-for-byte to supplied DMG ASAR; Windows book modules agree after restricted normalization. Native screenshots confirm visible form only, not quantitative timing or cross-platform pixel parity.",
+    "sources": [
+      {
+        "path": "dist/renderer/assets/LibraryBook-QEpCkkG6.js",
+        "sha256": "2a02d1bafba432a7b7f6cc667d24e7c7f254c6eb8610d6fd1d0c0a13cdefe852"
+      },
+      {
+        "path": "dist/renderer/assets/bookforge-By6voVED.js",
+        "sha256": "d05fd47c2fc498ad63b45ece05f680616d4686853d023fefe656e27e3f3d3b81"
+      },
+      {
+        "path": "dist/renderer/assets/clothweave-DVrYv7Dz.js",
+        "sha256": "f366713518b5b86c4523e00c9a62648aa6d8db5854d2542c9589aac320c3acb7"
+      }
+    ],
+    "geometry": {
+      "embeddedVertices": 2672,
+      "triangles": 5878,
+      "heightPerWidth": 1.3197609,
+      "depthPerWidth": 0.1385582,
+      "implementation": "Custom embedded mesh, curved binding/spine, cover and pages through atlas UV. Ratios alone do not reconstruct topology/normals/UV.",
+      "paperContact": {
+        "source": "bookforge embedded positions/indices/UV, after thickness rule",
+        "status": "Measured by static ray/triangle intersections; no runtime Windows validation",
+        "offsetBasis": "zero-based UTF-8 bytes, Mac bookforge hash in sources",
+        "anchors": {
+          "position": 517651,
+          "normal": 577919,
+          "uv": 622328,
+          "index": 664535,
+          "thicknessVertexShader": 746802
+        },
+        "nominalWidth": 15.8778,
+        "coverOuterZ": -7.9181,
+        "paperFirstVisibleZ": -7.5973,
+        "foreEdgeInsetPerWidth": 0.020204310420839172,
+        "paperHeadTailAbsY": 10.1677,
+        "coverAbsY": 10.4775,
+        "headTailInsetPerWidth": 0.0195115192,
+        "correction": "z=-7.3398 is interior, not first visible paper edge; previous .0364W inference was superseded. No concave fore-edge in sampled sections.",
+        "sampledSourceAdjustedX": [
+          0,
+          0.3,
+          0.6,
+          0.8,
+          0.85
+        ],
+        "sampledY": [
+          0,
+          -9.8,
+          -10,
+          -10.1677
+        ]
+      },
+      "lowerSpineContact": {
+        "status": "Static lower section at adjusted thickness x=0; not a proof of perfect head/tail symmetry",
+        "fromNominalLeftFractions": [
+          0,
+          0.005,
+          0.01,
+          0.012,
+          0.015,
+          0.02,
+          0.025
+        ],
+        "insetPerWidth": [
+          0.01468115,
+          0.00483516,
+          0.00168692,
+          0.00093204,
+          0.00288098,
+          0.00989072,
+          0.01951152
+        ],
+        "interpretation": "Closed bridge rises close to cover edge then meets paper near 2.5percent width. A proposed procedural microbevel radius is not an extracted source radius."
+      }
+    },
+    "pose": {
+      "detailDegrees": {
+        "turn": 20.05,
+        "bow": 28.65,
+        "roll": -8.59
+      },
+      "shelfDegrees": {
+        "turn": 0,
+        "bow": 0,
+        "roll": 0
+      }
+    },
+    "motion": {
+      "swingDegrees": 11,
+      "nodDegrees": 7,
+      "spin": 1,
+      "filterTimeConstantMs": 120,
+      "maxDeltaMs": 64,
+      "dragDegreesPerPixel": 0.42,
+      "verticalDragGain": 1.6,
+      "verticalOffsetLimitDegrees": 24,
+      "release": "Keep spin; return to hover target; leaving resets offsets.",
+      "transition": {
+        "durationMs": 460,
+        "easing": "cubic-bezier(.22,1,.36,1)",
+        "includes": [
+          "screen-space FLIP",
+          "pose interpolation",
+          "cloth interpolation"
+        ]
+      }
+    },
+    "material": {
+      "engine": "Three.js, custom ShaderMaterial with PHONG vertex/fragment code; not stock MeshPhongMaterial or MeshStandardMaterial",
+      "maps": [
+        "base diffuse",
+        "custom diffuse overlay",
+        "base bump",
+        "custom bump overlay",
+        "foil mask"
+      ],
+      "pages": "Solid #f6f1e5 atlas region; no separate striped pagesMap in audited call path",
+      "ink": "#fbfbfc",
+      "foil": "#e8cf92",
+      "foilScope": "Brand mark",
+      "shininess": 8,
+      "reflectiveness": 0.04,
+      "bumpBase": 0.006,
+      "bumpCustom": 0.07,
+      "foilOpacity": 0.6,
+      "foilSpecular": 1.72,
+      "foilDetail": 2.2,
+      "outputColorSpace": "srgb-linear",
+      "textureColorSpace": "NoColorSpace",
+      "lights": {
+        "ambient": 0.54,
+        "key": 0.9,
+        "keyPosition": [
+          7,
+          0,
+          4.5
+        ],
+        "back": 1,
+        "spot": 0.05,
+        "exposure": 0.7,
+        "intensityMultiplier": "PI",
+        "exposureMeaning": "Color compensation based on resting front normal, clamped .62–1.5; not renderer.toneMappingExposure.",
+        "backPosition": [
+          -32,
+          12,
+          -16
+        ],
+        "backHex": "#6e665b",
+        "spotPosition": [
+          24,
+          6.5,
+          1
+        ],
+        "spotTarget": [
+          -14.3,
+          0,
+          -61
+        ],
+        "spotHex": "#cceecc",
+        "spotAngle": 0.36,
+        "spotPenumbra": 1,
+        "spotDecay": 0,
+        "colorInterpretation": "Light hex interpreted in LinearSRGBColorSpace"
+      },
+      "warning": "These values require matching shader, UV and color pipeline; copying them onto a stock material does not establish parity.",
+      "bumpComposition": "Base/custom height contributions are normalized by the larger amplitude, combined by overlay, and differentiated before a single perturbNormalArb call. Serial perturbation of already changed normals is a distinct implementation.",
+      "baseBumpSampling": {
+        "source": "clothweave.C (byte 549); bookforge d3/Ls (763324/763459), vertex l3 (747659), fragment dHdxy_fwd (754408)",
+        "offsetBasis": "zero-based UTF-8 byte offsets",
+        "texturePixels": [
+          256,
+          256
+        ],
+        "cyclesPerTextureAxis": 32,
+        "configuredRepeat": [
+          4.338446272434423,
+          3.2980707422133864
+        ],
+        "configuredVsConsumed": "Repeat is configured on the texture. The audited custom vertex passes raw uv and the fragment samples raw vUv, with no repeat transform/uniform. Do not present configured repeat as proven effective frequency.",
+        "effectiveSamplingStatus": "Inferred from the complete static shader path; not verified by a captured runtime shader/texture in this audit.",
+        "cyclesAcrossRegionInferred": {
+          "front": [
+            13.9072,
+            24.144
+          ],
+          "back": [
+            13.9072,
+            24.1408
+          ],
+          "spine": [
+            2.6688,
+            23.5648
+          ]
+        }
+      },
+      "paperResponse": {
+        "diffuse": "#f6f1e5, solid atlas region",
+        "shaderScope": "same ShaderMaterial as mesh",
+        "customBump": "neutral",
+        "foilMask": 0,
+        "baseDiffuseAndBump": "remain active",
+        "shininess": 8,
+        "reflectiveness": 0.04,
+        "evidence": "T3 byte 769031 and h3 byte 763614; static, UTF-8 byte offsets"
+      },
+      "foilFunction": {
+        "coordinates": "sin/cos of perturbed normal and unnormalized view-space position; physical scale affects result",
+        "reflectionField": "2D gold field, six stops plus radial illumination",
+        "uvSize": [
+          0.14,
+          -0.19
+        ],
+        "detail": 2.2,
+        "opacity": 0.6,
+        "specular": "0.04 + coverage * 1.72",
+        "evidence": "bookforge bytes 759046, 761096, T3 769031; static"
+      },
+      "normalPerturbation": {
+        "status": "Confirmed static custom shader path; same bundle also contains different stock helper",
+        "offsetBasis": "zero-based UTF-8 bytes, Mac bookforge",
+        "customHelperByteOffset": 756887,
+        "stockHelperByteOffset": 171104,
+        "custom": "Unnormalized component-wise dFdx/dFdy of surface position form the tangent vectors before determinant/cross products.",
+        "stock": "Normalizes both spatial derivatives before cross products. Equal bumpScale and height values alone do not preserve physical slopes.",
+        "originalAdaptation": "With stock helper, divide deltaHeight X/Y by corresponding derivative lengths before perturbation; handle degenerate derivatives explicitly. Algebraically equivalent away from clamp.",
+        "regression": {
+          "kind": "Independent numerical formula check, not GPU/visual result",
+          "cases": 1000,
+          "maxAngularDifferenceDegrees": 3.2e-15,
+          "proposedAngularToleranceDegrees": 0.0001,
+          "scope": "Orthogonal/oblique planar tangents and spatial scales outside clamp"
+        },
+        "idealFixture": {
+          "physicalWidth": 1.84,
+          "projectedWidthPixels": 248,
+          "singlePixelHeightStep": true,
+          "neutral": 128,
+          "panels": 95,
+          "otherPatterns": 54,
+          "physicalNormalDegrees": [
+            8.0534583609,
+            17.6035050308
+          ],
+          "uncompensatedNormalizedDegrees": [
+            0.0601480799,
+            0.134877313
+          ],
+          "caveat": "Calculated ideal without weave; sampling, antialias, DPR and clamp alter measured output."
+        }
+      },
+      "patternChannels": {
+        "status": "Confirmed static T3/index dispatch",
+        "diffuseBlackAlpha": 0.045,
+        "neutralHeightByte": 128,
+        "panelsHeightByte": 95,
+        "otherPatternHeightByte": 54,
+        "panelsRadiusPerPatternWidth": "4.77 / 247",
+        "strokeRegistration": "grid/rules round positions plus .5; stems round origins/width/heights",
+        "anchors": {
+          "bookforgeSettings": 103,
+          "bookforgePattern": 770964,
+          "indexPatterns": 795859,
+          "indexDispatcher": 797501
+        },
+        "offsetBasis": "zero-based UTF-8 bytes of corresponding Mac source"
+      }
+    },
+    "layout": {
+      "shelfWidthCssPx": 168,
+      "detailWidthCssPx": 248,
+      "asideWidthCssPx": 340,
+      "columnGapCssPx": 20,
+      "patternControls": "Six selectors below the book",
+      "colorControls": "20 rounded square swatches in two rows below patterns",
+      "mobile": "No mobile override observed in audited desktop bundle; Pauta mobile is an intentional adaptation."
+    },
+    "palette": [
+      {
+        "name": "Aubergine",
+        "hex": "#322D32"
+      },
+      {
+        "name": "Slate",
+        "hex": "#3B3E4A"
+      },
+      {
+        "name": "Pewter",
+        "hex": "#808080"
+      },
+      {
+        "name": "Sand",
+        "hex": "#94816D"
+      },
+      {
+        "name": "Teal grey",
+        "hex": "#445354"
+      },
+      {
+        "name": "Umber",
+        "hex": "#51423A"
+      },
+      {
+        "name": "Sage",
+        "hex": "#566759"
+      },
+      {
+        "name": "Mist",
+        "hex": "#9CA6AD"
+      },
+      {
+        "name": "Charcoal",
+        "hex": "#2B2B2D"
+      },
+      {
+        "name": "Oxblood",
+        "hex": "#5E3A38"
+      },
+      {
+        "name": "Terracotta",
+        "hex": "#8A5A44"
+      },
+      {
+        "name": "Rose clay",
+        "hex": "#9A7475"
+      },
+      {
+        "name": "Ochre",
+        "hex": "#9A7B4F"
+      },
+      {
+        "name": "Olive",
+        "hex": "#6B6A4A"
+      },
+      {
+        "name": "Moss",
+        "hex": "#4F5B3F"
+      },
+      {
+        "name": "Pine",
+        "hex": "#34443C"
+      },
+      {
+        "name": "Prussian",
+        "hex": "#2F4152"
+      },
+      {
+        "name": "Dusk",
+        "hex": "#5A6B80"
+      },
+      {
+        "name": "Heather",
+        "hex": "#77708A"
+      },
+      {
+        "name": "Plum",
+        "hex": "#5A4459"
+      }
+    ],
+    "rea": {
+      "bookforgeParentEvidence": "ev_7965d563b1dff800df48a38bd15078a27282461f2c97ef4af08920f4d451b391",
+      "selectedSourceParseFailures": 0,
+      "semanticCoverage": "partial; per-file semantic retention reached 20000 nodes and 20000 unknowns; 4945 unselected inventoried files. Not an exhaustive application audit."
+    },
+    "reuse": "Facts/mechanisms may guide original implementation. The skill does not distribute proprietary source mesh, shader, atlas, textures or brand.",
+    "frame": {
+      "cameraDistancePerWidth": 17.1,
+      "projection": "Perspective; FOV derived from projected envelope",
+      "envelope": "24 yaw samples at 15 degrees over full turn when spin=1; bow ±24 degrees",
+      "layout": "Expanded canvas with centered negative bleed outside nominal 248px host; fitting the same envelope inside the host makes the visible book too small."
+    },
+    "atlasTypography": {
+      "evidence": "Static T3 call path in bookforge; formulas use atlas pixels, not CSS pixels. Source-mesh UV compensation is not transferable to a different mesh unchanged.",
+      "source": "dist/renderer/assets/bookforge-By6voVED.js",
+      "anchors": {
+        "offsetBasis": "zero-based UTF-8 byte offsets; overrides the top-level character-offset basis for this anchors object",
+        "T3": 769031,
+        "counterFormatter": 768209,
+        "ellipsize": 768307,
+        "lineWrap": 768490,
+        "frontMargin": 770134,
+        "frontFont": 770341,
+        "frontDivider": 770569,
+        "frontMetadata": 770739,
+        "frontPattern": 770964,
+        "markPainter": 771201,
+        "backRegion": 771406,
+        "spineRegion": 771552,
+        "spineTextPainter": 771748,
+        "spineTitle": 772289,
+        "spineCounter": 772328,
+        "spineMark": 772356
+      },
+      "coordinates": {
+        "A": "atlas width",
+        "B": "round(A * abs(-.0276 / .0362))",
+        "frontUV": {
+          "u": [
+            0.5468,
+            0.9814
+          ],
+          "v": [
+            0.0213,
+            0.7758
+          ]
+        },
+        "backUV": {
+          "u": [
+            0.0186,
+            0.4532
+          ],
+          "v": [
+            0.0218,
+            0.7762
+          ]
+        },
+        "spineUV": {
+          "u": [
+            0.4578,
+            0.5412
+          ],
+          "v": [
+            0.0306,
+            0.767
+          ]
+        },
+        "F": ".4346 * A; front width",
+        "K": ".7545 * B; front height",
+        "frontLeft": ".5468 * A",
+        "frontRight": ".9814 * A",
+        "frontTop": ".2242 * B",
+        "frontBottom": ".9787 * B"
+      },
+      "font": {
+        "family": "\"Inter Variable\", Inter, system-ui, sans-serif",
+        "weight": 500,
+        "rasterizer": "Browser Canvas2D; no custom text antialiasing in audited path",
+        "rendererLatinAsset": {
+          "file": "inter-latin-opsz-normal-BwkfbSeq.woff2",
+          "bytes": 72920,
+          "sha256": "2c295d99e26dcf357d4d01bcf270fd6924b600c9a13dd8c363ef114f4c6976fa",
+          "cssFamily": "Inter Variable",
+          "cssWeight": "100 900",
+          "selectionEvidence": "renderer @font-face; not extension inter-latin-wght-normal (48256 bytes)"
+        }
+      },
+      "front": {
+        "titleSize": ".078 * F",
+        "maxLines": 3,
+        "availableWidth": ".79 * F",
+        "lineHeight": "1.22 * titleSize",
+        "horizontalInset": ".105 * F",
+        "lastBaseline": "frontBottom - .105 * F",
+        "firstBaseline": "lastBaseline - (lineCount - 1) * lineHeight",
+        "dividerY": "round(firstBaseline - 1.75 * titleSize) + .5",
+        "dividerWidth": ".79 * F",
+        "dividerThickness": "max(1, .0032 * F)",
+        "dividerDiffuseAlpha": 0.45,
+        "metadataSize": ".34 * titleSize",
+        "metadataAlign": "right at frontRight - .105 * F",
+        "metadataBaseline": "dividerY - .55 * metadataSize",
+        "metadataDiffuseAlpha": 0.62,
+        "markWidth": ".075 * F",
+        "markX": "frontRight - .105 * F - markWidth",
+        "markY": "frontTop + .105 * F",
+        "patternRect": {
+          "x": "frontLeft + .105 * F",
+          "width": ".79 * F",
+          "top": "frontTop + .105 * F + markHeight + .085 * K",
+          "bottom": "dividerY - .095 * K",
+          "drawIf": "remaining height > .1 * K"
+        },
+        "overflow": "measureText, wrap words/long tokens, at most three lines and ellipsis; not horizontal glyph compression"
+      },
+      "back": {
+        "markWidth": ".13 * backRegionWidth",
+        "alignment": "center horizontally and vertically",
+        "title": false,
+        "metadata": false,
+        "frontPattern": false
+      },
+      "spine": {
+        "stripLeft": ".4578 * A",
+        "stripWidth": ".0834 * A",
+        "stripTop": ".233 * B",
+        "stripHeight": ".7364 * B",
+        "pixelsPerCm": ".0362 * B",
+        "thickness": 2.2,
+        "baseThickness": 3.374,
+        "titleSize": "pixelsPerCm * 2.2 * .3",
+        "transverseScale": "stripWidth / (2 * max(1, abs(1.4894) + (2.2 - 3.374) / 2) * pixelsPerCm)",
+        "opticalCenter": "(actualBoundingBoxAscent - actualBoundingBoxDescent) / 2; fallback ascent=.72 * titleSize, descent=.21 * titleSize",
+        "transformOrder": "translate optical center, scale(transverseScale, 1), rotate 90 degrees",
+        "endInset": ".0675 * F",
+        "titleStart": "stripTop + endInset",
+        "counter": "Nonnegative finite integer, rounded and zero-padded to at least five digits; 1288 -> 01288. More than five digits are retained; absent/nonfinite -> empty.",
+        "counterSize": ".78 * titleSize",
+        "counterStart": "measured title advance + 1.8 * titleSize",
+        "markWidth": ".48 * stripWidth",
+        "markHeight": "markWidth * markAspectRatio / transverseScale",
+        "markAlignment": "center across strip; endInset from bottom",
+        "overflow": "Title is ellipsized after reserving measured counter, mark height and 1.8/1.5 titleSize gaps",
+        "textChannels": {
+          "diffuse": true,
+          "customBump": false,
+          "foil": false,
+          "exception": "brand mark has separate custom bump and foil mask"
+        },
+        "relativeStripMetrics": {
+          "titleStartFraction": 0.052241,
+          "fontHeightFraction": 0.032444,
+          "status": "Derived from source atlas formulas; not measured CSS pixels"
+        }
+      },
+      "mark": {
+        "aspectRatio": "naturalHeight / naturalWidth; fallback 59.15 / 99.96",
+        "color": "#e8cf92",
+        "foilMask": "white",
+        "customBump": "#5f5f5f",
+        "scope": "Same mark on front, spine and back; the actual brand asset is not distributed"
+      },
+      "rasterization": {
+        "requestedAtlasWidth": "min(1400, round(widthCSS * 4.5))",
+        "diffuseScale": 1,
+        "customBumpScale": 0.5,
+        "foilScale": 0.25,
+        "registration": "2D contexts scale coordinates so the reduced maps share atlas layout",
+        "anisotropy": 8,
+        "sharedRenderer": {
+          "antialias": true,
+          "alpha": true,
+          "preserveDrawingBuffer": true,
+          "pixelRatio": 1
+        },
+        "presentation": "LibraryBook caps output DPR at 2. Ds renders at twice the calculated output resolution, then drawImage copies/downsamples to Canvas2D.",
+        "fontReadiness": "LibraryBook requests redraw after document.fonts.ready; the pe cache key does not explicitly include font status. Atlas invalidation after font loading is not proven by redraw alone.",
+        "exampleCalculatedNotMeasured": {
+          "widthCss": 248,
+          "atlasWidth": 1116,
+          "atlasHeight": 851,
+          "frontRegionWidthPx": 485.0136,
+          "titleAtlasPx": 37.8310608,
+          "metadataAtlasPx": 12.862560672
+        },
+        "resolutionStages": {
+          "atlas": "requested width min(1400, round(widthCSS * 4.5)); reduced custom bump/foil maps",
+          "sceneBufferScalePerCSS": "2 * min(devicePixelRatio, 2)",
+          "outputCanvasScalePerCSS": "min(devicePixelRatio, 2)",
+          "status": "Static data flow; not Windows runtime measurement"
+        }
+      }
+    },
+    "knownImplementationDeltas": {
+      "implementation": "Original BookObject shipped with design-complete; current asset identical to revision accepted in the 1.13.1 visual audit",
+      "status": "User accepted the corrected visual result on 2026-10-26. Mechanism regressions, 32 sampled poses and responsive CSS viewports documented; residual differences and untested dimensions remain explicit.",
+      "specification": "references/3d-reference-fidelity.md",
+      "items": [
+        {
+          "id": "weave-uv",
+          "check": "Per-face 512-point sampling, period/orientation; confirm source runtime or retain inference.",
+          "baseline": "Approximately 60 by 79.19 cycles on front, full map reused on spine. Different frequency/register from raw-atlas sampling.",
+          "current": "Per-face raw-atlas regions retained. Pigment overlay now branches on grain; periodic 4x4 pigment and 96x96 tension field reproduce the fixed-X, varying-Y consumer. Two-dimensional generator dimensions do not imply two-dimensional independent lookup.",
+          "status": "Corrected and inspected in the approved 2026-10-26 audit; sampled evidence, not universal pixel parity"
+        },
+        {
+          "id": "foil-field",
+          "check": "Fixed yaw/pitch series, same light calibration, compare highlight trajectory and mean color.",
+          "baseline": "Normalized view direction and two-color smoothstep with painted three-stop mark; different from 2D six-stop field.",
+          "current": "Six-stop reflection field retained; V transformed once accounting for flipY. Mask background zero and direct fractional antialias coverage. Fixed-pose comparisons recorded; own mark differs from reference.",
+          "status": "Corrected and inspected in the approved 2026-10-26 audit; sampled evidence, not universal pixel parity"
+        },
+        {
+          "id": "paper-material",
+          "check": "Same pigment/normal under grazing light; front/top/bottom yaw0/45/90.",
+          "baseline": "Separate material shininess1/specular0 without base diffuse grain/bump.",
+          "current": "Shared base grain/bump, shininess8/specular.04 retained. Strong paper striations were traced to rank-one edge UV and corrected by two-axis per-face unwrap, not new painted stripes or lower bump.",
+          "status": "Corrected and inspected in the approved 2026-10-26 audit; sampled evidence, not universal pixel parity"
+        },
+        {
+          "id": "spine-text",
+          "check": "Neutral custom height outside mark; measured baseline, long title and 5/8-digit counter.",
+          "baseline": "Title/counter also drawn in height, different start/reservation and possible maxWidth compression.",
+          "current": "Title/counter remain diffuse-only with measured fitting and reserved fields. Inspected in sampled side/oblique views; no claim of all long-title/font/device combinations.",
+          "status": "Corrected and inspected in the approved 2026-10-26 audit; sampled evidence, not universal pixel parity"
+        },
+        {
+          "id": "resolution-stages",
+          "check": "Record atlas/buffer/output at DPR1/2 and cost before choosing reference supersampling.",
+          "baseline": "2 pixels per CSS px independent of DPR, cap2048, direct WebGL output.",
+          "current": "Reference resolution mode remains renderScale1..2(default2)*clamp(DPR,.25,2), cap2048. Direct WebGL differs from reference Canvas2D presentation; 32-pose JPEG inspection cannot establish subpixel identity.",
+          "status": "Corrected and inspected in the approved 2026-10-26 audit; sampled evidence, not universal pixel parity"
+        },
+        {
+          "id": "surface-normals",
+          "check": "Compare normal and silhouette cross-sections at2/5/50/95/98percent; do not equate vertex count with quality.",
+          "baseline": "Procedural caps are x-deformed only, normal.y=0 for cap vertices; separate bevel groups.",
+          "current": "49-sample channel through first10percentW and localized rim curvature; printed field flat. Four arc segments and shared bridge boundary. Normal-error samples improved; closed meshes, contact and oblique gap rays verified. Whole-cap vertical bending is not the current correction.",
+          "status": "Corrected and inspected in the approved 2026-10-26 audit; sampled evidence, not universal pixel parity"
+        },
+        {
+          "id": "paper-edge-uv",
+          "baseline": "One x/y planar UV projection reused on x/z and y/z faces collapsed thickness variation; strong directional striations remained after material patch.",
+          "current": "Face-local projection uses both tangent axes, stores inverse of bookRegion transform, duplicates UV seams only; positions/normals preserved, all nondegenerate paper triangles have nonzero UV area.",
+          "check": "Verify UV area, two independent tangent derivatives, face-region orientation/frequency and grazing views; apply atlas transform once.",
+          "status": "Corrected with executable geometry regression and visual review"
+        }
+      ],
+      "otherAdaptations": [
+        "Own brand mark",
+        "Stable-ID color allocator differs from list collision allocation",
+        "2D FLIP does not interpolate reference 3D pose/cloth color"
+      ],
+      "acceptance": "User-approved visual result of this revision. No quantitative 100percent pixel parity; residual top-rim/joint/own-mark differences retained. Native Windows, physical mobile touch and GPU benchmark not tested.",
+      "baseline": {
+        "sha256": "0264b94572981badd303251cc25a96d092a36946b2926369652bb9e9790d71d2",
+        "meaning": "Original six-gap diagnosis; not unchanged current behavior"
+      },
+      "reviewedPatch": {
+        "sha256": "17bf1f572d0eaabc8486866fcf4b8b0cb9524bf191151d20580cb881b54e7cd4",
+        "scope": "Approved Pauta source and distributed skill asset; 32-pose visual audit, numeric regressions and real CSS viewport tests. Physical touch, Windows and GPU benchmark not established."
+      },
+      "currentResourceContract": {
+        "texturesPerDetailScene": 15,
+        "breakdown": {
+          "perFaceColorHeightMask": 9,
+          "sharedWeaveGrainReflection": 3,
+          "neutralSupport": 2,
+          "paperPigment": 1
+        },
+        "renderer": "Direct WebGL detail; static Canvas2D shelves; not shared source snapshot renderer",
+        "resize": "Rebuilds face atlases only when nominal width changes; pose alone does not rebuild resources"
+      },
+      "contactChecks": {
+        "snapshotSha256": "0d34c0b4726e49060f065eb29c2704713c66b06bec20582cc2fe969576fcdbf3",
+        "dimensions": [
+          1.84,
+          2.42836,
+          0.254947
+        ],
+        "poseDegrees": {
+          "pitch": 28.65,
+          "yaw": 0,
+          "roll": 0
+        },
+        "ray": {
+          "origin": [
+            -0.84,
+            -1.1017,
+            10
+          ],
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "before": "No FrontSide hit; DoubleSide saw opposite back face only",
+          "after": "FrontSide back-cover hit"
+        },
+        "oldGapGrid": {
+          "rays": 841,
+          "misses": 0,
+          "worldX": [
+            -0.86,
+            -0.8
+          ],
+          "worldY": [
+            -1.103,
+            -1.099
+          ]
+        },
+        "edgeIncidence": {
+          "positionQuantization": 1e-06,
+          "frontEdges": 10044,
+          "backEdges": 10044,
+          "pagesEdges": 17304,
+          "spineEdges": 306,
+          "allIncidenceTwo": true,
+          "coincidentVertexDegenerateTriangles": 0
+        },
+        "limit": "Old400 parallel lower rays were insufficient. Current ray/edge checks and one desktop image do not certify all angles or global fidelity.",
+        "visualEvidence": {
+          "file": "book-seam-fixed-desktop.png",
+          "sha256": "b8cd96ccf2a81cbd7725bb26d08337f3a347245cd2bc451cc8be89e5abb6fcfd",
+          "observed": "Desktop initial pose: no white seam visible, relief preserved",
+          "notEstablished": "Global pixel parity, uninspected extreme poses and physical devices remain unverified; see runtimeQA for separately captured side/back/mobile states."
+        },
+        "historicalStage": "Earlier seam repair at snapshot0d34; preserved for provenance, superseded by additional current geometry tests and sampled visual audit."
+      },
+      "runtimeQA": {
+        "engineSha256": "0d34c0b4726e49060f065eb29c2704713c66b06bec20582cc2fe969576fcdbf3",
+        "desktopCSS": [
+          1440,
+          1000
+        ],
+        "mobileCSS": [
+          [
+            389,
+            843
+          ],
+          [
+            358,
+            640
+          ]
+        ],
+        "devicePixelRatio": 0.6700000166893005,
+        "horizontalOverflowCSS": 0,
+        "observed": "White opening absent at inspected top/bottom seams, spine, back and fore-edge; panels/grid/stems show relief; responsive previews stay within tested widths. No captured browser warnings or errors.",
+        "limits": "Desktop browser with viewport overrides; not physical touch device, Windows runtime, FPS or quantitative pixel parity. Requested narrower override was clamped; report actual358CSS, not320.",
+        "tests": {
+          "pauta": 165,
+          "skillNode": 39,
+          "skillPython": 23,
+          "failed": 0,
+          "skipped": 0
+        },
+        "images": {
+          "front": {
+            "file": "book-seam-fixed-desktop.png",
+            "sha256": "b8cd96ccf2a81cbd7725bb26d08337f3a347245cd2bc451cc8be89e5abb6fcfd"
+          },
+          "seamCloseup": {
+            "file": "book-seam-detail-final.png",
+            "sha256": "55a8f8c6c1f3f673a3b8fdf01fab1957a63c1add7c18601962fe3c4cc949b5c2"
+          },
+          "grid": {
+            "file": "book-grid-final.png",
+            "sha256": "50f7466c332a458f69240feaa703a6e4a512df2f42bcdbc20a14491c81394e9a"
+          },
+          "spine": {
+            "file": "book-spine-final.png",
+            "sha256": "561ed4f3210c0457cbb49c7aa1db87a1be525e88b230fc20561552401251220d"
+          },
+          "back": {
+            "file": "book-back-final.png",
+            "sha256": "a5539a1d7cdcbfb66d6d67d2370fe4379f26aed36fe68e20c8040377d9715c30"
+          },
+          "pages": {
+            "file": "book-pages-final.png",
+            "sha256": "816ae45dcc4b3c3195d11e1b67f36979dddd9e9017f262c393308f9f903f6148"
+          },
+          "mobile389": {
+            "file": "book-mobile-389-final.png",
+            "sha256": "6db265d558d687ed3207975b64f4304a1d392022d7c4a80eb9af386c1c862009"
+          },
+          "mobile358": {
+            "file": "book-mobile-358-detail.png",
+            "sha256": "28dea03803f59e51246721ac2f1d683bfdaf83bbff2bb92808a380f8f6f5831a"
+          }
+        },
+        "historicalStage": "Earlier0d34 QA and counts; current audit below is a separate execution, not a relabel of these results."
+      },
+      "priorReviewedPatch": {
+        "sha256": "0d34c0b4726e49060f065eb29c2704713c66b06bec20582cc2fe969576fcdbf3",
+        "scope": "Pauta source, geometric/numerical tests, desktop and mobile-viewport visual inspection. Same engine bytes packaged in skill; physical mobile/Windows not tested."
+      },
+      "polishAudit": {
+        "date": "2026-10-26",
+        "caseStudy": "references/book-polish-case-study.md",
+        "manifest": "assets/audits/book-polish-2026-10-26/manifest.json",
+        "sourceHash": "17bf1f572d0eaabc8486866fcf4b8b0cb9524bf191151d20580cb881b54e7cd4",
+        "matrixCaptureHash": "9a0553fcf44f1ffc1b32ed37a473200719bed370a2a238c943d3f35e22b7d27b",
+        "matrixHashDifference": "Provenance comment only; executable behavior identical.",
+        "reference": "Detached renderer from the audited desktop reference build 0.19.0; not native execution per pose.",
+        "geometry": {
+          "normalSampleXPercentWidth": [
+            4,
+            6,
+            8
+          ],
+          "normalErrorDegreesBefore": [
+            6.877,
+            9.089,
+            6.929
+          ],
+          "normalErrorDegreesAfter": [
+            0.221,
+            1.352,
+            0.503
+          ],
+          "normalSamplesScope": "Three selected points, not global mesh error",
+          "channelSamples": 49,
+          "channelExtentWidthFraction": 0.1,
+          "rimArcSteps": 4,
+          "cornerRadiusWidthFraction": 0.032,
+          "cornerRadiusStatus": "Proposed procedural adaptation, not exact source measurement",
+          "bridgeContactSamples": 6,
+          "bridgeContactToleranceWidthFraction": 0.0012,
+          "closedPieces": 4,
+          "gapObliqueRays": 841,
+          "gapMisses": 0,
+          "trianglesBefore": 25132,
+          "trianglesAfter": 33436,
+          "gpuBenchmark": false
+        },
+        "paperUV": {
+          "coordinateSystem": "Pauta local x=width,y=height,z=thickness; tx=x/W+.5,ty=y/H+.5,tz=z/D+.5",
+          "atlasMapping": {
+            "bottom": {
+              "u": [
+                0.14605,
+                0.42395,
+                "tx"
+              ],
+              "v": [
+                0.9003,
+                0.09775,
+                "tz"
+              ]
+            },
+            "top": {
+              "u": [
+                0.57282,
+                0.42396,
+                "tx"
+              ],
+              "v": [
+                0.99794,
+                -0.09775,
+                "tz"
+              ]
+            },
+            "foreEdge": {
+              "u": [
+                0.36488,
+                0.63317,
+                "ty"
+              ],
+              "v": [
+                0.79973,
+                0.09775,
+                "tz"
+              ]
+            }
+          },
+          "storage": "Inverse FACE_UV.paper region is stored; shader applies region exactly once",
+          "verticesBefore": 6210,
+          "verticesAfter": 6702,
+          "trianglesUnchanged": 11536,
+          "positionsNormalsUnchanged": true,
+          "cyclesApprox": {
+            "bottom": [
+              13.5664,
+              3.128
+            ],
+            "top": [
+              13.56672,
+              3.128
+            ],
+            "foreEdge": [
+              20.26144,
+              3.128
+            ]
+          },
+          "scope": "Principal planar faces; curved reference topology not copied"
+        },
+        "verification": {
+          "pautaTests": 176,
+          "pautaFailures": 0,
+          "pautaSkips": 0,
+          "skillNodeWithThree186": 50,
+          "skillNodeWithoutThree": {
+            "passed": 43,
+            "skipped": 7,
+            "failed": 0
+          },
+          "poseCount": 32,
+          "yaw": [
+            -135,
+            -90,
+            -45,
+            0,
+            45,
+            90,
+            135,
+            180
+          ],
+          "pitch": [
+            -60,
+            0,
+            28.65,
+            60
+          ],
+          "roll": -8.59,
+          "comparisonCSSViewport": [
+            828,
+            1143
+          ],
+          "responsiveCSSViewports": [
+            [
+              390,
+              844
+            ],
+            [
+              1280,
+              900
+            ]
+          ],
+          "responsiveMethod": "Measured iframe CSS viewport; browser viewport override did not apply",
+          "physicalMobile": false,
+          "windowsNative": false
+        },
+        "userAcceptance": {
+          "statement": "ficou perfeito!!",
+          "scope": "Latest corrected visual result presented in this task"
+        },
+        "remainingDifferences": [
+          "Top rim can be darker/thicker at pitch-60",
+          "Slight stronger concavity at page/spine joint",
+          "Own mark and proportions intentionally differ",
+          "No infinite-angle/all-color/all-material claim"
+        ],
+        "portability": "Case-specific measurements stay in this profile. Transfer diagnosis, independent mechanism tests, controlled comparisons and hash identity; do not impose book constants on other objects.",
+        "evidenceStorage": "Branded source captures and reports moved unchanged to external provenance archive in 1.13.2; packaged manifest is a neutral summary."
+      }
+    }
+  },
+  "installerComparison": {
+    "verifiedAt": "2026-10-26",
+    "scope": "Static package inventory and selected renderer source comparison; no installer execution or Windows visual runtime.",
+    "macOS": {
+      "installer": {
+        "bytes": 202559936,
+        "sha256": "93722da30ceb4bcf28599d2cbb52fc33bf89e34762ccff5b30a442a5422e3d43",
+        "artifactRole": "User-provided arm64 DMG"
+      },
+      "appMetadata": {
+        "CFBundleShortVersionString": "0.19.0",
+        "LSMinimumSystemVersion": "12.0",
+        "ElectronFrameworkCFBundleVersion": "42.11.12",
+        "omittedIdentityFields": [
+          "CFBundleIdentifier"
+        ]
+      },
+      "asar": {
+        "bytes": 211361701,
+        "sha256": "93193b9cc8658ea072044a8d71325aca3f48fc65aa47e23d5da43d4b41380d3d",
+        "packed_file_count": 7111,
+        "equals_installed": true,
+        "headerCounts": {
+          "packedFiles": 7111,
+          "unpackedFiles": 75,
+          "directories": 728,
+          "totalEntries": 7914
+        }
+      },
+      "mount": "read-only; detached after inspection",
+      "reaInventoryEvidence": "ev_65f03dc3291136081783f66f1d6ce198065279ea8365b3c8259e747cba00e57f"
+    },
+    "windows": {
+      "installer": {
+        "bytes": 167359966,
+        "sha256": "f1548b295af34b198d813e04c7934004357ba17e5d4e40f5af3344b476987a12",
+        "format": "PE32 NSIS self-extracting archive",
+        "artifactRole": "User-provided Windows installer"
+      },
+      "payload": {
+        "bytes": 235377152,
+        "kind": "file",
+        "sha256": "70cbdf1ee0b9eaa774664b3287b4f51fd88983a7e7bf9d268e13e7da5e9965a8",
+        "artifactRole": "Extracted Windows application executable"
+      },
+      "asar": {
+        "path": "resources/app.asar",
+        "bytes": 211374198,
+        "kind": "file",
+        "sha256": "fc354c7b7d82dd36b19816dcef4609d6ba42da8c7b460de8bfd08269fe129ae7",
+        "headerCounts": {
+          "packedFiles": 7111,
+          "unpackedFiles": 75,
+          "directories": 725,
+          "totalEntries": 7911
+        }
+      },
+      "architecture": "x86 NSIS stub; x64 PE32+ application payload",
+      "archive": {
+        "file_count": 180,
+        "directory_count": 47,
+        "total_file_bytes": 667619183
+      },
+      "reaSelectedSourceEvidence": "ev_9da35fc93b098f8f40a7679be94a0cb36d9e4ccde29f1f834a5ddde1c9affda9"
+    },
+    "normalization": [
+      "replace asset filename hash suffixes only",
+      "replace literal backslash-r before real LF in shader template strings"
+    ],
+    "components": [
+      {
+        "component": "LibraryBook",
+        "windows_path": "LibraryBook-B6f3RyHy.js",
+        "macos_path": "LibraryBook-QEpCkkG6.js",
+        "windows_sha256": "bfa8289f0b65c4a81fdd1062fbf6a70c1c89a389b73113f95056bc3483fa28d5",
+        "macos_sha256": "2a02d1bafba432a7b7f6cc667d24e7c7f254c6eb8610d6fd1d0c0a13cdefe852",
+        "exact_bytes_equal": false,
+        "normalized_equal": true,
+        "windows_escaped_cr_count": 0,
+        "macos_escaped_cr_count": 0
+      },
+      {
+        "component": "clothweave",
+        "windows_path": "clothweave-C2AmlUa1.js",
+        "macos_path": "clothweave-DVrYv7Dz.js",
+        "windows_sha256": "d09a117698e5f2df9af9e8a6b6bffcdcf12a9b2d21b2f4b6a473ec7c06133106",
+        "macos_sha256": "f366713518b5b86c4523e00c9a62648aa6d8db5854d2542c9589aac320c3acb7",
+        "exact_bytes_equal": false,
+        "normalized_equal": true,
+        "windows_escaped_cr_count": 0,
+        "macos_escaped_cr_count": 0
+      },
+      {
+        "component": "bookforge",
+        "windows_path": "bookforge-DGjxX9wz.js",
+        "macos_path": "bookforge-By6voVED.js",
+        "windows_sha256": "2e8b24319579f18e03dc34d173ef5e5dce7d1bc6c5099db47f5e33c6d6a6dd1a",
+        "macos_sha256": "d05fd47c2fc498ad63b45ece05f680616d4686853d023fefe656e27e3f3d3b81",
+        "exact_bytes_equal": false,
+        "normalized_equal": true,
+        "windows_escaped_cr_count": 389,
+        "macos_escaped_cr_count": 0
+      },
+      {
+        "component": "index",
+        "windows_path": "index-BJCUjwsy.css",
+        "macos_path": "index-BqoLgPgv.css",
+        "windows_sha256": "6b83d954600e0a31de5c41765d5458013b3f1cfcf02fd66da6666032a3d116c7",
+        "macos_sha256": "fce4673ea10a877cc77ee8eefbf91a1ee6e72d2323d8c4f9c59030a9bf01ac5a",
+        "exact_bytes_equal": false,
+        "normalized_equal": true,
+        "windows_escaped_cr_count": 0,
+        "macos_escaped_cr_count": 0
+      },
+      {
+        "component": "renderer-index",
+        "windows_path": "index-BDzOyIoO.js",
+        "macos_path": "index-BmRclq7u.js",
+        "windows_sha256": "690231c0f9cfb76650588692b00700247bc79d30df72afd933de82a7e9c5758f",
+        "macos_sha256": "038a8f7cbd96a203799799468673ce7bdb1e3f2c6ef32dcae36672876925a184",
+        "windows_bytes": 923772,
+        "macos_bytes": 923772,
+        "exact_bytes_equal": false,
+        "normalized_equal": false
+      }
+    ],
+    "offsetBasis": "Component offset table uses zero-based UTF-8 bytes; do not reuse offsets across original builds without mapping.",
+    "componentOffsets": {
+      "settings": {
+        "macos_byte_offset": 103,
+        "windows_byte_offset": 103
+      },
+      "mesh_dimensions": {
+        "macos_byte_offset": 517617,
+        "windows_byte_offset": 517617
+      },
+      "mesh_position": {
+        "macos_byte_offset": 517651,
+        "windows_byte_offset": 517651
+      },
+      "mesh_normals": {
+        "macos_byte_offset": 577919,
+        "windows_byte_offset": 577919
+      },
+      "mesh_uv": {
+        "macos_byte_offset": 622328,
+        "windows_byte_offset": 622328
+      },
+      "mesh_index": {
+        "macos_byte_offset": 664535,
+        "windows_byte_offset": 664535
+      },
+      "uv_regions": {
+        "macos_byte_offset": 746554,
+        "windows_byte_offset": 746554
+      },
+      "vertex_shader": {
+        "macos_byte_offset": 746802,
+        "windows_byte_offset": 746802
+      },
+      "fragment_shader": {
+        "macos_byte_offset": 748283,
+        "windows_byte_offset": 748381
+      },
+      "render_setup": {
+        "macos_byte_offset": 763614,
+        "windows_byte_offset": 764392
+      },
+      "light_compensation": {
+        "macos_byte_offset": 765637,
+        "windows_byte_offset": 766415
+      },
+      "render_loop": {
+        "macos_byte_offset": 766615,
+        "windows_byte_offset": 767393
+      },
+      "atlas": {
+        "macos_byte_offset": 769031,
+        "windows_byte_offset": 769809
+      }
+    },
+    "rendererFonts": {
+      "compared": 33,
+      "allExactBytesEqual": true
+    },
+    "runtimeVersions": {
+      "electronPackaged": "42.11.12",
+      "windowsChromeMarker": "148.0.7778.280",
+      "threePackaged": "0.186.0"
+    },
+    "graphicsInventory": "Windows packages ANGLE/EGL/GLES, Direct3D compiler and Vulkan/SwiftShader components; actual selected backend was not observed.",
+    "limitations": [
+      "Native GPU backend, runtime font readiness, performance and Windows visual rendering are not observed.",
+      "Full renderer index has minified identifier differences; whole-application semantic equivalence is not claimed.",
+      "Same normalized book text proves selected artifact agreement, not runtime pixel equivalence.",
+      "ASAR header inventory contains 7186 file entries (7111 packed and 75 unpacked), plus 725 directories; only selected component/font/package bytes were independently verified against header integrity.",
+      "Signatures/download authenticity and native platform performance were not validated."
+    ]
+  },
+  "referenceId": "desktop-material-reference-v1",
+  "provenance": {
+    "type": "Anonymized observation profile, not a claimed original third-party design",
+    "sourceIdentityStorage": "External provenance archive in authoring project",
+    "originalProfileSHA256": "26ab81c3e23609260f7b6dda8aa2283cf625974efedc684f1b2b44165f0b2beb",
+    "externalArchiveId": "design-complete-provenance/1.13.1",
+    "anonymizedFields": "Source product name, source filesystem paths and bundle identifier omitted; measurements, source digests and evidence limits retained.",
+    "publicDistribution": "Literal third-party CSS blocks excluded from community distribution; observation measurements retained as evidence, not redistributed source code."
+  },
+  "shellControls": {
+    "evidenceType": "static declarations and cascade review; not runtime-computed geometry",
+    "cssSHA256": "fce4673ea10a877cc77ee8eefbf91a1ee6e72d2323d8c4f9c59030a9bf01ac5a",
+    "nav": {
+      "selector": ".sidebar .nav-row",
+      "offset": 117674,
+      "font": "14px / 500",
+      "padding": "5px 8px",
+      "gap": "8px",
+      "radius": "6px",
+      "height": "auto",
+      "selectedFill": "--bg-hover",
+      "iconColumn": "22px",
+      "normalHeightInference": "28px from declared 18px line-height + vertical padding; not measured"
+    },
+    "counter": {
+      "selector": ".sidebar .tally",
+      "offset": 118097,
+      "font": "12px / 600, tabular-nums",
+      "minimumWidth": "20px",
+      "height": "18px",
+      "paddingInline": "6px",
+      "dark": "weight 500; --text-faint"
+    },
+    "groups": {
+      "topAndNavigationGap": "24px",
+      "groupGap": "32px",
+      "filterGap": "8px",
+      "collectionGap": "16px"
+    },
+    "button": {
+      "selector": ".btn",
+      "offset": 31207,
+      "height": "32px",
+      "padding": "0 12px",
+      "gap": "6px",
+      "radius": "999px",
+      "font": "13px / 550",
+      "icon": "15px",
+      "primary": "accent + wash; --on-accent; separate primary shadow"
+    },
+    "search": {
+      "selector": ".search",
+      "offset": 23762,
+      "height": "40px",
+      "flexBasis": "460px",
+      "minWidth": "240px",
+      "maxWidth": "560px",
+      "padding": "0 8px 0 38px",
+      "radius": "999px",
+      "icon": "16px; left14px",
+      "font": "14px / 400"
+    },
+    "field": {
+      "selector": ".set-input",
+      "offset": 218718,
+      "widthInSettings": "224px",
+      "height": "32px",
+      "paddingInline": "8px",
+      "radius": "6px",
+      "background": "--bg-hover",
+      "shadow": "--shadow-field",
+      "font": "13px / 400"
+    },
+    "variants": {
+      "compactNavHeight": "26px via higher specificity root selector",
+      "railWidth": "40px; 52px macOS windowed",
+      "railControl": "32px",
+      "responsiveBoundary": "No generic shell mobile breakpoint established in inspected CSS; native settings/paywall breakpoints are different consumers"
+    },
+    "portableDifferences": [
+      "Larger interaction targets and inline narrow navigation are adaptations.",
+      "Busy, disabled, failure and touch discovery need explicit consumer contracts.",
+      "Cascading overrides are part of the evidence; extracting first matching selector is insufficient."
+    ]
+  }
+}

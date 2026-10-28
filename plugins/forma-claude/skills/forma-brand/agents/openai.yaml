@@ -1,0 +1,6 @@
+interface:
+  display_name: "Forma Brand"
+  short_description: "Identidade, campanhas e comunicação visual"
+  default_prompt: "Use /forma:forma-brand para criar ou adaptar esta peça preservando a identidade e os requisitos do canal."
+policy:
+  allow_implicit_invocation: true
