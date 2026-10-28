@@ -1,69 +1,69 @@
 <p align="center">
-  <img src="docs/assets/cover.png" width="100%" alt="Forma — arte de capa">
+  <img src="docs/assets/cover.png" width="100%" alt="Forma cover: a flat geometric F and the tagline From intent to craft.">
 </p>
 
 # Forma
 
-**Da intenção ao acabamento.**
+**From intent to craft.**
 
-Um sistema de design para assistentes de código: a Forma reúne uma coordenadora e 11 especialistas para criar, refinar e verificar interfaces, sistemas visuais e materiais de marca no seu projeto. Seleciona instruções e referências conforme o pedido, preservando sua identidade e sua stack. Disponível como plugin para **Codex**, **Claude Code** e como **Agent Skills** para outros ambientes compatíveis.
+A design system for coding assistants. Forma brings together a coordinator and 11 specialists to create, refine, and verify interfaces, visual systems, and brand materials in your project. It selects instructions and references for each task while preserving your identity and stack. Available as plugins for **Codex** and **Claude Code**, and as **Agent Skills** for other compatible environments.
 
 <p>
-  <a href="#instalar">Instalar</a> ·
-  <a href="#experimentar">Experimentar</a> ·
-  <a href="#especialidades">Especialidades</a> ·
-  <a href="#contribuir">Contribuir</a> ·
-  <a href="#licenca">Licença</a>
+  <a href="#install">Install</a> ·
+  <a href="#try-it">Try it</a> ·
+  <a href="#specialties">Specialties</a> ·
+  <a href="#contribute">Contribute</a> ·
+  <a href="#license">License</a>
 </p>
 
-## Experimentar
+## Try it
 
-Descreva o resultado, o contexto e o que deve ser preservado. A coordenadora escolhe as especialidades pertinentes; você pode começar com um pedido como estes:
+Describe the outcome, the context, and what should stay unchanged. The coordinator selects the relevant specialties. Start with a request like these:
 
-**Refinar uma interface**
+**Refine an interface**
 
-> Use Forma para melhorar este formulário: hierarquia, espaçamento e estados de erro. Preserve a marca e os componentes existentes; teste as interações afetadas.
+> Use Forma to improve this form's hierarchy, spacing, and error states. Preserve the existing brand and components, and test the affected interactions.
 
-**Criar uma peça de marca**
+**Create brand materials**
 
-> Use Forma para criar uma capa e uma apresentação curta deste produto. Use apenas os benefícios documentados e entregue os formatos editáveis solicitados.
+> Use Forma to create a cover and a short presentation for this product. Use only documented benefits and deliver the requested editable formats.
 
-**Auditar antes de mudar**
+**Audit before changing**
 
-> Use Forma para revisar este fluxo no desktop e na largura mobile. Mostre os problemas reproduzíveis e as evidências; por enquanto, não edite.
+> Use Forma to review this flow on desktop and at mobile width. Show reproducible issues with evidence. Do not edit yet.
 
-No Codex, invoque **`$forma:forma`**; no Claude Code, **`/forma:forma`**. Nos demais ambientes, use o mecanismo de ativação oferecido pelo assistente.
+In Codex, invoke **`$forma:forma`**; in Claude Code, **`/forma:forma`**. In other environments, use the activation mechanism your assistant supports.
 
-## Especialidades
+## Specialties
 
-### Entender e direcionar
+### Understand and direct
 
-- [**Coordenadora**](source/forma/SKILL.md) — entende o pedido e seleciona as instruções pertinentes.
-- [**Produto**](source/forma/skills/product/SKILL.md) — pesquisa, jornadas, organização e fluxos.
-- [**Referências**](source/forma/skills/reference/SKILL.md) — análise de fontes, reprodução e fidelidade com evidências.
+- [**Coordinator**](source/forma/SKILL.md) — interprets the request and selects the relevant instructions.
+- [**Product**](source/forma/skills/product/SKILL.md) — research, journeys, information architecture, and flows.
+- [**Reference**](source/forma/skills/reference/SKILL.md) — source analysis, reproduction, and fidelity backed by evidence.
 
-### Construir e refinar
+### Build and refine
 
-- [**Fundações**](source/forma/skills/foundations/SKILL.md) · [**Interface**](source/forma/skills/interface/SKILL.md) — cor, tipografia, layout, componentes e estados.
-- [**Objetos 3D**](source/forma/skills/objects-3d/SKILL.md) · [**Movimento**](source/forma/skills/motion/SKILL.md) — materiais, volumes, gestos, animações e filmes.
-- [**Grafos e dados**](source/forma/skills/graphs-data/SKILL.md) · [**Plataformas**](source/forma/skills/platforms/SKILL.md) — visualizações e adaptação à web, mobile e desktop.
+- [**Foundations**](source/forma/skills/foundations/SKILL.md) · [**Interface**](source/forma/skills/interface/SKILL.md) — color, typography, layout, components, and states.
+- [**3D Objects**](source/forma/skills/objects-3d/SKILL.md) · [**Motion**](source/forma/skills/motion/SKILL.md) — materials, volumes, gestures, animation, and films.
+- [**Graphs and Data**](source/forma/skills/graphs-data/SKILL.md) · [**Platforms**](source/forma/skills/platforms/SKILL.md) — visualizations and adaptation to web, mobile, and desktop.
 
-### Comunicar e entregar
+### Communicate and deliver
 
-- [**Marca**](source/forma/skills/brand/SKILL.md) — identidade, campanhas, apresentações e peças gráficas.
-- [**Handoff**](source/forma/skills/handoff/SKILL.md) — artefatos editáveis, tokens, exportação e integração.
-- [**Validação**](source/forma/skills/validation/SKILL.md) — acessibilidade, estados e qualidade com escopo verificável.
+- [**Brand**](source/forma/skills/brand/SKILL.md) — identity, campaigns, presentations, and graphic assets.
+- [**Handoff**](source/forma/skills/handoff/SKILL.md) — editable artifacts, tokens, export, and integration.
+- [**Validation**](source/forma/skills/validation/SKILL.md) — accessibility, states, and quality checks within a defined scope.
 
-Explore também os [recursos reutilizáveis](source/forma/references/resources.md), os [cenários de avaliação](source/forma/evals/routing-scenarios.md) e o [histórico de versões](CHANGELOG.md).
+Explore the [reusable resources](source/forma/references/resources.md), [evaluation scenarios](source/forma/evals/routing-scenarios.md), and [changelog](CHANGELOG.md).
 
-## Instalar
+## Install
 
-Escolha **um formato por assistente**. Os pacotes estão prontos no repositório; não é necessário compilá-los para usar. Você também pode baixar tudo por **Code → Download ZIP** no GitHub.
+Choose **one format per assistant**. The packages are ready to use in this repository; no build is required. You can also download the entire repository through **Code → Download ZIP** on GitHub.
 
 <details open>
-<summary><strong>Codex</strong> · plugin nativo</summary>
+<summary><strong>Codex</strong> · native plugin</summary>
 
-Com uma versão que ofereça `codex plugin`:
+Use a version of Codex that supports `codex plugin`:
 
 ```sh
 git clone https://github.com/figueirego/forma.git
@@ -73,14 +73,14 @@ codex plugin add forma@forma-community
 codex plugin list --marketplace forma-community --json
 ```
 
-Mantenha o clone disponível: ele é a origem local do catálogo. Abra uma nova conversa ou faça o reload suportado e selecione **Forma**. Confira a origem: `forma-local`, `forma-community` e a skill avulsa são instalações independentes. Não edite o cache instalado.
+Keep the clone available: it is the catalog's local source. Start a new chat or use the supported reload mechanism, then select **Forma**. Check the source: `forma-local`, `forma-community`, and the standalone skill are separate installations. Do not edit the installed cache.
 
-Não são necessários Node, Python ou chaves de API para registrar o pacote pronto. O Codex e integrações opcionais têm seus próprios requisitos e condições.
+Registering the ready-to-use package does not require Node, Python, or API keys. Codex and optional integrations have their own requirements and terms.
 
 </details>
 
 <details>
-<summary><strong>Claude Code</strong> · plugin nativo</summary>
+<summary><strong>Claude Code</strong> · native plugin</summary>
 
 ```sh
 claude plugin marketplace add figueirego/forma
@@ -88,39 +88,39 @@ claude plugin install forma@forma-community
 claude plugin list
 ```
 
-Inicie uma nova sessão e use `/forma:forma` seguido do pedido. Para testar um clone antes de instalar, execute `claude --plugin-dir ./plugins/forma-claude` na raiz deste repositório. Estas instruções se referem ao **Claude Code**, não a qualquer superfície de chat Claude.
+Start a new session and use `/forma:forma` followed by your request. To try a clone before installing, run `claude --plugin-dir ./plugins/forma-claude` from this repository's root. These instructions apply to **Claude Code**, not every Claude chat surface.
 
 </details>
 
 <details>
-<summary><strong>Cursor, Copilot, OpenCode e Gemini CLI</strong> · Agent Skills</summary>
+<summary><strong>Cursor, Copilot, OpenCode, and Gemini CLI</strong> · Agent Skills</summary>
 
-Na raiz do clone ou ZIP extraído, substitua o caminho pelo seu projeto. O primeiro comando simula; o segundo aplica:
+From the root of the clone or extracted ZIP, replace the path with your project's path. The first command previews the plan; the second applies it:
 
 ```sh
-python3 tools/install_skills.py --destination /caminho/do/projeto/.agents/skills
-python3 tools/install_skills.py --destination /caminho/do/projeto/.agents/skills --apply
+python3 tools/install_skills.py --destination /path/to/project/.agents/skills
+python3 tools/install_skills.py --destination /path/to/project/.agents/skills --apply
 ```
 
-O instalador exige Python 3.12+, preserva outras skills e recusa conflitos sem sobrescrever arquivos. No Windows, use `py -3` em vez de `python3` e coloque o caminho local entre aspas.
+The installer requires Python 3.12+, preserves other skills, and refuses conflicts without overwriting files. On Windows, use `py -3` instead of `python3` and put the local path in quotes.
 
-Sem Python, copie **as 12 pastas** de `distributions/agent-skills/` para a pasta de skills reconhecida pelo seu assistente. Elas compartilham recursos: não copie apenas o `SKILL.md`. Depois, faça o reload suportado pelo ambiente.
+Without Python, copy **all 12 folders** from `distributions/agent-skills/` into the skills directory recognized by your assistant. They share resources: do not copy only the `SKILL.md` files. Then use the environment's supported reload mechanism.
 
 </details>
 
-Consulte o [guia de instalação](docs/INSTALLATION.md) para atualização, remoção e evidências por ambiente. **Compatibilidade de formato não garante as mesmas ferramentas, permissões ou comportamento em todos os assistentes.**
+See the [installation guide](docs/INSTALLATION.md) for updates, removal, and evidence by environment. **Format compatibility does not guarantee the same tools, permissions, or behavior across assistants.**
 
-## Escopo e limites
+## Scope and limits
 
-A Forma fornece instruções, referências e recursos locais; não é um editor visual independente. Integrações como navegador, Figma ou REA dependem do ambiente e não são conectadas automaticamente.
+Forma provides instructions, references, and local resources; it is not a standalone visual editor. Integrations such as a browser, Figma, or REA depend on the environment and are not connected automatically.
 
-Testes de estrutura e geometria não comprovam renderização; uma viewport mobile não equivale a um aparelho físico. Há recursos executáveis e especificações para implementação, como o editor de aparência: nem toda capacidade descrita é um componente pronto para importar. Veja [operação e limites](source/forma/references/plugin-operation.md).
+Structure and geometry tests do not prove rendering quality; a mobile viewport is not a physical device. The package includes executable resources and implementation specifications, such as the appearance editor: not every documented capability is a ready-to-import component. See [operation and limits](source/forma/references/plugin-operation.md).
 
-## Contribuir
+## Contribute
 
-Faça um fork, crie uma branch e abra um PR. Documentação, bugs reproduzíveis, exemplos, acessibilidade e testes são bem-vindos. Leia o [guia de contribuição](CONTRIBUTING.md).
+Fork the repository, create a branch, and open a PR. Documentation, reproducible bugs, examples, accessibility improvements, and tests are welcome. Read the [contribution guide](CONTRIBUTING.md).
 
-Para alterar as skills, edite `source/forma/`, regenere as distribuições e verifique com **Python 3.12+ e Node 24+**:
+To change the skills, edit `source/forma/`, regenerate the distributions, and run the checks with **Python 3.12+ and Node 24+**:
 
 ```sh
 npm ci --ignore-scripts
@@ -128,10 +128,8 @@ python3 tools/build.py
 npm run check
 ```
 
-Plugins, catálogos e Agent Skills são gerados e versionados; a CI verifica sua correspondência com a fonte. As mudanças passam por PR e revisão do mantenedor. Consulte as [regras de governança](docs/GOVERNANCE.md), incluindo a exceção do único mantenedor e os limites das proteções remotas, e a [política de segurança](SECURITY.md).
+Plugins, catalogs, and Agent Skills are generated and versioned; CI checks that they match the source. Changes go through a PR and maintainer review. See the [governance rules](docs/GOVERNANCE.md), including the sole-maintainer exception and the limits of remote branch protections, and the [security policy](SECURITY.md).
 
-<a id="licenca"></a>
+## License
 
-## Licença
-
-[MIT](LICENSE). O ECC informou parte do método de organização; a Forma é independente e não instala ECC ou LangChain. Consulte a [procedência e os avisos de terceiros](source/forma/THIRD_PARTY_NOTICES.md). Referências externas mantêm seus próprios direitos e licenças.
+[MIT](LICENSE). ECC informed part of the organizational approach; Forma is independent and does not install ECC or LangChain. See the [provenance and third-party notices](source/forma/THIRD_PARTY_NOTICES.md). External references retain their own rights and licenses.

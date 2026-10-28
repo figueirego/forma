@@ -1,9 +1,48 @@
 {
-  "asset": "cover.png",
-  "purpose": "GitHub README banner; derivative illustration, not a replacement for the authoritative logo.",
+  "assets": [
+    "cover.svg",
+    "cover.png",
+    "social-preview.png"
+  ],
+  "purpose": "English, flat 2D GitHub README and social sharing cover.",
   "created": "2026-10-28",
-  "tool": "OpenAI built-in image_gen",
-  "reference": "../../source/forma/assets/plugin-brand/hero.png",
-  "prompt": "Use case: ads-marketing.\nAsset type: premium wide GitHub README cover for Forma, a design assistant system.\nInput image 1 is the approved existing brand hero, to be refined and reframed, not a new identity. Preserve its recognizable cobalt modular F sculpture: one vertical rectangular stem, a long separated top bar and a shorter separated middle bar, dark ink side faces, precise small chamfers and satin material.\nCreate a finished editorial banner with approximately 5:2 aspect ratio, wide landscape. Warm paper background #F5F4F0, restrained soft studio light, beautifully controlled contact shadow. At right, the same F sculpture fully visible, slightly elevated orthographic three-quarter camera, refine its satin ceramic/aluminum finish, microtexture and crisp joints. Keep generous breathing room. One low, discreet cobalt sample tile may sit near the sculpture. Left 48% is an elegant typographic block, optically aligned and spaced.\nText verbatim, perfectly spelled, only these two text elements: \"Forma\" in large dark ink #172238 bold Helvetica-style sans serif, then below it \"Da intenção\" on one line and \"ao acabamento.\" on the next in a sophisticated dark ink editorial serif. Text must stay large and legible at 800px banner width. Leave at least 7% outer safe margin. No labels, badges, UI, extra logos, gradients, glow or watermarks. Refined real art direction with balance and quiet precision, not a generic SaaS collage. Preserve the brand's cobalt and paper palette and the original F silhouette.",
-  "review": "Text spelling, safe margins, cobalt and paper palette, recognizable modular symbol checked visually. Essential text is repeated in accessible Markdown."
+  "direction": "Warm paper, ink, cobalt, a flat modular F and large geometric typography. No construction guides, decorative point, 3D illustration, extrusion, gradients or shadows.",
+  "method": "Original vector composition using the existing authoritative Forma symbol. Editable SVG embeds Manrope; PNGs rasterized with Sharp from glyph outlines produced by fontTools to avoid font substitution.",
+  "logo_reference": "../../source/forma/assets/plugin-brand/icon.svg",
+  "font": {
+    "family": "Manrope",
+    "weights": [
+      500,
+      600,
+      650,
+      800
+    ],
+    "source": "https://github.com/google/fonts/tree/main/ofl/manrope",
+    "file": "fonts/Manrope.ttf",
+    "license": "SIL Open Font License 1.1",
+    "license_file": "fonts/OFL-Manrope.txt"
+  },
+  "copy": [
+    "DESIGN FOR CODING ASSISTANTS",
+    "Forma",
+    "From intent",
+    "to craft.",
+    "Skills. Systems. Thoughtful details.",
+    "Codex / Claude Code / Agent Skills",
+    "figueirego/forma"
+  ],
+  "exports": {
+    "cover.png": {
+      "width": 2560,
+      "height": 1280,
+      "use": "README"
+    },
+    "social-preview.png": {
+      "width": 1280,
+      "height": 640,
+      "use": "GitHub repository social preview",
+      "max_bytes": 1000000
+    }
+  },
+  "review": "English copy, flat geometry, symbol proportions, font rendering, safe margins and full-size composition visually inspected. Essential messaging is repeated in accessible README text. The existing 3D assets elsewhere in the skill package are outside this cover/README change."
 }
