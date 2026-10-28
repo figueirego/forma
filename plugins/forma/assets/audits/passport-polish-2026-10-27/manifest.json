@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "caseId": "passport-polish-2026-10-27",
+  "distributionVersion": "1.17.0",
+  "consumerVersion": "3.17.1",
+  "approval": {
+    "source": "Direct user message in the Neuron task",
+    "statement": "ficou perfeito quero passar tudo isso e adicionar na skill",
+    "scope": "Presented local visual result; not universal fidelity, physical simulation or performance certification"
+  },
+  "mechanism": "Existing CSS 3D/DOM articulated passport; distinct from distributed BookObject",
+  "distributed": [
+    "Case study",
+    "Contextual parameters",
+    "Evidence hashes"
+  ],
+  "notDistributed": [
+    "Passport application/controller",
+    "National cover images",
+    "Document photographs",
+    "User profile or saved preferences"
+  ],
+  "externalEvidence": {
+    "root": "Private authoring archive, excluded from public distribution",
+    "requiredToUseKnowledge": false,
+    "requiredToRerunOriginalConsumer": true,
+    "files": {
+      "prototype/passport-motion.js": "be7d3a0847ff4d683d4f11200d02172999dd3e8fa65102d728c5529244ed7fc0",
+      "prototype/passport.css": "1b4e325c5f43047a79a317decbab0f46f55b964c8386fdb9596ccb23285f87ff",
+      "prototype/passport.js": "a23cbda44be53e52c4b2bf422a90db31753e398b3ed96990cfbeacceb1925d1b",
+      "prototype/tests/passport-interaction.test.mjs": "0f532a8952a4ad8d803aaa5e32d2157248a68030b5aa14dac68285957ae80a5a",
+      "prototype/tests/passport-motion.test.mjs": "82cb05174c543ff01dfa5f7a31c1eefddfd8ef408374c6bec7374e2b4f3648af",
+      "prototype/tests/helpers/passport-fixture.mjs": "730759e7960ddd09119a6bd5baec5cc6e2b1d158fe7a45605d2711aeeddd9faf",
+      "work/passport-v317-tests.txt": "47169f0892e2a18349e4c3cc7c2df3f2b39abca8ff5dee38eb313bbe58ebbb91",
+      "work/passport-v317-verification.json": "e72f366456c348ee774c922b1ce3ca373f4e88ac2ae1fa8cc8ee5b8731f509ab",
+      "work/passport-v317-before-benchmark.json": "35e0e30914bd7d0723cc3b9068a8075efe46efaee6a08084f2bdace5b2eba2d9",
+      "work/passport-v317-after-benchmark.json": "fa03844f40cc4833dc527b26fcdf259ca8b985dfa0d839b1ee0c7c83469c4b06",
+      "outputs/design/passport-v317/before-front.png": "c712a5ef52d5dc1b00ee3198ec8e06faaf25d9241411fe9d6ac1282fe5190838",
+      "outputs/design/passport-v317/final-front-detail.png": "b425b9de25d70dae00fc6de3a2710d9c9468d038b925279a0f8aa084bc35d269",
+      "outputs/design/passport-v317/final-spine.png": "89e4c1415ddd533ffde6a3fa6ded2b8f74e96b3b6277ed7bfeb633c5b835bb4d",
+      "outputs/design/passport-v317/final-back.png": "8859e3f5e297e5a227b7dbb26a3882aa045c6d2e4e45f577aa7eb44eea207a8b",
+      "outputs/design/passport-v317/final-cover-half.png": "a7147388881dd5c7ef61af97dc9e498732bb85eb2997d43ea1472255a13edef3"
+    }
+  },
+  "localParameters": {
+    "units": "CSS model units, not physical passport measurements",
+    "coverThickness": 0.45,
+    "closedEnvelope": 4.74,
+    "rootRadius": 0,
+    "freeCornerRadius": 13,
+    "paperInset": 1.5,
+    "spineSegments": 12,
+    "terminalTriangles": 624,
+    "grain": {
+      "svgTile": 122,
+      "frequency": [
+        0.28,
+        0.32
+      ],
+      "octaves": 3,
+      "seed": 8,
+      "surfaceScale": 1.65,
+      "opacity": 0.38,
+      "stitchTiles": "stitch"
+    },
+    "lighting": {
+      "vertices": 13,
+      "normal": "(-sin(theta),0,-cos(theta)); theta=PI*(1-open)*j/N",
+      "rotationApplicationOrder": [
+        "roll",
+        "yaw",
+        "pitch"
+      ],
+      "diffuseDirection": [
+        -0.42,
+        -0.45,
+        0.7881
+      ],
+      "halfVector": [
+        -0.2221,
+        -0.238,
+        0.9455
+      ],
+      "signedMix": "-.18 + .26 * max(0,NdotL) + .10 * max(0,NdotH)^12",
+      "paint": "Shared endpoint colors; per-face linear gradient; direct consumers; cache"
+    }
+  },
+  "historicalValidation": {
+    "productTests": 89,
+    "failed": 0,
+    "finalPoses": [
+      "front",
+      "back",
+      "spine",
+      "cover 50%"
+    ],
+    "keyboardRotation": true,
+    "renderedBrowser": "local integrated browser",
+    "physicalMobileDevice": false,
+    "gpuBenchmark": false
+  },
+  "replay": {
+    "environment": "Node DOM fixture; 59 frames per gesture sample",
+    "rotationStyleWrites": [
+      354,
+      617
+    ],
+    "additionalRotationMaterialWrites": 263,
+    "additionalCoverMaterialWrites": 304,
+    "newGeometryWritesOnRotation": 0,
+    "newNodes": 0,
+    "pendingFramesAtRest": 0,
+    "limits": "Not FPS, paint duration, GPU or touch latency"
+  }
+}

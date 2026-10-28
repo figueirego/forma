@@ -1,0 +1,21 @@
+{
+  "name": "forma-community",
+  "interface": {
+    "displayName": "Forma — comunidade"
+  },
+  "plugins": [
+    {
+      "name": "forma",
+      "version": "1.22.1",
+      "source": {
+        "source": "local",
+        "path": "./plugins/forma"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design"
+    }
+  ]
+}

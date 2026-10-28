@@ -1,0 +1,6 @@
+interface:
+  display_name: "Forma"
+  short_description: "Coordena especialistas de interface, cores, 3D e produto"
+  default_prompt: "Use $forma:forma para selecionar as especialistas e referências adequadas a este pedido, executar o trabalho autorizado e verificar o resultado, preservando a stack e os mecanismos aprovados."
+policy:
+  allow_implicit_invocation: true

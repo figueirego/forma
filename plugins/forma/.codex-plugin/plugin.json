@@ -1,0 +1,41 @@
+{
+  "name": "forma",
+  "version": "1.22.1",
+  "license": "MIT",
+  "homepage": "https://github.com/figueirego/forma",
+  "description": "Sistema de design com 12 skills para interface, cores, produto, 3D, movimento, grafos e validação.",
+  "keywords": [
+    "design",
+    "ui",
+    "ux",
+    "cores",
+    "3d",
+    "motion",
+    "acessibilidade"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Forma",
+    "shortDescription": "Design conectado, da intenção ao acabamento",
+    "longDescription": "Forma coordena 11 especialistas de design, com referências compartilhadas, recursos reutilizáveis e verificadores locais. Preserva a marca e a stack do projeto e confere os resultados no consumidor.",
+    "developerName": "Forma",
+    "category": "Design",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Interactive"
+    ],
+    "brandColor": "#315BE8",
+    "composerIcon": "./assets/plugin-brand/icon.svg",
+    "logo": "./assets/plugin-brand/logo.png",
+    "screenshots": [
+      "./assets/plugin-brand/preview-desktop-top.png",
+      "./assets/plugin-brand/preview-mobile-top.png"
+    ],
+    "defaultPrompt": [
+      "Use $forma:forma para criar uma interface no meu projeto.",
+      "Use $forma:forma para refinar cores, espaços e movimento.",
+      "Use $forma:forma para auditar e corrigir este design."
+    ]
+  }
+}

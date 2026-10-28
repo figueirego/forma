@@ -1,0 +1,461 @@
+{
+  "id": "compact-appearance-v1",
+  "version": 1,
+  "kind": "portable-contract-not-executable-component",
+  "applicability": "Reproduzir o editor compacto aprovado e suas superfícies quando solicitado. Não é tema obrigatório para todo produto.",
+  "authority": {
+    "layout": "CSS final e caixas renderizadas da referência em Chrome, DPR1",
+    "transition": "Código do modelo da referência; confirmar no consumidor",
+    "consumer_validation": "A integração no destino exige nova captura e testes; este perfil não a certifica"
+  },
+  "units": {
+    "layout": "CSS px",
+    "modelXY": "posição no modelo; stage normalizado=(valor+45)/190",
+    "intensity": "chroma em 0...09; rótulo=round(chroma/.09*100)",
+    "grain": "0..1; rótulo percentual"
+  },
+  "layout": {
+    "desktop": {
+      "panelWidth": 268,
+      "panelPadding": 6,
+      "panelRadius": 16,
+      "panelBorder": 0,
+      "observedPanelHeight": 374,
+      "stageHeight": 206,
+      "stageWidth": 256,
+      "stageRadius": 10,
+      "modeButton": [
+        30,
+        28
+      ],
+      "resetButton": [
+        22,
+        22
+      ],
+      "countButton": [
+        26,
+        22
+      ],
+      "swatchPaint": 16,
+      "swatchGap": 6,
+      "wave": [
+        92,
+        30
+      ],
+      "grainDial": [
+        36,
+        36
+      ],
+      "footerButtonHeight": 32
+    },
+    "touch": {
+      "condition": "(any-pointer:coarse), (max-width:680px)",
+      "panelWidth": 360,
+      "maxPanelWidth": "100vw - 24px",
+      "stageHeight": 206,
+      "modeButton": [
+        44,
+        44
+      ],
+      "resetButton": [
+        44,
+        44
+      ],
+      "countButton": [
+        44,
+        44
+      ],
+      "paletteArrow": [
+        44,
+        44
+      ],
+      "swatchTarget": [
+        44,
+        44
+      ],
+      "swatchPaint": 20,
+      "swatchGap": 4,
+      "wave": [
+        92,
+        44
+      ],
+      "grainDial": [
+        44,
+        44
+      ],
+      "footerButtonHeight": 44,
+      "observedViewport": [
+        375,
+        900
+      ],
+      "observedPanel": [
+        351,
+        442
+      ],
+      "observedStage": [
+        339,
+        206
+      ]
+    },
+    "anchors": {
+      "modes": {
+        "top": 10,
+        "horizontal": "center"
+      },
+      "reset": {
+        "top": 10,
+        "right": 10
+      },
+      "count": {
+        "bottom": 10,
+        "right": 10
+      },
+      "panel": {
+        "left": "clamp(workspace.left+16,12,viewport.width-panel.width-12)",
+        "bottom": "visibleBottomNavigationHeight+16",
+        "maxHeight": "viewport.height-visibleBottomNavigationHeight-32"
+      }
+    },
+    "typography": {
+      "font": "Inter Variable",
+      "baseSize": 14,
+      "baseWeight": 500,
+      "tracking": "-.02em",
+      "saveSize": 13,
+      "saveWeight": 500,
+      "fontOpticalSizing": "none",
+      "fontSmoothing": "auto",
+      "buttonTracking": "normal",
+      "saveLineHeight": 1.4
+    },
+    "palette": {
+      "hues": [
+        95,
+        72,
+        52,
+        36,
+        22,
+        6,
+        348,
+        330,
+        308,
+        285,
+        264,
+        243,
+        222,
+        200,
+        181,
+        158,
+        132
+      ],
+      "color": "oklch(.72 .15 H)",
+      "scrollStep": 96,
+      "selection": "abs(wrappedHueDifference)<6; não arredondar o hue salvo para uma amostra"
+    },
+    "ring": {
+      "size": [
+        60,
+        60
+      ],
+      "radius": 24,
+      "strokeWidth": 2.5,
+      "track": "#ffffff57",
+      "arc": "#ffffffeb",
+      "gripSize": 9,
+      "gripColor": "#ffffff",
+      "visibleWhen": "poolCount>=2 and selectedPool exists"
+    },
+    "extraVisibleRows": false,
+    "footer": [
+      "back/discard",
+      "save",
+      "more-settings"
+    ],
+    "accessibility": "Nomes, valores e status podem ser sr-only; falha de save continua visível."
+  },
+  "tokens": {
+    "light": {
+      "base": "#f0f4f6",
+      "surface": "#ffffff",
+      "raised": "#f7f8fa",
+      "field": "#ffffff",
+      "text": "rgba(0,0,0,1)",
+      "secondary": "rgba(0,0,0,.64)",
+      "edge": "rgba(0,0,0,.08)",
+      "save": "#3b6fe0",
+      "onSave": "#ffffff",
+      "glass": "rgba(255,255,255,.78)",
+      "washBase": "linear-gradient(180deg, #fdfeff 0%, #eef3f6 100%)",
+      "washHighlight": "radial-gradient(74% 46% at 10% -16%, rgba(255,255,255,.96), transparent 68%)",
+      "grainMultiplier": 0.42
+    },
+    "dark": {
+      "base": "#0e0e10",
+      "surface": "#131315",
+      "raised": "#19191c",
+      "field": "#18181b",
+      "text": "rgba(255,255,255,.93)",
+      "secondary": "rgba(255,255,255,.64)",
+      "edge": "rgba(255,255,255,.1)",
+      "save": "#3d6fe6",
+      "onSave": "#ffffff",
+      "glass": "rgba(24,24,27,.74)",
+      "washBase": "linear-gradient(180deg, #141417 0%, #08080a 100%)",
+      "washHighlight": "radial-gradient(74% 38% at 10% -14%, rgba(255,255,255,.07), transparent 62%)",
+      "grainMultiplier": 0.36
+    }
+  },
+  "composition": {
+    "body": "wash fixo + grain separado de texto",
+    "sidebar": "transparente sobre wash",
+    "workspace": "surface opaca",
+    "raised": "detail/focus/status",
+    "topbar": "glass com blur48px",
+    "context": "stage sempre manual; página pode resolver contexto real quando hold=false; não inventar entidade contextual no destino"
+  },
+  "initial": {
+    "hue": 181,
+    "chroma": 0.038,
+    "grain": 0,
+    "hold": false,
+    "selectedIndex": 1,
+    "maxPools": 3,
+    "pools": [
+      {
+        "d": 62,
+        "c": 0.75,
+        "x": -14,
+        "y": 62,
+        "w": 130,
+        "h": 46,
+        "fade": 72,
+        "light": {
+          "l": 0.9,
+          "a": 0.85
+        },
+        "dark": {
+          "l": 0.42,
+          "a": 0.7
+        }
+      },
+      {
+        "d": 0,
+        "c": 1,
+        "x": -10,
+        "y": 120,
+        "w": 124,
+        "h": 62,
+        "fade": 76,
+        "light": {
+          "l": 0.85,
+          "a": 1
+        },
+        "dark": {
+          "l": 0.48,
+          "a": 0.9
+        }
+      }
+    ]
+  },
+  "addPool": {
+    "capacity": 3,
+    "empty": "Clonar último pool inicial, selecionar0.",
+    "direction": "first-second, ou (-4,-58) se há só um pool.",
+    "origin": "Pool existente com menor y; empate conserva o primeiro.",
+    "position": "origin + direction; arredondar x/y para uma casa; não distribuir três pontos simetricamente.",
+    "hueOffset": "Primeiro de [120,-120,62,-62,180] cuja diferença absoluta para cada pool.d seja >=24; fallback120.",
+    "profile": {
+      "c": 0.85,
+      "w": 118,
+      "h": 58,
+      "fade": 74,
+      "light": {
+        "l": 0.88,
+        "a": 0.8
+      },
+      "dark": {
+        "l": 0.45,
+        "a": 0.75
+      }
+    },
+    "insertion": "Imediatamente antes da última âncora; selecionar índice oldLength-1.",
+    "afterPlusFromInitial": {
+      "poolOrderHues": [
+        243,
+        301,
+        181
+      ],
+      "selectedIndex": 1,
+      "newPool": {
+        "x": -18,
+        "y": 4,
+        "d": 120,
+        "absoluteHue": 301
+      },
+      "plusDisabled": true,
+      "ringVisible": true,
+      "expectedSelectedSwatch": null,
+      "swatchExplanation": "Hue301 difere7 da amostra308; o limiar é estritamente menor que6."
+    }
+  },
+  "migration": {
+    "versionRenderer": true,
+    "preserve": [
+      "pool IDs",
+      "pool count including0",
+      "positions including offstage",
+      "hues/colors",
+      "strength including0",
+      "grain"
+    ],
+    "legacyPercentMapping": "chroma=strength/100*.09; 5 permanece5%, sem reset para42%.",
+    "backup": "Salvar configuração original antes da primeira gravação migrada; falha de backup/gravação preserva original.",
+    "idempotent": true,
+    "notAllowed": "Recriar defaults para mascarar diferença de aparência ou manter renderer antigo sem verificar se impede a fidelidade pedida."
+  },
+  "verification": {
+    "compare": [
+      "initial2",
+      "plus3",
+      "remove3to2",
+      "customThirdColor",
+      "distanceRing",
+      "light",
+      "dark",
+      "system",
+      "save-reopen-reload",
+      "legacyMigration",
+      "empty0",
+      "plainGroupDragAllPools",
+      "altIndividualAllPools",
+      "offstagePaintAndClipping",
+      "positionKeyboardModelUnits",
+      "distanceAllVectors",
+      "modeAndColorNoMovement",
+      "fractionalRingContinuous",
+      "loadedResourcesIdentity",
+      "unsavedDraftPreservedBeforeReload"
+    ],
+    "sameConditions": [
+      "viewport",
+      "DPR",
+      "zoom",
+      "font loaded",
+      "theme",
+      "chroma",
+      "grain",
+      "pool coordinates and selection",
+      "context/hold"
+    ],
+    "layoutToleranceCssPx": 1,
+    "notProven": [
+      "physical mobile device",
+      "all browsers",
+      "universal pixel identity"
+    ]
+  },
+  "provenance": {
+    "case": "Pauta → Neuron, 2026-10-27",
+    "sourceFiles": [
+      {
+        "name": "themes.css",
+        "sha256": "acfa0d1898477cd7626a6bd0fbfdba75ca92c9ef49304ac0872c7229e1bc6bdf"
+      },
+      {
+        "name": "settings.js",
+        "sha256": "714b4a641244a46c28e51857e9bb1849fe6835a80c3786cd23259e2b8a741715"
+      },
+      {
+        "name": "appearance.js",
+        "sha256": "6647cdd25157a8ce18025c7b7314795fa1b104fe036401e83dd21141bc0e2044"
+      },
+      {
+        "name": "lighting-controls.js",
+        "sha256": "9549e1b8ffaea7159fb322ba35bcf1ef2e6cb3bd890caf4fa331867a544eb167"
+      },
+      {
+        "name": "preferences.js",
+        "sha256": "fc274d28ced90154a1f99f4322bcf50111ea64e778ed44a8445940ba354800fc"
+      }
+    ],
+    "dependencyOnAuthoringProject": false
+  },
+  "gestures": {
+    "coordinatePaint": "left/top=(modelXY+45)/190*100%; sem clamp ou representante na borda. Pontos fora são recortados pelo stage.",
+    "plainPointerDrag": {
+      "targets": "todos os pools",
+      "selected": "centro segue ponteiro limitado ao stage",
+      "others": "mesmo delta do selecionado; conservar vetores e permitir fora do stage",
+      "snapshot": "Calcular deltas contra a geometria capturada no pointerdown; arredondar modelo x/y a uma casa."
+    },
+    "altPointerDrag": {
+      "targets": "somente selecionado",
+      "modifier": "Alt capturado no pointerdown",
+      "others": "não mudam"
+    },
+    "positionKeyboard": {
+      "stepModelUnits": 1,
+      "shiftStepModelUnits": 10,
+      "targets": "todos; com Alt apenas selecionado",
+      "stageClamp": false
+    },
+    "distanceRing": {
+      "selected": "âncora fixa",
+      "others": "escalar vetores radiais com scale=min(requested/current,fitDaBorda)",
+      "requestedRange": [
+        0,
+        150
+      ],
+      "pointerDown": "não alterar distância",
+      "stepModelUnits": 2,
+      "shiftStepModelUnits": 10,
+      "coincident": "Se current<.5: x=selected.x; y=clamp(selected.y-requested*(i+1)/others.length,-45,145), arredondar a uma casa.",
+      "pointerAccumulator": {
+        "unwrapDegrees": 180,
+        "sensitivity": 0.4166666666666667,
+        "clampEachStep": [
+          0,
+          150
+        ],
+        "reconcileOnlyWhenAbsoluteDifferenceExceeds": 0.15,
+        "appliedDistance": "max hypot dos vetores em unidades do modelo, sem arredondar para o rótulo",
+        "keepSubUnitMotion": true
+      }
+    },
+    "plus": "Adicionar apenas o novo pool na posição/perfil definidos; coordenadas dos anteriores permanecem.",
+    "modeAndColor": "Não alteram x/y nem distância entre pools.",
+    "offstagePolicy": "Overflow clip impede scroll interno; não inventar proxies na borda no perfil fiel. Uma alternativa de recuperação pode existir fora do canvas, declarada separadamente.",
+    "thirdDragFixture": {
+      "start": "estado inicial → +; índice1 selecionado",
+      "targetStageNormalized": [
+        0.85,
+        0.8
+      ],
+      "expectedPoolXYModelInArrayOrder": [
+        [
+          120.5,
+          165
+        ],
+        [
+          116.5,
+          107
+        ],
+        [
+          124.5,
+          223
+        ]
+      ],
+      "expectedVisibility": "selecionado dentro; outros2 fora e recortados; sem substitutos visuais na borda."
+    },
+    "invariants": "Capturar modelo e centros CSS de TODOS os pools antes, durante e depois: verificar offsets, seleção, clipping e ausência de movimento nas ações que não movem."
+  },
+  "stateLifecycle": {
+    "initialWhen": "Sem configuração/lista de pools disponível; não usar truthiness da lista para decidir.",
+    "reopen": "Preservar configuração válida com0/1/2/3 pools e posições externas; não completar nem redistribuir.",
+    "selectionOnOpen": "Último índice quando houver pools; nenhum quando lista estiver vazia.",
+    "explicitReset": "Somente por ação de reset: restaurar initial e selecionar último; preservar hold no reset de iluminação.",
+    "intentionalZero": "Lista vazia, chroma0, grain0 e intensidade salva5% são valores válidos; não viram default.",
+    "migration": "Converter conforme migration, com backup/idempotência; não usar reset como migração.",
+    "invalidData": "Distinguir dados ausentes, legados e inválidos. Validar finitude/domínio; preservar original recuperável antes de reparar."
+  }
+}

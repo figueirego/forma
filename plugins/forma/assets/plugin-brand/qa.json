@@ -1,0 +1,889 @@
+{
+  "createdAt": "2026-10-28T18:46:43.531Z",
+  "mode": "Chromium headless, viewport resizing; local file. Not physical-device, print, screen-reader or full accessibility certification.",
+  "browser": "156.0.8078.73",
+  "executable": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "playwright": "1.62.1",
+  "entry": "identidade.html",
+  "sourceHashes": {
+    "identidade.html": "f10ae021b44c8c03b4eaa253f1f31a7aede38ea4c636931e2f34ed1c9fe83b21",
+    "identity.css": "24ffa820bcd021c46d8df56f25a76e048f4c41c397ef26cdc96f4c9b81f9d8f3",
+    "tokens.css": "1611cd1f3b31bba6bb95f22024fdc9ca9b4e407e3935c44350991ee657c90746",
+    "tokens.json": "7202a8b250d69333f17ed3977eafee8e85b324f41cb69977a0cda90f2d85ac65",
+    "icon.svg": "0f42ec2f2b8e274924e1e7907fc6d0e9d5d5dd455d5d09fcc06316e8d0c0c71c",
+    "icon-dark.svg": "364eed667d3fc9633f20ddb3cb4f5a55664a9d0a8857b97526142981a7a48685",
+    "wordmark.svg": "4a1a4042e60d042f920d17e1bf65226cfcf9e9eec84c5c3c0380aaea58f8628f",
+    "wordmark-dark.svg": "e24214cad34cc9773b8007b9920c6a02985395b954e179e41e99d491041ff9db",
+    "hero.png": "a07954c51662238cdd3225ab8dcbceaa0668da830b8fafdb6cb6860600d819ab",
+    "provenance.json": "7b2e1754ab9d05d08fb632eb2770f5e5936f5af5792c2f7bba1ec86dc022fa14"
+  },
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "no-horizontal-overflow-320",
+      "pass": true,
+      "evidence": {
+        "viewport": 320,
+        "documentWidth": 320
+      }
+    },
+    {
+      "name": "images-loaded-320",
+      "pass": true,
+      "evidence": [
+        {
+          "src": "hero.png",
+          "complete": true,
+          "naturalWidth": 1536,
+          "naturalHeight": 1024
+        }
+      ]
+    },
+    {
+      "name": "no-horizontal-overflow-360",
+      "pass": true,
+      "evidence": {
+        "viewport": 360,
+        "documentWidth": 360
+      }
+    },
+    {
+      "name": "images-loaded-360",
+      "pass": true,
+      "evidence": [
+        {
+          "src": "hero.png",
+          "complete": true,
+          "naturalWidth": 1536,
+          "naturalHeight": 1024
+        }
+      ]
+    },
+    {
+      "name": "no-horizontal-overflow-390",
+      "pass": true,
+      "evidence": {
+        "viewport": 390,
+        "documentWidth": 390
+      }
+    },
+    {
+      "name": "images-loaded-390",
+      "pass": true,
+      "evidence": [
+        {
+          "src": "hero.png",
+          "complete": true,
+          "naturalWidth": 1536,
+          "naturalHeight": 1024
+        }
+      ]
+    },
+    {
+      "name": "no-horizontal-overflow-768",
+      "pass": true,
+      "evidence": {
+        "viewport": 768,
+        "documentWidth": 768
+      }
+    },
+    {
+      "name": "images-loaded-768",
+      "pass": true,
+      "evidence": [
+        {
+          "src": "hero.png",
+          "complete": true,
+          "naturalWidth": 1536,
+          "naturalHeight": 1024
+        }
+      ]
+    },
+    {
+      "name": "no-horizontal-overflow-1024",
+      "pass": true,
+      "evidence": {
+        "viewport": 1024,
+        "documentWidth": 1024
+      }
+    },
+    {
+      "name": "images-loaded-1024",
+      "pass": true,
+      "evidence": [
+        {
+          "src": "hero.png",
+          "complete": true,
+          "naturalWidth": 1536,
+          "naturalHeight": 1024
+        }
+      ]
+    },
+    {
+      "name": "no-horizontal-overflow-1440",
+      "pass": true,
+      "evidence": {
+        "viewport": 1440,
+        "documentWidth": 1440
+      }
+    },
+    {
+      "name": "images-loaded-1440",
+      "pass": true,
+      "evidence": [
+        {
+          "src": "hero.png",
+          "complete": true,
+          "naturalWidth": 1536,
+          "naturalHeight": 1024
+        }
+      ]
+    },
+    {
+      "name": "eleven-specialists-in-order",
+      "pass": true,
+      "evidence": [
+        "foundations",
+        "interface",
+        "product",
+        "objects-3d",
+        "graphs-data",
+        "motion",
+        "platforms",
+        "brand",
+        "reference",
+        "validation",
+        "handoff"
+      ]
+    },
+    {
+      "name": "24-and-32-pixel-samples",
+      "pass": true,
+      "evidence": [
+        {
+          "x": 24,
+          "y": 7983.421875,
+          "width": 24,
+          "height": 24,
+          "right": 48
+        },
+        {
+          "x": 128.015625,
+          "y": 7975.421875,
+          "width": 32,
+          "height": 32,
+          "right": 160.015625
+        }
+      ]
+    },
+    {
+      "name": "all-links-resolve",
+      "pass": true,
+      "evidence": {
+        "hrefs": [
+          "#conteudo",
+          "#inicio",
+          "#identidade",
+          "#sistema",
+          "icon.svg",
+          "wordmark.svg",
+          "tokens.json",
+          "README.md"
+        ],
+        "badLinks": []
+      }
+    },
+    {
+      "name": "keyboard-skip-link",
+      "pass": true,
+      "evidence": {
+        "text": "Pular para o conteúdo",
+        "href": "#conteudo",
+        "outline": "solid"
+      }
+    },
+    {
+      "name": "navigation-anchor",
+      "pass": true,
+      "evidence": "#sistema"
+    },
+    {
+      "name": "logo-png-512-transparent",
+      "pass": true,
+      "evidence": {
+        "width": 512,
+        "height": 512,
+        "hasAlpha": true,
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "name": "canonical-three-part-geometry",
+      "pass": true,
+      "evidence": [
+        {
+          "file": "icon.svg",
+          "parseError": false,
+          "rects": [
+            [
+              12,
+              12,
+              24,
+              96
+            ],
+            [
+              42,
+              12,
+              66,
+              24
+            ],
+            [
+              42,
+              48,
+              48,
+              24
+            ]
+          ],
+          "editableText": null
+        },
+        {
+          "file": "icon-dark.svg",
+          "parseError": false,
+          "rects": [
+            [
+              12,
+              12,
+              24,
+              96
+            ],
+            [
+              42,
+              12,
+              66,
+              24
+            ],
+            [
+              42,
+              48,
+              48,
+              24
+            ]
+          ],
+          "editableText": null
+        },
+        {
+          "file": "wordmark.svg",
+          "parseError": false,
+          "rects": [
+            [
+              12,
+              12,
+              24,
+              96
+            ],
+            [
+              42,
+              12,
+              66,
+              24
+            ],
+            [
+              42,
+              48,
+              48,
+              24
+            ]
+          ],
+          "editableText": "Forma"
+        },
+        {
+          "file": "wordmark-dark.svg",
+          "parseError": false,
+          "rects": [
+            [
+              12,
+              12,
+              24,
+              96
+            ],
+            [
+              42,
+              12,
+              66,
+              24
+            ],
+            [
+              42,
+              48,
+              48,
+              24
+            ]
+          ],
+          "editableText": "Forma"
+        }
+      ]
+    },
+    {
+      "name": "wordmark-text-editable",
+      "pass": true,
+      "evidence": [
+        {
+          "file": "wordmark.svg",
+          "parseError": false,
+          "rects": [
+            [
+              12,
+              12,
+              24,
+              96
+            ],
+            [
+              42,
+              12,
+              66,
+              24
+            ],
+            [
+              42,
+              48,
+              48,
+              24
+            ]
+          ],
+          "editableText": "Forma"
+        },
+        {
+          "file": "wordmark-dark.svg",
+          "parseError": false,
+          "rects": [
+            [
+              12,
+              12,
+              24,
+              96
+            ],
+            [
+              42,
+              12,
+              66,
+              24
+            ],
+            [
+              42,
+              48,
+              48,
+              24
+            ]
+          ],
+          "editableText": "Forma"
+        }
+      ]
+    },
+    {
+      "name": "wordmark-fits-svg",
+      "pass": true,
+      "evidence": {
+        "x": 136,
+        "y": 13,
+        "width": 252.021484375,
+        "height": 100,
+        "font": "Arial, Helvetica, sans-serif"
+      }
+    },
+    {
+      "name": "declared-text-pairs-contrast",
+      "pass": true,
+      "evidence": [
+        {
+          "name": "ink/paper",
+          "foreground": "#172238",
+          "background": "#F5F4F0",
+          "ratio": 14.43,
+          "pass": true
+        },
+        {
+          "name": "muted/paper",
+          "foreground": "#596274",
+          "background": "#F5F4F0",
+          "ratio": 5.573,
+          "pass": true
+        },
+        {
+          "name": "blue/paper",
+          "foreground": "#315BE8",
+          "background": "#F5F4F0",
+          "ratio": 5.032,
+          "pass": true
+        },
+        {
+          "name": "white/blue",
+          "foreground": "#FFFFFF",
+          "background": "#315BE8",
+          "ratio": 5.538,
+          "pass": true
+        },
+        {
+          "name": "paper/ink",
+          "foreground": "#F5F4F0",
+          "background": "#172238",
+          "ratio": 14.43,
+          "pass": true
+        },
+        {
+          "name": "darkMuted/ink",
+          "foreground": "#B9C1D1",
+          "background": "#172238",
+          "ratio": 8.781,
+          "pass": true
+        },
+        {
+          "name": "darkAccent/ink",
+          "foreground": "#A8BCFF",
+          "background": "#172238",
+          "ratio": 8.547,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "no-external-page-requests",
+      "pass": true,
+      "evidence": []
+    },
+    {
+      "name": "no-browser-errors",
+      "pass": true,
+      "evidence": []
+    },
+    {
+      "name": "hero-matches-provenance",
+      "pass": true,
+      "evidence": {
+        "copiedSha256": "a07954c51662238cdd3225ab8dcbceaa0668da830b8fafdb6cb6860600d819ab",
+        "expectedSha256": "a07954c51662238cdd3225ab8dcbceaa0668da830b8fafdb6cb6860600d819ab"
+      }
+    }
+  ],
+  "responsiveMeasurements": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 800
+      },
+      "documentWidth": 320,
+      "documentHeight": 8818,
+      "h1": {
+        "x": 24,
+        "y": 183,
+        "width": 272,
+        "height": 82.375,
+        "right": 296
+      },
+      "hero": {
+        "x": 0,
+        "y": 80,
+        "width": 320,
+        "height": 713.09375,
+        "right": 320
+      },
+      "columns": "272px",
+      "smallMarks": [
+        {
+          "x": 24,
+          "y": 7983.421875,
+          "width": 24,
+          "height": 24,
+          "right": 48
+        },
+        {
+          "x": 128.015625,
+          "y": 7975.421875,
+          "width": 32,
+          "height": 32,
+          "right": 160.015625
+        }
+      ],
+      "images": [
+        {
+          "src": "hero.png",
+          "complete": true,
+          "naturalWidth": 1536,
+          "naturalHeight": 1024
+        }
+      ],
+      "specialistIds": [
+        "foundations",
+        "interface",
+        "product",
+        "objects-3d",
+        "graphs-data",
+        "motion",
+        "platforms",
+        "brand",
+        "reference",
+        "validation",
+        "handoff"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "documentWidth": 360,
+      "documentHeight": 8437,
+      "h1": {
+        "x": 24,
+        "y": 167.5,
+        "width": 312,
+        "height": 90.625,
+        "right": 336
+      },
+      "hero": {
+        "x": 0,
+        "y": 80,
+        "width": 360,
+        "height": 740.625,
+        "right": 360
+      },
+      "columns": "312px",
+      "smallMarks": [
+        {
+          "x": 24,
+          "y": 7655.234375,
+          "width": 24,
+          "height": 24,
+          "right": 48
+        },
+        {
+          "x": 128.015625,
+          "y": 7647.234375,
+          "width": 32,
+          "height": 32,
+          "right": 160.015625
+        }
+      ],
+      "images": [
+        {
+          "src": "hero.png",
+          "complete": true,
+          "naturalWidth": 1536,
+          "naturalHeight": 1024
+        }
+      ],
+      "specialistIds": [
+        "foundations",
+        "interface",
+        "product",
+        "objects-3d",
+        "graphs-data",
+        "motion",
+        "platforms",
+        "brand",
+        "reference",
+        "validation",
+        "handoff"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "documentHeight": 8113,
+      "h1": {
+        "x": 24,
+        "y": 167.5,
+        "width": 342,
+        "height": 96.375,
+        "right": 366
+      },
+      "hero": {
+        "x": 0,
+        "y": 80,
+        "width": 390,
+        "height": 772.46875,
+        "right": 390
+      },
+      "columns": "342px",
+      "smallMarks": [
+        {
+          "x": 24,
+          "y": 7330.3125,
+          "width": 24,
+          "height": 24,
+          "right": 48
+        },
+        {
+          "x": 128.015625,
+          "y": 7322.3125,
+          "width": 32,
+          "height": 32,
+          "right": 160.015625
+        }
+      ],
+      "images": [
+        {
+          "src": "hero.png",
+          "complete": true,
+          "naturalWidth": 1536,
+          "naturalHeight": 1024
+        }
+      ],
+      "specialistIds": [
+        "foundations",
+        "interface",
+        "product",
+        "objects-3d",
+        "graphs-data",
+        "motion",
+        "platforms",
+        "brand",
+        "reference",
+        "validation",
+        "handoff"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "documentWidth": 768,
+      "documentHeight": 5973,
+      "h1": {
+        "x": 38.390625,
+        "y": 218.96875,
+        "width": 317.953125,
+        "height": 179.203125,
+        "right": 356.34375
+      },
+      "hero": {
+        "x": 0,
+        "y": 86,
+        "width": 768,
+        "height": 650,
+        "right": 768
+      },
+      "columns": "329.609px 329.609px",
+      "smallMarks": [
+        {
+          "x": 440.171875,
+          "y": 5284.8125,
+          "width": 24,
+          "height": 24,
+          "right": 464.171875
+        },
+        {
+          "x": 552.1875,
+          "y": 5276.8125,
+          "width": 32,
+          "height": 32,
+          "right": 584.1875
+        }
+      ],
+      "images": [
+        {
+          "src": "hero.png",
+          "complete": true,
+          "naturalWidth": 1536,
+          "naturalHeight": 1024
+        }
+      ],
+      "specialistIds": [
+        "foundations",
+        "interface",
+        "product",
+        "objects-3d",
+        "graphs-data",
+        "motion",
+        "platforms",
+        "brand",
+        "reference",
+        "validation",
+        "handoff"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "documentWidth": 1024,
+      "documentHeight": 6159,
+      "h1": {
+        "x": 51.1875,
+        "y": 266.046875,
+        "width": 333.703125,
+        "height": 111.78125,
+        "right": 384.890625
+      },
+      "hero": {
+        "x": 0,
+        "y": 100,
+        "width": 1024,
+        "height": 650,
+        "right": 1024
+      },
+      "columns": "428.812px 428.812px",
+      "smallMarks": [
+        {
+          "x": 595.1875,
+          "y": 5455.90625,
+          "width": 24,
+          "height": 24,
+          "right": 619.1875
+        },
+        {
+          "x": 707.203125,
+          "y": 5447.90625,
+          "width": 32,
+          "height": 32,
+          "right": 739.203125
+        }
+      ],
+      "images": [
+        {
+          "src": "hero.png",
+          "complete": true,
+          "naturalWidth": 1536,
+          "naturalHeight": 1024
+        }
+      ],
+      "specialistIds": [
+        "foundations",
+        "interface",
+        "product",
+        "objects-3d",
+        "graphs-data",
+        "motion",
+        "platforms",
+        "brand",
+        "reference",
+        "validation",
+        "handoff"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentWidth": 1440,
+      "documentHeight": 6503,
+      "h1": {
+        "x": 72,
+        "y": 299.9375,
+        "width": 469.296875,
+        "height": 157.1875,
+        "right": 541.296875
+      },
+      "hero": {
+        "x": 0,
+        "y": 100,
+        "width": 1440,
+        "height": 763.1875,
+        "right": 1440
+      },
+      "columns": "616px 616px",
+      "smallMarks": [
+        {
+          "x": 824,
+          "y": 5800.53125,
+          "width": 24,
+          "height": 24,
+          "right": 848
+        },
+        {
+          "x": 936.015625,
+          "y": 5792.53125,
+          "width": 32,
+          "height": 32,
+          "right": 968.015625
+        }
+      ],
+      "images": [
+        {
+          "src": "hero.png",
+          "complete": true,
+          "naturalWidth": 1536,
+          "naturalHeight": 1024
+        }
+      ],
+      "specialistIds": [
+        "foundations",
+        "interface",
+        "product",
+        "objects-3d",
+        "graphs-data",
+        "motion",
+        "platforms",
+        "brand",
+        "reference",
+        "validation",
+        "handoff"
+      ]
+    }
+  ],
+  "contrastPairs": [
+    {
+      "name": "ink/paper",
+      "foreground": "#172238",
+      "background": "#F5F4F0",
+      "ratio": 14.43,
+      "pass": true
+    },
+    {
+      "name": "muted/paper",
+      "foreground": "#596274",
+      "background": "#F5F4F0",
+      "ratio": 5.573,
+      "pass": true
+    },
+    {
+      "name": "blue/paper",
+      "foreground": "#315BE8",
+      "background": "#F5F4F0",
+      "ratio": 5.032,
+      "pass": true
+    },
+    {
+      "name": "white/blue",
+      "foreground": "#FFFFFF",
+      "background": "#315BE8",
+      "ratio": 5.538,
+      "pass": true
+    },
+    {
+      "name": "paper/ink",
+      "foreground": "#F5F4F0",
+      "background": "#172238",
+      "ratio": 14.43,
+      "pass": true
+    },
+    {
+      "name": "darkMuted/ink",
+      "foreground": "#B9C1D1",
+      "background": "#172238",
+      "ratio": 8.781,
+      "pass": true
+    },
+    {
+      "name": "darkAccent/ink",
+      "foreground": "#A8BCFF",
+      "background": "#172238",
+      "ratio": 8.547,
+      "pass": true
+    }
+  ],
+  "limitations": [
+    "Hero is supplied AI artwork, not an interactive 3D mechanism.",
+    "Fonts use system fallbacks and may vary across operating systems.",
+    "Contrast results cover declared opaque color pairs, not every photographic pixel.",
+    "These checks do not establish trademark clearance or consumer integration."
+  ]
+}

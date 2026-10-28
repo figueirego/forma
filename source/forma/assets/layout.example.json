@@ -1,0 +1,19 @@
+{
+  "format": "design-complete-layout-v1",
+  "description": "Synthetic geometry for exercising the helper. Not evidence from a real product or browser.",
+  "viewport": {"width": 1200, "height": 800},
+  "elements": {
+    "panel": {"x": 100, "y": 80, "width": 600, "height": 500},
+    "title": {"x": 124, "y": 104, "width": 552, "height": 32},
+    "content": {"x": 124, "y": 160, "width": 552, "height": 320, "scrollWidth": 552, "clientWidth": 552}
+  },
+  "checks": [
+    {"id": "title-content-left", "type": "align", "elements": ["title", "content"], "edge": "left"},
+    {"id": "title-padding", "type": "inset", "container": "panel", "element": "title", "side": "top", "expected": 24},
+    {"id": "title-content-gap", "type": "gap", "from": "title", "to": "content", "axis": "y", "expected": 24},
+    {"id": "content-contained", "type": "containment", "container": "panel", "element": "content"},
+    {"id": "content-width", "type": "no-horizontal-overflow", "element": "content"},
+    {"id": "content-panel-center", "type": "center", "container": "panel", "element": "content", "axis": "x"},
+    {"id": "panel-in-viewport", "type": "containment", "container": "viewport", "element": "panel"}
+  ]
+}

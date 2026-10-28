@@ -1,0 +1,43 @@
+/* Forma · tokens de identidade 1.0.0. Escopo: marca do plugin. */
+:root {
+  --forma-blue: #315BE8;
+  --forma-ink: #172238;
+  --forma-paper: #F5F4F0;
+  --forma-white: #FFFFFF;
+  --forma-muted: #596274;
+  --forma-line: #C9CDD3;
+  --forma-dark-muted: #B9C1D1;
+  --forma-dark-line: #465167;
+  --forma-dark-accent: #A8BCFF;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-wordmark: Arial, Helvetica, sans-serif;
+  --font-code: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --space-unit: 6px;
+  --space-xs: 12px;
+  --space-sm: 18px;
+  --space-md: 24px;
+  --space-lg: 36px;
+  --space-xl: 48px;
+  --space-xxl: 72px;
+  --space-section: 120px;
+  --page-gutter: clamp(24px, 5vw, 80px);
+  --content-max: 1440px;
+}
+:root, [data-theme="light"] {
+  --background: var(--forma-paper);
+  --foreground: var(--forma-ink);
+  --muted: var(--forma-muted);
+  --line: var(--forma-line);
+  --accent: var(--forma-blue);
+  --surface: var(--forma-white);
+}
+[data-theme="dark"] {
+  --background: var(--forma-ink);
+  --foreground: var(--forma-paper);
+  --muted: var(--forma-dark-muted);
+  --line: var(--forma-dark-line);
+  --accent: var(--forma-dark-accent);
+  --surface: #202D46;
+}
+
