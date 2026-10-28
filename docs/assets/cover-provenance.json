@@ -6,7 +6,7 @@
   ],
   "purpose": "English, flat 2D GitHub README and social sharing cover.",
   "created": "2026-10-28",
-  "direction": "Warm paper, ink, cobalt, modular geometry and large geometric typography. No 3D illustration, extrusion, gradients or shadows.",
+  "direction": "Warm paper, ink, cobalt, a flat modular F and large geometric typography. No construction guides, decorative point, 3D illustration, extrusion, gradients or shadows.",
   "method": "Original vector composition using the existing authoritative Forma symbol. Editable SVG embeds Manrope; PNGs rasterized with Sharp from glyph outlines produced by fontTools to avoid font substitution.",
   "logo_reference": "../../source/forma/assets/plugin-brand/icon.svg",
   "font": {
