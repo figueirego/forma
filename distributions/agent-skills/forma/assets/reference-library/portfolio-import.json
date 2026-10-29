@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/emmabostian/developer-portfolios",
+  "revision": "c2ee35d6363e7b2ee4c34f40accb478c0f828e4f",
+  "canonicalSource": "README.md",
+  "counts": {
+    "readmeEntries": 2079,
+    "feedEntries": 2071,
+    "indexedEntries": 2079,
+    "intersection": 2070,
+    "union": 2080,
+    "quarantinedUrls": 1
+  },
+  "readmeNotInFeed": [
+    {
+      "name": "Francis Luz",
+      "url": "https://entry.fyi/francisluz",
+      "line": 754
+    },
+    {
+      "name": "Gene Dai",
+      "url": "https://genedai.md",
+      "line": 790
+    },
+    {
+      "name": "Ivan Markin",
+      "url": "https://curiouseyes.tech",
+      "line": 910
+    },
+    {
+      "name": "João Pedro Moreira",
+      "url": "https://nayetdet.dev",
+      "line": 1004
+    },
+    {
+      "name": "Korey Wang Tianru",
+      "url": "https://korey2028.tech",
+      "line": 1082
+    },
+    {
+      "name": "Md Mizan",
+      "url": "https://www.md-mizan.vercel.app",
+      "line": 1240
+    },
+    {
+      "name": "Pavithran S",
+      "url": "https://pavithran26.net",
+      "line": 1484
+    },
+    {
+      "name": "Rahul Kumar",
+      "url": "https://rahnoxa.antideploy.com",
+      "line": 1570
+    },
+    {
+      "name": "Yorben Vander Sleyen",
+      "url": "https://yorben.me",
+      "line": 2154
+    }
+  ],
+  "feedNotInReadme": [
+    {
+      "name": "Pavithran S",
+      "url": "https://pavithran26.vercel.app"
+    }
+  ],
+  "repeatedNames": [
+    {
+      "name": "Abhinav Jaiswal",
+      "occurrences": 2
+    },
+    {
+      "name": "Arshdeep Singh",
+      "occurrences": 2
+    },
+    {
+      "name": "Mehedi Hasan",
+      "occurrences": 2
+    },
+    {
+      "name": "Mohammad Ahmad",
+      "occurrences": 2
+    },
+    {
+      "name": "Rahul Kumar",
+      "occurrences": 2
+    },
+    {
+      "name": "Rohit Singh",
+      "occurrences": 2
+    },
+    {
+      "name": "Shubham Gupta",
+      "occurrences": 2
+    },
+    {
+      "name": "Vaibhav Singh",
+      "occurrences": 2
+    },
+    {
+      "name": "Wajahat Ali Mir",
+      "occurrences": 2
+    }
+  ],
+  "quarantined": [
+    {
+      "id": "portfolio-87eda7f80c4ba494ccf1",
+      "name": "Akshay Abraham",
+      "line": 196,
+      "originalUrl": "https://akshayabraham.vercel.app?utm_source=github&utm_medium=readme&utm_campaign=dev_portfolios\"",
+      "issue": "malformed-url"
+    }
+  ],
+  "policy": "Current README listings are complete. Feed-only destinations are historical discrepancies, not additional current portfolios. Names are not unique identities. Raw URLs are never silently repaired. Descriptions and taglines are not imported.",
+  "sha256": {
+    "README.md": "46579c228d97ec5122ee9bb644d976d93d1110ef8e45647a78efb92393ec1b0d",
+    "feed.json": "750de7e107a4d67e3242739d8776d691675d42ed48be88c28a322f0597be537e"
+  }
+}

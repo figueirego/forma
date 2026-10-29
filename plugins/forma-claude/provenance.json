@@ -1,5 +1,5 @@
 {
-  "version": "1.26.2",
+  "version": "1.27.0",
   "source": "canonical Forma skill",
   "transformations": [
     "Flatten skill directories",
@@ -16,14 +16,14 @@
     {
       "source": "SKILL.md",
       "packaged": "skills/forma/SKILL.md",
-      "source_sha256": "a25f1d1613d8bd804db0474a7a961ce7fba3439e01b9af48454372e26bb43bf7",
-      "packaged_sha256": "9a743640f87f2e99087c38bebfc6f5e822f4bd4776bd39908fe307dae9d859a2"
+      "source_sha256": "f10ba7bace683c61faedd10af2c17d3b9dda16dcf900219c7fe83877ed8688ea",
+      "packaged_sha256": "4f0f1562b78250df44013e7130759f8b5dde4894daa32cebdffd5658013fe236"
     },
     {
       "source": "THIRD_PARTY_NOTICES.md",
       "packaged": "THIRD_PARTY_NOTICES.md",
-      "source_sha256": "785445ac78a393c89673ef74d1f384009e5c26dc90c1727491ae7febed50c06a",
-      "packaged_sha256": "785445ac78a393c89673ef74d1f384009e5c26dc90c1727491ae7febed50c06a"
+      "source_sha256": "2410014235ea6ab889c8e93f8a5a881b16ee5f81fb5df0778239398fe2833983",
+      "packaged_sha256": "2410014235ea6ab889c8e93f8a5a881b16ee5f81fb5df0778239398fe2833983"
     },
     {
       "source": "agents/openai.yaml",
@@ -202,20 +202,32 @@
     {
       "source": "assets/reference-browser.html",
       "packaged": "assets/reference-browser.html",
-      "source_sha256": "8c69458a1411a7e6ee02288d4a5debef466fe596e9e3baba11d20bfe1ea5e9ec",
-      "packaged_sha256": "8c69458a1411a7e6ee02288d4a5debef466fe596e9e3baba11d20bfe1ea5e9ec"
+      "source_sha256": "17fc2b4efb3d489b02238a159fca8f15b6393df74ea164d1ae56e52c3b9cdd59",
+      "packaged_sha256": "17fc2b4efb3d489b02238a159fca8f15b6393df74ea164d1ae56e52c3b9cdd59"
     },
     {
       "source": "assets/reference-browser.js",
       "packaged": "assets/reference-browser.js",
-      "source_sha256": "c67ea1f2a475f93bfb7fcb2f215b0c364695a589eec5b7fd7889d451edc46a22",
-      "packaged_sha256": "c67ea1f2a475f93bfb7fcb2f215b0c364695a589eec5b7fd7889d451edc46a22"
+      "source_sha256": "2c989e53315f7b6f632e1c83794f955ad6167c7e31ca19ff0c41242e5005e2b1",
+      "packaged_sha256": "2c989e53315f7b6f632e1c83794f955ad6167c7e31ca19ff0c41242e5005e2b1"
     },
     {
       "source": "assets/reference-library/catalog.json",
       "packaged": "assets/reference-library/catalog.json",
       "source_sha256": "09d8224eeceeca184c5433ca71f184648659d9be31263ae9c11bd95dc5982b92",
       "packaged_sha256": "09d8224eeceeca184c5433ca71f184648659d9be31263ae9c11bd95dc5982b92"
+    },
+    {
+      "source": "assets/reference-library/portfolio-import.json",
+      "packaged": "assets/reference-library/portfolio-import.json",
+      "source_sha256": "787bc6df944ba8399a2dbefaa8ce297fa6407fcc2f95c4371a7a74a630453c88",
+      "packaged_sha256": "787bc6df944ba8399a2dbefaa8ce297fa6407fcc2f95c4371a7a74a630453c88"
+    },
+    {
+      "source": "assets/reference-library/portfolio-index.json",
+      "packaged": "assets/reference-library/portfolio-index.json",
+      "source_sha256": "b9a1a65b5b17ac19ba71c75e38eece723a5f548ffaeb56c3c6723109ed9db560",
+      "packaged_sha256": "b9a1a65b5b17ac19ba71c75e38eece723a5f548ffaeb56c3c6723109ed9db560"
     },
     {
       "source": "assets/reference-library/site-index.json",
@@ -268,8 +280,8 @@
     {
       "source": "evals/routing-scenarios.md",
       "packaged": "evals/routing-scenarios.md",
-      "source_sha256": "024d1bd68ce14c257c3f37f21b9be270b2f58f583c4ef36dcb57fa132be757aa",
-      "packaged_sha256": "024d1bd68ce14c257c3f37f21b9be270b2f58f583c4ef36dcb57fa132be757aa"
+      "source_sha256": "ab2a93fdc1c02e58efa3e5e66468478d2b6abb61de391e096b21ad7a6a3fd444",
+      "packaged_sha256": "ab2a93fdc1c02e58efa3e5e66468478d2b6abb61de391e096b21ad7a6a3fd444"
     },
     {
       "source": "evals/scenarios.md",
@@ -490,8 +502,8 @@
     {
       "source": "references/reference-library.md",
       "packaged": "references/reference-library.md",
-      "source_sha256": "ab7ebfdf057261206b250074fa4faab6974b659411e04d4429e24ef91fdcb4ca",
-      "packaged_sha256": "9cbcde68a8babf69d40fce675fd829500c5a5bd8d0e9bf53e93f85e6ed155bb3"
+      "source_sha256": "bf93444ad21effed5ee2250473fb0db5dcb3edc3303628f2db76ca557cc3833d",
+      "packaged_sha256": "bd63a64e3433d0dc9a1b936af82ac6ea6b4611390caf43b7da2759034fefcad7"
     },
     {
       "source": "references/rendered-validation.md",
@@ -508,8 +520,8 @@
     {
       "source": "references/resources.md",
       "packaged": "references/resources.md",
-      "source_sha256": "66e9dd22e5d13e4bd61691d06a7ceb4017158aedc272c7e12bcec5b7b1eac5f5",
-      "packaged_sha256": "a26c5feb4cda3b355b2b48cccc720370809715c9006f173d79dd9cdc946cf9ef"
+      "source_sha256": "581c403bc05201a2481bd12599142ebdfec8c923aeb610f029e9ede298c181fc",
+      "packaged_sha256": "93745a1ed3403e631d5d02f658979feb7dbc54802ece9ac595a80b55cd60a6c2"
     },
     {
       "source": "references/reusable-objects.md",
@@ -544,14 +556,14 @@
     {
       "source": "references/source-use-cases.md",
       "packaged": "references/source-use-cases.md",
-      "source_sha256": "7591da60fbc1abe95bf4f6250608737b8f945c81f58fffcbb78d647b0c92f984",
-      "packaged_sha256": "7591da60fbc1abe95bf4f6250608737b8f945c81f58fffcbb78d647b0c92f984"
+      "source_sha256": "cac065a79422e636b63c796c00490f1f26e05c29e0f31fea8bfc34ef1b975fbd",
+      "packaged_sha256": "cac065a79422e636b63c796c00490f1f26e05c29e0f31fea8bfc34ef1b975fbd"
     },
     {
       "source": "references/sources.md",
       "packaged": "references/sources.md",
-      "source_sha256": "8b97ec8af08dfb011644de2b500cb49640b4081942de4bc731f483c86716171c",
-      "packaged_sha256": "ff6a7df338e70a72f7f906b15f06ba2c441b30eefc53b01261cc8d1bf82fa9c1"
+      "source_sha256": "bd86caf8306a40b1d15c76ea63fb36dcd336a4b2c5fa933c7a5f4178f3fb41d4",
+      "packaged_sha256": "fa3b20ad5aaba7a682a0eee56148c412609ab3db3f38197ca26b78416fdf74eb"
     },
     {
       "source": "references/specialized-surfaces.md",
@@ -640,8 +652,8 @@
     {
       "source": "scripts/lib/reference-search.mjs",
       "packaged": "scripts/lib/reference-search.mjs",
-      "source_sha256": "80f95c7d7ce04a292b12cb33303d6c68011dd2f4545d8e564bfb18d0dbaab271",
-      "packaged_sha256": "80f95c7d7ce04a292b12cb33303d6c68011dd2f4545d8e564bfb18d0dbaab271"
+      "source_sha256": "c58699c06153a0944592e85ffee919dafe78dd5fd2fd2552b5fabd4a01047d82",
+      "packaged_sha256": "c58699c06153a0944592e85ffee919dafe78dd5fd2fd2552b5fabd4a01047d82"
     },
     {
       "source": "scripts/media.mjs",
@@ -652,8 +664,8 @@
     {
       "source": "scripts/references.mjs",
       "packaged": "scripts/references.mjs",
-      "source_sha256": "050493b604903b721219b4f725e30fe30fb3c06f6e62cd26c24bd33df6524740",
-      "packaged_sha256": "050493b604903b721219b4f725e30fe30fb3c06f6e62cd26c24bd33df6524740"
+      "source_sha256": "3bea47d3f92a44c40da914e613eb9b85d1424abc1007ea9f49fe99bbd48ecac6",
+      "packaged_sha256": "3bea47d3f92a44c40da914e613eb9b85d1424abc1007ea9f49fe99bbd48ecac6"
     },
     {
       "source": "skills/brand/SKILL.md",
@@ -766,8 +778,8 @@
     {
       "source": "skills/reference/SKILL.md",
       "packaged": "skills/forma-reference/SKILL.md",
-      "source_sha256": "79075d3e49ac1a437403e18f9f19e2d3dceb8e836efa3fcd40ca57f0e4da7865",
-      "packaged_sha256": "79075d3e49ac1a437403e18f9f19e2d3dceb8e836efa3fcd40ca57f0e4da7865"
+      "source_sha256": "98e7508a03278ca51cf10c96854bbb6a7a0282252d11ff63ae0e3825756d5ee0",
+      "packaged_sha256": "98e7508a03278ca51cf10c96854bbb6a7a0282252d11ff63ae0e3825756d5ee0"
     },
     {
       "source": "skills/reference/agents/openai.yaml",
@@ -816,6 +828,12 @@
       "packaged": "tests/media.test.cjs",
       "source_sha256": "eeef43644823bbe826285fba195ad9aa38f8402964e960c73be40be885ae59c9",
       "packaged_sha256": "eeef43644823bbe826285fba195ad9aa38f8402964e960c73be40be885ae59c9"
+    },
+    {
+      "source": "tests/references-portfolios.test.cjs",
+      "packaged": "tests/references-portfolios.test.cjs",
+      "source_sha256": "003019c10683447108316d86f5c2deac08f0e7b27473e7fe08dd5d6437298762",
+      "packaged_sha256": "003019c10683447108316d86f5c2deac08f0e7b27473e7fe08dd5d6437298762"
     },
     {
       "source": "tests/references-sites.test.cjs",

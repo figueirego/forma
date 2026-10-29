@@ -64,7 +64,14 @@ Forma maintains its own instructions, pattern descriptions and tools. Each addit
 
 ## Reference library
 
-Forma includes a searchable library of patterns written for its reusable resources and implementation contracts, plus **202 external site references mapped to Forma use cases**. Patterns explain implementation; the site index provides candidates and questions to investigate. Use the local selector or the lightweight browser to explore both. Historical mappings are starting hypotheses, not claims that the sites were recently tested.
+Forma includes a searchable library of patterns written for its reusable resources and implementation contracts, **202 external site references**, and **2,079 developer portfolios** from a pinned community listing. Patterns explain implementation; external collections provide candidates and Forma-authored questions to investigate. Explore all three in the local selector or lightweight browser. Indexed sites are not claimed to have been visited or tested.
+
+```sh
+node <skill-dir>/scripts/references.mjs --portfolios --query "João" --limit 3 --json
+node <skill-dir>/scripts/references.mjs --portfolios --case portfolio-project-stories --limit 3
+```
+
+The portfolio collection retains names, original URLs and source lines from [Developer Portfolios](https://github.com/emmabostian/developer-portfolios/tree/c2ee35d6363e7b2ee4c34f40accb478c0f828e4f). An [import receipt](source/forma/assets/reference-library/portfolio-import.json) records full README coverage, a stale feed and one quarantined malformed URL. No portfolio code, images or descriptions are included; the source snapshot has no explicit license, and individual websites retain their own rights.
 
 > Use Forma to find three references for this project, explain what fits our content, preserve the approved brand, and inspect the selected sites before implementing.
 

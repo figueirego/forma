@@ -1,5 +1,12 @@
 # Histórico
 
+## 1.27.0 — Developer portfolio collection
+
+- Added all 2,079 entries from the pinned Developer Portfolios README as a separate searchable collection in the CLI and browser, with source lines and explicit research-only status.
+- Added three Forma-authored investigation lenses for identity/contact, project evidence and responsive browsing; no unverified stack/style classification or portfolio code/assets are imported.
+- Added an independent reproducible importer and coverage receipt: a stale feed, repeated names, whitespace variation and one quarantined malformed URL are handled without silent loss or invented corrections.
+- Preserved the existing 202-site collection, pattern library and earlier board contracts; added portfolio provenance, rights boundaries and regression checks.
+
 ## 1.26.2 — Website reference coordination
 
 - Made reference-site selection, bounded investigation, coherent synthesis and specialist handoff explicit in the coordinator and reference workflow.

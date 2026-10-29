@@ -2,7 +2,7 @@
 name: forma-reference
 description: "Encontrar e selecionar exemplos de design no catálogo da Forma, pesquisar mídia com créditos, analisar fontes e investigar divergências visuais ou tecnológicas com REA quando necessário. Use para inspiração, reprodução, comparação ou incorporação fundamentada; não para inferir runtime a partir de documentação."
 metadata:
-  version: 1.26.2
+  version: 1.27.0
 ---
 
 # Referências, evidência e fidelidade
@@ -40,6 +40,8 @@ Se o usuário ainda não trouxe uma referência e quer exemplos, comece pela [bi
    Use [verificação](../../references/verification.md); para objetos, [fidelidade 3D](../../references/3d-reference-fidelity.md). Registre diferenças por dimensão, sem uma nota global que esconda lacunas.
 
 ## Saída e parada
+
+Para inspiração de portfólio, a consulta `--portfolios` abre a coleção específica descrita na [biblioteca](../../references/reference-library.md). Ela contém todos os nomes/URLs do README fixado, não milhares de análises de design. Use um roteiro para selecionar candidatas e observar as pertinentes antes de encaminhar implementação. Em importação de listas completas, compare fonte principal e feed, preserve nomes repetidos com destinos distintos, registre cada linha e deixe URLs malformadas sem link; nunca troque cobertura por uma amostra sem declarar.
 
 Entregue mapa fonte → evidência → decisão → consumidor/resultado, com limites e diferenças verificáveis.
 Uma auditoria pedida termina em achados sustentados; uma reprodução pedida exige também o artefato integrado e observado.

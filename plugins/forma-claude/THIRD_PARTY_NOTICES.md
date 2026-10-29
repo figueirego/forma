@@ -32,6 +32,12 @@ SOFTWARE.
 
 ## Dependências e outras referências
 
+### Developer Portfolios — índice factual
+
+`assets/reference-library/portfolio-index.json` registra os nomes e URLs das 2.079 entradas do README de [emmabostian/developer-portfolios](https://github.com/emmabostian/developer-portfolios/blob/c2ee35d6363e7b2ee4c34f40accb478c0f828e4f/README.md), revisão `c2ee35d6363e7b2ee4c34f40accb478c0f828e4f`, examinada em 29/10/2026. O snapshot inspecionado não apresenta arquivo LICENSE e a API informa licença nula; a documentação do feed explica integração por terceiros, mas não fornece uma licença. Não atribuímos MIT à seleção externa nem aos destinos. A Forma não distribui o README integral, taglines, scripts, screenshots, fontes, marcas ou código dos portfólios.
+
+O importador, os roteiros de investigação e a ferramenta de consulta foram escritos para a Forma. Nomes/URLs identificam os respectivos destinos externos; não há afiliação, endosso ou autoria da Forma sobre eles. A data/revisão da fonte, linhas originais, URL malformada e divergências entre README/feed estão preservadas no índice e em `portfolio-import.json`. Qualquer reutilização de código ou mídia exige examinar os direitos da fonte específica. Cadastro não comprova disponibilidade, qualidade ou tecnologia de um site.
+
 Three.js é uma dependência de desenvolvimento dos testes, com sua própria licença MIT e copyright dos autores, preservados no pacote instalado pelo npm. Não é embutido no plugin; o consumidor do BookObject fornece um loader compatível quando desejar WebGL.
 
 O hero em `assets/plugin-brand/hero.png` é uma imagem gerada para a Forma. Os símbolos SVG e o layout da apresentação foram criados para este projeto. Procedência e limites estão em `assets/plugin-brand/provenance.json`. O hero não é modelo 3D editável.

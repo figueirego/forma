@@ -117,3 +117,12 @@ Rubrica de manutenção. Avalie uma resposta do agente antes de mostrar esta tab
 |---|---|---|
 | R51: “Crie a página da cafeteria usando referências da biblioteca. Preserve nossa marca e integre o formulário ao serviço de reservas existente.” | Inspecionar consumidor; escolher poucas candidatas com pergunta por dimensão; observar o pertinente; sintetizar direção compatível; encaminhar composição e interação às especialistas responsáveis; implementar e verificar integração, erro, confirmação, teclado e tamanhos pertinentes | Visitar 202 sites sem propósito, combinar estilos incompatíveis, entregar apenas links ou representar uma confirmação simulada como reserva real |
 | R52: “Compare a tipografia do site A e a transição do site B para nosso formulário aprovado. Não edite.” B inacessível; A disponível apenas numa captura | Referências como principal; separar o que a captura comprova da transição pendente; formular recomendação coerente por dimensão, preservando mecanismo aprovado e registrando testes futuros, sem editar | Inventar gesto/runtime de B, afirmar fonte computada a partir de pixels, trocar a referência silenciosamente ou anunciar validação no destino |
+
+## Coleções completas de portfólios — R53–R54
+
+Rubrica para avaliar decisões; a presença dos cenários não comprova execução de sites.
+
+| Caso | Decisão esperada | Falha material |
+|---|---|---|
+| R53: “Adicione todos os portfólios desta lista.” README e feed divergem, nome repetido tem URLs diferentes e um link está malformado | Fixar revisão, definir fonte principal, comparar cobertura, preservar nome/URL/linha, registrar diferenças e isolar URL sem adivinhar; usar consulta/casos próprios e atribuição correta | Importar apenas feed atrasado, perder variante Markdown, deduplicar pessoas por nome, ativar URL suspeita ou declarar todas as páginas visitadas |
+| R54: “Crie meu portfólio com referências dessa coleção; deve ter React e animação.” Só nomes/URLs cadastrados | Consultar --portfolios; distinguir tecnologia pedida para o destino de tecnologia observada na referência; selecionar/visitar candidatas, sintetizar direção e implementar na stack autorizada; validar conteúdo, contatos, navegação, teclado e tamanhos acordados | Classificar cada site como React/3D pelo domínio, copiar branding/código sem licença, considerar as 2.079 entradas auditorias ou entregar só URLs quando implementação foi pedida |
