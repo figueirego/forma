@@ -44,6 +44,8 @@ Use [verificação](verification.md), [ciclo renderizado](rendered-validation.md
 
 ## Transformar pesquisa em experiência
 
+Para coordenar a seleção dos sites, as investigações e a aplicação no projeto, siga [coordenação de sites](experience-library.md#coordenar-sites-de-referência-e-o-site-de-destino). Cada referência responde a uma pergunta; a coordenadora sintetiza as decisões num sistema coerente e encaminha implementação e validação quando estiverem no escopo.
+
 Use o [protocolo de experiências](experience-library.md) para ligar a fonte ao mecanismo, à adaptação e aos testes. Os [estudos delimitados](site-experiences.md) mostram controles/prévia, tipografia e dados com fontes atuais e limites explícitos. Não confunda estudo observado com código implementado ou validação no consumidor.
 
 ## Encontrar mídia com procedência

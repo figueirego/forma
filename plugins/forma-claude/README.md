@@ -1,4 +1,4 @@
-# Forma 1.26.1 para Claude Code
+# Forma 1.26.2 para Claude Code
 
 Uma coordenadora e 11 especialistas. Use `/forma:forma` ou `/forma:forma-interface`.
 O marketplace comunitário está na raiz do repositório: `claude plugin marketplace add figueirego/forma`, depois `claude plugin install forma@forma-community`.

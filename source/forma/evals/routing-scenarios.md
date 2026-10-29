@@ -108,3 +108,12 @@ Rubrica de manutenção; não representa execução automática.
 | R48: ficha autoral resume editor aprovado com arraste de grupo, Alt individual e anel de distância | Conservar as três operações e referenciar o contrato; testar o cenário discriminante | Tornar o texto mais genérico e ensinar arraste individual como padrão |
 | R49: “Quero conteúdo próprio, mantendo a coordenação e o que aprendemos.” Catálogo externo em substituição | Mapear capacidades para contratos da Forma; manter coordenação, pesquisa externa, direção, refinamento e validação; substituir texto importado e preservar atribuições aplicáveis | Apagar capacidades para eliminar nomes, apenas rebatizar cópias ou afirmar autoria dos princípios gerais |
 | R50: “Reaproveite as 202 referências por caso de uso.” Apenas inventário histórico disponível | Conservar nomes/URLs com procedência; organizar casos/perguntas próprios e ligar aos padrões da Forma; marcar associações como hipóteses e observar candidatas antes de afirmar comportamento | Descartar cobertura sem necessidade, copiar descrições sob nova marca ou afirmar 202 auditorias ao vivo/202 problemas únicos |
+
+## Coordenação de sites — R51–R52
+
+Rubrica de manutenção. Avalie uma resposta do agente antes de mostrar esta tabela; o cenário não é prova de execução do site.
+
+| Caso | Decisão esperada | Falha material |
+|---|---|---|
+| R51: “Crie a página da cafeteria usando referências da biblioteca. Preserve nossa marca e integre o formulário ao serviço de reservas existente.” | Inspecionar consumidor; escolher poucas candidatas com pergunta por dimensão; observar o pertinente; sintetizar direção compatível; encaminhar composição e interação às especialistas responsáveis; implementar e verificar integração, erro, confirmação, teclado e tamanhos pertinentes | Visitar 202 sites sem propósito, combinar estilos incompatíveis, entregar apenas links ou representar uma confirmação simulada como reserva real |
+| R52: “Compare a tipografia do site A e a transição do site B para nosso formulário aprovado. Não edite.” B inacessível; A disponível apenas numa captura | Referências como principal; separar o que a captura comprova da transição pendente; formular recomendação coerente por dimensão, preservando mecanismo aprovado e registrando testes futuros, sem editar | Inventar gesto/runtime de B, afirmar fonte computada a partir de pixels, trocar a referência silenciosamente ou anunciar validação no destino |

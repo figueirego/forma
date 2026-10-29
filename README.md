@@ -151,3 +151,5 @@ Plugins, catalogs, and Agent Skills are generated and versioned; CI checks that 
 ### Learning from references
 
 Forma keeps site candidates separate from verified experience. The [experience workflow](source/forma/references/experience-library.md) connects observations, implementation techniques, licenses, adaptation decisions and tests. [Three bounded studies](source/forma/references/site-experiences.md) illustrate this process; the 202-site index is not a claim that every site has been audited or copied.
+
+Coordination also covers websites: select relevant sources, assign concrete research questions, reconcile findings into one design direction, hand decisions to the appropriate specialists, then implement and verify the destination when requested. The assistant carries out this workflow with available tools; the reference browser itself is a selector, not an autonomous crawler.

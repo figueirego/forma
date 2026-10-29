@@ -1,5 +1,5 @@
 {
-  "version": "1.26.1",
+  "version": "1.26.2",
   "source": "canonical Forma skill",
   "transformations": [
     "Flatten skill directories",
@@ -17,8 +17,8 @@
     {
       "source": "SKILL.md",
       "packaged": "skills/forma/SKILL.md",
-      "source_sha256": "a7f0bfe66084b6cb5aaec68b4efa543250bb3d93b717f9b80e839de2d001ccd8",
-      "packaged_sha256": "efa9d1186fb16618bca8a08868b72327363e4ac816400c6919240e16710a1960"
+      "source_sha256": "a25f1d1613d8bd804db0474a7a961ce7fba3439e01b9af48454372e26bb43bf7",
+      "packaged_sha256": "70c4205f9c9b77a2ca225ceb9bd3df4e5e83660254cf0c41198b293b2f491202"
     },
     {
       "source": "THIRD_PARTY_NOTICES.md",
@@ -269,8 +269,8 @@
     {
       "source": "evals/routing-scenarios.md",
       "packaged": "evals/routing-scenarios.md",
-      "source_sha256": "beaf6a752849410f169a834ac797a7814a998f4380a16b1761b9da1d4a83f862",
-      "packaged_sha256": "beaf6a752849410f169a834ac797a7814a998f4380a16b1761b9da1d4a83f862"
+      "source_sha256": "024d1bd68ce14c257c3f37f21b9be270b2f58f583c4ef36dcb57fa132be757aa",
+      "packaged_sha256": "024d1bd68ce14c257c3f37f21b9be270b2f58f583c4ef36dcb57fa132be757aa"
     },
     {
       "source": "evals/scenarios.md",
@@ -383,8 +383,8 @@
     {
       "source": "references/experience-library.md",
       "packaged": "references/experience-library.md",
-      "source_sha256": "cd739275ce3ec84ad8974d88e2e95c3dd2d96f4ba98a9e911b5c881fb7bb6ef7",
-      "packaged_sha256": "cd739275ce3ec84ad8974d88e2e95c3dd2d96f4ba98a9e911b5c881fb7bb6ef7"
+      "source_sha256": "50bfe2d5a2b6b7c635c8f7ca4281acc4d14eb7b71000857364ff59e855e3e2c1",
+      "packaged_sha256": "50bfe2d5a2b6b7c635c8f7ca4281acc4d14eb7b71000857364ff59e855e3e2c1"
     },
     {
       "source": "references/fidelity-contracts.md",
@@ -491,8 +491,8 @@
     {
       "source": "references/reference-library.md",
       "packaged": "references/reference-library.md",
-      "source_sha256": "035cb27a9a5ad7d309560147b5f57a4d1bf78f072056c727ec2dde1eb8d5040e",
-      "packaged_sha256": "3b2202f44f03044a19542c4495c0687a37416a319351cce8e9bde8cb16e9d1ee"
+      "source_sha256": "ab7ebfdf057261206b250074fa4faab6974b659411e04d4429e24ef91fdcb4ca",
+      "packaged_sha256": "0ae7f6486bf3a80fd6073e55ca3b2be19f23d7284f60ded7bcfa75ef62f5c227"
     },
     {
       "source": "references/rendered-validation.md",
@@ -521,8 +521,8 @@
     {
       "source": "references/routing.md",
       "packaged": "references/routing.md",
-      "source_sha256": "c1743a55a462489f57c478d1b431d32edb45dac3baf0c394639ac504041557cd",
-      "packaged_sha256": "6bc87a3a7b12b1f97fd3a39cc22a3b60f8b2689ba9c07613a7aef19d927fd0d2"
+      "source_sha256": "9959f5ec65a444ac9882760c5eed8b4792b18464ed27c854f8b140d780566b03",
+      "packaged_sha256": "f6163964040c8574c8b40084effc453530fdfdbc6b3197b6a5c2442f829f8f98"
     },
     {
       "source": "references/search-discovery.md",
@@ -767,8 +767,8 @@
     {
       "source": "skills/reference/SKILL.md",
       "packaged": "skills/forma-reference/SKILL.md",
-      "source_sha256": "f32bc3ca047fd1d0ed199766dc1fe5a63b198d1472db25221b60122241607e44",
-      "packaged_sha256": "f32bc3ca047fd1d0ed199766dc1fe5a63b198d1472db25221b60122241607e44"
+      "source_sha256": "79075d3e49ac1a437403e18f9f19e2d3dceb8e836efa3fcd40ca57f0e4da7865",
+      "packaged_sha256": "79075d3e49ac1a437403e18f9f19e2d3dceb8e836efa3fcd40ca57f0e4da7865"
     },
     {
       "source": "skills/reference/agents/openai.yaml",

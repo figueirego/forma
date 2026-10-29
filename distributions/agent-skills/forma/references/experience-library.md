@@ -14,6 +14,19 @@ O repertório reúne [candidatas por caso](reference-library.md), [estudos delim
 6. Quando implementar estiver no escopo, escreva a adaptação no consumidor, execute testes relevantes e compare o resultado renderizado. Uma experiência observada continua útil mesmo sem implementação, desde que o estado seja explícito.
 7. Promova aprendizado recorrente para um contrato existente, evitando duplicar teoria. Atualize a ficha que aponta ao contrato e inclua uma regressão que detecte o erro real. Revise por PR; mantenha origem e evidência histórica.
 
+## Coordenar sites de referência e o site de destino
+
+Exemplo: “Crie o site da minha cafeteria usando referências da Forma”. A coordenadora conserva público, conteúdo, marca, stack e objetivo do site; `reference` investiga fontes pertinentes e entrega decisões aproveitáveis. Marca/produto resolve mensagem quando necessário, foundations organiza tokens e composição, interface implementa, e a validação verifica o destino. Motion ou 3D entram apenas quando servirem à tarefa. Uma correção pequena não precisa percorrer toda essa sequência.
+
+1. **Defina a pergunta de cada referência.** Por exemplo: organização do menu, hierarquia tipográfica ou resposta do botão. Comece com poucas candidatas pertinentes (normalmente até três), ampliando somente se faltar evidência; uma lista explicitamente pedida pelo usuário pode ser maior. O tamanho do catálogo não determina o tamanho da pesquisa.
+2. **Distribua investigação sem perder contexto.** Cada recorte tem URL/revisão, pergunta, estados/tamanhos, evidência esperada e limite. Se houver subagentes disponíveis e vantagem real, delegue recortes independentes; sem eles, execute a mesma coordenação sequencialmente. Evite controle simultâneo da mesma aba e edições concorrentes nos mesmos arquivos. Ler três sites não exige criar três agentes.
+3. **Reúna resultados comparáveis.** Para cada achado, registre fonte → evidência/limite → técnica → decisão → consumidor → teste. Use o [modelo de experiência](templates.md#experiência-reutilizável). Código e licença são investigados quando relevantes; um site indisponível fica pendente ou é substituído por uma candidata justificada, sem inventar observação.
+4. **Escolha uma direção coerente.** Compare as contribuições por dimensão e resolva conflitos antes de implementar. Preserve a marca aprovada; quando estiver aberta, explicite a direção escolhida. Uma referência pode informar a tipografia e outra a navegação, mas tokens, espaçamentos e estados precisam compor um único sistema. Não combine paletas, fontes, persistência ou gestos incompatíveis por votação entre sites. Registre também o que rejeitou e por quê.
+5. **Entregue decisões à especialista responsável.** Envie objetivo, stack, mecanismo a preservar, fonte/evidência, alteração delimitada e aceite. A coordenadora integra o resultado e confere dependências; não transfira o brief inteiro a cada etapa nem permita chamadas recursivas entre módulos. Use o [contrato compartilhado](routing.md#um-contrato-compartilhado).
+6. **Feche conforme o pedido.** Pesquisa termina em síntese sustentada; criação/refinamento autorizado exige implementar e testar no site de destino, nos estados e tamanhos pertinentes. Confirme arquivos carregados e interações. Registre o aprendizado no projeto; só promova ao pacote Forma quando sua manutenção estiver autorizada. Consulta a uma fonte não autoriza mudar o plugin global.
+
+A coordenação é um procedimento executado pelo assistente com as ferramentas disponíveis. O catálogo e o navegador de fichas ajudam a selecionar fontes; não visitam os sites nem executam essa sequência sozinhos. Uma fonte bloqueada, uma captura isolada ou testes do pacote não comprovam a implementação final.
+
 ## Estados e prova
 
 | Estado | O que permite afirmar | O que ainda falta |

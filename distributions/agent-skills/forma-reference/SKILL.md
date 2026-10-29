@@ -2,7 +2,7 @@
 name: forma-reference
 description: "Encontrar e selecionar exemplos de design no catálogo da Forma, pesquisar mídia com créditos, analisar fontes e investigar divergências visuais ou tecnológicas com REA quando necessário. Use para inspiração, reprodução, comparação ou incorporação fundamentada; não para inferir runtime a partir de documentação."
 metadata:
-  version: 1.26.1
+  version: 1.26.2
 ---
 
 # Referências, evidência e fidelidade
@@ -21,6 +21,8 @@ Preserve marca e stack do destino salvo mudança explicitamente pedida; fidelida
 - Critérios de fidelidade visual/comportamental/técnica, estados e tamanhos; direitos de uso e limites conhecidos.
 
 ## Procedimento
+
+Para pesquisa de vários sites ou criação orientada por referências, use [coordenação de sites](../forma/references/experience-library.md#coordenar-sites-de-referência-e-o-site-de-destino). Este módulo seleciona e sintetiza fontes; a coordenadora mantém o contrato do destino, resolve incompatibilidades e aciona implementação/validação quando autorizadas. Não entregue uma coleção de estilos desconexos ou apenas URLs como resultado de implementação.
 
 Se o usuário ainda não trouxe uma referência e quer exemplos, comece pela [biblioteca e pesquisa](../forma/references/reference-library.md). Execute `scripts/references.mjs` na raiz compartilhada da skill para padrões locais; use `--sites` para candidatas externas organizadas por caso de uso. Filtre pela tarefa, leia o caso e explique a escolha. As associações históricas são hipóteses: observe as candidatas selecionadas antes de afirmar comportamento atual, descarte associações que não se sustentem e ligue a evidência ao padrão/consumidor. Não anuncie a consulta como visita. Para imagens/vídeos contextuais, `scripts/media.mjs` pesquisa coleções e registra créditos; baixar é uma ação explícita por ID. Ficha, site de referência, código, exemplo e contrato são recursos distintos.
 

@@ -2,7 +2,7 @@
 name: forma
 description: "Coordenar especialistas de design para criar, refinar, adaptar ou auditar interfaces, sistemas visuais e materiais de marca. Seleciona por caso a skill interna de interface, cores/layout, produto, 3D, grafos, movimento, plataforma, marca, referência, handoff ou validação. Use também para reaplicar componentes aprovados em outro projeto; não para backend isolado."
 metadata:
-  version: 1.26.1
+  version: 1.26.2
 ---
 
 # Forma
@@ -12,6 +12,8 @@ Uma entrada para o sistema: entenda o pedido, selecione a especialidade, leia su
 Para instalar, atualizar, conferir a distribuição ou distinguir a skill avulsa do plugin, consulte [operação do plugin](references/plugin-operation.md). A identidade visual da Forma pertence à ferramenta; nunca substitui a marca do projeto atendido.
 
 Para transformar referências em repertório técnico reutilizável, encaminhe ao módulo `reference` e ao [protocolo de experiências](references/experience-library.md): fonte → evidência → mecanismo → adaptação → teste, preservando licença e limites.
+
+A coordenação também cobre sites: encontrar referências, investigar suas técnicas e criar ou refinar o site de destino. Em pesquisa com várias fontes, `reference` reúne a evidência; a coordenadora escolhe uma direção coerente e encaminha decisões às especialistas pertinentes. Siga [coordenação de sites](references/experience-library.md#coordenar-sites-de-referência-e-o-site-de-destino). Não encerre um pedido de criação numa lista de links.
 
 ## Como coordenar
 

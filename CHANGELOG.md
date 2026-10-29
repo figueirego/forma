@@ -1,5 +1,10 @@
 # Histórico
 
+## 1.26.2 — Website reference coordination
+
+- Made reference-site selection, bounded investigation, coherent synthesis and specialist handoff explicit in the coordinator and reference workflow.
+- Added routing scenarios for website creation and conflicting or unavailable references; research remains separate from destination implementation and validation.
+
 ## 1.26.1 — Use-case routing for external references
 
 - Retained all 202 historical site names and URLs in a separate index mapped to Forma-authored investigation cases and existing patterns.
