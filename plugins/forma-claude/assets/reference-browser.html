@@ -1,40 +1,48 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title>Referências · Forma</title>
-  <link rel="stylesheet" href="reference-browser.css">
-  <script type="module" src="reference-browser.js"></script>
+  <title>Reference Library | Forma</title>
+  <link rel="stylesheet" href="reference-browser.css?v=1.28.1">
+  <script type="module" src="reference-browser.js?v=1.28.1"></script>
 </head>
 <body>
   <header class="masthead">
-    <a class="brand" href="https://github.com/figueirego/forma" aria-label="Forma no GitHub"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 3h7v26H3zm10 0h16v7H13zm0 10h12v7H13z"/></svg>Forma</a>
-    <span>Biblioteca de referências</span>
+    <a class="brand" href="https://github.com/figueirego/forma" aria-label="Forma on GitHub"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 3h7v26H3zm10 0h16v7H13zm0 10h12v7H13z"/></svg>Forma</a>
+    <span>Reference library</span>
   </header>
   <main>
     <section class="intro" aria-labelledby="title">
-      <p class="eyebrow">DA REFERÊNCIA À DECISÃO</p>
-      <h1 id="title">Um ponto de partida.<br>Um projeto com identidade.</h1>
-      <p>Explore composições, mecanismos e casos de uso. Leia a origem e os limites antes de adaptar ao seu projeto.</p>
+      <p class="eyebrow">FROM REFERENCE TO IMPLEMENTATION</p>
+      <h1 id="title">A clear starting point.<br>A design of your own.</h1>
+      <p>Choose Forma patterns to implement or external sites to study. Research guides help you ask useful questions; they do not report verified findings about each site.</p>
     </section>
-    <form id="filters" role="search" aria-label="Filtrar referências">
-      <div class="field query"><label for="query">O que você quer criar?</label><input id="query" type="search" placeholder="Sidebar, typography, perfil…" autocomplete="off"></div>
-      <div class="field"><label for="origin">Origem</label><select id="origin"><option value="">Todas</option><option value="forma">Forma</option><option value="taste">Estudo Taste</option></select></div>
-      <div class="field"><label for="kind">Contexto</label><select id="kind"><option value="">Todos</option></select></div>
+    <div class="library-source"><label for="collection">Collection</label><select id="collection"><option value="patterns">Forma patterns</option><option value="sites">Website references</option><option value="portfolios">Developer portfolios</option></select><a href="../references/reference-library.md">How to use references</a></div>
+    <form id="filters" role="search" aria-label="Filter references">
+      <div class="field query"><label id="query-label" for="query">What do you want to create?</label><input id="query" type="search" placeholder="Sidebar, typography, profile..." autocomplete="off" aria-describedby="query-help"><p id="query-help" class="field-help">Find a local pattern for your design task.</p></div>
+      <div class="field" id="evidence-field"><label for="evidence">Resource type</label><select id="evidence"><option value="">All</option></select></div>
+      <div class="field" id="kind-field"><label for="kind">Context</label><select id="kind"><option value="">All</option></select></div>
+    <div class="field" id="case-field" hidden><label for="case">Research guide</label><select id="case"><option value="">All</option></select></div>
     </form>
-    <div class="result-line"><p id="status" role="status" aria-live="polite">Carregando catálogo…</p><p>Fichas documentais · seleção local</p></div>
+    <div class="result-line"><p id="status" role="status" aria-live="polite">Loading the library...</p><p><span id="source-note">Written by Forma / Local search</span></p></div>
+    <p id="scope-note" class="scope-note" hidden></p>
     <div id="error" role="alert" hidden></div>
+    <section id="guide-suggestions" class="guide-suggestions" aria-labelledby="guide-title" hidden>
+      <h2 id="guide-title">Research guides for this topic</h2>
+      <p>These guides suggest questions to explore. Their candidate counts do not confirm which sites have the feature you searched for.</p>
+      <div id="guide-cards" class="guide-cards"></div>
+    </section>
     <div id="cards" class="cards"></div>
-    <p id="empty" hidden>Nenhuma referência corresponde aos filtros. Tente outro termo ou amplie o contexto.</p>
-    <button id="more" type="button" hidden>Mostrar mais referências</button>
-    <aside class="note"><strong>Inspiração com contexto.</strong> As fichas externas são registros históricos do estudo Taste, sem capturas incluídas nem visita ao vivo nesta consulta. As fichas Forma distinguem código, exemplos e contratos. Uma referência não transfere direitos sobre os assets do site.</aside>
+    <p id="empty" hidden>No patterns match these filters. Try another term or a broader context.</p>
+    <button id="more" type="button" hidden>Show more patterns</button>
+    <aside class="note"><strong>References with context.</strong> Pattern records distinguish reusable code, demos and implementation requirements. External sites are candidates for research. Forma's guides suggest what to investigate; they do not verify each site. Inspect selected references before adapting them and respect their authors' rights.</aside>
   </main>
   <dialog id="detail" aria-labelledby="detail-title">
-    <header class="detail-head"><span id="detail-origin"></span><button id="close-detail" type="button" aria-label="Fechar ficha" autofocus>Fechar <span aria-hidden="true">×</span></button></header>
+    <header class="detail-head"><span id="detail-origin"></span><button id="close-detail" type="button" aria-label="Close reference" autofocus>Close <span aria-hidden="true">&times;</span></button></header>
     <div id="detail-content"></div>
   </dialog>
-  <footer>Forma · From intent to craft. <a href="../references/reference-library.md">Guia de uso e limites</a></footer>
+  <footer>Forma / From intent to craft. <a href="../references/reference-library.md">Usage guide and limitations</a></footer>
 </body>
 </html>

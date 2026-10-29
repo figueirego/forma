@@ -1,47 +1,47 @@
 ---
 name: forma-platforms
-description: "Adaptar experiência à web, mobile, desktop, distribuição e superfícies especializadas, respeitando entrada, navegação e runtime reais. Use para diferenças de plataforma e instaladores; não para escolher framework apenas por aparência ou extensão de arquivo."
+description: "Adapt experiences to web, mobile, desktop, distribution and specialized surfaces, respecting actual input, navigation and runtime behavior. Use for platform differences and installers; not to choose a framework only by appearance or file extension."
 metadata:
   version: 1.17.1
 ---
 
-# Plataformas e distribuição
+# Platforms and distribution
 
-## Quando usar
+## When to use
 
-- Use para responsividade web, iOS/Android, janelas desktop, instalação/atualização ou superfície especializada.
-- Não use para migrar stack sem necessidade ou afirmar comportamento nativo a partir de mockup no navegador.
+- Use for web responsiveness, iOS/Android, desktop windows, installation/updates or specialized surfaces.
+- Do not use to migrate the stack unnecessarily or claim native behavior from a browser mockup.
 
-Este módulo exige leitura explícita; não instala, distribui ou chama outros módulos automaticamente.
-Preserve marca, stack e contratos existentes. Identifique o runtime antes de indicar implementação.
+This module requires explicit reading; it does not install, distribute or call other modules automatically.
+Preserve the existing brand, stack and contracts. Identify the runtime before recommending an implementation.
 
-## Entradas
+## Inputs
 
-- Plataforma, SO/versão e dispositivos alvo; tarefa, modos de entrada, distribuição e restrições conhecidas.
-- Manifests/código, navegação atual, suporte prometido e ambientes realmente disponíveis para teste.
+- Platform, OS/version and target devices; task, input methods, distribution and known constraints.
+- Manifests/code, current navigation, promised support and environments actually available for testing.
 
-## Procedimento
+## Procedure
 
-1. Detecte tecnologia e separe aplicação, empacotamento e distribuição.
-   Leia [adaptação por plataforma](../../references/platform-adapters.md); EXE/DMG não definem framework ou linguagem visual.
-2. Para navegador, leia [web](../../references/web.md); para telefone/tablet/dobrável, [mobile](../../references/mobile.md).
-   Adapte navegação, insets, texto, teclado, gesto e área disponível; não imponha controles web à experiência nativa.
-3. Para desktop/instalador, leia [desktop e distribuição](../../references/desktop-distribution.md).
-   Para TV, wearable, kiosk, voz ou experiências espaciais, leia [superfícies especializadas](../../references/specialized-surfaces.md) e verifique documentação atual pertinente.
-4. Implemente a menor adaptação no alvo autorizado, preservando dados e continuidade de tarefa.
-   Use os [playbooks](../../references/playbooks.md) pertinentes. Modele interrupção/recuperação de instalação ou atualização quando isso fizer parte do pedido.
-5. Execute o fluxo no runtime e nos modos de entrada disponíveis; verifique tamanhos, escala e estados afetados.
-   Use [acessibilidade](../../references/accessibility.md) e [verificação](../../references/verification.md); mantenha matriz explícita de ambientes testados e não testados.
+1. Detect the technology and separate application, packaging and distribution.
+   Read [platform adaptation](../../references/platform-adapters.md); EXE/DMG do not define a framework or visual language.
+2. For browsers, read [web](../../references/web.md); for phones/tablets/foldables, read [mobile](../../references/mobile.md).
+   Adapt navigation, insets, text, keyboard, gestures and available space; do not impose web controls on a native experience.
+3. For desktop/installers, read [desktop and distribution](../../references/desktop-distribution.md).
+   For TV, wearables, kiosks, voice or spatial experiences, read [specialized surfaces](../../references/specialized-surfaces.md) and check relevant current documentation.
+4. Implement the smallest adaptation in the authorized target, preserving data and task continuity.
+   Use the relevant [playbooks](../../references/playbooks.md). Model installation/update interruption and recovery when they are part of the request.
+5. Run the flow in the available runtime and input methods; verify affected sizes, scale and states.
+   Use [accessibility](../../references/accessibility.md) and [verification](../../references/verification.md); maintain an explicit matrix of tested and untested environments.
 
-## Saída e parada
+## Output and stopping condition
 
-Entregue adaptação funcional ou especificação pedida, decisões por plataforma e evidência do ambiente usado.
-Para distribuição, distinga pacote gerado, assinado, instalado, atualizado e publicado: cada etapa requer prova própria.
-Pare quando a tarefa e recuperação pertinentes funcionarem no escopo de suporte contratado.
-Sem SO/dispositivo alvo, entregue o trabalho possível e declare runtime não testado; simulação visual não encerra esse requisito.
+Deliver a working adaptation or the requested specification, platform decisions and evidence from the environment used.
+For distribution, distinguish generated, signed, installed, updated and published packages: each stage requires its own proof.
+Stop when the relevant task and recovery work within the agreed support scope.
+Without the target OS/device, deliver the work possible and declare the untested runtime; visual simulation does not complete that requirement.
 
-## Apoios opcionais e limites
+## Optional support and limits
 
-`ecc:react-native-patterns`, `ecc:compose-multiplatform-patterns`, `ecc:liquid-glass-design` e `accessibility` podem apoiar a stack/superfície correspondente.
-Leia apenas o `SKILL.md` atual do apoio disponível e pertinente, conforme [integrações](../../references/integrations.md); não infira ferramentas a partir do nome.
-Não instale frameworks nem publique pacotes pelo roteamento deste módulo. Critérios de design não substituem certificação especializada.
+`ecc:react-native-patterns`, `ecc:compose-multiplatform-patterns`, `ecc:liquid-glass-design` and `accessibility` can support the corresponding stack/surface.
+Read only the current `SKILL.md` for available, relevant support, as described in [integrations](../../references/integrations.md); do not infer tools from the name.
+Do not install frameworks or publish packages through this module's routing. Design criteria do not replace specialist certification.

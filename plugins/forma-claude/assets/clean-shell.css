@@ -1,5 +1,5 @@
 /*
- * Clean shell — portable, original UI foundation. No framework or external assets.
+ * Clean shell - portable, original UI foundation. No framework or external assets.
  * Public contract: wrap markup in .dc-shell; all component classes use dc-.
  * Set data-dc-theme="light|dark" on the root (resolve "system" in your app).
  * Optional root state: data-dc-collapsed="true|false", data-dc-nav-open="true|false",

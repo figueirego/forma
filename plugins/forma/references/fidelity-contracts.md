@@ -1,29 +1,29 @@
-# Reproduzir sem reinterpretar o que já foi aprovado
+# Reproduce without reinterpreting what was approved
 
-Neste plugin, `<forma-root>` é a pasta que contém `.codex-plugin/`, `references/`, `assets/`, `scripts/` e `tests/`; não é a pasta de uma especialista. Resolva-a a partir deste arquivo.
+In this plugin, `<forma-root>` is the directory containing `.codex-plugin/`, `references/`, `assets/`, `scripts/` and `tests/`; it is not a specialist directory. Resolve it relative to this file.
 
-Use quando o pedido for **reprodução ou transferência fiel**. Para inspiração ou criação nova, defina critérios do novo produto; não imponha este editor, suas medidas ou seus gestos.
+Use when the request is for **faithful reproduction or transfer**. For inspiration or new creation, define the new product's criteria; do not impose this editor, its dimensions, or its gestures.
 
-## Fixar o alvo e fechar a comparação
+## Fix the target and complete the comparison
 
-1. Registre o artefato aprovado, revisão e estado; se a implementação aprovada difere do estudo original, prevalece a escolha atual do usuário. Separe o que será preservado das adaptações autorizadas. Evidência histórica não é automaticamente regra atual.
-2. Leia o componente existente e o perfil portátil. Reutilize código próprio disponível antes de reimplementar; se só há contrato, implemente-o na stack. Referências e checkers não importam um componente automaticamente.
-3. Fixe os esperados **antes** de alterar o destino. Um teste que chama a mesma função nos dois lados, copia o resultado do destino ou regenera o baseline com ele não demonstra fidelidade. Versione o contrato; ampliar tolerância ou retirar um caso exige motivo e nova decisão, não conveniência para obter verde.
-4. Colete modelo, caixas e estilos computados no navegador com os mesmos dados, viewport CSS, DPR, fonte, modo e seleção. Compare o papel visual real: se uma bolinha é pintada em `::before`, ler o fundo transparente do botão produz um falso defeito. Identifique a camada pintada em cada implementação; não use o token declarado como substituto da cor computada. Gestos exigem todos os elementos antes/durante/depois. Inspecione também capturas: medir coordenadas não prova clipping, material, legibilidade ou ausência de outro elemento por cima.
-5. Compare, corrija dentro do escopo e repita os casos afetados. Falha ou medição ausente continua pendente; não some tudo em uma nota média. Verifique [identidade carregada e rascunhos](rendered-validation.md#aplicação-da-110-no-pauta--recorte-adaptação-e-identidade-da-execução), persistência, erro e acesso separadamente. Só anuncie aprovação dos critérios comprovados.
+1. Record the approved artifact, revision, and state; if the approved implementation differs from the original study, the user's current choice takes precedence. Separate what will be preserved from authorized adaptations. Historical evidence is not automatically a current rule.
+2. Read the existing component and portable profile. Reuse available original code before reimplementing; if only a contract exists, implement it in the stack. References and checkers do not import a component automatically.
+3. Fix expected values **before** changing the destination. A test that calls the same function on both sides, copies destination output, or regenerates its baseline from that output does not demonstrate fidelity. Version the contract; widening tolerance or removing a case requires a reason and a new decision, not convenience to make tests green.
+4. Collect the model, boxes, and computed styles in the browser using the same data, CSS viewport, DPR, font, mode, and selection. Compare the actual painted role: if a dot is painted in `::before`, reading the button's transparent background produces a false defect. Identify the painted layer in each implementation; do not substitute a declared token for computed color. Gestures require every element before/during/after. Inspect captures too: measuring coordinates does not prove clipping, material, legibility, or the absence of an overlapping element.
+5. Compare, correct within scope, and repeat affected cases. Failures or missing measurements remain pending; do not combine everything into an average score. Verify [loaded identity and drafts](rendered-validation.md#applying-110-to-pauta---scope-adaptation-and-execution-identity), persistence, errors, and access separately. Announce acceptance only for proven criteria.
 
-## Verificador portátil
+## Portable verifier
 
 `python3 <forma-root>/scripts/check_fidelity.py <contract.json> <observation.json>`
 
-Python3.9+, stdlib, leitura local. O script não abre o navegador, não executa o aplicativo, não altera preferências e não usa rede. Ele reprova medições divergentes, ausentes, duplicadas, valores não finitos, tipos incompatíveis e evidências locais inválidas. Não aceita um `status:pass` no lugar da medição. Exit0 significa que **os valores fornecidos** satisfazem o contrato; não confirma a veracidade da coleta, a completude dos requisitos ou fidelidade visual integral. Exit1 indica divergência/incompletude; exit2, falha de leitura/JSON.
+Python 3.9+, standard library, local reads. The script does not open the browser, execute the application, change preferences, or use the network. It rejects divergent, missing, or duplicate measurements, nonfinite values, incompatible types, and invalid local evidence. It does not accept `status:pass` instead of a measurement. Exit 0 means **the supplied values** satisfy the contract; it does not confirm collection accuracy, requirement completeness, or full visual fidelity. Exit 1 indicates divergence/incompleteness; exit 2 indicates a read/JSON failure.
 
-Contrato mínimo, com critérios independentes da observação:
+Minimal contract, with criteria independent of the observation:
 
 ```json
 {
   "schema_version": 1,
-  "profile_id": "meu-componente-revisao-aprovada",
+  "profile_id": "my-component-approved-revision",
   "checks": [
     {"id":"stage.height","kind":"number","expected":206,"tolerance":1},
     {"id":"selection","kind":"exact","expected":[false,true,false]}
@@ -31,12 +31,12 @@ Contrato mínimo, com critérios independentes da observação:
 }
 ```
 
-Observação correspondente, preenchida apenas depois de medir:
+Corresponding observation, populated only after measurement:
 
 ```json
 {
   "schema_version": 1,
-  "profile_id": "meu-componente-revisao-aprovada",
+  "profile_id": "my-component-approved-revision",
   "results": [
     {"id":"stage.height","actual":206,"artifact":"captures/measurements.json"},
     {"id":"selection","actual":[false,true,false],"artifact":"captures/measurements.json"}
@@ -44,24 +44,24 @@ Observação correspondente, preenchida apenas depois de medir:
 }
 ```
 
-O exemplo é ilustrativo e não foi executado. `artifact` deve apontar para arquivo local não vazio dentro da pasta da observação, relativo, sem `..`, caminho absoluto ou symlink. Guarde capturas/traços brutos suficientes para revisar a origem dos números; existência do arquivo não prova seu conteúdo. Tolerância pertence ao contrato, nunca à observação. `number` compara escalares finitos e não aceita booleanos; `exact` compara valores JSON e tipos, inclusive dentro de listas/objetos. Não arredonde a observação para ocultar erro.
+The example is illustrative and was not executed. `artifact` must point to a nonempty local file inside the observation directory, using a relative path with no `..` segments; absolute paths and symlinks are forbidden. Retain enough raw captures/traces to review the numbers' origin; file existence does not prove its content. Tolerance belongs to the contract, never the observation. `number` compares finite scalars and rejects booleans; `exact` compares JSON values and types, including inside lists/objects. Do not round observations to conceal errors.
 
-O contrato pode ser pequeno para uma correção local. Uma seleção parcial deve ter escopo/identificador próprio e resultado igualmente parcial; nunca remover checks do contrato completo para anunciar aprovação completa. Não exigir este formato se os testes existentes já comparam os mesmos invariantes com evidência equivalente.
+The contract may be small for a local correction. A partial selection must have its own scope/identifier and an equally partial result; never remove checks from the full contract to announce complete acceptance. Do not require this format if existing tests already compare the same invariants with equivalent evidence.
 
-## Amostra do editor compacto aprovado
+## Approved compact editor sample
 
-[Perfil e semântica](../assets/reference-profiles/compact-appearance-v1.json) e [medições congeladas](../assets/reference-profiles/compact-appearance-v1.fidelity.json) têm papéis distintos. O primeiro especifica o mecanismo; o segundo fornece uma amostra de regressão medida em Chromium, DPR1, movimento reduzido, viewport1440×900/ponteiro fino e375×900/toque emulado. A referência é independente do consumidor. Não é componente executável nem exige instalar/acessar o projeto de autoria.
+[Profile and semantics](../assets/reference-profiles/compact-appearance-v1.json) and [frozen measurements](../assets/reference-profiles/compact-appearance-v1.fidelity.json) serve distinct roles. The first specifies the mechanism; the second provides a regression sample measured in Chromium, DPR 1, reduced motion, viewport 1440x900/fine pointer and 375x900/emulated touch. The reference is independent of the consumer. It is not an executable component and does not require installing/accessing the authoring project.
 
-IDs `visual.<largura>.<light|dark>.<2|3>.<campo>` referem-se a primeira abertura limpa com2 pools e ao + que cria3, em cada modo. Contêm painel/stage, âncoras relativas dos controles, onda/dial, cor/posição/seleção dos pontos e string computada do gradiente. Coordenadas `points.<índice>.x/y` são percentuais do stage, com tolerância.01 ponto percentual; caixas usam CSS px com tolerância1. Seleção, cores e gradiente são comparações exatas dentro desse contexto de serialização CSS.
+IDs `visual.<width>.<light|dark>.<2|3>.<field>` refer to the first clean opening with 2 pools and the + action that creates 3, in each mode. They include panel/stage, relative control anchors, wave/dial, dot color/position/selection, and the computed gradient string. Coordinates `points.<index>.x/y` are stage percentages with a tolerance of .01 percentage point; boxes use CSS px with tolerance 1. Selection, colors, and gradient are exact comparisons within this CSS serialization context.
 
-IDs `gesture.<mouse|touch>.<etapa>.<campo>` comparam a trajetória inteira dos3 pontos. A sequência é: defaults→+; arrastar o selecionado para30%/40%,50%/60%,85%/80%; soltar; ArrowUp; Shift+ArrowLeft; Alt+ArrowDown. Reabrir defaults→+; iniciar anel no ângulo0°/raio25px e mover para1,2,3,4,5,6,8,10,15,60,120,180,240,260,220,180,120,60,0°; soltar. O traço amostra cada passo após atualizar a prévia. `ring-<índice>-<graus>` conserva a identificação da amostra; `ring-down-no-jump` e `ring-up` verificam início e término. Não substituir o gesto por atribuição direta ao estado.
+IDs `gesture.<mouse|touch>.<step>.<field>` compare the entire trajectory of the 3 dots. The sequence is: defaults -> +; drag the selected dot to 30%/40%, 50%/60%, 85%/80%; release; ArrowUp; Shift+ArrowLeft; Alt+ArrowDown. Reopen defaults -> +; start the ring at angle 0 degrees/radius 25 px and move to 1,2,3,4,5,6,8,10,15,60,120,180,240,260,220,180,120,60,0 degrees; release. The trace samples each step after updating the preview. `ring-<index>-<degrees>` retains sample identification; `ring-down-no-jump` and `ring-up` check start and end. Do not replace the gesture with direct state assignment.
 
-Colete esses campos por um adaptador dos seletores/componentes reais do destino. Não copiar `expected` para `actual`. Registre viewport e modos realmente observados fora do JSON mínimo e retenha os traços/capturas brutos. Um alias CSS de fonte diferente pode carregar os mesmos bytes; confira a fonte efetiva, não apenas o nome. Outra engine pode serializar CSS de modo diferente: investigue/normalize semanticamente em contrato separado antes de alegar divergência visual; não reduza uma comparação de gradiente a uma única cor.
+Collect these fields through an adapter for the destination's actual selectors/components. Do not copy `expected` into `actual`. Record the actually observed viewport and modes outside the minimal JSON, and retain raw traces/captures. Different CSS font aliases may load the same bytes; check the effective font, not just its name. Another engine may serialize CSS differently: investigate/normalize semantics in a separate contract before claiming visual divergence; do not reduce a gradient comparison to one color.
 
-Esta amostra **não cobre tudo**: inclui layout/cor de2/3 luzes e parte dos gestos; não certifica fonte carregada, reset, remoção, vazio, Alt+arrasto, giro10°/90 eventos, save/reload, migração, falha, contexto/hold, grain nãozero, clipping/foco ou identidade da aba. Exercite esses casos quando o editor completo for contratado, conforme [regressões do editor](lighting-editors-icons.md#regressões-do-contrato-completo). A amostra portátil é uma defesa adicional, não um substituto da matriz completa.
+This sample **does not cover everything**: it includes 2/3-light layout/color and some gestures; it does not certify loaded fonts, reset, removal, empty state, Alt+drag, 10-degree rotation/90 events, save/reload, migration, failure, context/hold, nonzero grain, clipping/focus, or tab identity. Exercise these cases when the complete editor is contracted, according to [editor regressions](lighting-editors-icons.md#full-contract-regressions). The portable sample is an additional defense, not a replacement for the complete matrix.
 
-## Provar que a defesa detecta defeitos
+## Prove the defense detects defects
 
-Além do caso correto, introduza em cópias de teste um ponto externo preso à borda, deslocamento de outro pool sob operação individual, cor/gradiente divergente, estágio redimensionado, seleção errada ou ausência de um ponto. O verificador deve falhar pelo dado afetado. Teste também ausência de evidência e tentativa de alterar tolerância na observação. Não modificar o produto ou baseline aprovado para criar esses casos.
+Besides the correct case, introduce an outlying dot stuck at the edge, movement of another pool under an individual operation, a divergent color/gradient, resized stage, wrong selection, or missing dot into test copies. The verifier must fail on the affected data. Also test missing evidence and attempts to change tolerance in the observation. Do not modify the approved product or baseline to create these cases.
 
-Um resultado verde é necessário para as medições contratadas; inspeção renderizada, acesso, persistência e concordância do usuário continuam separados. Scripts não tornam a skill infalível.
+A green result is necessary for contracted measurements; rendered inspection, access, persistence, and user agreement remain separate. Scripts do not make the skill infallible.

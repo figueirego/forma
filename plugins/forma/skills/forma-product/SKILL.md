@@ -1,48 +1,48 @@
 ---
 name: forma-product
-description: "Investigar tarefas de usuários, formular hipóteses, organizar informação e projetar fluxos de produto com pesquisa proporcional. Use quando a dúvida for sobre necessidade, sequência ou entendimento; não para ajustes cromáticos isolados ou fabricar evidência de usuários."
+description: "Investigate user tasks, formulate hypotheses, organize information, and design product flows with proportionate research. Use when the question concerns needs, sequence, or understanding; not for isolated color adjustments or fabricated user evidence."
 metadata:
   version: 1.19.0
 ---
 
-# Produto, pesquisa e fluxos
+# Product, research, and flows
 
-## Quando usar
+## When to use
 
-- Use para brief, jornada, arquitetura da informação, onboarding, hipóteses e teste de tarefa.
-- Não use para abrir descoberta completa diante de um padding incorreto ou de uma direção já decidida.
+- Use for briefs, journeys, information architecture, onboarding, hypotheses, and task testing.
+- Do not start a full discovery process for incorrect padding or a direction that has already been decided.
 
-Este módulo é instrução lida pelo agente; não agenda pesquisa, envia convites nem chama outros módulos.
-Preserve contexto, marca, stack e compromissos existentes; separe descoberta de implementação autorizada.
+This module provides instructions for the agent to read; it does not schedule research, send invitations, or call other modules.
+Preserve existing context, brand, stack, and commitments; distinguish discovery from authorized implementation.
 
-## Entradas
+## Inputs
 
-- Público/contexto conhecido, tarefa principal, problema, canal, restrições e decisão que precisa de evidência.
-- Fluxo atual, dados/contratos acessíveis e fontes de observações; hipóteses devem estar identificadas.
+- Known audience/context, primary task, problem, channel, constraints, and the decision that needs evidence.
+- Current flow, accessible data/contracts, and observation sources; identify hypotheses explicitly.
 
-## Procedimento
+## Procedure
 
-1. Formule uma entrada e um resultado concretos, com condição observável de sucesso.
-   Leia [produto e pesquisa](../../references/product-research.md); diferencie operador, comprador e pessoa afetada quando isso mudar a decisão.
-   Se houver histórico aprovado e plano novo, leia [evolução de produto aprovado](../../references/approved-product-evolution.md). Concilie as fontes antes de mudar jornada, plataforma ou stack; aprovação visual não comprova capacidades de backend.
-2. Escolha o menor método capaz de esclarecer a dúvida.
-   Para teste, leia [pesquisa prática](../../references/research-protocol.md); para diagnóstico fundamentado, [heurísticas](../../references/ux-heuristics.md). Heurísticas não são resultados de pesquisa.
-3. Modele fluxo principal, decisões, espera, erros, cancelamento e retorno.
-   Use [interação e conteúdo](../../references/interaction-content.md) e, se houver permissões/offline/IA, [contratos e confiança](../../references/contracts-trust.md).
-4. Produza o artefato autorizado que permita avaliar a hipótese: sequência, protótipo ou fatia implementada.
-   Adapte o playbook de nova tela ou redesign em [playbooks](../../references/playbooks.md); use [modelos](../../references/templates.md) só quando reduzirem ambiguidade.
-5. Compare com a tarefa e o contexto fixados; registre assistência, erro e recuperação quando executar teste.
-   Consulte [verificação](../../references/verification.md). Se não houver participantes, declare avaliação interna; não a apresente como validação com usuários.
+1. Define a concrete input and outcome, with an observable success condition.
+   Read [product and research](../../references/product-research.md); distinguish the operator, buyer, and affected person when that changes the decision.
+   If approved history and a new plan coexist, read [approved product evolution](../../references/approved-product-evolution.md). Reconcile sources before changing the journey, platform, or stack; visual approval does not prove backend capabilities.
+2. Choose the smallest method that can resolve the question.
+   For testing, read [practical research](../../references/research-protocol.md); for an evidence-informed diagnosis, read [heuristics](../../references/ux-heuristics.md). Heuristics are not research results.
+3. Model the primary flow, decisions, waiting, errors, cancellation, and return paths.
+   Use [interaction and content](../../references/interaction-content.md) and, for permissions/offline/AI, [contracts and trust](../../references/contracts-trust.md).
+4. Produce the authorized artifact that enables the hypothesis to be evaluated: a sequence, prototype, or implemented slice.
+   Adapt the new-screen or redesign playbook in [playbooks](../../references/playbooks.md); use [templates](../../references/templates.md) only when they reduce ambiguity.
+5. Compare the result against the established task and context; record assistance, errors, and recovery when running a test.
+   Consult [verification](../../references/verification.md). Without participants, describe the work as an internal assessment; do not present it as user validation.
 
-## Saída e parada
+## Output and stopping condition
 
-Entregue decisão, fluxo e estados, evidência disponível e próximo teste apenas para a incerteza restante.
-Se foi pedida implementação, entregue o fluxo no produto e confirme o resultado; um mapa de jornada não conclui esse pedido.
-Pare quando a decisão puder ser sustentada pelos dados disponíveis e o entregável autorizado estiver concluído.
-Se o sucesso depender de pesquisa ainda não realizada, marque a hipótese como pendente e evite inventar personas, entrevistas ou métricas.
+Deliver the decision, flow and states, available evidence, and a next test only for the remaining uncertainty.
+If implementation was requested, deliver the flow in the product and confirm its outcome; a journey map does not complete that request.
+Stop when the decision is supported by available data and the authorized deliverable is complete.
+If success depends on research that has not happened, mark the hypothesis as pending and do not invent personas, interviews, or metrics.
 
-## Apoios opcionais e limites
+## Optional support and boundaries
 
-Product Design, `ecc:product-lens` e `ecc:click-path-audit` podem apoiar pesquisa, diagnóstico e análise de fluxo.
-Quando disponíveis e pertinentes, leia o `SKILL.md` atual e [integrações](../../references/integrations.md) antes do uso. Disponibilidade não autoriza contato externo.
-Não instale métodos ou serviços por conveniência; use dados fictícios quando suficientes e não envie dados pessoais sem necessidade/autorização.
+Product Design, `ecc:product-lens`, and `ecc:click-path-audit` can support research, diagnosis, and flow analysis.
+When available and relevant, read their current `SKILL.md` and [integrations](../../references/integrations.md) before use. Availability does not authorize external contact.
+Do not install methods or services for convenience; use synthetic data when sufficient and do not send personal data without a need and authorization.

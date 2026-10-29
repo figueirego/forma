@@ -1,148 +1,148 @@
-# Web imersiva: efeitos portáteis, variantes e custo
+# Immersive web: portable effects, variants, and cost
 
-Use esta referência para campanhas, produto configurável, objeto editorial e cenas decorativas.
-Não a use como justificativa para adicionar WebGL a configurações, tabelas ou formulários.
-Priorize o mecanismo mínimo que entrega o comportamento necessário.
+Use this reference for campaigns, configurable products, editorial objects, and decorative scenes.
+Do not use it to justify adding WebGL to settings, tables, or forms.
+Prioritize the smallest mechanism that delivers the required behavior.
 
-Para personagens com expressão, volume, apoio físico e variantes de acabamento, leia [refinamento de mascotes](mascot-refinement.md). Uma malha procedural pode sustentar esse tipo de objeto; não pressupor GLB, rig, pós-processamento ou shader customizado só porque o objeto é tridimensional.
+For characters with expression, volume, physical support, and finish variants, read [mascot refinement](mascot-refinement.md). A procedural mesh can support this kind of object; do not assume GLB, a rig, post-processing, or custom shaders merely because the object is three-dimensional.
 
-## Escolha antes de implementar
+## Choose before implementing
 
-| Necessidade real | Começar com | Escalonar somente quando |
+| Actual need | Start with | Escalate only when |
 |---|---|---|
-| Caderno, capa, cartão, painel em perspectiva | HTML + CSS transform + SVG | Oclusão, geometria ou luz não puderem ser representadas suficientemente |
-| Retrato/produto frontal com profundidade aparente | Imagem/poster; 2.5D opcional por depth/alpha/normal | A vista precisar de volumes e ângulos que não existem na imagem |
-| GLB com orbit e troca de material | `<model-viewer>` | A cena exigir shaders, render passes ou composição que o componente não ofereça |
-| Retrato 2.5D + objeto 3D + revelação interativa | Three.js direto | A combinação justificar o custo de código, assets e manutenção |
-| Trajetória/mapa simples e interativo | SVG + DOM | Densidade medida justificar Canvas/WebGL; manter alternativa textual |
-| Fundo decorativo/isolinha/partícula | CSS/SVG estático | Movimento acrescentar valor; permitir desligar e parar trabalho fora da tela |
+| Notebook, cover, card, or panel in perspective | HTML + CSS transform + SVG | Occlusion, geometry, or lighting cannot be represented adequately |
+| Frontal portrait/product with apparent depth | Image/poster; optional 2.5D using depth/alpha/normal | The view needs volumes and angles absent from the image |
+| GLB with orbit and material switching | `<model-viewer>` | The scene requires shaders, render passes, or composition the component does not offer |
+| 2.5D portrait + 3D object + interactive reveal | Direct Three.js | The combination justifies code, asset, and maintenance costs |
+| Simple interactive path/map | SVG + DOM | Measured density justifies Canvas/WebGL; retain a text alternative |
+| Decorative background/isoline/particle | Static CSS/SVG | Motion adds value; allow disabling it and stop offscreen work |
 
-Não confundir 2.5D, malha 3D, vídeo e imagem pré-renderizada. Declare qual mecanismo foi demonstrado.
-Uma dependência de uma biblioteca não prova que a aplicação foi escrita diretamente com essa tecnologia.
+Do not confuse 2.5D, 3D meshes, video, and prerendered images. Declare which mechanism was demonstrated.
+A library dependency does not prove the application was written directly with that technology.
 
-## Caso Kimi: editorial com cena híbrida
+## Kimi case: editorial design with a hybrid scene
 
-[Fonte](https://kimi-landing-page-two.vercel.app/), capturada em 26/10/2026.
-[Perfil com hashes e limites](../assets/reference-profiles/kimi-2026-10-26.json).
-Confirmados: Lenis 1.3.26, Three.js r185, GLTFLoader/DRACOLoader, HDR/PMREM, Canvas 2D e SVG.
-Vite é inferido pelo bootstrap; versão do build e processo de autoria são desconhecidos.
-Retrato usa mapas diffuse/depth/alpha/normal em um plano; capacete é um GLB separado.
-O código combina leve deslocamento de UV, relighting, pivot amortecido e máscara de revelação.
-Contornos e trilha de circuito usam Canvas 2D, sem exigir malha 3D.
+[Source](https://kimi-landing-page-two.vercel.app/), captured on 2026-10-26.
+[Profile with hashes and limits](../assets/reference-profiles/kimi-2026-10-26.json).
+Confirmed: Lenis 1.3.26, Three.js r185, GLTFLoader/DRACOLoader, HDR/PMREM, Canvas 2D, and SVG.
+Vite is inferred from the bootstrap; build version and authoring process are unknown.
+The portrait uses diffuse/depth/alpha/normal maps on a plane; the helmet is a separate GLB.
+The code combines slight UV displacement, relighting, a damped pivot, and a reveal mask.
+Contours and the circuit trail use Canvas 2D without requiring a 3D mesh.
 
-Receita original, não transcrição do bundle:
-
-```text
-mostrar(conteúdoHTML, posterLicenciado, controles)
-se política.permiteCena e componenteVisível:
-  carregarMotorELimites()
-  validarMapasEModelo()
-  compor(planoComProfundidade, objetoOpcional, luzAmbiente)
-  aoPonteiro: atualizarAlvoLimitado()
-  quandoSujoEVisível: interpolarAlvo(); renderizar()
-aoErroOuWebGLIndisponível: manterPosterEControles()
-aoDesmontar: liberarCenaERecursos()
-```
-
-Separar texto/CTA da cena decorativa. Deslocamento tem limite para evitar revelar bordas vazias.
-Mapas são uma entrada artística: não prometer sua geração automática nem equivalência ao volume real.
-O padrão de tokens brutos → semânticos é útil; a paleta gelo/preto/ciano é específica da campanha.
-Display condensado, SVG recortado e grande escala não devem migrar automaticamente para UI operacional.
-
-## Caso Soda: produto configurável
-
-[Fonte](https://soda-landingpage.vercel.app/), capturada em 26/10/2026.
-[Perfil com hashes e limites](../assets/reference-profiles/soda-2026-10-26.json).
-Confirmados: `<model-viewer>`, GSAP 3.15.0, Three.js r183 embutido e dependências Lit.
-GLBs declaram glTF-Transform 4.5.1, meshopt, quantização e WebP; isso não identifica o modelador original.
-O produto e frutas são GLBs; bolhas são imagens animadas por CSS.
-Trocar variante combina textura do material, cores do fundo e decoração.
-Variante cromática de produto não é tema claro/escuro do aplicativo.
-
-Receita original com transação e concorrência:
+Original recipe, not a bundle transcription:
 
 ```text
-selecionar(variante):
-  pedido = próximoId(); estado = carregando(variante)
-  tentar:
-    recurso = carregarValidarOuObterDoCache(variante.asset)
-    se pedido != pedidoAtual: liberarSeNãoCompartilhado(recurso); retornar
-    aplicarJuntos(material, tokensContextuais, decoraçãoPermitida)
-    confirmarSeleçãoAcessível(variante); anunciarResultado()
-  falhou:
-    se pedido == pedidoAtual: manterÚltimaVariante(); mostrarRetry()
+show(htmlContent, licensedPoster, controls)
+if policy.allowsScene and componentVisible:
+  loadEngineAndLimits()
+  validateMapsAndModel()
+  compose(depthPlane, optionalObject, ambientLight)
+  onPointer: updateBoundedTarget()
+  whenDirtyAndVisible: interpolateTarget(); render()
+onErrorOrWebGLUnavailable: retainPosterAndControls()
+onUnmount: releaseSceneAndResources()
 ```
 
-Uma mesma configuração pode descrever capa de caderno, acabamento de móvel ou embalagem.
-Campos mínimos: `id`, rótulo, tokens de contexto, asset autorizado e poster.
-Manter foco/texto/superfície em tokens globais e validar contraste em todas as variantes.
-Não marcar escolha como concluída antes de a troca visual estar pronta; permitir teclado e toque.
-Só adotar GSAP quando uma timeline coordenada justificar biblioteca; transições simples cabem em CSS/WAAPI.
+Separate text/CTAs from the decorative scene. Bound displacement to avoid revealing empty edges.
+Maps are artistic inputs: do not promise automatic generation or equivalence to real volume.
+The raw -> semantic token pattern is useful; the ice/black/cyan palette belongs to this campaign.
+Condensed display type, clipped SVGs, and large scale must not automatically migrate into operational UI.
 
-## Contrato portátil
+## Soda case: configurable product
 
-Conteúdo, dados de variante, assets e política de qualidade não pertencem ao mesmo estado do renderer.
-Para cenas complexas, expor `mount`, `resize`, `setTheme`, `setQuality`, `pause`, `destroy` e eventos de erro/ready.
-Adicionar `setPointer`/`setProgress` apenas se usados. Um hover CSS não precisa dessa camada.
-Slots/props de conteúdo devem aceitar textos longos, idioma, capa sem imagem e ausência de metadados.
-O motor é substituível: poster → CSS/2.5D → GLB. A capacidade do produto permanece em todas as versões.
+[Source](https://soda-landingpage.vercel.app/), captured on 2026-10-26.
+[Profile with hashes and limits](../assets/reference-profiles/soda-2026-10-26.json).
+Confirmed: `<model-viewer>`, GSAP 3.15.0, embedded Three.js r183, and Lit dependencies.
+GLBs declare glTF-Transform 4.5.1, meshopt, quantization, and WebP; this does not identify the original modeling tool.
+The product and fruit are GLBs; bubbles are CSS-animated images.
+Switching variants combines material texture, background colors, and decoration.
+A product color variant is not the application's light/dark theme.
+
+Original recipe with transaction and concurrency:
 
 ```text
-política = combinar(preferência, orçamento, visibilidade, suporte)
-se estático: não importarMotor; não carregarDecoração; mostrarPoster
-se reduzido: trocarVariantesSemGiroBlurParallax; renderizarSobDemanda
-se completo: limitarDPR; criarApenasAssetsDoPreset; pausarForaDaTela
+select(variant):
+  request = nextId(); state = loading(variant)
+  try:
+    resource = loadValidateOrGetFromCache(variant.asset)
+    if request != currentRequest: releaseIfUnshared(resource); return
+    applyTogether(material, contextualTokens, permittedDecoration)
+    confirmAccessibleSelection(variant); announceResult()
+  catch:
+    if request == currentRequest: retainLastVariant(); showRetry()
 ```
 
-Reavaliar preferência durante a sessão. Testar retorno à aba e à viewport.
-`display:none`, congelar transform ou reduzir duração não garantem economia de rede/CPU/GPU.
-Liberar RAF, timers, listeners, observers, geometria, materiais, texturas de uniforms, environment e workers.
-Não destruir textura compartilhada sem gestão de ownership/cache; testar montagem/desmontagem repetida.
+The same configuration can describe a notebook cover, furniture finish, or packaging.
+Minimum fields: `id`, label, contextual tokens, authorized asset, and poster.
+Keep focus/text/surface in global tokens and validate contrast in every variant.
+Do not mark a selection complete before the visual switch is ready; support keyboard and touch.
+Adopt GSAP only when a coordinated timeline justifies the library; simple transitions fit CSS/WAAPI.
 
-## Budget e custo
+## Portable contract
 
-O budget vem do público, aparelho e objetivo. Medir antes de alegar performance ou economia.
+Content, variant data, assets, and quality policy do not belong to the renderer's state.
+For complex scenes, expose `mount`, `resize`, `setTheme`, `setQuality`, `pause`, `destroy`, and error/ready events.
+Add `setPointer`/`setProgress` only when used. A CSS hover does not need this layer.
+Content slots/props must accept long text, languages, covers without images, and missing metadata.
+The engine is replaceable: poster -> CSS/2.5D -> GLB. Product capability remains in every version.
 
-| Camada | Medir | Não confundir com |
+```text
+policy = combine(preference, budget, visibility, support)
+if static: doNotImportEngine; doNotLoadDecoration; showPoster
+if reduced: switchVariantsWithoutSpinBlurParallax; renderOnDemand
+if full: capDPR; createOnlyPresetAssets; pauseOffscreen
+```
+
+Reevaluate preferences during the session. Test returning to the tab and viewport.
+`display:none`, freezing transforms, or reducing duration do not guarantee network/CPU/GPU savings.
+Release RAF, timers, listeners, observers, geometry, materials, uniform textures, environment, and workers.
+Do not destroy shared textures without ownership/cache management; test repeated mounting/unmounting.
+
+## Budget and cost
+
+The budget comes from audience, device, and objective. Measure before claiming performance or savings.
+
+| Layer | Measure | Do not confuse with |
 |---|---|---|
-| Rede | Transferência comprimida/cacheada, requests, waterfall, peso bruto inventariado | Soma de todos os assets possíveis da página |
-| JS | Parse/execução, chunk inicial/lazy, trabalho principal | Tamanho de bundle como prova de fluidez |
-| GPU/CPU | Frame time, draw calls, texturas decodificadas, geometrias, DPR, loops ativos | Contagem de elementos DOM ou de triângulos isolada |
-| Manutenção | Loader/decoder, contexto perdido, teardown, testes por dispositivo | Um efeito funcionar na primeira visita |
-| Financeiro | Hosting, CDN, autoria/licenças, ferramentas e trabalho de manutenção | Domínio Vercel ou ausência de API como custo zero |
+| Network | Compressed/cached transfer, requests, waterfall, inventoried raw weight | Sum of all possible page assets |
+| JS | Parsing/execution, initial/lazy chunks, main-thread work | Bundle size as proof of smoothness |
+| GPU/CPU | Frame time, draw calls, decoded textures, geometries, DPR, active loops | DOM element or triangle counts alone |
+| Maintenance | Loader/decoder, context loss, teardown, per-device tests | An effect working on the first visit |
+| Financial | Hosting, CDN, authorship/licenses, tools, and maintenance work | A Vercel domain or lack of APIs meaning zero cost |
 
-Kimi: entrada 56.574 B; chunk 3D 618.987 B; HTML+CSS+JS+duas fontes somam 775.239 B brutos/inventariados.
-HDR/GLB/texturas ficaram sem peso verificado. O decoder configurado acrescenta custo condicional.
-Soda: model-viewer 1.024.001 B; GSAP 69.641 B; quatro GLBs somam 850.584 B.
-Lata: 3.934 triângulos declarados; os 15 elementos model-viewer observados não significam 15 contextos GPU.
-Nenhuma dessas capturas mede FPS, LCP, INP, custo financeiro ou uso de memória.
+Kimi: entry 56,574 B; 3D chunk 618,987 B; HTML+CSS+JS+two fonts total 775,239 raw/inventoried B.
+HDR/GLB/textures had no verified weight. The configured decoder adds conditional cost.
+Soda: model-viewer 1,024,001 B; GSAP 69,641 B; four GLBs total 850,584 B.
+Can: 3,934 declared triangles; the 15 observed model-viewer elements do not imply 15 GPU contexts.
+None of these captures measures FPS, LCP, INP, financial cost, or memory use.
 
-## Falhas a não importar
+## Failures not to import
 
-| Observado no código | Correção exigida na adaptação |
+| Observed in code | Required adaptation correction |
 |---|---|
-| Kimi: `freeze` ainda carrega assets e chama renderer | Poster com caminho sem motor; render sob demanda |
-| Kimi: escala raiz salta em 1279→1280 e 1440→1441 | Tokens `clamp()` contínuos; testar breakpoint −1/0/+1 px |
-| Ambos: reduced-motion incompleto | Política única cobrindo CSS, biblioteca, câmera e RAF |
-| Soda: decoração oculta continua criada | Decidir orçamento antes da criação e do download |
-| Soda: variante falha apenas no console | Commit atômico, rollback, retry e anúncio acessível |
-| Soda: navegação `#` e CTAs sem fluxo comprovado | Destino e resultado verificáveis; não chamar demo de checkout |
-| Ausência de poster explícito | Imagem alternativa autorizada, texto e CTA sempre úteis |
-| Decoder com detalhe `data:` sensível a CSP | Integração suportada na versão adotada; não relaxar CSP por cópia |
+| Kimi: `freeze` still loads assets and calls the renderer | Poster with an engine-free path; on-demand rendering |
+| Kimi: root scale jumps at 1279 -> 1280 and 1440 -> 1441 | Continuous `clamp()` tokens; test breakpoint -1/0/+1 px |
+| Both: incomplete reduced-motion behavior | One policy covering CSS, library, camera, and RAF |
+| Soda: hidden decoration is still created | Decide the budget before creation and download |
+| Soda: variant failure appears only in the console | Atomic commit, rollback, retry, and accessible announcement |
+| Soda: `#` navigation and CTAs without proven flows | Verifiable destination and outcome; do not call the demo a checkout |
+| No explicit poster | Authorized alternative image, always-useful text and CTA |
+| Decoder with CSP-sensitive `data:` details | Integration supported by the adopted version; do not relax CSP by copying |
 
-## Validação e procedência
+## Validation and provenance
 
-QA observado: Kimi 1280×720/390×844; Soda 1440×900/390×844; heros visíveis e menus móveis operantes.
-Soda também trocou variante com atualização de material/fundo/`aria-pressed`.
-Não houve overflow horizontal nesses estados. Isso não cobre aparelhos físicos ou todas as preferências.
-Testar separadamente: zoom 200%, teclado, toque, texto longo, viewport baixa, reduced-motion, save-data,
-WebGL indisponível/perdido, falha de textura, troca rápida, resize, aba oculta e remontagem.
-Verificar ordem de leitura/CTA no mobile; reservar altura para produto em fluxo, sem encobrir controles.
-Registrar paridade visual, tecnológica e funcional em campos separados, com desconhecidos explícitos.
+Observed QA: Kimi 1280x720/390x844; Soda 1440x900/390x844; visible heroes and working mobile menus.
+Soda also switched variants with material/background/`aria-pressed` updates.
+No horizontal overflow occurred in those states. This does not cover physical devices or every preference.
+Test separately: 200% zoom, keyboard, touch, long text, short viewport, reduced motion, save-data,
+unavailable/lost WebGL, texture failure, rapid switching, resize, hidden tab, and remounting.
+Verify mobile reading/CTA order; reserve product height in flow without covering controls.
+Record visual, technological, and functional parity in separate fields with explicit unknowns.
 
-REA parseou entradas e um recorte HeroScene como texto inerte, com grafos semânticos parciais.
-Os perfis preservam URLs, hashes, recorte e contagem de unknowns. Bibliotecas grandes não foram totalmente decompostas.
-403 de HEAD dos assets Kimi não foi falha de renderização no browser; o sourcemap Soda permaneceu indisponível.
-Não distribuir imagens, fontes, modelos, logos ou código original desses sites sem licença apropriada.
-Estas receitas são de autoria nova; hashes identificam evidência, não concedem direitos de uso.
-Confirmar licença e API da versão escolhida antes de incorporar qualquer dependência ao projeto.
+REA parsed entries and a HeroScene slice as inert text, producing partial semantic graphs.
+Profiles preserve URLs, hashes, scope, and unknown counts. Large libraries were not fully decomposed.
+A 403 on Kimi asset HEAD requests was not a browser-rendering failure; Soda's sourcemap remained unavailable.
+Do not distribute images, fonts, models, logos, or original code from these sites without appropriate licenses.
+These recipes are newly authored; hashes identify evidence, not usage rights.
+Confirm the selected version's license and API before incorporating any dependency into the project.

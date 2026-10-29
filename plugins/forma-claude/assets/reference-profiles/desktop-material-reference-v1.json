@@ -1,5 +1,5 @@
 {
-  "target": "Desktop material reference v1 — audited build 0.19.0",
+  "target": "Desktop material reference v1 - audited build 0.19.0",
   "evidenceType": "static resource inspection; no runtime-computed colors captured by this worker",
   "offsetBasis": "zero-based Unicode character offsets in UTF-8 decoded text, not byte offsets",
   "sources": [
@@ -760,7 +760,7 @@
         "spot": 0.05,
         "exposure": 0.7,
         "intensityMultiplier": "PI",
-        "exposureMeaning": "Color compensation based on resting front normal, clamped .62–1.5; not renderer.toneMappingExposure.",
+        "exposureMeaning": "Color compensation based on resting front normal, clamped .62-1.5; not renderer.toneMappingExposure.",
         "backPosition": [
           -32,
           12,
@@ -986,7 +986,7 @@
     "frame": {
       "cameraDistancePerWidth": 17.1,
       "projection": "Perspective; FOV derived from projected envelope",
-      "envelope": "24 yaw samples at 15 degrees over full turn when spin=1; bow ±24 degrees",
+      "envelope": "24 yaw samples at 15 degrees over full turn when spin=1; bow +/-24 degrees",
       "layout": "Expanded canvas with centered negative bleed outside nominal 248px host; fitting the same envelope inside the host makes the visible book too small."
     },
     "atlasTypography": {

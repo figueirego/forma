@@ -1,38 +1,38 @@
-# Resolver conflitos sem perder intenção
+# Resolve conflicts without losing intent
 
-As fontes são insumos para julgamento. Esta síntese não importa automaticamente todos os comandos, defaults e proibições de cada skill. Ao executar um plugin, leia seu contrato atual e siga os requisitos operacionais aplicáveis.
+Sources are inputs to judgment. This synthesis does not automatically import every command, default, and prohibition from each skill. When executing a plugin, read its current contract and follow applicable operational requirements.
 
-| Tensão entre fontes | Decisão desta skill |
+| Tension between sources | This skill's decision |
 |---|---|
-| Taste exige hero curto e imagem; produto pode ser textual ou denso | Aplicar composição de marketing onde ajudar; docs, ferramentas e serviços não precisam de hero ou imagem |
-| Proibição de Inter, serifas, roxo ou preto | Sem banimento universal. Avaliar marca, leitura, contraste, idioma, licença e contexto |
-| Uma cor de destaque versus cores semânticas | Separar destaque de marca de sucesso, aviso, erro, seleção e séries de dados |
-| Nunca animar teclado versus feedback útil | Não atrasar entrada nem foco; feedback de estado pode existir sem movimento espacial |
-| Animar tudo em 200 ms | Feedback imediato; duração baseada em distância, frequência e finalidade. Não usar transition: all como receita |
-| 44 px sempre versus requisitos distintos | Separar CSS px, pt e dp; distinguir piso normativo de alvo confortável |
-| Máximo de 5 ou 7 opções | Não derivar limite de navegação da memória de curto prazo. Agrupar e testar busca/descoberta |
-| Não repetir layouts versus consistência | Repetição é útil em produto, listas e séries editoriais; variedade só quando melhora compreensão |
-| Cards obrigatórios versus cards proibidos | Usar contenção para agrupar conteúdo real; evitar caixas redundantes |
-| Skeleton sempre versus spinner nunca | Escolher pela previsibilidade da forma, duração e semântica; progresso determinado apenas se mensurável |
-| Dual theme sempre | Respeitar escopo e sistema. Testar todos os temas suportados, sem inventar obrigação de segundo tema |
-| Hero deve caber sempre | Não cortar texto, impedir zoom ou reduzir legibilidade para caber; viewport pequeno pode exigir scroll |
-| CTA nunca quebra linha | Preferir clareza e espaço; permitir expansão em tradução e texto ampliado |
-| Dados “orgânicos” para parecer real | Só dados reais verificáveis ou exemplos explicitamente rotulados; aparência de precisão não é evidência |
-| Gerar imagens antes de qualquer implementação | Reusar assets existentes; geração é condicional e não substitui UI funcional ou prova do produto |
-| Instalar design system “oficial” por semelhança | Preservar stack e biblioteca existentes; confirmar compatibilidade atual antes de qualquer instalação |
-| Presets de 4/8 px como lei | Escala é ferramenta de consistência; ajustes ópticos e métricas nativas podem justificar exceções |
-| QA infinito versus limite rígido de duas rodadas | Inspeção agrupada, correção e confirmação; defeitos materiais permanecem abertos, polimento não é infinito |
-| Pontuação geral alta versus erro crítico | Falha de tarefa, perda de dados ou barreira de acesso não pode ser compensada por estética |
-| Seis candidatos/três direções em qualquer tarefa | Comparar alternativas quando a decisão estiver aberta; número proporcional e condições equivalentes |
-| Catálogo inspirado em marca versus tokens oficiais | Registrar autoria/evidência; prompt comunitário não comprova extração do produto |
-| Ranking de lookup versus requisito normativo | Conferir critério, nível, unidades e exceções na fonte primária; primeiro resultado não é necessariamente o requisito aplicável |
-| Remix de sistemas versus identidade coerente | Base definida, papel de cada contribuição e colisões resolvidas; testar estados combinados |
-| PPTX/HTML exportado versus artefato editável | Verificar propriedades por camada e arquivo reaberto; screenshot em slide não torna texto editável |
-| Repositório público versus reutilização permitida | Verificar licença do código e de cada asset; acesso público não concede uso comercial irrestrito |
-| HTML-first/scene graph obrigatório versus stack existente | Usar o formato que preserva as capacidades pedidas; pipeline de uma fonte não obriga migração |
-| Taste v2 estabelece cotas de imagens/movimento e incentiva vídeo | Escolher mídia e movimento pela tarefa, direitos, custo e acesso; nenhuma quota universal. Preservar tipografia, ilustração ou fundo material aprovado |
-| Estudo de screenshots versus regra universal | Manter amostra, método e limites. Preferência do autor, julgamento de modelo e norma têm pesos diferentes |
-| Números exibidos precisam somar após arredondar | Manter a precisão e a fonte de verdade do domínio; explicar reconciliação, sem alterar cálculo para melhorar a aparência |
-| Scanner estético sem alertas versus design completo | Confirmar conteúdo, tarefa e composição no alvo; exceção de gosto não encobre falha funcional ou de contraste |
+| An external preference requires a short hero and an image; the product may be text-based or dense | Apply marketing composition where helpful; docs, tools, and services do not require a hero or image |
+| Banning Inter, serifs, purple, or black | No universal ban. Evaluate brand, readability, contrast, language, license, and context |
+| One accent color versus semantic colors | Separate brand accents from success, warning, error, selection, and data series |
+| Never animate keyboard interactions versus useful feedback | Do not delay input or focus; state feedback can exist without spatial movement |
+| Animate everything in 200 ms | Immediate feedback; duration based on distance, frequency, and purpose. Do not use transition: all as a recipe |
+| Always 44 px versus differing requirements | Separate CSS px, pt, and dp; distinguish the normative minimum from a comfortable target |
+| Maximum of 5 or 7 options | Do not derive navigation limits from short-term memory. Group and test search/discovery |
+| Never repeat layouts versus consistency | Repetition helps products, lists, and editorial series; add variety only when it improves comprehension |
+| Mandatory cards versus prohibited cards | Use containment to group real content; avoid redundant boxes |
+| Always skeletons versus never spinners | Choose based on predictable shape, duration, and semantics; determinate progress only when measurable |
+| Always dual themes | Respect scope and system. Test all supported themes without inventing a second-theme obligation |
+| The hero must always fit | Do not clip text, prevent zoom, or reduce legibility to fit; a small viewport may require scrolling |
+| CTAs must never wrap | Favor clarity and space; allow expansion in translation and enlarged text |
+| "Organic" data to look realistic | Only verifiable real data or explicitly labeled examples; apparent precision is not evidence |
+| Generate images before any implementation | Reuse existing assets; generation is conditional and does not replace functional UI or product evidence |
+| Install an "official" design system based on resemblance | Preserve the existing stack and library; confirm current compatibility before any installation |
+| 4/8 px presets as law | A scale is a consistency tool; optical adjustments and native metrics may justify exceptions |
+| Infinite QA versus a rigid two-round limit | Grouped inspection, correction, and confirmation; material defects remain open, polishing is not infinite |
+| High overall score versus critical error | Task failure, data loss, or an access barrier cannot be offset by aesthetics |
+| Six candidates/three directions for every task | Compare alternatives when the decision is open; use a proportionate number and equivalent conditions |
+| Brand-inspired catalog versus official tokens | Record authorship/evidence; a community prompt does not prove extraction from the product |
+| Lookup ranking versus normative requirement | Check the criterion, level, units, and exceptions in the primary source; the first result is not necessarily the applicable requirement |
+| Remixed systems versus coherent identity | Define a base, each contribution's role, and resolved collisions; test combined states |
+| Exported PPTX/HTML versus editable artifact | Verify properties per layer and in the reopened file; a screenshot on a slide does not make text editable |
+| Public repository versus permitted reuse | Check the code license and each asset's license; public access does not grant unrestricted commercial use |
+| Mandatory HTML-first/scene graph versus existing stack | Use the format that preserves the requested capabilities; one source's pipeline does not require migration |
+| An external repertoire sets image/motion quotas and encourages video | Choose media and motion based on the task, rights, cost, and access; no universal quota. Preserve approved typography, illustration, or material backgrounds |
+| Screenshot study versus universal rule | Preserve sample, method, and limits. Author preference, model judgment, and standards carry different weight |
+| Displayed numbers must sum after rounding | Preserve domain precision and source of truth; explain reconciliation without changing calculations to improve appearance |
+| Aesthetic scanner with no warnings versus complete design | Confirm content, task, and composition on the target; a taste exception does not conceal functional or contrast failures |
 
-Registre exceções relevantes com: regra/contexto, evidência, alternativa escolhida, consequência e verificação. Não crie justificativas para defeitos reais sob o rótulo de direção artística.
+Record relevant exceptions with: rule/context, evidence, selected alternative, consequence, and verification. Do not justify real defects under the label of artistic direction.

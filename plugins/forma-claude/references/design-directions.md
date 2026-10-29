@@ -1,57 +1,61 @@
-# Explorar, comparar e escolher direções
+# Explore, compare, and choose directions
 
-Use quando a identidade estiver aberta, houver alternativas relevantes ou o usuário pedir exploração/redesign. Para reproduzir uma referência, siga [fidelidade](reference-fidelity.md); para corrigir padding, use [contratos espaciais](layout-spatial-contracts.md). Não abrir uma competição de conceitos para todo ajuste.
+Use when identity is open, meaningful alternatives exist, or the user requests exploration/redesign. To reproduce a reference, follow [fidelity](reference-fidelity.md); to fix padding, use [spatial contracts](layout-spatial-contracts.md). Do not open a concept competition for every adjustment.
 
-## Contrato da comparação
+## Comparison contract
 
-Antes de variar, fixe tarefa, público, conteúdo, claims, assets autorizados, estado, formato e dimensões de comparação. Separe o que é requisito do que está aberto. Marca aprovada, comportamento e informação obrigatória não desaparecem para uma proposta parecer melhor.
+Before varying the design, fix the task, audience, content, claims, authorized assets, state, format, and comparison dimensions. Separate requirements from open decisions. Approved brand, behavior, and mandatory information must not disappear to make a proposal look better.
 
-Escolha poucas alternativas com diferenças que mudem a leitura ou o uso: estrutura, prioridade, densidade, navegação, tipografia, tratamento de imagem ou materialidade. Quantidade depende da decisão; não exigir seis candidatos/três finalistas. Se o usuário já escolheu uma direção, implemente-a sem reabrir essa escolha por ritual.
+Choose a few alternatives with differences that affect reading or use: structure, priority, density, navigation, typography, image treatment, or materiality. Quantity depends on the decision; do not require six candidates/three finalists. If the user has already chosen a direction, implement it without ritually reopening that choice.
 
-| Direção ilustrativa para o mesmo acervo | Mudança real | Tradeoff a investigar |
+| Illustrative direction for the same collection | Actual change | Tradeoff to investigate |
 |---|---|---|
-| Lista instrumental | Metadados em colunas, filtros persistentes | Comparação rápida versus destaque visual da obra |
-| Galeria editorial | Imagens e sequência de leitura predominam | Exploração versus acesso a muitos atributos |
-| Área de composição | Seleção e arranjo espacial autoral | Liberdade versus orientação e acesso sem canvas |
+| Operational list | Metadata in columns, persistent filters | Fast comparison versus visual emphasis on the work |
+| Editorial gallery | Images and reading sequence predominate | Exploration versus access to many attributes |
+| Composition workspace | Original selection and spatial arrangement | Freedom versus guidance and access without a canvas |
 
-Os exemplos não obrigam criar três modos no produto. Variar só cor, fonte ou raio pode ser útil para acabamento, mas não comprova exploração estrutural.
+These examples do not require creating three product modes. Varying only color, font, or radius may help finishing, but does not demonstrate structural exploration.
 
-## Ficha curta por alternativa
+## Short card for each alternative
 
-Registre: tarefa favorecida; regra composicional; hierarquia e relações espaciais; papéis de tipo/cor; comportamento no estreito; detalhe distintivo; custo/risco; critério de avaliação. A descrição deve permitir implementar, não apenas nomear uma estética.
+Record: favored task; compositional rule; hierarchy and spatial relationships; type/color roles; narrow-layout behavior; distinctive detail; cost/risk; evaluation criterion. The description must enable implementation, not merely name an aesthetic.
 
-Mostre alternativas com o mesmo conteúdo e estado. Se uma usa dados curtos, assets melhores ou outra escala, declare a diferença. Inspecione a silhueta/composição geral e depois os detalhes; uma paleta coerente não compensa relações espaciais incorretas.
+Match expressive intensity to the brief. New interactive designs include the [default motion layer](motion.md#default-motion-for-new-interactive-designs); richer detail can justify a stronger composition, illustration, material treatment, or sequence without requiring all of them. Name what each addition communicates or helps the user do, where it belongs, and how it behaves at small sizes and without motion. A request for simplicity, static output, or no 3D remains binding. "Creative" or "premium" alone does not select a renderer or justify elaborate choreography. When actual volume or a specific motion is requested, preserve that mechanism instead of silently simplifying it away.
 
-## Direção que nasce do projeto
+Keep the [shared visual foundation](visual-system.md#coordinate-the-foundation) consistent across the chosen expression. Distinctiveness can come from content, typography, rhythm, and precise details; consistency does not require stripping those details away. Motion receives the same identity, modes, and acceptance context; add Objects 3D only when volume serves the brief.
 
-Em criação ou redesign autorizado, faça um inventário curto do que torna o projeto específico: objeto ou serviço, lugar, materiais, vocabulário, restrições reais, processo, acervo e resultados demonstráveis. Separe fatos confirmados de exemplos propostos. Não complete uma quantidade de itens inventando história, clientes ou números. Numa correção local, use a direção existente.
+Show alternatives using the same content and state. If one uses shorter data, better assets, or a different scale, declare the difference. Inspect the overall silhouette/composition before details; a coherent palette does not compensate for incorrect spatial relationships.
 
-Converta um desses fatos em uma decisão implementável: **neste projeto, [fato ou material próprio] orienta [composição, sequência ou interação]**. Por exemplo demonstrativo, uma oficina que já documenta cada etapa de restauração pode organizar a página pelo antes/processo/depois de uma peça real. O conceito depende desse acervo disponível; não basta escrever “artesanal e premium”.
+## A direction rooted in the project
 
-Teste a especificidade trocando mentalmente o nome pelo de um concorrente: se nada muda, investigue o conteúdo antes de adicionar decoração. Esse teste ajuda expressão de marca; não obriga controles familiares, formulários ou tabelas a serem inéditos.
+For creation or authorized redesign, make a short inventory of what makes the project specific: object or service, location, materials, vocabulary, real constraints, process, collection, and demonstrable outcomes. Separate confirmed facts from proposed examples. Do not fill an item quota by inventing history, customers, or numbers. For a local correction, use the existing direction.
 
-Escolha alternativas compatíveis com conteúdo, direitos dos assets, orçamento e stack. Uma composição que exige fotos ausentes, cinco depoimentos inexistentes ou WebGL fora do escopo não é uma boa escolha só por parecer distinta. Registre o motivo de descartar ou adaptar uma proposta. Se usar um sorteador externo, registre versão, seed e escolhas para repetibilidade; aleatoriedade não decide adequação nem substitui a direção aprovada.
+Turn one of these facts into an implementable decision: **in this project, [fact or original material] guides [composition, sequence, or interaction]**. As a demonstrative example, a workshop that already documents each restoration step could organize the page around before/process/after images of a real piece. The concept depends on that available collection; writing "artisanal and premium" is not enough.
 
-Na ficha da direção, ligue **fato → conceito → composição → recurso disponível → adaptação estreita → aceite observável**. Considere a página inteira: uma abertura específica seguida de seções intercambiáveis perde a direção. Repetir uma estrutura é válido quando serve comparação, continuidade ou consistência.
+Test specificity by mentally replacing the name with a competitor's: if nothing changes, investigate the content before adding decoration. This test helps brand expression; it does not require familiar controls, forms, or tables to be unprecedented.
 
-Quando uma demonstração ajudar a entender o produto, escolha uma interação curta que prove a ideia: comparar estados reais, filtrar um acervo ou experimentar uma opção disponível. Deve funcionar por teclado e toque e manter uma alternativa legível. Não adicionar um minijogo, calculadora fictícia ou animação obrigatória a toda página.
+Choose alternatives compatible with content, asset rights, budget, and stack. A composition that requires missing photos, five nonexistent testimonials, or out-of-scope WebGL is not a good choice merely because it looks distinctive. Record why a proposal was rejected or adapted. If using an external randomizer, record version, seed, and choices for repeatability; randomness does not determine suitability or replace the approved direction.
 
-Esta extensão adapta o método de inventário/conceito do [estudo Taste](taste-study.md). O repertório é apoio à escolha; suas cotas de imagens, movimento e proibições estéticas não são defaults da Forma.
+In the direction card, connect **fact -> concept -> composition -> available resource -> narrow-layout adaptation -> observable acceptance**. Consider the whole page: a specific opening followed by interchangeable sections loses the direction. Repeating a structure is valid when it supports comparison, continuity, or consistency.
 
-Julgue primeiro tarefa, acesso, integridade e legibilidade; depois adequação de marca e expressão. Preferência de um avaliador, aprovação do usuário, teste de tarefa e resultado de conversão são evidências diferentes. Sem pesquisa, apresente uma recomendação fundamentada, não uma vencedora estatística.
+When a demonstration helps explain the product, choose a short interaction that proves the idea: comparing real states, filtering a collection, or trying an available option. It must work by keyboard and touch and retain a readable alternative. Do not add a minigame, fictional calculator, or mandatory animation to every page.
 
-## Usar referências e remixes
+Forma decides according to the project contract: available content, task, constraints, and usage evidence. There is no image or motion quota. When expanding the repertoire, write a verifiable decision according to [authorship and incorporation](authorship.md), rather than importing another product's instructions.
 
-Para cada referência, identifique origem/licença, tipo de evidência e regra transferível: por exemplo, uma coluna estável de ações ou uma hierarquia editorial. Catálogo comunitário de um produto não é extração oficial de seus tokens. Popularidade, ranking de busca e screenshots não certificam acessibilidade nem implementação.
+Judge task, access, integrity, and legibility first; brand fit and expression afterward. Evaluator preference, user approval, task testing, and conversion results are different kinds of evidence. Without research, present a reasoned recommendation, not a statistical winner.
 
-Escolha uma base coerente; incorpore de outras referências apenas contribuições com papéis explícitos, como tratamento de imagem e movimento. Resolva conflitos antes de combinar tokens. Marca, estado, seleção, séries de dados e ambiente conservam papéis distintos mesmo quando duas cores coincidem. Faça prova com estados reais: erro + série verde + seleção, claro/escuro quando suportados, texto longo e largura pequena.
+## Use references and remixes
 
-Não invente uma genealogia oficial para um remix. Não copie marca, conteúdo ou código sem direitos. Um prompt de terceiros é uma hipótese de direção; seu código e seus valores precisam de revisão independente.
+For each reference, identify origin/license, evidence type, and a transferable rule: for example, a stable action column or editorial hierarchy. A community catalog for a product is not an official extraction of its tokens. Popularity, search ranking, and screenshots do not certify accessibility or implementation.
 
-## Consolidar e confirmar
+Choose a coherent base; incorporate only contributions with explicit roles from other references, such as image treatment and motion. Resolve conflicts before combining tokens. Brand, state, selection, data series, and environment retain distinct roles even when two colors coincide. Test with real states: error + green series + selection, supported light/dark modes, long text, and small widths.
 
-Registre escolha, motivo e aspectos preservados na documentação existente. Converta a direção em tokens/contratos da stack atual, implemente uma fatia representativa e compare no [ciclo renderizado](rendered-validation.md). Depois propague somente ao escopo autorizado.
+Do not invent an official genealogy for a remix. Do not copy brand, content, or code without rights. A third-party prompt is a direction hypothesis; its code and values require independent review.
 
-Scanner ajuda a localizar inconsistências; não escolhe a direção nem prova fidelidade. Um zero em alertas não justifica ignorar uma composição claramente divergente. Preserve captura inicial e confirme estados afetados depois da correção.
+## Consolidate and confirm
 
-Base conceitual: Huashu (comparação com condições fixas), Oil UI (exploração e inspeção por screenshots) e Awesome Claude Design (famílias/remixes como repertório). Versões, diferenças e limites em [casos de uso](source-use-cases.md).
+Record the choice, reason, and preserved aspects in existing documentation. Convert the direction into tokens/contracts for the current stack, implement a representative slice, and compare it in the [rendered cycle](rendered-validation.md). Then propagate only within the authorized scope.
+
+A scanner helps locate inconsistencies; it neither chooses the direction nor proves fidelity. Zero warnings do not justify ignoring a clearly divergent composition. Preserve the initial capture and confirm affected states after correction.
+
+Conceptual basis: Huashu (comparison under fixed conditions), Oil UI (exploration and screenshot inspection), and Awesome Claude Design (families/remixes as a repertoire). Versions, differences, and limits are in [use cases](source-use-cases.md).

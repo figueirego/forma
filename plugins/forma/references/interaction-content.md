@@ -1,51 +1,51 @@
-# Interação, dados e conteúdo
+# Interaction, data, and content
 
-## Contrato de estado
+## State contract
 
-Para cada ação relevante, especifique gatilho, pré-condição, feedback, resultado persistido, erro, cancelamento e repetição. Cubra estados aplicáveis, não uma lista mecânica em toda tela:
+For every relevant action, specify trigger, precondition, feedback, persisted outcome, error, cancellation, and repetition. Cover applicable states, not a mechanical list on every screen:
 
-| Estado | O usuário precisa saber | Comportamento |
+| State | What the user needs to know | Behavior |
 |---|---|---|
-| Inicial/vazio | O que existe aqui e como começar | Ação pertinente; diferenciar vazio de filtro sem resultados |
-| Carregando | O que está pendente | Preservar contexto; skeleton só se a forma for previsível |
-| Sucesso | O que foi concluído | Confirmação proporcional, próximo passo ou retorno |
-| Erro parcial | O que funcionou e o que falhou | Retentar só o necessário; manter dados válidos |
-| Offline/desatualizado | Atualidade e limites | Distinguir cache de dado atual; indicar sincronização |
-| Sem permissão | Limite e alternativa | Não revelar informação restrita; encaminhar acesso quando permitido |
-| Conflito | Qual versão difere | Resolver ou preservar ambas, sem sobrescrita silenciosa |
+| Initial/empty | What belongs here and how to start | Relevant action; distinguish empty content from filters with no results |
+| Loading | What is pending | Preserve context; skeleton only when the shape is predictable |
+| Success | What completed | Proportionate confirmation, next step, or return |
+| Partial error | What worked and what failed | Retry only what is necessary; retain valid data |
+| Offline/stale | Freshness and limits | Distinguish cached from current data; indicate synchronization |
+| No permission | Limit and alternative | Do not reveal restricted information; route access requests when permitted |
+| Conflict | Which version differs | Resolve or preserve both without silent overwriting |
 
-## Navegação, diálogos e comandos
+## Navigation, dialogs, and commands
 
-Mantenha back, histórico e estado de filtros previsíveis. Use links para navegação e comandos para ações. Context menus e atalhos complementam caminhos descobríveis. Não coloque ações exclusivas em hover ou long press.
+Keep back navigation, history, and filter state predictable. Use links for navigation and commands for actions. Context menus and shortcuts complement discoverable paths. Do not place exclusive actions behind hover or long press.
 
-Use modal para interrupção necessária. Defina nome acessível, foco inicial, limite de foco, Escape conforme risco e retorno ao disparador. Se o disparador desaparecer, escolha destino lógico. Conteúdo de popover não modal tem outro contrato. Ações destrutivas precisam de consequência clara, confirmação ou undo conforme reversibilidade e risco.
+Use a modal for a necessary interruption. Define an accessible name, initial focus, focus boundary, risk-appropriate Escape behavior, and return to the trigger. If the trigger disappears, choose a logical destination. Nonmodal popover content has a different contract. Destructive actions need clear consequences, confirmation, or undo according to reversibility and risk.
 
-## Formulários e onboarding
+## Forms and onboarding
 
-Rótulos persistentes, instrução antes do erro provável e mensagens junto ao campo. Valide no momento que ajuda sem punir digitação incompleta. Preserve dados no erro; resuma erros em formulários longos com ligação aos campos. Diferencie obrigatório, opcional e indisponível.
+Use persistent labels, instructions before likely errors, and messages beside fields. Validate when helpful without penalizing incomplete typing. Preserve data on error; summarize errors in long forms with links to their fields. Distinguish required, optional, and unavailable.
 
-Ofereça autofill, colagem, gerenciadores de senha e teclado adequado. Explique unidades e formatos; não torne datas ambíguas. Mostre progresso real em multietapas, permita revisar e voltar sem perder conteúdo. Onboarding deve levar ao primeiro valor, ser pulável quando possível e reaparecer como ajuda contextual.
+Offer autofill, paste, password managers, and appropriate keyboards. Explain units and formats; avoid ambiguous dates. Show real progress in multistep flows, permit review and back navigation without lost content. Onboarding should lead to first value, be skippable when possible, and reappear as contextual help.
 
-## Tabelas, busca e gráficos
+## Tables, search, and charts
 
-Tabelas são adequadas para comparação entre atributos; cards não são automaticamente melhores. Defina alinhamento, unidades, cabeçalhos, ordenação e estado de seleção. Paginação, virtualização e carregamento incremental dependem de volume e tarefa. Preserve acesso por teclado e posição ao atualizar.
+Tables suit comparisons across attributes; cards are not automatically better. Define alignment, units, headers, sorting, and selection state. Pagination, virtualization, and incremental loading depend on volume and task. Preserve keyboard access and position during updates.
 
-Busca deve mostrar consulta ativa, filtros, resultados e recuperação. Diferencie ausência de resultado, erro de rede e falta de permissão. Não sugira que uma busca parcial cobriu todo o acervo.
+Search must show the active query, filters, results, and recovery. Distinguish no results, network errors, and insufficient permission. Do not imply that a partial search covered the entire collection.
 
-Para pesquisa com sugestões, cor, tags, histórico ou IA, use [busca e descoberta](search-discovery.md). Campo ancorado, seletor de cor e paleta de comandos podem ser três superfícies diferentes: não transfira automaticamente modalidade, blur, teclado ou regras de fechamento entre elas.
+For search with suggestions, color, tags, history, or AI, use [search and discovery](search-discovery.md). An anchored field, color picker, and command palette may be three different surfaces: do not automatically transfer modality, blur, keyboard, or dismissal rules between them.
 
-Em gráficos, escolha o tipo pela pergunta: comparar, evoluir, distribuir ou relacionar. Identifique escala, período, unidade, origem, dados faltantes e incerteza. Evite eixos enganosos, 3D decorativo e dependência de cor. Ofereça alternativa textual/tabela e acesso às informações do tooltip sem mouse.
+For charts, choose the type based on the question: comparison, change, distribution, or relationships. Identify scale, period, unit, source, missing data, and uncertainty. Avoid misleading axes, decorative 3D, and reliance on color. Offer a text/table alternative and access to tooltip information without a mouse.
 
-Em monitoramento, mapas de indicadores ou comparação temporal, leia [dashboards temporais e geográficos](data-dashboards.md). Defina recorte, denominadores e identidade do snapshot antes de ligar os painéis; valor atual não pode aparecer como histórico, e resposta antiga não pode substituir a seleção mais recente.
+For monitoring, indicator maps, or temporal comparison, read [temporal and geographic dashboards](data-dashboards.md). Define the scope, denominators, and snapshot identity before connecting panels; current values must not appear as historical data, and old responses must not replace the latest selection.
 
-## Conteúdo e localização
+## Content and localization
 
-Escreva ações específicas, consequências claras e erro recuperável: o que aconteceu, o que foi preservado e próximo passo. Use terminologia de domínio consistente. Não corte citações de modo a alterar sentido. Não invente atribuições.
+Write specific actions, clear consequences, and recoverable errors: what happened, what was preserved, and the next step. Use consistent domain terminology. Do not truncate quotations in ways that alter meaning. Do not invent attributions.
 
-Prepare pluralização, RTL, datas, fuso, moeda e números locais; não concatene frases traduzíveis. Teste expansão e strings longas. Não use bandeira como sinônimo de idioma. Alt text descreve propósito/contexto; decoração não precisa ser narrada.
+Prepare pluralization, RTL, dates, time zones, currencies, and local numbers; do not concatenate translatable sentences. Test expansion and long strings. Do not use a flag as a synonym for language. Alt text describes purpose/context; decoration need not be narrated.
 
-## Colaboração e IA
+## Collaboration and AI
 
-Em edição colaborativa, diferencie presença, edição, salvamento e versão confirmada. Trate desconexão, conflitos e permissão alterada durante a sessão. Em IA, diferencie sugestão de execução, streaming de conclusão e confiança de certeza. Inclua editar, interromper, retentar, revisar fontes e reverter quando apropriado.
+In collaborative editing, distinguish presence, editing, saving, and confirmed version. Handle disconnection, conflicts, and permission changes during the session. For AI, distinguish suggestion from execution, streaming from completion, and confidence from certainty. Include editing, interruption, retry, source review, and reversal when appropriate.
 
-Ao fechar um documento com autosave, aguarde o flush da versão atual. Falha deve preservar o rascunho e oferecer retry ou descarte explícito; não absorva a exceção e feche mesmo assim. “Salvo” precisa nomear o destino: gravação local não demonstra sincronização remota. Exportar/copiar um rascunho também não equivale a persistir o formulário de origem.
+When closing an autosaved document, wait for the current version to flush. Failure must preserve the draft and offer retry or explicit discard; do not swallow the exception and close anyway. "Saved" must identify the destination: local storage does not prove remote synchronization. Exporting/copying a draft is also not equivalent to persisting the source form.

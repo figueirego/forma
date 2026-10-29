@@ -1,94 +1,93 @@
-# Forma — identidade e apresentação
+# Forma - identity and presentation
 
-**Da intenção ao acabamento.**
+**From intent to refinement.**
 
-Identidade visual local do plugin Forma: marca modular, paleta funcional e apresentação editorial responsiva em português. Abra [identidade.html](identidade.html) em um navegador. Não há fontes remotas, dependências de CDN, analytics, servidor ou JavaScript de aplicação.
+Local visual identity for the Forma plugin: a modular brand, functional palette and responsive editorial presentation in English. Open [identidade.html](identidade.html) in a browser. There are no remote fonts, CDN dependencies, analytics, server or application JavaScript.
 
-## Arquivos
+## Files
 
-| Arquivo | Uso |
+| File | Use |
 |---|---|
-| `icon.svg` / `icon-dark.svg` | Símbolo vetorial azul / claro, fundo transparente, canvas 120 × 120 |
-| `wordmark.svg` / `wordmark-dark.svg` | Assinatura com símbolo e nome editável, canvas 440 × 128 |
-| `logo.png` | Símbolo azul exportado a 512 × 512 com transparência |
-| `hero.png` | Imagem de apresentação 1536 × 1024, fornecida pela coordenação e copiada sem alteração |
-| `tokens.json` / `tokens.css` | Cores, papéis claro/escuro, tipografia, espaços e geometria |
-| `identidade.html` / `identity.css` | Página local com apresentação, onze especialistas e guia de marca |
-| `preview-desktop-top.png` | Prévia de abertura em viewport 1440 × 900 |
-| `preview-mobile-top.png` | Prévia de abertura em viewport 390 × 844 |
-| `preview-symbols.png` / `preview-usage.png` | Evidência das variantes e da área de proteção, fora da seleção de marketplace |
-| `provenance.json` | Ferramenta, prompt exato, origem e limites do hero |
-| `verify.cjs` / `qa.json` | Verificação local reproduzível e resultados medidos |
+| `icon.svg` / `icon-dark.svg` | Blue / light vector symbol, transparent background, 120 x 120 canvas |
+| `wordmark.svg` / `wordmark-dark.svg` | Signature with symbol and editable name, 440 x 128 canvas |
+| `logo.png` | Blue symbol exported at 512 x 512 with transparency |
+| `hero.png` | 1536 x 1024 presentation image, supplied by the coordinator and copied unchanged |
+| `tokens.json` / `tokens.css` | Colors, light/dark roles, typography, spacing and geometry |
+| `identidade.html` / `identity.css` | Local page with the introduction, eleven specialists and brand guide |
+| `preview-desktop-top.png` | Opening preview at a 1440 x 900 viewport |
+| `preview-mobile-top.png` | Opening preview at a 390 x 844 viewport |
+| `preview-symbols.png` / `preview-usage.png` | Evidence of variants and clear space, outside the marketplace selection |
+| `provenance.json` | Tool, exact prompt, origin and limits of the hero |
+| `verify.cjs` / `qa.json` | Reproducible local verification and measured results |
 
-Para a apresentação do marketplace, usar as duas prévias de abertura. Capturas longas não são necessárias.
+Use the two opening previews for the marketplace presentation. Long screenshots are unnecessary.
 
-## Geometria e proteção
+## Geometry and clear space
 
-O símbolo é construído em módulo `u = 6`, no canvas `120 × 120`:
+The symbol uses a module of `u = 6` on a `120 x 120` canvas:
 
-- Haste: `x12 y12 w24 h96`.
-- Barra superior: `x42 y12 w66 h24`.
-- Barra central: `x42 y48 w48 h24`.
-- Intervalo horizontal entre haste e barras: `1u = 6`.
-- Área visível total: `96 × 96`.
-- Área de proteção externa: pelo menos `4u = 24` ao redor dos limites visíveis, equivalente à largura da haste.
+- Stem: `x12 y12 w24 h96`.
+- Top bar: `x42 y12 w66 h24`.
+- Middle bar: `x42 y48 w48 h24`.
+- Horizontal gap between the stem and bars: `1u = 6`.
+- Total visible area: `96 x 96`.
+- External clear space: at least `4u = 24` around the visible bounds, equal to the stem width.
 
-O padding de 12 unidades dentro do SVG **não contém sozinho a área de proteção completa**. Complete o espaço no consumidor. O diagrama da página mostra uma área visível de 160 px em uma caixa de 240 px: 40 px livres em cada lado, equivalentes aos 4u dessa escala.
+The 12-unit padding inside the SVG **does not provide the entire clear space**. Add the remaining space in the consuming project. The page diagram shows a 160 px visible area inside a 240 px box: 40 px free on each side, equivalent to 4u at that scale.
 
-Mínimo recomendado para o canvas do símbolo: **24 px**. Há amostras reais a 24 e 32 px na página. Preserve proporção, três peças e intervalos; não gire, estique ou acrescente contornos. Para assinatura pequena, confira a leitura no tamanho de destino. Uma nova aplicação exige seu próprio aceite.
+Recommended minimum symbol canvas: **24 px**. The page includes actual 24 and 32 px samples. Preserve proportions, all three pieces and their gaps; do not rotate, stretch or add outlines. For a small signature, verify legibility at the destination size. Each new application requires its own acceptance check.
 
-## Paleta e tipografia
+## Palette and typography
 
-| Papel | Claro | Escuro |
+| Role | Light | Dark |
 |---|---|---|
-| Superfície | Papel `#F5F4F0` | Tinta `#172238` |
-| Texto principal | Tinta `#172238` | Papel `#F5F4F0` |
-| Texto de apoio | `#596274` | `#B9C1D1` |
-| Acento de texto | Azul Forma `#315BE8` | `#A8BCFF` |
-| Marca | Azul Forma | Papel |
+| Surface | Paper `#F5F4F0` | Ink `#172238` |
+| Primary text | Ink `#172238` | Paper `#F5F4F0` |
+| Supporting text | `#596274` | `#B9C1D1` |
+| Text accent | Forma blue `#315BE8` | `#A8BCFF` |
+| Brand | Forma blue | Paper |
 
-O acento claro do modo escuro serve à leitura; não substitui o azul original nos arquivos de marca. Cores de marca não são automaticamente cores de erro, sucesso ou gráficos.
+The lighter dark-mode accent supports reading; it does not replace the original blue in brand files. Brand colors are not automatically error, success or chart colors.
 
-O wordmark usa Arial/Helvetica/sans-serif e permanece como elemento `<text>` editável. Os títulos editoriais usam Georgia/Times New Roman; o corpo usa a fonte do sistema. Nenhum arquivo de fonte é distribuído. Métricas podem variar entre sistemas; confira a exportação se trocar fonte. Para uma assinatura com contornos idênticos em qualquer editor, seria necessária uma exportação adicional em curvas; ela não foi prometida neste pacote.
+The wordmark uses Arial/Helvetica/sans-serif and remains an editable `<text>` element. Editorial headings use Georgia/Times New Roman; body text uses the system font. No font file is distributed in this identity package. Metrics may vary between systems; check the export if you change fonts. A signature with identical outlines in every editor would require an additional outlined export; that export is not promised in this package.
 
-`tokens.json` é um formato local simples com aliases documentais, não uma declaração de conformidade com DTCG. O CSS contém os valores resolvidos consumidos pela página.
+`tokens.json` is a simple local format with documentary aliases, not a claim of DTCG conformance. The CSS contains the resolved values consumed by the page.
 
-## Conteúdo e escopo
+## Content and scope
 
-A família apresentada contém exatamente onze especialistas: foundations, interface, product, objects-3d, graphs-data, motion, platforms, brand, reference, validation e handoff. A apresentação descreve responsabilidades; não afirma que todos executam em cada tarefa ou que ferramentas externas estejam conectadas.
+The family presented contains exactly eleven specialists: foundations, interface, product, objects-3d, graphs-data, motion, platforms, brand, reference, validation and handoff. The presentation describes responsibilities; it does not claim that all specialists run on every task or that external tools are connected.
 
-**A identidade pertence ao plugin Forma. Ela nunca deve ser imposta aos projetos consumidores.** Os projetos preservam sua própria marca, tipografia, tecnologia, dados e decisões aprovadas.
+**The identity belongs to the Forma plugin. It must never be imposed on consuming projects.** Projects retain their own brand, typography, technology, data and approved decisions.
 
-O hero é uma imagem gerada por IA. A aparência de objeto material não é um modelo 3D, mecanismo interativo, prova de fabricabilidade ou especificação dimensional. A fonte canônica do símbolo é o SVG, não a perspectiva ou os chanfros do hero. O arquivo original foi copiado sem modificar pixels; o CSS adapta o enquadramento à largura.
+The hero is an AI-generated image. Its material-object appearance is not a 3D model, interactive mechanism, proof of manufacturability or dimensional specification. The canonical symbol source is the SVG, not the hero's perspective or bevels. The original file was copied without modifying pixels; CSS adapts the framing to the available width.
 
-Não houve pesquisa de marca registrada nem certificação jurídica de exclusividade. Os vetores foram construídos para esta entrega; não foram importados logos ou fontes de terceiros.
+No trademark search or legal certification of exclusivity was performed. The vectors were constructed for this deliverable; no third-party logos or fonts were imported into this identity package.
 
-## Proveniência da imagem
+## Image provenance
 
-Ferramenta informada pela coordenação: `image_gen__imagegen`. Parâmetro: `transparent_background: false`. Dimensão recebida: 1536 × 1024. Prompt executado, fornecido pela coordenação e preservado também em `provenance.json`:
+Tool reported by the coordinator: `image_gen__imagegen`. Parameter: `transparent_background: false`. Received dimensions: 1536 x 1024. Executed prompt, supplied by the coordinator and also preserved in `provenance.json`:
 
 > Create an original premium brand hero illustration for FORMA, a modular design assistant plugin. Landscape 3:2 composition, absolutely no text or lettering. Warm white studio background #F5F4F0, lots of negative space at left for future editorial typography. At right, a single sculptural uppercase F made from three precisely aligned geometric slabs: one vertical stem, a long horizontal top bar, and a shorter middle bar with clean rectangular negative space. Front surfaces deep cobalt #315BE8, beveled side surfaces dark ink #172238. This is a physical satin ceramic/aluminum object, NOT inflated bubble typography. Very restrained fine microtexture, softly rounded tiny chamfers, coherent realistic softbox reflections and ambient contact shadows, crisp edges, subtle paper-like warm-white pedestal. A single small flat blue color-sample tile near its base may reinforce a system of modular pieces. Camera front three-quarter, slight elevation, orthographic product photography. Elegant, precise, quiet and clean. No glow, no purple gradients, no glass, no extra symbols, no UI or logos of other companies. Original new mark, not based on any existing brand. High craftsmanship, professional design system editorial visual.
 
-O SHA-256 do arquivo copiado e do original foi comparado na autoria. O hash esperado está em `provenance.json` e é conferido por `verify.cjs` sem depender do original externo. Para repetir também essa comparação, informe opcionalmente `FORMA_HERO_SOURCE`. Identidade dos bytes não prova a origem conceitual de cada forma.
+The copied file's SHA-256 was compared with the original during authoring. The expected hash is in `provenance.json` and is checked by `verify.cjs` without depending on the external original. To repeat that comparison too, optionally set `FORMA_HERO_SOURCE`. Identical bytes do not prove the conceptual origin of each shape.
 
-## Verificação reproduzível
+## Reproducible verification
 
-Foi usado o Playwright já fornecido pelo ambiente, sem instalar pacotes, com Google Chrome headless em contexto novo. Com os caminhos deste ambiente:
+The original verification used Playwright already provided by the environment, without installing packages, with headless Google Chrome in a fresh context. Using that environment's paths:
 
 ```sh
 CHROME_BIN="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
 node work/forma-brand/verify.cjs
 ```
 
-O script usa `require('playwright')` e `require('sharp')` existentes. `sharp` apenas lê metadados/alpha do PNG exportado; a rasterização é screenshot do SVG no navegador. Sem `CHROME_BIN`, usa o Chromium gerenciado pelo Playwright; com essa variável, usa o executável informado. O comando acima é apenas o exemplo do ambiente de autoria. Em outro ambiente com os pacotes e navegador já disponíveis, execute `node verify.cjs` dentro desta pasta. Ele abre `identidade.html` por `file://`, mede os layouts, exporta o logo e atualiza prévias/`qa.json` dentro desta pasta.
+The script uses existing `require('playwright')` and `require('sharp')` packages. `sharp` only reads metadata/alpha from the exported PNG; rasterization uses a browser screenshot of the SVG. Without `CHROME_BIN`, it uses Playwright-managed Chromium; with that variable, it uses the specified executable. The command above is only an example from the authoring environment. In another environment with the packages and browser already available, run `node verify.cjs` inside this directory. It opens `identidade.html` through `file://`, measures layouts, exports the logo and updates previews/`qa.json` in this directory.
 
-Checagens: overflow horizontal em 320, 360, 390, 768, 1024 e 1440 px; imagens carregadas; onze IDs na ordem prevista; amostras 24/32; arquivos/âncoras; skip link por teclado; navegação; geometria dos três retângulos; texto SVG editável; wordmark dentro do canvas; contraste dos pares opacos declarados; ausência de requisições externas e erros de navegador; PNG 512 com alpha; hash do hero.
+Checks: horizontal overflow at 320, 360, 390, 768, 1024 and 1440 px; loaded images; eleven IDs in the expected order; 24/32 px samples; files/anchors; keyboard skip link; navigation; three-rectangle geometry; editable SVG text; wordmark within the canvas; contrast of declared opaque pairs; no external requests or browser errors; 512 px PNG with alpha; hero hash.
 
-Os resultados efetivamente executados estão em `qa.json`. Não são prova de aparelho físico, impressão, leitor de tela, acessibilidade integral, direitos de marca ou integração instalada no plugin. As capturas foram inspecionadas visualmente; a área fotográfica tem fundo variável e não recebe uma alegação universal de contraste por esses cálculos.
+Actual executed results are recorded in `qa.json`. They do not prove physical-device behavior, print quality, screen-reader support, full accessibility, trademark rights or installed plugin integration. Screenshots require visual inspection; the photographic area has a variable background and these calculations do not make a universal contrast claim for it.
 
-## Decisões de composição
+## Composition decisions
 
-Grid editorial e linhas de separação organizam o conteúdo sem aparência de dashboard. O índice de especialidades passa de duas colunas para uma conforme o espaço. No mobile, o texto precede a imagem, evitando sobrepor a mensagem ao símbolo. O movimento limita-se à navegação por âncora, desativado com `prefers-reduced-motion`.
+An editorial grid and separators organize the content without a dashboard appearance. The specialty index shifts from two columns to one as space narrows. On mobile, text precedes the image so the message does not cover the symbol. Motion is limited to anchor navigation, disabled with `prefers-reduced-motion`.
 
-Esta entrega ficou restrita a `work/forma-brand/`. Não modifica, instala, publica ou ativa Forma, plugins, provedores ou serviços.
-
+The original identity deliverable was limited to `work/forma-brand/`. The presentation itself does not modify, install, publish or activate Forma, plugins, providers or services.

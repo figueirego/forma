@@ -1,12 +1,12 @@
 {
   "name": "forma-community",
   "interface": {
-    "displayName": "Forma — comunidade"
+    "displayName": "Forma community"
   },
   "plugins": [
     {
       "name": "forma",
-      "version": "1.25.0",
+      "version": "1.29.0",
       "source": {
         "source": "local",
         "path": "./plugins/forma"

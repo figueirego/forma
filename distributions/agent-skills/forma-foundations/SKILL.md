@@ -1,47 +1,47 @@
 ---
 name: forma-foundations
-description: "Definir ou refinar hierarquia, tipografia, cor, layout, espaçamento e tokens de um sistema visual. Use para inconsistências de composição ou fundações; não para redesenhar fluxos de produto ou reproduzir um mecanismo 3D."
+description: "Define or refine hierarchy, typography, color, layout, spacing and visual-system tokens. Use for composition or foundation inconsistencies; not to redesign product flows or reproduce a 3D mechanism."
 metadata:
-  version: 1.17.1
+  version: 1.26.1
 ---
 
-# Fundações visuais
+# Visual foundations
 
-## Quando usar
+## When to use
 
-- Use para paleta, contraste cromático, tipografia, ritmo, alinhamento, densidade e tokens.
-- Não use para decidir pesquisa de produto, integrar objetos 3D ou tratar uma falha de persistência como styling.
+- Use for palettes, color contrast, typography, rhythm, alignment, density and tokens.
+- Do not use to decide product research, integrate 3D objects or treat a persistence failure as styling.
 
-Este módulo orienta o agente após leitura explícita; não executa ferramentas nem chama outros módulos.
-Preserve marca, stack e decisões aprovadas. Uma correção local não autoriza uma nova identidade.
+This module guides the agent after explicit reading; it does not execute tools or call other modules.
+Preserve the brand, stack and approved decisions. A local correction does not authorize a new identity.
 
-## Entradas
+## Inputs
 
-- Superfície e problema observável, ou direção nova autorizada; conteúdo e tamanhos representativos.
-- Tokens, estilos, componentes, assets e referência existentes; estados e consumidores afetados.
+- Surface and observable problem, or an authorized new direction; representative content and sizes.
+- Existing tokens, styles, components, assets and reference; affected states and consumers.
 
-## Procedimento
+## Procedure
 
-1. Inspecione o alvo e fixe baseline, fonte de verdade e critério observável.
-   Use o trecho de [playbooks](../forma/references/playbooks.md) se precisar estruturar trabalho amplo; leia [sistema visual](../forma/references/visual-system.md) ao consolidar valores/tokens. Um gap local pode ir direto ao contrato espacial.
-2. Se o problema for composição, declare container, eixos, insets, grupos e regra de adaptação.
-   Leia [contratos espaciais](../forma/references/layout-spatial-contracts.md); meça cascata e conteúdo antes de alterar a escala global.
-3. Se envolver cor, separe ação, texto, superfície, ambiente e estados.
-   Consulte [refinamento cromático](../forma/references/color-refinement.md); avalie modos, alpha e fundos reais. Para direção aberta, use [direções](../forma/references/design-directions.md).
-4. Aplique a menor mudança no consumidor real e examine os demais usos do token alterado.
-   Para migração ou aliases, leia [tokens e handoff](../forma/references/tokens-handoff.md); adapte exemplos ao pipeline existente, sem impor outro formato.
-5. Compare conteúdo e estados equivalentes em tamanhos pertinentes.
-   Use os trechos pertinentes de [verificação](../forma/references/verification.md) e [validação renderizada](../forma/references/rendered-validation.md), sem carregar toda a matriz para um ajuste local; contraste isolado não confirma composição ou fidelidade.
+1. Inspect the target and establish a baseline, source of truth and observable criterion.
+   Use the relevant [playbooks](../forma/references/playbooks.md) section if broad work needs structure; read the [shared visual foundation](../forma/references/visual-system.md#coordinate-the-foundation) for new surfaces, broad refinement, or token consolidation. Connect palette/modes, spacing, shape, and icon roles through existing consumers. A local gap can go directly to the spatial contract.
+2. If the problem is composition, declare the container, axes, insets, groups and adaptation rule.
+   Read [spatial contracts](../forma/references/layout-spatial-contracts.md); measure the cascade and content before changing the global scale.
+3. If color is involved, separate action, text, surface, ambient color and states.
+   Consult [color refinement](../forma/references/color-refinement.md); evaluate modes, alpha and actual backgrounds. For an open direction, use [directions](../forma/references/design-directions.md).
+4. Apply the smallest change in the actual consumer and inspect the changed token's other uses.
+   For migration or aliases, read [tokens and handoff](../forma/references/tokens-handoff.md); adapt examples to the existing pipeline without imposing another format.
+5. Compare equivalent content and states at relevant sizes.
+   Use the relevant sections of [verification](../forma/references/verification.md) and [rendered validation](../forma/references/rendered-validation.md), without loading the entire matrix for a local adjustment; contrast alone does not confirm composition or fidelity.
 
-## Saída e parada
+## Output and stopping condition
 
-Entregue a alteração solicitada, papéis/tokens afetados, decisão material e evidência do consumidor.
-Se a tarefa for especificação, entregue regras implementáveis com exemplos e valores identificados como medidos ou propostos.
-Pare quando os aceites de hierarquia, alinhamento, leitura e adaptação forem atendidos sem regressão relevante.
-Se faltar acesso ao render ou uma escolha de identidade, registre a lacuna e o que continua sem validação.
+Deliver the requested change, affected roles/tokens, material decision and consumer evidence.
+If the task is a specification, deliver implementable rules with examples and values identified as measured or proposed.
+Stop when hierarchy, alignment, reading and adaptation criteria are met without a relevant regression.
+If rendering access or an identity decision is missing, record the gap and what remains unvalidated.
 
-## Apoios opcionais e limites
+## Optional support and limits
 
-`ecc:design-system`, `design-taste-frontend`, Impeccable e Font Pairing podem resolver dúvidas específicas de consistência, composição ou fontes.
-Se disponíveis e pertinentes, leia o `SKILL.md` atual antes de usá-los, conforme [integrações](../forma/references/integrations.md). Um nome não garante ferramenta ou conexão.
-Não instale apoios por padrão. Snippets e JSONs de exemplo não são um design system já integrado; confirme uso e efeito no destino.
+`ecc:design-system`, Impeccable and Font Pairing can resolve specific questions about consistency, composition or fonts.
+If available and relevant, read the current `SKILL.md` before using them, as described in [integrations](../forma/references/integrations.md). A name does not guarantee a tool or connection.
+Do not install supporting tools by default. Example snippets and JSON files are not an already-integrated design system; confirm their use and effect in the destination.

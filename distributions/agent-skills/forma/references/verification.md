@@ -1,93 +1,99 @@
-# Verificação, auditoria e aceite
+# Verification, auditing and acceptance
 
-Nesta distribuição, `<forma-root>` é a pasta `forma/` instalada junto às especialistas; contém `references/`, `assets/`, `scripts/` e `tests/`. Resolva-a a partir deste arquivo.
+In this distribution, `<forma-root>` is the `forma/` directory installed beside the specialists; it contains `references/`, `assets/`, `scripts/` and `tests/`. Resolve it relative to this file.
 
-Defina critérios antes de julgar. Separe **verificado**, **inferido**, **não testado** e **não aplicável com motivo**. Não atribua nota a uma área que não foi acessada.
+Define criteria before judging. Separate **verified**, **inferred**, **untested** and **not applicable with a reason**. Do not score an area that was not accessed.
 
-## Matriz proporcional
+## Proportionate matrix
 
-| Dimensão | Evidência mínima pertinente |
+| Dimension | Relevant minimum evidence |
 |---|---|
-| Tarefa principal | Percurso real ou teste de comportamento; não apenas screenshot |
-| Estados | Vazio, carregando, falha, sucesso e extremos aplicáveis |
-| Layout | Container/eixos e contratos espaciais declarados; medidas de alinhamento/insets/gaps/overflow + capturas nos tamanhos e estados suportados |
-| Acessibilidade | Automação disponível + teclado, foco, semântica e testes assistivos pertinentes |
-| Conteúdo | Texto real revisado, links, traduções e fontes de claims |
-| Visual | Hierarquia, espaçamento, tipografia, cores, assets, clipping e consistência |
-| Cor, quando alterada | Papel/modo/estado, pares e composição; legibilidade, semântica, equilíbrio contextual e fidelidade julgados separadamente conforme [refinamento cromático](color-refinement.md) |
-| Motion | Interrupção, reduced motion, resposta e continuidade |
-| Desempenho | Medição no contexto declarado; distinguir lab de campo |
-| Engenharia | Build/lint/types/testes pertinentes quando houve código |
-| API/dados | Falhas, permissões, retry, staleness e persistência conforme contrato |
-| Grafos/ligações | Fixture com relações esperadas; resolução, ocorrências, backlinks, filtros/profundidade e rename; navegação e alternativa fora do canvas |
-| Nativo/instalador | SO/arquitetura/estado de instalação explicitamente testados |
-| Exportação | Abrir arquivo final e conferir formato, dimensões, assets e editabilidade |
-| Editor/geração | Alvo e revisão preservados, preview isolado, edição concorrente, undo e falha parcial conforme contrato |
-| Reúso de capacidade | Contrato pedido ligado ao consumidor real; estado/renderizador e operação discriminante observados no destino, conforme [integração](playbooks.md#h-reutilizar-capacidades-em-outro-projeto) |
-| Base de interface limpa | Hierarquia fundo/sidebar/painel, seleção/foco, botões/campos, rolagem e alinhamento observados juntos; conteúdo extremo e adaptação por largura, conforme [receita](clean-shell.md) |
+| Primary task | Actual walkthrough or behavioral test; not just a screenshot |
+| States | Applicable empty, loading, failure, success and extreme states |
+| Layout | Declared container/axes and spatial contracts; alignment/inset/gap/overflow measurements + captures at supported sizes and states |
+| Accessibility | Available automation + keyboard, focus, semantics and relevant assistive tests |
+| Content | Reviewed actual text, links, translations and sources for claims |
+| Visual | Hierarchy, spacing, typography, colors, assets, clipping and consistency |
+| Color, when changed | Role/mode/state, pairs and composition; legibility, semantics, contextual balance and fidelity judged separately according to [color refinement](color-refinement.md) |
+| Motion | Interruption, reduced motion, response and continuity |
+| Performance | Measurement in the declared context; distinguish lab from field |
+| Engineering | Relevant build/lint/types/tests when code changed |
+| API/data | Failures, permissions, retry, staleness and persistence according to the contract |
+| Graphs/links | Fixture with expected relationships; resolution, occurrences, backlinks, filters/depth and rename; navigation and an alternative outside the canvas |
+| Native/installer | Explicitly tested OS/architecture/installation state |
+| Export | Open the final file and check format, dimensions, assets and editability |
+| Editor/generation | Preserved target and revision, isolated preview, concurrent editing, undo and partial failure according to the contract |
+| Capability reuse | Requested contract connected to the actual consumer; state/renderer and discriminating operation observed in the destination, according to [integration](playbooks.md#h-reuse-capabilities-in-another-project) |
+| Clean interface foundation | Background/sidebar/panel hierarchy, selection/focus, buttons/fields, scrolling and alignment observed together; extreme content and width-based adaptation, according to the [recipe](clean-shell.md) |
 
-Escolha amostras pelo risco: um componente compartilhado exige consumidores representativos; um ajuste textual não exige instalar todas as plataformas. Imagens de aparência correta não substituem checks de comportamento.
+Choose samples by risk: a shared component needs representative consumers; a text adjustment does not require installing every platform. Images with the correct appearance do not replace behavioral checks.
 
-Para revisar a própria skill, inventarie entrypoint, referências, exemplos, helpers e cenários. Registre por área: manter/alterar, problema ou critério revisado, evidência e método de validação. Leitura documental, teste de helper, avaliação independente de decisão e execução renderizada são níveis distintos. Não converter cobertura de arquivos em alegação de todos os fluxos/dispositivos testados. Novas regras precisam de cenário que revele uma decisão errada, não de teste que apenas busque palavras na documentação.
+To review the skill itself, inventory the entrypoint, references, examples, helpers and scenarios. Record per area: keep/change, problem or criterion reviewed, evidence and validation method. Document reading, helper testing, independent decision evaluation and rendered execution are distinct levels. Do not turn file coverage into a claim that every flow/device was tested. New rules need a scenario that reveals an incorrect decision, not a test that merely searches documentation for words.
 
-Confira também o contrato do verificador: quantidade esperada/examinada, falhas descartadas, dependências ausentes e testes pulados. Exit code 0 pode representar um skip ou artefato parcial. `skipped`/`partial` de ferramentas externas permanecem não verificados/incompletos no relatório; não são `pass` nem `not-applicable` por conveniência. Métricas automáticas de semelhança/diversidade são apoio, não julgamento visual independente.
+Also check the verifier's contract: expected/examined count, discarded failures, missing dependencies and skipped tests. Exit code 0 may represent a skip or partial artifact. `skipped`/`partial` from external tools remain unverified/incomplete in the report; they are not `pass` or `not-applicable` for convenience. Automatic similarity/diversity metrics support evaluation; they are not independent visual judgment.
 
-Ligue cada gate bem-sucedido ao alvo e à revisão de entrada e saída que ele examinou. Contar chamadas de inspeção ou encontrar um gate anterior ao último render não prova que todos os requisitos foram checados, nem que o gate passou. Um contrato com `satisfied: true` e um texto de evidência é uma declaração a conferir: localize o arquivo/medição e a autorização citados; não trate o próprio relato como prova independente. Verificação estática, texto no DOM e texto legível no arquivo entregue também são evidências diferentes.
+Connect every successful gate to the target and input/output revision it examined. Counting inspection calls or finding a gate preceding the latest render does not prove every requirement was checked or that the gate passed. A contract with `satisfied: true` and an evidence description is a statement to verify: locate the cited file/measurement and authorization; do not treat the report itself as independent proof. Static verification, text in the DOM and legible text in the delivered file are also different evidence.
 
-Em uma transferência, diferencie teste do pacote e teste do consumidor: hashes, imports resolvidos e regressões do componente não mostram que a rota o instanciou. Um editor de três cores que salva pode continuar incapaz de representar pools/posição/grain; um passaporte CSS pode passar layout e contraste sem possuir a malha/material pedidos. Não usar esses checks como aprovação substituta. Quando o escopo for apenas documental, validar decisões em cenários independentes e declarar que o produto continua sem correção executada.
+In a transfer, distinguish package tests from consumer tests: hashes, resolved imports and component regressions do not show that the route instantiated it. A three-color editor that saves may still be unable to represent pools/position/grain; a CSS passport may pass layout and contrast checks without the requested mesh/material. Do not use those checks as substitute approval. When scope is documentation only, validate decisions through independent scenarios and state that no product correction has been executed.
 
-## Comparação visual
+## Visual comparison
 
-Para resultados de agentes e ferramentas, consulte também [cobertura dos verificadores](#cobertura-de-verificadores-e-recibos). A aprovação precisa corresponder à pergunta realmente medida.
+For agent and tool results, also consult [verifier coverage](#verifier-coverage-and-receipts). Approval must correspond to the question actually measured.
 
-Use [contratos espaciais](layout-spatial-contracts.md) para transformar “está desalinhado” em alvo e relação verificáveis. Um script geométrico confirma apenas os contratos incluídos; não detecta requisitos omitidos nem substitui inspeção óptica, legibilidade ou teste de tarefa.
+Use [spatial contracts](layout-spatial-contracts.md) to turn "it is misaligned" into a verifiable target and relationship. A geometric script confirms only the included contracts; it does not detect omitted requirements or replace optical inspection, legibility or task testing.
 
-Para reprodução, fonte e implementação devem ter mesmo viewport, tema, estado, conteúdo e escala. Examine juntas, não por memória. Confira geometria e assets, mas registre diferenças de renderização legítimas. Para novo design, compare com critérios e direção definidos, sem inventar uma “fonte original”.
+For reproduction, source and implementation must have the same viewport, theme, state, content and scale. Examine them together, not from memory. Check geometry and assets, but record legitimate rendering differences. For a new design, compare against the defined criteria and direction without inventing an "original source."
 
-Para uma emenda, halo ou borda de poucos pixels, uma captura geral reduzida pode esconder o defeito. Compare recortes equivalentes antes/depois, incluindo a borda de referência, em escala nativa ou ampliação sem suavização enganosa; depois confira a composição inteira. Preserve as capturas originais. A pergunta visual deve ser concreta, como “a junção ficou fechada neste ângulo?”, sem concluir pelo tamanho de um thumbnail. Para filmes, amostre também o entorno dos cortes conforme [revisão temporal](motion.md#filmes-e-sequências-renderizadas).
+For a seam, halo or edge a few pixels wide, a reduced overview capture may hide the defect. Compare equivalent before/after crops, including the reference edge, at native scale or enlarged without misleading smoothing; then inspect the whole composition. Preserve original captures. The visual question should be concrete, such as "is the joint closed at this angle?", without drawing conclusions from a thumbnail's size. For films, also sample around cuts according to [temporal review](motion.md#films-and-rendered-sequences).
 
-## Rodadas e encerramento
+## Coordinated foundation review
 
-Faça uma inspeção agrupada, corrija achados relevantes em lote e confirme as alterações. Repetir só se mudanças/falhas justificarem. Não prolongue refinamento cosmético sem benefício. Se um bloqueador persistir, registre-o e não declare aprovação. As exigências específicas de um plugin usado continuam válidas.
+For a new surface or broad visual refinement, compare representative consumers against the [shared foundation](visual-system.md#coordinate-the-foundation). Use the same content and applicable states at narrow and wide sizes, in light and dark when both are supported or requested. Inspect the composition and computed values together: color roles and surface hierarchy; type and spacing relationships; equivalent radius roles and nested shapes; icon meaning, family, optical weight, and accessible names. Trigger focus, selection, and error where applicable so their coexistence is visible. Include the consumer of a changed shared token, not only an isolated swatch or component. Sample supporting text, placeholders, count badges, and the boundaries that identify enabled controls, including composited opacity; checking only body text and primary buttons can miss these failures.
 
-## Severidade
+For new interactive designs, exercise the [default motion layer](motion.md#default-motion-for-new-interactive-designs), especially supported theme changes, hover/focus/press, and the chosen scroll treatment. Check expressive details against their purpose and brief; motion and any requested 3D need their own interaction, fallback, and relevant cost evidence. An omitted inapplicable effect needs a reason; absent unrequested 3D is not a defect. A consistent but empty generic page may still fail the direction, and a distinctive page may still fail basic relationships. Record discrepancies against the responsible rule without treating either quality as a substitute for the other. For a local fix, verify the affected relationship and likely regressions instead of reopening the complete foundation.
 
-- **Crítica:** perda de dados, exposição sensível, ação irreversível enganosa ou tarefa essencial inviável.
-- **Alta:** fluxo principal falha para um grupo relevante, navegação inacessível, persistência incorreta.
-- **Média:** fricção reproduzível com recuperação, inconsistência que induz erro, falha relevante de adaptação.
-- **Baixa:** refinamento visual/local sem impacto material no uso.
+## Rounds and completion
 
-Cada achado contém alvo/localização, estado, passos, evidência, impacto, correção mínima e como verificar. Separe observação de hipótese. Sem achados, diga o escopo e os limites, não “perfeito”.
+Run a grouped inspection, fix relevant findings in a batch and confirm the changes. Repeat only when changes/failures justify it. Do not prolong cosmetic refinement without benefit. If a blocker remains, record it and do not declare approval. Specific requirements of a plugin being used remain valid.
 
-## Entrega
+## Severity
 
-Informe artefato e local, mudança e razão, verificações executadas e pendências. Não declare “produção pronta” se funções forem mockadas, tela não tiver sido renderizada ou instalação não tiver sido testada. Documentação pode estar completa mesmo quando uma implementação futura ainda não existe: nomeie a natureza da entrega.
+- **Critical:** data loss, sensitive exposure, misleading irreversible action or an impossible essential task.
+- **High:** the main flow fails for a relevant group, inaccessible navigation, incorrect persistence.
+- **Medium:** reproducible friction with recovery, inconsistency that causes mistakes, a relevant adaptation failure.
+- **Low:** visual/local refinement without material impact on use.
 
-## Registro verificável local
+Each finding contains target/location, state, steps, evidence, impact, smallest correction and how to verify. Separate observation from hypothesis. When there are no findings, state the scope and limits, not "perfect."
 
-Para tarefa ampla com múltiplos estados/dispositivos, use o [exemplo de registro](../assets/evidence.example.json). Para ajuste simples, evidência na resposta ou teste existente pode bastar. O JSON tem:
+## Delivery
 
-- `schema_version: 1`, `scope` e lista `targets` com identificadores estáveis do contexto testado.
-- `checks`: cada item declara `id`, `target` e `status` (`pass`, `fail`, `untested`, `not-applicable`).
-- `pass` exige `observation` e `artifact`, caminho relativo de arquivo local não vazio dentro da pasta do relatório, sem symlink ou `..`.
-- Outros estados exigem `reason`; falha ou teste pendente impede aprovação estrutural. Cada target precisa de pelo menos uma evidência aprovada.
+State the artifact and location, change and reason, executed checks and pending work. Do not declare "production ready" when functions are mocked, the screen has not been rendered or installation has not been tested. Documentation can be complete even when a future implementation does not yet exist: name the nature of the deliverable.
 
-Exemplo de check preenchido após um teste real: `{"id":"save-error","target":"web-390x844","status":"pass","observation":"Falha preservou os campos; retry persistiu a alteração.","artifact":"captures/save-error.png"}`. O arquivo deve existir e a observação precisa ser verdadeira. Screenshot é evidência de aparência; log/teste/percurso é necessário para alegar persistência.
+## Verifiable local record
 
-Execute `python3 <forma-root>/scripts/check_evidence.py <report.json>`. Exit 0 significa cobertura declarada e arquivos presentes; exit 1 indica registro incompleto/inválido; exit 2 indica erro de leitura/JSON. O checker não descobre requisitos omitidos, não inspeciona pixels e não prova que uma observação é verdadeira. Critérios e inspeção humana continuam essenciais.
+For broad tasks involving multiple states/devices, use the [example record](../assets/evidence.example.json). For a simple adjustment, evidence in the response or an existing test may suffice. The JSON has:
 
-O exemplo distribuído começa `untested` e deve falhar: não é um relatório pronto. Não renomeie teste inacessível para “não aplicável”. Preserve pendências no registro mesmo quando impedem exit 0.
+- `schema_version: 1`, `scope` and a `targets` list with stable identifiers for the tested context.
+- `checks`: each item declares `id`, `target` and `status` (`pass`, `fail`, `untested`, `not-applicable`).
+- `pass` requires `observation` and `artifact`, a relative path to a nonempty local file inside the report folder, without symlinks or `..`.
+- Other states require `reason`; failure or a pending test prevents structural approval. Each target needs at least one passing piece of evidence.
 
-## Verificação de contraste
+Example of a check completed after an actual test: `{"id":"save-error","target":"web-390x844","status":"pass","observation":"The failure preserved the fields; retry persisted the change.","artifact":"captures/save-error.png"}`. The file must exist and the observation must be true. A screenshot is appearance evidence; a log/test/walkthrough is needed to claim persistence.
 
-`python3 <forma-root>/scripts/check_contrast.py '#111827' '#ffffff' --threshold 4.5` calcula a razão WCAG de cores sRGB opacas, sem arredondar para decidir aprovação. Use o limiar pertinente ao elemento. Para alpha, gradiente, imagem e blur, avalie fundo final composto e todas as regiões relevantes; o utilitário não faz composição. Resultado aprovado não valida foco, semântica ou acessibilidade completa.
+Run `python3 <forma-root>/scripts/check_evidence.py <report.json>`. Exit 0 means declared coverage and present files; exit 1 indicates an incomplete/invalid record; exit 2 indicates a read/JSON error. The checker does not discover omitted requirements, inspect pixels or prove an observation true. Criteria and human inspection remain essential.
 
-## Cobertura de verificadores e recibos
+The distributed example starts as `untested` and must fail: it is not a ready-made report. Do not rename an inaccessible test "not applicable." Preserve pending work in the record even when it prevents exit 0.
 
-Antes de consumir um `pass`, confira **o que foi examinado, o que ficou de fora e a qual revisão pertence**. `measured:false`, zero itens julgados, fonte não resolvida ou falha de coleta não viram aceite visual por haver zero defeitos registrados. Se não existe conteúdo a verificar naquele critério, justifique a não aplicabilidade pelo contrato; não transforme falha do analisador em dispensa.
+## Contrast verification
 
-No registro existente de uma tarefa composta, vincule critério → método/versão → alvo/revisão → cobertura → resultado → artefato. Para uma amostra temporal, declare intervalo, cadência e momentos examinados; para tipografia, famílias/pesos/glifos efetivos; para export, identidade da fonte e do arquivo. Use hash quando for útil confirmar os bytes; ele não prova qualidade nem correção do conteúdo. Não exigir esquema novo em todo ajuste.
+`python3 <forma-root>/scripts/check_contrast.py '#111827' '#ffffff' --threshold 4.5` calculates the WCAG ratio of opaque sRGB colors without rounding to decide approval. Use the threshold relevant to the element. For alpha, gradients, images and blur, evaluate the final composited background and all relevant regions; the utility does not composite. A passing result does not validate focus, semantics or complete accessibility.
 
-Separe coleta e julgamento. Um coletor pode terminar com exit0 e registrar erros de assets; uma heurística pode medir só CSS resolvível ou uma amostra de frames. Leia essas limitações antes de concluir. Não modificar thresholds, omitir regiões ou reconstruir expected a partir do candidato para obter aprovação. Uma nota de dispensa escrita pelo próprio gerador não altera o aceite do usuário.
+## Verifier coverage and receipts
 
-O [checker local de evidências](resources.md) continua verificando somente a estrutura declarada e arquivos presentes; não autentica observações, mede cobertura omitida ou valida esses recibos semanticamente. Use [cenários independentes](../evals/scenarios.md#cobertura-de-mídia-e-agentes--1210), além das provas do produto quando houver implementação. Para runtime, [produção coordenada](agent-production.md) distingue execução, retomada e entrega.
+Before consuming a `pass`, check **what was examined, what was excluded and which revision it belongs to**. `measured:false`, zero judged items, an unresolved source or collection failure do not become visual acceptance because zero defects were recorded. If no content exists to verify for that criterion, justify nonapplicability through the contract; do not turn analyzer failure into an exemption.
+
+In the existing record for a composite task, connect criterion -> method/version -> target/revision -> coverage -> result -> artifact. For temporal samples, declare the interval, cadence and moments examined; for typography, actual families/weights/glyphs; for export, source and file identity. Use a hash when confirming bytes is useful; it does not prove quality or content correctness. Do not require a new schema for every adjustment.
+
+Separate collection from judgment. A collector may finish with exit0 and record asset errors; a heuristic may measure only resolvable CSS or a sample of frames. Read those limitations before concluding. Do not modify thresholds, omit regions or reconstruct expected values from the candidate to obtain approval. An exemption written by the generator itself does not change the user's acceptance criteria.
+
+The [local evidence checker](resources.md) continues to verify only declared structure and present files; it does not authenticate observations, measure omitted coverage or semantically validate these receipts. Use [independent scenarios](../evals/scenarios.md#media-and-agent-coverage---1210), in addition to product evidence when implementation exists. For runtime, [coordinated production](agent-production.md) distinguishes execution, resumption and delivery.

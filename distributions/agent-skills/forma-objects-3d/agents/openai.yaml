@@ -1,6 +1,6 @@
 interface:
   display_name: "Forma Objects 3D"
-  short_description: "Objetos 3D, materiais e interação reutilizável"
-  default_prompt: "Use $forma-objects-3d para integrar ou refinar este objeto 3D preservando seu mecanismo e verificando materiais e interação."
+  short_description: "3D objects, materials, and reusable interaction"
+  default_prompt: "Use $forma-objects-3d to integrate or refine this 3D object while preserving its mechanism and verifying materials and interaction."
 policy:
   allow_implicit_invocation: true

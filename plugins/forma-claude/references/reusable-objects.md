@@ -1,94 +1,94 @@
-# Objetos reutilizáveis: da referência ao componente
+# Reusable objects: from reference to component
 
-Use quando o pedido exigir a técnica adaptável, não só a aparência de um caderno, livro, cartão ou embalagem. Declare o limite: um motor de livro fechado atende caderno, álbum e relatório; não vira editor de páginas, qualquer malha 3D ou app nativo automaticamente.
+Use when the request requires adaptable technique, not just the appearance of a notebook, book, card or package. State the limit: a closed-book engine supports notebooks, albums and reports; it does not automatically become a page editor, arbitrary 3D mesh or native app.
 
-Quando o pedido exigir reutilizar o mecanismo já aprovado e o objeto couber nesse contrato, integrar o BookObject distribuído. Adaptar conteúdo, proporções e identidade pela API, preservando malha, UV, normais, materiais e ciclo de vida aprovados; não reescrevê-los por aproximação especulativa. Conservar a marca e a stack do consumidor. Um pedido genérico de “perfil” não determina um livro ou passaporte. CSS 2.5D é válido para uma composição independente adequada ao pedido ou um fallback solicitado/aceito, mas uma capa inclinada em CSS não atende por si só ao reúso explícito do mecanismo 3D.
+When the request requires reusing the already approved mechanism and the object fits this contract, integrate the distributed BookObject. Adapt content, proportions and identity through the API while preserving approved meshes, UVs, normals, materials and lifecycle; do not rewrite them through speculative approximation. Preserve the consumer's brand and stack. A generic "profile" request does not determine a book or passport. CSS 2.5D is valid for an independent composition suited to the request or a requested/accepted fallback, but a tilted CSS cover alone does not fulfill explicit reuse of the 3D mechanism.
 
-## Extração por responsabilidades
+## Extraction by responsibility
 
-1. Identificar mecanismo comprovado: CSS, Canvas, malha, shader, textura, câmera e eventos. Separar evidência da referência e implementação original.
-2. Separar conteúdo (`title`, subtítulo, marca), geometria (largura/altura/espessura), material (cores/padrão/asset), comportamento (pose/gestos) e integração (persistência/ações).
-3. Manter o contrato pequeno: `create → update/setPose/reset/dispose`. Separar alteração de conteúdo/material da inspeção de pose. Injetar loader/dependência já usada pelo projeto. Não embutir armazenamento, dados de pessoa, marca ou CSS global do produto original.
-4. Dar exemplos com proporções diferentes e validar nome extremo, fonte carregada, resize e desmontagem. Trocar apenas a cor de uma cópia fixa não demonstra reúso.
+1. Identify the proven mechanism: CSS, Canvas, mesh, shader, texture, camera and events. Separate reference evidence from original implementation.
+2. Separate content (`title`, subtitle, brand), geometry (width/height/thickness), material (colors/pattern/asset), behavior (pose/gestures) and integration (persistence/actions).
+3. Keep the contract small: `create -> update/setPose/reset/dispose`. Separate content/material changes from pose inspection. Inject a loader/dependency already used by the project. Do not embed storage, personal data, branding or global CSS from the original product.
+4. Provide examples with different proportions and validate extreme names, loaded fonts, resize and unmounting. Changing only the color of a fixed copy does not demonstrate reuse.
 
-Ao incorporar um refinamento aprovado, conservar junto ao componente a cadeia **sintoma → causa medida → patch → regressão → comparação renderizada**. O [caso do livro Pauta](book-polish-case-study.md) mostra como transformar um ajuste visual em conhecimento reutilizável. Normal, UV, mistura e ciclo de vida são mecanismos transferíveis; raio, paleta, pose e número de subdivisões daquele livro precisam de nova justificativa em outro objeto.
+When incorporating approved refinement, retain the chain **symptom -> measured cause -> patch -> regression -> rendered comparison** alongside the component. The [Pauta book case](book-polish-case-study.md) shows how to turn a visual adjustment into reusable knowledge. Normals, UVs, blending and lifecycle are transferable mechanisms; that book's radius, palette, pose and subdivision count need fresh justification in another object.
 
-## Gate obrigatório de fidelidade à referência
+## Required reference-fidelity gate
 
-Quando o pedido for “igual à referência” ou equivalente, um livro genérico funcional não atende ao aceite. Antes de implementar, fixe a referência, sua identidade/versão e os estados relevantes. Registre cada afirmação como **observada em runtime**, **confirmada estaticamente**, **inferida** ou **proposta de adaptação**. Hashes e callsites confirmam o artefato analisado, não a aparência da sessão aberta. Um shader encontrado no bundle não prova que foi executado na tela comparada.
+When the request is "like the reference" or equivalent, a functional generic book does not meet acceptance criteria. Before implementing, pin the reference, its identity/version and relevant states. Record each claim as **observed at runtime**, **statically confirmed**, **inferred** or **proposed adaptation**. Hashes and callsites confirm the analyzed artifact, not the appearance of the open session. A shader found in a bundle does not prove it executed on the compared screen.
 
-Monte a matriz abaixo e estabeleça tolerâncias por dimensão **antes** de julgar o resultado. Use medidas coerentes com a evidência: proporção/ângulo ou pixels CSS para forma e enquadramento; valores e papéis de cor quando extraídos; duração/curva e trajetória para movimento. Informe viewport, DPR, tema, dados e instante da captura. Tolerância escolhida é uma decisão do projeto, não uma norma universal; não a alargue depois para aprovar a implementação. Dimensão sem evidência suficiente permanece não verificada.
+Build the matrix below and establish tolerances per dimension **before** judging the result. Use measurements consistent with evidence: proportions/angles or CSS pixels for shape and framing; extracted color values and roles; duration/curve and trajectory for motion. State viewport, DPR, theme, data and capture time. A chosen tolerance is a project decision, not a universal standard; do not widen it afterward to approve the implementation. A dimension without sufficient evidence remains unverified.
 
-| Dimensão independente | Comparar e registrar |
+| Independent dimension | Compare and record |
 |---|---|
-| Geometria | Silhueta, proporção, espessura, lombada, capas, páginas, cantos e relevos; não apenas uma caixa com textura |
-| Projeção e composição | Tipo de câmera, perspectiva, enquadramento, pose inicial, ocupação do host e relação com título/ações |
-| Paleta | Cor base, tinta, páginas, contraste e diferença entre tema/accent e cor do objeto; comparar estados equivalentes |
-| Shader e material | Origem de cor/relevo/reflexo, escala e direção da trama, iluminação, roughness e máscaras; separar resposta angular de brilho pintado |
-| Gestos | Alvo e eixos, amplitude, ganho, captura/cancelamento, hover versus drag e resultado após soltar/sair |
-| Transições | Gatilho, trajetória, velocidade, amortecimento, repouso e interrupção; mesma pose final não prova mesmo movimento |
-| Adaptação | Estante/detalhe, desktop/mobile, nome longo, touch, reduced-motion e fallback; identificar toda diferença intencional |
+| Geometry | Silhouette, proportion, thickness, spine, covers, pages, corners and relief; not merely a textured box |
+| Projection and composition | Camera type, perspective, framing, initial pose, host occupancy and relationship with heading/actions |
+| Palette | Base color, ink, pages, contrast and the distinction between theme/accent and object color; compare equivalent states |
+| Shader and material | Origin of color/relief/reflection, weave scale and direction, lighting, roughness and masks; separate angular response from painted gloss |
+| Gestures | Target and axes, range, gain, capture/cancellation, hover versus drag and result after release/exit |
+| Transitions | Trigger, trajectory, speed, damping, rest and interruption; the same final pose does not prove the same motion |
+| Adaptation | Shelf/detail, desktop/mobile, long names, touch, reduced motion and fallback; identify every intentional difference |
 
-Execute a comparação em **repouso, hover, arrastar, soltar e sair com o ponteiro**, tanto na **estante** quanto no **detalhe** quando esses comportamentos existirem. “Não existe na referência” exige evidência, não um N/A automático. No mobile, registrar o gesto equivalente ou a adaptação que preserva a tarefa. Captura estática valida apenas o instante; gesto/transição requer sequência ou observação direta. Conservar referência e implementação lado a lado com os mesmos dados, dimensões e estado, sem substituir o resultado pela captura da referência.
+Execute comparison at **rest, hover, drag, release and pointer exit**, both on the **shelf** and in **detail** when those behaviors exist. "Does not exist in the reference" requires evidence, not automatic N/A. On mobile, record the equivalent gesture or adaptation preserving the task. A static capture validates only an instant; gestures/transitions require a sequence or direct observation. Keep reference and implementation side by side with the same data, dimensions and state, without replacing the result with a reference screenshot.
 
-O aceite exige resultado separado por dimensão e estado: aprovado dentro da tolerância, divergente, adaptação explicitada ou não verificado. Nenhuma média pode esconder divergência material. Presença de Three/WebGL, testes de descarte, acessibilidade ou fallback correto não aprovam fidelidade visual e comportamental. Se o usuário rejeitar uma diferença como “livro genérico”, reabra a matriz e investigue a dimensão divergente; não acrescente efeitos arbitrários nem transforme a implementação rejeitada em padrão da skill.
+Acceptance requires a separate result for each dimension and state: approved within tolerance, divergent, explicitly adapted or unverified. No average may conceal a material discrepancy. Three/WebGL presence, disposal tests, accessibility or a correct fallback do not approve visual and behavioral fidelity. If the user rejects a difference as a "generic book," reopen the matrix and investigate the divergent dimension; do not add arbitrary effects or turn the rejected implementation into the skill's standard.
 
-## Caso auditado: livro da referência desktop
+## Audited case: the desktop reference book
 
-O [perfil factual](../assets/reference-profiles/desktop-material-reference-v1.json) registra o artefato instalado, hashes e parâmetros. A inspeção distinguiu malha própria, UV em atlas, normais, dois mapas difusos, dois mapas de relevo e máscara de foil em ShaderMaterial com iluminação Phong. Isso não equivale a escolher MeshPhongMaterial e aplicar os mesmos números de luz.
+The [factual profile](../assets/reference-profiles/desktop-material-reference-v1.json) records the installed artifact, hashes and parameters. Inspection distinguished a custom mesh, atlas UVs, normals, two diffuse maps, two relief maps and a foil mask in ShaderMaterial with Phong lighting. This is not equivalent to choosing MeshPhongMaterial and applying the same light numbers.
 
-Três erros concretos devem reprovar a reprodução:
+Three concrete errors must fail reproduction:
 
-1. **Cor correta com pipeline diferente.** Textura sRGB, textura sem conversão, saída linear, intensidade das luzes e compensação de exposição alteram a cor final. Compare essa cadeia antes de alterar o hex para esconder o erro.
-2. **Folhas e relevo inventados.** Uma textura de listras adicionada a um bloco de páginas muda a referência, assim como usar linhas Bézier no padrão de hastes ou preto pintado no lugar de rebaixo. Inspecione material, topologia e mapa separadamente.
-3. **Envelope no container errado.** O livro auditado expande o canvas e usa bleed negativo em torno do tamanho nominal. Encaixar todo o giro dentro do mesmo slot encolhe o objeto. Meça slot, canvas e silhueta renderizada separadamente. No mobile, reserve espaço para o envelope ou adapte a escala; não esconda cortes com overflow indiscriminado.
+1. **Correct color with a different pipeline.** sRGB textures, textures without conversion, linear output, light intensity and exposure compensation change the final color. Compare this pipeline before changing hex values to hide the error.
+2. **Invented pages and relief.** Adding a striped texture to a page block changes the reference, as does using Bezier lines for the stem pattern or painted black instead of a recess. Inspect material, topology and map separately.
+3. **Envelope in the wrong container.** The audited book expands the canvas and uses negative bleed around the nominal size. Fitting the entire rotation inside the same slot shrinks the object. Measure slot, canvas and rendered silhouette separately. On mobile, reserve envelope space or adapt scale; do not hide cuts with indiscriminate overflow.
 
-A transição estante/detalhe inclui posição, escala, pose e cor do tecido na referência. FLIP apenas de posição/escala é uma implementação parcial e precisa ser identificada assim. A comparação de movimento deve conter ida, volta, interrupção, arrastar/soltar/sair e modo reduzido, além da imagem em repouso.
+The reference's shelf/detail transition includes position, scale, pose and cloth color. Position/scale-only FLIP is a partial implementation and must be identified as such. Motion comparison must include forward, reverse, interruption, drag/release/exit and reduced mode, as well as the resting image.
 
-Frente, lombada e verso também são contratos separados. A frente auditada usa título em até três linhas, metadado à direita acima do divisor e marca no alto; a lombada tem título, contador real preenchido até cinco dígitos e marca inferior; o verso contém somente a marca central. A largura da fonte é relativa à região UV frontal, não ao atlas inteiro. O [perfil factual](../assets/reference-profiles/desktop-material-reference-v1.json) conserva proporções, rasterização e âncoras de código. Esperar a fonte ou invalidar a textura após seu carregamento é necessário: redesenhar uma textura antiga não atualiza métricas. Comparar texto com o mesmo nome, contagem e tamanho projetado antes de aumentar resolução ou relevo.
+Front, spine and back are also separate contracts. The audited front uses a title in up to three lines, right-aligned metadata above the divider and a mark at the top; the spine has a title, actual counter padded to five digits and a lower mark; the back contains only the centered mark. Font width is relative to the front UV region, not the entire atlas. The [factual profile](../assets/reference-profiles/desktop-material-reference-v1.json) preserves proportions, rasterization and code anchors. Waiting for the font or invalidating the texture after loading is necessary: redrawing an old texture does not update metrics. Compare text with the same name, count and projected size before increasing resolution or relief.
 
-Rastreie **configurado → consumido → renderizado**. No artefato auditado, a textura base recebe `repeat`, mas o shader customizado amostra UV bruto sem a transformação correspondente. Os valores configurados não comprovam frequência efetiva da trama. Registre UV local versus atlas, unidade e região por face; reutilizar o mapa inteiro da frente em uma lombada estreita muda sua densidade. A inferência estática da amostragem precisa permanecer distinta da captura do shader/textura realmente executados.
+Trace **configured -> consumed -> rendered**. In the audited artifact, the base texture receives `repeat`, but the custom shader samples raw UVs without the corresponding transformation. Configured values do not prove effective weave frequency. Record local versus atlas UVs, units and regions per face; reusing the entire front map on a narrow spine changes density. Static sampling inference must remain distinct from capture of the shader/texture actually executed.
 
-## Caso de conhecimento: passaporte articulado
+## Knowledge case: articulated passport
 
-O [caso do passaporte](passport-polish-case-study.md) cobre casca envolvente, terminais retos, encadernação durante o gesto, textura contínua e luz que revela a curvatura. É uma implementação CSS 3D/DOM do produto de origem, distinta do BookObject. A skill inclui o aprendizado e o manifesto, sem exportar um `PassportObject` ou fornecer o aplicativo. Preserve o motor adequado já aprovado no consumidor; não atribua a este caso shader, física ou API que ele não tem.
+The [passport case](passport-polish-case-study.md) covers a wrapping shell, straight end caps, binding during gestures, continuous texture and light revealing curvature. It is a CSS 3D/DOM implementation in the source product, distinct from BookObject. The skill includes the lessons and manifest without exporting a `PassportObject` or supplying the application. Preserve the suitable engine already approved in the consumer; do not attribute shaders, physics or APIs to this case that it does not have.
 
-## Implementação disponível: BookObject
+## Available implementation: BookObject
 
-“BookObject aprovado” identifica a revisão do componente original aceita no Pauta e registrada no caso de refinamento abaixo. Não significa aprovação do aplicativo de referência nem certificação de equivalência entre os dois motores.
+"Approved BookObject" identifies the original component revision accepted in Pauta and recorded in the refinement case below. It does not mean approval of the reference application or certification of equivalence between the two engines.
 
-Para detalhes de lombada, profundidade, papel, foil ou nitidez ainda divergentes, aplicar [fidelidade 3D do pacote ao pixel](3d-reference-fidelity.md). A auditoria 1.11.1 registrou um baseline de seis diferenças: UV/trama, função óptica, papel, height/layout da lombada, resolução Retina e continuidade de normais. O [ciclo de polimento aprovado](book-polish-case-study.md) corrigiu depois o canal/aro, a mistura e o foil, além do UV degenerado nos cortes do papel. A síntese distribuída registra revisão, testes e diferenças restantes; as capturas pareadas ficam no arquivo externo de autoria e podem não acompanhar a skill. A aprovação do usuário vale para esse resultado observado; os contratos abaixo permitem reúso e não certificam igualdade de pixels ou todas as adaptações.
+For remaining differences in spine details, depth, paper, foil or sharpness, apply [package-to-pixel 3D fidelity](3d-reference-fidelity.md). Audit 1.11.1 recorded a baseline of six differences: UV/weave, optical function, paper, spine height/layout, Retina resolution and normal continuity. The [approved polish cycle](book-polish-case-study.md) later corrected the channel/rim, blending and foil, plus degenerate UVs on paper cuts. The distributed synthesis records the revision, tests and remaining differences; paired captures stay in the external authoring archive and may not accompany the skill. User approval applies to that observed result; the contracts below allow reuse and do not certify pixel equality or every adaptation.
 
-[Motor original](../assets/book-object.js), extraído do Pauta e testado com Three.js 0.186.0. É um exemplo de componente reutilizável; não é o livro da referência desktop nem comprova equivalência com ele. Não contém código, texturas ou marca dessa referência. Canvas2D estático funciona sem dependências; volume usa Three fornecido pelo consumidor. Manter a licença MIT do Three ao redistribuir sua dependência. Para um pedido de fidelidade, aplicar o gate acima antes de considerar este exemplo adequado.
+[Original engine](../assets/book-object.js), extracted from Pauta and tested with Three.js 0.186.0. It is an example of a reusable component; it is not the desktop reference book or proof of equivalence to it. It contains no code, textures or branding from that reference. Static Canvas2D works without dependencies; volume uses Three supplied by the consumer. Retain Three's MIT license when redistributing the dependency. For a fidelity request, apply the gate above before considering this example suitable.
 
-### Exemplo mínimo: capa estática
+### Minimum example: static cover
 
-Sem `loadThree`, o resultado é Canvas2D. `interactive:true` sozinho não cria volume nem habilita giro. Copie o asset para o caminho servido pelo projeto; este exemplo não precisa de Three nem de botão de reposição.
+Without `loadThree`, the result is Canvas2D. `interactive:true` alone does not create volume or enable rotation. Copy the asset to the project's served path; this example needs neither Three nor a reset button.
 
 ```html
 <script src="book-object.js"></script>
-<h2>Caderno de campo</h2>
+<h2>Field notebook</h2>
 <div id="cover-static" style="width:100%;height:360px" aria-hidden="true"></div>
 <script>
 const staticBook = BookObject.create(document.querySelector('#cover-static'), {
-  title: 'Caderno de campo', brand: 'ESTÚDIO', color: '#315463'
+  title: 'Field notebook', brand: 'STUDIO', color: '#315463'
 }, {interactive: false});
-// Ao desmontar: staticBook.dispose().
+// On unmount: staticBook.dispose().
 </script>
 ```
 
-### Integração de volume: loader ativo
+### Volume integration: active loader
 
-O caminho do import abaixo deve resolver o módulo ES de Three **já disponível no consumidor**, com seus arquivos associados. Ajuste-o ao loader/bundler existente; não instale nem carregue uma segunda engine automaticamente. O asset expõe a API global `BookObject`, não um export ES nomeado.
+The import path below must resolve the Three ES module **already available in the consumer**, with its associated files. Adapt it to the existing loader/bundler; do not automatically install or load a second engine. The asset exposes the global `BookObject` API, not a named ES export.
 
 ```html
 <script src="book-object.js"></script>
-<h2 id="title">Caderno de campo</h2>
+<h2 id="title">Field notebook</h2>
 <div id="cover" style="width:100%;height:360px" aria-hidden="true"></div>
-<button id="reset">Repor posição</button>
+<button id="reset">Reset position</button>
 <script type="module">
 const book = globalThis.BookObject.create(document.querySelector('#cover'), {
-  title: 'Caderno de campo', subtitle: '12 observações', brand: 'ESTÚDIO',
+  title: 'Field notebook', subtitle: '12 observations', brand: 'STUDIO',
   brandMark: 'monogram', spineLabel: '00012',
   color: '#315463', inkColor: '#fbfbfc', pagesColor: '#f6f1e5',
   pattern: 'grid', material: 'cloth', finish: 'foil',
@@ -99,103 +99,103 @@ const book = globalThis.BookObject.create(document.querySelector('#cover'), {
   loadThree: () => import('./vendor/three/three.module.js')
 });
 document.querySelector('#reset').onclick = () => book.reset();
-// book.update({title: 'Pesquisa em campo', depth: .2});
-// Inspecionar o verso, conservando a calibração de luz da pose inicial:
+// book.update({title: 'Field research', depth: .2});
+// Inspect the back, retaining the initial pose's lighting calibration:
 // book.setPose({yaw: 180}, {preserveLighting: true});
-// Atualize também o título DOM. Ao desmontar: book.dispose().
+// Also update the DOM heading. On unmount: book.dispose().
 </script>
 ```
 
-`create` retorna a instância imediatamente com a capa de fallback; a API atual não oferece uma promise `ready`. O loader e a primeira renderização são assíncronos e aguardam host na viewport, aba visível e ausência de `data-materials="static"` no elemento raiz. Para verificar volume, dê dimensões reais ao host, torne-o visível e aguarde `book.renderMode === 'webgl'` com limite de tempo no teste; não faça essa asserção logo após `create`. Confirme também o canvas visível e o volume renderizado no navegador. Loader resolvido ou estado `webgl` isolado não certificam fidelidade.
+`create` returns the instance immediately with a fallback cover; the current API does not offer a `ready` promise. The loader and first render are asynchronous and wait for the host to be in the viewport, the tab to be visible and the absence of `data-materials="static"` on the root element. To verify volume, give the host actual dimensions, make it visible and wait for `book.renderMode === 'webgl'` with a test timeout; do not assert this immediately after `create`. Also confirm the visible canvas and rendered volume in the browser. A resolved loader or isolated `webgl` state does not certify fidelity.
 
-Com reduced-motion do SO ou `data-motion="reduced"`, o volume pode renderizar, mas os gestos e a interpolação ficam desativados; não force movimento para passar o teste. Verifique giro/reposição sob a política normal e a pose estática sob a política reduzida. `canvas`, `canvas-unavailable` e `canvas-context-lost` são estados de fallback, nunca aprovação da entrega 3D; registre a causa ou o limite encontrado. Preserve esse fallback para falhas e preferência estática, sem substituir silenciosamente o mecanismo solicitado.
+With OS reduced motion or `data-motion="reduced"`, volume may render, but gestures and interpolation are disabled; do not force motion to pass the test. Verify rotation/reset under normal policy and a static pose under reduced policy. `canvas`, `canvas-unavailable` and `canvas-context-lost` are fallback states, never approval of 3D delivery; record the cause or limit found. Preserve this fallback for failures and static preference without silently replacing the requested mechanism.
 
-| Contrato | Limites |
+| Contract | Limits |
 |---|---|
-| `create(host, config, {loadThree?, interactive?, renderScale?, resolution?})` | Host com dimensões; retorna instância síncrona, sem promise `ready`. `loadThree` fornece o namespace Three, diretamente ou por promise. Sem loader: capa Canvas2D, sem import automático. `renderScale` 1–2, padrão 2; `resolution:'reference'` padrão multiplica DPR limitado a .25–2, `'economy'` usa somente renderScale; buffer ≤ 2048px por lado |
-| `update(patch)` | Atualização parcial de conteúdo/material refaz textura/volume. Se contiver apenas `pose`, usa a atualização de pose sem reconstruir mapas ou malha |
-| `setPose(patch, {preserveLighting?})` | Atualiza a pose configurada sem recriar mapas/malha; encerra o gesto. Por padrão recalibra a iluminação para a nova pose; `preserveLighting:true` mantém a calibração anterior durante inspeção |
-| `reset()` / `dispose()` | Repor a pose configurada atual / desmontar de forma idempotente. Loader tardio não cria cena; descarte no mesmo tick nem inicia o loader |
-| `config` / `renderMode` | Cópia normalizada / estado `canvas`, `webgl`, `canvas-unavailable`, `canvas-context-lost`, `disposed` |
-| `normalize(patch, base?)` | Validação sem DOM; cor somente `#RRGGBB`, enumerações e valores finitos |
-| Geometria | Largura 0.6–4, altura 0.6–5, espessura 0.08–0.9, unidades relativas; câmera recalcula enquadramento |
-| Texto e marca | Título até 240, subtítulo 120, marca 40 e `spineLabel` 12 caracteres. `brandMark:'text'` desenha a marca textual; `'monogram'` usa seu primeiro code point. Não recebe logo/URL arbitrários |
-| Padrão | `panels`, `grid`, `rules`, `dots`, `stems`, `checks` |
-| Material/acabamento | `material:'cloth'|'paper'|'leather'`; `finish:'foil'|'ink'`. Defaults `cloth` e `foil`; foil restrito à marca, sem metalizar título ou capa inteira |
-| Cores | `color`, `inkColor`, `pagesColor` em hex; defaults `#3d4934`, `#fbfbfc`, `#f6f1e5`. `palette:null` ou `{deep,lit,edge}` em hex; `null` remove a paleta anterior |
-| Pose | Graus; pitch ±60, yaw ±180, roll ±18. Mapeamento interno `(-pitch,yaw,-roll)`, ordem Euler `ZXY`; soltar mantém giro transitório, sair retorna à pose configurada |
+| `create(host, config, {loadThree?, interactive?, renderScale?, resolution?})` | Dimensioned host; returns a synchronous instance, without a `ready` promise. `loadThree` supplies the Three namespace directly or through a promise. Without a loader: Canvas2D cover, no automatic import. `renderScale` 1-2, default 2; default `resolution:'reference'` multiplies DPR clamped to .25-2; `'economy'` uses only renderScale; buffer <= 2048px per side |
+| `update(patch)` | Partial content/material update rebuilds texture/volume. A patch containing only `pose` uses pose updating without rebuilding maps or mesh |
+| `setPose(patch, {preserveLighting?})` | Updates configured pose without recreating maps/mesh; ends the gesture. By default recalibrates lighting for the new pose; `preserveLighting:true` retains prior calibration during inspection |
+| `reset()` / `dispose()` | Restore the current configured pose / unmount idempotently. A late loader creates no scene; disposal in the same tick does not even start the loader |
+| `config` / `renderMode` | Normalized copy / state `canvas`, `webgl`, `canvas-unavailable`, `canvas-context-lost`, `disposed` |
+| `normalize(patch, base?)` | DOM-free validation; colors only `#RRGGBB`, enumerations and finite values |
+| Geometry | Width 0.6-4, height 0.6-5, thickness 0.08-0.9, relative units; camera recalculates framing |
+| Text and brand | Title up to 240, subtitle 120, brand 40 and `spineLabel` 12 characters. `brandMark:'text'` draws the textual brand; `'monogram'` uses its first code point. Does not accept arbitrary logos/URLs |
+| Pattern | `panels`, `grid`, `rules`, `dots`, `stems`, `checks` |
+| Material/finish | `material:'cloth'|'paper'|'leather'`; `finish:'foil'|'ink'`. Defaults `cloth` and `foil`; foil is restricted to the mark, without metallizing the title or entire cover |
+| Colors | `color`, `inkColor`, `pagesColor` in hex; defaults `#3d4934`, `#fbfbfc`, `#f6f1e5`. `palette:null` or `{deep,lit,edge}` in hex; `null` removes the previous palette |
+| Pose | Degrees; pitch +/-60, yaw +/-180, roll +/-18. Internal mapping `(-pitch,yaw,-roll)`, Euler order `ZXY`; release retains transient rotation, exit returns to the configured pose |
 
-Valores fora de faixa são limitados; inválidos conservam o anterior. A capa abrevia títulos em até três linhas, portanto título integral e ações permanecem no DOM. Contraste entre cores livres é responsabilidade da interface consumidora. URL/SVG/estilo arbitrário não são entradas de cor.
+Out-of-range values are clamped; invalid values retain the previous value. The cover abbreviates titles to at most three lines, so the full title and actions remain in the DOM. Contrast between arbitrary colors is the consumer interface's responsibility. Arbitrary URLs/SVG/styles are not color inputs.
 
-`spineLabel` é conteúdo explícito, não uma contagem derivada pelo motor. O consumidor calcula o total correto, formata-o e mantém a informação completa acessível; `String(total).padStart(5,'0')` preserva números maiores que cinco dígitos, mas o campo do componente tem limite de 12 caracteres. Não confundir total da biblioteca, total filtrado e ID. Uma marca própria, mesmo com posicionamento semelhante, é uma adaptação de identidade.
+`spineLabel` is explicit content, not an engine-derived count. The consumer calculates the correct total, formats it and keeps complete information accessible; `String(total).padStart(5,'0')` preserves numbers longer than five digits, but the component field has a 12-character limit. Do not confuse library total, filtered total and ID. An original mark, even with similar placement, is an identity adaptation.
 
-`setPose` altera a pose de repouso: após `setPose({yaw:180})`, `reset()` volta a 180°. Para restaurar o enquadramento inicial, o consumidor guarda esse preset e chama `setPose` novamente. Ao inspecionar frente/lateral/verso, preserve a calibração de luz: recalibrá-la a cada orientação altera o material aparente e prejudica a comparação angular. Consumidores anteriores que passavam sinais Euler diretamente precisam revisar `pitch`/`roll`, não inverter coordenadas silenciosamente.
+`setPose` changes the resting pose: after `setPose({yaw:180})`, `reset()` returns to 180 degrees. To restore initial framing, the consumer stores that preset and calls `setPose` again. When inspecting front/side/back, preserve lighting calibration: recalibrating at every orientation changes apparent material and undermines angular comparison. Older consumers passing Euler signs directly must review `pitch`/`roll`, not silently invert coordinates.
 
-## Cor automática portátil
+## Portable automatic color
 
-O helper original `PautaLibraryColors`, distribuído em `assets/library-colors.js`, é independente do BookObject e do DOM. `resolve({id,color,dark})` retorna `{base,deep,lit,edge}` em hex; `auto({id,dark})` ignora cor explícita, e `palette` contém 20 cores nomeadas. Passe `base` a `BookObject.color` e as demais variações a `BookObject.palette`. Ele aceita `#RGB`/`#RRGGBB` explícitos, inclusive legados fora da paleta, e os normaliza; ausência, `null` ou valor inválido usa cor automática. Não é parser CSS geral.
+The original `PautaLibraryColors` helper, distributed in `assets/library-colors.js`, is independent from BookObject and the DOM. `resolve({id,color,dark})` returns `{base,deep,lit,edge}` in hex; `auto({id,dark})` ignores explicit color, and `palette` contains 20 named colors. Pass `base` to `BookObject.color` and the other variations to `BookObject.palette`. It accepts and normalizes explicit `#RGB`/`#RRGGBB`, including legacy values outside the palette; absence, `null` or invalid values use automatic color. It is not a general CSS parser.
 
-Persistir `color:null` conserva a intenção automática. Resolver novamente quando o tema mudar e aplicar o mesmo resultado em estante, detalhe e indicador de biblioteca; não gravar o hex calculado como escolha manual. A opção `dark` modifica apenas a ramificação automática. O helper usa FNV-1a sobre ID, matiz estável por ID e variações OKLCH convertidas/limitadas a sRGB. O alocador frontend `Sv` da referência desktop auditada recebe a lista inteira e resolve colisões de matiz; nosso helper permite matizes repetidos para que reordenar/adicionar bibliotecas não altere a existente. A referência também preserva como explícita no material apenas a paleta reconhecida e mantém CSS OKLCH. Essas adaptações impedem prometer coincidência cromática exata com qualquer lista da referência desktop auditada.
+Persisting `color:null` retains automatic intent. Resolve again when theme changes and apply the same result to shelf, detail and library indicator; do not store the calculated hex as a manual choice. The `dark` option changes only the automatic branch. The helper uses FNV-1a over ID, stable hue by ID and OKLCH variations converted/clamped to sRGB. The audited desktop reference's frontend allocator `Sv` receives the whole list and resolves hue collisions; our helper permits repeated hues so reordering/adding libraries does not change an existing one. The reference also preserves only recognized-palette colors as explicit material colors and retains CSS OKLCH. These adaptations prevent promises of exact color correspondence with any list in the audited desktop reference.
 
-## Mapas e resposta do material
+## Maps and material response
 
-Cor impressa, relevo e reflexão têm responsabilidades diferentes. Escolha canais segundo o modelo de iluminação: PBR pode usar metalness/roughness; Phong usa resposta especular e shininess. Gere mapas separados quando houver funções distintas: texto no mapa de cor não deve automaticamente virar relevo, e uma capa com detalhe metalizado não deve receber esse acabamento por inteiro. Height/bump ou normal descreve a superfície; a máscara limita o reflexo ao acabamento. Um gradiente pintado no fallback comunica acabamento, mas não comprova reflexão física.
+Printed color, relief and reflection have different responsibilities. Choose channels according to the lighting model: PBR may use metalness/roughness; Phong uses specular response and shininess. Generate separate maps for distinct functions: text in the color map must not automatically become relief, and a cover with metallic detail must not receive that finish everywhere. Height/bump or normal describes the surface; the mask confines reflection to the finish. A gradient painted in the fallback communicates finish but does not prove physical reflection.
 
-No BookObject, tecido, papel e couro variam microestrutura e relevo. A versão aplicada ao Pauta usa `MeshPhongMaterial` estendido por `onBeforeCompile`: pigmento, bump customizado, trama e máscara especular têm funções separadas; o foil acrescenta resposta angular dourada procedural somente na marca. Isso é uma implementação original com Phong, não um material PBR controlado por metalness/roughness nem o `ShaderMaterial` completo da referência desktop auditada. Nomes internos históricos de canais não estabelecem a equação usada pelo renderer. O fallback pinta o acabamento, sem resposta óptica física.
+In BookObject, cloth, paper and leather vary in microstructure and relief. The version applied to Pauta uses `MeshPhongMaterial` extended through `onBeforeCompile`: pigment, custom bump, weave and specular mask have separate functions; foil adds procedural golden angular response only to the mark. This is an original Phong implementation, not a PBR material controlled by metalness/roughness or the audited desktop reference's complete `ShaderMaterial`. Historical internal channel names do not establish the renderer's equation. The fallback paints the finish without physical optical response.
 
-A malha procedural e seus UV/normais são próprios; frente, verso e lombada têm mapas separados, e o bloco de páginas usa pigmento liso com grão/bump base e resposta Phong. A implementação atual conserva 15 texturas por cena: 9 mapas específicos de frente/verso/lombada, 3 tiles compartilhados de trama/grão/reflexão, 2 mapas neutros de apoio e 1 de papel. A contagem deve ser conferida após mudanças, sem ser tratada como orçamento universal. Não foram distribuídos a malha embutida, o atlas de reflexão, as texturas ou o shader proprietário da referência. Igualar algumas proporções e coeficientes não elimina diferenças de silhueta, mapeamento, combinação de bump, luz e antialiasing. A fidelidade desses aspectos continua sujeita à matriz, sem alegação de “100% igual”.
+The procedural mesh and its UVs/normals are original; front, back and spine have separate maps, and the page block uses smooth pigment with base grain/bump and Phong response. The current implementation retains 15 textures per scene: 9 front/back/spine-specific maps, 3 shared weave/grain/reflection tiles, 2 neutral support maps and 1 paper map. Check this count after changes without treating it as a universal budget. The reference's embedded mesh, reflection atlas, textures and proprietary shader are not distributed. Matching some proportions and coefficients does not eliminate differences in silhouette, mapping, bump combination, lighting and antialiasing. Fidelity of those aspects remains subject to the matrix, without a "100% identical" claim.
 
-O relevo exige unidade física e equação de normal compatíveis: o shader customizado da referência usa derivadas cruas, enquanto o helper público Three normaliza os vetores. A extensão atual compensa o delta de height pelo comprimento da derivada espacial; testes de fórmula e debug de normal devem preceder aumentar preto ou bump. A faixa de brilho da encadernação depende também da curvatura geométrica: amostragem concentrada no canal, aro arredondado e campo impresso plano produzem respostas diferentes de uma capa inteira curvada ou de mais luz global.
+Relief requires compatible physical units and normal equations: the reference's custom shader uses raw derivatives, while the public Three helper normalizes vectors. The current extension compensates height delta by spatial-derivative length; formula tests and normal debugging should precede increasing black or bump. The binding's gloss band also depends on geometric curvature: sampling concentrated in the channel, a rounded rim and a flat printed field produce responses different from a fully curved cover or more global light.
 
-Tampa e bevel precisam compartilhar fronteiras antes da deformação. Verifique fechamento/orientação, primeiro contato entre peças e normais separadamente: uma malha fechada pode ter ponte com perfil incorreto; raios em uma direção não certificam toda união visível. O recuo de papel medido na primeira superfície externa é `.020204W`, não o antigo `.0364W`; o microchanfro procedural continua uma adaptação. No papel, as ilhas UV dos cortes variam também pela espessura. Usar X/Y para todas as faces colapsa o corte superior/inferior e lateral em uma linha de textura, criando estrias artificiais. A correção duplica apenas costuras e preserva posições/normais; não pede desenhar mais folhas.
+Cap and bevel must share boundaries before deformation. Check closure/orientation, first contact between pieces and normals separately: a closed mesh may have a bridge with an incorrect profile; rays in one direction do not certify the entire visible joint. Paper inset measured at the first outer surface is `.020204W`, not the previous `.0364W`; the procedural microbevel remains an adaptation. On paper, cut UV islands also vary along thickness. Using X/Y for all faces collapses top/bottom and side cuts into a texture line, creating artificial striations. The correction duplicates only seams and preserves positions/normals; it does not require drawing more pages.
 
-Nos materiais, preservar a ordem do overlay, a cobertura antialiased da máscara e a transformação do foil considerando recorte/`flipY`. Um campo gerador 96×96 não implica consumo 2D: a tensão do tecido deste caso lê X fixo e varia Y. Esses contratos estão detalhados no [protocolo 3D](3d-reference-fidelity.md), com diagnóstico antes de qualquer compensação por cor, blur ou intensidade de bump.
+For materials, preserve overlay order, antialiased mask coverage and foil transformation accounting for cropping/`flipY`. A 96x96 generated field does not imply 2D consumption: cloth tension in this case reads fixed X and varying Y. These contracts are detailed in the [3D protocol](3d-reference-fidelity.md), with diagnosis before any compensation through color, blur or bump intensity.
 
-Atualizações de pose/câmera devem reutilizar geometria e mapas; recriar texturas a cada movimento mistura responsabilidades e eleva o custo sem alterar o conteúdo.
+Pose/camera updates should reuse geometry and maps; recreating textures on every movement mixes responsibilities and increases cost without changing content.
 
-| Adaptação | Alterar | Preservar |
+| Adaptation | Change | Preserve |
 |---|---|---|
-| Caderno | Padrão, título e espessura | Dados editáveis, fallback, foco e descarte |
-| Álbum | Proporção horizontal, cor, metadados | Fit pela geometria/host e texto integral fora da textura |
-| Relatório | Menor espessura, linhas, marca | Ordem de leitura e ações independentes da cena |
-| Embalagem não retangular | Substituir geometria/usar GLB licenciado | Política de qualidade, variantes e estados; exige outra implementação |
+| Notebook | Pattern, title and thickness | Editable data, fallback, focus and disposal |
+| Album | Landscape proportion, color, metadata | Fit based on geometry/host and full text outside the texture |
+| Report | Reduced thickness, rules, brand | Reading order and actions independent of the scene |
+| Nonrectangular packaging | Replace geometry/use licensed GLB | Quality policy, variants and states; requires another implementation |
 
-## Custo e ciclo de vida
+## Cost and lifecycle
 
-Estantes usam Canvas2D; apenas detalhe selecionado cria WebGL. Um contexto por item não escala a centenas de objetos. Importar Three e iniciar renderização são decisões diferentes. Este asset não roda animação contínua em repouso, usa `renderScale` 1–2 com DPR no modo `resolution:'reference'` e sem DPR no modo `'economy'`, buffer limitado a 2048px por lado e ResizeObserver; isso não estabelece um orçamento universal nem FPS medido.
+Shelves use Canvas2D; only selected detail creates WebGL. One context per item does not scale to hundreds of objects. Importing Three and starting rendering are different decisions. This asset runs no continuous animation at rest, uses `renderScale` 1-2 with DPR in `resolution:'reference'` mode and without DPR in `'economy'` mode, a buffer limited to 2048px per side and ResizeObserver; this does not establish a universal budget or measured FPS.
 
-O fallback da estante sugere espessura com Canvas2.5D; não reproduz a projeção física de uma cena 3D. A referência desktop auditada usa renderer compartilhado e snapshots Canvas2D, enquanto o detalhe Pauta usa contexto próprio. Comparar aquisição, memória, suavização e custo por separação de responsabilidades. Teste mobile aqui significa navegador responsivo, salvo evidência explícita de dispositivo físico ou app nativo. Nenhuma dessas alternativas implementa abrir o livro, virar folhas ou editar páginas.
+The shelf fallback suggests thickness through Canvas2.5D; it does not reproduce a 3D scene's physical projection. The audited desktop reference uses a shared renderer and Canvas2D snapshots, while Pauta detail uses its own context. Compare acquisition, memory, smoothing and cost through separation of responsibilities. Mobile testing here means a responsive browser unless explicit evidence indicates a physical device or native app. None of these alternatives implements opening a book, turning sheets or editing pages.
 
-Reduced-motion do SO ou `document.documentElement.dataset.motion='reduced'` desliga gestos/interpolação. `pan-y` conserva scroll mobile. Falha de loader/render/contexto mantém a capa; não promete restaurar WebGL automaticamente. Ao desmontar, liberar observadores, eventos, RAF, texturas, geometrias, materiais e contexto; verificar import que termina antes/depois do descarte.
+OS reduced motion or `document.documentElement.dataset.motion='reduced'` disables gestures/interpolation. `pan-y` preserves mobile scrolling. Loader/render/context failure retains the cover; it does not promise automatic WebGL restoration. On unmount, release observers, events, RAF, textures, geometry, materials and context; check imports finishing before/after disposal.
 
-Uma preferência estática precisa impedir aquisição, não apenas esconder o canvas: nenhum import de engine nem contexto WebGL no início estático. Ao alternar de interativo para estático, liberar os recursos e conservar a representação de fallback e os dados DOM. Um módulo já carregado pode ser reutilizado no retorno, mas o renderer precisa ser recriado sob demanda. Depois de `WEBGL_lose_context`/`forceContextLoss`, não tentar reinicializar no mesmo canvas perdido; criar um novo canvas/contexto. Perda inesperada deve conservar o fallback e evitar tentativas contínuas em cada atualização.
+A static preference must prevent acquisition, not merely hide the canvas: no engine import or WebGL context on a static start. When switching from interactive to static, release resources and retain the fallback representation and DOM data. An already loaded module may be reused on return, but the renderer must be recreated on demand. After `WEBGL_lose_context`/`forceContextLoss`, do not reinitialize the same lost canvas; create a new canvas/context. Unexpected loss should retain the fallback and avoid repeated attempts on every update.
 
-Visibilidade é parte do ciclo de vida: aba oculta ou objeto fora da viewport suspende RAF e adia criação/reconstrução pesada. Retomar com os dados mais recentes, sem reproduzir uma fila de estados antigos. Limitar DPR pelo tamanho real do host e separar atualização de pose da atualização de material. Veja [movimento](motion.md) para política conjunta SO/app e distinção entre hover fino e gesto touch intencional.
+Visibility is part of lifecycle: a hidden tab or offscreen object suspends RAF and defers expensive creation/rebuilding. Resume with the latest data without replaying a queue of old states. Limit DPR according to actual host size and separate pose updates from material updates. See [motion](motion.md) for combined OS/app policy and the distinction between fine-pointer hover and intentional touch gestures.
 
-Separar custos de rede, memória de textura e manutenção. Dimensão de imagem comprimida não é tamanho decodificado na GPU. Dependência injetada evita duplicar motores já existentes; cache compartilhado precisa de ownership explícito. Para 2.5D/GLB e variantes de produto, leia [web imersiva](immersive-web-tech.md).
+Separate network, texture-memory and maintenance costs. Compressed-image dimensions are not decoded GPU size. Dependency injection avoids duplicating existing engines; shared caches need explicit ownership. For 2.5D/GLB and product variants, read [immersive web](immersive-web-tech.md).
 
-## Perfil e exportação de texto
+## Profile and text export
 
-Nome armazenado, nome exibido e exportação são contratos distintos. Preview pode usar clamp/reticências explicitamente, com texto completo acessível. Export deve medir a fonte real (`measureText` ou equivalente), quebrar palavras/tokens longos, reservar blocos de nome/papel/metadados e falhar claramente se não couber. Não truncar o dado silenciosamente. Validar o PNG aberto, não apenas o tamanho do Blob. Inclua nome longo sem espaços, acentos e CJK conforme o público suportado.
+Stored name, displayed name and export are separate contracts. Preview may explicitly clamp/ellipsize while keeping full text accessible. Export must measure the actual font (`measureText` or equivalent), wrap long words/tokens, reserve name/role/metadata blocks and fail clearly if content does not fit. Do not silently truncate data. Validate the opened PNG, not only Blob size. Include long names without spaces, accents and CJK according to the supported audience.
 
-## Verificação
+## Verification
 
-Execute a partir da pasta da skill:
+Run from the skill folder:
 
 ```bash
 node --test tests/book-object.test.cjs tests/book-geometry.test.cjs tests/book-material-fidelity.test.cjs
 ```
 
-`book-object` verifica normalização, enquadramento, linhas longas, fallback, import tardio, erro de render/contexto e descarte. `book-material-fidelity` verifica a mistura realmente instalada no shader, campos determinísticos, cobertura antialiased, orientação do foil e preservação dos materiais não envolvidos. `book-geometry` verifica fechamento/orientação, normais do canal/plano/aro, contatos das pontes, o furo oblíquo anterior e UV bidimensional nos cortes do papel. Fórmula e geometria sem GPU não comprovam shader executado nem aparência no navegador.
+`book-object` verifies normalization, framing, long lines, fallback, late import, render/context errors and disposal. `book-material-fidelity` verifies blending actually installed in the shader, deterministic fields, antialiased coverage, foil orientation and preservation of unaffected materials. `book-geometry` verifies closure/orientation, channel/plane/rim normals, bridge contacts, the previous oblique hole and two-dimensional UVs on paper cuts. Formulas and geometry without GPU execution do not prove the executed shader or browser appearance.
 
-Teste presets, resize desktop/mobile, interação, reset e modo estático; declare separadamente o que foi visto. Use screenshot da implementação final, nunca screenshot da referência como prova da sua entrega. Registre a viewport **observada**, não somente a largura pedida à ferramenta; aguarde a pose final e mantenha luz/calibração constantes na comparação angular. Dimensione a matriz de ângulos pelo risco do objeto — as 32 poses do caso auditado são uma amostra, não um requisito universal.
+Test presets, desktop/mobile resize, interaction, reset and static mode; declare separately what was seen. Use screenshots of the final implementation, never reference screenshots as proof of delivery. Record the **observed** viewport, not only the width requested from the tool; wait for the final pose and hold light/calibration constant during angular comparison. Size the angle matrix by object risk - the audited case's 32 poses are a sample, not a universal requirement.
 
-Inclua regressões de aquisição zero em modo estático, alternância estático/interativo com canvas novo, pausa por visibilidade, alteração de política durante um gesto e descarte idempotente. Contar contextos/imports/frames pendentes verifica o ciclo de vida; comparar brilho, relevo, cores, legibilidade e exportação exige inspeção visual separada. Não registrar essa inspeção como concluída apenas porque os testes do renderer passaram.
+Include regressions for zero acquisition in static mode, static/interactive switching with a new canvas, visibility pausing, policy changes during a gesture and idempotent disposal. Counting contexts/imports/pending frames verifies lifecycle; comparing gloss, relief, colors, legibility and export requires separate visual inspection. Do not record that inspection as complete merely because renderer tests passed.
 
-Para executar também a geometria com Three real, forneça um módulo ES Three 0.186 compatível que já exista no projeto:
+To also execute geometry using actual Three, supply a compatible Three 0.186 ES module already present in the project:
 
 ```bash
-BOOK_THREE_MODULE=/caminho/absoluto/three.module.js node --test tests/book-object.test.cjs tests/book-geometry.test.cjs tests/book-material-fidelity.test.cjs
+BOOK_THREE_MODULE=/absolute/path/three.module.js node --test tests/book-object.test.cjs tests/book-geometry.test.cjs tests/book-material-fidelity.test.cjs
 ```
 
-Sem `BOOK_THREE_MODULE`, os casos que exigem Three real em `book-object` e `book-geometry` são explicitamente pulados; os demais não exigem dependência. Não converter esses skips em aprovação de geometria. A variável injeta a dependência do consumidor; não instalar outro motor só para executar o exemplo. Os resultados históricos descritos no [caso aprovado](book-polish-case-study.md) pertencem ao hash ali identificado; as capturas originais ficam no arquivo externo de autoria. Após adaptar o componente, execute novamente os testes pertinentes e a comparação visual; guarde diferenças restantes e custo medido sem inferir FPS a partir da contagem de triângulos.
+Without `BOOK_THREE_MODULE`, cases requiring actual Three in `book-object` and `book-geometry` are explicitly skipped; the others require no dependency. Do not turn those skips into geometry approval. The variable injects the consumer's dependency; do not install another engine merely to run the example. Historical results described in the [approved case](book-polish-case-study.md) belong to the hash identified there; original captures stay in the external authoring archive. After adapting the component, rerun relevant tests and visual comparison; retain remaining differences and measured cost without inferring FPS from triangle count.

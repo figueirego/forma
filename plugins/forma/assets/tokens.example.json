@@ -1,6 +1,6 @@
 {
   "format": "design-complete-example-v1",
-  "purpose": "Exemplo para formulário web. Adaptar ao sistema existente; não é padrão DTCG.",
+  "purpose": "Example for a web form. Adapt to the existing system; this is not a DTCG standard.",
   "space": {
     "labelControl": { "value": 0.5, "unit": "rem" },
     "controlHelp": { "value": 0.25, "unit": "rem" },

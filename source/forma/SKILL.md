@@ -1,91 +1,102 @@
 ---
 name: forma
-description: "Coordenar especialistas de design para criar, refinar, adaptar ou auditar interfaces, sistemas visuais e materiais de marca. Seleciona por caso a skill interna de interface, cores/layout, produto, 3D, grafos, movimento, plataforma, marca, referência, handoff ou validação. Use também para reaplicar componentes aprovados em outro projeto; não para backend isolado."
+description: "Coordinate design specialists to create, refine, adapt, or audit interfaces, visual systems, and brand assets. Select the internal interface, color/layout, product, 3D, graphs, motion, platform, brand, reference, handoff, or validation skill for each case. Also use to reuse approved components in another project; not for isolated backend work."
 metadata:
-  version: 1.25.0
+  version: 1.29.0
 ---
 
 # Forma
 
-Uma entrada para o sistema: entenda o pedido, selecione a especialidade, leia suas instruções e referências pertinentes, execute o trabalho autorizado e verifique o resultado. Responda no idioma do usuário; preserve marca, stack, dados, componentes e decisões aprovadas. Não prometa perfeição nem cobertura universal.
+One entry point to the system: understand the request, select a specialty, read its instructions and relevant references, complete the authorized work, and verify the result. Respond in the user's language; preserve the brand, stack, data, components, and approved decisions. Do not promise perfection or universal coverage.
 
-Para instalar, atualizar, conferir a distribuição ou distinguir a skill avulsa do plugin, consulte [operação do plugin](references/plugin-operation.md). A identidade visual da Forma pertence à ferramenta; nunca substitui a marca do projeto atendido.
+To install, update, inspect the distribution, or distinguish the standalone skill from the plugin, consult [plugin operation](references/plugin-operation.md). Forma's visual identity belongs to the tool; it never replaces the identity of the project being served.
 
-## Como coordenar
+To turn references into reusable technical knowledge, route the work to the `reference` module and the [experience protocol](references/experience-library.md): source -> evidence -> mechanism -> adaptation -> test, preserving licenses and limits.
 
-1. **Identifique a tarefa real:** planejar, criar, refinar, redesenhar, reproduzir, auditar ou extrair sistema; indique o alvo e a plataforma. Inspecione o projeto/fonte disponível antes de decisões substanciais. Pedido de explicação continua explicação; auditoria não autoriza edição. Esclareça só uma ambiguidade que mude materialmente o resultado.
-2. **Selecione a skill interna principal na tabela abaixo e leia o respectivo `SKILL.md`.** Comece pela tarefa predominante, não por cada palavra citada. Leia as referências que a especialista selecionar; o link sozinho não é consulta. Num ajuste pequeno, uma especialista e a referência do defeito podem bastar.
-3. **Acrescente apoio apenas para uma necessidade distinta.** Exemplo: interface integra o editor; foundations resolve sua cor; objects-3d trata o volume explicitamente pedido. Para composição, precedência, tarefas ambíguas e fallback, use [roteamento e coordenação](references/routing.md). Evite abrir toda a biblioteca ou encadear especialistas sem nova pergunta.
-4. **Execute, não pare na indicação.** Se o usuário pediu implementação, a seleção da especialista é uma etapa interna. Se pediu apenas qual usar, entregue a recomendação. Para trabalho amplo siga o [processo compartilhado](references/workflow.md) e o [playbook pertinente](references/playbooks.md); para ajuste local, mantenha escopo local.
-5. **Feche o ciclo no alvo:** verifique os arquivos efetivamente carregados, as interações afetadas e o aceite. Um marcador de revisão repetido não comprova CSS/JS atuais; confira a identidade dos recursos afetados e preserve alterações não salvas antes de qualquer reload. A especialista de validação ajuda em auditorias amplas; todo trabalho exige verificação proporcional mesmo sem carregar outra skill. Informe mudança, evidência e limitações reais.
+Coordination also covers websites: finding references, investigating their techniques, and creating or refining the destination site. In research involving several sources, `reference` gathers evidence; the coordinator selects a coherent direction and routes decisions to the relevant specialists. Follow [site coordination](references/experience-library.md#coordinate-reference-sites-and-the-destination-site). Do not end a creation request with a list of links.
 
-Diga brevemente qual especialidade e por quê: “Vou usar interface para a sidebar e foundations para alinhar os insets”. Não transforme isso em um questionário nem exija que o usuário conheça nomes de módulos. A coordenadora conserva o contexto e resolve conflitos; especialistas não chamam a coordenadora recursivamente. Ler uma skill não cria automaticamente um subagente ou executa um plugin.
+External lookup matches names and URLs; topic queries suggest research guides separately. A guide assignment is an investigation lens, not proof that a site has that feature. State the question and unknowns before selecting candidates. Evaluate retrieval, routing, implemented output and repeatability separately; a valid plan or a large catalog does not prove design quality.
 
-Leia a especialista escolhida por inteiro; nas referências canônicas, localize a seção pertinente e leia contexto suficiente para aplicar o contrato corretamente. Não siga seus links recursivamente por padrão. Para um gap local, isso pode limitar a leitura à relação espacial e ao trecho de verificação afetado; para um editor completo, inclua os contratos de estado e persistência. Instruções operacionais de uma skill externa explicitamente acionada continuam obrigatórias.
+## How to coordinate
 
-## Skills internas por caso
+1. **Identify the real task:** plan, create, refine, redesign, reproduce, audit, or extract a system; identify the destination and platform. Inspect the available project/source before substantial decisions. A request for explanation remains an explanation; an audit does not authorize editing. Clarify only an ambiguity that materially changes the result.
+2. **Select the primary internal skill from the table below and read its `SKILL.md`.** Start with the predominant task, not every word mentioned. Read the references selected by that specialist; a link alone is not consultation. For a small adjustment, one specialist and the reference addressing the defect may be enough.
+3. **Add support only for a distinct need.** For example: interface integrates the editor; foundations resolves its color; objects-3d handles explicitly requested volume. For composition, precedence, ambiguous tasks, and fallback, use [routing and coordination](references/routing.md). Avoid opening the entire library or chaining specialists without a new question.
+   For a new surface or broad visual refinement, establish the [shared visual foundation](references/visual-system.md#coordinate-the-foundation) before splitting work. Interface or Brand can apply it directly; add Foundations for unresolved system decisions. For new interactive designs, also read [Motion](skills/motion/SKILL.md) and implement the [default motion layer](references/motion.md#default-motion-for-new-interactive-designs), with intensity adapted to the brief. Carry the same roles and rules into each specialist. Additional expressive detail and 3D remain conditional; a local fix does not activate a redesign.
+4. **Execute; do not stop at a referral.** If the user requested implementation, specialist selection is an internal step. If they only asked which one to use, deliver the recommendation. For broad work, follow the [shared workflow](references/workflow.md) and [relevant playbook](references/playbooks.md); for a local adjustment, keep the scope local.
+5. **Close the loop in the destination:** verify the files actually loaded, the affected interactions, and acceptance. A repeated revision marker does not prove that CSS/JS is current; check the identity of affected resources and preserve unsaved changes before any reload. The validation specialist supports broad audits; all work requires proportionate verification even without loading another skill. Report the change, evidence, and actual limitations.
 
-| Caso predominante | Skill a ler | Resultado esperado |
+Briefly state the specialty and reason: "I will use interface for the sidebar and foundations to align the insets." Do not turn this into a questionnaire or require the user to know module names. The coordinator retains context and resolves conflicts; specialists do not recursively call the coordinator. Reading a skill does not automatically create a subagent or execute a plugin.
+
+Read the chosen specialist in full; in canonical references, locate the relevant section and read enough context to apply the contract correctly. Do not recursively follow their links by default. For a local gap, this may limit reading to the spatial relationship and affected verification section; for a complete editor, include state and persistence contracts. Operational instructions for an explicitly activated external skill remain mandatory.
+
+## Internal skills by use case
+
+| Predominant case | Skill to read | Expected outcome |
 |---|---|---|
-| Cores, contraste, espaçamento, centralização, grid, tipografia ou tokens | [Forma Foundations](skills/foundations/SKILL.md) | Relações visuais e valores ligados aos consumidores reais |
-| Fundo limpo, sidebar, botões, inputs, busca, temas, configurações e perfil | [Forma Interface](skills/interface/SKILL.md) | Composição e controles funcionais na stack existente |
-| Brief, pesquisa, jornada, onboarding, fluxo ou direção de produto | [Forma Product](skills/product/SKILL.md) | Tarefa, sequência de estados e decisões de produto |
-| Livro, capa, passaporte, mascote, volume, materiais, brilho ou relevo | [Forma Objects 3D](skills/objects-3d/SKILL.md) | Mecanismo solicitado, material e interação verificáveis |
-| Grafos, backlinks, Canvas, mapas, dashboards ou dados temporais | [Forma Graphs & Data](skills/graphs-data/SKILL.md) | Relações e visualizações com fonte, significado e controles |
-| Gesto, transição, animação, vídeo, filme ou redução de movimento | [Forma Motion](skills/motion/SKILL.md) | Movimento interativo ou sequência renderizada com continuidade e aceite próprios |
-| Comportamento específico web, mobile, desktop, instalador ou dispositivo | [Forma Platforms](skills/platforms/SKILL.md) | Adaptação de tarefa e operação ao ambiente alvo |
-| Identidade, campanha, landing de marketing, peça, apresentação ou impressão | [Forma Brand](skills/brand/SKILL.md) | Mensagem, composição e entregáveis dos canais pedidos |
-| Encontrar exemplos, selecionar referências, engenharia reversa, tecnologias ou divergência de fidelidade | [Forma Reference](skills/reference/SKILL.md) | Consulta contextual, evidência separada de hipótese e especificação transferível |
-| Auditoria de qualidade, acessibilidade, regressão ou aceite renderizado | [Forma Validation](skills/validation/SKILL.md) | Achados/provas delimitados e correções quando autorizadas |
-| Figma, artefato editável, exportação, biblioteca, design-to-code ou entrega técnica | [Forma Handoff](skills/handoff/SKILL.md) | Fonte, componentes e saída entregues e verificados |
+| Color, contrast, spacing, centering, grids, typography, or tokens | [Forma Foundations](skills/foundations/SKILL.md) | Visual relationships and values connected to real consumers |
+| Clean backgrounds, sidebars, buttons, inputs, search, themes, settings, and profiles | [Forma Interface](skills/interface/SKILL.md) | Composition and functional controls in the existing stack |
+| Briefs, research, journeys, onboarding, flows, or product direction | [Forma Product](skills/product/SKILL.md) | Task, state sequence, and product decisions |
+| Books, covers, passports, mascots, volume, materials, gloss, or relief | [Forma Objects 3D](skills/objects-3d/SKILL.md) | The requested mechanism, verifiable material, and interaction |
+| Graphs, backlinks, Canvas, maps, dashboards, or time-series data | [Forma Graphs & Data](skills/graphs-data/SKILL.md) | Relationships and visualizations with sources, meaning, and controls |
+| Gestures, transitions, animation, video, film, or reduced motion | [Forma Motion](skills/motion/SKILL.md) | Interactive motion or a rendered sequence with continuity and its own acceptance criteria |
+| Behavior specific to web, mobile, desktop, installers, or devices | [Forma Platforms](skills/platforms/SKILL.md) | Task and operational adaptation to the target environment |
+| Identity, campaigns, marketing landing pages, assets, presentations, or print | [Forma Brand](skills/brand/SKILL.md) | Message, composition, and deliverables for the requested channels |
+| Finding examples, selecting references, reverse engineering, technologies, or fidelity differences | [Forma Reference](skills/reference/SKILL.md) | Contextual research, evidence separated from hypotheses, and transferable specifications |
+| Quality audits, accessibility, regression, or rendered acceptance | [Forma Validation](skills/validation/SKILL.md) | Bounded findings/evidence and fixes when authorized |
+| Figma, editable artifacts, exports, libraries, design-to-code, or technical delivery | [Forma Handoff](skills/handoff/SKILL.md) | Source, components, and output delivered and verified |
 
-Os identificadores seguem `forma-<especialidade>`, por exemplo `$forma-motion`, `$forma-interface` e `$forma-objects-3d`. Quando o catálogo do ambiente os oferecer, podem ser chamados diretamente. A entrada `$forma` continua escolhendo e lendo os módulos pelos caminhos acima, sem depender dessa descoberta em todos os hosts. Não invente um comando de ferramenta `invoke_skill`: use o mecanismo de leitura/invocação realmente oferecido no ambiente.
+Identifiers follow `forma-<specialty>`, for example `$forma-motion`, `$forma-interface`, and `$forma-objects-3d`. They can be called directly when the environment catalog offers them. The `$forma` entry point still selects and reads modules through the paths above, without relying on discovery in every host. Do not invent an `invoke_skill` tool command: use the reading/invocation mechanism actually available in the environment.
 
-## Integrações externas sob demanda
+## External integrations on demand
 
-ECC, REA, Impeccable, Figma, ferramentas gráficas e outras skills são apoios opcionais. Identifique a lacuna, confira a capacidade disponível na sessão e leia a skill operacional atual antes de usá-la. Consulte [integrações](references/integrations.md) para escolher o apoio e suas fronteiras. Nomes no catálogo não comprovam instalação, conexão ou execução; registre ausência e continue trabalho independente sem fingir que chamou o serviço.
+ECC, REA, Impeccable, Figma, graphic tools, and other skills provide optional support. Identify the gap, check the capability available in the session, and read the current operational skill before using it. Consult [integrations](references/integrations.md) to select support and understand its boundaries. Catalog names do not prove installation, connection, or execution; record unavailability and continue independent work without pretending to have called the service.
 
-Não instale plugins nem inicie geração paga para completar um checklist. O sistema funciona com referências e ferramentas locais. Ao delegar trabalho disponível e útil, atribua pergunta/arquivos/aceite e evite edições concorrentes; delegação não é requisito para toda tarefa.
+Do not install plugins or start paid generation to complete a checklist. The system works with local references and tools. When delegating available, useful work, assign the question/files/acceptance criteria and avoid concurrent edits; delegation is not required for every task.
 
-Incorporar métodos de um agente não instala seu runtime. Para agentes de produção, jobs, retomada ou uma integração LangChain/Deep Agents explicitamente pedida, leia [produção coordenada](references/agent-production.md). Confira capacidades, revisão e cobertura dos resultados; um fluxo descrito não comprova execução. Ajustes locais de UI continuam na especialista pertinente.
+Incorporating an agent's methods does not install its runtime. For production agents, jobs, resumption, or an explicitly requested LangChain/Deep Agents integration, read [coordinated production](references/agent-production.md). Check capabilities, revision, and result coverage; a described workflow does not prove execution. Local UI adjustments remain with the relevant specialist.
 
-## Preservar mecanismos aprovados
+## Preserve approved mechanisms
 
-Quando precisar de exemplos, use a [biblioteca pesquisável](references/reference-library.md): fichas próprias e sites estudados, seleção por contexto, consulta visual e pesquisa de mídia com créditos. Leia somente as candidatas relevantes; catálogo histórico não é captura atual. Uma correção local não exige pesquisa de inspiração. A biblioteca não substitui o mecanismo aprovado do consumidor.
+When examples are needed, use the [searchable library](references/reference-library.md): original cards covering Forma resources and patterns, a site index associated with original investigation cases, context-based selection, visual browsing, and optional credited media research. Read only relevant candidates; a pattern card does not prove its execution in the consumer. A local correction does not require inspiration research. The library does not replace the consumer's approved mechanism.
 
-Distinguir **aplicar princípios** de **reutilizar um mecanismo** é obrigatório para pedidos de transferência. Adaptar marca/conteúdo não autoriza trocar um volume por CSS inclinado ou um editor manipulável por três cores fixas. Se o pedido for **igual à implementação aprovada**, preserve também sua composição, paleta e comportamento responsivo: a instrução explícita prevalece sobre a adaptação genérica à marca. Use a cascata final e o estado renderizado daquela revisão, não apenas uma especificação anterior. Dados, rotas e conteúdo do destino continuam preservados. Siga [reúso no consumidor](references/playbooks.md#h-reutilizar-capacidades-em-outro-projeto): contrato → implementação disponível → consumidor → operação discriminante observada.
+Distinguishing **applying principles** from **reusing a mechanism** is mandatory for transfer requests. Adapting brand/content does not authorize replacing volume with tilted CSS or a manipulable editor with three fixed colors. If the request is **identical to the approved implementation**, also preserve its composition, palette, and responsive behavior: the explicit instruction takes precedence over generic brand adaptation. Use the final cascade and rendered state of that revision, not just an earlier specification. Preserve the destination's data, routes, and content. Follow [consumer reuse](references/playbooks.md#h-reuse-capabilities-in-another-project): contract -> available implementation -> consumer -> observed distinguishing operation.
 
-Para reprodução aprovada, fixe critérios antes de alterar o destino e use [contratos de fidelidade](references/fidelity-contracts.md). O verificador portátil compara medições com a referência congelada; divergência, dado ausente ou revisão não confirmada impedem anunciar fidelidade concluída. Não gere o esperado a partir do próprio destino nem aumente tolerâncias para fazer o teste passar.
+For an approved reproduction, freeze criteria before changing the destination and use [fidelity contracts](references/fidelity-contracts.md). The portable verifier compares measurements against the frozen reference; differences, missing data, or an unconfirmed revision prevent declaring fidelity complete. Do not generate expected values from the destination itself or widen tolerances to make a test pass.
 
-| Recurso | Situação do pacote | Rota |
+| Resource | Package status | Route |
 |---|---|---|
-| Base de interface limpa | CSS encapsulado + exemplo HTML/JS com dados em memória | Interface → [receita](references/clean-shell.md) |
-| BookObject e helper de cores | Código original reutilizável; volume exige loader Three válido, modo estático é separado | Objetos 3D → [contrato](references/reusable-objects.md) e [caso aprovado](references/book-polish-case-study.md) |
-| Passaporte articulado: encaixe, couro e luz | Estudo de caso aprovado e manifesto; não inclui componente de passaporte | Objetos 3D → [caso e limites](references/passport-polish-case-study.md) |
-| Editor completo de aparência/iluminação e perfil material | Contratos e [perfil portátil](assets/reference-profiles/compact-appearance-v1.json) para implementar na stack; não inclui componente executável de editor | Interface → [editor](references/lighting-editors-icons.md) e [perfil](references/adaptive-visual-systems.md) |
-| Verificadores de contraste, layout e evidência | Scripts locais com escopo delimitado | Validação → [recursos executáveis](references/resources.md) |
+| Clean interface foundation | Scoped CSS + HTML/JS example with in-memory data | Interface -> [recipe](references/clean-shell.md) |
+| BookObject and color helper | Original reusable code; volume requires a valid Three loader, and static mode is separate | Objects 3D -> [contract](references/reusable-objects.md) and [approved case](references/book-polish-case-study.md) |
+| Articulated passport: fit, leather, and light | Approved case study and manifest; does not include a passport component | Objects 3D -> [case and limits](references/passport-polish-case-study.md) |
+| Complete appearance/lighting editor and material profile | Contracts and a [portable profile](assets/reference-profiles/compact-appearance-v1.json) for implementation in the stack; does not include an executable editor component | Interface -> [editor](references/lighting-editors-icons.md) and [profile](references/adaptive-visual-systems.md) |
+| Contrast, layout, and evidence verifiers | Local scripts with bounded scope | Validation -> [executable resources](references/resources.md) |
 
-Não dependa da pasta do projeto de autoria nem de arquivos presumidos de outro chat. Confira o recurso da versão instalada. Testes do pacote não comprovam integração no consumidor. Preserve os hashes e os limites da auditoria ao transferir um resultado aprovado.
+Do not depend on the authoring project's folder or presumed files from another chat. Check the resource in the installed version. Package tests do not prove consumer integration. Preserve hashes and audit limits when transferring an approved result.
 
-## Critérios compartilhados
+## Shared criteria
 
-Correção, segurança, acesso e dados vêm antes do acabamento. Preserve o sistema e a identidade existentes; não imponha estilos, 3D, ferramentas ou frameworks por associação. Normas, heurísticas e preferências são categorias diferentes; resolva conflitos em [precedência](references/conflicts.md).
+Correctness, security, access, and data come before polish. Preserve the existing system and identity; do not impose styles, 3D, tools, or frameworks by association. Standards, heuristics, and preferences are different categories; resolve conflicts through [precedence](references/conflicts.md).
 
-Teste tarefa, foco, conteúdo extremo e estados afetados. Static/bundle, UI observada, aparelho físico, arquivo exportado e publicação são evidências distintas. Referência não concede autoria, licença de assets ou autorização para publicar. [Verificação](references/verification.md) e [ciclo renderizado](references/rendered-validation.md) definem como fechar o aceite; os [modelos](references/templates.md) são opcionais, não burocracia para ajustes pequenos.
+Test the task, focus, extreme content, and affected states. Static/bundle analysis, observed UI, physical devices, exported files, and publication provide distinct evidence. A reference does not grant authorship, asset licenses, or authorization to publish. [Verification](references/verification.md) and the [rendered cycle](references/rendered-validation.md) define how to complete acceptance; [templates](references/templates.md) are optional, not bureaucracy for small adjustments.
 
-## Exemplos simples de uso
+## Simple usage examples
 
-- “Use $forma para aplicar a base de interface limpa no meu app preservando marca, stack e rotas.”
-- “Use $forma para corrigir o alinhamento e as cores desse formulário.”
-- “Use $forma para adaptar o BookObject aprovado a um passaporte 3D com materiais e interação.”
-- “Use $forma para implementar o editor completo de iluminação com pools, salvar/reabrir e cores por contexto.”
-- “Use $forma para auditar este fluxo; por enquanto, não edite.”
-- “Use $forma para criar uma campanha e entregar os arquivos editáveis.”
-- “Use $forma-motion para refinar as animações desta interface.”
-- “Use $forma-interface para aplicar sidebar, fundo limpo e controles no meu app.”
+- "Use $forma to apply the clean interface foundation to my app while preserving its brand, stack, and routes."
+- "Use $forma to fix the alignment and colors in this form."
+- "Use $forma to adapt the approved BookObject into a 3D passport with materials and interaction."
+- "Use $forma to implement the complete lighting editor with pools, save/reopen behavior, and colors by context."
+- "Use $forma to audit this flow; do not edit it yet."
+- "Use $forma to create a campaign and deliver editable files."
+- "Use $forma-motion to refine this interface's animations."
+- "Use $forma-interface to apply the sidebar, clean background, and controls to my app."
 
-## Manutenção
+## Maintenance
 
-Ao melhorar esta skill, mantenha a entrada pequena, cada especialista com responsabilidade distinta e a teoria em sua referência canônica. Preserve links, recursos aprovados e histórico em [fontes](references/sources.md). Valide estrutura e [cenários de decisão](evals/scenarios.md), incluindo [roteamento](evals/routing-scenarios.md). Leitura, avaliação documental e execução de produto não são provas intercambiáveis.
+Keep all Forma-authored package content in US English with ASCII editorial punctuation, following the [editorial and encoding standard](references/reference-library.md#editorial-and-encoding-standard). Preserve original identities, licenses, URLs and intentional multilingual behavior. This package policy does not change the user's language or the destination product's locale.
 
-Para incorporar aprendizados de uma conversa ou conciliar um plano novo com design aprovado, use [evolução de produto aprovado](references/approved-product-evolution.md): separar decisão local, mecanismo transferível e evidência. Não copiar a conversa inteira, dados pessoais ou requisitos de um produto como defaults para todos.
+For new content, follow [authorship and integration](references/authorship.md): write a solution to a real problem, connect it to the resource, and verify it; renaming external content does not make it original. When replacing imported content, preserve the capabilities learned and verify where they belong in Forma's own contracts, including coordination, research, direction, and refinement. References, standards, dependencies, and media retain their origins.
+
+When improving this skill, keep the entry point small, give each specialist a distinct responsibility, and keep theory in its canonical reference. Preserve links, approved resources, and history in [sources](references/sources.md). Validate the structure and [decision scenarios](evals/scenarios.md), including [routing](evals/routing-scenarios.md). Reading, documentary evaluation, and product execution are not interchangeable proof.
+
+To incorporate findings from a conversation or reconcile a new plan with approved design, use [approved product evolution](references/approved-product-evolution.md): distinguish local decisions, transferable mechanisms, and evidence. Do not copy entire conversations, personal data, or one product's requirements into universal defaults.

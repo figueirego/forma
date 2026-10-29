@@ -72,10 +72,10 @@ def build(source, destination):
             text = re.sub(r'\[[^\]\n]*\]\(([^)\n]+)\)', replace_link, content.decode())
             if '<skill-dir>' in text:
                 text = text.replace('<skill-dir>', '<forma-root>')
-                note = '\nNeste plugin, `<forma-root>` é a pasta que contém `.codex-plugin/`, `references/`, `assets/`, `scripts/` e `tests/`; não é a pasta de uma especialista. Resolva-a a partir deste arquivo.\n'
+                note = '\nIn this plugin, `<forma-root>` is the directory containing `.codex-plugin/`, `references/`, `assets/`, `scripts/` and `tests/`; it is not a specialist directory. Resolve it relative to this file.\n'
                 text = re.sub(r'(^# .+\n)', lambda m: m.group(0) + note, text, count=1, flags=re.M)
             if name == Path('SKILL.md'):
-                text = text.replace('# Forma\n', '# Forma\n\nNo plugin, as especialistas estão nas pastas irmãs. Os links abaixo já apontam para a cópia deste pacote; não procure outra instalação global da Forma.\n', 1)
+                text = text.replace('# Forma\n', '# Forma\n\nIn this plugin, specialists are in sibling directories. The links below already point to this package; do not look for another global Forma installation.\n', 1)
             text = re.sub(r'\$(forma(?:-[a-z0-9]+)*)\b', r'$forma:\1', text)
             content = text.encode()
         elif name.name == 'openai.yaml' and name.parent.name == 'agents':
@@ -88,18 +88,18 @@ def build(source, destination):
         'name': 'forma', 'version': version,
         'license': 'MIT',
         'homepage': 'https://github.com/figueirego/forma',
-        'description': f'Sistema de design com {skill_count} skills para interface, cores, produto, 3D, movimento, grafos e validação.',
-        'keywords': ['design', 'ui', 'ux', 'cores', '3d', 'motion', 'acessibilidade'],
+        'description': f'A design system with {skill_count} skills for interfaces, color, product, 3D, motion, graphs and validation.',
+        'keywords': ['design', 'ui', 'ux', 'color', '3d', 'motion', 'accessibility'],
         'skills': './skills/',
         'interface': {
-            'displayName': 'Forma', 'shortDescription': 'Design conectado, da intenção ao acabamento',
-            'longDescription': f'Forma coordena {specialist_count} especialistas de design, com referências compartilhadas, recursos reutilizáveis e verificadores locais. Preserva a marca e a stack do projeto e confere os resultados no consumidor.',
+            'displayName': 'Forma', 'shortDescription': 'Connected design, from intent to refinement',
+            'longDescription': f'Forma coordinates {specialist_count} design specialists with shared references, reusable resources and local validators. It preserves the project brand and stack and verifies results in the consuming project.',
             'developerName': 'Forma', 'category': 'Design',
             'capabilities': ['Read', 'Write', 'Interactive'], 'brandColor': '#315BE8',
             'composerIcon': './assets/plugin-brand/icon.svg',
             'logo': './assets/plugin-brand/logo.png',
             'screenshots': ['./assets/plugin-brand/preview-desktop-top.png', './assets/plugin-brand/preview-mobile-top.png'],
-            'defaultPrompt': ['Use $forma:forma para criar uma interface no meu projeto.', 'Use $forma:forma para refinar cores, espaços e movimento.', 'Use $forma:forma para auditar e corrigir este design.']
+            'defaultPrompt': ['Use $forma:forma to create an interface in my project.', 'Use $forma:forma to refine color, spacing and motion.', 'Use $forma:forma to audit and fix this design.']
         }
     }
     for asset in [manifest['interface']['composerIcon'], manifest['interface']['logo'], *manifest['interface']['screenshots']]:
@@ -110,19 +110,19 @@ def build(source, destination):
     generated[Path('provenance.json')] = (json.dumps({'version': version, 'source': 'canonical Forma skill', 'transformations': ['Flatten skill directories', 'Rebase local Markdown links', 'Clarify shared resource root', 'Namespace skill invocations in Markdown and composer metadata'], 'files': provenance}, ensure_ascii=False, indent=2) + '\n').encode()
     generated[Path('README.md')] = f'''# Forma {version}
 
-Plugin comunitário de design para Codex, distribuído sob a licença MIT: uma coordenadora e {specialist_count} especialistas. Não exige servidor, chave de API, hooks ou autenticação própria. O uso do Codex continua sujeito ao plano do usuário. Integrações externas são opcionais e só podem ser usadas quando disponíveis e autorizadas.
+A community design plugin for Codex, distributed under the MIT license: one coordinator and {specialist_count} specialists. It requires no server, API key, hooks or separate authentication. Codex usage remains subject to the user's plan. External integrations are optional and may only be used when available and authorized.
 
-Selecione **Forma** no catálogo de plugins ou invoque `$forma:forma`. Exemplo: “Use Forma para refinar a sidebar, os botões e as cores deste projeto, preservando sua identidade.” Para uma tarefa específica, selecione Forma Interface, Forma Motion ou outra especialista.
+Select **Forma** in the plugin catalog or invoke `$forma:forma`. Example: "Use Forma to refine this project's sidebar, buttons and colors while preserving its identity." For a focused task, select Forma Interface, Forma Motion or another specialist.
 
-A coordenadora está em [skills/forma/SKILL.md](skills/forma/SKILL.md). A raiz compartilhada contém `references/`, `assets/`, `scripts/`, `tests/` e `evals/`. Caminhos `<forma-root>` nos exemplos apontam para essa raiz, inclusive quando a skill estiver no cache instalado.
+The coordinator is at [skills/forma/SKILL.md](skills/forma/SKILL.md). The shared root contains `references/`, `assets/`, `scripts/`, `tests/` and `evals/`. Example paths using `<forma-root>` point to this root, including when the skill is in the installed cache.
 
-O pacote preserva os recursos executáveis da Forma {version}; `provenance.json` registra os arquivos originais e empacotados. O editor completo de aparência tem contratos, não um componente pronto. O BookObject tem implementação reutilizável e dependências documentadas. Este plugin não instala ECC, REA, Figma ou o runtime do Design Agent.
+This package preserves Forma {version}'s executable resources; `provenance.json` records source and packaged files. The complete appearance editor has implementation contracts, not a ready-made component. BookObject has a reusable implementation and documented dependencies. This plugin does not install ECC, REA, Figma or the Design Agent runtime.
 
-Geração: editar `source/forma/` no [repositório público](https://github.com/figueirego/forma), executar `npm run build` e depois `npm run check`. Esta pasta é gerada; não editar uma segunda cópia dos princípios aqui. Instalação por marketplace copia um snapshot; mudanças posteriores na fonte exigem empacotar e atualizar o plugin. A skill avulsa é uma distribuição independente.
+Build: edit `source/forma/` in the [public repository](https://github.com/figueirego/forma), run `npm run build`, then `npm run check`. This directory is generated; do not edit a second copy of the principles here. Marketplace installation copies a snapshot; later source changes require rebuilding and updating the plugin. The standalone skill is a separate distribution.
 
-Verificações locais: `python3 scripts/check_package.py --root .` e `python3 -m unittest discover -s tests -p 'test_*.py' -v` na raiz do plugin. O [catálogo](catalog.json) é derivado da fonte; o verificador confere os arquivos reais. Aprovação desses utilitários não comprova design ou integração de um produto. Veja [operação e limites](references/plugin-operation.md).
+Local checks: `python3 scripts/check_package.py --root .` and `python3 -m unittest discover -s tests -p 'test_*.py' -v` from the plugin root. The [catalog](catalog.json) is derived from source; the validator checks actual files. Passing these utilities does not prove product design or integration. See [operation and limits](references/plugin-operation.md).
 
-Identidade visual: [apresentação](assets/plugin-brand/identidade.html), [guia](assets/plugin-brand/README.md) e arquivos SVG/PNG. A marca da Forma pertence ao plugin, não é um tema obrigatório para os seus projetos. O hero é uma imagem gerada, não um componente 3D interativo.
+Visual identity: [presentation](assets/plugin-brand/identidade.html), [guide](assets/plugin-brand/README.md) and SVG/PNG assets. Forma's brand belongs to the plugin; it is not a required theme for your projects. The hero is a generated image, not an interactive 3D component.
 '''.encode()
 
     # Refuse to silently remove unrelated files in an existing package.
@@ -133,15 +133,15 @@ Identidade visual: [apresentação](assets/plugin-brand/identidade.html), [guia]
         output = plugin / path
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_bytes(data)
-    marketplace = {'name': 'forma-community', 'interface': {'displayName': 'Forma — comunidade'}, 'plugins': [{'name': 'forma', 'version': version, 'source': {'source': 'local', 'path': './plugins/forma'}, 'policy': {'installation': 'AVAILABLE', 'authentication': 'ON_INSTALL'}, 'category': 'Design'}]}
+    marketplace = {'name': 'forma-community', 'interface': {'displayName': 'Forma community'}, 'plugins': [{'name': 'forma', 'version': version, 'source': {'source': 'local', 'path': './plugins/forma'}, 'policy': {'installation': 'AVAILABLE', 'authentication': 'ON_INSTALL'}, 'category': 'Design'}]}
     catalog = destination / '.agents/plugins/marketplace.json'
     catalog.parent.mkdir(parents=True, exist_ok=True)
     catalog.write_text(json.dumps(marketplace, ensure_ascii=False, indent=2) + '\n')
-    (destination / 'README.md').write_text(f'''# Forma — plugin comunitário {version}
+    (destination / 'README.md').write_text(f'''# Forma community plugin {version}
 
-O pacote contém o catálogo `forma-community` e o plugin em `plugins/forma`, distribuídos sob a licença MIT. Extraia a pasta inteira para um local permanente e use essa pasta como marketplace.
+This package contains the `forma-community` catalog and the plugin at `plugins/forma`, distributed under the MIT license. Extract the entire directory to a permanent location and use it as a marketplace.
 
-No terminal, dentro desta pasta:
+In a terminal, from this directory:
 
 ```sh
 codex plugin marketplace add .
@@ -149,13 +149,13 @@ codex plugin add forma@forma-community
 codex plugin list --marketplace forma-community --json
 ```
 
-Depois, abra uma nova conversa ou atualize o catálogo no Codex e selecione Forma. A instalação só fornece instruções, referências e recursos locais; não inicia serviços ou chamadas a modelos externos.
+Then open a new conversation or refresh the catalog in Codex and select Forma. Installation provides only instructions, references and local resources; it does not start services or call external models.
 
-Se houver uma Forma avulsa em `~/.codex/skills/forma`, ela continua existindo. Para conferir o plugin, use a entrada com namespace do plugin e verifique seu caminho no cache. Não edite o cache; atualize a fonte do pacote e instale a versão nova pelo marketplace. O caminho deste marketplace deve continuar disponível para atualizações; o conteúdo instalado tem sua própria cópia.
+If a standalone Forma exists at `~/.codex/skills/forma`, it remains installed. To verify the plugin, use its namespaced entry and inspect its cache path. Do not edit the cache; update the package source and install the new version through the marketplace. The marketplace path must remain available for updates; the installed content has its own copy.
 
-Para remover somente o plugin: `codex plugin remove forma@forma-community`. Para remover este catálogo: `codex plugin marketplace remove forma-community`. A Forma avulsa não é apagada por esses comandos.
+To remove only the plugin: `codex plugin remove forma@forma-community`. To remove this catalog: `codex plugin marketplace remove forma-community`. These commands do not delete the standalone Forma skill.
 
-Detalhes: [plugin](plugins/forma/README.md). Fonte e contribuições: [figueirego/forma](https://github.com/figueirego/forma).
+Details: [plugin](plugins/forma/README.md). Source and contributions: [figueirego/forma](https://github.com/figueirego/forma).
 ''')
     archive = destination.with_suffix('.zip')
     with ZipFile(archive, 'w', ZIP_DEFLATED) as zipped:

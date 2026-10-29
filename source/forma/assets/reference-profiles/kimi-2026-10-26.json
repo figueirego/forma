@@ -2,74 +2,74 @@
   "reference": "https://kimi-landing-page-two.vercel.app/",
   "review_date": "2026-10-26",
   "date_timezone": "UTC",
-  "scope": "Snapshot estático público + QA visual delimitado; referência de mecanismos, não tema padrão ou validação de alegações editoriais.",
+  "scope": "Public static snapshot and bounded visual QA; a mechanism reference, not a default theme or validation of editorial claims.",
   "runtime": {
     "desktop": {
       "width": 1280,
       "height": 720,
       "verified": [
-        "Retrato, capacete e contornos visíveis",
-        "Nenhuma imagem quebrada observada",
-        "Oito elementos canvas no DOM"
+        "Portrait, helmet and contours visible",
+        "No broken images observed",
+        "Eight canvas elements in the DOM"
       ]
     },
     "mobile": {
       "width": 390,
       "height": 844,
       "verified": [
-        "Hero em composição vertical",
-        "Capacete visível",
-        "Sem overflow horizontal observado",
-        "Menu dialog abre e fecha"
+        "Vertically composed hero",
+        "Helmet visible",
+        "No horizontal overflow observed",
+        "Menu dialog opens and closes"
       ],
-      "gap": "Open não expõe aria-expanded"
+      "gap": "Open does not expose aria-expanded"
     },
-    "operator": "Agente principal desta tarefa; evidências visuais em outputs/landing-rea/kimi/desktop.png e mobile.png"
+    "operator": "Task coordinator; visual evidence at outputs/landing-rea/kimi/desktop.png and mobile.png"
   },
   "static": {
     "confirmed_stack": [
       {
         "name": "Lenis",
         "version": "1.3.26",
-        "role": "Rolagem suave"
+        "role": "Smooth scrolling"
       },
       {
         "name": "Three.js",
         "version": "r185",
-        "role": "Cena WebGL; versão npm/patch não identificada"
+        "role": "WebGL scene; npm/patch version not identified"
       },
       {
         "name": "GLTFLoader/DRACOLoader",
         "version": null,
-        "role": "GLB com decoder WASM/worker configurado; compressão do arquivo não confirmada"
+        "role": "GLB with a configured WASM/worker decoder; file compression not confirmed"
       },
       {
         "name": "HDR/PMREM + ShaderMaterial",
         "version": null,
-        "role": "Luz ambiente, plano 2.5D com diffuse/depth/alpha/normal, reveal de material"
+        "role": "Ambient lighting, a 2.5D plane with diffuse/depth/alpha/normal maps, and material reveal"
       },
       {
         "name": "Canvas 2D + SVG",
         "version": null,
-        "role": "Contornos, trilha, dissolução, molduras e símbolos"
+        "role": "Contours, trail, dissolve, frames and symbols"
       }
     ],
     "inferred_stack": [
       {
         "name": "Vite",
-        "confidence": "alta",
-        "basis": "modulepreload e vite:preloadError; versão/configuração desconhecidas"
+        "confidence": "high",
+        "basis": "modulepreload and vite:preloadError; unknown version/configuration"
       }
     ],
     "fonts": [
       {
         "family": "Oswald",
-        "weights": "400–700",
+        "weights": "400-700",
         "format": "WOFF2"
       },
       {
         "family": "Space Grotesk",
-        "weights": "400–700",
+        "weights": "400-700",
         "format": "WOFF2"
       }
     ],
@@ -78,7 +78,7 @@
       "foreground": "#090a0b",
       "surface_dark": "#0e0f14",
       "accent": "#02d2e3",
-      "architecture": "Valores brutos → papéis semânticos; contexto de campanha"
+      "architecture": "Raw values -> semantic roles; campaign context"
     },
     "quality_policy_declared": {
       "max_dpr": {
@@ -87,8 +87,8 @@
         "desktop": 1.5
       },
       "antialias": "desktop",
-      "pointer": "Ponteiro fino sem reduced-motion",
-      "freeze": "reduced-motion ou mobile com saveData/deviceMemory <=2; não evita downloads/render"
+      "pointer": "Fine pointer without reduced-motion",
+      "freeze": "reduced-motion or mobile with saveData/deviceMemory <=2; does not prevent downloads/rendering"
     },
     "sources": [
       {
@@ -126,44 +126,44 @@
         "status": "partial; alias expansion bounded at 512"
       },
       {
-        "input": "Sufixo exato HeroScene de 9346 bytes",
+        "input": "Exact 9346-byte HeroScene suffix",
         "bytes": 9346,
         "parse_failures": 0,
         "application_unknowns": 3,
         "semantic_unknowns": 554,
-        "status": "partial; definições da biblioteca fora do recorte"
+        "status": "partial; library definitions outside the excerpt"
       }
     ]
   },
   "cost": {
-    "basis": "Bytes brutos GET/Content-Length HEAD; não total da navegação nem transferência comprimida",
+    "basis": "Raw GET bytes/HEAD Content-Length; neither the total navigation payload nor compressed transfer size",
     "entry_js_bytes": 56574,
     "hero_js_bytes": 618987,
     "html_css_js_two_fonts_subtotal_bytes": 775239,
     "configured_wasm_decoder_plus_wrapper_conditional_bytes": 344510,
     "scene_assets_bytes": null,
-    "gpu_runtime_cost": "Não medido; shaders, PMREM, textura e loops criam custo que DPR sozinho não caracteriza",
+    "gpu_runtime_cost": "Not measured; shaders, PMREM, textures and loops incur costs that DPR alone cannot characterize",
     "financial_cost": null
   },
   "reuse_cases": [
-    "Caderno/cartão: CSS perspective antes de WebGL",
-    "Retrato 2.5D + objeto GLB opcional",
-    "Timeline editorial com ordem móvel",
-    "SVG/Canvas para trajetória e contorno"
+    "Notebook/card: consider CSS perspective before WebGL",
+    "2.5D portrait + optional GLB object",
+    "Editorial timeline with mobile ordering",
+    "SVG/Canvas for paths and contours"
   ],
   "avoid_copying": [
-    "Escala raiz descontínua em 1279→1280 e 1440→1441",
-    "freeze que continua baixando e renderizando",
-    "Reduced-motion parcial",
-    "Ausência de poster útil em falha",
-    "Cleanup incompleto para adaptação SPA"
+    "Discontinuous root scale at 1279->1280 and 1440->1441",
+    "A freeze that keeps downloading and rendering",
+    "Partial reduced-motion support",
+    "No useful poster on failure",
+    "Incomplete cleanup for SPA adaptation"
   ],
   "not_verified": [
-    "FPS, LCP, INP, GPU memory e custo financeiro não medidos",
-    "Aparelhos físicos, leitores de tela e todos os breakpoints não testados",
-    "Fallback WebGL/rede, reduced-motion completo e teardown não validados em runtime",
-    "Licenças de assets, preço/plano de hosting, pipeline original de autoria",
-    "Dimensões/pesos/triângulos do GLB e mapas: HEAD externo retornou 403, sem falha no QA do navegador"
+    "FPS, LCP, INP, GPU memory and financial cost not measured",
+    "Physical devices, screen readers and the full breakpoint range not tested",
+    "WebGL/network fallback, complete reduced-motion support and teardown not validated at runtime",
+    "Asset licenses, hosting price/plan and original authoring pipeline",
+    "GLB and map dimensions/sizes/triangles: external HEAD returned 403, without failure during browser QA"
   ],
-  "redistribution": "Perfil factual e padrões originais. Nenhum asset, fonte, modelo, logo ou código do fornecedor incluído; direitos de redistribuição não estabelecidos."
+  "redistribution": "Factual profile and original patterns. No vendor assets, fonts, models, logos or code included; redistribution rights not established."
 }

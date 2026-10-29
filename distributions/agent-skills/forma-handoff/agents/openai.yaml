@@ -1,6 +1,6 @@
 interface:
   display_name: "Forma Handoff"
-  short_description: "Figma, tokens, artefatos editáveis e entrega"
-  default_prompt: "Use $forma-handoff para entregar este design no formato solicitado, conectado ao consumidor e verificado."
+  short_description: "Figma, tokens, editable artifacts, and delivery"
+  default_prompt: "Use $forma-handoff to deliver this design in the requested format, connected to the consumer and verified."
 policy:
   allow_implicit_invocation: true

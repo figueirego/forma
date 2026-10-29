@@ -1,27 +1,27 @@
-# Acessibilidade e inclusão
+# Accessibility and inclusion
 
-Use WCAG 2.2 AA como referência para web quando aplicável; requisitos legais/contratuais dependem do produto e jurisdição. Para nativo, acrescente a documentação da plataforma e testes com suas tecnologias assistivas. Não declare conformidade total com base em screenshot, Lighthouse ou contraste isolado.
+Use WCAG 2.2 AA as a web reference where applicable; legal and contractual requirements depend on the product and jurisdiction. For native applications, add platform documentation and tests with its assistive technologies. Do not claim full conformance based on a screenshot, Lighthouse or contrast alone.
 
-## Medidas e seus significados
+## Measurements and their meanings
 
-- Texto comum: contraste mínimo 4,5:1; texto grande: 3:1. “Grande” é pelo menos 18 pt (24 CSS px) regular ou 14 pt (aprox. 18,67 CSS px) em negrito. Não confundir 18 px com 18 pt.
-- Componentes/informação gráfica necessários à compreensão: verificar contraste não textual e estados relevantes; não depender de borda invisível para reconhecer controles.
-- WCAG 2.2 AA, SC 2.5.8: alvo de ponteiro de pelo menos 24 × 24 CSS px ou exceção aplicável, inclusive regra de espaçamento. 44 × 44 CSS px é um alvo ampliado útil, não o mínimo universal AA.
-- iOS/iPadOS: a HIG consultada distingue controle padrão de 44 × 44 pt de mínimo de 28 × 28 pt; use o padrão confortável como ponto de partida e avalie espaçamento/contexto. Não apresente 44 pt como mínimo normativo universal. Android/Material: alvo de toque de 48 × 48 dp. São unidades e ecossistemas diferentes.
+- Regular text: minimum contrast of 4.5:1; large text: 3:1. "Large" means at least 18 pt (24 CSS px) regular or 14 pt (approximately 18.67 CSS px) bold. Do not confuse 18 px with 18 pt.
+- Components and graphical information needed for understanding: check non-text contrast and relevant states; do not rely on an invisible border to identify controls.
+- WCAG 2.2 AA, SC 2.5.8: a pointer target of at least 24 x 24 CSS px or an applicable exception, including the spacing rule. 44 x 44 CSS px is a useful enhanced target, not the universal AA minimum.
+- iOS/iPadOS: the HIG reviewed distinguishes a standard 44 x 44 pt control from a 28 x 28 pt minimum; start with the comfortable standard and assess spacing and context. Do not present 44 pt as a universal normative minimum. Android/Material: a 48 x 48 dp touch target. These are different units and ecosystems.
 
-Confirme requisitos exatos na fonte oficial ao auditar. Consulte [fontes](sources.md); não reduza controles destrutivos abaixo de alvos utilizáveis.
+Confirm exact requirements in the official source when auditing. Consult [sources](sources.md); do not shrink destructive controls below usable target sizes.
 
-## Verificações funcionais
+## Functional checks
 
-1. Percorrer o fluxo somente com teclado: ordem lógica, foco visível, sem trap indevido e sem foco oculto por overlays. Na WCAG 2.2, o critério [2.4.11, AA](https://www.w3.org/TR/WCAG22/#focus-not-obscured-minimum) avalia se o **componente que recebe foco** não fica totalmente escondido por conteúdo criado pelo autor; aplicar também suas notas sobre conteúdo reposicionável ou aberto pelo usuário. O [2.4.12, AAA](https://www.w3.org/TR/WCAG22/#focus-not-obscured-enhanced) exige que nenhuma parte do componente seja escondida. Não confundir componente com pixels do anel; visibilidade e aparência do indicador têm critérios próprios.
-2. Testar nome, função, valor e estado com leitor de tela; preferir semântica nativa. Use anúncios para mudanças relevantes sem reler a página inteira.
-3. Verificar zoom de texto e reflow, inclusive em 320 CSS px de largura equivalente quando pertinente. Tabelas e conteúdos bidimensionais têm condições próprias; não esconda informação para “passar”.
-4. Testar texto ampliado/Dynamic Type/font scale, alto contraste, temas suportados, redução de movimento e transparência quando disponíveis.
-5. Alternativas a arrastar, gestos multiponto, hover e ações dependentes de precisão. Garanta operação por voz/switch quando fizer parte do alvo.
-6. Mídia com legendas, transcrição e audiodescrição conforme conteúdo e requisitos. Confira [fala e leitura temporal](motion.md#legendas-e-fala); efeito tipográfico não substitui legenda completa. Não autoplay de áudio como surpresa; permita pausar movimento relevante.
-7. Autenticação sem barreiras desnecessárias de memória: permitir colagem/gerenciadores de senha e alternativas apropriadas a desafios cognitivos.
-8. Mensagens de erro associadas, correção clara, informação não transmitida somente por cor, posição, som ou animação.
+1. Complete the flow using only the keyboard: logical order, visible focus, no inappropriate trap and no focus hidden by overlays. In WCAG 2.2, [2.4.11, AA](https://www.w3.org/TR/WCAG22/#focus-not-obscured-minimum) assesses whether the **component receiving focus** is not entirely hidden by author-created content; also apply its notes on repositionable or user-opened content. [2.4.12, AAA](https://www.w3.org/TR/WCAG22/#focus-not-obscured-enhanced) requires that no part of the component be hidden. Do not confuse the component with focus-ring pixels; the indicator's visibility and appearance have their own criteria.
+2. Test name, role, value and state with a screen reader; prefer native semantics. Announce relevant changes without rereading the entire page.
+3. Check text zoom and reflow, including at an equivalent width of 320 CSS px where relevant. Tables and two-dimensional content have specific conditions; do not hide information to "pass."
+4. Test enlarged text, Dynamic Type/font scale, high contrast, supported themes, reduced motion and reduced transparency where available.
+5. Provide alternatives to dragging, multipoint gestures, hover and precision-dependent actions. Ensure voice/switch operation when it is part of the target.
+6. Provide captions, transcripts and audio descriptions according to the media and requirements. Check [speech and timed reading](motion.md#captions-and-speech); typographic effects do not replace complete captions. Do not surprise users with autoplaying audio; allow relevant motion to be paused.
+7. Avoid unnecessary memory barriers in authentication: allow pasting, password managers and suitable alternatives to cognitive challenges.
+8. Associate error messages with their controls, make correction clear, and do not convey information solely through color, position, sound or animation.
 
-## Evidência
+## Evidence
 
-Registre dispositivo/navegador, tecnologia assistiva, estado, critério, passos e resultado. Ferramentas automáticas encontram parte dos problemas; testes manuais e usuários reais cobrem outras dimensões. Não classifique estilo preferido como falha de acessibilidade.
+Record device/browser, assistive technology, state, criterion, steps and result. Automated tools find some problems; manual tests and real users cover other dimensions. Do not classify a preferred style as an accessibility failure.

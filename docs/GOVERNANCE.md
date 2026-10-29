@@ -1,27 +1,27 @@
-# Governança das contribuições
+# Contribution governance
 
-O repositório oficial é mantido por `@figueirego`. A comunidade contribui por forks e pull requests, sem receber acesso de escrita ao repositório original. O mantenedor decide escopo, revisão, merge e versões.
+The official repository is maintained by `@figueirego`. The community contributes through forks and pull requests without receiving write access to the original repository. The maintainer decides scope, review, merges and versions.
 
-## Política da branch main
+## Main branch policy
 
-A configuração esperada no GitHub usa dois rulesets cumulativos:
+The expected GitHub configuration uses two cumulative rulesets:
 
-1. **main-integrity**, sem bypass: exige PR, check `Validate Forma` aprovado e branch atualizada, conversas resolvidas; impede force push e exclusão de `main`.
-2. **main-owner-review**: exige uma aprovação do CODEOWNER e descarta aprovações após novos commits. O mantenedor tem exceção somente no fluxo de PR para esta regra de revisão.
+1. **main-integrity**, with no bypass: requires a PR, a passing `Validate Forma` check, an up-to-date branch and resolved conversations; prevents force pushes and deletion of `main`.
+2. **main-owner-review**: requires one CODEOWNER approval and dismisses approvals after new commits. The maintainer has an exception for this review rule only within the PR workflow.
 
-A exceção existe porque uma pessoa não pode aprovar seu próprio PR. Ela não libera os testes, as conversas pendentes nem push direto, que pertencem ao primeiro ruleset. Tecnicamente o mantenedor pode usar a exceção também em PRs externos; a política é reservá-la a alterações próprias ou exceções justificadas no PR. Não há alegação de revisão independente de um PR do único mantenedor.
+The exception exists because people cannot approve their own PRs. It does not bypass tests, unresolved conversations or the direct-push restriction, which belong to the first ruleset. Technically, the maintainer can also use this exception on external PRs; the policy reserves it for their own changes or exceptions justified in the PR. No independent review is claimed for a sole maintainer's own PR.
 
-Para tornar revisão independente obrigatória também para o mantenedor, adicione outro revisor confiável com acesso apropriado e remova a exceção. O proprietário sempre conserva poderes administrativos para alterar regras; arquivos de política não impedem isso.
+To require independent review for the maintainer as well, add another trusted reviewer with appropriate access and remove the exception. The owner always retains administrative power to change rules; policy files do not prevent that.
 
-## Workflows e instalação
+## Workflows and installation
 
-Contribuições executam em runner hospedado, sem secrets de publicação e com token de leitura. Workflows de contribuidores externos aguardam autorização de execução. O checkout não preserva credenciais. Não há auto-merge, publicação npm ou atualização automática de consumidores.
+Contributions run on a hosted runner without publishing secrets and with a read-only token. External contributors' workflows await execution approval. Checkout does not persist credentials. There is no auto-merge, npm publication or automatic update of consuming projects.
 
-Alterar as skills no GitHub não modifica uma instalação existente. Consumidores devem atualizar o clone/catálogo e conferir a versão instalada conforme as ferramentas de seu host.
+Changing skills on GitHub does not modify an existing installation. Users must update their clone or catalog and verify the installed version with their host's tools.
 
-## Verificar as proteções
+## Verify protections
 
-As definições versionadas nesta pasta são o estado desejado. A comprovação do servidor exige consultar os rulesets ativos e o check real, por exemplo:
+The versioned definitions in this directory describe the desired state. Proving the server state requires querying active rulesets and the actual check, for example:
 
 ```sh
 gh api repos/figueirego/forma/rules/branches/main
@@ -29,6 +29,6 @@ gh api repos/figueirego/forma/codeowners/errors
 gh api repos/figueirego/forma/actions/permissions/workflow
 ```
 
-Os arquivos locais não ativam regras por si só. Não enfraqueça as proteções para resolver uma falha de CI; corrija o problema em uma branch e envie PR.
+Local files do not activate rules by themselves. Do not weaken protections to resolve a CI failure; fix the problem on a branch and submit a PR.
 
-Referências: [rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets), [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners), [segurança no Actions](https://docs.github.com/en/actions/reference/security/secure-use).
+References: [rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets), [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners), [Actions security](https://docs.github.com/en/actions/reference/security/secure-use).

@@ -1,30 +1,30 @@
-# Mobile e experiências adaptativas
+# Mobile and adaptive experiences
 
-Escolha iOS/Android nativo, Flutter, React Native, web móvel ou outra stack conforme o produto existente. Um mockup de celular no navegador não comprova comportamento nativo.
+Choose native iOS/Android, Flutter, React Native, mobile web or another stack according to the existing product. A phone mockup in a browser does not prove native behavior.
 
-## Estrutura e entrada
+## Structure and input
 
-Respeite navegação, back, apresentação de sheets, menus e controles do sistema. Use safe areas/window insets para recortes, barras, gestos e teclado; não hardcode margens de um aparelho. Pense em alcance do polegar sem esconder ações importantes.
+Respect system navigation, back behavior, sheet presentation, menus and controls. Use safe areas/window insets for cutouts, bars, gestures and the keyboard; do not hardcode margins for one device. Consider thumb reach without hiding important actions.
 
-Defina quando navegação inferior vira rail/sidebar em tablet. Dobráveis e split-screen exigem adaptação à área disponível, não apenas orientação. Não estique uma tela de telefone em todo tablet. Rotação deve preservar estado quando suportada; bloqueio de orientação precisa de razão funcional.
+Define when bottom navigation becomes a rail/sidebar on tablets. Foldables and split-screen require adaptation to the available area, not just orientation. Do not stretch a phone screen across every tablet. Rotation must preserve state when supported; locking orientation requires a functional reason.
 
-Toque, teclado físico, leitor de tela, switch, stylus e voz podem coexistir. Swipes e drag têm alternativas. Haptics acompanham significado, não cada toque; a função deve ser compreensível sem vibração ou som.
+Touch, hardware keyboards, screen readers, switches, styluses and voice may coexist. Provide alternatives to swipes and dragging. Haptics reinforce meaning, not every tap; the function must remain understandable without vibration or sound.
 
-## Ciclo de vida
+## Lifecycle
 
-- Preservar rascunho após interrupção, background, reconexão e recriação de processo conforme requisitos.
-- Pedir permissão no momento de necessidade, com propósito compreensível. Tratar recusa, recusa permanente e revogação; oferecer caminhos alternativos quando viáveis.
-- Notificações precisam de utilidade, controles, deep link válido e comportamento para conteúdo indisponível.
-- Upload/download mostra estado, consumo relevante, retry e cancelamento. Definir offline, cache, fila e conflitos.
-- Autenticação e biometria precisam de fallback apropriado; não confundir retorno à aplicação com sessão válida.
-- Preferir seletores e pickers do sistema quando reduzirem fricção e exposição de dados.
+- Preserve drafts after interruptions, backgrounding, reconnection and process recreation according to requirements.
+- Request permission when needed, with an understandable purpose. Handle denial, permanent denial and revocation; offer alternatives when feasible.
+- Notifications need a useful purpose, controls, a valid deep link and behavior for unavailable content.
+- Uploads/downloads show state, relevant resource consumption, retry and cancellation. Define offline behavior, caching, queues and conflicts.
+- Authentication and biometrics need an appropriate fallback; returning to the application does not imply a valid session.
+- Prefer system selectors and pickers when they reduce friction and data exposure.
 
-## Entrega
+## Delivery
 
-Teste font scale/Dynamic Type, leitor de tela, teclado cobrindo campos, conectividade ruim, voltar durante submissão, estado após retomada e dispositivo mínimo suportado. Screenshots de loja representam funcionalidades reais, com assets e textos revisados. Requisitos de loja, privacidade e SDK devem ser conferidos nas fontes oficiais no momento da publicação.
+Test font scaling/Dynamic Type, screen readers, keyboards covering fields, poor connectivity, back navigation during submission, state after resuming and the minimum supported device. Store screenshots must represent real functionality, with reviewed assets and copy. Check store, privacy and SDK requirements against official sources at publication time.
 
-## Receita lista/detalhe
+## List/detail recipe
 
-Na menor área suportada, lista e detalhe são regiões alternadas; voltar preserva filtro, seleção e posição. Aumente a largura até caberem lista legível, separação e detalhe com conteúdo mínimo real. Esse ponto observado orienta duas regiões; registre a condição pelo espaço, não pelo modelo de aparelho.
+At the smallest supported size, list and detail are alternating regions; going back preserves the filter, selection and position. Increase the width until a readable list, separation and detail with real minimum content fit. This observed point determines when to use two regions; record the condition in terms of space, not device model.
 
-Redimensionar com detalhe aberto mantém item selecionado. Retornar ao estreito mantém região ativa e retorno; não reinicia jornada. Teste texto ampliado, teclado, item removido e deep link. Navegação vira rail/sidebar quando houver espaço e ganho de acesso. Veja [adaptação](platform-adapters.md) para stack e testes.
+Resizing with a detail open keeps the selected item. Returning to a narrow width preserves the active region and return path; it does not restart the journey. Test enlarged text, the keyboard, a removed item and deep links. Navigation becomes a rail/sidebar when space and access benefits justify it. See [adaptation](platform-adapters.md) for stacks and tests.

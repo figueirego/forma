@@ -1,75 +1,83 @@
-# Catálogo de decisões para componentes
+# Component decision catalog
 
-Escolha pelo comportamento necessário, depois pela aparência. As receitas são contratos agnósticos de stack; use componentes nativos/da biblioteca existente. Confira APIs atuais antes de implementar.
+Choose based on required behavior, then appearance. Recipes are stack-agnostic contracts; use native components or the existing library. Check current APIs before implementing.
 
-Quando o pedido for reaplicar o visual conjunto de fundo, sidebar, botões e campos, use a [base de interface limpa](clean-shell.md): inclui CSS portátil e exemplo funcional. Estas tabelas continuam definindo semântica e estados; a receita acrescenta relações de composição e hierarquia, sem substituir a stack.
+When the request is to reuse the combined appearance of background, sidebar, buttons, and fields, use the [clean interface foundation](clean-shell.md): it includes portable CSS and a working example. These tables still define semantics and states; the recipe adds composition and hierarchy relationships without replacing the stack.
 
-## Ações, feedback e confirmação
+## Actions, feedback, and confirmation
 
-| Padrão | Quando usar | Contrato | Teste adverso |
+| Pattern | When to use | Contract | Adverse test |
 |---|---|---|---|
-| Botão | Comando local ou submissão | Nome explícito, foco, pressed/busy quando aplicável; conteúdo não muda largura inesperadamente | Duplo clique, teclado, request lenta e erro |
-| Link | Mudar localização/recurso | Destino real, semântica e comportamento do navegador | Nova aba, back, URL indisponível |
-| Toast | Confirmação transitória não essencial | Não rouba foco; ação importante continua acessível fora dele | Leitor de tela e timeout |
-| Banner inline | Falha ou condição persistente | Contexto, consequência e recuperação próximos da área afetada | Conteúdo longo, retry e erro parcial |
-| Dialog | Decisão/interrupção necessária | Título, foco, cancelamento seguro, confirmação específica e retorno | Escape, clique fora conforme contrato, disparador removido |
-| Undo | Operação reversível | Janela/prazo e alcance reais; restauração confirmada | Falha no undo, expiração e navegação |
+| Button | Local command or submission | Explicit name, focus, pressed/busy when applicable; content does not unexpectedly change width | Double-click, keyboard, slow request, and error |
+| Link | Change location/resource | Real destination, semantics, and browser behavior | New tab, back, unavailable URL |
+| Toast | Nonessential transient confirmation | Does not steal focus; important actions remain accessible elsewhere | Screen reader and timeout |
+| Inline banner | Persistent failure or condition | Context, consequence, and recovery near the affected area | Long content, retry, and partial error |
+| Dialog | Necessary decision/interruption | Title, focus, safe cancellation, specific confirmation, and return | Escape, outside click according to contract, removed trigger |
+| Undo | Reversible operation | Real window/deadline and scope; confirmed restoration | Undo failure, expiration, and navigation |
 
-Não crie clique em div por estética. Tooltip complementa um controle com nome; não é a única fonte de instrução indispensável nem recipiente de ações interativas.
+Do not make a div clickable for aesthetics. A tooltip supplements a named control; it is neither the sole source of essential instructions nor a container for interactive actions.
 
-## Formulários
+## Forms
 
-| Necessidade | Padrão inicial | Evitar |
+| Need | Initial pattern | Avoid |
 |---|---|---|
-| Uma opção entre poucas mutuamente exclusivas | Radio group | Toggles independentes que permitem combinação inválida |
-| Preferência aplicada imediatamente | Switch com estado explícito | Switch que só passa a valer após um botão oculto |
-| Selecionar vários itens | Checkboxes ou seleção de lista | Estado indeterminado não explicado |
-| Uma opção em conjunto extenso | Select/combobox com busca conforme volume | Dropdown custom sem teclado ou leitor de tela |
-| Valor preciso com unidade | Campo numérico e indicação da unidade | Slider como único meio de precisão |
-| Data de domínio | Controle adequado e formato explícito | Calendário difícil para data muito distante |
+| One of a few mutually exclusive options | Radio group | Independent toggles that allow an invalid combination |
+| Immediately applied preference | Switch with explicit state | A switch that takes effect only after a hidden button |
+| Select multiple items | Checkboxes or list selection | Unexplained indeterminate state |
+| One option from a large set | Select/combobox with search according to volume | Custom dropdown without keyboard or screen reader support |
+| Precise value with a unit | Numeric field and unit indicator | Slider as the only precision input |
+| Domain-specific date | Appropriate control and explicit format | Calendar that makes distant dates difficult |
 
-**Exemplo: salvar perfil.** Idle → edição → submissão → confirmação ou erros. Validação do servidor associa códigos aos campos. Durante envio, mantenha rascunho; não apague campos no 422. Se a sessão expirar, reautenticação deve preservar a intenção sem armazenar secrets. Nome e e-mail são exemplos, não imposição de formulário.
+**Example: save profile.** Idle -> editing -> submission -> confirmation or errors. Server validation associates codes with fields. Preserve the draft during submission; do not clear fields on a 422. If the session expires, reauthentication must preserve intent without storing secrets. Name and email are examples, not mandatory form fields.
 
-**Aceite:** usuário consegue identificar erro, corrigi-lo sem repetir campos válidos, enviar via teclado e perceber confirmação. Longa tradução não sobrepõe mensagens. Mudança de foco ocorre por motivo, não a cada validação.
+**Acceptance:** the user can identify the error, correct it without repeating valid fields, submit by keyboard, and perceive confirmation. Long translations do not overlap messages. Focus changes for a reason, not on every validation.
 
-**Anatomia espacial:** label, campo, ajuda e erro compõem um grupo. O grupo seguinte tem separação perceptível, sem margem duplicada do filho e do stack. Mensagens crescem sem se aproximar mais do campo seguinte. Na linha de preferências, texto multilinha alinha pelo topo quando facilitar associação; o controle preserva largura funcional e empilha por pressão de conteúdo. Veja [contratos espaciais](layout-spatial-contracts.md).
+**Spatial anatomy:** label, field, help, and error form a group. The next group has perceptible separation without duplicated margins from the child and stack. Messages grow without becoming closer to the next field. In preference rows, align multiline text to the top when this improves association; the control retains its functional width and stacks under content pressure. See [spatial contracts](layout-spatial-contracts.md).
 
-## Navegação e disclosure
+## Numeric controls and preview
 
-Tabs alternam painéis irmãos, acordeão revela conteúdo e menu contém comandos/opções. Não use todos como versões visuais do mesmo componente. Defina seleção, foco, history e URL separadamente. Tabs de navegação real precisam de roteamento coerente; tabs locais não precisam inventar páginas.
+The control, accessible value, and preview derive from the same state. Do not maintain three competing values in the slider, drawing, and form. Normalize at the update boundary, including programmatic setters, typed text, and imports: finite number, unit, minimum, maximum, step relative to the minimum, and decimal precision. An operation does not alter neighboring controls without an explicit grouping contract.
 
-Sidebar pode colapsar por pressão de conteúdo; preserve rótulos acessíveis e indicação de seleção. Breadcrumb exprime hierarquia, não substitui histórico. Command palette complementa descoberta e não deve ser única forma de alcançar função essencial.
+Define keyboard behavior, reset, and cancellation alongside pointer behavior. An adjustment library with autosave must not silently replace draft -> Save/Cancel. Framework adapters must reuse the update rule and release listeners/subscriptions on unmount. Do not copy a store architecture for a simple field when the existing local state suffices.
 
-## Tabelas e listas operacionais
+**Acceptance:** keyboard, pointer, and setter produce the same final value; extremes and fractional steps do not oscillate; preview and announced value agree; reset restores the expected revision; cancel does not alter saved data; reopening/unmounting does not duplicate handlers. The [control study](site-experiences.md#controls-connected-to-the-preview) motivated these criteria but does not prove their implementation in a consumer.
 
-**Exemplo: pedidos com filtros.** Defina chave estável, colunas, ordenação inicial, filtros ativos, contagem e paginação. Diferencie “selecionar página” de “selecionar todos os resultados”. Ação em lote informa quantos itens e quais falharam. Alterar filtro deve ter regra explícita para seleção existente.
+## Navigation and disclosure
 
-**Estados:** zero registros, zero resultados filtrados, carregamento inicial, refresh com dados antigos, erro parcial, registro removido e ausência de autorização. Não trocar dado financeiro por skeleton em todo refresh.
+Tabs switch sibling panels, accordions reveal content, and menus contain commands/options. Do not treat them all as visual versions of the same component. Define selection, focus, history, and URL separately. Actual navigation tabs need coherent routing; local tabs need not invent pages.
 
-**Mobile:** escolha preservar tabela com scroll identificável, priorizar colunas ou oferecer detalhe por linha conforme tarefa. Ocultar coluna exige acesso alternativo. Virtualização precisa de testes de foco/semântica; se quebra acesso, use paginação ou alternativa apropriada.
+A sidebar may collapse under content pressure; preserve accessible labels and selection indication. Breadcrumbs express hierarchy, not history. A command palette complements discovery and must not be the only route to an essential function.
 
-**Aceite:** sort é determinístico, filtro pode ser limpo, estado persiste no retorno conforme contrato, seleção não muda de identidade após refresh e ação parcial não anuncia sucesso total.
+## Operational tables and lists
 
-**Anatomia espacial:** header e linhas compartilham guias de colunas/insets; números comparáveis conservam borda de alinhamento; título/metadados pertencem ao mesmo grupo; ações não invadem texto longo. Em flex/grid, permita shrink e wrap do texto antes de reduzir fonte. Defina quando truncar e como acessar o texto completo.
+**Example: orders with filters.** Define a stable key, columns, initial sorting, active filters, count, and pagination. Distinguish "select page" from "select all results." Batch actions report how many items and which ones failed. Changing a filter requires an explicit rule for the existing selection.
 
-## Upload e processamento assíncrono
+**States:** no records, no filtered results, initial loading, refresh with old data, partial error, removed record, and missing authorization. Do not replace financial data with skeletons on every refresh.
 
-Antes de enviar, mostre formatos/tamanho reais. Validar → enviar → processar → concluído são estados diferentes. Ofereça picker além de drag/drop, nome legível, progresso mensurável e retry por arquivo. Cancelar transporte não garante cancelar processamento remoto.
+**Mobile:** choose an identifiable scrolling table, prioritized columns, or row details according to the task. Hiding a column requires alternative access. Virtualization needs focus/semantics tests; if it breaks access, use pagination or an appropriate alternative.
 
-**Aceite:** arquivo inválido não elimina os válidos; perda de conexão distingue falha confirmada de resultado desconhecido; confirmação representa o resultado final.
+**Acceptance:** sorting is deterministic, filters can be cleared, state persists on return according to the contract, selection does not change identity after refresh, and partial actions do not announce total success.
 
-## Busca, filtros e recomendações
+**Spatial anatomy:** header and rows share column guides/insets; comparable numbers retain their alignment edge; title/metadata belong to the same group; actions do not invade long text. In flex/grid, allow text to shrink and wrap before reducing font size. Define when to truncate and how to access the full text.
 
-Consulta, seleção e submit são ações diferentes. Debounce não deve atrasar teclado local nem enviar requests obsoletas sobre resultados atuais. Faça requests canceláveis quando suportado e descarte respostas fora de ordem. Exiba consulta que gerou o resultado.
+## Upload and asynchronous processing
 
-Recomendação deve distinguir ordem algorítmica de ordenação escolhida, publicidade de resultado e sugestão de verdade. Histórico e sugestões não devem vazar dados entre usuários/tenants.
+Show actual formats/sizes before uploading. Validating -> uploading -> processing -> completed are different states. Offer a picker alongside drag/drop, readable filenames, measurable progress, and per-file retry. Canceling transport does not guarantee canceling remote processing.
 
-## Empty states e onboarding
+**Acceptance:** an invalid file does not remove valid ones; connection loss distinguishes confirmed failure from an unknown outcome; confirmation represents the final result.
 
-Identifique a causa antes da composição: recém-criado, filtro, permissão, sincronização ou falha. Só o primeiro caso costuma pedir “começar”. Uma ilustração não substitui explicação. Dê primeiro passo útil e exemplo identificado quando favorecer entendimento.
+## Search, filters, and recommendations
 
-## Controle de qualidade comum
+Querying, selecting, and submitting are different actions. Debouncing must not delay local keyboard interaction or let obsolete requests overwrite current results. Make requests cancelable when supported and discard out-of-order responses. Display the query that produced the result.
 
-Para dialog/painel, alinhe os insets relevantes de header/body/footer e atribua a rolagem a uma região explícita. Título centralizado precisa de referência definida: trilhas assimétricas podem deslocá-lo mesmo com `space-between`. Chips e mensagens de erro podem aumentar a altura; o corpo deve adaptar-se sem um cálculo fixo que corte rodapé ou resultados.
+Recommendations must distinguish algorithmic ranking from selected sorting, advertising from results, and suggestions from truth. History and suggestions must not leak data across users/tenants.
 
-Para cada padrão usado, documente somente diferenças do componente existente: estado inicial, evento, resultado, erro, foco e conteúdo extremo. Não copie todos estes contratos para o projeto quando a biblioteca já os implementa e foram verificados.
+## Empty states and onboarding
+
+Identify the cause before composing: newly created, filter, permission, synchronization, or failure. Usually only the first case calls for "get started." An illustration does not replace explanation. Provide a useful first step and an identified example when it aids understanding.
+
+## Shared quality control
+
+For dialogs/panels, align relevant header/body/footer insets and assign scrolling to an explicit region. A centered title needs a defined reference: asymmetric tracks can shift it even with `space-between`. Chips and error messages may increase height; the body must adapt without a fixed calculation that clips the footer or results.
+
+For each pattern used, document only differences from the existing component: initial state, event, result, error, focus, and extreme content. Do not copy all these contracts into the project when the library already implements them and they have been verified.

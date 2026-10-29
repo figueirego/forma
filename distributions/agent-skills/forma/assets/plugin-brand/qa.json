@@ -1,21 +1,21 @@
 {
-  "createdAt": "2026-10-28T18:46:43.531Z",
+  "createdAt": "2026-10-29T06:11:12.338Z",
   "mode": "Chromium headless, viewport resizing; local file. Not physical-device, print, screen-reader or full accessibility certification.",
   "browser": "156.0.8078.73",
   "executable": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
   "playwright": "1.62.1",
   "entry": "identidade.html",
   "sourceHashes": {
-    "identidade.html": "f10ae021b44c8c03b4eaa253f1f31a7aede38ea4c636931e2f34ed1c9fe83b21",
-    "identity.css": "24ffa820bcd021c46d8df56f25a76e048f4c41c397ef26cdc96f4c9b81f9d8f3",
-    "tokens.css": "1611cd1f3b31bba6bb95f22024fdc9ca9b4e407e3935c44350991ee657c90746",
-    "tokens.json": "7202a8b250d69333f17ed3977eafee8e85b324f41cb69977a0cda90f2d85ac65",
-    "icon.svg": "0f42ec2f2b8e274924e1e7907fc6d0e9d5d5dd455d5d09fcc06316e8d0c0c71c",
-    "icon-dark.svg": "364eed667d3fc9633f20ddb3cb4f5a55664a9d0a8857b97526142981a7a48685",
-    "wordmark.svg": "4a1a4042e60d042f920d17e1bf65226cfcf9e9eec84c5c3c0380aaea58f8628f",
-    "wordmark-dark.svg": "e24214cad34cc9773b8007b9920c6a02985395b954e179e41e99d491041ff9db",
+    "identidade.html": "51deef0a5fe026a916f81ad409a98abf0dbbe47888e16d12355687612aaacc74",
+    "identity.css": "bd4d84fd86574ad95a322e3e6a16a0907d93f8ae1b11cfb901716ebb5944b53b",
+    "tokens.css": "5e0c9107bcb1e0a2e8f2aa2d857e0296fe761270a5ae406e0da0e2507a052f1b",
+    "tokens.json": "778f32e06bc5502db0a04c5f1d4dbbe808c47de673c4d106b84621c2fcb99e49",
+    "icon.svg": "0e285b588983d16caa4fdc47c5fddc1e82c883ae1864d211cd626cdce5800b84",
+    "icon-dark.svg": "4a45d7630a0fbf0524d3637166b6198e9bbfc0c23721bccb9c3fceb5151a8169",
+    "wordmark.svg": "8750775f6981a74892d601be469a08371db203b175a0065bc285c37dd90bbcef",
+    "wordmark-dark.svg": "9e9a1fc4acefa28332f6480d741bd57f204d0a7df49bd042979e262a204befd8",
     "hero.png": "a07954c51662238cdd3225ab8dcbceaa0668da830b8fafdb6cb6860600d819ab",
-    "provenance.json": "7b2e1754ab9d05d08fb632eb2770f5e5936f5af5792c2f7bba1ec86dc022fa14"
+    "provenance.json": "a505cf433395b1f1ec0ee4b519f7da5d2098c14533dc133682b9057ca010402d"
   },
   "allPassed": true,
   "checks": [
@@ -162,14 +162,14 @@
       "evidence": [
         {
           "x": 24,
-          "y": 7983.421875,
+          "y": 7916.796875,
           "width": 24,
           "height": 24,
           "right": 48
         },
         {
           "x": 128.015625,
-          "y": 7975.421875,
+          "y": 7908.796875,
           "width": 32,
           "height": 32,
           "right": 160.015625
@@ -197,7 +197,7 @@
       "name": "keyboard-skip-link",
       "pass": true,
       "evidence": {
-        "text": "Pular para o conteúdo",
+        "text": "Skip to content",
         "href": "#conteudo",
         "outline": "solid"
       }
@@ -474,10 +474,10 @@
         "height": 800
       },
       "documentWidth": 320,
-      "documentHeight": 8818,
+      "documentHeight": 8699,
       "h1": {
         "x": 24,
-        "y": 183,
+        "y": 167.5,
         "width": 272,
         "height": 82.375,
         "right": 296
@@ -486,21 +486,21 @@
         "x": 0,
         "y": 80,
         "width": 320,
-        "height": 713.09375,
+        "height": 697.59375,
         "right": 320
       },
       "columns": "272px",
       "smallMarks": [
         {
           "x": 24,
-          "y": 7983.421875,
+          "y": 7916.796875,
           "width": 24,
           "height": 24,
           "right": 48
         },
         {
           "x": 128.015625,
-          "y": 7975.421875,
+          "y": 7908.796875,
           "width": 32,
           "height": 32,
           "right": 160.015625
@@ -534,7 +534,7 @@
         "height": 800
       },
       "documentWidth": 360,
-      "documentHeight": 8437,
+      "documentHeight": 8495,
       "h1": {
         "x": 24,
         "y": 167.5,
@@ -553,14 +553,14 @@
       "smallMarks": [
         {
           "x": 24,
-          "y": 7655.234375,
+          "y": 7731.1875,
           "width": 24,
           "height": 24,
           "right": 48
         },
         {
           "x": 128.015625,
-          "y": 7647.234375,
+          "y": 7723.1875,
           "width": 32,
           "height": 32,
           "right": 160.015625
@@ -594,7 +594,7 @@
         "height": 844
       },
       "documentWidth": 390,
-      "documentHeight": 8113,
+      "documentHeight": 8052,
       "h1": {
         "x": 24,
         "y": 167.5,
@@ -613,14 +613,14 @@
       "smallMarks": [
         {
           "x": 24,
-          "y": 7330.3125,
+          "y": 7310.296875,
           "width": 24,
           "height": 24,
           "right": 48
         },
         {
           "x": 128.015625,
-          "y": 7322.3125,
+          "y": 7302.296875,
           "width": 32,
           "height": 32,
           "right": 160.015625
@@ -654,7 +654,7 @@
         "height": 1024
       },
       "documentWidth": 768,
-      "documentHeight": 5973,
+      "documentHeight": 6087,
       "h1": {
         "x": 38.390625,
         "y": 218.96875,
@@ -673,14 +673,14 @@
       "smallMarks": [
         {
           "x": 440.171875,
-          "y": 5284.8125,
+          "y": 5399.484375,
           "width": 24,
           "height": 24,
           "right": 464.171875
         },
         {
           "x": 552.1875,
-          "y": 5276.8125,
+          "y": 5391.484375,
           "width": 32,
           "height": 32,
           "right": 584.1875
@@ -714,13 +714,13 @@
         "height": 900
       },
       "documentWidth": 1024,
-      "documentHeight": 6159,
+      "documentHeight": 6207,
       "h1": {
         "x": 51.1875,
         "y": 266.046875,
-        "width": 333.703125,
+        "width": 331.9375,
         "height": 111.78125,
-        "right": 384.890625
+        "right": 383.125
       },
       "hero": {
         "x": 0,
@@ -733,14 +733,14 @@
       "smallMarks": [
         {
           "x": 595.1875,
-          "y": 5455.90625,
+          "y": 5503.953125,
           "width": 24,
           "height": 24,
           "right": 619.1875
         },
         {
           "x": 707.203125,
-          "y": 5447.90625,
+          "y": 5495.953125,
           "width": 32,
           "height": 32,
           "right": 739.203125
@@ -774,13 +774,13 @@
         "height": 1000
       },
       "documentWidth": 1440,
-      "documentHeight": 6503,
+      "documentHeight": 6505,
       "h1": {
         "x": 72,
         "y": 299.9375,
-        "width": 469.296875,
+        "width": 420.59375,
         "height": 157.1875,
-        "right": 541.296875
+        "right": 492.59375
       },
       "hero": {
         "x": 0,
@@ -793,14 +793,14 @@
       "smallMarks": [
         {
           "x": 824,
-          "y": 5800.53125,
+          "y": 5802.078125,
           "width": 24,
           "height": 24,
           "right": 848
         },
         {
           "x": 936.015625,
-          "y": 5792.53125,
+          "y": 5794.078125,
           "width": 32,
           "height": 32,
           "right": 968.015625

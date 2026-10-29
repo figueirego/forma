@@ -1,74 +1,88 @@
-# Movimento e feedback
+# Motion and feedback
 
-Antes de animar, responda: o que muda, por quê, quem precisa perceber, com que frequência, e o que acontece sem movimento? Os eixos de contenção, polimento e expressão de Design Motion Principles são lentes contextuais, não endosso de autores nem receita única.
+Before animating, answer: what changes, why, who needs to notice, how often, and what happens without motion? The restraint, polish and expression axes of Design Motion Principles are contextual lenses, not author endorsements or a single recipe.
 
-## Escolha
+## Default motion for new interactive designs
 
-| Situação | Direção |
+Treat purposeful animation as part of creating an interface or interactive page, even when the brief does not list individual effects. Reuse the project's timing and mechanisms; otherwise define a small shared set. Implement applicable moments below, with intensity suited to the content and frequency of use. Record a concrete reason for an omitted moment, such as no theme switching, no scrolling, reduced motion, or an explicitly static request. This does not require 3D, a new library, or adding motion outside a local correction.
+
+| Moment | Implementation and acceptance |
 |---|---|
-| Entrada de texto, teclado, ações centenas de vezes/dia | Resposta imediata; evitar deslocamento e atraso |
-| Mudança de estado ou abertura de painel | Continuidade curta, foco correto, sem bloquear ação |
-| Primeiro uso ou campanha expressiva | Narrativa possível, preservando controle e leitura |
-| Operação longa | Progresso verdadeiro, cancelamento e recuperação |
-| Conteúdo informativo estático | Nenhuma animação se não melhora compreensão |
+| Light/dark change | When both modes exist, transition related surfaces, text, borders, and icons coherently. Choose properties/timing that retain readable intermediate states; avoid a bright flash or fading all content away. Simultaneous foreground/background interpolation can cross an unreadable midpoint even when both endpoints pass. When appropriate, reveal an opaque snapshot of the new palette instead of blending palettes; feature-detect that mechanism and provide an immediate safe fallback. Do not delay applying the requested theme while waiting for an effect. Preserve focus, scroll position, and saved/system preference semantics. Initialize the correct theme without an entrance animation; observe manual changes, rapid reversal, and OS changes while following system mode. |
+| Hover, press, and focus | Provide brief, consistent feedback for actionable controls. Gate hover effects to hover-capable input, provide equivalent information and visible focus for keyboard use, and keep touch/press feedback available. Do not shift layout or move the hit target away from the pointer; focus indication and action remain immediate. |
+| Scroll | Consider a subtle progressive reveal or progress cue for narrative pages. Reveal once, keep important content immediately available, and preserve normal wheel/touch scrolling. Prefer stable visible content for repetitive workspaces where reveals slow scanning. Without JS or with reduced motion, content stays readable and reachable; do not require scrolling through long pins or hijack scroll to demonstrate polish. |
+| State, panels, and feedback | Connect opening/closing, selection, loading, success, and errors to clear state changes with brief continuity. Preserve focus management and interruption; never delay a real action or manufacture progress to finish an animation. |
 
-Como ponto de partida, feedback visual pode ser instantâneo, transições pequenas podem ficar em 100–250 ms e deslocamentos maiores em 200–400 ms. Ajuste à distância e plataforma; não apresente estes intervalos como norma universal. Não insira espera artificial para “mostrar” sucesso.
+Respect reduced motion across all moments, including when the OS preference changes during interaction. Remove decorative travel, parallax, zoom, and loops; use an immediate update or subtle fade when appropriate. No perpetual motion is required. The default layer and its alternatives must be exercised in the actual browser: normal/rapid input, keyboard/touch, theme change, scroll/reverse scroll, reduced motion, and JS-free content where applicable. Static captures and presence of transition declarations alone do not prove behavior, continuity, or acceptable cost.
 
-## Especificação
+ECC `motion-foundations` and `motion-patterns` can support shared timing, interruption, and component sequences when their stack fits. Read the current skills before applying them through [integrations](integrations.md). Their React-specific implementations are not a reason to change a CSS/native stack; use the existing engine and inspect the result.
 
-Para cada movimento importante: gatilho, estado inicial/final, propriedade, duração ou parâmetros de spring, easing, interrupção, reversão, repetição e alternativa reduzida. Gestos devem acompanhar o dedo e permitir cancelamento. Entradas rápidas não podem formar filas de animação nem disparar ação duplicada.
+## Selection
 
-Redução de movimento vale independentemente da intensidade escolhida. Troque parallax, zoom amplo e rotação por transição discreta ou mudança instantânea, mantendo informação. Não dependa de animationend para concluir uma regra de negócio. Não aplique globalmente durações quase zero sem verificar conteúdo inicialmente oculto.
+| Situation | Direction |
+|---|---|
+| Text entry, keyboard, actions performed hundreds of times/day | Immediate response; avoid displacement and delay |
+| State change or panel opening | Brief continuity, correct focus, without blocking action |
+| First use or expressive campaign | Narrative is possible while preserving control and reading |
+| Long operation | Actual progress, cancellation and recovery |
+| Static informational content | No animation unless it improves understanding |
 
-## Engenharia
+As a starting point, visual feedback may be instantaneous, small transitions may take 100-250 ms and larger movements 200-400 ms. Adjust to distance and platform; do not present these ranges as a universal standard. Do not insert artificial waits to "show" success.
 
-Prefira transform e opacity quando expressarem o efeito; anime geometria apenas com motivo e medição. Não use transition: all. Não proíba APIs por nome: listeners passivos bem controlados podem ser adequados; re-renderizar toda a árvore por pixel de scroll geralmente não é.
+## Specification
 
-Escolha CSS, API nativa ou biblioteca já usada. Evite duas engines controlando a mesma propriedade. Em React, mantenha valores contínuos fora de state quando necessário e limpe observers, listeners e timelines. Use will-change pontualmente; blur e camadas gigantes podem custar memória/GPU.
+For each important motion, specify trigger, initial/final state, property, duration or spring parameters, easing, interruption, reversal, repetition and reduced alternative. Gestures should track the finger and allow cancellation. Rapid inputs must not queue animations or trigger duplicate actions.
 
-Valide interrupção, navegação durante animação, resizing, aba em background, hardware modesto, reduced motion e conteúdo alcançável antes de JS. Movimento não substitui estado acessível, boa latência ou feedback textual.
+Reduced motion applies regardless of the chosen intensity. Replace parallax, broad zoom and rotation with a subtle transition or instantaneous change while retaining information. Do not depend on animationend to complete a business rule. Do not globally apply near-zero durations without checking initially hidden content.
 
-## Materiais e objetos interativos
+## Engineering
 
-Renderização estática e movimento reduzido são escolhas independentes. A preferência **estática** deve manter a representação CSS/Canvas2D sem importar a engine ou adquirir contexto WebGL. Movimento **reduzido** pode manter um material renderizado uma vez, mas deve remover inclinação decorativa, parallax e interpolação. Combine a preferência do SO com a do app: se qualquer uma pedir redução, reduza. Observe ambas ao vivo e neutralize a pose de hover já ativa quando a política mudar.
+Prefer transform and opacity when they express the effect; animate geometry only with a reason and measurement. Do not use transition: all. Do not prohibit APIs by name: well-managed passive listeners may be appropriate; rerendering the entire tree for every scroll pixel usually is not.
 
-Inclinação por hover exige ponteiro fino com hover disponível; ignore eventos touch nesse comportamento. Arrastar um objeto deliberadamente é outro contrato: precisa de alvo, cancelamento e alternativa por controles. Preserve o scroll vertical mobile e trate `pointercancel`; não transforme qualquer toque na página em gesto 3D.
+Choose CSS, a native API or an existing library. Avoid two engines controlling the same property. In React, keep continuous values outside state when needed and clean up observers, listeners and timelines. Use will-change selectively; blur and giant layers may consume memory/GPU resources.
 
-Use RAF sob demanda: iniciar ao mudar o alvo, continuar enquanto a pose converge e parar em repouso. Cancele o frame pendente quando a aba ou o objeto ficarem invisíveis, adie reconstruções caras e redesenhe o estado mais recente ao retornar. Não acrescente “respiração” contínua para demonstrar que o material funciona. Se JS controla `transform` a cada frame, não aplique também uma transição CSS nessa propriedade.
+Validate interruption, navigation during animation, resizing, background tabs, modest hardware, reduced motion and content reachability before JS. Motion does not replace accessible state, good latency or textual feedback.
 
-Teste a sequência **interagir → reduzir movimento → ocultar → alterar dados → mostrar → estático → interativo → desmontar**, incluindo mudança do SO e descarte antes de um import terminar. Estados DOM como `moving`, `idle`, `paused` e `static` ajudam a observar o contrato, mas não demonstram FPS, custo de GPU ou qualidade visual. Verifique a imagem no navegador e a ausência de trabalho pendente separadamente.
+## Materials and interactive objects
 
-## Filmes e sequências renderizadas
+Static rendering and reduced motion are independent choices. The **static** preference must retain the CSS/Canvas2D representation without importing the engine or acquiring a WebGL context. **Reduced** motion may retain a material rendered once, but must remove decorative tilt, parallax and interpolation. Combine the OS and app preferences: if either requests reduction, reduce. Observe both live and neutralize an already active hover pose when the policy changes.
 
-Use para vídeo, teaser, deck animado ou narrativa temporal entregue como arquivo. Não impor este fluxo a um hover, gesto ou ajuste de interface. Escolha ferramenta pela capacidade disponível e pelo formato contratado; uma referência feita com HyperFrames não obriga migrar Remotion, CSS, SVG ou a engine existente.
+Hover tilt requires a fine pointer with hover available; ignore touch events for this behavior. Deliberately dragging an object is a separate contract: it needs a target, cancellation and an alternative through controls. Preserve mobile vertical scrolling and handle `pointercancel`; do not turn every page touch into a 3D gesture.
 
-1. **Fixe a entrega.** Mensagem, conteúdo literal, proporções, duração/FPS, som ou silêncio, legendas e editabilidade vêm do pedido e do canal. Não acrescentar música, locução ou formatos por default. Identidade do projeto e [contrato editorial](artifact-workflows.md#contrato-editorial-em-restyles) continuam válidos.
-2. **Planeje mudanças observáveis.** Para cada trecho, registre conteúdo/pose, o que muda, intervalo de leitura e passagem ao trecho seguinte. Em um filme novo complexo, storyboard e animatic reduzem retrabalho: primeiro composição, depois timing, depois produção. Reuse composição, assets e poses aprovados no render final, evitando uma segunda implementação que só parece equivalente. Uma correção em filme aprovado preserva as demais cenas. Respeite a autorização já dada para produzir; a etapa não cria outra aprovação obrigatória nem presume aprovação por silêncio.
-3. **Use uma referência temporal única.** Derive limites de cena, entradas, pausas, voz e cues sonoros da mesma timeline ou mapa de tempo. Texto só pode ser lido depois de entrar; o intervalo útil não inclui todo o fade. Estado ao buscar um instante deve derivar do tempo, sem depender da sequência de callbacks já percorrida. Verifique seek/scrub fora de ordem quando oferecido. Não fixe BPM, easing, loudness ou intervalo de leitura universais.
-4. **Divida produção quando ajudar.** Cada cena delegada recebe revisão, contrato de entrada/saída, enquadramento, ativos e dono dos arquivos. Integre apenas o resultado da revisão esperada. Retome etapas comprovadas; se o render ou upload terminou com resultado desconhecido, consulte-o antes de repetir o efeito. Reaproveitar saída antiga exige confirmar que seus insumos não mudaram. Isso é disciplina de execução, não promessa de um scheduler instalado.
-5. **Revise transições e arquivo final.** Amostre abertura, encerramento e antes/durante/depois das passagens importantes; frames distantes podem esconder um flash ou corte abrupto. Em estudo de referência, anote timestamp/frame e FPS ou timebase, distinguindo medição de interpretação. Use contato de frames para localizar problemas, depois reproduza o trecho; uma folha de frames não comprova áudio nem todos os frames.
+Use on-demand RAF: start when the target changes, continue while the pose converges and stop at rest. Cancel the pending frame when the tab or object becomes invisible, defer expensive rebuilds and redraw the latest state on return. Do not add continuous "breathing" to demonstrate that the material works. If JS controls `transform` every frame, do not also apply a CSS transition to that property.
 
-No arquivo exportado, confira dimensão/proporção, duração e tolerância contratada, frame rate/timebase, primeiros/últimos frames, texto/assets e faixa de áudio ou silêncio. Em mídia de frame rate variável, não use uma tolerância de “um frame” sem definir a base de tempo. Tela preta pode ser intenção; só reprove se contrariar a sequência. Ouça sincronização, cortes e inteligibilidade quando houver som. Projeto salvo, preview e MP4 final são evidências distintas.
+Test the sequence **interact -> reduce motion -> hide -> change data -> show -> static -> interactive -> unmount**, including OS changes and disposal before an import finishes. DOM states such as `moving`, `idle`, `paused` and `static` help observe the contract, but do not demonstrate FPS, GPU cost or visual quality. Verify the browser image and absence of pending work separately.
 
-Um gate indisponível fica não verificado; um processo com exit0 ainda pode gerar arquivo incompleto. Mostre separadamente o que foi medido, inspecionado e entregue. Não chamar `upload_files`, `look`, `start_task` ou comandos de outra plataforma se não existirem no ambiente. Não iniciar hospedagem, geração paga, publicação ou memória automática como consequência de produzir uma mídia.
+## Films and rendered sequences
 
-### Legendas e fala
+Use for video, teasers, animated decks or time-based narratives delivered as files. Do not impose this flow on a hover, gesture or interface adjustment. Choose the tool according to available capability and the agreed format; a reference made with HyperFrames does not require migrating Remotion, CSS, SVG or the existing engine.
 
-Quando houver legendas, confronte a transcrição com o áudio real, incluindo silêncio, negação, nomes e trechos incertos. ASR pode inventar fala em silêncio; não complete por plausibilidade. Detecte texto já gravado no vídeo antes de acrescentar outra camada. Preserve o conteúdo pedido e distinga transcrição literal de adaptação editorial autorizada. Sem acesso ao áudio, a fidelidade à fala permanece não verificada.
+1. **Fix the deliverable.** Message, literal content, aspect ratios, duration/FPS, sound or silence, captions and editability come from the request and channel. Do not add music, narration or formats by default. Project identity and the [editorial contract](artifact-workflows.md#editorial-contract-for-restyling) remain valid.
+2. **Plan observable changes.** For each segment, record content/pose, what changes, reading time and the transition to the next segment. For a complex new film, storyboards and animatics reduce rework: composition first, then timing, then production. Reuse approved composition, assets and poses in the final render, avoiding a second implementation that only looks equivalent. A correction to an approved film preserves the other scenes. Respect authorization already given to produce; this step does not create another mandatory approval or presume approval from silence.
+3. **Use one temporal reference.** Derive scene boundaries, entrances, pauses, voice and sound cues from the same timeline or time map. Text can only be read after entering; usable reading time does not include the entire fade. State when seeking to a moment must derive from time without depending on the sequence of callbacks already traversed. Verify out-of-order seek/scrub when offered. Do not prescribe universal BPM, easing, loudness or reading intervals.
+4. **Split production when useful.** Each delegated scene receives the revision, entry/exit contract, framing, assets and file owner. Integrate only the result from the expected revision. Resume proven steps; if rendering or uploading ended with an unknown outcome, inspect it before repeating the effect. Reusing old output requires confirming that its inputs have not changed. This is execution discipline, not a promise of an installed scheduler.
+5. **Review transitions and the final file.** Sample the opening, ending and before/during/after important transitions; distant frames can hide a flash or abrupt cut. In a reference study, record timestamp/frame and FPS or timebase, distinguishing measurement from interpretation. Use a contact sheet to locate problems, then play the segment; a frame sheet does not prove audio or every frame.
 
-Confira ordem, sincronização, duração útil de leitura, quebras e legibilidade ao longo de cortes, movimento e mudanças de fundo. Destaques decorativos atrás de uma pessoa não substituem uma legenda completa e legível quando esta for exigida. Preserve o vídeo original quando a tarefa for apenas legendar; estilo, posição, língua e tolerâncias vêm do contrato. Valide a trilha/arquivo final, não só o JSON de cues ou um frame estático. Não adicionar locução, transcrição paga ou download de modelos automaticamente.
+In the exported file, check dimensions/aspect ratio, duration and agreed tolerance, frame rate/timebase, first/last frames, text/assets and the audio track or silence. For variable-frame-rate media, do not use a tolerance of "one frame" without defining the timebase. A black screen may be intentional; fail it only if it contradicts the sequence. Listen for synchronization, cuts and intelligibility when sound is present. A saved project, preview and final MP4 are different evidence.
 
-### GIF e loops
+An unavailable gate remains unverified; a process with exit0 may still produce an incomplete file. Show separately what was measured, inspected and delivered. Do not call `upload_files`, `look`, `start_task` or commands from another platform unless they exist in the environment. Do not initiate hosting, paid generation, publication or automatic memory as a consequence of producing media.
 
-Inspecione o arquivo codificado: dimensões, delays dos frames, duração, repetição e transição do último para o primeiro. PNGs intermediários corretos não comprovam ritmo nem emenda do GIF. Confira também entrada, desenvolvimento e repouso para evitar recorte que só funciona no frame final. Reenquadrar não autoriza esticar texto ou alterar o conteúdo fora do pedido.
+### Captions and speech
 
-Se o canal mostrar apenas o primeiro frame quando não anima, este precisa comunicar a informação contratada. Limitações de paleta, transparência ou compressão devem ser avaliadas no formato de entrega; não trocar silenciosamente GIF por vídeo ou impor uma taxa de frames universal. Ajustar timing exige verificar o resultado e a continuidade, não apenas o parâmetro do encoder.
+When captions are present, compare the transcript with the actual audio, including silence, negation, names and uncertain passages. ASR may invent speech during silence; do not fill gaps based on plausibility. Detect text already burned into the video before adding another layer. Preserve the requested content and distinguish a literal transcript from authorized editorial adaptation. Without access to audio, speech fidelity remains unverified.
 
+Check order, synchronization, usable reading time, line breaks and legibility across cuts, motion and background changes. Decorative highlights behind a person do not replace complete, readable captions when required. Preserve the original video when the task is only captioning; style, position, language and tolerances come from the contract. Validate the final track/file, not just cue JSON or a static frame. Do not automatically add narration, paid transcription or model downloads.
 
-## Cenas vinculadas à rolagem
+### GIFs and loops
 
-Quando o escopo incluir uma cena por scroll, defina a informação que ela comunica, região de início/fim, estado inicial/final e relação entre progresso e pose. Use a infraestrutura existente; GSAP, Lenis e um catálogo externo são opções, não requisitos. O catálogo ou demo citado precisa existir na versão disponível antes de planejar sua reutilização.
+Inspect the encoded file: dimensions, frame delays, duration, repetition and the transition from last to first. Correct intermediate PNGs do not prove GIF rhythm or loop continuity. Also check entrance, development and rest to avoid a crop that only works on the final frame. Reframing does not authorize stretching text or changing content outside the request.
 
-Inspecione antes/durante/depois da fixação, pontos intermediários e percurso reverso. Uma folha de frames ajuda a localizar cortes e sobreposição, mas não prova continuidade entre amostras: percorra a cena de verdade. Confirme resize, retorno à rota e desmontagem de listeners/observers/timelines quando aplicáveis; reposicionar a página não deve deixar conteúdo preso ou invisível.
+If the channel displays only the first frame when animation is unavailable, that frame must communicate the agreed information. Evaluate palette, transparency or compression limits in the delivery format; do not silently replace GIF with video or impose a universal frame rate. Adjusting timing requires checking the result and continuity, not only the encoder parameter.
 
-Em largura estreita, toque ou movimento reduzido, priorize o acesso ao conteúdo e à ação. Escolha sequência estática ou transição simples quando a viagem espacial não ajudar; sem JavaScript, mantenha conteúdo essencial legível quando esse fallback fizer parte da entrega. Não use autoplay, pins longos ou um número mínimo de elementos animados para provar acabamento. Use orçamento de peso, duração e custo de render adequado ao alvo e meça onde houver risco. Esta adaptação do [estudo Taste](taste-study.md) preserva as regras de acesso e continuidade deste documento.
+## Scroll-linked scenes
+
+When scope includes a scroll-driven scene, define the information it communicates, start/end region, initial/final state and relationship between progress and pose. Use existing infrastructure; GSAP, Lenis and an external catalog are options, not requirements. A cited catalog or demo must exist in the available version before planning reuse.
+
+Inspect before/during/after pinning, intermediate points and reverse traversal. A contact sheet helps locate cuts and overlap, but does not prove continuity between samples: actually traverse the scene. Confirm resize, return to the route and disposal of listeners/observers/timelines when applicable; repositioning the page must not leave content stuck or invisible.
+
+At narrow widths, with touch or reduced motion, prioritize access to content and actions. Choose a static sequence or simple transition when spatial travel does not help; without JavaScript, keep essential content readable when that fallback is part of the deliverable. Do not use autoplay, long pins or a minimum number of animated elements to prove polish. Use a payload, duration and rendering-cost budget suited to the target and measure where risk exists. The review records continuity, interruption, a reduced alternative and content access as separate criteria.

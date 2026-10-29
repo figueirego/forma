@@ -2,74 +2,74 @@
   "reference": "https://soda-landingpage.vercel.app/",
   "review_date": "2026-10-26",
   "date_timezone": "UTC",
-  "scope": "Snapshot estático público, metadados GLB e QA visual delimitado. Variante cromática não equivale a tema claro/escuro.",
+  "scope": "Public static snapshot, GLB metadata and bounded visual QA. A color variant is not a light/dark theme.",
   "runtime": {
     "desktop": {
       "width": 1440,
       "height": 900,
       "verified": [
-        "Lata e frutas visíveis",
-        "Next flavor muda Classic→Lime e aria-pressed",
-        "Material do produto e fundo ficam azuis"
+        "Can and fruit visible",
+        "Next flavor changes Classic->Lime and aria-pressed",
+        "Product material and background turn blue"
       ]
     },
     "mobile": {
       "width": 390,
       "height": 844,
       "verified": [
-        "Lata/frutas visíveis após carregamento",
-        "Sem overflow horizontal observado",
-        "Menu abre e fecha"
+        "Can/fruit visible after loading",
+        "No horizontal overflow observed",
+        "Menu opens and closes"
       ]
     },
     "dom": {
       "model_viewer_elements": 15,
       "webgl_context_count": null,
-      "navigation_href": "Home/Ingredients/Taste/Eco/Reviews usam #"
+      "navigation_href": "Home/Ingredients/Taste/Eco/Reviews use #"
     },
-    "operator": "Agente principal desta tarefa; desktop.png, blue-desktop.png e mobile.png em outputs/landing-rea/soda/"
+    "operator": "Task coordinator; desktop.png, blue-desktop.png and mobile.png at outputs/landing-rea/soda/"
   },
   "static": {
     "confirmed_stack": [
       {
-        "name": "Vite: assinatura do build",
+        "name": "Vite: build signature",
         "version": null,
-        "evidence": "__vite__mapDeps na entrada; versão da ferramenta desconhecida"
+        "evidence": "__vite__mapDeps in the entry point; unknown tool version"
       },
       {
-        "name": "model-viewer: elemento personalizado",
+        "name": "model-viewer: custom element",
         "version": null,
-        "evidence": "customElements.define e exportação ModelViewerElement no chunk dinâmico"
+        "evidence": "customElements.define and ModelViewerElement export in the dynamic chunk"
       },
       {
         "name": "GSAP",
         "version": "3.15.0",
-        "evidence": "Literal Z.version no chunk GSAP"
+        "evidence": "Z.version literal in the GSAP chunk"
       },
       {
         "name": "Three.js",
         "version": "r183",
-        "evidence": "Literais data-engine e window.__THREE__ no chunk model-viewer; dependência embutida"
+        "evidence": "data-engine and window.__THREE__ literals in the model-viewer chunk; bundled dependency"
       },
       {
         "name": "Lit Element",
         "version": "4.2.2",
-        "evidence": "Registro litElementVersions"
+        "evidence": "litElementVersions registry"
       },
       {
         "name": "lit-html",
         "version": "3.3.3",
-        "evidence": "Registro litHtmlVersions"
+        "evidence": "litHtmlVersions registry"
       },
       {
         "name": "@lit/reactive-element",
         "version": "2.1.2",
-        "evidence": "Registro reactiveElementVersions"
+        "evidence": "reactiveElementVersions registry"
       },
       {
         "name": "glTF-Transform",
         "version": "4.5.1",
-        "evidence": "asset.generator nos quatro GLBs; declara exportador, não o pipeline completo de autoria"
+        "evidence": "asset.generator in all four GLBs; identifies the exporter, not the complete authoring pipeline"
       }
     ],
     "fonts": [
@@ -103,9 +103,9 @@
         "#010c14"
       ],
       "highlight": "#fbcfe8",
-      "architecture": "Configuração de variante coordena material, fundo e decoração; tokens globais separados"
+      "architecture": "Variant configuration coordinates material, background and decoration; global tokens are separate"
     },
-    "composition": "Desktop em três regiões; abaixo de 900px produto ocupa espaço no fluxo. Breakpoints 1200/900/380 e ajuste de altura desktop 760px.",
+    "composition": "Three desktop regions; below 900px the product occupies space in normal flow. Breakpoints at 1200/900/380 and a desktop height adjustment at 760px.",
     "sources": [
       {
         "url": "https://soda-landingpage.vercel.app/assets/index-tSUMTbNt.js",
@@ -216,11 +216,11 @@
       "parse_failures": 0,
       "application_unknowns": 2,
       "semantic_unknowns": 714,
-      "status": "partial; dependências grandes inspecionadas por trechos, não totalmente decompostas"
+      "status": "partial; large dependencies inspected through excerpts, not fully decomposed"
     }
   },
   "cost": {
-    "basis": "Bytes brutos e HEAD; sem waterfall, total inicial ou inferência de contextos GPU",
+    "basis": "Raw bytes and HEAD; no waterfall, initial total or inference of GPU contexts",
     "model_viewer_js_bytes": 1024001,
     "gsap_js_bytes": 69641,
     "entry_plus_helper_bytes": 11371,
@@ -228,28 +228,28 @@
     "six_woff2_inventory_bytes": 131032,
     "blue_texture_head_bytes": 327278,
     "financial_cost": null,
-    "runtime_cost": "Não medido; instâncias, layout por frame, blur e texturas exigem perfil real"
+    "runtime_cost": "Not measured; instances, per-frame layout, blur and textures require actual profiling"
   },
   "reuse_cases": [
-    "Caderno/produto com variantes de capa/material",
-    "model-viewer para GLB simples",
-    "Carregamento progressivo conteúdo→produto→decoração",
-    "Seleção transacional com cache e descarte de respostas atrasadas"
+    "Notebook/product with cover/material variants",
+    "model-viewer for a simple GLB",
+    "Progressive loading: content->product->decoration",
+    "Transactional selection with caching and stale-response rejection"
   ],
   "avoid_copying": [
-    "Somente esconder decoração que continua criada/baixada",
-    "Reduced-motion parcial e RAF sem teardown",
-    "Variante aplicada na UI antes de confirmar textura",
-    "CTAs # sem fluxo funcional",
-    "Ausência de poster de erro",
-    "Detalhe de decoder data: sem validar CSP da integração"
+    "Merely hiding decoration that is still created/downloaded",
+    "Partial reduced-motion support and RAF without teardown",
+    "Variant applied to the UI before the texture is confirmed",
+    "# CTAs without a functional flow",
+    "No error poster",
+    "A data: decoder without validating the integration's CSP"
   ],
   "not_verified": [
-    "FPS, LCP, INP, GPU memory e custo financeiro não medidos",
-    "Aparelhos físicos, leitores de tela e todos os breakpoints não testados",
-    "Fallback WebGL/rede, reduced-motion completo e teardown não validados em runtime",
-    "Licença de redistribuição, preço/plano de hosting e pipeline original de modelagem",
-    "Versão exata model-viewer/Vite; sourcemap entry negou acesso"
+    "FPS, LCP, INP, GPU memory and financial cost not measured",
+    "Physical devices, screen readers and the full breakpoint range not tested",
+    "WebGL/network fallback, complete reduced-motion support and teardown not validated at runtime",
+    "Redistribution license, hosting price/plan and original modeling pipeline",
+    "Exact model-viewer/Vite version; access to the entry sourcemap was denied"
   ],
-  "redistribution": "Somente perfil factual e receitas originais. GLBs/texturas/fontes/código observados permaneceram na evidência local; não são incorporados à skill."
+  "redistribution": "Only a factual profile and original recipes. Observed GLBs/textures/fonts/code remain in local evidence; they are not included in the skill."
 }

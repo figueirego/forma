@@ -1,47 +1,47 @@
-# Fidelidade visual e tecnológica
+# Visual and technological fidelity
 
-Use quando o usuário pedir reproduzir um sistema, extrair uma referência ou apontar que o resultado não segue a referência. Não aplique o perfil material de referência automaticamente a outros projetos.
+Use when the user asks to reproduce a system, extract a reference or points out that the result does not follow the reference. Do not automatically apply the reference material profile to other projects.
 
-## Contrato antes da implementação
+## Contract before implementation
 
-Distinguir inspiração, adaptação e reprodução. Se o usuário corrigir a fidelidade, não continuar usando a paleta autoral como se fosse equivalente. Declare quais superfícies, estados e mecanismos serão reproduzidos e quais pertencem a outro produto. Registre fonte, versão, hash, localização, evidência estática/runtime e limites.
+Distinguish inspiration, adaptation and reproduction. If the user corrects fidelity, do not keep using an authored palette as though it were equivalent. Declare which surfaces, states and mechanisms will be reproduced and which belong to another product. Record source, version, hash, location, static/runtime evidence and limits.
 
-Quando o usuário escolher uma implementação já aprovada, ela prevalece sobre um estudo histórico de outro aplicativo. Para o editor compacto aprovado, consulte [seu perfil](../assets/reference-profiles/compact-appearance-v1.json) e [comparação por contrato](fidelity-contracts.md). Marca, proporções ou gestos só mudam dentro das adaptações autorizadas; nomes de projetos não são presets universais.
+When the user selects an already approved implementation, it takes precedence over a historical study of another application. For the approved compact editor, consult [its profile](../assets/reference-profiles/compact-appearance-v1.json) and [contract comparison](fidelity-contracts.md). Branding, proportions or gestures change only within authorized adaptations; project names are not universal presets.
 
-## Extração em cinco camadas
+## Five-layer extraction
 
-1. **Primitivos:** valores exatos, unidades, espaço de cor, fontes/pesos/subsets/licença, raios e dimensões.
-2. **Semântica:** fill de ação, on-fill, accent-text, superfície, ambiente, texto secundário, seleção, foco e estados. A mesma família pode ter três cores distintas no mesmo modo.
-3. **Composição:** ordem de camadas, transparência sobre o fundo efetivo, blur, stops de gradiente, elevação por papel e geometria. Uma cor correta no papel errado não é fidelidade.
-4. **Estado:** padrão CSS, override JS, preferência persistida, contexto do conteúdo, tema resolvido, alto contraste e movimento reduzido. Não confundir default estático com resultado final.
-5. **Tecnologia:** manifesto declarado, versão realmente empacotada, callsite do recurso e execução observada. Presença de Three não prova que todo WebGL usa Three; versão de framework instalada não é runtime medido.
+1. **Primitives:** exact values, units, color space, fonts/weights/subsets/license, radii and dimensions.
+2. **Semantics:** action fill, on-fill, accent-text, surface, ambient color, secondary text, selection, focus and states. The same family may have three distinct colors in one mode.
+3. **Composition:** layer order, transparency over the effective background, blur, gradient stops, role-based elevation and geometry. A correct color in the wrong role is not fidelity.
+4. **State:** CSS default, JS override, persisted preference, content context, resolved theme, high contrast and reduced motion. Do not confuse a static default with the final result.
+5. **Technology:** declared manifest, actually packaged version, resource callsite and observed execution. Three's presence does not prove all WebGL uses Three; an installed framework version is not measured runtime evidence.
 
-Extraia tabelas e fórmulas necessárias, não um dump integral do bundle. Identifique offsets de caracteres versus bytes. REA parcial, timeout ou grafo truncado deve permanecer parcial no relatório. Aproveite evidência retida, estreite arquivos; não repetir análise ampla sem mudar o escopo. Leitura direta de tokens é evidência estática independente, não sucesso retroativo de AST.
+Extract the required tables and formulas, not an entire bundle dump. Identify character versus byte offsets. Partial REA, timeouts or truncated graphs must remain partial in the report. Use retained evidence and narrow the files; do not repeat broad analysis without changing scope. Direct token reading is independent static evidence, not retroactive AST success.
 
-## Implementação rastreável
+## Traceable implementation
 
-Crie uma tabela: propriedade → fonte → valor/papel original → implementação → adaptação → verificação. Preserve os valores originais no perfil de referência; não sobrescreva a evidência com as adaptações do produto.
+Create a table: property -> source -> original value/role -> implementation -> adaptation -> verification. Preserve original values in the reference profile; do not overwrite evidence with product adaptations.
 
-Mantenha ação e ambiente independentes quando a referência o fizer. Migre IDs antigos de preferência e valide números finitos conforme o domínio de cada campo: limites do ponteiro/stage não são limites universais do modelo; coordenadas externas válidas precisam sobreviver à pintura e persistência. Mantenha cancelamento reversível e só confirme persistência após sucesso. Um controle de ambiente fixo não equivale a editor livre de campos/ruído/contexto.
+Keep action and ambient color independent when the reference does. Migrate old preference IDs and validate finite numbers according to each field's domain: pointer/stage limits are not universal model limits; valid external coordinates must survive rendering and persistence. Keep cancellation reversible and confirm persistence only after success. A fixed ambient control is not equivalent to a free editor of fields/noise/context.
 
-Escolha a tecnologia pelo mecanismo necessário. CSS OKLCH/color-mix e fonte correta podem reproduzir cores em vanilla JS; isso não autoriza dizer que usa a mesma stack React/Electron. Uma casca de navegador não comprova app nativo, instalador, IPC ou atualização automática.
+Choose technology according to the required mechanism. CSS OKLCH/color-mix and the correct font can reproduce colors in vanilla JS; this does not authorize claiming the same React/Electron stack. A browser shell does not prove a native app, installer, IPC or automatic updating.
 
-## Três gates independentes
+## Three independent gates
 
-- **Funcional:** preview, salvar/recarregar, cancelar/Escape, reset, sistema, migração, storage indisponível e sincronização.
-- **Acessibilidade:** texto sobre fundo composto, teclado, foco, alvos, redução de movimento/transparência. Não inferir contraste de gradientes por um único token.
-- **Fidelidade:** pares por modo, fonte efetivamente carregada, geometria, opacidade, composição e estados comparados com viewport/conteúdo equivalentes.
+- **Functional:** preview, save/reload, cancel/Escape, reset, system mode, migration, unavailable storage and synchronization.
+- **Accessibility:** text over a composite background, keyboard, focus, targets, reduced motion/transparency. Do not infer gradient contrast from a single token.
+- **Fidelity:** mode-matched pairs, actually loaded font, geometry, opacity, composition and states compared with equivalent viewport/content.
 
-Passar em contraste não aprova fidelidade. Se o original falha em contraste, preserve fill quando possível e registre adaptação de on-fill/texto por papel. Não chame a adaptação de cópia exata. Não conclua por uma nota global ou pela quantidade de tokens extraídos.
+Passing contrast does not approve fidelity. If the original fails contrast, preserve the fill where possible and record role-specific on-fill/text adaptations. Do not call the adaptation an exact copy. Do not conclude from a global score or the number of extracted tokens.
 
-## Referência desktop auditada — artefato 0.19.0
+## Audited desktop reference - artifact 0.19.0
 
-Consulte sob demanda `../assets/reference-profiles/desktop-material-reference-v1.json` (inspeção estática do artefato local). Onze famílias; blue dark fill #3d6fe6, ink branco e accent-text #7ea6ff. Superfície dark #131315 sobre ground #0e0e10. Inter Variable é a fonte da UI; Geist Mono e Source Serif 4 têm papéis específicos.
+Consult `../assets/reference-profiles/desktop-material-reference-v1.json` on demand (static inspection of the local artifact). Eleven families; blue dark fill #3d6fe6, white ink and accent-text #7ea6ff. Dark surface #131315 over ground #0e0e10. Inter Variable is the UI font; Geist Mono and Source Serif 4 have specific roles.
 
-Ambiente: hue181, chroma.038, grain0; dois pools com geometria e luminância próprios por modo, nove stops smoothstep e base/highlight separados. `hold` bloqueia influência contextual; não desliga iluminação. Cor contextual com chroma>.02 pode alterar hue e elevar chroma configurado ×1.45 (máximo.09). Leia o perfil para fórmula/precedência completas. O contexto observado estaticamente não foi exercitado em runtime neste estudo.
+Ambient color: hue 181, chroma .038, grain 0; two pools with mode-specific geometry and luminance, nine smoothstep stops and separate base/highlight. `hold` blocks contextual influence; it does not turn lighting off. Contextual color with chroma > .02 can change hue and increase configured chroma by 1.45 (maximum .09). Read the profile for the complete formula/precedence. The statically observed context was not exercised at runtime in this study.
 
-React/ReactDOM18.3.1 presentes no renderer; Electron no shell; Three0.186.0 em livros; perfil usa WebGL2 direto; grafo usa canvas/worker; mola customizada não comprova Framer Motion. Dependências de PDF, IA local ou SQLite não são pré-requisitos para reproduzir aparência.
+React/ReactDOM 18.3.1 are present in the renderer; Electron in the shell; Three 0.186.0 in books; the profile uses direct WebGL2; the graph uses canvas/worker; a custom spring does not prove Framer Motion. PDF, local AI or SQLite dependencies are not prerequisites for reproducing appearance.
 
-## Entrega
+## Delivery
 
-Mostre resultado visual atual, diferenças intencionais e lacunas. Diga se comparação runtime da referência não foi possível. Não declarar perfeito, pixel-perfect ou paridade integral com base apenas em extração estática. A aprovação visual do usuário continua separada dos checks técnicos.
+Show the current visual result, intentional differences and gaps. State when runtime comparison with the reference was not possible. Do not claim perfection, pixel-perfect output or complete parity based only on static extraction. User visual approval remains separate from technical checks.

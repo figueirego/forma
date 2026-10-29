@@ -3,7 +3,7 @@
 'use strict';
 const PATTERNS=Object.freeze(['panels','grid','rules','dots','stems','checks']);
 const MATERIALS=Object.freeze(['cloth','paper','leather']),FINISHES=Object.freeze(['ink','foil']);
-const DEFAULTS=Object.freeze({title:'Sem título',subtitle:'',brand:'',brandMark:'text',spineLabel:'',color:'#3d4934',inkColor:'#fbfbfc',pagesColor:'#f6f1e5',pattern:'panels',material:'cloth',finish:'foil',width:1.84,height:2.53,depth:.36,pose:Object.freeze({pitch:9,yaw:-18,roll:-2})});
+const DEFAULTS=Object.freeze({title:'Untitled',subtitle:'',brand:'',brandMark:'text',spineLabel:'',color:'#3d4934',inkColor:'#fbfbfc',pagesColor:'#f6f1e5',pattern:'panels',material:'cloth',finish:'foil',width:1.84,height:2.53,depth:.36,pose:Object.freeze({pitch:9,yaw:-18,roll:-2})});
 const FONT='"Inter Variable",Inter,system-ui,sans-serif';
 function finite(value,fallback,min,max){return typeof value==='number'&&Number.isFinite(value)?Math.max(min,Math.min(max,value)):fallback;}
 function color(value,fallback){return typeof value==='string'&&/^#[0-9a-f]{6}$/i.test(value)?value.toLowerCase():fallback;}
@@ -122,7 +122,7 @@ function linesFor(value,measure,maxWidth,maxLines){
  const chars=Array.from(value);const lines=[];let line='';
  for(let i=0;i<chars.length;i++){
   const next=line+chars[i];
-  if(line&&measure(next)>maxWidth){lines.push(line.trim());line=chars[i];if(lines.length===maxLines){let last=lines[maxLines-1];while(last&&measure(last+'…')>maxWidth)last=last.slice(0,-1);lines[maxLines-1]=last+'…';return lines;}}
+  if(line&&measure(next)>maxWidth){lines.push(line.trim());line=chars[i];if(lines.length===maxLines){let last=lines[maxLines-1];while(last&&measure(last+'\u2026')>maxWidth)last=last.slice(0,-1);lines[maxLines-1]=last+'\u2026';return lines;}}
   else line=next;
  }
  if(line||!lines.length)lines.push(line.trim());return lines.slice(0,maxLines);

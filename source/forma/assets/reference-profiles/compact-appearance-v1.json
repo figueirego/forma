@@ -2,17 +2,17 @@
   "id": "compact-appearance-v1",
   "version": 1,
   "kind": "portable-contract-not-executable-component",
-  "applicability": "Reproduzir o editor compacto aprovado e suas superfícies quando solicitado. Não é tema obrigatório para todo produto.",
+  "applicability": "Reproduce the approved compact editor and its surfaces when requested. It is not a mandatory theme for every product.",
   "authority": {
-    "layout": "CSS final e caixas renderizadas da referência em Chrome, DPR1",
-    "transition": "Código do modelo da referência; confirmar no consumidor",
-    "consumer_validation": "A integração no destino exige nova captura e testes; este perfil não a certifica"
+    "layout": "Final reference CSS and rendered boxes in Chrome at DPR 1",
+    "transition": "Reference model code; verify in the consuming project",
+    "consumer_validation": "Destination integration requires new captures and tests; this profile does not certify it"
   },
   "units": {
     "layout": "CSS px",
-    "modelXY": "posição no modelo; stage normalizado=(valor+45)/190",
-    "intensity": "chroma em 0...09; rótulo=round(chroma/.09*100)",
-    "grain": "0..1; rótulo percentual"
+    "modelXY": "model position; normalized stage coordinate=(value+45)/190",
+    "intensity": "chroma in 0...09; label=round(chroma/.09*100)",
+    "grain": "0..1; percentage label"
   },
   "layout": {
     "desktop": {
@@ -150,7 +150,7 @@
       ],
       "color": "oklch(.72 .15 H)",
       "scrollStep": 96,
-      "selection": "abs(wrappedHueDifference)<6; não arredondar o hue salvo para uma amostra"
+      "selection": "abs(wrappedHueDifference)<6; do not round the saved hue to a swatch"
     },
     "ring": {
       "size": [
@@ -171,7 +171,7 @@
       "save",
       "more-settings"
     ],
-    "accessibility": "Nomes, valores e status podem ser sr-only; falha de save continua visível."
+    "accessibility": "Names, values and status may be sr-only; save failures remain visible."
   },
   "tokens": {
     "light": {
@@ -206,12 +206,12 @@
     }
   },
   "composition": {
-    "body": "wash fixo + grain separado de texto",
-    "sidebar": "transparente sobre wash",
-    "workspace": "surface opaca",
+    "body": "fixed wash + grain separated from text",
+    "sidebar": "transparent over wash",
+    "workspace": "opaque surface",
     "raised": "detail/focus/status",
-    "topbar": "glass com blur48px",
-    "context": "stage sempre manual; página pode resolver contexto real quando hold=false; não inventar entidade contextual no destino"
+    "topbar": "glass with 48px blur",
+    "context": "stage is always manual; the page may resolve real context when hold=false; do not invent a contextual entity at the destination"
   },
   "initial": {
     "hue": 181,
@@ -259,11 +259,11 @@
   },
   "addPool": {
     "capacity": 3,
-    "empty": "Clonar último pool inicial, selecionar0.",
-    "direction": "first-second, ou (-4,-58) se há só um pool.",
-    "origin": "Pool existente com menor y; empate conserva o primeiro.",
-    "position": "origin + direction; arredondar x/y para uma casa; não distribuir três pontos simetricamente.",
-    "hueOffset": "Primeiro de [120,-120,62,-62,180] cuja diferença absoluta para cada pool.d seja >=24; fallback120.",
+    "empty": "Clone the last initial pool; select index 0.",
+    "direction": "first-second, or (-4,-58) when there is only one pool.",
+    "origin": "Existing pool with the lowest y; ties keep the first.",
+    "position": "origin + direction; round x/y to one decimal place; do not distribute three points symmetrically.",
+    "hueOffset": "First value in [120,-120,62,-62,180] whose absolute difference from each pool.d is >=24; fallback 120.",
     "profile": {
       "c": 0.85,
       "w": 118,
@@ -278,7 +278,7 @@
         "a": 0.75
       }
     },
-    "insertion": "Imediatamente antes da última âncora; selecionar índice oldLength-1.",
+    "insertion": "Immediately before the last anchor; select index oldLength-1.",
     "afterPlusFromInitial": {
       "poolOrderHues": [
         243,
@@ -295,7 +295,7 @@
       "plusDisabled": true,
       "ringVisible": true,
       "expectedSelectedSwatch": null,
-      "swatchExplanation": "Hue301 difere7 da amostra308; o limiar é estritamente menor que6."
+      "swatchExplanation": "Hue 301 differs by 7 from swatch 308; the threshold is strictly less than 6."
     }
   },
   "migration": {
@@ -308,10 +308,10 @@
       "strength including0",
       "grain"
     ],
-    "legacyPercentMapping": "chroma=strength/100*.09; 5 permanece5%, sem reset para42%.",
-    "backup": "Salvar configuração original antes da primeira gravação migrada; falha de backup/gravação preserva original.",
+    "legacyPercentMapping": "chroma=strength/100*.09; 5 remains 5%, without resetting to 42%.",
+    "backup": "Back up the original configuration before the first migrated write; a backup or write failure preserves the original.",
     "idempotent": true,
-    "notAllowed": "Recriar defaults para mascarar diferença de aparência ou manter renderer antigo sem verificar se impede a fidelidade pedida."
+    "notAllowed": "Recreating defaults to hide appearance differences, or retaining an old renderer without checking whether it prevents the requested fidelity."
   },
   "verification": {
     "compare": [
@@ -355,7 +355,7 @@
     ]
   },
   "provenance": {
-    "case": "Pauta → Neuron, 2026-10-27",
+    "case": "Pauta -> Neuron, 2026-10-27",
     "sourceFiles": [
       {
         "name": "themes.css",
@@ -381,35 +381,35 @@
     "dependencyOnAuthoringProject": false
   },
   "gestures": {
-    "coordinatePaint": "left/top=(modelXY+45)/190*100%; sem clamp ou representante na borda. Pontos fora são recortados pelo stage.",
+    "coordinatePaint": "left/top=(modelXY+45)/190*100%; no clamp or edge proxy. Points outside the stage are clipped.",
     "plainPointerDrag": {
-      "targets": "todos os pools",
-      "selected": "centro segue ponteiro limitado ao stage",
-      "others": "mesmo delta do selecionado; conservar vetores e permitir fora do stage",
-      "snapshot": "Calcular deltas contra a geometria capturada no pointerdown; arredondar modelo x/y a uma casa."
+      "targets": "all pools",
+      "selected": "center follows the pointer clamped to the stage",
+      "others": "same delta as the selected pool; preserve vectors and allow offstage positions",
+      "snapshot": "Calculate deltas against geometry captured on pointerdown; round model x/y to one decimal place."
     },
     "altPointerDrag": {
-      "targets": "somente selecionado",
-      "modifier": "Alt capturado no pointerdown",
-      "others": "não mudam"
+      "targets": "selected only",
+      "modifier": "Alt captured on pointerdown",
+      "others": "unchanged"
     },
     "positionKeyboard": {
       "stepModelUnits": 1,
       "shiftStepModelUnits": 10,
-      "targets": "todos; com Alt apenas selecionado",
+      "targets": "all; with Alt, selected only",
       "stageClamp": false
     },
     "distanceRing": {
-      "selected": "âncora fixa",
-      "others": "escalar vetores radiais com scale=min(requested/current,fitDaBorda)",
+      "selected": "fixed anchor",
+      "others": "scale radial vectors with scale=min(requested/current,edgeFit)",
       "requestedRange": [
         0,
         150
       ],
-      "pointerDown": "não alterar distância",
+      "pointerDown": "do not change distance",
       "stepModelUnits": 2,
       "shiftStepModelUnits": 10,
-      "coincident": "Se current<.5: x=selected.x; y=clamp(selected.y-requested*(i+1)/others.length,-45,145), arredondar a uma casa.",
+      "coincident": "If current<.5: x=selected.x; y=clamp(selected.y-requested*(i+1)/others.length,-45,145), rounded to one decimal place.",
       "pointerAccumulator": {
         "unwrapDegrees": 180,
         "sensitivity": 0.4166666666666667,
@@ -418,15 +418,15 @@
           150
         ],
         "reconcileOnlyWhenAbsoluteDifferenceExceeds": 0.15,
-        "appliedDistance": "max hypot dos vetores em unidades do modelo, sem arredondar para o rótulo",
+        "appliedDistance": "max hypot of vectors in model units, without rounding to the displayed label",
         "keepSubUnitMotion": true
       }
     },
-    "plus": "Adicionar apenas o novo pool na posição/perfil definidos; coordenadas dos anteriores permanecem.",
-    "modeAndColor": "Não alteram x/y nem distância entre pools.",
-    "offstagePolicy": "Overflow clip impede scroll interno; não inventar proxies na borda no perfil fiel. Uma alternativa de recuperação pode existir fora do canvas, declarada separadamente.",
+    "plus": "Add only the new pool at the specified position/profile; existing coordinates stay unchanged.",
+    "modeAndColor": "Do not change x/y or the distance between pools.",
+    "offstagePolicy": "Overflow clip prevents internal scrolling; do not invent edge proxies in the faithful profile. A recovery alternative may exist outside the canvas, declared separately.",
     "thirdDragFixture": {
-      "start": "estado inicial → +; índice1 selecionado",
+      "start": "initial state -> +; index 1 selected",
       "targetStageNormalized": [
         0.85,
         0.8
@@ -445,17 +445,17 @@
           223
         ]
       ],
-      "expectedVisibility": "selecionado dentro; outros2 fora e recortados; sem substitutos visuais na borda."
+      "expectedVisibility": "selected pool inside; the other 2 outside and clipped; no visual proxies at the edge."
     },
-    "invariants": "Capturar modelo e centros CSS de TODOS os pools antes, durante e depois: verificar offsets, seleção, clipping e ausência de movimento nas ações que não movem."
+    "invariants": "Capture the model and CSS centers of ALL pools before, during and after: verify offsets, selection, clipping and no movement from actions that should not move pools."
   },
   "stateLifecycle": {
-    "initialWhen": "Sem configuração/lista de pools disponível; não usar truthiness da lista para decidir.",
-    "reopen": "Preservar configuração válida com0/1/2/3 pools e posições externas; não completar nem redistribuir.",
-    "selectionOnOpen": "Último índice quando houver pools; nenhum quando lista estiver vazia.",
-    "explicitReset": "Somente por ação de reset: restaurar initial e selecionar último; preservar hold no reset de iluminação.",
-    "intentionalZero": "Lista vazia, chroma0, grain0 e intensidade salva5% são valores válidos; não viram default.",
-    "migration": "Converter conforme migration, com backup/idempotência; não usar reset como migração.",
-    "invalidData": "Distinguir dados ausentes, legados e inválidos. Validar finitude/domínio; preservar original recuperável antes de reparar."
+    "initialWhen": "No configuration/pool list is available; do not use list truthiness to decide.",
+    "reopen": "Preserve valid configurations with 0/1/2/3 pools and offstage positions; do not fill or redistribute them.",
+    "selectionOnOpen": "Last index when pools exist; none when the list is empty.",
+    "explicitReset": "Only on explicit reset: restore initial and select the last pool; preserve hold when resetting lighting.",
+    "intentionalZero": "An empty list, chroma 0, grain 0 and a saved intensity of 5% are valid values; do not replace them with defaults.",
+    "migration": "Convert according to migration, with backup/idempotence; do not use reset as migration.",
+    "invalidData": "Distinguish missing, legacy and invalid data. Validate finiteness/domain; preserve a recoverable original before repairing."
   }
 }

@@ -1,51 +1,52 @@
 ---
 name: forma-validation
-description: "Validar tarefa, acessibilidade, render, estados e fidelidade com evidência proporcional e achados reproduzíveis. Use para QA e confirmação após mudanças; não para certificar áreas não acessadas ou considerar build/testes isolados como prova visual."
+description: "Validate tasks, accessibility, rendering, states, and fidelity with proportionate evidence and reproducible findings. Use for QA and confirmation after changes; not to certify inaccessible areas or treat isolated builds/tests as visual proof."
 metadata:
   version: 1.22.0
 ---
 
-# Validação e qualidade
+# Validation and quality
 
-## Quando usar
+## When to use
 
-- Use para auditoria, aceite, regressão, acessibilidade, comparação renderizada e confirmação de recursos integrados.
-- Não use para inventar notas, declarar conformidade completa por automação ou ampliar uma auditoria para edição não autorizada.
+- Use for audits, acceptance, regression, accessibility, rendered comparison, and confirmation of integrated capabilities.
+- Do not invent scores, declare full compliance from automation, or expand an audit into unauthorized edits.
 
-Este módulo requer leitura pelo agente; não dispara testes, correções nem outros módulos sozinho.
-Preserve escopo, marca e stack. Distinga verificado, inferido, não testado e não aplicável com motivo.
+This module must be read by the agent; it does not trigger tests, fixes, or other modules by itself.
+Preserve scope, brand, and stack. Distinguish verified, inferred, untested, and not applicable, with a reason.
 
-## Entradas
+## Inputs
 
-- Artefato/rota, revisão realmente carregada, tarefa, critérios de aceite e estados/dispositivos suportados.
-- Baseline quando houver comparação, dados/fixtures e ferramentas/ambientes efetivamente disponíveis.
+- Artifact/route, revision actually loaded, task, acceptance criteria, and supported states/devices.
+- A baseline for comparisons, data/fixtures, and tools/environments that are actually available.
 
-## Procedimento
+## Procedure
 
-1. Monte uma matriz proporcional ao risco e ao pedido antes de julgar.
-   Leia [verificação](../../references/verification.md); selecione dimensões e prova mínima, sem exigir todas para uma correção pequena.
-   Ao consumir gates de agentes/renderers, confira [cobertura e recibos](../../references/verification.md#cobertura-de-verificadores-e-recibos): pass sem medição, zero itens julgados ou revisão antiga não aprovam a entrega atual.
-2. Confirme identidade da execução e percorra a tarefa por entrada, ação, sucesso e recuperação.
-   Use [validação renderizada](../../references/rendered-validation.md); confira persistência após reabrir se prometida e diferencie protótipo em memória de operação real.
-3. Para acesso, leia [acessibilidade](../../references/accessibility.md) e exercite teclado, foco, semântica, zoom e alternativas pertinentes.
-   Se houver layout/cor afetados, use [contratos espaciais](../../references/layout-spatial-contracts.md) e [refinamento cromático](../../references/color-refinement.md).
-4. Para referência ou reúso, teste a operação que distingue o mecanismo pedido da aproximação.
-   Consulte reúso nos [playbooks](../../references/playbooks.md) e [fidelidade](../../references/reference-fidelity.md); observe caminho principal, fallback e estados relevantes separadamente.
-   Quando houver valores de referência congelados, execute o [verificador de fidelidade](../../references/fidelity-contracts.md) sobre medições do consumidor. Campo ausente, NaN, ponto omitido ou revisão diferente não viram aprovação por média. Uma fixture numérica aprovada não comprova que o navegador carregou a revisão nem que o contrato cobre tudo; confirme essas evidências separadamente.
-5. Registre falhas com reprodução, efeito, severidade e correção mínima; corrija somente dentro da autorização existente.
-   Reconfirme estados afetados e caminhos críticos, preservando capturas antes/depois. Testes adicionais precisam responder a uma preocupação restante.
-6. Ao alterar a própria Forma, use [operação do plugin](../../references/plugin-operation.md) e o [protocolo de avaliação](../../evals/routing-scenarios.md#comparar-versões-sem-confundir-as-provas).
-   Integridade do pacote, descoberta no host, decisão do agente e operação no consumidor têm aceites separados.
+1. Build a matrix proportionate to the risk and request before judging the result.
+   Read [verification](../../references/verification.md); select dimensions and minimum proof without requiring every dimension for a small fix.
+   When consuming agent/renderer gates, check [coverage and receipts](../../references/verification.md#verifier-coverage-and-receipts): a pass without measurements, zero assessed items, or an old revision does not approve the current delivery.
+2. Confirm execution identity and follow the task through input, action, success, and recovery.
+   Use [rendered validation](../../references/rendered-validation.md); verify persistence after reopening if promised, and distinguish an in-memory prototype from real operation.
+3. For access, read [accessibility](../../references/accessibility.md) and exercise the relevant keyboard, focus, semantics, zoom, and alternative paths.
+   If layout/color is affected, use [spatial contracts](../../references/layout-spatial-contracts.md) and [color refinement](../../references/color-refinement.md).
+   For a new surface or broad visual refinement, inspect the [coordinated foundation](../../references/verification.md#coordinated-foundation-review) in representative consumers and supported modes. Isolated token or contrast checks do not establish a coherent composition.
+4. For reference work or reuse, test the operation that distinguishes the requested mechanism from an approximation.
+   Consult reuse in [playbooks](../../references/playbooks.md) and [fidelity](../../references/reference-fidelity.md); observe the primary path, fallback, and relevant states separately.
+   When frozen reference values exist, run the [fidelity verifier](../../references/fidelity-contracts.md) against consumer measurements. Missing fields, NaN, omitted points, or different revisions cannot pass through averaging. A passing numerical fixture does not prove that the browser loaded the revision or that the contract covers everything; confirm those facts separately.
+5. Record failures with reproduction steps, effects, severity, and the smallest correction; fix only within existing authorization.
+   Recheck affected states and critical paths, preserving before/after captures. Additional tests must address a remaining concern.
+6. When changing Forma itself, use [plugin operation](../../references/plugin-operation.md) and the [evaluation protocol](../../evals/routing-scenarios.md#compare-versions-without-confusing-evidence).
+   Package integrity, host discovery, agent decisions, and consumer operation have separate acceptance criteria.
 
-## Saída e parada
+## Output and stopping condition
 
-Entregue resultado por critério, evidência/ambiente, achados acionáveis e limites de cobertura.
-Scripts auxiliares verificam seus contratos de entrada; sua aprovação não substitui observação no produto.
-Pare quando os critérios pertinentes tiverem prova e não houver bloqueio relevante, ou conclua a auditoria com falhas claramente abertas.
-Sem acesso ao runtime, declare o que a análise estática confirma e o que permanece sem teste; não trate limitação como aprovação.
+Deliver results by criterion, evidence/environment, actionable findings, and coverage limits.
+Helper scripts verify their input contracts; passing them does not replace observation in the product.
+Stop when relevant criteria have evidence and no material blocker remains, or conclude the audit with clearly open failures.
+Without runtime access, state what static analysis confirms and what remains untested; do not treat a limitation as approval.
 
-## Apoios opcionais e limites
+## Optional support and boundaries
 
-`accessibility`, `ecc:browser-qa`, `e2e-testing` e `ecc:click-path-audit` podem apoiar uma lacuna concreta.
-Leia o `SKILL.md` atual do apoio disponível e [integrações](../../references/integrations.md) antes de usar; nome de skill não comprova runner conectado.
-Não crie suítes que apenas espelham a implementação. Evidência de teste, inspeção visual e validação da tarefa respondem a perguntas diferentes.
+`accessibility`, `ecc:browser-qa`, `e2e-testing`, and `ecc:click-path-audit` can support a concrete gap.
+Read the available support skill's current `SKILL.md` and [integrations](../../references/integrations.md) before use; a skill name does not prove that a runner is connected.
+Do not create suites that merely mirror the implementation. Test evidence, visual inspection, and task validation answer different questions.

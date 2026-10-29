@@ -1,110 +1,110 @@
-# Modos, temas e configurações: contrato executável de design
+# Modes, themes and settings: an executable design contract
 
-Use sempre que o pedido incluir settings, preferências, tema, modo de exibição, personalização ou painel administrativo. Complementa adaptive-visual-systems e contracts-trust. Aplicar o método ECC Click-path Audit: mapear donos e resets antes de seguir controles; ECC Design System: auditar consistência e estados sem inventar scores.
+Use whenever the request includes settings, preferences, themes, display modes, customization or an administrative panel. Complements adaptive-visual-systems and contracts-trust. Apply the ECC Click-path Audit method: map owners and resets before following controls; ECC Design System: audit consistency and states without inventing scores.
 
-## Entregável obrigatório para mudanças amplas
+## Required deliverable for broad changes
 
-Produza um registro por configuração: **id, rótulo, propósito, tipo, valores, default, origem do default, dono/escopo, precedência, persistência, handler, preview, commit, cancelamento, erro/retry, reset, efeito lateral, dependências, acessibilidade, teste e evidência**. Campos desconhecidos permanecem desconhecidos. Não invente padrões só porque o controle está selecionado na captura.
+Produce a record for each setting: **id, label, purpose, type, values, default, default origin, owner/scope, precedence, persistence, handler, preview, commit, cancellation, error/retry, reset, side effect, dependencies, accessibility, test and evidence**. Unknown fields remain unknown. Do not invent defaults because a control is selected in a screenshot.
 
-Separe:
-- modo de cor (preferido e resolvido);
-- modo de trabalho/navegação;
-- modo de apresentação/densidade;
-- preferências de acessibilidade;
-- dados e operações de manutenção;
-- identidade, conta e segurança.
+Separate:
+- color mode (preferred and resolved);
+- work/navigation mode;
+- presentation/density mode;
+- accessibility preferences;
+- data and maintenance operations;
+- identity, account and security.
 
-Uma aba não define o dono do dado. Sidebar pode ser global, tema por workspace e accent sincronizado no perfil. Documente a precedência real e seus efeitos ao trocar contexto.
+A tab does not determine data ownership. Sidebar may be global, theme workspace-specific and accent synchronized with the profile. Document actual precedence and its effects when switching context.
 
-## Modelo de estados
+## State model
 
-Para formulário com Save: confirmado → draft → preview → saving → confirmado, ou error com draft preservado. Cancel restaura o confirmado, sem gravar em outro contexto. Fechamento e navegação devem tratar dirty state deliberadamente.
+For a form with Save: confirmed -> draft -> preview -> saving -> confirmed, or error with the draft preserved. Cancel restores the confirmed state without writing into another context. Closing and navigation must deliberately handle dirty state.
 
-Mantenha o rascunho durante a navegação entre abas da mesma sessão. Salvar uma seção deve confirmar somente os campos que ela possui, mesmo se perfil/aparência compartilham um objeto persistido. Use uma lista explícita de campos sobre o confirmado atual; não espalhe todo o draft de outra seção. Teste nos dois sentidos: nome pendente → salvar tema e tema/sidebar pendente → salvar perfil. Fechar e reabrir segue a política declarada de descarte/retomada, não a política de alternar abas.
+Retain the draft while navigating between tabs in the same session. Saving a section should commit only the fields it owns, even if profile/appearance share a persisted object. Use an explicit field list over the current confirmed state; do not spread another section's entire draft. Test both directions: pending name -> save theme, and pending theme/sidebar -> save profile. Closing and reopening follows the declared discard/resume policy, not the tab-switching policy.
 
-Para ajuste imediato: confirmado → pending → confirmado/error; dizer que aplica automaticamente e fornecer recuperação adequada. Se houver debounce, defina flush no fechamento, cancelamento do timer, ordem de versões e destino do write. Não chamar fechar de Save quando não confirma persistência.
+For immediate adjustments: confirmed -> pending -> confirmed/error; state that changes apply automatically and provide appropriate recovery. If debounced, define closing flush, timer cancellation, version ordering and write destination. Do not call closing Save when it does not confirm persistence.
 
-Defina o evento que confirma texto: por tecla, debounce, Enter ou saída de foco. “Automático” é insuficiente. Não recrie o formulário após cada alteração; atualize a prévia e preserve identidade do campo, seleção, foco e primeiro clique no próximo controle. Se change e blur confirmam a mesma edição, deduplique a gravação. Testar eventos reais no navegador; chamar onchange diretamente em teste não cobre input → Tab.
+Define the event that commits text: each keystroke, debounce, Enter or blur. "Automatic" is insufficient. Do not recreate the form after every change; update the preview and preserve field identity, selection, focus and the first click on the next control. If change and blur commit the same edit, deduplicate the write. Test actual browser events; directly calling onchange in a test does not cover input -> Tab.
 
-Ações como criar biblioteca, importar, atualizar ou sair da conta têm contratos próprios. Não escondê-las atrás do Save geral. Especifique side effects: troca de contexto, fechamento de viewers, descarte de cache, efeitos remotos e retenção de dados. Picker cancelado não é falha nem sucesso.
+Actions such as creating a library, importing, updating or signing out have their own contracts. Do not hide them behind a general Save. Specify side effects: context switching, closing viewers, cache disposal, remote effects and data retention. A canceled picker is neither failure nor success.
 
-## Pipeline de tema
+## Theme pipeline
 
-Fonte persistida → validação/fallback → modo resolvido → tokens semânticos → estilos computados DOM/native/canvas. Defina primeiro frame, onboarding, múltiplas janelas, listener do SO, override de contexto, retorno ao sistema e reset. Não transformar uma exceção do produto referência (ex.: primeiro uso sempre claro) em regra universal.
+Persisted source -> validation/fallback -> resolved mode -> semantic tokens -> computed DOM/native/canvas styles. Define the first frame, onboarding, multiple windows, OS listener, context override, return to system and reset. Do not turn a reference product's exception (for example, first use always light) into a universal rule.
 
-Tokens incluem accent fill/on-fill/text; background/surface/overlay; text/border/focus/status. Verificar override JS, alpha e fundo real. App reduce-motion e preferência do SO precisam de precedência declarada; parar CSS, JS, shaders e scroll suave quando apropriado. High contrast é um modo, não um certificado.
+Tokens include accent fill/on-fill/text; background/surface/overlay; text/border/focus/status. Check JS overrides, alpha and actual backgrounds. App reduce-motion and the OS preference need declared precedence; stop CSS, JS, shaders and smooth scrolling when appropriate. High contrast is a mode, not a certificate.
 
-Separe também cores de categoria, objeto personalizável e ação. Salvar tema/accent não deve alterar a identidade cromática da categoria ou o valor de cor gravado no objeto. Confira esses valores e a aparência composta após salvar e recarregar, nas superfícies pertinentes.
+Also separate category, customizable-object and action colors. Saving theme/accent must not change a category's color identity or an object's stored color value. Check those values and the composited appearance after saving and reloading across relevant surfaces.
 
-## Anatomia e área de interação
+## Anatomy and interaction area
 
-Rótulo nativo associado por `for`/`id` ou equivalente pode ampliar o acesso ao campo sem tornar toda uma linha com vários controles uma ação ambígua. Um nome em `aria-label` não torna o título visual clicável. Teste clicar no rótulo, no desenho e no alvo, além do teclado.
+A native label associated through `for`/`id` or equivalent can expand field access without turning an entire row with multiple controls into an ambiguous action. An `aria-label` name does not make the visual heading clickable. Test clicking the label, drawing and target, as well as keyboard use.
 
-Swatch, switch e ícone podem ter desenho menor que a área interativa. Ao ampliá-la, confirme `box-sizing`, padding, borda e `background-clip` finais; uma media query antiga pode reduzir a caixa e encolher ainda mais a pintura. Escolha dimensões pela plataforma e pelo contexto, sem universalizar os valores do Pauta. Preserve indicação de seleção e foco ao redor do alvo funcional.
+Swatches, switches and icons may have drawings smaller than their interactive areas. When enlarging the area, confirm final `box-sizing`, padding, border and `background-clip`; an old media query can shrink the box and further reduce the painted area. Choose dimensions by platform and context without universalizing Pauta's values. Preserve selection and focus indications around the functional target.
 
-## Auditoria do caminho do clique
+## Click-path audit
 
-Para cada controle: evento → calls em ordem → state lido/escrito → resets → await real → retorno → renderização final. Pergunte: um efeito posterior desfaz o anterior? O pai otimista restaura um valor ainda não persistido? A resposta pertence ao contexto atual? O cache depende desse valor? O feedback confirma a mesma operação que acabou?
+For each control: event -> calls in order -> state read/written -> resets -> actual await -> return -> final rendering. Ask: does a later effect undo an earlier one? Does the optimistic parent restore a value not yet persisted? Does the response belong to the current context? Does the cache depend on this value? Does feedback confirm the same operation that just completed?
 
-Em REA, registrar hash/versão e fonte exata. Diferenciar observado na UI, recuperado estaticamente e reproduzido. Se AST for parcial, complementar por leitura dirigida e rotular a origem; nunca alegar que REA executou o controle.
+In REA, record the hash/version and exact source. Distinguish UI observation, static recovery and reproduction. If the AST is partial, supplement with targeted reading and label the origin; never claim REA executed the control.
 
-## Critérios mínimos de aceite
+## Minimum acceptance criteria
 
-- Save confirma armazenamento; falha preserva draft e permite retry.
-- Cancel/Escape/clique fora têm política coerente e retorno de foco.
-- Reset declara escopo e valor resultante; não remove identidade/dados por acidente.
-- Trocar contexto com gravação pendente não escreve no destino errado.
-- Importação/exportação assíncrona captura sessão, seção e revisão; fechar/trocar aba invalida o retorno quando a operação pertence àquela seção. Descartar resposta antiga não cancela automaticamente a leitura/cálculo: declare o que foi interrompido.
-- Preferência global e local têm precedência previsível, mostrada quando relevante.
-- Estado reiniciado/reaberto corresponde ao persistido.
-- Valores inválidos/migração recebem fallback explícito sem sobrescrever dados silenciosamente.
-- Densidade de toolbar, lista, grade e leitura são independentes quando necessário.
-- Labels, ajuda, disabled reason, teclado e status acessível acompanham cada opção.
-- Operações externas/destrutivas mantêm suas permissões e confirmações próprias.
+- Save confirms storage; failure preserves the draft and allows retry.
+- Cancel/Escape/outside click have a coherent policy and restore focus.
+- Reset states its scope and resulting value; it does not accidentally remove identity/data.
+- Switching context with a pending write does not write to the wrong destination.
+- Asynchronous import/export captures session, section and revision; closing/switching tabs invalidates the response when the operation belongs to that section. Discarding an old response does not automatically cancel reading/computation: declare what was interrupted.
+- Global and local preferences have predictable precedence, shown when relevant.
+- Restarted/reopened state matches persisted state.
+- Invalid values/migration receive explicit fallback without silently overwriting data.
+- Toolbar, list, grid and reading density are independent when necessary.
+- Labels, help, disabled reasons, keyboard support and accessible status accompany each option.
+- External/destructive operations retain their own permissions and confirmations.
 
-## Ensaios representativos
+## Representative tests
 
-Tema-only Save com erro; draft→Escape→reabrir; live preview→discard antes/depois do debounce; SO muda em system; perfil global sobrescreve opção local; troca de workspace durante write; compact sem alterar grid; reduced-motion muda durante shader; preferência desconhecida de versão anterior; export cancelado; reset parcial. Registrar resultado, screenshot/estado e limitações por caso.
+Theme-only Save with an error; draft -> Escape -> reopen; live preview -> discard before/after debounce; OS changes in system mode; global profile overrides a local option; workspace switch during a write; compact without changing the grid; reduced motion changes during a shader; an unknown preference from an earlier version; canceled export; partial reset. Record the result, screenshot/state and limitations for each case.
 
-## Regressões observadas no Pauta (implementação 1.3)
+## Regressions observed in Pauta (implementation 1.3)
 
-- **Tokens não vencem a cascata automaticamente.** Textarea conservou fundo branco por regra anterior mais específica enquanto texto ficou claro. Inspecionar computed foreground/background de campos, badges, ajuda e estados; corrigir precedência e repetir as combinações. Não usar um cálculo dos tokens como prova de aplicação real.
-- **Uma preferência, um dono.** Remover toggles legados que mantêm densidade apenas em classes locais quando um controller persistente assume o valor. Toolbar e Settings devem consultar o mesmo estado.
-- **Configuração alcançável no mobile.** Não esconder a engrenagem junto de ações secundárias ao estreitar o header. Preservar alvo, busca e acesso por teclado; dialog longo precisa rolagem e ações alcançáveis.
-- **Validar o ciclo de foco no browser alvo.** Um dialog nativo fornece base semântica, mas teste Tab/Shift+Tab nos extremos, Escape, foco de retorno e interação com outros overlays. Corrigir o percurso observado, sem declarar conformidade completa só pelo elemento dialog.
-- **Persistência testável sem depender do browser.** Isolar normalização/read/save com adapter de storage. Cobrir erro de escrita, corrupção, versão futura e defaults sem sobrescrever dados na leitura. Separar teste do adapter de injeção de falha no formulário: o primeiro não prova o segundo.
-- **Matriz e limites juntos.** Reportar pares, temas, accents e estados realmente medidos, mínimo obtido e áreas não testadas. Contrast ratio bom em oito elementos não certifica toda a tela.
-- **Conflitos entre janelas.** Se outra janela salva com draft aberto, comunicar política: manter draft e substituir ao confirmar, ou resolver conflito. Cancelar deve voltar ao confirmado mais recente, não snapshot obsoleto.
+- **Tokens do not automatically win the cascade.** A textarea retained a white background because of an older, more specific rule while text became light. Inspect computed foreground/background for fields, badges, help and states; correct precedence and repeat combinations. Do not use a token calculation as proof of actual application.
+- **One preference, one owner.** Remove legacy toggles that retain density only in local classes when a persistent controller owns the value. Toolbar and Settings must read the same state.
+- **Reachable mobile settings.** Do not hide the gear with secondary actions when narrowing the header. Preserve the target, search and keyboard access; long dialogs need scrolling and reachable actions.
+- **Validate the focus loop in the target browser.** A native dialog provides a semantic foundation, but test Tab/Shift+Tab at the boundaries, Escape, return focus and interaction with other overlays. Correct the observed path without declaring full compliance solely from the dialog element.
+- **Persistence testable without the browser.** Isolate normalization/read/save with a storage adapter. Cover write errors, corruption, future versions and defaults without overwriting data during reads. Separate adapter testing from failure injection in the form: the former does not prove the latter.
+- **Matrix and limits together.** Report pairs, themes, accents and states actually measured, the minimum obtained and untested areas. A good contrast ratio in eight elements does not certify the whole screen.
+- **Conflicts between windows.** If another window saves while a draft is open, communicate the policy: retain the draft and overwrite on confirmation, or resolve the conflict. Cancel should return to the latest confirmed state, not an obsolete snapshot.
 
-## Configurações com contratos diferentes dentro da mesma janela
+## Settings with different contracts in one window
 
-Caso verificado na referência desktop auditada, artefato 0.19: abas Profile, Libraries, Data, Appearance e Account. Não inventar abas General/Shortcuts/About por hábito. Modal completo: largura `min(980px,100vw−56px)`, altura `min(728px,100vh−72px)`, conteúdo rolável e rodapé separado. Tabs com ícone acima do texto e overflow horizontal. Estes valores são referência desktop, não especificação mobile universal. O editor rápido de iluminação é outro componente, não modal no canto do painel.
+Verified case in the audited desktop reference, artifact 0.19: Profile, Libraries, Data, Appearance and Account tabs. Do not invent General/Shortcuts/About tabs out of habit. Full modal: width `min(980px,100vw-56px)`, height `min(728px,100vh-72px)`, scrollable content and a separate footer. Tabs have icons above text and horizontal overflow. These values are a desktop reference, not a universal mobile specification. The quick lighting editor is another component, nonmodal in the panel corner.
 
-- Profile e Appearance editam rascunho até Save. Cor do cartão pertence ao perfil, accent pertence à UI, tecido pertence à biblioteca, wash pertence ao ambiente.
-- Nome, padrão e cor de capa de Libraries persistem imediatamente. Um botão Save global não implica rollback destas operações. Selecionar o livro abre detalhes; abrir a biblioteca é outra ação.
-- Data executa operações independentes: backup, exportação, importação e lixeira. Progresso, cancelamento, seleção de escopo e destino pertencem a cada operação. Confirmar restauração de backup com teste de restore; criar arquivo não prova recuperação.
-- Account agrupa identidade/licença/sessão, versão/atualização, ajuda e links legais. Não propagar email, licença ou identificadores para exemplos/documentação sem necessidade.
+- Profile and Appearance edit a draft until Save. Card color belongs to the profile, accent to the UI, cloth to the library and wash to the environment.
+- Libraries cover name, pattern and color persist immediately. A global Save button does not imply rollback of those operations. Selecting a book opens details; opening the library is another action.
+- Data executes independent operations: backup, export, import and trash. Progress, cancellation, scope selection and destination belong to each operation. Confirm backup recovery with a restore test; creating a file does not prove recovery.
+- Account groups identity/license/session, version/update, help and legal links. Do not propagate email, license or identifiers into examples/documentation without need.
 
-Classic/Rail muda a arquitetura de navegação global, não o conteúdo do editor. O dono de sidebar, contagens, compact, contraste e movimento deve ser explícito. Testar leitura com sidebar estreita, nomes truncados, ícone sem texto e comando equivalente de teclado. Perfil local salvo, sincronização remota do perfil e estado da biblioteca são confirmações distintas.
+Classic/Rail changes global navigation architecture, not editor content. Ownership of sidebar, counts, compactness, contrast and motion must be explicit. Test reading with a narrow sidebar, truncated names, icons without text and an equivalent keyboard command. A saved local profile, remote profile synchronization and library state are separate confirmations.
 
-Critério para menus: documentar o efeito de cada ação antes de automatizá-la. 'Check for updates' pode iniciar download; New library pode ter contratos diferentes no menu e na prateleira; apagar biblioteca não equivale a esvaziar lixeira. Na auditoria, inspecionar estes caminhos sem confundir o clique com autorização para executar a operação final.
+Menu criterion: document each action's effect before automating it. 'Check for updates' may start a download; New library may have different contracts in the menu and shelf; deleting a library is not equivalent to emptying trash. During an audit, inspect these paths without confusing a click with authorization to execute the final operation.
 
-## Bibliotecas, arquivos e limites de plataforma
+## Libraries, files and platform limits
 
-- **Criar, selecionar, abrir e arquivar são ações distintas.** Defina qual muda a biblioteca ativa, para onde vai o foco e o que acontece com buscas/drafts/jobs. Arquivar a biblioteca ativa exige um destino válido; lixeira de tarefas não deve remover a biblioteca. Trocar contexto limpa/fecha filtros e popovers que não pertencem ao novo destino.
-- **Importação é uma fronteira de entrada.** Validar versão, limites de tamanho/quantidade, campos, IDs duplicados, enumerações e cores antes de persistir. Nunca inserir uma cor livre em `style.background`: um valor `url(...)` pode disparar acesso externo. Conteúdo local de imagem deve aceitar apenas formatos raster explicitamente suportados, dataURL/base64 e tamanho limitado; rejeitar URLs remotas e SVG quando não previstos. Validar novamente antes de renderizar. Um arquivo importado não recebe confiança por ter sido escolhido pelo usuário.
-- **Imagem assíncrona pertence a um draft.** Fixar biblioteca + item + geração antes de decodificar/processar. Se A começa, B começa depois e A termina por último, apenas B pode atualizar o draft. Remover a imagem também invalida jobs anteriores; finalização antiga não limpa o input de um upload novo. Fechar bitmaps/liberar URLs temporárias em sucesso, erro e cancelamento.
-- **Importar não é restaurar.** No Pauta, importar cria novas bibliotecas/IDs e preserva as existentes. O backup inclui perfil e bibliotecas. A opção explícita “Restaurar também perfil do backup”, desmarcada por padrão, valida e grava perfil junto das novas bibliotecas; importar sem essa opção preserva o perfil atual. Identidade da biblioteca ativa, tema e iluminação não são restaurados pelo backup. Declarar esses limites e testar recuperação de cada entidade antes de oferecer “restauração completa”.
-- **Download iniciado não é arquivo confirmado.** Um link com Blob pode gerar JSON/ZIP/PNG, mas não confirma destino, gravação pelo navegador nem cópia externa segura. Distinguir “arquivo gerado” de “backup verificado”; abrir o artefato e executar um round-trip controlado. Exportação por pastas deve gerar conteúdo interoperável real, nomes seguros e tratamento de colisões.
-- **Portar capacidades, não promessas nativas.** Browser pode oferecer perfil local, bibliotecas na origem, download e clipboard sujeito a suporte/permissão. Isso não equivale a conta autenticada, sincronização, pasta nativa, importador Eagle ou atualização de app instalado. Não exibir ações de login/licença/update fictícias para preencher a composição da referência; explicar o estado local e fornecer apenas caminhos implementados.
-- **Persistência é transação de produto.** Validar cópia candidata, gravar e só então trocar estado confirmado/emitir sucesso. Em quota excedida ou formato incompatível, conservar o último estado e draft recuperável. Importação aditiva, backup, exclusão e restauração precisam de falhas visíveis independentes do Save de aparência.
+- **Create, select, open and archive are separate actions.** Define which changes the active library, where focus goes and what happens to searches/drafts/jobs. Archiving the active library requires a valid destination; task trash must not remove the library. Switching context clears/closes filters and popovers that do not belong to the new destination.
+- **Import is an input boundary.** Validate version, size/count limits, fields, duplicate IDs, enumerations and colors before persisting. Never insert an arbitrary color into `style.background`: a `url(...)` value can trigger external access. Local image content should accept only explicitly supported raster formats, dataURL/base64 and bounded size; reject remote URLs and SVG when not supported. Validate again before rendering. An imported file does not become trusted because the user selected it.
+- **An asynchronous image belongs to a draft.** Pin library + item + generation before decoding/processing. If A starts, B starts later and A finishes last, only B may update the draft. Removing the image also invalidates previous jobs; an old completion must not clear a new upload's input. Close bitmaps/release temporary URLs on success, error and cancellation.
+- **Importing is not restoring.** In Pauta, import creates new libraries/IDs and preserves existing ones. Backup includes the profile and libraries. The explicit "Also restore profile from backup" option, unchecked by default, validates and writes the profile along with the new libraries; importing without it preserves the current profile. Active-library identity, theme and lighting are not restored by backup. Declare those limits and test recovery of each entity before offering "complete restoration."
+- **Download started is not a confirmed file.** A Blob link can generate JSON/ZIP/PNG, but does not confirm destination, browser writing or a safe external copy. Distinguish "file generated" from "backup verified"; open the artifact and execute a controlled round trip. Folder export must generate actual interoperable content, safe names and collision handling.
+- **Port capabilities, not native promises.** A browser may offer a local profile, origin-scoped libraries, downloads and a clipboard subject to support/permission. That is not equivalent to an authenticated account, synchronization, native folder, Eagle importer or installed-app updating. Do not display fictitious login/license/update actions to fill the reference composition; explain local state and provide only implemented paths.
+- **Persistence is a product transaction.** Validate a candidate copy, write and only then replace confirmed state/emit success. On quota exhaustion or incompatible format, retain the last state and a recoverable draft. Additive import, backup, deletion and restoration need visible failures independent of appearance Save.
 
-Uma checagem de funções de storage prova serialização/contrato, não o ciclo completo de formulário, download, importação e retorno de foco. Registrar esses níveis separadamente.
+Checking storage functions proves serialization/contracts, not the entire form, download, import and return-focus cycle. Record those levels separately.
 
-## Composição das configurações
+## Settings composition
 
-Formulários podem ficar ao lado do objeto em painéis largos e preceder a prévia em painéis estreitos. Escolha pela tarefa, preservando a mesma ordem semântica no DOM quando houver stack. Use largura do container, não somente viewport: um dialog de 700px em monitor largo ainda é um painel estreito. Reserve área própria para fechar, tabs roláveis e rodapé; texto de erro não deve expulsar a ação de salvar da área alcançável. Nomes longos, status em duas linhas, um único item e última biblioteca arquivável fazem parte do ensaio.
+Forms can sit beside the object in wide panels and precede the preview in narrow panels. Choose according to the task, retaining the same semantic DOM order when stacked. Use container width, not only viewport: a 700px dialog on a wide monitor is still a narrow panel. Reserve dedicated space for closing, scrollable tabs and the footer; error text must not push the save action outside reach. Long names, two-line statuses, a single item and the last archivable library are part of the test.
 
-Quando o objeto for o foco aprovado, reserve espaço para seu envelope fechado **e aberto**, incluindo perspectiva e controles. O formulário pode ter largura limitada e rolagem independente (`min-height:0` no layout flex/grid quando necessário). Não diminuir o objeto inteiro para acomodar uma coluna secundária excessiva, nem aceitar clipping do conteúdo para fazê-lo caber. Verifique janelas desktop baixas e redimensionamento com o objeto aberto; viewport largo não garante espaço útil dentro do modal.
+When the object is the approved focus, reserve space for its closed **and open** envelope, including perspective and controls. The form can have bounded width and independent scrolling (`min-height:0` in flex/grid layouts when needed). Do not shrink the entire object to accommodate an excessive secondary column or accept content clipping to make it fit. Check short desktop windows and resizing with the object open; a wide viewport does not guarantee usable modal space.
 
-Ao concentrar um perfil antes separado em Configurações, reutilize componente, estado e entrada de edição. Links legados podem abrir o mesmo painel; evitar duas versões divergentes do formulário. Após salvar, atualizar os consumidores afetados sem remontar a sessão em curso ou destruir o elemento que deve recuperar foco. Teste abrir por cada entrada real → editar → salvar/falhar → fechar → reabrir e o retorno de foco após o commit, não só após Cancelar. Dados globais e por contexto devem ser verificados também com outro contexto ativo.
+When consolidating a previously separate profile into Settings, reuse its component, state and editing entry. Legacy links can open the same panel; avoid two diverging versions of the form. After saving, update affected consumers without remounting the current session or destroying the element that should regain focus. Test opening from each actual entry -> edit -> save/fail -> close -> reopen, and focus return after commit, not only Cancel. Also verify global and contextual data with another context active.

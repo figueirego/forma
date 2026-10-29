@@ -1,10 +1,10 @@
-# Procedência e referências externas
+# Provenance and external references
 
-A Forma contém documentação, componentes e verificadores originais. A pesquisa de princípios e o histórico estão em [sources.md](references/sources.md). Citar uma referência não concede licença sobre seu código ou seus assets e não implica endosso.
+Forma contains original documentation, components, and verifiers. Principle research and history are recorded in [sources.md](references/sources.md). Citing a reference does not grant a license to its code or assets and does not imply endorsement.
 
 ## ECC
 
-A organização por skills, leitura progressiva, evidências e validação foi informada pelo [ECC](https://github.com/affaan-m/ECC). A Forma não incorpora o runtime, os hooks ou o catálogo completo do ECC. Preservamos o aviso da fonte consultada, sob MIT:
+The organization into skills, progressive reading, evidence, and validation was informed by [ECC](https://github.com/affaan-m/ECC). Forma does not incorporate ECC's runtime, hooks, or complete catalog. We preserve the MIT notice from the consulted source:
 
 ```text
 MIT License
@@ -30,22 +30,28 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-## Dependências e outras referências
+## Dependencies and other references
 
-Three.js é uma dependência de desenvolvimento dos testes, com sua própria licença MIT e copyright dos autores, preservados no pacote instalado pelo npm. Não é embutido no plugin; o consumidor do BookObject fornece um loader compatível quando desejar WebGL.
+### Developer Portfolios - factual index
 
-O hero em `assets/plugin-brand/hero.png` é uma imagem gerada para a Forma. Os símbolos SVG e o layout da apresentação foram criados para este projeto. Procedência e limites estão em `assets/plugin-brand/provenance.json`. O hero não é modelo 3D editável.
+`assets/reference-library/portfolio-index.json` records the names and URLs of the 2,079 entries in the [emmabostian/developer-portfolios](https://github.com/emmabostian/developer-portfolios/blob/c2ee35d6363e7b2ee4c34f40accb478c0f828e4f/README.md) README, revision `c2ee35d6363e7b2ee4c34f40accb478c0f828e4f`, examined on 2026-10-29. The inspected snapshot has no LICENSE file and the API reports a null license; the feed documentation explains third-party integration but does not provide a license. We do not assign MIT to the external selection or destinations. Forma does not distribute the complete README, taglines, scripts, screenshots, fonts, brands, or portfolio code.
 
-A edição comunitária exclui blocos literais de CSS extraídos de terceiros, perfis de projetos privados, binários, capturas privadas e caminhos pessoais. As medições que permanecem são registros de observação com limites, não assets nem código da aplicação observada. A licença MIT da Forma não relicencia os sites, marcas, livros, bibliotecas ou produtos externos citados.
+The importer, investigation procedures, and query tool were written for Forma. Names/URLs identify their respective external destinations; Forma is not affiliated with them, does not endorse them, and does not claim authorship of them. The source date/revision, original lines, malformed URL, and README/feed differences are preserved in the index and `portfolio-import.json`. Reusing any code or media requires examining the specific source's rights. A listing does not prove a site's availability, quality, or technology.
 
-## Perfis de observação
+Three.js is a test development dependency with its own MIT license and authors' copyright, preserved in the package installed by npm. It is not embedded in the plugin; the BookObject consumer supplies a compatible loader when WebGL is needed.
 
-`desktop-material-reference-v1.json` registra observações de uma aplicação desktop 0.19.0. `library-colors.js` é uma implementação independente informada por essa paleta e por parâmetros observados; esses parâmetros não são apresentados como criação visual inédita da Forma. A identidade e os artefatos originais permanecem no arquivo de autoria e não integram a distribuição pública. O perfil público mantém medidas estruturadas e exclui dumps de CSS e expressões CSS literais. Observar uma referência não constitui licença para redistribuir seu código ou sua identidade, nem indica afiliação ou endosso.
+The hero in `assets/plugin-brand/hero.png` is an image generated for Forma. The SVG symbols and presentation layout were created for this project. Provenance and limits are recorded in `assets/plugin-brand/provenance.json`. The hero is not an editable 3D model.
+
+The community edition excludes literal CSS blocks extracted from third parties, private project profiles, binaries, private captures, and personal paths. The remaining measurements are bounded observation records, not assets or code from the observed application. Forma's MIT license does not relicense the external sites, brands, books, libraries, or products cited.
+
+## Observation profiles
+
+`desktop-material-reference-v1.json` records observations of a desktop application, version 0.19.0. `library-colors.js` is an independent implementation informed by that palette and observed parameters; these parameters are not presented as an unprecedented visual creation by Forma. The identity and original artifacts remain in the authorship archive and are not included in the public distribution. The public profile retains structured measurements and excludes CSS dumps and literal CSS expressions. Observing a reference does not grant a license to redistribute its code or identity, nor does it indicate affiliation or endorsement.
 
 
 ## Taste Skill
 
-A síntese de direção específica, argumento por seção, rotas de página/app e crítica renderizada foi informada por [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), snapshot12af471f627f866411b4bd785b19646d3672784c. O [mapeamento](references/taste-study.md) registra adaptações e limites. Na versão 1.25.0, `assets/reference-library/catalog.json` também incorpora os 202 registros de `library/sites.json`, preservando os campos do snapshot e acrescentando metadados de uso/evidência. `provenance.taste` identifica origem, revisão e hash do arquivo de entrada. Os utilitários da Forma são implementações próprias. Não redistribuímos screenshots, fontes, imagens ou código dos sites; esses ativos externos mantêm licenças próprias. Preservamos o aviso da fonte:
+Revisions 1.24-1.25 were informed by [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), snapshot `12af471f627f866411b4bd785b19646d3672784c`. Version 1.25 distributed 202 records from `library/sites.json`. In the 1.26 series, imported descriptions, aesthetic notes, and instructions were replaced with cards written for Forma's resources. Revision 1.26.1 preserves the names/URLs of the 202 references in a separate index and associates them with investigation cases written by Forma, without renaming imported descriptions or attributing authorship of the sites to Forma. The historical selection remains identified in the index provenance; mappings are hypotheses to confirm on the current site. The utilities are original implementations without the source runtime. This notice preserves attribution for the syntheses and their history; it does not indicate affiliation, an operational dependency, or a claim of authorship over external sites. Historical reports remain in the repository, outside the installed skill. We preserve the MIT notice:
 
 ```text
 MIT License

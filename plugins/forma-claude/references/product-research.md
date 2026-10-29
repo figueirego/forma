@@ -1,36 +1,36 @@
-# Produto, pesquisa e arquitetura
+# Product, research and architecture
 
-## Descoberta mínima
+## Minimum discovery
 
-Determine quem usa, qual trabalho precisa concluir, contexto físico/cognitivo, frequência, canal de aquisição e condição de sucesso. Diferencie comprador, operador, administrador e pessoa afetada. Inclua usuários com pouca experiência, tecnologia assistiva, conexão ruim e equipamentos modestos quando pertinentes.
+Determine who uses the product, the job they need to complete, their physical/cognitive context, frequency, acquisition channel and success condition. Distinguish buyers, operators, administrators and affected people. Include inexperienced users, assistive technology, poor connections and modest equipment where relevant.
 
-Separe fatos observados, declarações do usuário, inferências e hipóteses. Personas inventadas são hipóteses; não finja entrevistas, testes ou métricas. Colete só informação necessária, sem incluir dados pessoais em ferramentas externas por conveniência.
+Separate observed facts, user statements, inferences and hypotheses. Invented personas are hypotheses; do not pretend to have interviews, tests or metrics. Collect only necessary information, without sending personal data to external tools for convenience.
 
-## Investigar a dúvida certa
+## Investigate the right uncertainty
 
-| Dúvida | Método proporcional | Evidência produzida |
+| Question | Proportionate method | Evidence produced |
 |---|---|---|
-| As pessoas entendem os grupos? | Card sorting ou tree testing | Erros de localização e vocabulário |
-| Conseguem concluir a tarefa? | Teste de usabilidade com cenário e critérios | Conclusão, erros, ajuda e fricção |
-| O problema realmente ocorre? | Entrevista contextual, suporte, observação | Episódios e frequência relatada/observada |
-| Onde há abandono? | Funil e instrumentação existente | Etapa e segmento; correlação não explica causa |
-| Qual composição comunica melhor? | Teste de compreensão ou variantes | Entendimento; preferência visual não prova conversão |
-| Mudança melhora resultado? | Experimento adequado ao tráfego e risco | Métrica principal, guardrails e incerteza |
+| Do people understand the groups? | Card sorting or tree testing | Findability errors and vocabulary |
+| Can they complete the task? | Usability testing with a scenario and criteria | Completion, errors, assistance and friction |
+| Does the problem actually occur? | Contextual interviews, support, observation | Episodes and reported/observed frequency |
+| Where do people abandon the flow? | Funnel and existing instrumentation | Stage and segment; correlation does not explain cause |
+| Which composition communicates better? | Comprehension testing or variants | Understanding; visual preference does not prove conversion |
+| Does a change improve the outcome? | Experiment suited to the traffic and risk | Primary metric, guardrails and uncertainty |
 
-Pesquisa secundária informa hipóteses; não é auditoria de um fluxo inacessível. Referências concorrentes servem para comparar padrões, não copiar marca.
+Secondary research informs hypotheses; it is not an audit of an inaccessible flow. Competitor references help compare patterns, not copy a brand.
 
-## Estruturar a experiência
+## Structure the experience
 
-Modele objetos e ações no vocabulário do domínio. Faça um mapa de rotas/telas quando o fluxo exigir. Distinga navegação global, contextual, local e histórico. Garanta orientação, retorno, endereço compartilhável quando aplicável e caminho de recuperação.
+Model objects and actions using domain vocabulary. Create a route/screen map when the flow requires it. Distinguish global, contextual and local navigation from history. Provide orientation, return navigation, a shareable address where applicable and a recovery path.
 
-Para jornadas, registre entrada, intenção, ação, resposta, espera, falha e saída. Para serviços que cruzam canais, faça um service blueprint: ações do usuário, atendimento visível, operações internas, dependências e responsável. Evite desenhar uma promessa que atendimento ou API não conseguem cumprir.
+For journeys, record entry, intent, action, response, waiting, failure and exit. For services spanning channels, create a service blueprint: user actions, visible service, internal operations, dependencies and ownership. Avoid designing a promise that support staff or the API cannot fulfill.
 
-Priorize por gravidade, frequência, alcance e custo da correção. Não use números arbitrários para produzir uma falsa precisão. Reduza passos inúteis, mas preserve compreensão, consentimento e controle.
+Prioritize by severity, frequency, reach and correction cost. Do not use arbitrary numbers to create false precision. Reduce unnecessary steps while preserving understanding, consent and control.
 
-## Validação de produto
+## Product validation
 
-Escolha uma métrica primária ligada à tarefa: conclusão sem ajuda, tempo até primeiro valor, taxa de erro ou recuperação. Use retenção, suporte, acessibilidade e cancelamento como guardrails conforme o contexto. Tempo de permanência elevado pode indicar confusão, não sucesso.
+Choose a primary metric connected to the task: unassisted completion, time to first value, error rate or recovery. Use retention, support, accessibility and cancellation as guardrails according to context. Long dwell time may indicate confusion, not success.
 
-Produza apenas artefatos necessários: brief curto para uma tela; fluxo e estados para processo multietapas; mapa de serviço para experiência multicanal. Não gere personas, jornadas e blueprints por ritual.
+Produce only necessary artifacts: a short brief for one screen; flow and states for a multistep process; a service map for a multichannel experience. Do not generate personas, journeys and blueprints as a ritual.
 
-Para executar, use [pesquisa prática](research-protocol.md): inclui tarefa neutra, critério de sucesso, moderação, registro e limites de interpretação.
+To execute, use [practical research](research-protocol.md): it includes a neutral task, success criterion, moderation, recording and interpretation limits.

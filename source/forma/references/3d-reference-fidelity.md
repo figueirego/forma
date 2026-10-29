@@ -1,145 +1,145 @@
-# Fidelidade de objetos 3D: do pacote ao pixel
+# 3D object fidelity: from package to pixel
 
-Use quando a mesma biblioteca, as mesmas cores ou uma proporção parecida ainda produzem um objeto diferente. Este protocolo complementa [objetos reutilizáveis](reusable-objects.md) e [fidelidade de referência](reference-fidelity.md). Os números da referência desktop abaixo pertencem ao artefato 0.19.0 auditado em 26/10/2026; não são defaults universais. O [caso de polimento do livro](book-polish-case-study.md) resume diagnóstico, correções, testes e limites, com rastreabilidade das capturas no histórico externo do resultado aprovado pelo usuário; reutilize o método, não os parâmetros como receita para qualquer objeto.
+Use when the same library, colors, or similar proportions still produce a different object. This protocol complements [reusable objects](reusable-objects.md) and [reference fidelity](reference-fidelity.md). Desktop reference values below belong to artifact 0.19.0 audited on 2026-10-26; they are not universal defaults. The [book polishing case](book-polish-case-study.md) summarizes diagnosis, corrections, tests, and limits, with capture traceability in the external history of the user-approved result; reuse the method, not the parameters as a recipe for every object.
 
-## 1. Fixar identidade antes de procurar outra tecnologia
+## 1. Fix identity before seeking another technology
 
-Identifique separadamente instalador → aplicativo/payload → ASAR → módulo → asset → runtime. Preserve originais, tamanho, SHA-256, seleção analisada e base dos offsets. Versão igual não prova bytes iguais; bytes diferentes não provam algoritmos diferentes.
+Identify installer -> application/payload -> ASAR -> module -> asset -> runtime separately. Preserve originals, size, SHA-256, analyzed selection, and offset base. Identical versions do not prove identical bytes; different bytes do not prove different algorithms.
 
-No artefato desktop fornecido, o ASAR do DMG é byte a byte igual ao instalado no Mac. Os módulos Windows `LibraryBook`, `clothweave`, `bookforge` e o CSS têm o mesmo texto após normalizar somente referências de assets com hash e escapes CR antes de LF nas strings GLSL. As 33 WOFF2 de renderer comparadas são iguais. O renderer principal completo não recebeu prova de equivalência semântica. Hashes, regras e limites estão no [perfil factual](../assets/reference-profiles/desktop-material-reference-v1.json).
+In the supplied desktop artifact, the DMG ASAR is byte-for-byte identical to the installed Mac ASAR. Windows modules `LibraryBook`, `clothweave`, `bookforge`, and CSS have identical text after normalizing only hashed asset references and CR escapes before LF in GLSL strings. The 33 compared renderer WOFF2 files are identical. Semantic equivalence of the complete main renderer was not proven. Hashes, rules, and limits are in the [factual profile](../assets/reference-profiles/desktop-material-reference-v1.json).
 
-Tecnologia identificada: Electron 42.11.12, Three 0.186.0, malha embutida com UV/normais, `ShaderMaterial` Phong customizado, texturas procedurais/atlas, cena WebGL e cópia para Canvas2D. DLLs ANGLE/Direct3D/Vulkan no Windows são componentes empacotados; não demonstram qual backend foi utilizado. Extração estática não valida instalação, driver, FPS ou renderização no Windows.
+Identified technology: Electron 42.11.12, Three 0.186.0, embedded mesh with UVs/normals, custom Phong `ShaderMaterial`, procedural textures/atlases, WebGL scene, and copy to Canvas2D. Windows ANGLE/Direct3D/Vulkan DLLs are bundled components; they do not demonstrate which backend ran. Static extraction does not validate Windows installation, drivers, FPS, or rendering.
 
-## 2. Contrato mínimo de cada parâmetro
+## 2. Minimum contract for each parameter
 
-Rastreie **declarado/configurado → consumido → usado no shader/layout → observado em runtime**. Um uniform presente ou um `Texture.repeat` configurado não prova seu efeito. Para cada campo, registre:
+Trace **declared/configured -> consumed -> used in shader/layout -> observed at runtime**. A present uniform or configured `Texture.repeat` does not prove its effect. For each field, record:
 
-| Campo | Exemplo de especificação útil |
+| Field | Example of a useful specification |
 |---|---|
-| Origem e certeza | Módulo + hash + byte UTF-8 base zero; confirmado estático, inferido, observado ou proposto |
-| Consumidor | Expressão que lê o valor e branch que a utiliza |
-| Domínio/unidade | UV local ou atlas, centímetros ou malha normalizada, CSS px ou pixels do buffer |
-| Região/canal | Frente, lombada, verso, papel; difuso, height, normal, máscara ou reflexão |
-| Transformação | Matriz UV, escala, espaço de cor, composição e ordem das operações |
-| Estado | Repouso, hover, arraste, saída; calibração fixa ou recalculada |
-| Verificação | Medida, fixture, tolerância acordada e evidência; pendente se não executada |
+| Origin and certainty | Module + hash + zero-based UTF-8 byte; statically confirmed, inferred, observed, or proposed |
+| Consumer | Expression reading the value and branch using it |
+| Domain/unit | Local or atlas UV, centimeters or normalized mesh, CSS px or buffer pixels |
+| Region/channel | Front, spine, back, paper; diffuse, height, normal, mask, or reflection |
+| Transformation | UV matrix, scale, color space, composition, and operation order |
+| State | Rest, hover, drag, leave; fixed or recalculated calibration |
+| Verification | Measurement, fixture, agreed tolerance, and evidence; pending if not executed |
 
-Exemplo: “bump .006” está incompleto. É preciso declarar qual mapa, unidade física da malha, UV efetivamente amostrado, combinação com o relevo customizado e perturbação de normal. Na referência desktop auditada, base/custom são combinados por overlay antes de uma única perturbação; duas perturbações sucessivas produzem outro resultado.
+Example: "bump .006" is incomplete. Specify the map, mesh physical unit, actually sampled UV, combination with custom relief, and normal perturbation. In the audited desktop reference, base/custom are combined through overlay before one perturbation; two successive perturbations produce a different result.
 
-## 3. Trama e registro por face
+## 3. Weave and registration per face
 
-**Confirmado no código:** textura base 256×256, 32 ciclos por eixo, pesos .58/.42; difuso com ruído interpolado em grade 4×4 e amplitude .055. `repeat` recebe aproximadamente 4.338446×3.298071, mas o shader auditado passa e amostra UV bruto, sem a matriz correspondente.
+**Confirmed in code:** base texture 256x256, 32 cycles per axis, weights .58/.42; diffuse with noise interpolated on a 4x4 grid and amplitude .055. `repeat` receives approximately 4.338446x3.298071, but the audited shader passes and samples raw UVs without the corresponding matrix.
 
-**Inferência estática, ainda sem captura do shader executado:**
+**Static inference, without an executed-shader capture yet:**
 
-| Face | Extensão UV | Ciclos inferidos na região |
+| Face | UV extent | Inferred cycles in the region |
 |---|---|---|
-| Frente | .4346×.7545 | 13.9072×24.1440 |
-| Verso | .4346×.7544 | 13.9072×24.1408 |
-| Lombada | .0834×.7364 | 2.6688×23.5648 |
+| Front | .4346x.7545 | 13.9072x24.1440 |
+| Back | .4346x.7544 | 13.9072x24.1408 |
+| Spine | .0834x.7364 | 2.6688x23.5648 |
 
-Amostre uma linha de 512 pontos em cada região, fora do padrão/foil, e registre orientação/período. Confirme o caminho em runtime ou mantenha a classificação de inferência. Uma tolerância inicial de ±1 ciclo pode acomodar extremidades parciais, mas precisa ser aceita no projeto. Reutilizar 60 ciclos completos em todas as faces torna a lombada muito mais densa que a capa. Aumentar bump não resolve frequência ou registro.
+Sample a 512-point line in each region outside the pattern/foil and record orientation/period. Confirm the path at runtime or retain the inference classification. An initial tolerance of +/-1 cycle can accommodate partial ends but needs project acceptance. Reusing 60 full cycles on every face makes the spine much denser than the cover. Increasing bump does not fix frequency or registration.
 
-**Gerador e consumidor são contratos diferentes.** Na tensão do tecido auditado, o campo periódico é gerado em 96×96, mas a expressão consumida amostra `s(0,f)`: X fixo, somente Y varia. O resultado efetivo é uma tensão 1D suave. Trocar isso por ruído independente em X/Y muda o material, mesmo mantendo resolução, seed e amplitude. Já o grão de pigmento usa campo periódico 4×4 bidimensional. Verifique amostras determinísticas, continuidade e coordenadas realmente lidas; não conclua dimensionalidade pelo tamanho do gerador.
+**Generator and consumer are different contracts.** In the audited cloth-tension field, the periodic field is generated at 96x96, but the consumed expression samples `s(0,f)`: fixed X, only Y varies. The effective result is smooth 1D tension. Replacing it with independent X/Y noise changes the material despite identical resolution, seed, and amplitude. Pigment grain, by contrast, uses a two-dimensional 4x4 periodic field. Verify deterministic samples, continuity, and coordinates actually read; do not infer dimensionality from generator size.
 
-### Bordas e cortes: UV precisa representar a superfície
+### Edges and cuts: UVs must represent the surface
 
-Uma textura lisa pode virar estrias quando o UV perde uma dimensão. No Pauta, a projeção `(x/W+.5, y/H+.5)` servia para a frente, mas era reutilizada nos cortes de páginas: topo/base variam em X/Z e têm Y constante; a lateral varia em Y/Z. A espessura Z não alterava UV, produzindo mapeamento de posto 1 e repetição de uma única linha de trama. Blur, menos bump ou outra cor apenas esconderiam a causa.
+A smooth texture can become streaked when UVs lose a dimension. In Pauta, projection `(x/W+.5, y/H+.5)` worked for the front but was reused on page cuts: top/bottom vary in X/Z with constant Y; the side varies in Y/Z. Z thickness did not change UVs, producing rank-1 mapping and repetition of one weave row. Blur, less bump, or another color would merely hide the cause.
 
-Para uma superfície texturizada bidimensional, inspecione a área UV de cada triângulo não degenerado e a variação ao atravessar a espessura. Use ilhas coerentes por face: largura/espessura no topo/base, altura/espessura no corte lateral. Separe vértices nas costuras quando necessário, sem fazer um triângulo atravessar duas ilhas; preserve posições e normais quando a correção for só de unwrap. Verifique o UV **efetivo após** a transformação de região no shader: armazenar UV local com transformação ou UV de atlas com identidade são alternativas, não etapas cumulativas. Compare frequência nas duas direções e confirme visualmente as vistas rasantes. No caso aprovado, esse ajuste eliminou áreas UV nulas e estrias fortes sem alterar a geometria do papel.
+For a two-dimensional textured surface, inspect each nondegenerate triangle's UV area and variation across thickness. Use coherent per-face islands: width/thickness on top/bottom, height/thickness on the side cut. Split seam vertices when necessary without letting a triangle span two islands; preserve positions and normals when only unwrapping needs correction. Verify **effective UVs after** shader region transformation: local UVs with transformation or atlas UVs with identity are alternatives, not cumulative steps. Compare frequency in both directions and visually confirm grazing views. In the approved case, this adjustment eliminated zero UV areas and strong streaks without altering paper geometry.
 
-## 4. Profundidade, normais e padrões
+## 4. Depth, normals, and patterns
 
-Malha válida e silhueta plausível não garantem a luz do canal da lombada, ombro ou cantos. A referência fornece suas próprias normais. Na região frontal auditada, que inclui transições, 85 de 396 vértices têm `abs(normal.y)>.001`. A contagem não é uma meta: a propriedade relevante é a continuidade da orientação na superfície.
+Valid meshes and plausible silhouettes do not guarantee the lighting of spine channels, shoulders, or corners. The reference supplies its own normals. In the audited front region, including transitions, 85 of 396 vertices have `abs(normal.y)>.001`. This count is not a target: continuity of surface orientation is the relevant property.
 
-Compare cortes horizontais e verticais em regiões planas, canais e extremos; 2%, 5%, 50%, 95% e 98% são uma amostragem inicial, a adaptar ao objeto. Registre silhueta, posição/profundidade do canal, ângulo das normais, continuidade capa/bevel e contato com páginas/lombada. A faixa de brilho descreve a orientação da superfície: um canal com altura próxima e normais diferentes produz outro highlight. Antes de alterar intensidade de luz, compare curvatura e normais com iluminação fixa.
+Compare horizontal and vertical sections in flat regions, channels, and extremes; 2%, 5%, 50%, 95%, and 98% are an initial sample to adapt to the object. Record silhouette, channel position/depth, normal angles, cover/bevel continuity, and contact with pages/spine. The highlight band describes surface orientation: a channel with similar height and different normals produces a different highlight. Compare curvature and normals under fixed lighting before changing light intensity.
 
-A curvatura em Y deve existir **onde o perfil a exige**, não no campo impresso inteiro. A correção aprovada removeu a deformação ampla da capa e manteve o plano até a transição localizada do aro. Densificou a amostragem no canal e substituiu o chanfro linear por arredondamento segmentado; não aumentou uniformemente toda a malha. Vértices duplicados sem regra de normais podem criar uma costura luminosa. Contar normais não nulas não substitui conferir sua localização, direção e continuidade.
+Y curvature must exist **where the profile requires it**, not across the entire printed field. The approved correction removed broad cover deformation and retained a plane until the localized rim transition. It increased sampling density in the channel and replaced a linear bevel with segmented rounding; it did not uniformly densify the whole mesh. Duplicated vertices without a normal rule can create a bright seam. Counting nonzero normals does not replace checking their location, direction, and continuity.
 
-### Derivadas da normal: verificar a equação consumida
+### Normal derivatives: verify the consumed equation
 
-O shader customizado do livro da referência desktop usa derivadas espaciais **cruas** para os vetores tangentes (byte 756887 do `bookforge` Mac). O mesmo bundle também contém o helper stock do Three com derivadas **normalizadas** (byte 171104). A primeira ocorrência de um nome de função não identifica o caminho usado pelo componente.
+The desktop reference book's custom shader uses **raw** spatial derivatives for tangent vectors (byte 756887 of Mac `bookforge`). The same bundle also contains Three's stock helper with **normalized** derivatives (byte 171104). The first occurrence of a function name does not identify the component's actual path.
 
-No helper normalizado, passar apenas `deltaHeight * bumpScale` perde o comprimento físico por pixel. Para conservar o resultado do helper cru, dividir cada delta pelo comprimento da derivada espacial correspondente antes da perturbação, ou usar uma implementação original matematicamente equivalente. Testar tangentes ortogonais/oblíquas, escala de objeto e resolução; explicitar a política numérica em derivadas degeneradas. A amplitude `.07 * W/15.8778` sozinha não prova equivalência.
+In the normalized helper, passing only `deltaHeight * bumpScale` loses physical length per pixel. To preserve the raw helper's result, divide each delta by the corresponding spatial derivative's length before perturbation, or use an original mathematically equivalent implementation. Test orthogonal/oblique tangents, object scale, and resolution; make numerical policy explicit for degenerate derivatives. Amplitude `.07 * W/15.8778` alone does not prove equivalence.
 
-Fixture ideal: largura física Pauta 1.84, frente projetada 248px, uma transição completa por pixel, trama desligada. Height 128→95 corresponde a 8,053° com a fórmula física, mas apenas 0,06015° no helper normalizado sem compensação; 128→54 dá 17,604° versus 0,13488°. São cálculos ideais, dependentes de amostragem, não medições universais de screenshot. A checagem algébrica executada em 1000 casos de tangentes/escala encontrou erro angular máximo 3,2e-15° entre as duas fórmulas compensadas fora do clamp. Não prova compilação GPU ou aparência. Um limite inicial proposto de 1e-4° permite regressão numérica sem exigir identidade de bytes.
+Ideal fixture: Pauta physical width 1.84, projected front 248 px, one full transition per pixel, weave disabled. Height 128 -> 95 corresponds to 8.053 degrees with the physical formula but only 0.06015 degrees in the uncompensated normalized helper; 128 -> 54 gives 17.604 degrees versus 0.13488 degrees. These are ideal sampling-dependent calculations, not universal screenshot measurements. The algebraic check executed across 1,000 tangent/scale cases found a maximum angular error of 3.2e-15 degrees between the two compensated formulas outside the clamp. This does not prove GPU compilation or appearance. A proposed initial limit of 1e-4 degrees permits numerical regression without requiring byte identity.
 
-### Fechamento: superfície visível e fronteiras compartilhadas
+### Closure: visible surfaces and shared boundaries
 
-Meça primeira interseção externa, não somente extremos de vértices. O papel auditado tem corte externo fonte `z=-7.5973`, capa externa `z=-7.9181`: recuo `.0202043104W`. O valor antes usado `z=-7.3398` era interior e superestimava o recuo. Head/tail em `|y|=10.1677` dão inset `.0195115192W`. As seções amostradas não sustentam concavidade no centro do corte.
+Measure the first external intersection, not only vertex extremes. The audited paper has source external cut `z=-7.5973`, external cover `z=-7.9181`: setback `.0202043104W`. Previously used `z=-7.3398` was interior and overestimated setback. Head/tail at `|y|=10.1677` give inset `.0195115192W`. Sampled sections do not support concavity at the cut's center.
 
-O pé da lombada tem ponte: inset desde a borda da capa ≈`.014681W` na esquerda nominal, `.000932W` em 1,2%W e `.019512W` em 2,5%W. É medição de seção inferior, não regra de simetria universal. Uma ponte original pode usar esses limites; o raio de chanfro deve ser identificado como proposto quando não foi medido.
+The spine foot has a bridge: inset from the cover edge approximately `.014681W` at nominal left, `.000932W` at 1.2%W, and `.019512W` at 2.5%W. This is a lower-section measurement, not a universal symmetry rule. An original bridge may use these limits; identify its bevel radius as proposed when unmeasured.
 
-Testar cada mesh fechado **e** a união visível entre meshes. As fronteiras da tampa e do bevel precisam compartilhar a mesma discretização antes da deformação: muitos vértices na tampa e um segmento reto longo no bevel abrem uma fresta no canal curvo. Soldar só as normais ou usar DoubleSide não reconstrói o volume. Separar três verificações: fechamento/orientação das arestas e triângulos não degenerados; primeiro contato externo e sobreposição entre peças; direção/continuidade das normais. Uma malha fechada pode continuar com perfil ou reflexo incorretos.
+Test each closed mesh **and** the visible union between meshes. Cap and bevel boundaries must share the same discretization before deformation: many cap vertices with one long straight bevel segment open a gap at a curved channel. Welding normals alone or using DoubleSide does not reconstruct volume. Separate three checks: edge closure/orientation and nondegenerate triangles; first external contact and overlap between pieces; normal direction/continuity. A closed mesh can still have an incorrect profile or reflection.
 
-Verificar raios oblíquos de frente/verso, alto/baixo, concentrados na junção suspeita. Historicamente, 400 raios verticais inferiores passaram no Pauta, mas um raio oblíquo revelou um filete branco. O reparo manteve a discretização compartilhada; o polimento posterior trocou o leque central da ponte por faixas que acompanham a parede lateral. Passaram 841 raios na região antiga e o fechamento das quatro malhas. Lados, verso e cortes receberam evidência visual própria no [caso aprovado](book-polish-case-study.md). Quantidade de raios sozinha não prova cobertura de todas as direções ou proporções.
+Check oblique rays from front/back and above/below, concentrated at the suspect junction. Historically, 400 lower vertical rays passed in Pauta, but an oblique ray exposed a white sliver. The repair retained shared discretization; later polishing replaced the bridge's central fan with strips following the side wall. The former region passed 841 rays, and all four meshes passed closure checks. Sides, back, and cuts received their own visual evidence in the [approved case](book-polish-case-study.md). Ray count alone does not prove coverage of every direction or proportion.
 
-Para cada um dos seis padrões, separe forma, espaçamento, máscara, sinal do relevo, borda e escala física. Capture difuso e height isolados, depois luz rasante em frente/lateral/verso. Linha escura pintada e cavidade não são equivalentes. Defina tolerâncias sobre perfis e sombras; igualdade de quantidade de vértices não é critério. Reconstitua geometria original a partir de perfis mensuráveis, sem incorporar arrays proprietários.
+For each of the six patterns, separate shape, spacing, mask, relief sign, border, and physical scale. Capture diffuse and height channels separately, then grazing light at front/side/back. A painted dark line and a cavity are not equivalent. Define tolerances over profiles and shadows; equal vertex counts are not a criterion. Reconstruct original geometry from measurable profiles without incorporating proprietary arrays.
 
-### Objetos articulados: localizar a superfície e preservar o encaixe
+### Articulated objects: locate the surface and preserve the fit
 
-Quando “a lombada” parecer uma tira ou a capa engolir as folhas, identifique primeiro a peça visível: corte do miolo, pele externa da dobra, forro, aro e canto livre podem se sobrepor na projeção. Uma vista anotada ou isolamento temporário por cor reduz a ambiguidade. Verifique frente e verso; corrigir uma única vista não estabelece que a fronteira compartilhada esteja certa.
+When "the spine" looks like a strip or the cover swallows the pages, first identify the visible part: page-block cut, outer fold skin, lining, rim, and free corner can overlap in projection. An annotated view or temporary color isolation reduces ambiguity. Check front and back; fixing one view does not establish a correct shared boundary.
 
-Capa envolvente é uma casca: exterior e interior unidos pela espessura, não um preenchimento da corda externa sobre o miolo. Faces, aros e terminais devem compartilhar contornos, espaço local e precisão. Dimensões locais fracionárias não são intercambiáveis com medidas inteiras nem com uma caixa já projetada por transform. Em objetos articulados, confira também a ligação e a tangente durante o movimento, não apenas em repouso.
+A wrapping cover is a shell: exterior and interior joined through thickness, not a fill of the outer chord over the page block. Faces, rims, and end caps must share contours, local space, and precision. Fractional local dimensions are not interchangeable with integer measurements or an already transform-projected box. In articulated objects, also check attachment and tangency during motion, not only at rest.
 
-Com geometria aprovada, sensação de pouca espessura pode vir de grão fraco ou luz uniforme. Separe amplitude/escala do grão da resposta angular. Em uma superfície segmentada, registre U por comprimento e calcule luz nos vértices compartilhados; reiniciar a textura ou dar uma cor constante diferente a cada faixa cria costuras. Uma extensão plana de textura só substitui terminais quando a superfície ocupada for equivalente. Raio zero, dimensões e luz do [caso do passaporte](passport-polish-case-study.md) são parâmetros locais, não defaults para outro objeto.
+With approved geometry, insufficient perceived thickness can come from weak grain or uniform lighting. Separate grain amplitude/scale from angular response. On segmented surfaces, record U by length and calculate light at shared vertices; restarting the texture or assigning a different constant color to each strip creates seams. A flat texture extension replaces end caps only when occupied surfaces are equivalent. Zero radius, dimensions, and lighting in the [passport case](passport-polish-case-study.md) are local parameters, not defaults for another object.
 
-Meça transformação rígida, deformação e pintura separadamente, mantendo todas as escritas na conta total. Atualize consumidores diretos somente quando seus dados mudarem; confirme ausência de trabalho em repouso. Uma máscara custosa em centenas de superfícies não justifica proibir máscaras em qualquer UI. Replay Node e intervalos RAF não medem GPU/FPS; confirme separadamente a percepção no renderer.
+Measure rigid transformation, deformation, and painting separately while retaining all writes in the total count. Update direct consumers only when their data changes; confirm no work at rest. A costly mask across hundreds of surfaces does not justify banning masks in all UI. Node replay and RAF intervals do not measure GPU/FPS; confirm perception separately in the renderer.
 
-## 5. Metal, papel e cor têm caminhos próprios
+## 5. Metal, paper, and color have their own paths
 
-**Composição:** registre qual operando escolhe o ramo de cada mistura. Overlay não é comutativo: `overlay(grão, pigmento)` pode dar outro resultado que `overlay(pigmento, grão)`. No material auditado, o grão decide multiply/screen; trocar os operandos altera a distribuição de luz sem mudar o hex. Teste a expressão instalada no shader com canais escuros/claros e amostras intermediárias antes de compensar exposição.
+**Composition:** record which operand chooses each blend branch. Overlay is not commutative: `overlay(grain, pigment)` can differ from `overlay(pigment, grain)`. In the audited material, grain decides multiply/screen; swapping operands changes light distribution without changing hex values. Test the installed shader expression using dark/light channels and intermediate samples before compensating exposure.
 
-**Foil da referência:** máscara somente na marca; campo 2D com seis stops dourados e iluminação radial. Seno/cosseno usam normal perturbada e posição de vista não normalizada, detalhe 2.2 e tamanho UV (.14,−.19). Mistura .6; especular base .04 + cobertura×1.72. Copiar números para uma rampa de duas cores ou normalizar a posição de vista altera o percurso do brilho. Escalar a malha exige compensar coordenadas em unidades físicas.
+**Reference foil:** mask only on the mark; a 2D field with six gold stops and radial lighting. Sine/cosine use perturbed normals and unnormalized view position, detail 2.2 and UV size (.14,-.19). Blend .6; base specular .04 + coverage x 1.72. Copying numbers into a two-color ramp or normalizing view position changes the shine path. Scaling the mesh requires compensating coordinates in physical units.
 
-Em uma máscara linear de cobertura, região sem metal deve ser zero verdadeiro e antialias deve preservar valores entre 0 e 1. Distinga cobertura, valor codificado e resultado do consumidor: `10/255≈0,0392` é zerado por `step(.1,mask)`, portanto fundo não nulo sozinho não prova halo nesse caminho; o mesmo threshold destrói coberturas intermediárias. Remover o threshold exige também corrigir o fundo ou decodificar um offset comprovado. Especular base e contribuição mascarada são termos separados.
+In a linear coverage mask, nonmetal regions must be true zero and antialiasing must preserve values between 0 and 1. Distinguish coverage, encoded value, and consumer result: `10/255 ~= 0.0392` becomes zero through `step(.1,mask)`, so a nonzero background alone does not prove a halo on that path; the same threshold destroys intermediate coverage. Removing the threshold also requires fixing the background or decoding a proven offset. Base specular and masked contribution are separate terms.
 
-Ao extrair um campo de reflexão do atlas, derive escala e orientação a partir do recorte e do `flipY` real das texturas. Na correção Pauta, ambos os `CanvasTexture` usam `flipY=true`: o V separado passou a `1−(.19/.197)×(.5+.5×cos)`, evitando uma inversão dupla. Essa fórmula pertence àquele recorte; para outro atlas, teste os cantos de origem/destino e derive sua transformação. Contar inversões no código sem compor upload, recorte e amostragem não determina a orientação final.
+When extracting a reflection field from the atlas, derive scale and orientation from the crop and actual texture `flipY`. In the Pauta correction, both `CanvasTexture` instances use `flipY=true`: separate V became `1-(.19/.197)*(.5+.5*cos)`, avoiding a double inversion. That formula belongs to that crop; for another atlas, test source/destination corners and derive its transformation. Counting code inversions without composing upload, crop, and sampling does not determine final orientation.
 
-Compare poses `yaw=-60,-30,0,30,60`, `pitch=0,28.65`, com luz e calibração constantes. Registre cor média, centroide do highlight e ordem dos máximos da mesma máscara. A forma de uma marca própria é adaptação de identidade; avalie a função óptica com uma máscara de teste autorizada. Não invente uma tolerância de pixels após olhar o resultado.
+Compare poses `yaw=-60,-30,0,30,60`, `pitch=0,28.65`, under constant lighting and calibration. Record mean color, highlight centroid, and maxima order for the same mask. An original brand mark's shape is an identity adaptation; evaluate optical function with an authorized test mask. Do not invent pixel tolerances after viewing the result.
 
-**Papel da referência:** pigmento #f6f1e5 em região lisa do atlas, no mesmo material do restante da malha. Base difusa/bump, shininess 8 e refletividade .04 continuam ativos onde custom bump é neutro e foil é zero. Isso não pede listras de folhas. Compare corte frontal/superior/inferior em yaw 0/45/90; papel sem grão, shininess 1 e especular zero constitui outro material. Se as estrias persistirem após corrigir o grão, verifique a dimensionalidade UV das bordas descrita acima, mantendo material/luz constantes para isolar a causa.
+**Reference paper:** pigment #f6f1e5 in a smooth atlas region, using the same material as the rest of the mesh. Base diffuse/bump, shininess 8, and reflectiveness .04 remain active where custom bump is neutral and foil is zero. This does not call for page stripes. Compare front/top/bottom cuts at yaw 0/45/90; grainless paper with shininess 1 and zero specular is another material. If streaking persists after grain correction, check edge UV dimensionality described above, holding material/light constant to isolate the cause.
 
-**Cor:** registre pigmento, espaço das texturas, conversões e saída. A referência usa mapas `NoColorSpace`, saída linear sRGB e compensação de luz baseada na normal frontal de repouso, limitada a .62–1.5. “Exposição .7” aqui não é `toneMappingExposure`. Ao girar para inspeção, manter a calibração inicial evita reiluminar cada face e perder a diferença entre frente e verso. Nome do hex sozinho não determina a aparência.
+**Color:** record pigment, texture spaces, conversions, and output. The reference uses `NoColorSpace` maps, linear sRGB output, and light compensation based on the resting frontal normal, limited to .62-1.5. "Exposure .7" here is not `toneMappingExposure`. While rotating for inspection, retaining initial calibration avoids relighting each face and losing front/back differences. A hex name alone does not determine appearance.
 
-## 6. Tipografia de capa e lombada
+## 6. Cover and spine typography
 
-Confirme o arquivo de fonte selecionado por `@font-face`, eixos, peso, estado de carregamento e métricas antes de rasterizar. O renderer usa Inter Variable, variante `inter-latin-opsz-normal` de 72920 bytes; o `inter-latin-wght-normal` de 48256 bytes presente na extensão é outro asset. “Inter” não identifica a variante. O perfil registra o hash da variante do renderer.
+Confirm the actual font file selected by `@font-face`, axes, weight, loading state, and metrics before rasterizing. The renderer uses Inter Variable, `inter-latin-opsz-normal` variant at 72,920 bytes; the extension's `inter-latin-wght-normal` at 48,256 bytes is a different asset. "Inter" does not identify the variant. The profile records the renderer variant's hash.
 
-Frente: título .078 da largura frontal, Inter 500, até três linhas; metadado .34 do tamanho do título; inset .105 da largura. Lombada e verso têm composição própria. Na lombada auditada:
+Front: title .078 of front width, Inter 500, up to three lines; metadata .34 of title size; inset .105 of width. Spine and back have their own compositions. On the audited spine:
 
-- Título/contador aparecem somente no difuso; não criam relevo customizado. A marca inferior tem máscara/relevo/foil.
-- Centralização usa `actualBoundingBoxAscent/Descent`, compensação UV e rotação.
-- Início do título ≈5.2241% da altura do strip; fonte ≈3.2444% dessa altura.
-- Medir e reservar contador + marca antes de aplicar reticências. Não comprimir glifos com `fillText(..., maxWidth)` como substituto de layout.
+- Title/counter appear only in diffuse; they do not create custom relief. The lower mark has mask/relief/foil.
+- Centering uses `actualBoundingBoxAscent/Descent`, UV compensation, and rotation.
+- Title start approximately 5.2241% of strip height; font approximately 3.2444% of that height.
+- Measure and reserve counter + mark before ellipsizing. Do not compress glyphs with `fillText(..., maxWidth)` instead of laying them out.
 
-Fixture: `Teste / 01288`, depois nome longo com contador de 5 e 8 dígitos. Compare atlas plano e objeto inclinado. No canal custom height da lombada, texto deve permanecer neutro #808080 fora da marca se esse for o mecanismo escolhido; trama base é outro canal. Baseline/centragem podem usar tolerância inicial proposta de ±1 pixel de textura, explicitamente distinta de CSS px.
+Fixture: `Teste / 01288`, then a long name with 5- and 8-digit counters. Compare the flat atlas and tilted object. In the spine custom-height channel, text must remain neutral #808080 outside the mark if that is the selected mechanism; base weave is another channel. Baseline/centering may use a proposed initial tolerance of +/-1 texture pixel, explicitly distinct from CSS px.
 
-## 7. Resolução em três etapas
+## 7. Resolution in three stages
 
-Registre separadamente **atlas → buffer da cena → saída final**. “2×” sem denominador é ambíguo.
+Record **atlas -> scene buffer -> final output** separately. "2x" without a denominator is ambiguous.
 
-Na referência desktop auditada, `LibraryBook` passa `min(DPR,2)` e o motor aplica supersampling adicional 2 antes da cópia. Em DPR2, o buffer WebGL chega a 4 pixels por CSS px em cada eixo e o Canvas2D de saída a 2. O BookObject revisado usa `resolution:'reference'` por padrão: multiplicador `renderScale * clamp(DPR,.25,2)`, com `renderScale` 1–2 (padrão 2) e limite 2048 por eixo. `resolution:'economy'` usa somente `renderScale`. O detalhe entrega WebGL diretamente, sem a cópia/downsample Canvas2D da referência: é uma adaptação de apresentação e orçamento, não igualdade do pipeline. A revisão anterior usava 2 por CSS px independentemente do DPR; essa diferença é baseline histórico, não descrição do candidato atual.
+In the audited desktop reference, `LibraryBook` passes `min(DPR,2)` and the engine applies an additional supersampling factor of 2 before copying. At DPR 2, the WebGL buffer reaches 4 pixels per CSS px on each axis and the Canvas2D output reaches 2. Revised BookObject defaults to `resolution:'reference'`: multiplier `renderScale * clamp(DPR,.25,2)`, with `renderScale` 1-2 (default 2) and a 2048 limit per axis. `resolution:'economy'` uses only `renderScale`. The detail view delivers WebGL directly without the reference's Canvas2D copy/downsample: this is a presentation/budget adaptation, not pipeline equality. The previous revision used 2 per CSS px independently of DPR; that difference is historical baseline, not a description of the current candidate.
 
-Meça rect CSS, tamanho do canvas, drawingBuffer, DPR, resolução do atlas e escala após limites em DPR1 e DPR2. Compare fontes inclinadas, diagonais e padrões no mesmo tamanho projetado. Subir 2×→4× quadruplica a quantidade de pixels do buffer; avalie custo antes de adotá-lo. Não prometa FPS, memória exata ou resolução de todos os defeitos só por aumentar o buffer.
+Measure CSS rect, canvas size, drawingBuffer, DPR, atlas resolution, and capped scale at DPR 1 and DPR 2. Compare tilted fonts, diagonals, and patterns at the same projected size. Increasing 2x -> 4x quadruples buffer pixels; evaluate cost before adoption. Do not promise FPS, exact memory, or resolution of every defect merely by increasing the buffer.
 
-## 8. Gesto e transição fazem parte do objeto
+## 8. Gestures and transitions are part of the object
 
-O perfil registra hover 11°/7°, arraste .42° por px, suavização 120ms, dt limitado a 64ms e poses. Esses valores precisam das mesmas convenções de eixo/Euler, origem do gesto, viewport, estado de captura e tratamento de release/leave. Compare trajetórias com coordenadas/tempos iguais; uma screenshot não demonstra movimento.
+The profile records hover 11/7 degrees, drag .42 degrees per px, 120 ms smoothing, dt capped at 64 ms, and poses. These values require matching axis/Euler conventions, gesture origin, viewport, capture state, and release/leave handling. Compare trajectories with identical coordinates/times; a screenshot does not demonstrate motion.
 
-A referência desktop interpola posição/escala, pose 3D e cor do tecido durante 460ms. FLIP 2D isolado não reproduz essa transição. Verifique interrupção, scroll/resize, troca de cor em movimento, toque, teclado e reduced-motion. No mobile, separar rolagem de arraste e fornecer controles de pose; declarar adaptação quando o gesto mudar.
+The desktop reference interpolates position/scale, 3D pose, and cloth color over 460 ms. Isolated 2D FLIP does not reproduce that transition. Verify interruption, scroll/resize, color changes during motion, touch, keyboard, and reduced motion. On mobile, separate scrolling from dragging and provide pose controls; declare adaptation when gestures change.
 
-## 9. Ordem de implementação e aceite
+## 9. Implementation and acceptance order
 
-1. Fixar build/hash, fonte carregada, conteúdo, paleta, pose, luz de repouso e DPR; desabilitar variação aleatória nas fixtures. Guardar baseline antes de editar.
-2. Para cada discrepância, registrar sintoma → mecanismo suspeito → medida que o distingue → menor patch. Corrigir silhueta/canal/normais antes de compensar luz; verificar UV e escala física antes de trocar textura ou bump.
-3. Criar regressão que falhe no defeito e passe no patch. Separar álgebra/material, geometria real sem GPU, ciclo de vida e imagem renderizada; uma classe não substitui outra. Alterações de UV devem preservar posição/normal, e de material devem preservar os canais não envolvidos. Para proteger um arco, medir posições do perfil: um chanfro linear também pode ter normais suavizadas intermediárias. Confirmar que reverter somente o mecanismo corrigido faz a regressão falhar.
-4. Comparar novamente em poses estabilizadas e condições iguais; aguardar o estado final, não um timeout arbitrário durante interpolação. Inspecionar todas as faces relevantes, cortes e junções, acrescentando vistas rasantes onde apareceram defeitos. A matriz de 32 poses do caso Pauta é exemplo de cobertura por amostragem, não número universal nem prova de infinitos ângulos.
-5. Medir viewport CSS, rect do host, DPR e buffers **observados**. Se um override não se aplicar, ajustar o harness ou declarar o limite; um iframe com viewport CSS medido pode validar responsividade, mas não toque, hardware mobile ou aplicativo nativo. Corrigir erros do harness sem atribuí-los ao produto.
-6. Conferir resolução/custo e preservar gesto, fallback, reduced-motion e descarte. Depois do último patch, vincular código, testes e capturas por hash; se diferirem só em comentário, registrar e verificar essa diferença. Revalidar as dimensões afetadas em vez de reutilizar aprovação de uma versão anterior.
+1. Fix build/hash, loaded font, content, palette, pose, resting light, and DPR; disable random variation in fixtures. Save a baseline before editing.
+2. For each discrepancy, record symptom -> suspected mechanism -> discriminating measurement -> smallest patch. Correct silhouette/channel/normals before compensating lighting; check UVs and physical scale before changing texture or bump.
+3. Create a regression that fails on the defect and passes on the patch. Separate algebra/material, actual GPU-free geometry, lifecycle, and rendered image; one category does not replace another. UV changes must preserve position/normal, and material changes must preserve uninvolved channels. To protect an arc, measure profile positions: a linear bevel can also have intermediate smoothed normals. Confirm that reverting only the corrected mechanism makes the regression fail.
+4. Compare again in stabilized poses and equal conditions; wait for final state, not an arbitrary timeout during interpolation. Inspect every relevant face, cut, and junction, adding grazing views where defects appeared. Pauta's 32-pose matrix is sampled coverage, not a universal count or proof of infinite angles.
+5. Measure **observed** CSS viewport, host rect, DPR, and buffers. If an override does not apply, adjust the harness or declare the limit; an iframe with measured CSS viewport can validate responsiveness, not touch, mobile hardware, or native applications. Correct harness errors without attributing them to the product.
+6. Check resolution/cost and preserve gestures, fallback, reduced motion, and disposal. After the last patch, link code, tests, and captures by hash; if they differ only in a comment, record and verify that difference. Revalidate affected dimensions instead of reusing an earlier version's approval.
 
-Para cada dimensão, publicar referência, implementação, medida, tolerância acordada, resultado e pendência. Não alargar a tolerância para aprovar um patch que falhou; revisar a causa e corrigir. Manter diferenças intencionais de marca e adaptação explícitas. Aprovação estética do usuário é aceite daquele resultado, não identidade de pixels, prova de todas as variantes ou benchmark de desempenho.
+For every dimension, publish reference, implementation, measurement, agreed tolerance, outcome, and pending items. Do not widen tolerance to approve a failing patch; revisit the cause and correct it. Keep intentional branding/adaptation differences explicit. User aesthetic approval accepts that result; it is not pixel identity, proof of all variants, or a performance benchmark.
 
-### Evidência do ciclo aprovado
+### Evidence from the approved cycle
 
-O [caso de polimento](book-polish-case-study.md) reúne o baseline `0d34c0b4726e`, a revisão final `17bf1f572d0e`, 32 poses, testes e revisão independente. A versão final passou 176 testes Pauta e inspeção responsiva em viewports CSS observados de 390×844 e 1280×900. Aberturas e estrias fortes não reapareceram nas poses registradas; persistem pequenas diferenças de aro, junção papel/lombada e marca. O aumento de 25.132 para 33.436 triângulos foi contabilizado, sem benchmark GPU. Esses números documentam aquele ciclo; novas adaptações devem gerar evidência própria.
+The [polishing case](book-polish-case-study.md) gathers baseline `0d34c0b4726e`, final revision `17bf1f572d0e`, 32 poses, tests, and independent review. The final version passed 176 Pauta tests and responsive inspection at observed CSS viewports of 390x844 and 1280x900. Gaps and strong streaks did not recur in recorded poses; small differences remain in the rim, paper/spine junction, and brand mark. The increase from 25,132 to 33,436 triangles was accounted for without a GPU benchmark. These numbers document that cycle; new adaptations must produce their own evidence.

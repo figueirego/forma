@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { allowedUrl, requestBytes, requestJson } from './lib/media-network.mjs';
 
 const SCHEMA = 'forma-media-search/v1';
-export const RIGHTS_NOTE = 'Provider-reported licence: verify the source, attribution, share-alike and any personality, trademark or territorial restrictions before publishing. Contextual media must not be presented as the client’s own product, team or work.';
+export const RIGHTS_NOTE = 'Provider-reported licence: verify the source, attribution, share-alike and any personality, trademark or territorial restrictions before publishing. Contextual media must not be presented as the client\'s own product, team or work.';
 const SOURCES = ['openverse', 'commons', 'aic', 'met'];
 const clean = value => String(value ?? '').replace(/<[^>]*>/g, ' ').replace(/[\u0000-\u001f\u007f-\u009f]/g, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/\s+/g, ' ').trim().slice(0, 2000);
 const positive = value => Number.isFinite(Number(value)) && Number(value) > 0 ? Number(value) : null;
@@ -132,8 +132,8 @@ async function met(query, options, getJson) {
 }
 const adapters = { openverse, commons, aic, met };
 export async function searchMedia(query, { sources = ['openverse', 'commons', 'aic', 'met'], type = 'image', limit = 5, pages = 2 } = {}, { getJson = requestJson, now = () => new Date().toISOString() } = {}) {
-  if (typeof query !== 'string' || !query.trim() || query.length > 300) throw new Error('Query must contain 1–300 characters');
-  if (!['image', 'video'].includes(type) || !Number.isInteger(limit) || limit < 1 || limit > 20 || !Number.isInteger(pages) || pages < 1 || pages > 3) throw new Error('Invalid type, limit (1–20), or pages (1–3)');
+  if (typeof query !== 'string' || !query.trim() || query.length > 300) throw new Error('Query must contain 1-300 characters');
+  if (!['image', 'video'].includes(type) || !Number.isInteger(limit) || limit < 1 || limit > 20 || !Number.isInteger(pages) || pages < 1 || pages > 3) throw new Error('Invalid type, limit (1-20), or pages (1-3)');
   if (!Array.isArray(sources) || !sources.length || sources.some(x => !SOURCES.includes(x) || (type === 'video' && x !== 'commons'))) throw new Error('Unsupported source for media type; video supports Commons');
   const providers = await Promise.all([...new Set(sources)].map(async provider => {
     const deadline = Date.now() + 60000;
@@ -222,7 +222,7 @@ export function readCredits(directory) {
     return data;
   });
 }
-export const USAGE = `Forma media — Node 18+, no dependencies or API keys
+export const USAGE = `Forma media - Node 18+, no dependencies or API keys
   node media.mjs "query" [--source all|openverse|commons|aic|met] [--type image|video]
       [--limit 5] [--pages 2] [--json] [--out results.json]
   node media.mjs --get <id> --from results.json --to assets [--json]
@@ -265,9 +265,9 @@ export async function main(argv = process.argv.slice(2)) {
   else if (options.credits) result = readCredits(options.to);
   else { result = await searchMedia(options.query, options); if (options.out) writeExclusive(options.out, result); }
   if (options.json) console.log(JSON.stringify(result, null, 2));
-  else if (options.credits) for (const item of result) console.log(`${clean(item.title)} — ${clean(item.author)}; ${clean(item.license?.code)} ${clean(item.license?.version)}; ${clean(item.pageUrl)}; ${clean(item.license?.url)}; file: ${clean(item.file)}`);
+  else if (options.credits) for (const item of result) console.log(`${clean(item.title)} - ${clean(item.author)}; ${clean(item.license?.code)} ${clean(item.license?.version)}; ${clean(item.pageUrl)}; ${clean(item.license?.url)}; file: ${clean(item.file)}`);
   else if (options.get) console.log(`Downloaded ${result.mediaFile}\nCredit: ${result.creditFile}\n${RIGHTS_NOTE}`);
-  else { console.log(`Search: ${result.status} (${result.items.length} results)\n${RIGHTS_NOTE}`); for (const provider of result.providers) console.log(`${provider.provider}: ${provider.status}${provider.error ? ` — ${provider.error}` : ''}${provider.warnings.length ? ` — ${provider.warnings.join('; ')}` : ''}`); for (const item of result.items) console.log(`\n${item.id} — ${item.title}\n${item.author} · ${item.license.code}\nSource: ${item.pageUrl}\nDownload supported: ${item.downloadable}`); }
+  else { console.log(`Search: ${result.status} (${result.items.length} results)\n${RIGHTS_NOTE}`); for (const provider of result.providers) console.log(`${provider.provider}: ${provider.status}${provider.error ? ` - ${provider.error}` : ''}${provider.warnings.length ? ` - ${provider.warnings.join('; ')}` : ''}`); for (const item of result.items) console.log(`\n${item.id} - ${item.title}\n${item.author} | ${item.license.code}\nSource: ${item.pageUrl}\nDownload supported: ${item.downloadable}`); }
   return result.status === 'error' ? 1 : 0;
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

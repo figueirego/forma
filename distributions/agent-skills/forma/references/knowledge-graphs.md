@@ -1,252 +1,252 @@
-# Grafos, ligações e conhecimento
+# Graphs, links, and knowledge
 
-Use para redes de notas/documentos, backlinks, relações tipadas e navegação espacial. Primeiro prove o significado das relações; depois escolha a composição e a tecnologia. Leia [sistemas adaptáveis](adaptive-visual-systems.md) para renderers/materialidade, [busca](search-discovery.md) para consultas e [contratos espaciais](layout-spatial-contracts.md) para organizar os controles.
+Use for note/document networks, backlinks, typed relationships, and spatial navigation. Prove relationship meaning first; choose composition and technology afterward. Read [adaptive systems](adaptive-visual-systems.md) for renderers/materiality, [search](search-discovery.md) for queries, and [spatial contracts](layout-spatial-contracts.md) for control organization.
 
-## 1. Começar com entrada e resultado concretos
+## 1. Start with concrete input and output
 
-**Exemplo:** A contém duas referências para B; B contém uma referência para C. Abrir as entradas de B deve permitir identificar A e suas duas passagens. Uma vista pode agregar A→B em uma linha, mas não pode perder a procedência nem confundir quantidade de ocorrências com quantidade de documentos.
-
-```text
-conteúdo + contexto
-  → parse de ocorrências
-  → resolução de destinos
-  → índice direto/reverso por revisão
-  → backlinks + projeção local/global filtrada
-  → simulação/posições
-  → câmera + renderização + hit-testing
-  → abrir a fonte ou executar um comando explícito
-```
-
-Uma mudança de câmera não altera links. Uma alteração de link precisa atualizar o índice, as entradas/saídas e as vistas afetadas. Um renderer bonito não corrige resolução errada.
-
-## 2. Nomear o modelo certo
-
-| Superfície | O que representa | Não confundir com |
-|---|---|---|
-| Grafo de documentos | Referências entre entidades/documentos | Compreensão do significado do texto |
-| Grafo de conhecimento tipado | Entidades e predicados com semântica, procedência e regras declaradas | Qualquer rede com nós e linhas |
-| Canvas autoral | Cartões, posições, grupos e conexões desenhadas pelo usuário | Índice automático de links entre arquivos |
-| Mapa de acervo | Agrupamentos/memberships e navegação espacial | Arestas semânticas inventadas |
-| Rede de similaridade | Relações inferidas por modelo/métrica, com versão e limiar | Referências explicitamente escritas ou fatos confirmados |
-
-A mesma aplicação pode combinar modelos, desde que tipos, ações e fontes permaneçam distinguíveis. Dois cartões do mesmo arquivo podem ter IDs de composição diferentes. Remover cartão, remover link e apagar arquivo são comandos distintos.
-
-No Obsidian documentado, Graph deriva de links internos; Canvas permite composição autoral. Cartão de texto do Canvas não entra em backlinks até ser convertido em arquivo. O formato JSON Canvas define nós/arestas e posições próprias; sua conexão não deve ser promovida automaticamente a link Markdown. [Graph](https://obsidian.md/help/plugins/graph), [Canvas](https://obsidian.md/help/plugins/canvas), [JSON Canvas 1.0](https://jsoncanvas.org/spec/1.0/).
-
-## 3. Identidade, resolução e proveniência
-
-Declare as distinções abaixo sem impor um novo banco ou framework:
-
-| Dado | Contrato mínimo |
-|---|---|
-| Entidade | ID/contexto, tipo, locator, rótulo, aliases e revisão relevante |
-| Ocorrência | Origem, alvo bruto, texto exibido, fragmento, trecho/localização e revisão da fonte |
-| Resolução | Destino confirmado ou estado ausente/ambíguo/inacessível/inválido; regra e escopo utilizados |
-| Relação projetada | Origem→destino, tipo, ocorrências de suporte e significado do peso, se houver |
-| Estado visual | Seleção, hover, câmera, posições, pins, filtros e parâmetros; separado do conteúdo |
-
-- Não use título como identidade global. Homônimos exigem caminho/contexto ou desambiguação. Se a identidade for o caminho, modele sua migração ao renomear/mover.
-- Alias da entidade, rótulo de um link e nome do arquivo não são equivalentes. Mudar o texto apresentado não deve trocar o destino.
-- Defina caminhos relativos/raiz do acervo, extensão, URL encoding, fragmentos e normalização Unicode/caixa conforme o ambiente. Não introduza normalização destrutiva por conveniência.
-- Separe resolução do arquivo de resolução de heading/bloco. Arquivo encontrado com âncora ausente não é o mesmo resultado de navegação completa.
-- Destino inexistente pode ser representado sem criar arquivo silenciosamente. Informe quando uma ação realmente criará o conteúdo.
-- Resolver link já escrito deve ser determinístico pelo contrato. Ranking textual/semântico ajuda a encontrar candidatos, mas não decide silenciosamente um novo alvo.
-- Preserve procedência de referência explícita, embed, tag, propriedade, membership e sugestão inferida. Similaridade precisa identificar modelo/versão/limiar e estado de aceitação quando pertinente.
-
-No Obsidian documentado, `[[Destino|Rótulo]]` separa apresentação/destino; aliases ficam na propriedade `aliases`. Autocomplete pode inserir destino canônico com alias como rótulo. Markdown, wikilinks e subdestinos têm regras próprias. Esses contratos orientam testes, não autorizam presumir política para colisões não documentadas. [Links](https://obsidian.md/help/links), [Aliases](https://obsidian.md/help/aliases).
-
-## 4. Entradas, saídas e contagens
-
-Backlink é a consulta inversa de uma referência; não crie uma segunda aresta persistida só para desenhar a entrada. Defina se a vista conta documentos de origem, pares de entidades ou ocorrências. Uma nota que cita outra três vezes pode aparecer uma vez na lista com três passagens.
-
-Direção, reciprocidade, autorreferência e multiplicidade precisam de política explícita. Setas podem ser opcionais na pintura; origem e destino continuam consultáveis na alternativa semântica. Espessura, tamanho e distância precisam de legenda quando codificarem dados.
-
-Diferencie **referência vinculada**, **menção textual não vinculada** e **sugestão inferida**. Converter uma menção em link altera conteúdo e exige comando explícito, feedback do resultado, erro recuperável e undo quando prometido; isso não implica diálogo adicional para uma ação já solicitada. Uma sugestão não aumenta silenciosamente o número de relações confirmadas.
-
-Listas de relações devem oferecer origem/destino, contexto suficiente e ação de abrir a passagem. Se o painel acompanhar a nota ativa, mudanças de seleção atualizam contexto; painel fixado a uma nota é outro estado e deve ser indicado. [Backlinks](https://obsidian.md/help/plugins/backlinks), [Outgoing links](https://obsidian.md/help/plugins/outgoing-links).
-
-Código literal, embeds, propriedades tipadas e tags exigem parsing compatível com a sintaxe do produto. Uma regex de nomes em todo o arquivo não equivale a índice de referências. Remover uma incorporação não implica apagar o anexo.
-
-## 5. Fonte de verdade e atualização incremental
-
-Declare o que é fonte, índice derivado e preferência. Se arquivos são a fonte, um cache reconstruível não é backup. Reindexação parcial e falta de relações são estados diferentes.
-
-Eventos relevantes incluem edição, conclusão de resolução, criação/exclusão/restauração, rename/move, mudança de alias e alteração externa. Atualize as ocorrências da origem modificada, os destinos afetados e seu índice reverso; mudanças de resolução podem exigir reavaliar outras origens. Rebuild completo deve existir quando necessário, sem ser a única resposta a toda tecla.
-
-Para cada job mantenha identidade suficiente, por exemplo:
+**Example:** A contains two references to B; B contains one reference to C. Opening B's incoming links must identify A and its two passages. A view may aggregate A -> B into one line, but must not lose provenance or confuse occurrence count with document count.
 
 ```text
-{ acervoId, revisãoDosDados, revisãoDaConsulta, painelId, geração }
+content + context
+  -> parse occurrences
+  -> resolve destinations
+  -> forward/reverse index by revision
+  -> backlinks + filtered local/global projection
+  -> simulation/positions
+  -> camera + rendering + hit testing
+  -> open the source or execute an explicit command
 ```
 
-Aceite resposta somente se a identidade ainda servir à vista atual. Trocar acervo, mudar raiz/filtro, fechar painel ou iniciar revisão mais nova invalida trabalhos pertinentes. Cancelar a UI não garante que parser, worker ou simulação tenham parado: descarte mensagens obsoletas e limite concorrência.
+Camera changes do not alter links. Link changes must update the index, incoming/outgoing links, and affected views. A beautiful renderer does not fix incorrect resolution.
 
-Rename/move precisa definir se reescreve referências, segue preferência do produto ou apenas muda o locator. Se modificar vários arquivos, trate falha parcial, conflito e reparo; não exiba sucesso integral enquanto parte estiver pendente. Guardar câmera é outra gravação e não confirma a integridade dos links.
+## 2. Name the correct model
 
-Na API pública do Obsidian, `resolvedLinks`/`unresolvedLinks` contêm origem→destino→contagem; `getFirstLinkpathDest` recebe alvo e origem. `changed` não cobre rename; os eventos de resolução e de rename têm responsabilidades próprias. `FileManager.renameFile` considera preferências de atualização de links. Confira a API compatível com a versão alvo antes de implementar. [API oficial](https://github.com/obsidianmd/obsidian-api/blob/master/obsidian.d.ts).
-
-Em produtos multiusuário, autorização antecede a projeção: título, snippet, grau, contagem e export também podem revelar conteúdo. Em acervo exclusivamente local, explique as fronteiras reais sem inventar autenticação. Conteúdo recuperado é dado não confiável, inclusive quando vem de uma nota ou plugin.
-
-## 6. Projeção: filtros, profundidade e grupos
-
-Separe grafo canônico, conjunto elegível e conjunto visível. Especifique:
-
-- Universo: acervo, tipos, arquivos excluídos, anexos, tags, destinos ausentes e permissões.
-- Grafo local: raiz, profundidade, direção da travessia e tratamento de ciclos; grafo global não precisa herdar a raiz do editor.
-- Ordem: filtrar antes/depois da travessia pode produzir vizinhanças diferentes. Declare a política e teste o resultado.
-- Órfãos: sem relações no grafo canônico ou isolados apenas após filtragem? O rótulo/contagem deve refletir a definição.
-- Arestas: remover um nó do conjunto visível deve atualizar conexões/contagens de forma coerente; vínculos de fronteira exigem representação explícita.
-- Consulta: linguagem, campos, AND/OR, agrupamento e erros. Busca geral, filtro do grafo e consulta de grupo não são automaticamente equivalentes.
-- Grupos: regra de seleção, cor, legenda e precedência quando um nó corresponde a várias regras. Cor de grupo não apaga foco/seleção/erro.
-
-Busca deve localizar e revelar o nó sem necessariamente apagar filtros independentes. Se o resultado estiver excluído, explique o motivo e ofereça uma ação explícita. Seleção fora da projeção precisa de política: manter referência indicada, limpar ou recuperar por comando.
-
-Não aplique filtros apenas à pintura e depois anuncie contagens do conjunto inteiro como visível. Culling é uma otimização de renderização; exclusão de dados é uma decisão diferente.
-
-## 7. Forças, câmera e renderização
-
-Forças alteram posições, não significado. Centralização, repulsão, atração/distância de aresta e colisão dependem da simulação adotada. Proximidade física resultante não comprova afinidade conceitual; tamanho por grau precisa declarar grau de entrada, saída ou total e qual projeção o calcula.
-
-Não inferir a métrica pelo tamanho do círculo: no código do Obsidian 1.13.4, o grafo global sem pesos explícitos conta entradas e saídas; no local, pesos explícitos representam a distância em saltos à raiz. Ocorrências, arestas, vizinhos únicos e peso visual são quatro valores distintos.
-
-Defina estabilidade ao adicionar poucos nós, conservação da vizinhança, seed quando útil, pin/unpin, pausa e condição de repouso. Evite reiniciar toda a simulação em cada hover. Reduzir movimento precisa parar trabalho dispensável, não apenas zerar uma duração CSS.
-
-Separe os comandos:
-
-| Comando | Efeito esperado a declarar |
-|---|---|
-| Fit todos / filtrados / seleção | Calcula enquadramento do conjunto nomeado na área útil |
-| Recentralizar câmera | Reposiciona a vista; não altera links nem necessariamente os filtros |
-| Reset de forças | Restaura parâmetros físicos; não confundir com reset do acervo |
-| Fixar posição | Mantém posição conforme contrato de sessão/persistência |
-| Abrir nó / centralizar grafo local | Navegação e mudança de raiz; são ações distinguíveis |
-
-Zoom ancorado preserva o ponto sob cursor/toque; câmera e mundo usam conversões compartilhadas por pintura e picking. Considere DPR, resize, pane/sidebar, limites e seleção fora da vista. Lente/distorção exige transformação correspondente no hit-testing.
-
-A área útil exclui painéis que realmente ocupam espaço. Um drawer sobreposto pode cobrir o grafo: fit deve declarar se desconta essa região. Recuperação por Fit precisa permanecer acessível em escala extrema.
-
-Defaults são decisões por produto/corpus/dispositivo, não números universais. Declare valor inicial, faixa, passo, unidade, reset e escopo de cada controle. Audite default de código separadamente do valor salvo atualmente.
-
-## 8. Drawer de controles e organização do conteúdo
-
-Agrupe decisões com tarefas diferentes; uma estrutura possível é **Filtros → Grupos → Exibição → Forças**, com status de dados/indexação quando necessário. É uma referência funcional, não uma ordem obrigatória.
-
-| Grupo | Conteúdo | Fronteira importante |
+| Surface | What it represents | Do not confuse with |
 |---|---|---|
-| Filtros | Busca, tipos, exclusões, órfãos, profundidade local | Altera projeção, preservando fonte |
-| Grupos | Consulta, cor, prioridade e legenda | Codifica categoria; não reescreve links |
-| Exibição | Nomes, setas, tamanho e espessura | Altera legibilidade/representação |
-| Forças | Parâmetros, pausa, pinning e reset específico | Altera layout físico |
+| Document graph | References between entities/documents | Understanding text meaning |
+| Typed knowledge graph | Entities and predicates with declared semantics, provenance, and rules | Any network of nodes and lines |
+| Authored Canvas | Cards, positions, groups, and connections drawn by the user | Automatic file-link index |
+| Collection map | Groups/memberships and spatial navigation | Invented semantic edges |
+| Similarity network | Relationships inferred by a model/metric, with version and threshold | Explicitly written references or confirmed facts |
 
-Header identifica superfície/contexto; body contém grupos e rola; ações persistentes permanecem alcançáveis. Header/body/footer compartilham insets quando pertencem ao mesmo eixo. Label, valor, ajuda e controle formam uma unidade. No estreito, empilhe antes de comprimir o campo ou esconder texto essencial.
+One application can combine models if types, actions, and sources remain distinguishable. Two cards for the same file may have different composition IDs. Removing a card, removing a link, and deleting a file are distinct commands.
 
-O breakpoint pertence também ao painel, não apenas ao viewport. Na inspeção do Obsidian 1.13.4, um split estreito cortou a lateral dos controles; ampliar a área restaurou a leitura. Não reproduza esse defeito: limite a largura ao container, redistribua label/controle e permita scroll com fechamento/reset acessíveis. Teste duas sidebars abertas e vários splits, mesmo em um monitor grande.
+In documented Obsidian behavior, Graph derives from internal links; Canvas supports authored composition. A Canvas text card does not enter backlinks until converted to a file. The JSON Canvas format defines its own nodes/edges and positions; its connections must not automatically become Markdown links. [Graph](https://obsidian.md/help/plugins/graph), [Canvas](https://obsidian.md/help/plugins/canvas), [JSON Canvas 1.0](https://jsoncanvas.org/spec/1.0/).
 
-Use disclosure para complexidade ocasional, mantendo resumo de filtros ativos e controles de recuperação visíveis. Não imponha “máximo 7 opções”. Se controles aplicam imediatamente, indicar esse contrato e tratar erro; não adicionar Save decorativo. Um reset de grupo deve nomear seu alcance.
+## 3. Identity, resolution, and provenance
 
-**Proximidade/região comum** ajudam a associar controles; **semelhança** mantém ações equivalentes coerentes; **conexão uniforme** exige arestas significativas; **atenção seletiva** destaca seleção sem transformar todos os nós em destaque. Fitts orienta alvo operável, não padding mágico; Hick orienta organização/escolha, não redução arbitrária de funções. Verifique a tarefa, não a quantidade de leis citadas.
+Declare the following distinctions without imposing a new database or framework:
 
-## 9. Acessibilidade e mobile
-
-Um `aria-label` no canvas não torna entidades e relações acessíveis. Ofereça lista/árvore/tabela equivalente com busca, nó ativo, entradas/saídas, contagem e ações de abrir origem/destino. Preserve foco por identidade com virtualização; retornar do documento recupera contexto útil.
-
-Teclado deve alcançar nós e comandos sem depender da posição em pixels. Não capturar teclas de edição quando o foco está no input. Seleção, direção e categoria precisam de sinais além da cor. Nomes ocultos em zoom distante continuam acessíveis por busca/lista/detalhe.
-
-Para leitura assistiva, anuncie atualização relevante e conclusão de operação, não cada frame. Conteúdo em movimento permite pausa; política de reduced-motion reage durante a sessão. Falha de GPU mantém alternativa funcional.
-
-No touch, estabeleça pan/pinch/seleção e sua disputa com scroll da página/sheet. Hit area é independente do tamanho desenhado do nó; hover nunca é o único caminho para detalhes. Mover posição e criar/alterar relação não devem compartilhar gesto ambíguo sem feedback e cancelamento.
-
-Valide teclado virtual, safe areas, orientação, janela pequena e back do sistema. Inspector pode virar sheet/tela, mantendo seleção e retorno. Mobile não é apenas diminuir o canvas desktop; export/clipboard e plugins podem ter capacidades diferentes.
-
-## 10. Estados, persistência e performance
-
-| Estado | Informação/recuperação |
+| Data | Minimum contract |
 |---|---|
-| Carregando/indexando/resolvendo | Progresso pertinente, contexto e cancelamento quando disponível; não declarar vazio definitivo |
-| Vazio real | Distinguir acervo vazio, nó sem relações e filtro sem resultados |
-| Parcial | Explicitar fonte/limite/índice incompleto e permitir completar/repetir |
-| Destino ausente/ambíguo | Preservar referência e permitir resolver, criar ou corrigir conforme ação escolhida |
-| Erro/conflito | Manter conteúdo confirmado e draft; retry/rebuild/reparo com efeito explícito |
-| Renderer indisponível | Lista operável; não esconder dados porque canvas falhou |
+| Entity | ID/context, type, locator, label, aliases, and relevant revision |
+| Occurrence | Source, raw target, displayed text, fragment, excerpt/location, and source revision |
+| Resolution | Confirmed destination or missing/ambiguous/inaccessible/invalid state; rule and scope used |
+| Projected relationship | Source -> destination, type, supporting occurrences, and weight meaning if present |
+| Visual state | Selection, hover, camera, positions, pins, filters, and parameters; separate from content |
 
-Defina dono/duração de filtros, grupos, câmera, parâmetros físicos, pins, posições e raiz local: painel, sessão, acervo, dispositivo ou conta. Reabrir, trocar contexto e importar requerem testes separados. Arquivo salvo, índice atualizado, sync e backup restaurado são confirmações distintas.
+- Do not use titles as global identity. Namesakes need paths/context or disambiguation. If identity is the path, model its migration on rename/move.
+- Entity aliases, link labels, and filenames are not equivalent. Changing displayed text must not change the destination.
+- Define collection-relative/root paths, extension, URL encoding, fragments, and Unicode/case normalization according to the environment. Do not introduce destructive normalization for convenience.
+- Separate file resolution from heading/block resolution. A found file with a missing anchor is not complete navigation success.
+- Missing destinations may be represented without silently creating files. Explain when an action will actually create content.
+- Resolving an existing link must be deterministic under the contract. Textual/semantic ranking helps find candidates but must not silently choose a new target.
+- Preserve provenance of explicit references, embeds, tags, properties, memberships, and inferred suggestions. Similarity must identify model/version/threshold and acceptance state when relevant.
 
-Meça parse/indexação, abertura fria/quente, primeira interação, filtro, simulação, pintura, picking e memória separadamente. Registre hardware, viewport/DPR, nós **e arestas**, distribuição e budgets próprios. Compare esparso, hub, desconectado e denso; uma contagem isolada de nós não caracteriza carga.
+In documented Obsidian behavior, `[[Destination|Label]]` separates presentation/destination; aliases live in the `aliases` property. Autocomplete may insert the canonical destination with an alias as its label. Markdown, wikilinks, and subdestinations have their own rules. These contracts guide tests; they do not authorize assuming undocumented collision policies. [Links](https://obsidian.md/help/links), [Aliases](https://obsidian.md/help/aliases).
 
-Escolha culling, LOD, índice espacial, cache, worker e GPU a partir de evidência. Worker não elimina custos de serialização; GPU não elimina parsing ou simulação na CPU. Não prometa60 fps só por usar RAF. Amostragem/truncamento precisa de indicação de incompletude.
+## 4. Incoming links, outgoing links, and counts
 
-Liberar timers, listeners, observers, jobs, workers, texturas/buffers e bitmaps ao fechar/trocar contexto. Pausar fora de vista quando adequado; verificar reabertura repetida. Parada do cliente e parada do cálculo são eventos diferentes.
+A backlink is the inverse query of a reference; do not create a second persisted edge merely to draw incoming links. Define whether the view counts source documents, entity pairs, or occurrences. A note citing another three times may appear once with three passages.
 
-## 11. Fixtures e assertions antes de aprovar
+Direction, reciprocity, self-reference, and multiplicity need explicit policies. Painted arrows may be optional; source and destination remain available in the semantic alternative. Thickness, size, and distance need legends when encoding data.
 
-São ensaios propostos, não resultados executados. Usar corpus sintético isolado e apenas sintaxes/capacidades do alvo. Registrar versão, plataforma, preferências e core/plugins.
+Distinguish **linked reference**, **unlinked textual mention**, and **inferred suggestion**. Converting a mention into a link changes content and requires an explicit command, result feedback, recoverable errors, and undo when promised; this does not imply an additional dialog for an already-requested action. Suggestions must not silently increase confirmed relationship counts.
 
-**Fixture base:** A referencia B duas vezes; B referencia C; D é isolada; A referencia X inexistente. Acrescentar E homônima de A em outra pasta, alias alternativo, referência a heading/bloco e texto literal sem link.
+Relationship lists must offer source/destination, sufficient context, and an action to open the passage. If a panel follows the active note, selection changes update context; pinning the panel to one note is a separate state and must be indicated. [Backlinks](https://obsidian.md/help/plugins/backlinks), [Outgoing links](https://obsidian.md/help/plugins/outgoing-links).
 
-Para uma política que agrega por par dirigido e exclui destinos inexistentes, declarar antes do teste:
+Literal code, embeds, typed properties, and tags require parsing compatible with product syntax. A filename regex across the whole file is not a reference index. Removing an embed does not imply deleting its attachment.
+
+## 5. Source of truth and incremental updates
+
+Declare what is source, derived index, and preference. If files are the source, a rebuildable cache is not a backup. Partial reindexing and absent relationships are different states.
+
+Relevant events include editing, resolution completion, creation/deletion/restoration, rename/move, alias changes, and external edits. Update occurrences for the changed source, affected destinations, and their reverse index; resolution changes may require reevaluating other sources. Full rebuild must exist when necessary without being the only response to every keystroke.
+
+Retain sufficient identity for each job, for example:
 
 ```text
-arestas resolvidas = {(A,B), (B,C)}
-ocorrências(A,B) = 2
-backlinks(B) = {A}, com duas passagens
-local(A, saída, profundidade=1) = {A,B}
-local(A, saída, profundidade=2) = {A,B,C}
+{ collectionId, dataRevision, queryRevision, panelId, generation }
 ```
 
-Se outra política for adotada, adaptar as expectativas explicitamente. Não mudar o resultado esperado depois da execução só para fazer o teste passar.
+Accept responses only when their identity still matches the current view. Switching collections, changing root/filter, closing panels, or starting newer revisions invalidates relevant work. Canceling UI does not guarantee parsers, workers, or simulations stopped: discard stale messages and bound concurrency.
 
-| Ensaio | Assertion / evidência exigida |
+Rename/move must define whether it rewrites references, follows product preferences, or only changes the locator. When modifying multiple files, handle partial failure, conflicts, and repair; do not show complete success while some work remains pending. Saving the camera is a separate write and does not confirm link integrity.
+
+In Obsidian's public API, `resolvedLinks`/`unresolvedLinks` contain source -> destination -> count; `getFirstLinkpathDest` receives target and source. `changed` does not cover rename; resolution and rename events have separate responsibilities. `FileManager.renameFile` respects link-update preferences. Check the API compatible with the target version before implementing. [Official API](https://github.com/obsidianmd/obsidian-api/blob/master/obsidian.d.ts).
+
+In multiuser products, authorization precedes projection: titles, snippets, degrees, counts, and exports can also reveal content. For exclusively local collections, explain actual boundaries without inventing authentication. Retrieved content is untrusted data, including notes and plugin output.
+
+## 6. Projection: filters, depth, and groups
+
+Separate canonical graph, eligible set, and visible set. Specify:
+
+- Universe: collection, types, excluded files, attachments, tags, missing destinations, and permissions.
+- Local graph: root, depth, traversal direction, and cycle handling; the global graph need not inherit the editor root.
+- Order: filtering before/after traversal can produce different neighborhoods. Declare the policy and test results.
+- Orphans: unrelated in the canonical graph or isolated only after filtering? Labels/counts must reflect the definition.
+- Edges: removing a node from the visible set must update connections/counts coherently; boundary links need explicit representation.
+- Query: language, fields, AND/OR, grouping, and errors. General search, graph filters, and group queries are not automatically equivalent.
+- Groups: selection rule, color, legend, and precedence when a node matches several rules. Group color does not erase focus/selection/error.
+
+Search must locate and reveal a node without necessarily clearing independent filters. If a result is excluded, explain why and offer an explicit action. Selection outside the projection needs a policy: retain an indicated reference, clear it, or recover by command.
+
+Do not apply filters only to painting and then announce whole-set counts as visible. Culling is a rendering optimization; excluding data is a different decision.
+
+## 7. Forces, camera, and rendering
+
+Forces change positions, not meaning. Centering, repulsion, edge attraction/distance, and collision depend on the adopted simulation. Resulting physical proximity does not prove conceptual affinity; size based on degree must declare incoming, outgoing, or total degree and the projection calculating it.
+
+Do not infer a metric from circle size: in Obsidian 1.13.4 code, the global graph without explicit weights counts incoming and outgoing links; local graph explicit weights represent hop distance from the root. Occurrences, edges, unique neighbors, and visual weight are four distinct values.
+
+Define stability when adding a few nodes, neighborhood preservation, seeds where useful, pin/unpin, pause, and resting conditions. Avoid restarting the entire simulation on every hover. Reduced motion must stop unnecessary work, not just zero a CSS duration.
+
+Separate commands:
+
+| Command | Expected effect to declare |
 |---|---|
-| Adicionar B→A e A→A | Reciprocidade/autorreferência seguem política e contagens corretas |
-| Mudar só rótulo; depois alias | Rótulo não troca destino; alias invalida resolução pertinente |
-| Dois homônimos | Destino contextual inequívoco ou desambiguação; nenhum chute por ranking |
-| Criar/remover X | Estado não resolvido converge sem arquivo/aresta fantasma |
-| Heading/bloco removido | Arquivo resolvido e subdestino inválido não se confundem |
-| Texto comum/código literal | Menção/sugestão permanece separada de relação confirmada |
-| Rename/move com falha parcial | Conferir fontes, índice direto/reverso, mensagem e reparo, conforme preferência |
-| Edição externa após cache aquecido | Relações antigas desaparecem da revisão final |
-| Filtro + profundidade + órfãos | Conjunto e contagens correspondem à projeção declarada |
-| Cores de grupos sobrepostos | Precedência/legenda explícita; seleção continua distinguível |
-| Forças/zoom/picking/resize | Nenhuma mudança de links; mesmo alvo nas coordenadas transformadas |
-| A→B→trocar acervo com worker lento | Geração antiga não substitui dados/progresso no contexto novo |
-| Reabrir e restaurar estado | Cada propriedade persiste somente pelo contrato, com IDs corretos |
-| Teclado/leitor/touch | Abrir fonte, consultar direção, filtrar e recuperar vista sem gesto exclusivo |
-| Corpus grande/falha GPU/worker | Budgets medidos, completude comunicada e alternativa funcional |
+| Fit all / filtered / selection | Frames the named set within usable area |
+| Recenter camera | Repositions the view; changes neither links nor necessarily filters |
+| Reset forces | Restores physical parameters; do not confuse it with resetting the collection |
+| Pin position | Retains position according to session/persistence contract |
+| Open node / center local graph | Navigation and root changes are distinguishable actions |
 
-A aprovação exige artefato e observação para o caso executado. Teste de parser não comprova navegação; screenshot não comprova persistência; mocks de worker não comprovam latência ou qualidade de inferência.
+Anchored zoom preserves the point under cursor/touch; camera and world use conversions shared by painting and picking. Account for DPR, resize, panes/sidebars, limits, and offscreen selection. Lenses/distortion need corresponding hit-testing transformations.
 
-## 12. Tecnologia: decisão e evidência
+Usable area excludes panels that actually occupy space. An overlaid drawer may cover the graph: fit must declare whether it subtracts that region. Fit recovery must remain accessible at extreme scales.
 
-| Responsabilidade | Alternativas/decisão a avaliar | Evidência necessária |
+Defaults are product/corpus/device decisions, not universal numbers. Declare initial value, range, step, unit, reset, and scope for each control. Audit code defaults separately from currently saved values.
+
+## 8. Control drawer and content organization
+
+Group decisions belonging to different tasks; one possible structure is **Filters -> Groups -> Display -> Forces**, with data/indexing status when needed. This is a functional reference, not a mandatory order.
+
+| Group | Content | Important boundary |
 |---|---|---|
-| Parse/resolução | Parser da linguagem + política de caminhos/aliases | Ocorrências e destinos corretos no corpus; não apenas nome da dependência |
-| Índice direto/reverso | Estruturas/cache existentes, incremental ou rebuild | Revisões, rename/delete e consistência entre entradas/saídas |
-| Projeção | Travessia/filtros no contexto correto | Conjuntos esperados local/global; limites e permissões |
-| Simulação | Forças próprias/biblioteca, JS/WASM, main thread/worker | Callsite, execução ativa, pausa, custo e fallback |
-| Render/picking | DOM/SVG/Canvas/WebGL conforme escala e tarefa | Camada usada, transformação, hit-test e alternativa acessível |
-| Persistência | Arquivos/store de dados e estado de vista separados | Escrita, leitura, falha, migração e round-trip |
+| Filters | Search, types, exclusions, orphans, local depth | Changes projection while preserving source |
+| Groups | Query, color, priority, and legend | Encodes categories; does not rewrite links |
+| Display | Names, arrows, size, and thickness | Changes legibility/representation |
+| Forces | Parameters, pause, pinning, and specific reset | Changes physical layout |
 
-**Referência delimitada — Obsidian 1.13.4:** a auditoria estática desta revisão identificou `PIXI.Application` em `app.js` e `pixi.js-legacy 7.2.4`. Em `sim.js`, o caminho prioriza WASM embutido, com fallback D3 explícito. Isso demonstra mecanismos presentes nesse build; não prova qual caminho foi exercido em cada sessão, qual renderer/GPU estava ativo ou desempenho em outro dispositivo. Não generalizar “grafo=D3” quando D3 é fallback, nem inferir Three/3D pela aparência.
+Header identifies surface/context; body contains groups and scrolls; persistent actions remain reachable. Header/body/footer share insets when on the same axis. Label, value, help, and control form a unit. In narrow layouts, stack before compressing fields or hiding essential text.
 
-No mesmo artefato, o editor Markdown instancia CodeMirror 6; o recurso Canvas monta DOM e SVG com transformações CSS; controles do grafo usam o resolver Lucide, com aliases próprios. O catálogo de SVG não determina sozinho tamanho/espessura finais: tokens CSS participam do resultado. Renderers de grafo leem cores computadas do tema e precisam atualizá-las ao mudar CSS. Não atribuir a mesma biblioteca a todas as superfícies do aplicativo.
+Breakpoints belong to panels too, not only viewports. During Obsidian 1.13.4 inspection, a narrow split clipped the controls' side; widening the area restored readability. Do not reproduce this defect: constrain width to the container, redistribute labels/controls, and allow scrolling with reachable close/reset actions. Test two open sidebars and multiple splits even on large monitors.
 
-Os recursos de Graph documentados incluem filtros/grupos/exibição/forças e profundidade local. Help/API atuais são mutáveis e podem descrever versões diferentes do runtime inspecionado; changelogs posteriores não identificam retroativamente a tecnologia instalada. Separar **documentado**, **estático**, **observado em execução**, **inferido** e **pendente**. [Graph](https://obsidian.md/help/plugins/graph), [armazenamento](https://obsidian.md/help/data-storage), [API](https://github.com/obsidianmd/obsidian-api/blob/master/obsidian.d.ts).
+Use disclosure for occasional complexity while keeping active-filter summaries and recovery controls visible. Do not impose a "maximum of 7 options." If controls apply immediately, indicate that contract and handle errors; do not add decorative Save buttons. Group resets must name their scope.
 
-A stack da referência é evidência, não obrigação para outro produto. Reutilize a arquitetura existente e implemente o contrato necessário. Não copiar código vendor/proprietário, plugins ou assets da instalação como atalho de fidelidade. Para cada alegação tecnológica, guardar versão/hash, arquivo/callsite, responsabilidade e limite de cobertura no relatório da auditoria.
+**Proximity/common region** help associate controls; **similarity** keeps equivalent actions coherent; **uniform connectedness** requires meaningful edges; **selective attention** emphasizes selection without highlighting every node. Fitts informs operable targets, not magic padding; Hick informs organization/choice, not arbitrary feature reduction. Verify the task, not the number of cited laws.
 
-### Observações executadas na revisão 1.8
+## 9. Accessibility and mobile
 
-Vault sintético, macOS, Obsidian 1.13.4, tema escuro padrão; os resultados abaixo não são aprovação universal dos cenários da seção11.
+An `aria-label` on the canvas does not make entities and relationships accessible. Provide an equivalent list/tree/table with search, active node, incoming/outgoing links, counts, and actions to open sources/destinations. Preserve focus by identity with virtualization; returning from a document restores useful context.
 
-| Ensaio | Resultado observado e consequência |
+Keyboard access must reach nodes and commands without relying on pixel positions. Do not capture editing keys while an input has focus. Selection, direction, and category need cues beyond color. Names hidden at distant zoom remain accessible through search/list/detail.
+
+For assistive reading, announce relevant updates and operation completion, not every frame. Moving content permits pause; reduced-motion policy responds during the session. GPU failure preserves a functional alternative.
+
+On touch, define pan/pinch/selection and their competition with page/sheet scrolling. Hit areas are independent of drawn node size; hover must never be the only detail path. Moving positions and creating/changing relationships must not share ambiguous gestures without feedback and cancellation.
+
+Validate virtual keyboards, safe areas, orientation, small windows, and system back. Inspectors may become sheets/screens while preserving selection and return. Mobile is more than shrinking a desktop canvas; export/clipboard and plugins may have different capabilities.
+
+## 10. States, persistence, and performance
+
+| State | Information/recovery |
 |---|---|
-| A cita B duas vezes, outra nota cita B uma vez | Painel apresentou3 ocorrências em2 arquivos; não confundir contagem com número de origens |
-| Menções do nome e alias sem markup | Apareceram como2 menções não vinculadas; não viraram relações confirmadas |
-| `tag:#ux` com tags/anexos habilitados | Filtrou as notas correspondentes e manteve tags/anexo relacionados, inclusive outra tag; registrar expansão por tipo após o filtro |
-| Grafo local com profundidade1→2 | Passou de4 a7 nós na fixture; seleção de profundidade altera travessia, não o conteúdo |
-| Renomear destino e escolher atualizar uma vez | Atualizou3 links em2 arquivos; rótulo de alias permaneceu; arquivos e3 backlinks conferidos após a ação |
-| Canvas com nota e cartão livre conectados | Composição mostrou a conexão autoral; grafo local do arquivo Canvas permaneceu um nó, sem transformar os cartões em relações Markdown |
+| Loading/indexing/resolving | Relevant progress, context, and cancellation when available; do not declare definitive emptiness |
+| Actually empty | Distinguish empty collection, unrelated node, and filters without results |
+| Partial | Explain source/limit/incomplete index and allow completion/retry |
+| Missing/ambiguous destination | Preserve the reference and allow resolving, creating, or correcting according to the chosen action |
+| Error/conflict | Retain confirmed content and drafts; retry/rebuild/repair with explicit effects |
+| Unavailable renderer | Operable list; do not hide data because canvas failed |
 
-Os nomes/defaults correspondem ao build auditado. Backend gráfico efetivo, caminho WASM ativo, leitor de tela, touch, corpus grande e recuperação de falhas não foram validados nesta passagem. Veja [proveniência](sources.md).
+Define ownership/lifetime of filters, groups, camera, physical parameters, pins, positions, and local root: panel, session, collection, device, or account. Reopening, context switching, and importing need separate tests. Saved files, updated indexes, sync, and restored backups are distinct confirmations.
 
-**Pergunta final de aceite:** por que estas entidades estão ligadas, em qual direção, qual passagem ou dado sustenta a relação, o que muda ao renomear uma delas e como acessar tudo isso fora do canvas? Se a resposta depende apenas de cor, força ou screenshot, o trabalho ainda está incompleto.
+Measure parsing/indexing, cold/warm opening, first interaction, filtering, simulation, painting, picking, and memory separately. Record hardware, viewport/DPR, nodes **and edges**, distribution, and project budgets. Compare sparse, hub, disconnected, and dense graphs; node count alone does not characterize load.
+
+Choose culling, LOD, spatial indexes, caches, workers, and GPU based on evidence. Workers do not eliminate serialization costs; GPU does not eliminate CPU parsing or simulation. Do not promise 60 fps merely by using RAF. Sampling/truncation needs an incompleteness indicator.
+
+Release timers, listeners, observers, jobs, workers, textures/buffers, and bitmaps on close/context switch. Pause offscreen when appropriate; verify repeated reopening. Stopping the client and stopping computation are different events.
+
+## 11. Fixtures and assertions before acceptance
+
+These are proposed rehearsals, not executed results. Use an isolated synthetic corpus and only target-supported syntax/capabilities. Record version, platform, preferences, and core/plugins.
+
+**Base fixture:** A references B twice; B references C; D is isolated; A references nonexistent X. Add E with the same name as A in another folder, an alternative alias, a heading/block reference, and literal text without a link.
+
+For a policy aggregating by directed pair and excluding nonexistent destinations, declare before testing:
+
+```text
+resolved edges = {(A,B), (B,C)}
+occurrences(A,B) = 2
+backlinks(B) = {A}, with two passages
+local(A, outgoing, depth=1) = {A,B}
+local(A, outgoing, depth=2) = {A,B,C}
+```
+
+If another policy is adopted, explicitly adapt expectations. Do not change expected results after execution merely to pass tests.
+
+| Rehearsal | Required assertion / evidence |
+|---|---|
+| Add B -> A and A -> A | Reciprocity/self-reference follow policy with correct counts |
+| Change only label; then alias | Label does not change destination; alias invalidates relevant resolution |
+| Two namesakes | Unambiguous contextual destination or disambiguation; no ranking-based guess |
+| Create/remove X | Unresolved state converges without phantom files/edges |
+| Removed heading/block | Resolved file and invalid subdestination remain distinguishable |
+| Ordinary text/literal code | Mention/suggestion remains separate from confirmed relationships |
+| Rename/move with partial failure | Check sources, forward/reverse index, message, and repair according to preference |
+| External edit after warmed cache | Old relationships disappear from the final revision |
+| Filter + depth + orphans | Set and counts match the declared projection |
+| Overlapping group colors | Explicit precedence/legend; selection stays distinguishable |
+| Forces/zoom/picking/resize | No link changes; same target under transformed coordinates |
+| A -> B -> switch collection with slow worker | Old generation does not replace data/progress in the new context |
+| Reopen and restore state | Each property persists only according to contract with correct IDs |
+| Keyboard/screen reader/touch | Open source, inspect direction, filter, and recover view without exclusive gestures |
+| Large corpus/GPU/worker failure | Measured budgets, communicated completeness, and functional alternative |
+
+Acceptance requires an artifact and observation for the executed case. Parser tests do not prove navigation; screenshots do not prove persistence; worker mocks do not prove latency or inference quality.
+
+## 12. Technology: decision and evidence
+
+| Responsibility | Alternatives/decision to evaluate | Required evidence |
+|---|---|---|
+| Parsing/resolution | Language parser + path/alias policy | Correct corpus occurrences and destinations, not merely dependency names |
+| Forward/reverse index | Existing structures/cache, incremental or rebuild | Revisions, rename/delete, and incoming/outgoing consistency |
+| Projection | Traversal/filters in the correct context | Expected local/global sets; limits and permissions |
+| Simulation | Original/library forces, JS/WASM, main thread/worker | Callsite, active execution, pause, cost, and fallback |
+| Render/picking | DOM/SVG/Canvas/WebGL according to scale and task | Used layer, transformation, hit test, and accessible alternative |
+| Persistence | Separate files/data store and view state | Writing, reading, failure, migration, and round trip |
+
+**Bounded reference - Obsidian 1.13.4:** this revision's static audit identified `PIXI.Application` in `app.js` and `pixi.js-legacy 7.2.4`. In `sim.js`, the path prioritizes embedded WASM with an explicit D3 fallback. This demonstrates mechanisms present in the build; it does not prove which path ran in each session, the active renderer/GPU, or performance on another device. Do not generalize "graph=D3" when D3 is a fallback or infer Three/3D from appearance.
+
+In the same artifact, the Markdown editor instantiates CodeMirror 6; Canvas builds DOM and SVG using CSS transforms; graph controls use the Lucide resolver with custom aliases. The SVG catalog alone does not determine final size/thickness: CSS tokens contribute. Graph renderers read computed theme colors and need updates when CSS changes. Do not attribute one library to every application surface.
+
+Documented Graph features include filters/groups/display/forces and local depth. Current Help/API are mutable and may describe versions different from the inspected runtime; later changelogs do not retroactively identify installed technology. Separate **documented**, **static**, **runtime-observed**, **inferred**, and **pending**. [Graph](https://obsidian.md/help/plugins/graph), [storage](https://obsidian.md/help/data-storage), [API](https://github.com/obsidianmd/obsidian-api/blob/master/obsidian.d.ts).
+
+The reference stack is evidence, not an obligation for another product. Reuse existing architecture and implement the necessary contract. Do not copy vendor/proprietary code, plugins, or installation assets as fidelity shortcuts. For each technological claim, retain version/hash, file/callsite, responsibility, and coverage limits in the audit report.
+
+### Observations executed in revision 1.8
+
+Synthetic vault, macOS, Obsidian 1.13.4, default dark theme; results below are not universal acceptance of section 11 scenarios.
+
+| Rehearsal | Observed result and consequence |
+|---|---|
+| A cites B twice; another note cites B once | Panel showed 3 occurrences in 2 files; do not confuse count with number of sources |
+| Name and alias mentions without markup | Appeared as 2 unlinked mentions; did not become confirmed relationships |
+| `tag:#ux` with tags/attachments enabled | Filtered matching notes and retained related tags/attachment, including another tag; record type expansion after filtering |
+| Local graph depth 1 -> 2 | Changed from 4 to 7 fixture nodes; depth selection changes traversal, not content |
+| Rename target and choose one-time update | Updated 3 links in 2 files; alias label remained; files and 3 backlinks checked after the action |
+| Canvas with a connected note and free card | Composition showed the authored connection; the Canvas file's local graph remained one node without turning cards into Markdown relationships |
+
+Names/defaults correspond to the audited build. Actual graphics backend, active WASM path, screen reader, touch, large corpus, and failure recovery were not validated in this pass. See [provenance](sources.md).
+
+**Final acceptance question:** why are these entities linked, in which direction, which passage or data supports the relationship, what changes when one is renamed, and how can all of this be accessed outside the canvas? If the answer depends only on color, forces, or screenshots, the work is still incomplete.

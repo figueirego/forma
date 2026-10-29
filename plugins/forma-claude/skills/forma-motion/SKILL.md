@@ -1,50 +1,52 @@
 ---
 name: forma-motion
-description: "Criar ou auditar feedback, gestos, animações e filmes com continuidade, acesso e custo de execução. Use para movimento interativo ou sequência renderizada; não para animar toda superfície por padrão."
+description: "Create or audit feedback, gestures, animations and films with continuity, accessibility and execution cost in mind. Use for interactive motion or rendered sequences; not to animate every surface by default."
 metadata:
   version: 1.21.0
 ---
 
-# Movimento e feedback
+# Motion and feedback
 
-## Quando usar
+## When to use
 
-- Use para transição, gesto, resposta de controle, narrativa visual ou defeito de continuidade/performance.
-- Não use para esconder latência, substituir progresso real ou acrescentar efeitos a um pedido sem necessidade de movimento.
+- Use for the default motion layer of new interactive designs, transitions, gestures, control responses, visual narrative or continuity/performance defects.
+- Do not use to hide latency, replace actual progress or expand a local correction into a motion redesign.
 
-Este módulo orienta o agente que o lê; não executa animações nem chama outros módulos.
-Preserve marca, stack, interação e expectativas da plataforma.
+This module guides the agent reading it; it does not execute animations or call other modules.
+Preserve the brand, stack, interaction and platform expectations.
 
-## Entradas
+## Inputs
 
-- Elemento, ação/evento, estado inicial/final, contexto/frequência e problema ou efeito desejado.
-- Runtime, mecanismo existente, dispositivos/alvos e comportamento esperado sem movimento.
+- Element, action/event, initial/final state, context/frequency and problem or desired effect.
+- Runtime, existing mechanism, devices/targets and expected behavior without motion.
 
-## Procedimento
+## Procedure
 
-Para filme, teaser ou deck animado, siga [filmes e sequências renderizadas](../../references/motion.md#filmes-e-sequências-renderizadas): composição, tempo, áudio quando pedido e arquivo final. Os passos de gesto/interrupção abaixo se aplicam a interfaces interativas; não os confunda com edição de uma timeline. Uma correção localizada em filme aprovado não exige refazer seu storyboard.
+For a new interactive design, apply [default motion](../../references/motion.md#default-motion-for-new-interactive-designs): coordinated hover/press, supported theme transitions, context-appropriate scroll treatment, and state/panel feedback. Respect explicit static requests and reduced motion. The default is purposeful implementation, not a requirement to animate every element or add 3D.
 
-Quando pertinentes, use [legendas e fala](../../references/motion.md#legendas-e-fala), [GIF e loops](../../references/motion.md#gif-e-loops) e [players interativos](../../references/specialized-surfaces.md#decks-e-players-interativos). Um formato ou player diferente muda a prova necessária; não impõe outra engine.
+For a film, teaser or animated deck, follow [films and rendered sequences](../../references/motion.md#films-and-rendered-sequences): composition, timing, audio when requested and final file. The gesture/interruption steps below apply to interactive interfaces; do not confuse them with editing a timeline. A local correction in an approved film does not require rebuilding its storyboard.
 
-1. Declare o que muda, por que precisa ser percebido e como a tarefa funciona sem animação.
-   Leia [movimento e feedback](../../references/motion.md); use refinamento nos [playbooks](../../references/playbooks.md) para defeitos localizados.
-2. Mapeie estado, gatilho, continuidade, reversão, interrupção e conclusão observável.
-   Para foco e cancelamento, consulte [interação e conteúdo](../../references/interaction-content.md); não atribua duração visual a uma operação assíncrona desconhecida.
-3. Escolha o mecanismo mínimo compatível com a stack e o efeito autorizado.
-   Para cenas/3D, leia [web imersiva](../../references/immersive-web-tech.md); para pose/material fiel, [fidelidade 3D](../../references/3d-reference-fidelity.md). FLIP de posição não comprova interpolação de material.
-4. Implemente no consumidor com estado coerente, limpeza de callbacks e alternativa reduzida/estática.
-   Consulte [acessibilidade](../../references/accessibility.md). Não deixe conteúdo essencial invisível quando o caminho animado falhar.
-5. Execute a sequência normal e interrupções: repetir, reverter, sair, trocar tamanho e desmontar quando aplicável.
-   Use [validação renderizada](../../references/rendered-validation.md) e [verificação](../../references/verification.md); só informe custo/desempenho medido.
+When relevant, use [captions and speech](../../references/motion.md#captions-and-speech), [GIFs and loops](../../references/motion.md#gifs-and-loops) and [interactive players](../../references/specialized-surfaces.md#interactive-decks-and-players). A different format or player changes the evidence required; it does not impose another engine.
 
-## Saída e parada
+1. Declare what changes, why it needs to be perceived and how the task works without animation.
+   Read [motion and feedback](../../references/motion.md); use refinement in [playbooks](../../references/playbooks.md) for local defects.
+2. Map state, trigger, continuity, reversal, interruption and observable completion.
+   For focus and cancellation, consult [interaction and content](../../references/interaction-content.md); do not assign a visual duration to an unknown asynchronous operation.
+3. Choose the smallest mechanism compatible with the stack and authorized effect.
+   For scenes/3D, read [immersive web](../../references/immersive-web-tech.md); for faithful pose/material, read [3D fidelity](../../references/3d-reference-fidelity.md). Positional FLIP does not prove material interpolation.
+4. Implement in the consumer with coherent state, callback cleanup and a reduced/static alternative.
+   Consult [accessibility](../../references/accessibility.md). Do not leave essential content invisible when the animated path fails.
+5. Run the normal sequence and interruptions: repeat, reverse, exit, resize and unmount when applicable.
+   Use [rendered validation](../../references/rendered-validation.md) and [verification](../../references/verification.md); report only measured cost/performance.
 
-Para interface, entregue movimento integrado ou especificação pedida, gatilhos/estados e comportamento reduzido. Inclua evidência de continuidade e limites de runtime/dispositivo, sem confundir vídeo de demonstração com interação implementada. O aceite inclui interrupção correta e tarefa disponível.
+## Output and stopping condition
 
-Para filme, entregue a sequência e o formato contratados, com revisão de conteúdo, timing, transições e arquivo final. Confira áudio/silêncio e variantes solicitadas; não imponha os testes de input de uma interface a um MP4. Pare quando os critérios aplicáveis estiverem verificados. Storyboard, snippet, preview e render final devem ser identificados pelo estágio efetivamente entregue.
+For an interface, deliver integrated motion or the requested specification, triggers/states and reduced-motion behavior. Include continuity evidence and runtime/device limits, without confusing a demonstration video with implemented interaction. Acceptance includes correct interruption and an available task.
 
-## Apoios opcionais e limites
+For a film, deliver the agreed sequence and format, with content, timing, transition and final-file review. Check audio/silence and requested variants; do not impose interface input tests on an MP4. Stop when the applicable criteria have been verified. Storyboard, snippet, preview and final render must be labeled according to the stage actually delivered.
 
-`design-motion-principles`, `ecc:motion-foundations`, `ecc:motion-patterns` e `ecc:motion-advanced` podem responder dúvidas específicas.
-Selecione apenas o apoio pertinente e leia seu `SKILL.md` atual, se disponível, conforme [integrações](../../references/integrations.md); não há invocação automática.
-Não instale uma biblioteca de animação para um efeito que a stack resolve nem substitua um mecanismo 3D explicitamente contratado por transformações CSS.
+## Optional support and limits
+
+`design-motion-principles`, `ecc:motion-foundations`, `ecc:motion-patterns` and `ecc:motion-advanced` can answer specific questions.
+Select only relevant support and read its current `SKILL.md`, if available, as described in [integrations](../../references/integrations.md); there is no automatic invocation.
+Do not install an animation library for an effect the stack already handles, or replace an explicitly required 3D mechanism with CSS transforms.

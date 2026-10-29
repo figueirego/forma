@@ -1,6 +1,6 @@
 interface:
   display_name: "Forma Foundations"
-  short_description: "Cores, tipografia, alinhamento e espaçamentos"
-  default_prompt: "Use /forma:forma-foundations para corrigir ou definir cores, tipografia e espaçamentos preservando o sistema existente."
+  short_description: "Color, typography, alignment, and spacing"
+  default_prompt: "Use /forma:forma-foundations to fix or define color, typography, and spacing while preserving the existing system."
 policy:
   allow_implicit_invocation: true

@@ -3,13 +3,13 @@
   "owner": {
     "name": "Forma"
   },
-  "description": "Forma: sistema comunitário de design, da intenção ao acabamento.",
+  "description": "Forma: a community design system, from intent to refinement.",
   "plugins": [
     {
       "name": "forma",
       "source": "./plugins/forma-claude",
-      "version": "1.25.0",
-      "description": "Design com uma coordenadora e 11 especialistas, da intenção ao acabamento."
+      "version": "1.29.0",
+      "description": "Design with one coordinator and 11 specialists, from intent to refinement."
     }
   ]
 }

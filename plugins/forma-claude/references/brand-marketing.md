@@ -1,80 +1,80 @@
-# Marca, marketing e peças gráficas
+# Brand, marketing, and graphic assets
 
-## Estratégia e identidade
+## Strategy and identity
 
-Defina público, oferta, diferenciação comprovável, tom, ação e canal. Separe identidade estável de campanha temporária. Preserve logotipo oficial, proporções, área de proteção, versões autorizadas e direitos de uso.
+Define audience, offer, verifiable differentiation, tone, action, and channel. Separate stable identity from temporary campaigns. Preserve the official logo, proportions, clear space, authorized versions, and usage rights.
 
-Monte um sistema que atravesse produto, landing, e-mail, apresentação e peça social sem exigir layouts idênticos. Defina hierarquia tipográfica, paleta funcional, imagem, iconografia, voz e regras de recorte. Moodboard é investigação visual, não entrega final nem licença de uso.
+Build a system that spans product, landing pages, email, presentations, and social assets without requiring identical layouts. Define typographic hierarchy, functional palette, imagery, iconography, voice, and cropping rules. A moodboard is visual research, not a final deliverable or a usage license.
 
-Para personagens de marca, use [refinamento de mascotes](mascot-refinement.md): preservar silhueta, espaços negativos e leitura do rosto antes de ajustar materiais e gestos. A mesma identidade pode aparecer como SVG, poster e volume; isso não exige a mesma tecnologia nem movimento em todas as peças.
+For brand characters, use [mascot refinement](mascot-refinement.md): preserve silhouette, negative space, and facial readability before adjusting materials and gestures. The same identity can appear as SVG, a poster, and a volume; this does not require identical technology or motion in every asset.
 
-## Pacote de identidade do projeto
+## Project identity package
 
-Reúna no sistema existente os tokens por papel/modo, arquivos oficiais de marca, fontes realmente disponíveis, regras de composição/voz e exceções autorizadas. Ligue-os aos consumidores: declarar uma família não prova que carregou, e a cor dentro de um logotipo oficial não se torna automaticamente cor permitida de todo botão. Não impor um schema, limitar a paleta a sRGB ou trocar OKLCH por exigência de um exemplo externo. Um asset ausente é uma lacuna a resolver; não invente um logotipo para fechar a peça.
+Gather role/mode tokens, official brand files, actually available fonts, composition/voice rules, and authorized exceptions in the existing system. Connect them to consumers: declaring a family does not prove it loaded, and a color inside an official logo does not automatically become an allowed color for every button. Do not impose a schema, limit the palette to sRGB, or replace OKLCH because an external example demands it. A missing asset is a gap to resolve; do not invent a logo to complete the piece.
 
-Em uma peça nova, relacione a afirmação principal à fonte e ao estado verificado/estimado/pendente, quando necessário. Pergunte se o conteúdo ainda comunica sua ideia sem a decoração. Isso é uma lente de revisão, não proibição universal de gradientes, formas abstratas ou uma composição aprovada. Pedido explícito e decisões do projeto prevalecem sobre o gosto da ferramenta. Para restyles, siga o [contrato editorial](artifact-workflows.md#contrato-editorial-em-restyles).
+For a new asset, connect the main claim to its source and verified/estimated/pending status when necessary. Ask whether the content still communicates its idea without decoration. This is a review lens, not a universal ban on gradients, abstract shapes, or an approved composition. Explicit requests and project decisions take precedence over a tool's taste. For restyling, follow the [editorial contract](artifact-workflows.md#editorial-contract-for-restyling).
 
-## Marketing e conversão
+## Marketing and conversion
 
-Faça promessa específica, evidência verificável, objeções relevantes e próximo passo claro. Preços, renovação, limitações e cancelamento devem ser compreensíveis. Não use urgência falsa, depoimentos inventados, checkbox pré-selecionado manipulativo ou rejeição deliberadamente escondida.
+Make a specific promise, provide verifiable evidence, address relevant objections, and give a clear next step. Prices, renewal, limitations, and cancellation must be understandable. Do not use false urgency, invented testimonials, manipulative preselected checkboxes, or deliberately hidden rejection options.
 
-A estrutura depende da decisão: comparação pode exigir tabela; serviço pode precisar de contato e localização; portfólio pode começar pela obra. Não imponha hero central, três cards, logo wall ou carrossel. Repetir uma CTA pode ajudar em página longa; preserve intenção e clareza.
+Structure depends on the decision: comparison may require a table; a service may need contact details and location; a portfolio may begin with the work. Do not impose a centered hero, three cards, a logo wall, or a carousel. Repeating a CTA can help on a long page; preserve intent and clarity.
 
-SEO e analytics apoiam objetivos reais. Eventos devem representar ações verificáveis, sem coleta desnecessária. Não prometa melhora de conversão sem medição.
+SEO and analytics support real goals. Events must represent verifiable actions without unnecessary collection. Do not promise conversion improvements without measurement.
 
-## Argumento, conteúdo e interface demonstrada
+## Argument, content, and demonstrated interface
 
-Antes de compor uma landing nova, conecte cada seção à pergunta do visitante e ao que a sustenta. Use esta ficha no documento existente; não é necessário abrir um arquivo por seção:
+Before composing a new landing page, connect each section to the visitor's question and its supporting evidence. Use this card in the existing document; a separate file per section is unnecessary:
 
-| Pergunta/afirmação | Prova e origem | Conteúdo/asset disponível | Composição e próximo passo |
+| Question/claim | Evidence and origin | Available content/asset | Composition and next step |
 |---|---|---|---|
-| O que é e para quem serve? | Oferta confirmada | Nome, descrição, produto ou demonstração | Título legível, contexto e ação pertinente |
-| Como funciona? | Processo verificável | Etapas reais e exemplos identificados | Sequência que permita entender o serviço |
-| Quanto custa e quais limites? | Condições aprovadas | Valores, escopo e restrições | Comparação ou leitura completa, sem esconder condições |
+| What is it and who is it for? | Confirmed offer | Name, description, product, or demonstration | Readable title, context, and relevant action |
+| How does it work? | Verifiable process | Real steps and identified examples | Sequence that makes the service understandable |
+| What does it cost and what are its limits? | Approved conditions | Prices, scope, and restrictions | Comparison or complete reading without hiding conditions |
 
-As linhas são exemplos, não uma ordem fixa. Remova uma seção redundante; mantenha informação necessária mesmo sem apelo promocional. Conteúdo obrigatório não pode desaparecer para produzir uma composição minimalista. Não invente prova social, métricas, preços ou detalhes operacionais para preencher um template. Exemplos autorizados ficam identificados como demonstração e pendentes de confirmação quando pertinente.
+Rows are examples, not a fixed order. Remove redundant sections; retain necessary information even without promotional appeal. Required content must not disappear to produce a minimalist composition. Do not invent social proof, metrics, prices, or operational details to fill a template. Authorized examples remain labeled as demonstrations and pending confirmation where relevant.
 
-Escreva títulos e apoio com o conteúdo real antes de fixar medidas. Estime a ocupação pela fonte, largura e idioma e confirme no render, incluindo tradução e zoom. Duas linhas podem ser uma preferência editorial, não limite universal: não reduzir legibilidade, mutilar nomes ou esconder condições para caber. A primeira tela deve orientar; conteúdo longo continua acessível por rolagem.
+Write titles and supporting copy with real content before fixing dimensions. Estimate space using the font, width, and language, then confirm in the render, including translation and zoom. Two lines may be an editorial preference, not a universal limit: do not reduce readability, mutilate names, or hide conditions to fit. The first screen should orient the visitor; long content remains accessible by scrolling.
 
-Uma landing que mostra software possui duas camadas: a composição promocional e o fragmento operacional dentro dela. O fragmento conserva marca, unidades, labels, estados e dataset coerentes com o produto. Prefira captura autorizada atual ou componente real reutilizado; se for protótipo, identifique-o. Não simule um app funcional com barras cinzas nem apresente fixtures como resultados de clientes. Recorte e escala não podem tornar a prova ilegível. Para dashboard, leia [dados](data-dashboards.md); a página externa segue sua direção editorial.
+A landing page that shows software has two layers: the promotional composition and the operational fragment within it. That fragment retains brand, units, labels, states, and a dataset consistent with the product. Prefer a current authorized capture or reused real component; identify prototypes as such. Do not simulate a functional app with gray bars or present fixtures as customer outcomes. Cropping and scale must not make the evidence illegible. For dashboards, read [data](data-dashboards.md); the outer page follows its editorial direction.
 
-Para imagens encontradas, mantenha origem, autor, licença específica, alterações e crédito exigido. A licença do repositório que encontrou uma imagem não cobre a imagem. Fotografia de contexto não representa automaticamente o produto, a equipe ou o local do cliente; quando houver risco de confusão, torne a distinção clara no conteúdo. Se não há imagens adequadas, use tipografia, material próprio ou outra composição completa. Nenhuma quota de imagens ou vídeo justifica representar algo falso.
+For discovered images, retain origin, author, specific license, modifications, and required credit. The license of the repository where an image was found does not cover the image. Contextual photography does not automatically represent the customer's product, team, or location; clarify that distinction in the content when confusion is possible. If suitable images are unavailable, use typography, original material, or another complete composition. No image or video quota justifies representing something false.
 
-## Produção por canal
+## Production by channel
 
-| Canal | Verificações específicas |
+| Channel | Specific checks |
 |---|---|
-| Social/ads | Proporção e limites atuais do canal, safe zones, leitura pequena, legenda/alt text, recorte |
-| E-mail | Clientes suportados, texto alternativo, links, fallback, peso e comportamento responsivo |
-| Slides | Uma ideia principal, leitura à distância, contraste, sequência, notas e texto editável |
-| Thumbnail/capa | Foco visual, legibilidade pequena, conteúdo honesto, variações de recorte |
-| Impresso | Tamanho físico, sangria e margem conforme gráfica, resolução efetiva, perfil de cor e prova |
-| Embalagem/produto físico | Uso e contexto, hierarquia de informação, tolerâncias, ergonomia, material e protótipo físico |
+| Social/ads | Current channel proportions and limits, safe zones, small-size readability, captions/alt text, cropping |
+| Email | Supported clients, alternative text, links, fallback, weight, and responsive behavior |
+| Slides | One main idea, distance readability, contrast, sequence, notes, and editable text |
+| Thumbnail/cover | Visual focus, small-size legibility, honest content, cropping variations |
+| Print | Physical size, printer-specified bleed and margins, effective resolution, color profile, and proof |
+| Packaging/physical product | Use and context, information hierarchy, tolerances, ergonomics, material, and physical prototype |
 
-Para impressão, confirme especificações do fornecedor; não converter tudo automaticamente para um CMYK genérico. Para produto físico, CAD, fabricação, segurança, rotulagem regulatória e validação ergonômica demandam especialistas e testes próprios. Um render não é prova de fabricabilidade.
+For print, confirm vendor specifications; do not automatically convert everything to generic CMYK. For physical products, CAD, manufacturing, safety, regulatory labeling, and ergonomic validation require specialists and dedicated tests. A render is not proof of manufacturability.
 
-## Assets e IA
+## Assets and AI
 
-Classifique assets como referência, identidade reutilizável ou conteúdo final. Reuse logos e material fornecido; não redesenhe marca exata com geração. Mantenha texto essencial editável; gere fundos/ilustrações quando úteis. Confira direitos, consentimento e autenticidade de representações.
+Classify assets as references, reusable identity, or final content. Reuse supplied logos and material; do not redraw an exact brand through generation. Keep essential text editable; generate backgrounds/illustrations when useful. Check rights, consent, and authenticity of representations.
 
-Entregue formatos solicitados, dimensões, transparência quando necessária, fontes/links permitidos e arquivos editáveis quando disponíveis. Inspecione a exportação final, não apenas a origem. Não publique a campanha como efeito colateral de criar as peças.
+Deliver requested formats, dimensions, transparency when necessary, permitted fonts/links, and editable files when available. Inspect the final export, not only its source. Do not publish a campaign as a side effect of creating its assets.
 
-Se o pedido exigir slides ou conteúdo editável, declare quais camadas continuam editáveis no destino e verifique-as. Converter cada página em PNG dentro de um PPTX conserva a aparência, mas perde a edição de texto/objetos. Use o contrato de [artefatos e exportação](artifact-workflows.md), incluindo falha parcial, fontes e páginas omitidas.
+If the request requires slides or editable content, declare which layers remain editable at the destination and verify them. Converting every page into a PNG inside a PPTX preserves appearance but loses text/object editing. Use the [artifact and export](artifact-workflows.md) contract, including partial failure, fonts, and omitted pages.
 
-## Adaptar uma campanha
+## Adapt a campaign
 
-Exemplo demonstrativo: organizador de estudos com calendário real. Promessa “Organize suas próximas sessões”, sem inventar melhora de notas.
+Demonstrative example: a study organizer with a real calendar. Promise "Organize your upcoming sessions," without inventing improved grades.
 
-| Elemento | Vertical | Horizontal |
+| Element | Vertical | Horizontal |
 |---|---|---|
-| Marca/promessa | Preservadas | Preservadas |
-| Composição | Título alto, visual central, ação em área livre | Texto e visual lado a lado, ação junto ao texto |
-| Asset | Recorte preserva objeto | Recorte amplo, sem esticar |
-| Copy | Requebra e comprimento ajustados | Hierarquia recalculada |
-| Inspeção | Tamanho de uso e overlays do canal | Leitura reduzida e recortes de placement |
+| Brand/promise | Preserved | Preserved |
+| Composition | High title, central visual, action in clear space | Text and visual side by side, action beside the text |
+| Asset | Crop preserves the object | Wider crop without stretching |
+| Copy | Adjust wrapping and length | Recalculate hierarchy |
+| Inspection | Actual usage size and channel overlays | Reduced-size readability and placement crops |
 
-Não escale apenas o mesmo layout. Confirme dimensões/safe zones atuais, continuidade com landing e URL/QR final. Teste QR no tamanho de uso.
+Do not merely scale the same layout. Confirm current dimensions/safe zones, continuity with the landing page, and the final URL/QR code. Test the QR code at its actual usage size.
 
-## Preflight impresso
+## Print preflight
 
-Obtenha tamanho, sangria, área segura, perfil de cor, acabamento e formato da gráfica. Use unidades físicas; faca/dieline vem de fornecedor validado. Confira resolução efetiva após escala: pixels divididos pelo tamanho em polegadas. Verifique transparências e fontes conforme licença. Exporte no preset solicitado e abra o PDF para conferir página, corte, texto e imagens. Material, cor, dobra e montagem exigem prova física; preview RGB não certifica impressão.
+Obtain size, bleed, safe area, color profile, finish, and format from the printer. Use physical units; the die/dieline comes from a validated supplier. Check effective resolution after scaling: pixels divided by size in inches. Verify transparencies and fonts according to their licenses. Export using the requested preset and open the PDF to check page, trim, text, and images. Material, color, folds, and assembly require a physical proof; an RGB preview does not certify print output.

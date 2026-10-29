@@ -1,15 +1,15 @@
 ---
-name: Relatar problema
-about: Um comportamento reproduzível da Forma
+name: Report a bug
+about: Reproducible Forma behavior
 title: "[Bug] "
 ---
 
-### Versão e ambiente
+### Version and environment
 
-### Passos mínimos para reproduzir
+### Minimal reproduction steps
 
-### Resultado esperado e observado
+### Expected and observed results
 
-### Evidências e limites
+### Evidence and limitations
 
-Use dados sintéticos. Remova nomes, credenciais e caminhos pessoais das capturas e logs. Para vulnerabilidades, consulte SECURITY.md.
+Use synthetic data. Remove names, credentials and personal paths from captures and logs. For vulnerabilities, see SECURITY.md.

@@ -1,6 +1,6 @@
 interface:
   display_name: "Forma Interface"
-  short_description: "Sidebar, controles, temas e estados de interface"
-  default_prompt: "Use $forma-interface para criar ou refinar esta interface preservando componentes, rotas e estado existentes."
+  short_description: "Sidebars, controls, themes, and interface states"
+  default_prompt: "Use $forma-interface to create or refine this interface while preserving existing components, routes, and state."
 policy:
   allow_implicit_invocation: true

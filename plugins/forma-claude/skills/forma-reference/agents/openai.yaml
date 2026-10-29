@@ -1,6 +1,6 @@
 interface:
   display_name: "Forma Reference"
-  short_description: "Referências, engenharia reversa e fidelidade"
-  default_prompt: "Use /forma:forma-reference para investigar esta referência e separar evidência, hipótese e decisões de implementação."
+  short_description: "References, reverse engineering, and fidelity"
+  default_prompt: "Use /forma:forma-reference to investigate this reference and distinguish evidence, hypotheses, and implementation decisions."
 policy:
   allow_implicit_invocation: true

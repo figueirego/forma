@@ -28,12 +28,12 @@ test('camera fit contains the volume at all rotations and narrow host aspects',(
 });
 test('painted titles wrap even without spaces and signal truncation, leaving DOM full title to host',()=>{
  const full='W'.repeat(120),measure=s=>s.length*10,lines=linesFor(full,measure,100,3);
- assert.equal(lines.length,3);assert.ok(lines.every(l=>measure(l)<=100));assert.ok(lines[2].endsWith('…'));assert.deepEqual(linesFor('Curto',measure,100,3),['Curto']);
+ assert.equal(lines.length,3);assert.ok(lines.every(l=>measure(l)<=100));assert.ok(lines[2].endsWith('\u2026'));assert.deepEqual(linesFor('Short',measure,100,3),['Short']);
 });
 test('static shelves do not request Three and release their DOM on disposal',()=>{
  const host=hostFixture(),book=create(host,{title:'Caderno'}, {interactive:false});assert.equal(book.renderMode,'canvas');assert.equal(host.children.length,1);
- book.update({title:'Álbum',width:2.8});assert.equal(book.config.title,'Álbum');assert.equal(book.config.width,2.8);
- const copy=book.config;copy.title='mutação';assert.equal(book.config.title,'Álbum');book.dispose();book.dispose();assert.equal(host.children.length,0);assert.equal(book.renderMode,'disposed');book.update({title:'ignorado'});assert.equal(book.config.title,'Álbum');
+ book.update({title:'\u00c1lbum',width:2.8});assert.equal(book.config.title,'\u00c1lbum');assert.equal(book.config.width,2.8);
+ const copy=book.config;copy.title='mutation';assert.equal(book.config.title,'\u00c1lbum');book.dispose();book.dispose();assert.equal(host.children.length,0);assert.equal(book.renderMode,'disposed');book.update({title:'ignored'});assert.equal(book.config.title,'\u00c1lbum');
 });
 test('immediate disposal does not start the deferred Three loader',async()=>{
  const host=hostFixture();let loaderCalls=0;const book=create(host,{}, {loadThree:()=>{loaderCalls++;return {};}});
@@ -55,7 +55,7 @@ function threeFixture(host,{renderError=false}={}){
 test('lost context restores the visible cover and releases shared GPU resources only once',async()=>{
  const host=hostFixture(),gpu=threeFixture(host),book=create(host,{}, {loadThree:()=>gpu.T});await new Promise(r=>setImmediate(r));gpu.draw();assert.equal(book.renderMode,'webgl');assert.equal(host.children[0].children[0].style.visibility,'hidden');
  let prevented=false;gpu.renderer.domElement.events.get('webglcontextlost')({preventDefault(){prevented=true}});assert.equal(prevented,true);assert.equal(book.renderMode,'canvas-context-lost');assert.equal(host.children[0].children[0].style.visibility,'visible');assert.equal(host.children[0].children.length,1);assert.deepEqual(gpu.counts,{geometry:4,material:5,texture:15,renderer:1,context:1});assert.equal(gpu.frames.size,0);
- book.update({title:'Capa ainda utilizável'});book.dispose();assert.deepEqual(gpu.counts,{geometry:4,material:5,texture:15,renderer:1,context:1});
+ book.update({title:'Cover still usable'});book.dispose();assert.deepEqual(gpu.counts,{geometry:4,material:5,texture:15,renderer:1,context:1});
 });
 test('a render failure restores the cover instead of leaving a blank WebGL canvas',async()=>{
  const host=hostFixture(),gpu=threeFixture(host,{renderError:true}),book=create(host,{}, {loadThree:()=>gpu.T});await new Promise(r=>setImmediate(r));gpu.draw();assert.equal(book.renderMode,'canvas-unavailable');assert.equal(host.children[0].children[0].style.visibility,'visible');assert.equal(gpu.counts.renderer,1);book.dispose();
@@ -201,9 +201,9 @@ test('cloth, paper and foil use registered face regions and physical material sc
 });
 
 test('spine lettering only paints diffuse and never compresses glyphs to a maxWidth',async()=>{
- const host=hostFixture(),gpu=threeFixture(host),book=create(host,{title:'Título muito longo '.repeat(10),spineLabel:'12345678',brand:'Pauta',brandMark:'monogram'},{loadThree:()=>gpu.T});await new Promise(r=>setImmediate(r));
+ const host=hostFixture(),gpu=threeFixture(host),book=create(host,{title:'A very long title '.repeat(10),spineLabel:'12345678',brand:'Pauta',brandMark:'monogram'},{loadThree:()=>gpu.T});await new Promise(r=>setImmediate(r));
  const material=gpu.materials[2],diffuse=material.map.image.textCalls,height=material.bumpMap.image.textCalls,foil=material.specularMap.image.textCalls;
- assert.ok(diffuse[0][0].endsWith('…'));assert.equal(diffuse[0].length,3);assert.equal(diffuse[1].length,3);assert.equal(diffuse[1][0],'12345678');assert.deepEqual(height.map(call=>call[0]),['P']);assert.deepEqual(foil.map(call=>call[0]),['P']);
+ assert.ok(diffuse[0][0].endsWith('\u2026'));assert.equal(diffuse[0].length,3);assert.equal(diffuse[1].length,3);assert.equal(diffuse[1][0],'12345678');assert.deepEqual(height.map(call=>call[0]),['P']);assert.deepEqual(foil.map(call=>call[0]),['P']);
  const cover=gpu.materials[0];assert.ok(Math.abs(cover.bumpMap.image.width*2-cover.map.image.width)<=1);assert.ok(Math.abs(cover.specularMap.image.width*4-cover.map.image.width)<=2);book.dispose();
 });
 

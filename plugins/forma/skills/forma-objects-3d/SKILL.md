@@ -1,48 +1,48 @@
 ---
 name: forma-objects-3d
-description: "Integrar ou refinar objetos materiais reutilizáveis, BookObject, livros, capas e mascotes 2D/3D, incluindo geometria, materiais, gestos e lifecycle. Use para mecanismo e fidelidade do objeto; não para adicionar 3D decorativo a toda interface."
+description: "Integrate or refine reusable material objects, BookObject, books, covers and 2D/3D mascots, including geometry, materials, gestures and lifecycle. Use for object mechanisms and fidelity; not to add decorative 3D to every interface."
 metadata:
   version: 1.19.0
 ---
 
-# Objetos, material e 3D
+# Objects, material and 3D
 
-## Quando usar
+## When to use
 
-- Use para reutilizar BookObject, corrigir material/volume, preservar um mascote ou adaptar cena/objeto autorizado.
-- Não use para pressupor WebGL diante de qualquer cartão, perfil, mascote ou imagem de campanha.
+- Use to reuse BookObject, correct material/volume, preserve a mascot or adapt an authorized scene/object.
+- Do not use to assume WebGL for every card, profile, mascot or campaign image.
 
-Este módulo orienta execução após leitura; não inicia renderer, geração ou outros módulos sozinho.
-Preserve marca e stack. Quando o pedido incluir 3D real, CSS inclinado não satisfaz esse aceite.
+This module guides execution after it is read; it does not start a renderer, generation or other modules by itself.
+Preserve the brand and stack. When the request includes actual 3D, tilted CSS does not meet that acceptance criterion.
 
-## Entradas
+## Inputs
 
-- Objeto e consumidor de destino, mecanismo solicitado, referência/versão, estados e vistas relevantes.
-- Código/assets disponíveis, loader/dependências, identidade autorizada, limites de execução e fallback.
+- Object and destination consumer, requested mechanism, reference/version, relevant states and views.
+- Available code/assets, loader/dependencies, authorized identity, execution limits and fallback.
 
-## Procedimento
+## Procedure
 
-1. Fixe conteúdo, geometria, materiais, comportamento e integração; separe evidência estática e runtime.
-   Leia [objetos reutilizáveis](../../references/reusable-objects.md) e reúso nos [playbooks](../../references/playbooks.md); confirme se o objeto cabe no contrato do BookObject.
-2. Para BookObject aprovado, inspecione o asset distribuído e seu consumidor; adapte parâmetros sem reescrever malha/material por palpite.
-   Leia [caso de refinamento](../../references/book-polish-case-study.md). Para capa/folhas articuladas já existentes, borda em tira ou couro sem corpo, consulte o [caso do passaporte](../../references/passport-polish-case-study.md): diagnostique superfície, encaixe, UV e luz antes de mudar espessura. É conhecimento de um consumidor CSS 3D, não um novo asset BookObject. Para mascotes, use [refinamento de mascotes](../../references/mascot-refinement.md) e preserve silhueta, vazios e expressão.
-3. Se houver divergência, rastreie configuração até geometria, UV, normais, shader, fonte, buffer e saída.
-   Use [fidelidade do pacote ao pixel](../../references/3d-reference-fidelity.md); para escolher mecanismo/custo de cena, [web imersiva](../../references/immersive-web-tech.md).
-   Para páginas articuladas, consulte também a seção de folhas/divisória do caso do passaporte: distinguir início do papel, inset do conteúdo e pivô do gesto; conferir ligação dos dois lados e sobreposição que pode atravessar a capa ao fechar.
-4. Integre código e assets ao projeto de destino, com loader válido, eventos, resize, descarte e erro/fallback.
-   Conecte estado e persistência solicitados. Snippet, contrato ou arquivo copiado sem consumidor não é mecanismo disponível em execução.
-5. Observe o caminho principal e teste vistas/gestos pertinentes, materiais, conteúdo extremo e desmontagem.
-   Use [validação renderizada](../../references/rendered-validation.md) e [verificação](../../references/verification.md); valide fallback e redução de movimento separadamente.
+1. Establish content, geometry, materials, behavior and integration; separate static and runtime evidence.
+   Read [reusable objects](../../references/reusable-objects.md) and reuse in [playbooks](../../references/playbooks.md); confirm whether the object fits the BookObject contract.
+2. For an approved BookObject, inspect the distributed asset and its consumer; adapt parameters without guessing mesh/material rewrites.
+   Read the [refinement case study](../../references/book-polish-case-study.md). For existing articulated covers/pages, strip-like edges or leather lacking body, consult the [passport case](../../references/passport-polish-case-study.md): diagnose surface, fit, UVs and light before changing thickness. This is knowledge from a CSS 3D consumer, not a new BookObject asset. For mascots, use [mascot refinement](../../references/mascot-refinement.md) and preserve silhouette, negative spaces and expression.
+3. If a discrepancy exists, trace configuration through geometry, UVs, normals, shader, font, buffer and output.
+   Use [package-to-pixel fidelity](../../references/3d-reference-fidelity.md); for scene mechanism/cost choices, read [immersive web](../../references/immersive-web-tech.md).
+   For articulated pages, also consult the passport case's pages/divider section: distinguish the paper's starting edge, content inset and gesture pivot; check both sides' connection and overlap that may pass through the cover when closing.
+4. Integrate code and assets into the destination project with a valid loader, events, resize, disposal and error/fallback handling.
+   Connect the requested state and persistence. A snippet, contract or copied file without a consumer is not a mechanism available at runtime.
+5. Observe the main path and test relevant views/gestures, materials, extreme content and unmounting.
+   Use [rendered validation](../../references/rendered-validation.md) and [verification](../../references/verification.md); validate fallback and reduced motion separately.
 
-## Saída e parada
+## Output and stopping condition
 
-Entregue o objeto integrado ou especificação pedida, API efetivamente usada e evidência do renderer no destino.
-Registre o que foi integrado, adaptado, substituído ou não testado; comparação de bibliotecas não prova equivalência visual.
-Pare quando o consumidor exercitar o mecanismo solicitado e vistas, gestos e material atenderem ao aceite fixado.
-Se apenas fallback funcionar, não conclua que o volume/renderer principal foi validado. Declare a dependência concreta restante.
+Deliver the integrated object or requested specification, the API actually used and renderer evidence in the destination.
+Record what was integrated, adapted, replaced or not tested; a library comparison does not prove visual equivalence.
+Stop when the consumer exercises the requested mechanism and views, gestures and material meet the established acceptance criteria.
+If only the fallback works, do not conclude that the primary volume/renderer was validated. State the concrete remaining dependency.
 
-## Apoios opcionais e limites
+## Optional support and limits
 
-REA pode esclarecer mecanismo desconhecido; `design-motion-principles` pode apoiar gestos; `ecc:blender-motion-state-inspection` só cabe quando houver contexto Blender.
-Confira disponibilidade e leia o `SKILL.md` operacional atual, quando existir, conforme [integrações](../../references/integrations.md); não suponha ferramentas pelo nome.
-Não instale engines ou troque stack por associação visual. Materialidade, geração de imagem e geometria executável são entregáveis distintos.
+REA can clarify an unknown mechanism; `design-motion-principles` can support gestures; `ecc:blender-motion-state-inspection` applies only when a Blender context exists.
+Check availability and read the current operational `SKILL.md`, when present, as described in [integrations](../../references/integrations.md); do not assume tools from a name.
+Do not install engines or change the stack by visual association. Materiality, image generation and executable geometry are distinct deliverables.
