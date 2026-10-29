@@ -71,28 +71,28 @@ def cases():
         {
             'id': 'portfolio-introduction',
             'name': 'Developer portfolio: identity and contact',
-            'whenToUse': 'Investigate how a developer introduces their work, audience and contact paths. Listing membership does not prove a specific profession, stack or design quality.',
+            'whenToUse': 'Investigate how a developer presents their work, intended audience and contact options. Inclusion in this listing does not verify a profession, technology stack or level of design quality.',
             'questions': ['Can a visitor understand the intended work and audience from real content?', 'Which contact and profile links are available and still work?'],
-            'adapt': ['Write an introduction using the destination owner’s actual experience and goals.', 'Use the destination brand, typography and contact information; do not copy another person’s identity or claims.'],
-            'verify': ['Check heading hierarchy, text contrast, focus, long names and narrow-screen wrapping.', 'Verify real contact destinations and distinguish a working form from a mail link or demonstration.'],
+            'adapt': ["Write an introduction using the project owner's actual experience and goals.", "Use the project's brand, typography and contact information; do not copy another person's identity or claims."],
+            'verify': ['Check heading hierarchy, text contrast, focus, long names and narrow-screen wrapping.', 'Verify contact links and distinguish a working form from an email link or a demonstration.'],
             'patternIds': ['forma-typography', 'forma-color-system', 'forma-recoverable-forms'],
         },
         {
             'id': 'portfolio-project-stories',
             'name': 'Developer portfolio: project evidence and case studies',
             'whenToUse': 'Investigate how projects explain the problem, contribution and result. The index does not verify the claims made by each portfolio.',
-            'questions': ['Does a project separate personal contributions, team work and proposals?', 'Are a demo, repository, image and measured result identified as different kinds of evidence?'],
-            'adapt': ['Build case studies from the owner’s verifiable work with a clear problem, role, decisions and result.', 'Choose media with known provenance and a readable text alternative; inspect any source-code license separately.'],
-            'verify': ['Test project detail and return navigation with real content, broken media and long titles.', 'Check that screenshots, links and results support the stated contribution without invented metrics.'],
+            'questions': ['Does a project distinguish individual contributions, team contributions and proposals?', 'Are demos, repositories, images and measured results identified as different kinds of evidence?'],
+            'adapt': ["Build case studies from the owner's verifiable work, clearly describing the problem, role, decisions and result.", 'Choose media with known provenance and a readable text alternative; inspect any source-code license separately.'],
+            'verify': ['Test project detail views and return navigation with real content, broken media and long titles.', 'Check that screenshots, links and results support the stated contribution without invented metrics.'],
             'patternIds': ['forma-adaptive-list-detail', 'forma-reference-media', 'forma-rendered-review'],
         },
         {
             'id': 'portfolio-navigation',
             'name': 'Developer portfolio: browsing and responsive navigation',
             'whenToUse': 'Investigate project selection, reading order, navigation and responsive behavior. Motion or 3D must be observed before assigning those characteristics to a site.',
-            'questions': ['Can visitors find and compare projects without opening every item?', 'What happens to focus, scroll and selection when opening a project and returning?'],
-            'adapt': ['Organize real projects using stable IDs and a coherent content hierarchy.', 'Select layout and interaction from the destination task; keep animations optional and essential content accessible.'],
-            'verify': ['Exercise keyboard, touch, back navigation, narrow width and reduced motion on the selected reference and the resulting consumer.', 'Check empty lists, unavailable links, missing thumbnails and preserved reading context.'],
+            'questions': ['Can visitors find and compare projects without opening every item?', 'What happens to focus, scroll position and selection when opening a project and returning?'],
+            'adapt': ['Organize real projects using stable IDs and a coherent content hierarchy.', 'Choose the layout and interactions to support the task in the target project; keep animations optional and essential content accessible.'],
+            'verify': ['Test keyboard and touch input, back navigation, narrow viewports and reduced motion on the selected reference and the resulting implementation.', 'Check empty lists, unavailable links, missing thumbnails and preserved reading context.'],
             'patternIds': ['forma-adaptive-list-detail', 'forma-spatial-layout', 'forma-search-discovery'],
         },
     ]
@@ -128,19 +128,19 @@ def build(readme, feed, revision):
         'provenance': {
             'inventory': {
                 'url': f'{REPOSITORY}/blob/{revision}/README.md', 'revision': revision,
-                'license': 'No explicit repository license found in the inspected snapshot. Factual names and URLs only; no code, descriptions, images or site licenses are transferred.',
+                'license': 'No explicit repository license was found in the inspected snapshot. This index contains only factual names and URLs; it does not include portfolio code, descriptions or images, or grant rights to those materials.',
                 'noticePath': 'THIRD_PARTY_NOTICES.md',
                 'retainedFields': ['name', 'url', 'README line'],
             },
             'mapping': {
                 'author': 'Forma',
-                'method': 'All current README listings are indexed without deduplicating people by name. Three Forma-authored research lenses apply to the collection as questions, not per-site findings. Original URLs and source lines are retained; malformed URLs are quarantined instead of repaired. The feed is compared for drift and is not authoritative.',
+                'method': 'All listings in the pinned README are indexed without merging records by name. Three Forma-authored investigation guides provide questions for the collection, not findings about individual sites. Original URLs and source lines are retained; malformed URLs are quarantined instead of repaired. The feed is compared with the README to identify differences and is not authoritative.',
                 'limits': [
                     'No portfolio website was visited, captured, tested or rated during this import. Availability, design, technology and ownership are unverified.',
-                    'All cases are investigation prompts shared by the collection, not extracted website features, professional classifications or quality endorsements.',
+                    'All cases contain investigation prompts shared by the collection, not extracted website features, professional classifications or quality endorsements.',
                     'The source declares no explicit license in this snapshot. This factual index does not authorize reuse of portfolio code, identities, text, fonts or images.',
                     'A malformed original URL remains visible as data with no active destination link. Historical feed-only URLs are recorded in portfolio-import.json, not silently substituted.',
-                    'There is no automatic refresh or crawler. Reinspect a selected original site before using it as current design evidence.',
+                    'There is no automatic refresh or crawler. Inspect a selected site before using it as current design evidence.',
                 ],
             },
         },
@@ -156,7 +156,7 @@ def build(readme, feed, revision):
         'feedNotInReadme': [{'name': name, 'url': url} for name, url in sorted(feed_pairs - readme_pairs)],
         'repeatedNames': [{'name': name, 'occurrences': count} for name, count in sorted(Counter(row['name'] for row in rows).items()) if count > 1],
         'quarantined': [{'id': entry['id'], 'name': entry['name'], **entry['source']} for entry in entries if entry['url'] is None],
-        'policy': 'Current README listings are complete. Feed-only destinations are historical discrepancies, not additional current portfolios. Names are not unique identities. Raw URLs are never silently repaired. Descriptions and taglines are not imported.',
+        'policy': 'Every listing in the pinned README is included. Feed-only destinations are historical discrepancies, not additional current portfolios. Names do not uniquely identify people. Raw URLs are never silently repaired. Descriptions and taglines are not imported.',
     }
     return index, receipt
 

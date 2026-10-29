@@ -19,7 +19,7 @@
       "limits": [
         "Every assignment is a research hypothesis derived from historical metadata, not a verified statement about the current website or its implementation.",
         "No website was revisited or captured for this index. Availability, current appearance, interactions, underlying technologies and mobile behavior remain unverified.",
-        "A case lists questions to investigate and adaptations to test; it does not assert that a candidate website already implements, passes or permits any of them.",
+        "Each case proposes questions and adaptations. It does not establish that a candidate implements the suggested behavior, passes the listed checks or permits reuse.",
         "The 202 external candidates may share cases. They are neither 202 distinct implementation problems nor Forma-owned designs.",
         "Names and URLs preserve attribution to the external destinations. This index grants no permission to copy website code, branding, images, fonts or other assets.",
         "Before implementation, inspect only the selected candidates on the target viewports, record date and state, and validate the resulting implementation independently."
@@ -36,8 +36,8 @@
         "Which headings need stable URLs, a contents list or return-to-reading behavior?"
       ],
       "adapt": [
-        "Build the heading hierarchy and reading width with the project’s real text before adding decorative media.",
-        "Keep chapter navigation separate from content; retain the reading position when opening a citation or returning from a detail."
+        "Build the heading hierarchy and reading width with the project's real text before adding decorative media.",
+        "Keep chapter navigation separate from content; retain the reading position when opening a citation or returning from a detail view."
       ],
       "verify": [
         "Test long headings, text zoom, a narrow viewport and keyboard navigation without loss of reading order.",
@@ -96,7 +96,7 @@
     {
       "id": "functional-product-demo",
       "name": "Demonstrate a real software task",
-      "whenToUse": "Use for a SaaS, AI product, developer tool or consumer app page that must show what a control does instead of relying on a decorative mockup.",
+      "whenToUse": "Use for a SaaS product, AI product, developer tool or consumer app page that must show what a control does instead of relying on a decorative mockup.",
       "questions": [
         "Which action and observable result prove the product claim?",
         "Is the demonstration using real functionality, an isolated fixture or a noninteractive recording?"
@@ -183,7 +183,7 @@
     },
     {
       "id": "character-feedback",
-      "name": "Character and mascot as interface feedback",
+      "name": "Characters and mascots as interface feedback",
       "whenToUse": "Use when a character, mascot, avatar or illustrated guide communicates a product identity or responds to an interaction.",
       "questions": [
         "Which recognizable features must remain stable across poses and sizes?",
@@ -194,7 +194,7 @@
         "Separate personality animation from functional status; expose errors and progress in ordinary text as well."
       ],
       "verify": [
-        "Compare the character at avatar size, full size and all supported themes.",
+        "Compare the character at avatar size and full size in all supported themes.",
         "Verify interrupted transitions, reduced motion and failure states without misleading emotional or progress cues."
       ],
       "patternIds": [
@@ -206,7 +206,7 @@
     {
       "id": "identity-system",
       "name": "Translate identity into reusable UI roles",
-      "whenToUse": "Use when a brand’s color, shape or visual motif needs to support buttons, sections, content and navigation across several pages.",
+      "whenToUse": "Use when a brand's color, shape or visual motif needs to support buttons, sections, content and navigation across several pages.",
       "questions": [
         "Which attributes identify the brand, and which controls must remain conventional for comprehension?",
         "Can the same visual roles work with real content in light and dark modes?"
@@ -217,7 +217,7 @@
       ],
       "verify": [
         "Review hover, focus, selected, disabled and error states in both themes.",
-        "Check contrast and information hierarchy with the decorative motif removed and with color perception differences."
+        "Check contrast and information hierarchy with the decorative motif removed and under different color-vision conditions."
       ],
       "patternIds": [
         "forma-color-system",
@@ -228,17 +228,17 @@
     {
       "id": "venue-booking",
       "name": "Restaurant, cafe and destination booking forms",
-      "whenToUse": "Use for a restaurant, coffee shop, cafe, hotel or destination page where a booking form supports reserving or checking availability alongside practical visit information.",
+      "whenToUse": "Use for a restaurant, coffee shop, cafe, hotel or destination page that combines availability checks or reservations with practical visitor information.",
       "questions": [
-        "Can a visitor quickly find location, opening times, accessible contact and booking conditions?",
+        "Can a visitor quickly find the location, opening hours, contact options and booking conditions?",
         "Which date, party size or accommodation constraints must be checked before a reservation can succeed?"
       ],
       "adapt": [
         "Place practical visit information alongside the relevant action; use current verified content rather than decorative sample details.",
-        "Preserve entered dates and guest details across validation or provider failures, and distinguish an enquiry from a confirmed booking."
+        "Preserve entered dates and guest details across validation or provider failures, and distinguish an inquiry from a confirmed booking."
       ],
       "verify": [
-        "Complete the booking or enquiry path on a narrow screen and verify the confirmation state.",
+        "Complete the booking or inquiry flow on a narrow screen and verify the confirmation state.",
         "Test unavailable dates, invalid party size, external-provider failure and a visitor who cannot use a map."
       ],
       "patternIds": [
@@ -257,7 +257,7 @@
       ],
       "adapt": [
         "Use structured event and session data for the agenda and any calendar export; make sold-out and changed sessions explicit.",
-        "Keep registration and payment boundaries understandable and preserve the attendee’s draft when validation fails."
+        "Keep registration and payment boundaries understandable and preserve the attendee's draft when validation fails."
       ],
       "verify": [
         "Check time-zone display, session overlaps, agenda navigation and mobile registration.",
@@ -272,7 +272,7 @@
     {
       "id": "collection-discovery",
       "name": "Find and compare items in a collection",
-      "whenToUse": "Use for an archive, product catalogue, reference library, icon collection or saved-item app that requires search, filters or comparison.",
+      "whenToUse": "Use for an archive, product catalog, reference library, icon collection or saved-item app that requires search, filters or comparison.",
       "questions": [
         "Which facets and metadata help a user narrow the collection without guessing?",
         "What identifies an item when its image, ordering or display label changes?"
@@ -305,7 +305,7 @@
       ],
       "verify": [
         "Check totals, rounding, missing values and changes in the selected time range.",
-        "Compare the visual account against a readable table or list, including keyboard access and narrow-screen behavior."
+        "Compare the visualization with a readable table or list, including keyboard access and narrow-screen behavior."
       ],
       "patternIds": [
         "forma-data-dashboard",
@@ -337,15 +337,15 @@
     },
     {
       "id": "service-enquiry",
-      "name": "Service proof and recoverable enquiry forms",
-      "whenToUse": "Use for an agency, consultancy, professional practice, architecture service or property presentation that must lead from evidence to an enquiry form.",
+      "name": "Service evidence and recoverable inquiry forms",
+      "whenToUse": "Use for an agency, consultancy, professional practice, architectural service or property presentation that must lead from evidence to an inquiry form.",
       "questions": [
-        "Which authentic project, qualification or service detail supports the visitor’s decision?",
-        "What is the minimum information needed to route the enquiry to the appropriate team?"
+        "Which authentic project, qualification or service detail supports the visitor's decision?",
+        "What is the minimum information needed to route the inquiry to the appropriate team?"
       ],
       "adapt": [
-        "Arrange the offer, relevant proof and next action around the customer’s task rather than a generic collection of visual effects.",
-        "Use a short labelled form, make any external handoff visible and preserve the draft when submission fails."
+        "Arrange the offer, relevant evidence and next action around the customer's task rather than a generic collection of visual effects.",
+        "Use a short labeled form, make any external handoff visible and preserve the draft when submission fails."
       ],
       "verify": [
         "Verify that claims and images belong to the service being offered and remain readable on a phone.",

@@ -1,5 +1,13 @@
 # Histórico
 
+## 1.27.1 - Reference library language review
+
+- Kept search coverage stable through the copy review with shared aliases for form/forms and inquiry/enquiry, including regression coverage for both English spellings.
+- Standardized the reference browser, accessible labels, empty states and errors in US English, with plain ASCII editorial copy and UTF-8 source data.
+- Reviewed all 20 pattern records, 16 website research guides and three portfolio guides; corrected grammar, terminology and punctuation while preserving technical contracts.
+- Preserved all 202 website and 2,079 portfolio identities, URLs and source lines, including original accented names. Added regression checks for identity preservation, authored ASCII text and browser language metadata.
+- Updated the portfolio importer and library guide to preserve the same editorial standard on future imports.
+
 ## 1.27.0 — Developer portfolio collection
 
 - Added all 2,079 entries from the pinned Developer Portfolios README as a separate searchable collection in the CLI and browser, with source lines and explicit research-only status.

@@ -111,7 +111,7 @@
       "issue": "malformed-url"
     }
   ],
-  "policy": "Current README listings are complete. Feed-only destinations are historical discrepancies, not additional current portfolios. Names are not unique identities. Raw URLs are never silently repaired. Descriptions and taglines are not imported.",
+  "policy": "Every listing in the pinned README is included. Feed-only destinations are historical discrepancies, not additional current portfolios. Names do not uniquely identify people. Raw URLs are never silently repaired. Descriptions and taglines are not imported.",
   "sha256": {
     "README.md": "46579c228d97ec5122ee9bb644d976d93d1110ef8e45647a78efb92393ec1b0d",
     "feed.json": "750de7e107a4d67e3242739d8776d691675d42ed48be88c28a322f0597be537e"

@@ -3,10 +3,10 @@ const el = id => document.getElementById(id);
 const root = new URL('../', import.meta.url);
 const pageSize = 12;
 const evidenceLabels = {
-  'executable-demo': 'Demonstração executável',
-  'reusable-component': 'Componente reutilizável',
-  'implementation-contract': 'Contrato para implementar',
-  'guidance-with-helper': 'Guia com utilitário',
+  'executable-demo': 'Runnable demo',
+  'reusable-component': 'Reusable component',
+  'implementation-contract': 'Implementation requirements',
+  'guidance-with-helper': 'Guide with a helper tool',
 };
 let entries = [], visible = [], count = pageSize, catalog = null;
 const externalIndices = { sites: null, portfolios: null }, externalErrors = {};
@@ -44,45 +44,45 @@ function link(parent, label, value, local = false) {
 }
 function detail(entry) {
   if (isExternal()) { siteDetail(entry); return; }
-  el('detail-origin').textContent = `Forma · ${evidenceLabels[entry.evidence.type]}`;
+  el('detail-origin').textContent = `Forma / ${evidenceLabels[entry.evidence.type]}`;
   const content = el('detail-content');
   content.replaceChildren(text('h2', entry.name));
   content.firstChild.id = 'detail-title';
-  section(content, 'Ideia', entry.idea);
-  section(content, 'Quando usar', entry.whenToUse);
-  section(content, 'Estrutura', entry.structure);
-  section(content, 'Como adaptar', entry.adapt);
-  section(content, 'O que evitar', entry.avoid);
-  section(content, 'Como verificar', entry.verify);
-  section(content, 'Evidência e limites', [evidenceLabels[entry.evidence.type], ...(entry.evidence.limits ?? [])].filter(Boolean));
-  content.append(text('p', 'A ficha não inclui uma captura ao vivo. Confira o recurso e teste o projeto de destino antes de concluir fidelidade ou comportamento.', 'warning'));
-  section(content, 'Direitos', Object.values(entry.rights ?? {}));
-  content.append(text('h3', 'Recursos no pacote'));
+  section(content, 'Core idea', entry.idea);
+  section(content, 'When to use it', entry.whenToUse);
+  section(content, 'Structure', entry.structure);
+  section(content, 'How to adapt it', entry.adapt);
+  section(content, 'What to avoid', entry.avoid);
+  section(content, 'What to verify', entry.verify);
+  section(content, 'Evidence and limitations', [evidenceLabels[entry.evidence.type], ...(entry.evidence.limits ?? [])].filter(Boolean));
+  content.append(text('p', 'This record includes no live screenshot. Inspect the resource and test the target project before claiming visual or behavioral fidelity.', 'warning'));
+  section(content, 'Rights and attribution', Object.values(entry.rights ?? {}));
+  content.append(text('h3', 'Package resources'));
   for (const resource of entry.resources ?? []) link(content, resource.label, resource.path, true);
   el('detail').showModal();
 }
 function siteDetail(entry) {
-  el('detail-origin').textContent = `${isPortfolios() ? 'Portfólio de desenvolvedor' : 'Site externo'} · candidato histórico`;
+  el('detail-origin').textContent = `${isPortfolios() ? 'Developer portfolio' : 'External website'} / Research candidate`;
   const content = el('detail-content');
   content.replaceChildren(text('h2', entry.name));
   content.firstChild.id = 'detail-title';
-  if (entry.url) link(content, 'Visitar o site original ↗', entry.url);
+  if (entry.url) link(content, 'Visit the original website', entry.url);
   if (entry.source) {
-    section(content, 'URL original na fonte (texto)', entry.source.originalUrl);
-    link(content, `Registro no README · linha ${entry.source.line}`, `${currentIndex().provenance.inventory.url}#L${entry.source.line}`);
-    if (entry.source.issue) content.append(text('p', 'URL inválida na fonte: registro preservado sem link de visita. Não foi corrigida automaticamente.', 'warning'));
+    section(content, 'Original source URL (text)', entry.source.originalUrl);
+    link(content, `README source / Line ${entry.source.line}`, `${currentIndex().provenance.inventory.url}#L${entry.source.line}`);
+    if (entry.source.issue) content.append(text('p', 'The source URL is invalid. The record is preserved without a visit link; no correction was guessed.', 'warning'));
   }
-  content.append(text('p', 'Não visitado nesta consulta; sem captura incluída. Os casos abaixo propõem o que investigar, não atestam características deste site. Identidade, código e assets pertencem aos respectivos autores.', 'warning'));
-  link(content, 'Estudos e experiências da Forma', 'references/site-experiences.md', true);
+  content.append(text('p', 'This lookup does not visit the site or include a screenshot. The guides below suggest what to investigate; they do not verify this site. Identity, code and assets belong to their respective authors.', 'warning'));
+  link(content, 'Forma studies and research notes', 'references/site-experiences.md', true);
   const selectedCases = casesFor(entry);
   for (const item of selectedCases) {
-    section(content, `Caso Forma: ${item.name}`, item.whenToUse);
-    section(content, 'Perguntas para investigar', item.questions);
-    section(content, 'Possíveis adaptações', item.adapt);
-    section(content, 'Como verificar', item.verify);
+    section(content, `Forma research guide: ${item.name}`, item.whenToUse);
+    section(content, 'Questions to investigate', item.questions);
+    section(content, 'Possible adaptations', item.adapt);
+    section(content, 'What to verify', item.verify);
   }
   const patternIds = new Set(selectedCases.flatMap(item => item.patternIds));
-  content.append(text('h3', 'Padrões relacionados no pacote'));
+  content.append(text('h3', 'Related Forma patterns'));
   for (const pattern of entries.filter(item => patternIds.has(item.id))) {
     section(content, pattern.name, evidenceLabels[pattern.evidence.type]);
     for (const resource of pattern.resources) link(content, resource.label, resource.path, true);
@@ -92,7 +92,7 @@ function siteDetail(entry) {
 function updateSource() {
   const sites = isExternal();
   // Cases belong to one inventory; never carry a stale filter into another collection.
-  const allCases = text('option', 'Todos'); allCases.value = '';
+  const allCases = text('option', 'All'); allCases.value = '';
   el('case').replaceChildren(allCases);
   for (const item of currentIndex()?.cases ?? []) {
     const option = text('option', item.name); option.value = item.id; el('case').append(option);
@@ -101,10 +101,10 @@ function updateSource() {
   el('kind-field').hidden = sites;
   el('case-field').hidden = !sites;
   el('filters').classList.toggle('site-filters', sites);
-  el('source-note').textContent = sites ? `${isPortfolios() ? 'Linhas do README · portfólios externos' : 'URLs históricas'} · casos de investigação da Forma` : 'Autoria editorial Forma · seleção local';
-  el('query').placeholder = isPortfolios() ? 'Nome, developer, portfolio…' : sites ? 'Cafeteria, typography, editorial…' : 'Sidebar, typography, perfil…';
-  el('more').textContent = isPortfolios() ? 'Mostrar mais portfólios' : sites ? 'Mostrar mais sites' : 'Mostrar mais padrões';
-  el('empty').textContent = sites ? 'Nenhum site corresponde aos filtros. Tente outro termo ou caso de investigação.' : 'Nenhum padrão corresponde aos filtros. Tente outro termo ou amplie o contexto.';
+  el('source-note').textContent = sites ? `${isPortfolios() ? 'External portfolios with source lines' : 'External website inventory'} / Forma research guides` : 'Written by Forma / Local search';
+  el('query').placeholder = isPortfolios() ? 'Name, developer, portfolio...' : sites ? 'Cafe, typography, editorial...' : 'Sidebar, typography, profile...';
+  el('more').textContent = isPortfolios() ? 'Show more portfolios' : sites ? 'Show more websites' : 'Show more patterns';
+  el('empty').textContent = isPortfolios() ? 'No portfolios match these filters. Try another name or research guide.' : sites ? 'No websites match these filters. Try another term or research guide.' : 'No patterns match these filters. Try another term or a broader context.';
   filter();
 }
 function render() {
@@ -113,25 +113,25 @@ function render() {
   for (const entry of visible.slice(0, count)) {
     const card = document.createElement('article'); card.className = 'card';
     const meta = document.createElement('div'); meta.className = 'card-meta';
-    meta.append(text('span', isPortfolios() ? 'PORTFÓLIO' : isExternal() ? 'SITE EXTERNO' : 'FORMA', 'tag'), text('span', isExternal() ? (entry.source?.issue ? 'URL inválida · registro preservado' : 'Não verificado ao vivo') : evidenceLabels[entry.evidence.type]));
-    const paragraph = isExternal() ? `Investigar: ${casesFor(entry).map(item => item.name).join(' · ')}` : String(entry.idea ?? entry.whenToUse ?? '');
-    const button = text('button', isExternal() ? 'Ver caso de investigação →' : 'Ler ficha →'); button.type = 'button';
-    button.setAttribute('aria-label', `Ler ficha: ${entry.name}`);
+    meta.append(text('span', isPortfolios() ? 'PORTFOLIO' : isExternal() ? 'EXTERNAL WEBSITE' : 'FORMA', 'tag'), text('span', isExternal() ? (entry.source?.issue ? 'Invalid URL / Record preserved' : 'Not verified live') : evidenceLabels[entry.evidence.type]));
+    const paragraph = isExternal() ? `Research guides: ${casesFor(entry).map(item => item.name).join(' / ')}` : String(entry.idea ?? entry.whenToUse ?? '');
+    const button = text('button', isExternal() ? 'View research guides' : 'View pattern'); button.type = 'button';
+    button.setAttribute('aria-label', `View reference: ${entry.name}`);
     button.addEventListener('click', () => detail(entry));
-    card.append(meta, text('h2', entry.name), text('p', paragraph.length > 230 ? `${paragraph.slice(0, 227)}…` : paragraph), button);
+    card.append(meta, text('h2', entry.name), text('p', paragraph.length > 230 ? `${paragraph.slice(0, 227)}...` : paragraph), button);
     fragment.append(card);
   }
   cards.replaceChildren(fragment);
   const shown = Math.min(count, visible.length);
-  const noun = isPortfolios() ? (visible.length === 1 ? 'portfólio' : 'portfólios') : isExternal() ? (visible.length === 1 ? 'site' : 'sites') : (visible.length === 1 ? 'padrão' : 'padrões');
-  el('status').textContent = `${visible.length} ${noun} · ${shown} ${shown === 1 ? 'exibido' : 'exibidos'}`;
+  const noun = isPortfolios() ? (visible.length === 1 ? 'portfolio' : 'portfolios') : isExternal() ? (visible.length === 1 ? 'website' : 'websites') : (visible.length === 1 ? 'pattern' : 'patterns');
+  el('status').textContent = `${visible.length} ${noun} / ${shown} shown`;
   el('empty').hidden = visible.length !== 0;
   el('more').hidden = count >= visible.length;
 }
 function filter() {
   try {
     const siteIndex = currentIndex();
-    if (isExternal() && !siteIndex) throw new Error(externalErrors[el('collection').value] || 'Índice ainda não carregado.');
+    if (isExternal() && !siteIndex) throw new Error(externalErrors[el('collection').value] || 'The index has not loaded yet.');
     visible = isExternal() ? rankSites(siteIndex, catalog, {
       query: el('query').value, ...(el('case').value && { caseId: el('case').value }),
     }).map(result => result.entry) : rankReferences({ entries }, {
@@ -143,7 +143,7 @@ function filter() {
     visible = [];
     count = pageSize;
     render();
-    el('status').textContent = `Refine a busca: ${error.message}`;
+    el('status').textContent = `Search unavailable: ${error.message}`;
     return;
   }
   count = pageSize;
@@ -173,24 +173,25 @@ try {
   entries = [...catalog.entries].sort((a, b) => a.name.localeCompare(b.name));
   if (siteResult.status === 'fulfilled') {
     try { externalIndices.sites = validateSiteIndex(siteResult.value, catalog); }
-    catch (error) { externalErrors.sites = `Índice de sites inválido: ${error.message}`; }
-  } else externalErrors.sites = `Índice de sites indisponível: ${siteResult.reason.message}`;
+    catch (error) { externalErrors.sites = `Invalid website index: ${error.message}`; }
+  } else externalErrors.sites = `Website index unavailable: ${siteResult.reason.message}`;
   if (portfolioResult.status === 'fulfilled') {
     try {
       const index = validateSiteIndex(portfolioResult.value, catalog);
-      if (index.schemaVersion !== 2 || index.collection !== 'developer-portfolios') throw new Error('Coleção de portfólios incorreta.');
+      if (index.schemaVersion !== 2 || index.collection !== 'developer-portfolios') throw new Error('Incorrect portfolio collection.');
       externalIndices.portfolios = index;
-    } catch (error) { externalErrors.portfolios = `Índice de portfólios inválido: ${error.message}`; }
-  } else externalErrors.portfolios = `Índice de portfólios indisponível: ${portfolioResult.reason.message}`;
+    } catch (error) { externalErrors.portfolios = `Invalid portfolio index: ${error.message}`; }
+  } else externalErrors.portfolios = `Portfolio index unavailable: ${portfolioResult.reason.message}`;
   for (const evidence of [...new Set(entries.map(entry => entry.evidence.type))].sort()) {
     const option = text('option', evidenceLabels[evidence]); option.value = evidence; el('evidence').append(option);
   }
   for (const kind of [...new Set(entries.map(entry => entry.kind))].sort()) {
-    const option = text('option', kind); option.value = kind; el('kind').append(option);
+    const label = kind === '3d' ? '3D' : kind.charAt(0).toUpperCase() + kind.slice(1).replaceAll('-', ' ');
+    const option = text('option', label); option.value = kind; el('kind').append(option);
   }
   updateSource();
 } catch (error) {
-  el('status').textContent = 'Catálogo indisponível';
+  el('status').textContent = 'Library unavailable';
   el('error').hidden = false;
-  el('error').textContent = `Não foi possível ler o catálogo. Abra esta página por um servidor HTTP local, com a raiz completa da skill. Detalhe: ${error.message}`;
+  el('error').textContent = `The library could not be loaded. Serve the complete skill directory through a local HTTP server. Details: ${error.message}`;
 }

@@ -149,6 +149,22 @@ test('form queries retrieve enquiry, booking and registration cases rather than 
   assert.ok(api.searchSites(index, catalog, { query: 'reading', caseId: 'editorial-reading' }).totalMatches > 0);
 });
 
+test('US and British inquiry spellings retrieve the same service and booking candidates', () => {
+  const inquiryCases = new Set(['service-enquiry', 'venue-booking']);
+  const expectedIds = index.entries.filter(entry => entry.caseIds.some(id => inquiryCases.has(id)))
+    .map(entry => entry.id).sort();
+  for (const query of ['inquiry', 'enquiry']) {
+    const results = api.rankSites(index, catalog, { query });
+    assert.deepEqual(results.map(result => result.entry.id).sort(), expectedIds);
+    assert.equal(api.searchSites(index, catalog, { query, caseId: 'editorial-reading' }).totalMatches, 0);
+    const result = cli('--sites', '--query', query, '--limit', '5', '--json');
+    assert.equal(result.status, 0, result.stderr);
+    const board = JSON.parse(result.stdout);
+    assert.equal(board.totalMatches, expectedIds.length);
+    assert.deepEqual(ids(board), results.slice(0, 5).map(item => item.entry.id));
+  }
+});
+
 test('site boards never overwrite existing pattern, legacy or symlink outputs', () => {
   const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'forma-site-board-'));
   try {

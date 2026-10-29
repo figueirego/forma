@@ -211,26 +211,26 @@ test('browser switches case collections, preserves focus and never links the qua
   assert.equal(page.nodes.get('case').value, '');
   assert.deepEqual(page.nodes.get('case').children.slice(1).map(item => item.value), index.cases.map(item => item.id));
   assert.equal(page.document.activeElement, page.nodes.get('collection'));
-  assert.match(page.nodes.get('status').textContent, /^2079 portfólios/);
+  assert.match(page.nodes.get('status').textContent, /^2079 portfolios/);
   const invalid = index.entries.find(entry => entry.source.issue);
   page.change('query', invalid.name);
   page.nodes.get('cards').firstChild.querySelector('button').listeners.click();
   const detail = page.nodes.get('detail-content'), links = descend(detail).filter(node => node.tag === 'a');
   assert.ok(detail.textContent.includes(invalid.source.originalUrl));
-  assert.ok(detail.textContent.includes('URL inválida na fonte'));
-  assert.equal(links.some(node => node.href === invalid.source.originalUrl || node.textContent.includes('Visitar o site original')), false);
+  assert.ok(detail.textContent.includes('The source URL is invalid'));
+  assert.equal(links.some(node => node.href === invalid.source.originalUrl || node.textContent.includes('Visit the original website')), false);
   assert.ok(links.some(node => node.href === `${index.provenance.inventory.url}#L${invalid.source.line}`));
   page.change('query', ''); page.change('collection', 'sites');
   assert.equal(page.nodes.get('case').value, '');
   assert.equal(page.nodes.get('case').children.length, sites.cases.length + 1);
-  assert.match(page.nodes.get('status').textContent, /^202 sites/);
+  assert.match(page.nodes.get('status').textContent, /^202 websites/);
 });
 
 test('a missing portfolio inventory does not disable sites or patterns', async () => {
   const page = await browserHarness({ missingPortfolio: true });
-  assert.match(page.nodes.get('status').textContent, /^20 padrões/);
+  assert.match(page.nodes.get('status').textContent, /^20 patterns/);
   page.change('collection', 'portfolios');
-  assert.match(page.nodes.get('status').textContent, /portfólios indisponível/);
-  page.change('collection', 'sites'); assert.match(page.nodes.get('status').textContent, /^202 sites/);
-  page.change('collection', 'patterns'); assert.match(page.nodes.get('status').textContent, /^20 padrões/);
+  assert.match(page.nodes.get('status').textContent, /Portfolio index unavailable/);
+  page.change('collection', 'sites'); assert.match(page.nodes.get('status').textContent, /^202 websites/);
+  page.change('collection', 'patterns'); assert.match(page.nodes.get('status').textContent, /^20 patterns/);
 });

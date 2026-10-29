@@ -4,11 +4,11 @@
     "forma": {
       "author": "Forma contributors",
       "method": "Original editorial capability records written from the components, demonstrations and contracts in this package.",
-      "scope": "A curated pattern library for choosing a next implementation step, not a catalog of external websites.",
+      "scope": "A curated pattern library for choosing the next implementation step, not a catalog of external websites.",
       "limits": [
         "No third-party catalog records, aesthetic scores, screenshots or website assets are included.",
         "Authorship of the editorial records does not imply invention of UX theory, observed mechanisms, standards or dependencies described by their linked resources.",
-        "Entry availability identifies code, a runnable demo or an implementation contract; it is not evidence of a working consumer integration."
+        "An entry identifies available code, a runnable demo or an implementation contract; it is not evidence of a working integration in the destination project."
       ],
       "license": "MIT; see LICENSE and THIRD_PARTY_NOTICES.md"
     }
@@ -36,7 +36,7 @@
         "dark"
       ],
       "idea": "A stable navigation edge and a separate working surface let product content carry the visual emphasis.",
-      "whenToUse": "An operational app needs a reusable starting point for navigation, toolbar and content without changing its routes.",
+      "whenToUse": "An operational app needs a reusable starting point for its navigation, toolbar and content without changing its routes.",
       "structure": [
         "Keep navigation, work area and contextual actions in separate regions.",
         "Use repeated insets to align the toolbar and content; allow the content track to shrink."
@@ -46,7 +46,7 @@
         "Choose density from the actual list or form, rather than scaling the whole screen."
       ],
       "avoid": [
-        "Do not ship the in-memory demo as production persistence.",
+        "Do not treat the demo's in-memory state as production persistence.",
         "The simple demo toggle is not the complete lighting editor."
       ],
       "verify": [
@@ -103,14 +103,14 @@
         "light",
         "dark"
       ],
-      "idea": "A preview can look like a material object while the profile remains a small, explicit editing transaction.",
+      "idea": "A preview can look like a physical object while profile editing remains a small, explicit transaction.",
       "whenToUse": "The product needs a profile card and editable identity fields that agree before and after saving.",
       "structure": [
         "Pair a card preview with the fields that actually belong to the account.",
         "Separate the working draft, the persisted identity and a visual variation."
       ],
       "adapt": [
-        "Use the destination membership and role model; omit unsupported fields.",
+        "Use the destination project's membership and role model; omit unsupported fields.",
         "Keep copy, export and appearance variation as separate commands with their own outcomes."
       ],
       "avoid": [
@@ -136,7 +136,7 @@
         "liveVerified": false,
         "capture": null,
         "limits": [
-          "A ready profile/card component is not bundled. Export, persistence and material rendering need consumer implementation."
+          "A ready-to-use profile card component is not bundled. Export, persistence and material rendering must be implemented in the destination project."
         ]
       },
       "rights": {
@@ -170,7 +170,7 @@
       ],
       "adapt": [
         "State which values are immediate and which belong to a draft.",
-        "Use tabs or another navigation appropriate to the actual number and length of groups."
+        "Use tabs or another navigation pattern suited to the number of groups and the length of their labels."
       ],
       "avoid": [
         "Do not create empty product areas to match a reference screenshot.",
@@ -195,7 +195,7 @@
         "liveVerified": false,
         "capture": null,
         "limits": [
-          "This record describes a package contract; it does not include an implemented consumer or new rendered test."
+          "This record describes an implementation contract; it does not include a working integration or a new rendered test."
         ]
       },
       "rights": {
@@ -223,17 +223,17 @@
         "position",
         "popover"
       ],
-      "idea": "A light-pool editor distinguishes group positioning, Alt-local positioning and relative distance, while selection, color, intensity and grain keep their own state.",
+      "idea": "A light-pool editor separates group positioning, local positioning with Alt and relative distance, while selection, color, intensity and grain retain independent state.",
       "whenToUse": "An approved appearance mechanism needs movable lights and per-context persistence, rather than a static palette.",
       "structure": [
         "Anchor the editor to the declared working region and keep its preview bounds stable.",
-        "Default center drag translates every pool by the selected pool’s delta; Alt captured on pointerdown moves only the selected pool.",
+        "Dragging a pool's center normally translates every pool by the selected pool's delta; holding Alt when pointerdown occurs moves only the selected pool.",
         "The distance ring keeps its selected anchor fixed and scales the other radial vectors; it is not a position control."
       ],
       "adapt": [
         "Use the portable profile for the initial two pools, third-pool insertion and selection; adding or choosing a pool does not redistribute existing coordinates.",
         "Clamp the selected pointer target to the stage, then apply the same model delta to the other pools. Paint actual coordinates and clip offstage points; do not clamp the group or pin visual substitutes to the edge.",
-        "Keep finite offstage coordinates through save/reopen. Color, mode and selection changes do not move any pool."
+        "Preserve finite offstage coordinates when saving and reopening. Color, mode and selection changes do not move any pool."
       ],
       "avoid": [
         "Do not make ordinary center drag local-only or make Alt drag translate the group.",
@@ -242,8 +242,8 @@
       ],
       "verify": [
         "Add the third pool without moving the previous two, then compare every pool during default drag, Alt drag and ring adjustment as three separate operations.",
-        "Replay portable-profile gestures.thirdDragFixture: after initial + insertion, drag selected index 1 to normalized [0.85,0.8]; expected model coordinates in array order are [[120.5,165],[116.5,107],[124.5,223]]. The selected point stays inside while the other two are clipped, with no edge proxies.",
-        "Under default drag preserve relative vectors within model quantization; under Alt keep the others unchanged; under ring adjustment keep the anchor fixed and check radial scaling.",
+        "Replay gestures.thirdDragFixture from the portable profile: after adding the third pool with +, drag the selected pool at index 1 to normalized coordinates [0.85,0.8]; expected model coordinates in array order are [[120.5,165],[116.5,107],[124.5,223]]. The selected point stays inside while the other two are clipped, with no edge proxies.",
+        "During a default drag, preserve relative vectors within the model's quantization tolerance; during an Alt drag, keep the other pools unchanged; during a ring adjustment, keep the anchor fixed and check radial scaling.",
         "Save and reopen in light and dark modes; confirm offstage coordinates, context, color, grain and intensity independently."
       ],
       "resources": [
@@ -266,7 +266,7 @@
         "capture": null,
         "limits": [
           "The distributed profile and contract are not an executable editor.",
-          "The profile records an approved observed mechanism; this editorial entry does not claim that appearance was invented here."
+          "The profile records an approved observed mechanism; this editorial entry does not claim that Forma invented the appearance or interaction."
         ]
       },
       "rights": {
@@ -295,7 +295,7 @@
         "three"
       ],
       "idea": "The cover, binding and page block must form a continuous volume before material polish can make the book convincing.",
-      "whenToUse": "A real book-like artifact must rotate and preserve legibility, thickness and material cues beyond its front view.",
+      "whenToUse": "A three-dimensional book must rotate while preserving legibility, thickness and material cues beyond its front view.",
       "structure": [
         "Treat front, back, binding and pages as coordinated geometry with declared dimensions.",
         "Keep artwork, material response, camera pose and input behavior independently adjustable."
@@ -417,7 +417,7 @@
         "dark",
         "semantic"
       ],
-      "idea": "Brand, selection, semantic state, data series and ambient color can coexist without inheriting one another’s meanings.",
+      "idea": "Brand, selection, semantic state, data series and ambient color can coexist without inheriting one another's meanings.",
       "whenToUse": "A palette looks coherent in isolation but becomes ambiguous or unreadable when actual states are combined.",
       "structure": [
         "Map colors to roles and contexts before editing numeric values.",
@@ -487,7 +487,7 @@
         "Keep important content readable when the animation never initializes."
       ],
       "adapt": [
-        "Use the current stack and the minimum mechanism that meets the interaction.",
+        "Use the current stack and the simplest mechanism that meets the interaction requirements.",
         "Define a reduced-motion alternative that preserves information and actions."
       ],
       "avoid": [
@@ -513,7 +513,7 @@
         "liveVerified": false,
         "capture": null,
         "limits": [
-          "This record describes a package contract; it does not include an implemented consumer or new rendered test."
+          "This record describes an implementation contract; it does not include a working integration or a new rendered test."
         ]
       },
       "rights": {
@@ -543,8 +543,8 @@
       "idea": "Spacing is easier to refine when each distance belongs to one container and expresses one relationship.",
       "whenToUse": "Content appears off-center, crowded or disconnected despite apparently consistent spacing values.",
       "structure": [
-        "Identify available region, reading column, groups and control boundaries.",
-        "Assign inset to the container and repeated sibling distance to its layout rule."
+        "Identify the available region, reading column, groups and control boundaries.",
+        "Assign insets to the container and repeated spacing between siblings to its layout rule."
       ],
       "adapt": [
         "Measure the intended alignment reference before choosing flex, grid or auto margins.",
@@ -573,7 +573,7 @@
         "liveVerified": false,
         "capture": null,
         "limits": [
-          "This record describes a package contract; it does not include an implemented consumer or new rendered test."
+          "This record describes an implementation contract; it does not include a working integration or a new rendered test."
         ]
       },
       "rights": {
@@ -601,7 +601,7 @@
         "wrapping"
       ],
       "idea": "A typographic hierarchy works only when the loaded font, real language and available width support its intended roles.",
-      "whenToUse": "Text hierarchy, numeric comparison or localization needs refinement without replacing the product identity.",
+      "whenToUse": "Text hierarchy, numeric comparison or localization needs refinement while preserving the product's identity.",
       "structure": [
         "Separate reading text, headings, control labels and comparable numeric values.",
         "Choose line length and leading together with the real font metrics."
@@ -633,7 +633,7 @@
         "liveVerified": false,
         "capture": null,
         "limits": [
-          "This record describes a package contract; it does not include an implemented consumer or new rendered test."
+          "This record describes an implementation contract; it does not include a working integration or a new rendered test."
         ]
       },
       "rights": {
@@ -660,7 +660,7 @@
         "recovery"
       ],
       "idea": "Validation should help complete the current transaction without discarding already-correct work.",
-      "whenToUse": "A form needs predictable submit, asynchronous errors and recovery after a partial failure.",
+      "whenToUse": "A form needs predictable submission, clear asynchronous errors and recovery after a partial failure.",
       "structure": [
         "Keep label, control, help and error in one perceptual group.",
         "Model editing, submission, success, failure and unknown outcome separately."
@@ -675,7 +675,7 @@
       ],
       "verify": [
         "Submit invalid input, fix the named field with a keyboard and confirm a valid result.",
-        "Simulate delayed response and expired session while retaining permitted draft data."
+        "Simulate a delayed response and an expired session while retaining permitted draft data."
       ],
       "resources": [
         {
@@ -692,7 +692,7 @@
         "liveVerified": false,
         "capture": null,
         "limits": [
-          "This record describes a package contract; it does not include an implemented consumer or new rendered test."
+          "This record describes an implementation contract; it does not include a working integration or a new rendered test."
         ]
       },
       "rights": {
@@ -722,12 +722,12 @@
       "idea": "A result belongs to a query, scope and revision; changing any of them must not let an old response repaint the current search.",
       "whenToUse": "A product combines text, tags, colors, recent queries or a command palette over changing content.",
       "structure": [
-        "Declare searched universe, fields, filter semantics, ranking and result completeness.",
+        "Declare the search scope, fields, filter semantics, ranking and result completeness.",
         "Separate typed text, applied query, pending request and accepted response."
       ],
       "adapt": [
         "Normalize text according to the product language and display active filters.",
-        "Use request identity and revision checks in addition to debounce."
+        "Use request identity and revision checks in addition to debouncing."
       ],
       "avoid": [
         "Do not call substring matching semantic search.",
@@ -752,7 +752,7 @@
         "liveVerified": false,
         "capture": null,
         "limits": [
-          "This record describes a package contract; it does not include an implemented consumer or new rendered test."
+          "This record describes an implementation contract; it does not include a working integration or a new rendered test."
         ]
       },
       "rights": {
@@ -783,7 +783,7 @@
       "whenToUse": "A dashboard needs readable comparison and honest interpretation of missing, delayed or rounded data.",
       "structure": [
         "Declare the question, unit, range, series identity and data revision.",
-        "Keep annotation, legend and accessible alternative attached to the same metric."
+        "Keep annotations, the legend and the accessible alternative tied to the same metric."
       ],
       "adapt": [
         "Choose a chart from the comparison being made, not the visual style of the page.",
@@ -812,7 +812,7 @@
         "liveVerified": false,
         "capture": null,
         "limits": [
-          "This record describes a package contract; it does not include an implemented consumer or new rendered test."
+          "This record describes an implementation contract; it does not include a working integration or a new rendered test."
         ]
       },
       "rights": {
@@ -839,7 +839,7 @@
         "selection",
         "back"
       ],
-      "idea": "Width changes can alter the arrangement of a list and its detail without restarting the user’s place in the task.",
+      "idea": "Width changes can alter the arrangement of a list and its detail view without losing the user's place in the task.",
       "whenToUse": "The same product must support one-region mobile navigation and side-by-side work at larger widths.",
       "structure": [
         "Keep item identity and navigation state independent of the number of visible regions.",
@@ -854,7 +854,7 @@
         "Do not count a phone-shaped desktop preview as device testing."
       ],
       "verify": [
-        "Open a detail, narrow and widen the viewport, then return to the same filtered list.",
+        "Open a detail view, narrow and widen the viewport, then return to the same filtered list.",
         "Check text scaling, virtual keyboard, removed items and direct links."
       ],
       "resources": [
@@ -872,7 +872,7 @@
         "liveVerified": false,
         "capture": null,
         "limits": [
-          "This record describes a package contract; it does not include an implemented consumer or new rendered test."
+          "This record describes an implementation contract; it does not include a working integration or a new rendered test."
         ]
       },
       "rights": {
@@ -882,7 +882,7 @@
     },
     {
       "id": "forma-brand-argument",
-      "name": "A landing built from available proof",
+      "name": "A landing page built from available evidence",
       "origin": "forma",
       "kind": "brand",
       "useCases": [
@@ -902,11 +902,11 @@
       "idea": "A page earns its composition from what the product can demonstrate, rather than from a sequence of empty promotional sections.",
       "whenToUse": "A new marketing page needs a message, credible supporting material and a real next step.",
       "structure": [
-        "Connect the visitor’s question to a supported claim, available material and action.",
+        "Connect the visitor's question to a supported claim, available material and an action.",
         "Choose the reading sequence from that decision, then set the visual hierarchy."
       ],
       "adapt": [
-        "Use the brand’s actual vocabulary, images and verified conditions.",
+        "Use the brand's actual vocabulary, images and verified conditions.",
         "Label demonstration data and distinguish a proposal from an existing product feature."
       ],
       "avoid": [
@@ -915,7 +915,7 @@
       ],
       "verify": [
         "Trace each material claim to its source and inspect the page with its real content.",
-        "Follow the primary action to the intended destination and check narrow reading order."
+        "Follow the primary action to the intended destination and check the reading order at narrow widths."
       ],
       "resources": [
         {
@@ -932,7 +932,7 @@
         "liveVerified": false,
         "capture": null,
         "limits": [
-          "This record describes a package contract; it does not include an implemented consumer or new rendered test."
+          "This record describes an implementation contract; it does not include a working integration or a new rendered test."
         ]
       },
       "rights": {
@@ -960,9 +960,9 @@
         "gesture"
       ],
       "idea": "A character remains recognizable through changes of medium when its proportions, negative spaces and expression have an explicit identity contract.",
-      "whenToUse": "An existing mascot needs improved rendering or adaptation between flat artwork and a volume.",
+      "whenToUse": "An existing mascot needs improved rendering or adaptation between flat artwork and a 3D model.",
       "structure": [
-        "Record silhouette, face landmarks, negative spaces and the characteristic gesture.",
+        "Record the silhouette, facial landmarks, negative spaces and characteristic gesture.",
         "Separate identity-preserving geometry from lighting and surface finish."
       ],
       "adapt": [
@@ -992,7 +992,7 @@
         "liveVerified": false,
         "capture": null,
         "limits": [
-          "This record describes a package contract; it does not include an implemented consumer or new rendered test."
+          "This record describes an implementation contract; it does not include a working integration or a new rendered test."
         ]
       },
       "rights": {
@@ -1030,7 +1030,7 @@
         "Inspect the exported result in the destination tool rather than relying on a download toast."
       ],
       "avoid": [
-        "Do not call a rasterized slide editable text.",
+        "Do not describe a rasterized slide as containing editable text.",
         "Do not treat a PNG extension or visible checkerboard as proof of transparency."
       ],
       "verify": [
@@ -1052,7 +1052,7 @@
         "liveVerified": false,
         "capture": null,
         "limits": [
-          "This record describes a package contract; it does not include an implemented consumer or new rendered test."
+          "This record describes an implementation contract; it does not include a working integration or a new rendered test."
         ]
       },
       "rights": {
@@ -1094,7 +1094,7 @@
       ],
       "verify": [
         "Run a discriminating interaction, not only an initial-state screenshot.",
-        "Verify missing measurements and unknown revisions prevent a complete-parity claim."
+        "Verify that missing measurements and unknown revisions prevent a claim of complete parity."
       ],
       "resources": [
         {
@@ -1122,7 +1122,7 @@
     },
     {
       "id": "forma-rendered-review",
-      "name": "Inspect the served result, then refine one cause",
+      "name": "Inspect the served result, then fix one cause",
       "origin": "forma",
       "kind": "validation",
       "useCases": [
@@ -1171,7 +1171,7 @@
         "liveVerified": false,
         "capture": null,
         "limits": [
-          "This record describes a package contract; it does not include an implemented consumer or new rendered test."
+          "This record describes an implementation contract; it does not include a working integration or a new rendered test."
         ]
       },
       "rights": {
@@ -1199,9 +1199,9 @@
         "assets"
       ],
       "idea": "A media selection carries its author, source, stated license and file identity into the delivered project.",
-      "whenToUse": "The project lacks an authorized image or video and a contextual collection asset would serve the content.",
+      "whenToUse": "The project lacks an authorized image or video, and a relevant asset from a media collection would serve the content.",
       "structure": [
-        "Search first, inspect candidates, then download only the selected manifest ID.",
+        "Search first, inspect candidates, then download only the asset identified by the selected manifest ID.",
         "Keep the credit receipt with the file and propagate required attribution into the final artifact."
       ],
       "adapt": [
@@ -1210,7 +1210,7 @@
       ],
       "avoid": [
         "Do not present stock material as the actual team, product or customer.",
-        "Do not treat provider license metadata as proof of every depicted person or trademark right."
+        "Do not treat a provider's license metadata as proof that all rights involving depicted people or trademarks are cleared."
       ],
       "verify": [
         "Confirm the selected file matches its manifest and the recorded SHA.",

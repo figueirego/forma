@@ -76,8 +76,8 @@ test('appearance record preserves the canonical third-pool group-drag fixture, n
   assert.deepEqual([first[0] - selected[0], first[1] - selected[1]], [4, 58]);
   assert.deepEqual([last[0] - selected[0], last[1] - selected[1]], [8, 116]);
   assert.ok(first[1] > 145 && last[1] > 145, 'The fixture intentionally moves the other pools offstage.');
-  assert.match(entry.structure.join(' '), /Default center drag translates every pool/);
-  assert.match(entry.structure.join(' '), /Alt captured on pointerdown moves only the selected pool/);
+  assert.match(entry.structure.join(' '), /Dragging a pool's center normally translates every pool/);
+  assert.match(entry.structure.join(' '), /holding Alt when pointerdown occurs moves only the selected pool/);
   assert.match(entry.structure.join(' '), /distance ring keeps its selected anchor fixed/);
   assert.match(entry.adapt.join(' '), /clip offstage points/);
 });

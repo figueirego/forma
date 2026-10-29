@@ -1,42 +1,42 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title>Padrões · Forma</title>
+  <title>Reference Library | Forma</title>
   <link rel="stylesheet" href="reference-browser.css">
   <script type="module" src="reference-browser.js"></script>
 </head>
 <body>
   <header class="masthead">
-    <a class="brand" href="https://github.com/figueirego/forma" aria-label="Forma no GitHub"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 3h7v26H3zm10 0h16v7H13zm0 10h12v7H13z"/></svg>Forma</a>
-    <span>Biblioteca Forma</span>
+    <a class="brand" href="https://github.com/figueirego/forma" aria-label="Forma on GitHub"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 3h7v26H3zm10 0h16v7H13zm0 10h12v7H13z"/></svg>Forma</a>
+    <span>Reference library</span>
   </header>
   <main>
     <section class="intro" aria-labelledby="title">
-      <p class="eyebrow">DO PADRÃO À IMPLEMENTAÇÃO</p>
-      <h1 id="title">Um ponto de partida.<br>Um projeto com identidade.</h1>
-      <p>Escolha padrões da Forma para implementar ou sites externos para investigar. Os casos de uso ajudam a formular perguntas; não são auditorias ao vivo dos sites.</p>
+      <p class="eyebrow">FROM REFERENCE TO IMPLEMENTATION</p>
+      <h1 id="title">A clear starting point.<br>A design of your own.</h1>
+      <p>Choose Forma patterns to implement or external sites to study. Research guides help you ask useful questions; they do not report verified findings about each site.</p>
     </section>
-    <div class="library-source"><label for="collection">Consultar</label><select id="collection"><option value="patterns">Padrões da Forma</option><option value="sites">Sites para investigar</option><option value="portfolios">Portfólios de desenvolvedores</option></select><a href="../references/experience-library.md">Como transformar pesquisa em experiência</a></div>
-    <form id="filters" role="search" aria-label="Filtrar referências">
-      <div class="field query"><label for="query">O que você quer criar?</label><input id="query" type="search" placeholder="Sidebar, typography, perfil…" autocomplete="off"></div>
-      <div class="field" id="evidence-field"><label for="evidence">Recurso disponível</label><select id="evidence"><option value="">Todos</option></select></div>
-      <div class="field" id="kind-field"><label for="kind">Contexto</label><select id="kind"><option value="">Todos</option></select></div>
-    <div class="field" id="case-field" hidden><label for="case">Caso de investigação</label><select id="case"><option value="">Todos</option></select></div>
+    <div class="library-source"><label for="collection">Collection</label><select id="collection"><option value="patterns">Forma patterns</option><option value="sites">Website references</option><option value="portfolios">Developer portfolios</option></select><a href="../references/reference-library.md">How to use references</a></div>
+    <form id="filters" role="search" aria-label="Filter references">
+      <div class="field query"><label for="query">What do you want to create?</label><input id="query" type="search" placeholder="Sidebar, typography, profile..." autocomplete="off"></div>
+      <div class="field" id="evidence-field"><label for="evidence">Resource type</label><select id="evidence"><option value="">All</option></select></div>
+      <div class="field" id="kind-field"><label for="kind">Context</label><select id="kind"><option value="">All</option></select></div>
+    <div class="field" id="case-field" hidden><label for="case">Research guide</label><select id="case"><option value="">All</option></select></div>
     </form>
-    <div class="result-line"><p id="status" role="status" aria-live="polite">Carregando catálogo…</p><p><span id="source-note">Autoria editorial Forma · seleção local</span></p></div>
+    <div class="result-line"><p id="status" role="status" aria-live="polite">Loading the library...</p><p><span id="source-note">Written by Forma / Local search</span></p></div>
     <div id="error" role="alert" hidden></div>
     <div id="cards" class="cards"></div>
-    <p id="empty" hidden>Nenhum padrão corresponde aos filtros. Tente outro termo ou amplie o contexto.</p>
-    <button id="more" type="button" hidden>Mostrar mais padrões</button>
-    <aside class="note"><strong>Inspiração com contexto.</strong> Os padrões distinguem código, demonstrações e contratos. Os sites são candidatos históricos externos; cada caso de investigação é uma proposta editorial da Forma, não uma descrição validada de todos os candidatos. Visite as referências selecionadas antes de adaptar e preserve os direitos de seus autores.</aside>
+    <p id="empty" hidden>No patterns match these filters. Try another term or a broader context.</p>
+    <button id="more" type="button" hidden>Show more patterns</button>
+    <aside class="note"><strong>References with context.</strong> Pattern records distinguish reusable code, demos and implementation requirements. External sites are candidates for research. Forma's guides suggest what to investigate; they do not verify each site. Inspect selected references before adapting them and respect their authors' rights.</aside>
   </main>
   <dialog id="detail" aria-labelledby="detail-title">
-    <header class="detail-head"><span id="detail-origin"></span><button id="close-detail" type="button" aria-label="Fechar ficha" autofocus>Fechar <span aria-hidden="true">×</span></button></header>
+    <header class="detail-head"><span id="detail-origin"></span><button id="close-detail" type="button" aria-label="Close reference" autofocus>Close <span aria-hidden="true">&times;</span></button></header>
     <div id="detail-content"></div>
   </dialog>
-  <footer>Forma · From intent to craft. <a href="../references/reference-library.md">Guia de uso e limites</a></footer>
+  <footer>Forma / From intent to craft. <a href="../references/reference-library.md">Usage guide and limitations</a></footer>
 </body>
 </html>
