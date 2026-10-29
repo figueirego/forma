@@ -2,7 +2,7 @@
 name: forma
 description: "Coordenar especialistas de design para criar, refinar, adaptar ou auditar interfaces, sistemas visuais e materiais de marca. Seleciona por caso a skill interna de interface, cores/layout, produto, 3D, grafos, movimento, plataforma, marca, referência, handoff ou validação. Use também para reaplicar componentes aprovados em outro projeto; não para backend isolado."
 metadata:
-  version: 1.24.0
+  version: 1.25.0
 ---
 
 # Forma
@@ -37,7 +37,7 @@ Leia a especialista escolhida por inteiro; nas referências canônicas, localize
 | Gesto, transição, animação, vídeo, filme ou redução de movimento | [Forma Motion](../forma-motion/SKILL.md) | Movimento interativo ou sequência renderizada com continuidade e aceite próprios |
 | Comportamento específico web, mobile, desktop, instalador ou dispositivo | [Forma Platforms](../forma-platforms/SKILL.md) | Adaptação de tarefa e operação ao ambiente alvo |
 | Identidade, campanha, landing de marketing, peça, apresentação ou impressão | [Forma Brand](../forma-brand/SKILL.md) | Mensagem, composição e entregáveis dos canais pedidos |
-| Engenharia reversa, fonte de referência, tecnologias ou divergência de fidelidade | [Forma Reference](../forma-reference/SKILL.md) | Evidência separada de hipótese e especificação transferível |
+| Encontrar exemplos, selecionar referências, engenharia reversa, tecnologias ou divergência de fidelidade | [Forma Reference](../forma-reference/SKILL.md) | Consulta contextual, evidência separada de hipótese e especificação transferível |
 | Auditoria de qualidade, acessibilidade, regressão ou aceite renderizado | [Forma Validation](../forma-validation/SKILL.md) | Achados/provas delimitados e correções quando autorizadas |
 | Figma, artefato editável, exportação, biblioteca, design-to-code ou entrega técnica | [Forma Handoff](../forma-handoff/SKILL.md) | Fonte, componentes e saída entregues e verificados |
 
@@ -52,6 +52,8 @@ Não instale plugins nem inicie geração paga para completar um checklist. O si
 Incorporar métodos de um agente não instala seu runtime. Para agentes de produção, jobs, retomada ou uma integração LangChain/Deep Agents explicitamente pedida, leia [produção coordenada](../../references/agent-production.md). Confira capacidades, revisão e cobertura dos resultados; um fluxo descrito não comprova execução. Ajustes locais de UI continuam na especialista pertinente.
 
 ## Preservar mecanismos aprovados
+
+Quando precisar de exemplos, use a [biblioteca pesquisável](../../references/reference-library.md): fichas próprias e sites estudados, seleção por contexto, consulta visual e pesquisa de mídia com créditos. Leia somente as candidatas relevantes; catálogo histórico não é captura atual. Uma correção local não exige pesquisa de inspiração. A biblioteca não substitui o mecanismo aprovado do consumidor.
 
 Distinguir **aplicar princípios** de **reutilizar um mecanismo** é obrigatório para pedidos de transferência. Adaptar marca/conteúdo não autoriza trocar um volume por CSS inclinado ou um editor manipulável por três cores fixas. Se o pedido for **igual à implementação aprovada**, preserve também sua composição, paleta e comportamento responsivo: a instrução explícita prevalece sobre a adaptação genérica à marca. Use a cascata final e o estado renderizado daquela revisão, não apenas uma especificação anterior. Dados, rotas e conteúdo do destino continuam preservados. Siga [reúso no consumidor](../../references/playbooks.md#h-reutilizar-capacidades-em-outro-projeto): contrato → implementação disponível → consumidor → operação discriminante observada.
 

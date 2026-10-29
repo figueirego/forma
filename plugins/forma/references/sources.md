@@ -392,3 +392,7 @@ O [mapa do estudo](taste-study.md) fixa o snapshot12af471f627f866411b4bd785b1964
 Foram incorporados inventário específico, conceito, argumento por seção, rotas página/app/fragmento operacional, coerência de dados, crítica de substância e verificação de cenas por progresso. Permanecem preservados marca, stack, contratos de aparência e objetos aprovados. Catálogos, drivers de navegador, downloaders, dependências de movimento e mídia de terceiros não foram embutidos. Bans estéticos, cotas e scores da fonte não se tornam normas da Forma.
 
 Os casos R32–R39 ampliam a rubrica de decisão; a presença dos casos não comprova sua execução. Testes estruturais e auditorias históricas não são aprovação visual de novos consumidores.
+
+## Biblioteca de referências — 1.25.0
+
+O [catálogo](../assets/reference-library/catalog.json) incorpora 202 fichas de sites do snapshot Taste 2.1.5 já estudado e fichas próprias da Forma. A proveniência no JSON registra revisão e hash da entrada; a atribuição MIT está preservada. A [operação](reference-library.md) diferencia seleção lexical local, consulta visual, observação ao vivo pelo host e pesquisa/download de mídia com créditos. Não são distribuídas capturas ou assets dos sites. Novas observações não substituem silenciosamente o snapshot.

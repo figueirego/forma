@@ -60,7 +60,7 @@ class OtherHostTests(unittest.TestCase):
     def test_executable_assets_and_licenses_are_identical_across_hosts(self):
         source = ROOT / 'source/forma'
         paths = [p for p in source.rglob('*') if p.is_file()
-                 and (p.suffix in {'.js', '.css', '.html', '.png', '.svg', '.json', '.py'} or p.name == 'LICENSE')
+                 and (p.suffix in {'.js', '.mjs', '.css', '.html', '.png', '.svg', '.json', '.py'} or p.name == 'LICENSE')
                  and '__pycache__' not in p.parts and p.parts[len(source.parts)] != 'skills']
         self.assertGreater(len(paths), 20)
         for path in paths:

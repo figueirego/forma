@@ -62,6 +62,14 @@ Forma connects the project’s own content to a visual concept, maps each sectio
 
 The [Taste study and integration map](source/forma/references/taste-study.md) records what was adapted, what was already covered, and what was deliberately left out. Your approved brand and components take precedence over stylistic bans or image and animation quotas. See the [integration checks and decision exercises](docs/TASTE-INTEGRATION.md) for evidence and limits.
 
+## Reference library
+
+Forma includes a searchable collection of studied sites and its own reusable resources. Each entry explains the context, evidence, adaptation, limitations, and rights. Use the local selector or the lightweight browser to explore candidates; live site verification uses the browser tools available in your assistant.
+
+> Use Forma to find three references for this project, explain what fits our content, preserve the approved brand, and inspect the selected sites before implementing.
+
+The media helper searches Openverse, Wikimedia Commons, the Art Institute of Chicago, and the Met, and downloads only an explicitly selected result with its attribution record. See the [reference and media guide](source/forma/references/reference-library.md). The bundled catalog is a pinned historical snapshot, not a continuously updated gallery or a license to reuse the sites' assets.
+
 ## Install
 
 Choose **one format per assistant**. The packages are ready to use in this repository; no build is required. You can also download the entire repository through **Code → Download ZIP** on GitHub.

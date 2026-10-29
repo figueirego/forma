@@ -1,8 +1,8 @@
 ---
 name: forma-reference
-description: "Analisar fontes e referências, extrair sistemas e investigar divergências visuais ou tecnológicas com REA quando necessário. Use para reprodução, comparação ou incorporação fundamentada; não para inferir runtime a partir de documentação ou executar binários por ritual."
+description: "Encontrar e selecionar exemplos de design no catálogo da Forma, pesquisar mídia com créditos, analisar fontes e investigar divergências visuais ou tecnológicas com REA quando necessário. Use para inspiração, reprodução, comparação ou incorporação fundamentada; não para inferir runtime a partir de documentação."
 metadata:
-  version: 1.21.0
+  version: 1.25.0
 ---
 
 # Referências, evidência e fidelidade
@@ -21,6 +21,8 @@ Preserve marca e stack do destino salvo mudança explicitamente pedida; fidelida
 - Critérios de fidelidade visual/comportamental/técnica, estados e tamanhos; direitos de uso e limites conhecidos.
 
 ## Procedimento
+
+Se o usuário ainda não trouxe uma referência e quer exemplos, comece pela [biblioteca e pesquisa](../forma/references/reference-library.md). Execute `scripts/references.mjs` na raiz compartilhada da skill, filtre pela tarefa, leia as fichas candidatas e explique a escolha. Para imagens/vídeos contextuais, `scripts/media.mjs` pesquisa coleções e registra créditos; baixar é uma ação explícita por ID. A ficha distingue código, exemplo e contrato. Observe ao vivo somente as referências selecionadas quando a tarefa exigir evidência atual; não anuncie todos os sites do catálogo como auditados nesta execução.
 
 1. Classifique a fonte como norma, documentação, código, skill, catálogo, app ou exemplo.
    Leia [casos de uso das fontes](../forma/references/source-use-cases.md) e [proveniência](../forma/references/sources.md); versões históricas não confirmam estado atual.
