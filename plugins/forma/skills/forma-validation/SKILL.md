@@ -2,7 +2,7 @@
 name: forma-validation
 description: "Validate tasks, accessibility, rendering, states, and fidelity with proportionate evidence and reproducible findings. Use for QA and confirmation after changes; not to certify inaccessible areas or treat isolated builds/tests as visual proof."
 metadata:
-  version: 1.22.0
+  version: 1.32.1
 ---
 
 # Validation and quality
@@ -28,15 +28,16 @@ Preserve scope, brand, and stack. Distinguish verified, inferred, untested, and 
 2. Confirm execution identity and follow the task through input, action, success, and recovery.
    Use [rendered validation](../../references/rendered-validation.md); verify persistence after reopening if promised, and distinguish an in-memory prototype from real operation.
 3. For access, read [accessibility](../../references/accessibility.md) and exercise the relevant keyboard, focus, semantics, zoom, and alternative paths.
+   Inspect computed accessible names for inputs presented with icons or placeholders; descriptions explain a field but do not replace its label.
    If layout/color is affected, use [spatial contracts](../../references/layout-spatial-contracts.md) and [color refinement](../../references/color-refinement.md).
    For a new surface or broad visual refinement, inspect the [coordinated foundation](../../references/verification.md#coordinated-foundation-review) in representative consumers and supported modes. Isolated token or contrast checks do not establish a coherent composition.
 4. For reference work or reuse, test the operation that distinguishes the requested mechanism from an approximation.
-   Consult reuse in [playbooks](../../references/playbooks.md) and [fidelity](../../references/reference-fidelity.md); observe the primary path, fallback, and relevant states separately.
+   Consult reuse in [playbooks](../../references/playbooks.md) and [fidelity](../../references/reference-fidelity.md); observe the primary path, fallback, and relevant states separately. The [component lab](../../references/reusable-components.md#run-the-lab) exposes actual renderer and state diagnostics; counters and geometry tests still need rendered inspection, Save/reload, error recovery, unmount/remount and BFCache checks in the consumer.
    When frozen reference values exist, run the [fidelity verifier](../../references/fidelity-contracts.md) against consumer measurements. Missing fields, NaN, omitted points, or different revisions cannot pass through averaging. A passing numerical fixture does not prove that the browser loaded the revision or that the contract covers everything; confirm those facts separately.
 5. Record failures with reproduction steps, effects, severity, and the smallest correction; fix only within existing authorization.
    Recheck affected states and critical paths, preserving before/after captures. Additional tests must address a remaining concern.
 6. When changing Forma itself, use [plugin operation](../../references/plugin-operation.md) and the [evaluation protocol](../../evals/routing-scenarios.md#compare-versions-without-confusing-evidence).
-   Package integrity, host discovery, agent decisions, and consumer operation have separate acceptance criteria.
+   Package integrity, host discovery, agent decisions, and consumer operation have separate acceptance criteria. Apply [release validation](../../references/release-validation.md) when the request concerns a revision, independent trials, reusable components, or observed retrieval: freeze inputs/submissions, keep post-review corrections separate, and record each browser/input/motion/WebGL/cost gate as passed, failed, unverified, or inapplicable with a reason. Two Chromium shells are not two engines; narrow width is not touch, and CPU render time is not GPU cost.
 
 ## Output and stopping condition
 

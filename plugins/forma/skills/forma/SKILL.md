@@ -2,7 +2,7 @@
 name: forma
 description: "Coordinate design specialists to create, refine, adapt, or audit interfaces, visual systems, and brand assets. Select the internal interface, color/layout, product, 3D, graphs, motion, platform, brand, reference, handoff, or validation skill for each case. Also use to reuse approved components in another project; not for isolated backend work."
 metadata:
-  version: 1.29.0
+  version: 1.32.1
 ---
 
 # Forma
@@ -17,7 +17,9 @@ To turn references into reusable technical knowledge, route the work to the `ref
 
 Coordination also covers websites: finding references, investigating their techniques, and creating or refining the destination site. In research involving several sources, `reference` gathers evidence; the coordinator selects a coherent direction and routes decisions to the relevant specialists. Follow [site coordination](../../references/experience-library.md#coordinate-reference-sites-and-the-destination-site). Do not end a creation request with a list of links.
 
-External lookup matches names and URLs; topic queries suggest research guides separately. A guide assignment is an investigation lens, not proof that a site has that feature. State the question and unknowns before selecting candidates. Evaluate retrieval, routing, implemented output and repeatability separately; a valid plan or a large catalog does not prove design quality.
+External candidate lookup matches names and URLs; topic queries suggest research guides separately. For specific recorded features, use the separate `--observed` collection and read the returned claim, date, conditions, and caveats. Its six sources and ten observed claims do not establish that all 202 sites or 2,079 portfolios were studied. A guide assignment is an investigation lens, not proof that a site has that feature. State the question and unknowns before selecting candidates. Evaluate retrieval, routing, implemented output and repeatability separately; a valid plan or a large catalog does not prove design quality.
+
+For the approved closed book, route to [the complete book integration](../../references/book-integration.md): BookPreset, font, stage, loader, lighting and reset travel together. Do not substitute bare engine defaults or the passport demo.
 
 ## How to coordinate
 
@@ -70,8 +72,9 @@ For an approved reproduction, freeze criteria before changing the destination an
 |---|---|---|
 | Clean interface foundation | Scoped CSS + HTML/JS example with in-memory data | Interface -> [recipe](../../references/clean-shell.md) |
 | BookObject and color helper | Original reusable code; volume requires a valid Three loader, and static mode is separate | Objects 3D -> [contract](../../references/reusable-objects.md) and [approved case](../../references/book-polish-case-study.md) |
-| Articulated passport: fit, leather, and light | Approved case study and manifest; does not include a passport component | Objects 3D -> [case and limits](../../references/passport-polish-case-study.md) |
-| Complete appearance/lighting editor and material profile | Contracts and a [portable profile](../../assets/reference-profiles/compact-appearance-v1.json) for implementation in the stack; does not include an executable editor component | Interface -> [editor](../../references/lighting-editors-icons.md) and [profile](../../references/adaptive-visual-systems.md) |
+| Articulated passport | Executable NeuronPassport preserves the approved CSS engine and visual layers; Three PassportObject is a separate legacy alternative | Objects 3D -> [extracted component](../../references/reusable-components.md#neuronpassport-integration) and [approved CSS case](../../references/passport-polish-case-study.md) |
+| Appearance/lighting editor | Executable vanilla `AppearanceEditor`, scoped styles and save/cancel adapters; compact profile guides consumer fidelity | Interface -> [component](../../references/reusable-components.md#appearanceeditor-integration), [editor contract](../../references/lighting-editors-icons.md) and [material profile](../../references/adaptive-visual-systems.md) |
+| Component lab | Runnable appearance/passport consumer with real renderer diagnostics and explicit dependency loader; not automatic framework integration | [Setup and evidence limits](../../references/reusable-components.md#run-the-lab) |
 | Contrast, layout, and evidence verifiers | Local scripts with bounded scope | Validation -> [executable resources](../../references/resources.md) |
 
 Do not depend on the authoring project's folder or presumed files from another chat. Check the resource in the installed version. Package tests do not prove consumer integration. Preserve hashes and audit limits when transferring an approved result.
@@ -80,13 +83,14 @@ Do not depend on the authoring project's folder or presumed files from another c
 
 Correctness, security, access, and data come before polish. Preserve the existing system and identity; do not impose styles, 3D, tools, or frameworks by association. Standards, heuristics, and preferences are different categories; resolve conflicts through [precedence](../../references/conflicts.md).
 
-Test the task, focus, extreme content, and affected states. Static/bundle analysis, observed UI, physical devices, exported files, and publication provide distinct evidence. A reference does not grant authorship, asset licenses, or authorization to publish. [Verification](../../references/verification.md) and the [rendered cycle](../../references/rendered-validation.md) define how to complete acceptance; [templates](../../references/templates.md) are optional, not bureaucracy for small adjustments.
+Test the task, focus, extreme content, and affected states. Static/bundle analysis, observed UI, physical devices, exported files, and publication provide distinct evidence. For a skill release, comparative trial, or reuse audit, use [release validation](../../references/release-validation.md): freeze inputs, preserve independent submissions, and report browser, input, motion, WebGL, persistence, retrieval, and cost gates separately. A reference does not grant authorship, asset licenses, or authorization to publish. [Verification](../../references/verification.md) and the [rendered cycle](../../references/rendered-validation.md) define how to complete acceptance; [templates](../../references/templates.md) are optional, not bureaucracy for small adjustments.
 
 ## Simple usage examples
 
 - "Use $forma:forma to apply the clean interface foundation to my app while preserving its brand, stack, and routes."
 - "Use $forma:forma to fix the alignment and colors in this form."
-- "Use $forma:forma to adapt the approved BookObject into a 3D passport with materials and interaction."
+- "Use $forma:forma to reuse the approved closed book through BookPreset, preserving its framing, light, materials, and gestures."
+- "Use $forma:forma to integrate the approved interactive passport through NeuronPassport, preserving its opening, page turns, editing, and save behavior."
 - "Use $forma:forma to implement the complete lighting editor with pools, save/reopen behavior, and colors by context."
 - "Use $forma:forma to audit this flow; do not edit it yet."
 - "Use $forma:forma to create a campaign and deliver editable files."

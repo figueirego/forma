@@ -2,7 +2,7 @@
 name: forma-interface
 description: "Build or refine operational interfaces, clean shells, forms, navigation, search, settings, appearance editors and material profiles. Use for usable components and states; not for broad research, campaigns or 3D geometry implementation."
 metadata:
-  version: 1.24.0
+  version: 1.32.1
 ---
 
 # Interface and states
@@ -35,8 +35,8 @@ An operational screen organizes work: objects, scope, data and the next action. 
    Fix the stage-relative anchors: modes at the top center, reset at the top right, minus/plus at the bottom right; do not reposition them according to the pool. Separate vivid handle/swatch color from wash chroma, and the default intensity of 42% from a saved value of 5%. To reproduce the approved editor, read the [portable compact profile](../../assets/reference-profiles/compact-appearance-v1.json): it already defines desktop and touch, nighttime surfaces and the transition from 2 to 3 lights. Do not invent new breakpoints/sizes or inherit a differently colored button. Outside that request, declare platform adaptations.
 4. Implement the slice that proves the capability and connect handlers, data and storage to the correct owner.
    The profile uses the domain's fields and the approved object in the destination; do not impose the reference's card/role on an existing passport. Check global/contextual scope, framing of the open object and consumer updates without destroying the session or focus return.
-   Follow reuse in another project in [playbooks](../../references/playbooks.md). Editor/profile contracts require code; the clean-shell demo does not provide a backend.
-   For faithful reproduction, freeze the approved source's criteria before editing the consumer. Use [fidelity contracts](../../references/fidelity-contracts.md) to compare measurements; the compact profile has a portable sample of layout, colors and trajectories. It does not replace save/reload, cache, access or screenshot inspection.
+   Follow reuse in another project in [playbooks](../../references/playbooks.md). The [portable AppearanceEditor](../../references/reusable-components.md#appearanceeditor-integration) supplies scoped vanilla controls, draft/commit state and explicit save/cancel adapters. Reuse it when compatible, or adapt the mechanism to existing components. Connect its persistence and context to the destination owner; the [component lab](../../assets/components-lab.html) uses browser-local sample data. The clean-shell demo does not provide a backend.
+   Its mode order is System, Light, Dark. Valid offstage anchors keep positive radial scaling instead of an impossible stage edge fit; this explicit bug fix does not imply every historical pixel/gesture is identical. For faithful reproduction, freeze the approved source's criteria before editing the consumer. Use [fidelity contracts](../../references/fidelity-contracts.md) to compare measurements; the compact profile has a portable sample of layout, colors and trajectories. It does not replace save/reload, cache, access or screenshot inspection.
 5. Exercise keyboard input, focus, errors, extremes and reopening when persistence is promised.
    Use [rendered validation](../../references/rendered-validation.md) and [verification](../../references/verification.md); validate each agreed search capability against expected results.
    Distinguish local code, served response, isolated test context and an already-open tab. Compare the individual identity of affected CSS and JS with the tested artifact; a matching `data-revision` does not resolve an old cache. If a draft exists, preserve it and leave saving/discarding to the user before reloading. Exercise the gesture in small steps too: updating an accumulator from the rounded label can conceal continuous movement.

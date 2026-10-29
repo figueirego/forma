@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Forma - approved book integration</title>
+<link rel="stylesheet" href="book-lab.css">
+<script src="book-object.js"></script><script src="book-preset.js"></script>
+</head>
+<body><main class="shell">
+<header><div class="eyebrow">Reusable book / approved preset</div><h1>The complete book mechanism.</h1><p>The approved geometry, materials, lighting, color pipeline and gestures, with their original presentation. This lab keeps the Pauta sample text for comparison; the public adapter accepts your own content.</p><a href="components-lab.html">Other components</a></header>
+<div class="workspace">
+<section class="preview-panel" aria-labelledby="preview-heading"><h2 id="preview-heading">Object preview</h2>
+<div id="book-stage" class="forma-book-stage" aria-hidden="true"></div>
+<div class="caption"><strong id="book-title"></strong><span id="book-subtitle"></span></div>
+<p class="hint">Drag horizontally to rotate. Vertical scrolling remains available on mobile. Reset returns to the approved starting pose and lighting.</p>
+<div class="preview-actions"><button type="button" id="spine-pose">View spine</button><button type="button" id="reset-pose">Reset position</button><button type="button" id="back-pose">View back</button><button type="button" id="pages-pose">View pages</button><button type="button" id="toggle-renderer" aria-pressed="false">Use static cover</button></div>
+<p class="hint" id="renderer-status" role="status">Preparing the book...</p><p class="error" id="lab-error" hidden></p></section>
+<section class="form-panel" aria-labelledby="controls-heading"><h2 id="controls-heading">Content and material</h2>
+<label class="field"><span>Title</span><input id="title" maxlength="240"></label><label class="field"><span>Subtitle</span><input id="subtitle" maxlength="120"></label><label class="field"><span>Brand</span><input id="brand" maxlength="40"></label><label class="field"><span>Spine counter</span><input id="spineLabel" maxlength="12"></label>
+<div class="columns"><label class="field"><span>Cover color</span><input type="color" id="color"></label><label class="field"><span>Text color</span><input type="color" id="inkColor"></label></div>
+<label class="field"><span>Pattern</span><select id="pattern"><option value="panels">Panels</option><option value="grid">Grid</option><option value="rules">Rules</option><option value="dots">Dots</option><option value="stems">Stems</option><option value="checks">Checks</option></select></label>
+<div class="columns"><label class="field"><span>Material</span><select id="material"><option value="cloth">Cloth</option><option value="paper">Paper</option><option value="leather">Leather</option></select></label><label class="field"><span>Finish</span><select id="finish"><option value="foil">Foil</option><option value="ink">Ink</option></select></label></div>
+<h2>Geometry</h2><div class="columns three"><label class="field"><span>Width</span><input type="number" id="width" min="0.6" max="4" step="any"></label><label class="field"><span>Height</span><input type="number" id="height" min="0.6" max="5" step="any"></label><label class="field"><span>Depth</span><input type="number" id="depth" min="0.08" max="0.9" step="any"></label></div>
+<p class="hint">Edits are deliberate adaptations. They do not change the approved preset.</p><button type="button" id="restore-preset">Restore approved preset</button>
+<label class="toggle"><input type="checkbox" id="reduce-motion">Reduce motion</label>
+</section></div>
+<section class="tech"><h2>Reuse the complete integration</h2><p>Load <a href="book-object.js">BookObject</a> and <a href="book-preset.js">BookPreset</a>, the supplied Inter font and your existing Three.js loader. Read the <a href="../references/book-integration.md">integration contract</a>. No remote CDN or hidden installation is used.</p><p class="hint">Serve the repository root after npm ci --ignore-scripts. This lab loads Three 0.186.0 from the repository's node_modules. In another project, supply that project's module path. A static fallback is not 3D parity.</p><details><summary>Current configuration and runtime</summary><pre id="config-output"></pre></details></section>
+</main><script type="module" src="book-lab.js"></script></body></html>

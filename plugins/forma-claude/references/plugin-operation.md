@@ -14,7 +14,7 @@ The `.agents/skills/` directory is shared by compatible versions of Cursor, Copi
 
 In the standalone distribution, select the skill named `forma`. In the plugin, the host adds its namespace to the entry and specialists. Use the name announced by the current catalog; do not invent an `invoke_skill` tool. The generator adapts links and prompts to the distribution. Agent metadata provides presentation and instructions, not running processes.
 
-The package includes contracts, helpers, examples and the components declared in [resources](resources.md). The complete appearance editor remains an implementation contract; the plugin does not automatically inject it into any framework. External plugins, keys, services, models and connections are not installed as implicit dependencies.
+The package includes contracts, helpers, examples and the components declared in [resources](resources.md). The portable [AppearanceEditor and extracted NeuronPassport](reusable-components.md) now include executable code and a component lab; the plugin does not automatically inject them into any framework. Their adapters, persistence and fidelity still require destination integration. The primary passport now extracts the approved Neuron CSS engine. The earlier Three implementation remains a distinct legacy alternative. External plugins, keys, services, models and connections are not installed as implicit dependencies.
 
 ## Repeatable verification
 

@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "component": "NeuronPassport",
+  "engine": "DOM/CSS3D articulated",
+  "reference": "Neuron v03.23 JavaScript + current CSS explicitly authorized 2026-10-29",
+  "historicalCssByteIdentity": false,
+  "sourcePreservation": "All listed files copied byte for byte. Adapter files are additional host integration, not edits to the engine.",
+  "fonts": {
+    "external": false,
+    "sans": "ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+    "serif": "Georgia, serif",
+    "limitation": "System font rasterization can differ across operating systems."
+  },
+  "remoteAssets": {
+    "countryCovers": "https://img.passportindex.org/countries/",
+    "note": "Original Neuron is offline. National skins retain the original network loading and visible failure status."
+  },
+  "files": [
+    {
+      "file": "data.js",
+      "sha256": "253f00f75e5776f478e837f04fdf8d8bfac01ee5b97a602855f6c22ff38a55a9",
+      "bytes": 18652,
+      "transformation": "none",
+      "source": "authorized-audit-runtime/neuron/data.js"
+    },
+    {
+      "file": "lighting.js",
+      "sha256": "99c99b2cf8321c438b14b865dbda5518043c2e43f1ee3abac932963e8f311c3d",
+      "bytes": 15503,
+      "transformation": "none",
+      "source": "authorized-audit-runtime/neuron/lighting.js"
+    },
+    {
+      "file": "passport-catalog.js",
+      "sha256": "962433bcb68dbbfce3fdd866f29b0f7254d3b178eb011a853b54f2959460046b",
+      "bytes": 38706,
+      "transformation": "none",
+      "source": "authorized-audit-runtime/neuron/passport-catalog.js"
+    },
+    {
+      "file": "passport-motion.js",
+      "sha256": "31811adc31352fff917b6248057afa5e9babaf3a1c749c24f1db71b230d85f66",
+      "bytes": 49801,
+      "transformation": "none",
+      "source": "authorized-audit-runtime/neuron/passport-motion.js"
+    },
+    {
+      "file": "passport.css",
+      "sha256": "e1620d3b9264126e08da770596765d857d30ce4be2c254b33ae65bf555551d5b",
+      "bytes": 43251,
+      "transformation": "none",
+      "source": "authorized-audit-runtime/neuron/passport.css"
+    },
+    {
+      "file": "passport.js",
+      "sha256": "1b71496fdce731ee91d2c172bcf4b627747053cae41ba4062cb1c098f7ef44f1",
+      "bytes": 31840,
+      "transformation": "none",
+      "source": "authorized-audit-runtime/neuron/passport.js"
+    },
+    {
+      "file": "profile.css",
+      "sha256": "025a1ea838fa2a58dd6fe5881d30e3ee3cd8f3cebae700136adcc436be90d2df",
+      "bytes": 34966,
+      "transformation": "none",
+      "source": "authorized-audit-runtime/neuron/profile.css"
+    },
+    {
+      "file": "styles.css",
+      "sha256": "1bd640092f070282951ab6319da90ff2ad6da6dc852c55cb130e1b70c3067f05",
+      "bytes": 61806,
+      "transformation": "none",
+      "source": "authorized-audit-runtime/neuron/styles.css"
+    },
+    {
+      "file": "icons.js",
+      "sha256": "ef4717abcaab0a050fe0b4578abcfeb8fdca1fc3ffca58a4e55e027781a9e73f",
+      "bytes": 10974,
+      "transformation": "none",
+      "source": "Neuron prototype/icons.js; content after bundler export stripping matches archived settings-v323-standalone-check.mjs"
+    }
+  ]
+}

@@ -64,18 +64,27 @@ Forma maintains its own instructions, pattern descriptions and tools. Each addit
 
 ## Reference library
 
-Forma includes a searchable library of patterns written for its reusable resources and implementation contracts, **202 external site references**, and **2,079 developer portfolios** from a pinned community listing. Patterns explain implementation; external collections provide candidates and Forma-authored questions to investigate. Explore all three in the local selector or lightweight browser. Indexed sites are not claimed to have been visited or tested.
+Forma includes a searchable library of patterns written for its reusable resources and implementation contracts, **202 external site references**, and **2,079 developer portfolios** from a pinned community listing. Patterns explain implementation; external collections provide candidates and Forma-authored questions to investigate. Explore them in the local selector or lightweight browser. A separate **observed-experiences collection currently covers five sources and nine bounded claims**, each with dates, conditions, evidence and caveats. This does not mean all 202 sites or 2,079 portfolios were studied.
 
 ```sh
 node <skill-dir>/scripts/references.mjs --portfolios --query "Joao" --limit 3 --json
 node <skill-dir>/scripts/references.mjs --portfolios --case portfolio-project-stories --limit 3
+node <skill-dir>/scripts/references.mjs --observed --query "sticky navigation" --json
 ```
+
+Observed lookup matches specific features within the same supporting claim. Unsupported queries return no observed match; untested caveats and broad candidate guides do not count as feature evidence. It performs no fresh site visit. See [observed search](source/forma/references/reference-library.md#search-observed-experiences).
 
 The portfolio collection retains names, original URLs and source lines from [Developer Portfolios](https://github.com/emmabostian/developer-portfolios/tree/c2ee35d6363e7b2ee4c34f40accb478c0f828e4f). An [import receipt](source/forma/assets/reference-library/portfolio-import.json) records full README coverage, a stale feed and one quarantined malformed URL. No portfolio code, images or descriptions are included; the source snapshot has no explicit license, and individual websites retain their own rights.
 
 > Use Forma to find three references for this project, explain what fits our content, preserve the approved brand, and inspect the selected sites before implementing.
 
 The media helper searches Openverse, Wikimedia Commons, the Art Institute of Chicago, and the Met, and downloads only an explicitly selected result with its attribution record. See the [reference and media guide](source/forma/references/reference-library.md). Pattern guidance, use-case questions and tools are maintained by Forma. External sites, the historical inventory and media retain their provenance; imported descriptions and aesthetic scores are not presented as Forma-authored work.
+
+## Reusable components
+
+[AppearanceEditor](source/forma/references/reusable-components.md#appearanceeditor-integration) provides the compact lighting UI, keyboard/touch event handling, draft preview, Save/Cancel and explicit persistence adapters. [NeuronPassport](source/forma/references/reusable-components.md#neuronpassport-integration) preserves the approved Neuron CSS 3D engine, visual layers and corner gestures in an isolated frame. The old Three PassportObject remains a legacy alternative, not a fidelity substitute.
+
+Run the [component lab](source/forma/assets/components-lab.html) from a repository checkout after `npm ci --ignore-scripts`, using a local HTTP server at the repository root. The primary components need no Three dependency; diagnostics identify the actual CSS renderer. [Setup and adapters](source/forma/references/reusable-components.md) explain how to use the destination's existing stack. The lab uses sample data and browser-local storage; package tests and a standalone demo do not prove consumer integration, cross-engine behavior or physical touch.
 
 ## Install
 
@@ -135,7 +144,7 @@ See the [installation guide](docs/INSTALLATION.md) for updates, removal, and evi
 
 Forma provides instructions, references, and local resources; it is not a standalone visual editor. Integrations such as a browser, Figma, or REA depend on the environment and are not connected automatically.
 
-Structure and geometry tests do not prove rendering quality; a mobile viewport is not a physical device. The package includes executable resources and implementation specifications, such as the appearance editor: not every documented capability is a ready-to-import component. See [operation and limits](source/forma/references/plugin-operation.md).
+Structure and geometry tests do not prove rendering quality; a mobile viewport is not a physical device. The package includes executable resources and implementation specifications; inspect their current availability before promising reuse. AppearanceEditor and the extracted NeuronPassport are executable modules, while domain integrations and fidelity still need destination evidence. See [operation and limits](source/forma/references/plugin-operation.md) and the [release-validation protocol](source/forma/references/release-validation.md). That protocol separates frozen trials, original failures, reviewed corrections, rendered behavior, retrieval and runtime cost; it does not claim universal reliability or authorize publication.
 
 ## Contribute
 
@@ -157,6 +166,6 @@ Plugins, catalogs, and Agent Skills are generated and versioned; CI checks that 
 
 ### Learning from references
 
-Forma keeps site candidates separate from verified experience. The [experience workflow](source/forma/references/experience-library.md) connects observations, implementation techniques, licenses, adaptation decisions and tests. [Three bounded studies](source/forma/references/site-experiences.md) illustrate this process; the 202-site index is not a claim that every site has been audited or copied.
+Forma keeps site candidates separate from verified experience. The [experience workflow](source/forma/references/experience-library.md) connects observations, implementation techniques, licenses, adaptation decisions and tests. [Dated source studies](source/forma/references/site-experiences.md) support the observed collection's five sources and nine claims. Neither that subset nor the 202-site and 2,079-portfolio indexes claim that every destination was audited or copied.
 
 Coordination also covers websites: select relevant sources, assign concrete research questions, reconcile findings into one design direction, hand decisions to the appropriate specialists, then implement and verify the destination when requested. The assistant carries out this workflow with available tools; the reference browser itself is a selector, not an autonomous crawler.

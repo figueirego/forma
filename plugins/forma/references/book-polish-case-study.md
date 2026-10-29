@@ -4,7 +4,7 @@ Application case from 2026-10-26, incorporated in version 1.13.1 and distributed
 
 ## Result and identity
 
-The user approved the corrected visual result with "it turned out perfect!!" (translated from Portuguese). The [distributed BookObject](../assets/book-object.js) has the same bytes as the component approved in Pauta: SHA-256 `17bf1f572d0eaabc8486866fcf4b8b0cb9524bf191151d20580cb881b54e7cd4`. Approval applies to that presented result, not universal certification of all materials, devices, or poses.
+The user approved the corrected visual result with "it turned out perfect!!" (translated from Portuguese). The independently approved Pauta component has SHA-256 `17bf1f572d0eaabc8486866fcf4b8b0cb9524bf191151d20580cb881b54e7cd4`. The current [distributed BookObject](../assets/book-object.js), SHA-256 `ab63b0f8db78d6d5d8aa720a29f5702fa796015967855d97e745006aaa21197a`, differs only in the generic title and an equivalent escaped ellipsis; it is not byte-identical. Use the [approved integration](book-integration.md) for its preset, font, stage and light-preserving controls. Approval applies to that presented result, not universal certification of all materials, devices, or poses.
 
 The [evidence manifest](../assets/audits/book-polish-2026-10-26/manifest.json) preserves hashes, scopes, limits, and the case's neutral identifier. The [material reference profile](../assets/reference-profiles/desktop-material-reference-v1.json) retains observed measurements and mechanisms. Original comparative captures and reports, attributed to the source, remain in the external authorship history. They are not required to run the component, but this synthesis does not replace inspecting that evidence when a historical claim needs revalidation.
 

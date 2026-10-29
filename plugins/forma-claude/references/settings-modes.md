@@ -20,6 +20,8 @@ A tab does not determine data ownership. Sidebar may be global, theme workspace-
 
 For a form with Save: confirmed -> draft -> preview -> saving -> confirmed, or error with the draft preserved. Cancel restores the confirmed state without writing into another context. Closing and navigation must deliberately handle dirty state.
 
+Dirty state compares meaning, not property insertion order. Normalize defaults, new entries, reset values and persisted data to the same representation before comparing them. After an acknowledged save, verify that the preview is unchanged, dirty is false, and immediate reopen works without a reload. A successful write and a Saved message do not prove that the edit session has committed correctly. A rejected write must retain the draft and remain dirty.
+
 Retain the draft while navigating between tabs in the same session. Saving a section should commit only the fields it owns, even if profile/appearance share a persisted object. Use an explicit field list over the current confirmed state; do not spread another section's entire draft. Test both directions: pending name -> save theme, and pending theme/sidebar -> save profile. Closing and reopening follows the declared discard/resume policy, not the tab-switching policy.
 
 For immediate adjustments: confirmed -> pending -> confirmed/error; state that changes apply automatically and provide appropriate recovery. If debounced, define closing flush, timer cancellation, version ordering and write destination. Do not call closing Save when it does not confirm persistence.

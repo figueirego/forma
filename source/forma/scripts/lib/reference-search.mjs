@@ -250,3 +250,139 @@ export function rankSites(index, catalog, options = {}) {
   }
   return orderMatches(matches, seed, index.collection === 'developer-portfolios');
 }
+
+const nonempty = value => typeof value === 'string' && Boolean(value.trim());
+const stringList = (value, required = true) => Array.isArray(value) && (!required || value.length > 0) && value.every(nonempty);
+const exactFields = (value, fields) => value && typeof value === 'object' && !Array.isArray(value)
+  && Object.keys(value).every(key => fields.includes(key));
+const localEvidencePath = value => typeof value === 'string'
+  && /^(assets|references)\/[a-zA-Z0-9_./-]+(?:#[a-z0-9-]+)?$/.test(value) && !value.split(/[\/#]/).includes('..');
+function validDate(value) {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const parsed = new Date(`${value}T00:00:00Z`);
+  return Number.isFinite(parsed.valueOf()) && parsed.toISOString().slice(0, 10) === value;
+}
+
+export function validateObservedExperiences(index) {
+  const provenance = index?.provenance;
+  if (!exactFields(index, ['schemaVersion', 'collection', 'provenance', 'entries'])
+    || index.schemaVersion !== 1 || index.collection !== 'observed-experiences'
+    || !Array.isArray(index.entries) || !index.entries.length
+    || !exactFields(provenance, ['author', 'method', 'limits', 'receipts'])
+    || !nonempty(provenance.author) || !nonempty(provenance.method) || !stringList(provenance.limits)
+    || !Array.isArray(provenance.receipts)) throw new Error('Invalid observed-experience schema or provenance.');
+  const receipts = new Map(), ids = new Set(), claimIds = new Set(), sourceIdentities = new Set();
+  for (const receipt of provenance.receipts) {
+    if (!exactFields(receipt, ['id', 'date', 'path', 'sha256', 'distributed', 'summary'])
+      || !/^[a-z0-9-]+$/.test(receipt.id ?? '') || receipts.has(receipt.id) || !validDate(receipt.date)
+      || typeof receipt.path !== 'string' || !/^outputs\/[a-zA-Z0-9_./-]+$/.test(receipt.path) || receipt.path.split('/').includes('..')
+      || !/^[a-f0-9]{64}$/.test(receipt.sha256 ?? '') || receipt.distributed !== false || !localEvidencePath(receipt.summary)) {
+      throw new Error('Invalid observed-experience receipt.');
+    }
+    receipts.set(receipt.id, receipt);
+  }
+  for (const entry of index.entries) {
+    const identity = entry?.sourceIdentity;
+    if (!exactFields(entry, ['id', 'name', 'url', 'requestedUrl', 'sourceIdentity', 'claims', 'rights'])
+      || !/^observed-[a-z0-9-]+$/.test(entry.id ?? '') || ids.has(entry.id) || !nonempty(entry.name)
+      || !isSafePortfolioURL(entry.url) || !isSafePortfolioURL(entry.requestedUrl)
+      || !exactFields(identity, ['collection', 'id']) || !['sites', 'portfolios'].includes(identity.collection)
+      || !/^[a-z0-9-]+$/.test(identity.id ?? '') || sourceIdentities.has(`${identity.collection}:${identity.id}`)
+      || !Array.isArray(entry.claims) || !entry.claims.some(claim => claim?.status === 'observed')
+      || !exactFields(entry.rights, ['license', 'scope']) || !nonempty(entry.rights.license) || !nonempty(entry.rights.scope)) {
+      throw new Error(`Invalid or duplicate observed experience: ${entry?.id ?? '(missing ID)'}`);
+    }
+    ids.add(entry.id); sourceIdentities.add(`${identity.collection}:${identity.id}`);
+    for (const claim of entry.claims) {
+      const evidence = claim?.evidence;
+      const expectedEvidence = { observed: ['observed-dom', 'observed-interaction'], inferred: ['inference'], unverified: ['not-tested'] };
+      if (!exactFields(claim, ['id', 'status', 'date', 'statement', 'features', 'useCases', 'conditions', 'caveats', 'evidence', 'sourceUrl'])
+        || !/^[a-z0-9-]+$/.test(claim.id ?? '') || claimIds.has(claim.id)
+        || !Object.hasOwn(expectedEvidence, claim.status) || !validDate(claim.date) || !nonempty(claim.statement)
+        || !stringList(claim.features, claim.status === 'observed') || !stringList(claim.useCases, claim.status === 'observed')
+        || claim.useCases.some(value => !/^[a-z0-9-]+$/.test(value)) || !nonempty(claim.conditions) || !stringList(claim.caveats)
+        || claim.sourceUrl !== entry.url
+        || !exactFields(evidence, ['type', 'source', 'assertion', 'receiptId'])
+        || !expectedEvidence[claim.status].includes(evidence.type) || !localEvidencePath(evidence.source)
+        || !nonempty(evidence.assertion) || evidence.assertion !== claim.statement
+        || (evidence.receiptId !== undefined && (!receipts.has(evidence.receiptId) || receipts.get(evidence.receiptId).date !== claim.date))) {
+        throw new Error(`Invalid observed-experience claim: ${claim?.id ?? '(missing ID)'}`);
+      }
+      claimIds.add(claim.id);
+    }
+  }
+  return index;
+}
+
+export function observedFacets(index) {
+  const claims = index.entries.flatMap(entry => entry.claims.filter(claim => claim.status === 'observed'));
+  const count = key => Object.fromEntries([...claims.reduce((map, claim) => {
+    for (const value of new Set(claim[key])) map.set(value, (map.get(value) ?? 0) + 1);
+    return map;
+  }, new Map())].sort(([a], [b]) => a.localeCompare(b, 'en')));
+  return { total: index.entries.length, observedClaims: claims.length, features: count('features'), useCases: count('useCases') };
+}
+
+export function observedEvidencePaths(index) {
+  return [...new Set([...index.entries.flatMap(entry => entry.claims.map(claim => claim.evidence.source)),
+    ...index.provenance.receipts.map(receipt => receipt.summary)].map(source => source.split('#')[0]))];
+}
+
+export function validateObservedEvidence(index, sourceTexts) {
+  validateObservedExperiences(index);
+  const readSection = source => {
+    const [path, anchor] = source.split('#');
+    if (!Object.hasOwn(sourceTexts, path) || typeof sourceTexts[path] !== 'string') throw new Error(`Missing observed evidence source: ${path}`);
+    const text = sourceTexts[path];
+    if (!anchor) return text;
+    const headings = [...text.matchAll(/^(#{1,6})\s+(.+)$/gm)];
+    const start = headings.findIndex(match => normalize(match[2]).replace(/[^\p{L}\p{N}\s-]/gu, '').trim().replace(/\s+/g, '-') === anchor);
+    if (start < 0) throw new Error(`Missing observed evidence anchor: ${source}`);
+    const next = headings.slice(start + 1).find(match => match[1].length <= headings[start][1].length);
+    return text.slice(headings[start].index, next?.index ?? text.length);
+  };
+  for (const entry of index.entries) for (const claim of entry.claims) {
+    const section = readSection(claim.evidence.source);
+    const dates = [...section.matchAll(/^\*\*Observation date:\*\* (\d{4}-\d{2}-\d{2})\.\s*$/gm)];
+    if (!section.includes(claim.evidence.assertion) || dates.length !== 1 || dates[0][1] !== claim.date) {
+      throw new Error(`Unsupported observed evidence assertion: ${claim.id}`);
+    }
+  }
+  for (const receipt of index.provenance.receipts) {
+    const summary = readSection(receipt.summary);
+    if (!summary.includes(receipt.sha256) || !summary.includes(receipt.path)) throw new Error(`Unsupported observed receipt assertion: ${receipt.id}`);
+  }
+  return index;
+}
+
+export function rankObservedExperiences(index, options = {}) {
+  const { query = '', useCase, site, seed } = options;
+  if (useCase !== undefined && !Object.hasOwn(observedFacets(index).useCases, useCase)) throw new Error(`Unknown observed use-case "${useCase}". Use --observed --list.`);
+  // Avoid concept expansion such as sidebar -> navigation: a related concept is not an observed feature.
+  const terms = [...new Set(words(query).filter(term => !STOP.has(term)))].map(term => ({ term, alternatives: [term] }));
+  if (query.trim() && !terms.length) throw new Error('The observed query needs a specific feature, use case, name or URL.');
+  const matches = [];
+  for (const entry of index.entries) {
+    if (site && entry.id !== site) continue;
+    const matchedClaims = [];
+    for (const claim of entry.claims) {
+      if (claim.status !== 'observed' || (useCase && !claim.useCases.includes(useCase))) continue;
+      const fields = [
+        ['identity', new Set(words(`${entry.name} ${entry.url} ${entry.requestedUrl}`)), 4],
+        ['observed-features', new Set(words(claim.features.join(' '))), 3],
+        ['observed-use-cases', new Set(words(claim.useCases.join(' '))), 2],
+      ];
+      const matchedTerms = matchFields(fields, terms);
+      if (matchedTerms.length !== terms.length) continue;
+      matchedClaims.push({ claim, match: {
+        lexicalScore: matchedTerms.reduce((total, item) => total + item.weight, 0), literalMatches: matchedTerms.length,
+        matchedTerms, filters: { ...(useCase && { useCase }) },
+      } });
+    }
+    if (matchedClaims.length) {
+      matchedClaims.sort((a, b) => b.match.lexicalScore - a.match.lexicalScore || a.claim.id.localeCompare(b.claim.id, 'en'));
+      matches.push({ entry, matchedClaims, match: matchedClaims[0].match });
+    }
+  }
+  return orderMatches(matches, seed, true);
+}

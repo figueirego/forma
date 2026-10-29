@@ -38,6 +38,8 @@ SOFTWARE.
 
 The importer, investigation procedures, and query tool were written for Forma. Names/URLs identify their respective external destinations; Forma is not affiliated with them, does not endorse them, and does not claim authorship of them. The source date/revision, original lines, malformed URL, and README/feed differences are preserved in the index and `portfolio-import.json`. Reusing any code or media requires examining the specific source's rights. A listing does not prove a site's availability, quality, or technology.
 
+Inter Variable is distributed in `assets/fonts/inter-latin-opsz-normal.woff2` under the SIL Open Font License 1.1. Preserve `assets/fonts/Inter-OFL.txt` with the font. It is a third-party dependency used by the approved book texture renderer, not a Forma-authored font.
+
 Three.js is a test development dependency with its own MIT license and authors' copyright, preserved in the package installed by npm. It is not embedded in the plugin; the BookObject consumer supplies a compatible loader when WebGL is needed.
 
 The hero in `assets/plugin-brand/hero.png` is an image generated for Forma. The SVG symbols and presentation layout were created for this project. Provenance and limits are recorded in `assets/plugin-brand/provenance.json`. The hero is not an editable 3D model.

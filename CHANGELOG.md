@@ -1,5 +1,35 @@
 # Changelog
 
+## 1.32.1 - 2026-10-29
+
+- Fix false dirty state in AppearanceEditor after saving first-use, newly added or reset lights. Keep default, draft and persisted records canonical without changing color values, geometry, gestures, gradient generation or styling.
+- Add regression coverage for immediate reopen after successful save, equivalent reset values and failed-write draft retention. Require acknowledgement, clean edit state and reopen evidence together; a Saved message alone is insufficient.
+- Preserve the frozen 1.32.0 generation trials separately from this corrective patch. Browser-engine, emulated-touch, physical-device and performance results retain their own evidence boundaries.
+
+## 1.32.0 - 2026-10-29
+
+- Add explicit asynchronous host persistence to NeuronPassport. Preserve drafts while waiting, require a true acknowledgement, retain fields after rejection, reject stale revisions, and ignore completion after disposal. The host owns durable storage, timeouts and server-side conflict handling; the approved visual engine remains unchanged.
+- Correct coordinator and evaluation examples to route closed books through BookPreset and the approved passport through NeuronPassport. A pre-existing Three.js loader is not a reason to substitute the passport mechanism.
+- Expand the observed collection to six sources and ten bounded claims with a keyboard project-selection observation. Candidate indexes remain separate from verified features; a source interaction is not complete site accessibility or performance evidence.
+- Require rendered accessible-name checks for controls: descriptions and placeholders do not replace labels. Keep frozen original trials and reviewed corrections separate. Three locally reviewed briefs do not establish general reliability or superiority.
+
+## 1.31.0 - 2026-10-29
+
+- Add BookPreset and a dedicated book lab carrying the approved dimensions, pose, materials, Inter font, loader, lighting calibration and reset behavior. Preserve the original BookObject renderer; content updates do not replay the saved pose. Add startup and adapter regressions, and explicit consumer fidelity conditions.
+
+- Add NeuronPassport as the primary passport mechanism: preserve the approved Neuron CSS 3D engine, geometry, material layers, typography, dynamic lighting and corner gestures. Isolate original styles in an owned same-origin frame to protect the host workspace and color editor.
+- Preserve the frozen v03.23 engine and the explicitly authorized current CSS as independently hashed sources. This composite does not assert historical CSS byte identity.
+- Replace the component lab passport consumer with the extracted mechanism and real profile/state adapters. Retain the earlier Three PassportObject only as a legacy alternative, never as a faithful Neuron substitute.
+- Keep BookObject, LibraryColors and AppearanceEditor unchanged. Require matching host, assets, pose, theme and runtime conditions for visual comparisons; package checks do not establish universal GPU or operating-system parity.
+
+## 1.30.0 - 2026-10-29
+
+- Add portable AppearanceEditor JavaScript/CSS with the compact System/Light/Dark controls, isolated draft/commit state, 0/1/2/3-light semantics, ring/wave/grain controls, keyboard/Pointer Events, save/cancel adapters and legacy backup. Keep allowed offstage anchors from producing negative distance scaling.
+- Add a simplified articulated Three PassportObject using the original BookObject cover painter, with cover/page/material/fit controls, centered rotation, disposal and labeled fallback. It is a new mechanism and does not claim parity with the approved CSS passport.
+- Add a runnable component lab with local sample data, persistence, real WebGL diagnostics, separate first/warm CPU render measurements, live reduced-motion handling, BFCache-aware lifecycle and synchronized controls. Consumer integration, GPU cost, other engines and physical touch require their own evidence.
+- Add a separate observed-experiences collection and `--observed` CLI/browser retrieval: five sources and nine dated observed claims, with source identity, conditions, use cases, evidence assertions and caveats. Unsupported features do not fall back to the 202-site or 2,079-portfolio candidate indexes; those indexes remain distinct from studied coverage.
+- Add a bounded release-validation protocol and decision scenarios covering frozen independent trials, separate reviewed corrections, browser/input/motion/runtime gates, consumer persistence/lifecycle and positive/negative retrieval checks. The protocol and scenarios are not published test results or universal reliability claims.
+
 ## 1.29.0 - 2026-10-29
 
 - Coordinate palette roles, light/dark modes, spacing, radius and icon decisions before splitting new visual work across specialists. Preserve local fixes and existing project conventions.

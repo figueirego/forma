@@ -39,7 +39,7 @@ test('portfolio collection preserves every source row, including the quarantined
 });
 
 test('CLI keeps portfolios, sites and patterns as explicit independent collections', () => {
-  for (const [args, total] of [[['--portfolios'], 2079], [['--sites'], 202], [[], 20]]) {
+  for (const [args, total] of [[['--portfolios'], 2079], [['--sites'], 202], [[], 21]]) {
     const result = cli(...args, '--list', '--json');
     assert.equal(result.status, 0, result.stderr);
     assert.equal(JSON.parse(result.stdout).total, total);
@@ -219,7 +219,7 @@ test('portfolio boards are exclusive writes from any working directory', () => {
 
 // Execute the browser module with a small DOM boundary: verifies collection transitions and
 // generated links without making a network request or pretending to prove visual layout.
-async function browserHarness({ missingPortfolio = false } = {}) {
+async function browserHarness({ missingPortfolio = false, missingObserved = false, missingObservedEvidence = false } = {}) {
   const nodes = new Map();
   let document;
   class Node {
@@ -238,9 +238,9 @@ async function browserHarness({ missingPortfolio = false } = {}) {
     showModal() { this.open = true; }
     close() { this.open = false; }
   }
-  const ids = ['collection', 'query', 'query-label', 'query-help', 'case', 'evidence', 'kind', 'filters', 'cards', 'status', 'empty', 'more', 'error', 'source-note', 'scope-note', 'guide-suggestions', 'guide-cards', 'case-field', 'kind-field', 'evidence-field', 'detail', 'detail-origin', 'detail-content', 'close-detail'];
-  for (const id of ids) nodes.set(id, new Node(['collection', 'case', 'evidence', 'kind'].includes(id) ? 'select' : 'div'));
-  for (const id of ['case', 'evidence', 'kind']) { const option = new Node('option'); option.value = ''; nodes.get(id).append(option); }
+  const ids = ['collection', 'query', 'query-label', 'query-help', 'case', 'evidence', 'kind', 'use-case', 'filters', 'cards', 'status', 'empty', 'more', 'error', 'source-note', 'scope-note', 'guide-suggestions', 'guide-cards', 'case-field', 'use-case-field', 'kind-field', 'evidence-field', 'detail', 'detail-origin', 'detail-content', 'close-detail'];
+  for (const id of ids) nodes.set(id, new Node(['collection', 'case', 'evidence', 'kind', 'use-case'].includes(id) ? 'select' : 'div'));
+  for (const id of ['case', 'evidence', 'kind', 'use-case']) { const option = new Node('option'); option.value = ''; nodes.get(id).append(option); }
   nodes.get('collection').value = 'patterns';
   document = { getElementById: id => nodes.get(id), createElement: tag => new Node(tag), createDocumentFragment: () => new Node('#fragment') };
   const source = fs.readFileSync(path.join(root, 'assets/reference-browser.js'), 'utf8')
@@ -248,11 +248,18 @@ async function browserHarness({ missingPortfolio = false } = {}) {
   const fetch = async url => {
     const name = String(url).split('/').pop();
     if (name === 'portfolio-index.json' && missingPortfolio) return { ok: false, status: 404 };
-    return { ok: true, json: async () => ({ 'catalog.json': catalog, 'site-index.json': sites, 'portfolio-index.json': index })[name] };
+    if (name === 'observed-experiences.json' && missingObserved) return { ok: false, status: 404 };
+    if (name === 'site-experiences.md') return missingObservedEvidence ? { ok: false, status: 404 }
+      : { ok: true, text: async () => fs.readFileSync(path.join(root, 'references/site-experiences.md'), 'utf8') };
+    return { ok: true, json: async () => ({ 'catalog.json': catalog, 'site-index.json': sites, 'portfolio-index.json': index,
+      'observed-experiences.json': api.loadObservedExperiences() })[name] };
   };
   await vm.runInNewContext(`(async () => {${source}})()`, { document, URL, fetch,
     rankReferences: api.rankReferences, validateCatalog: value => value, validateSiteIndex: api.validateSiteIndex,
-    rankSites: api.rankSites, suggestSiteCases: api.suggestSiteCases });
+    rankSites: api.rankSites, suggestSiteCases: api.suggestSiteCases,
+    validateObservedExperiences: api.validateObservedExperiences, observedFacets: api.observedFacets,
+    rankObservedExperiences: api.rankObservedExperiences, observedEvidencePaths: api.observedEvidencePaths,
+    validateObservedEvidence: api.validateObservedEvidence });
   return { nodes, document, change(id, value) { nodes.get(id).value = value; nodes.get(id).listeners[id === 'query' ? 'input' : 'change'](); } };
 }
 const descend = node => [node, ...node.children.flatMap(child => typeof child === 'string' ? [] : descend(child))];
@@ -283,11 +290,11 @@ test('browser switches case collections, preserves focus and never links the qua
 
 test('a missing portfolio inventory does not disable sites or patterns', async () => {
   const page = await browserHarness({ missingPortfolio: true });
-  assert.match(page.nodes.get('status').textContent, /^20 patterns/);
+  assert.match(page.nodes.get('status').textContent, /^21 patterns/);
   page.change('collection', 'portfolios');
   assert.match(page.nodes.get('status').textContent, /Portfolio index unavailable/);
   page.change('collection', 'sites'); assert.match(page.nodes.get('status').textContent, /^202 websites/);
-  page.change('collection', 'patterns'); assert.match(page.nodes.get('status').textContent, /^20 patterns/);
+  page.change('collection', 'patterns'); assert.match(page.nodes.get('status').textContent, /^21 patterns/);
 });
 
 test('browser separates guide suggestions from identity results and makes candidate browsing explicit', async () => {
@@ -319,4 +326,60 @@ test('browser separates guide suggestions from identity results and makes candid
   page.change('query', 'motion');
   page.change('collection', 'patterns');
   assert.equal(guides.children.length, 0);
+});
+
+test('browser observed collection filters supporting claims and displays conditions without guide fallback', async () => {
+  const page = await browserHarness();
+  page.change('collection', 'observed');
+  assert.match(page.nodes.get('status').textContent, /^6 observed experiences/);
+  assert.equal(page.nodes.get('case-field').hidden, true);
+  assert.equal(page.nodes.get('use-case-field').hidden, false);
+  page.change('query', 'sticky navigation');
+  assert.equal(page.nodes.get('cards').children.length, 1);
+  page.nodes.get('cards').firstChild.querySelector('button').listeners.click();
+  const detail = page.nodes.get('detail-content');
+  assert.match(detail.textContent, /brittany-sticky-navigation \/ 2026-10-29 \/ observed/);
+  assert.match(detail.textContent, /1280x800/);
+  assert.match(detail.textContent, /Unverified/);
+  assert.ok(descend(detail).some(node => node.tag === 'a' && node.href.endsWith('site-experiences.md#responsive-portfolio-navigation')));
+  page.change('query', 'screen reader');
+  assert.equal(page.nodes.get('cards').children.length, 0);
+  assert.equal(page.nodes.get('guide-cards').children.length, 0);
+  assert.match(page.nodes.get('empty').textContent, /No observed claims match/);
+  page.change('query', ''); page.change('use-case', 'compact-expandable-biography');
+  assert.equal(page.nodes.get('cards').children.length, 1);
+  assert.match(page.nodes.get('cards').textContent, /Lee Robinson/);
+  page.change('collection', 'sites');
+  assert.equal(page.nodes.get('use-case-field').hidden, true);
+  page.change('collection', 'observed');
+  assert.equal(page.nodes.get('use-case').value, '');
+  assert.match(page.nodes.get('status').textContent, /^6 observed experiences/);
+});
+
+test('missing observed data or evidence keeps existing browser collections available', async () => {
+  for (const failure of [{ missingObserved: true }, { missingObservedEvidence: true }]) {
+    const page = await browserHarness(failure);
+    assert.match(page.nodes.get('status').textContent, /^21 patterns/);
+    page.change('collection', 'observed');
+    assert.match(page.nodes.get('status').textContent, /Search unavailable:/);
+    assert.equal(page.nodes.get('cards').children.length, 0);
+    page.change('collection', 'sites'); assert.match(page.nodes.get('status').textContent, /^202 websites/);
+    page.change('collection', 'portfolios'); assert.match(page.nodes.get('status').textContent, /^2079 portfolios/);
+    page.change('collection', 'patterns'); assert.match(page.nodes.get('status').textContent, /^21 patterns/);
+  }
+});
+
+test('browser card action names retain the visible label and identify their source in every collection', async () => {
+  const page = await browserHarness();
+  for (const collection of ['patterns', 'sites', 'portfolios', 'observed']) {
+    page.change('collection', collection);
+    const cards = page.nodes.get('cards').children;
+    assert.ok(cards.length > 0, collection);
+    for (const card of cards) {
+      const button = card.querySelector('button');
+      const sourceName = card.querySelector('h2').textContent;
+      assert.ok(button['aria-label'].includes(button.textContent), `${collection}: visible action missing from accessible name`);
+      assert.ok(button['aria-label'].includes(sourceName), `${collection}: source missing from accessible name`);
+    }
+  }
 });

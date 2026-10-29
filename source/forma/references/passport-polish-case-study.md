@@ -6,7 +6,7 @@ Case approved on 2026-10-27, incorporated into Forma 1.17.0. Consult it to corre
 
 The user approved Neuron v03.17.1 after successive geometry, texture and lighting corrections, and requested incorporating the knowledge into the skill. The mechanism is **articulated CSS 3D/DOM**, with thickness surfaces, covers, a page block and a segmented sheet during turning. It is not the distributed BookObject/Three, does not use a PBR shader and does not physically simulate leather or paper.
 
-This reference and the [manifest](../assets/audits/passport-polish-2026-10-27/manifest.json) distribute knowledge, contextualized parameters and hashes. **They do not distribute a PassportObject component**, the application, user profiles, document photographs or national covers. Running the original passport requires its project; this synthesis is self-contained for applying the lessons. [BookObject](reusable-objects.md) retains its own unchanged contract and code.
+This reference and the [manifest](../assets/audits/passport-polish-2026-10-27/manifest.json) distribute knowledge, contextualized parameters and hashes. **They do not distribute the approved CSS passport component**, its application, user profiles, document photographs or national covers. Running that original passport requires its project; this synthesis is self-contained for applying the lessons. Since 1.30.0, a separate [PassportObject](reusable-components.md#passportobject-integration) supplies a simplified executable Three adaptation. It is not this historical implementation and does not inherit its approval or geometry/material fidelity. [BookObject](reusable-objects.md) retains its own unchanged contract and code.
 
 ## Symptom -> cause -> correction -> proof
 
@@ -50,7 +50,7 @@ The manifest pins hashes of code and external evidence. The 89 tests belong to t
 
 ## Pages, divider and content - subsequent learning through v03.23.0
 
-This extension records corrections after the v03.17.1 manifest; it does not change its hashes or transfer its approval to new poses. Source: Neuron conversation, code and integration documentation. No new component is distributed here.
+This extension records corrections after the v03.17.1 manifest; it does not change its hashes or transfer its approval to new poses. Source: Neuron conversation, code and integration documentation. This historical extension does not distribute its CSS component; the later [simplified Three component](reusable-components.md#passportobject-integration) is a separate implementation.
 
 **The page starts at the hinge; text starts at its inset.** Do not confuse editorial margins with the beginning of the physical surface. Paper must continuously cover seam -> curved section -> sheet on both sides. A flat central strip with a shadow does not replace two surfaces reaching the same binding. Define shared position and tangent where the curve joins the sheet; keep the root attached, compatible upper/lower height and smooth volume without arbitrarily moving the turning pivot to the content margin. Evaluate geometric mirroring separately from legitimate text asymmetry.
 
@@ -63,3 +63,12 @@ In the consumer, connecting curves between seam and sheet use sampling concentra
 **Framing and gestures belong to the consumer.** Use available panel dimensions and the projected opening envelope, not just the book's closed width. Separate presentation orientation/position from persisted profile data. When direct gestures replace explicit modes, arbitrate between page corner, surface and clickable control; retain arrow/keyboard alternatives and reduced motion. Canceling, resizing or changing data during movement must not detach the root or leave old sheet copies.
 
 Transferable verification: boundaries/tangents and nonintersection in geometric tests; painting continuity in fixed poses; gesture with forward/reverse/interruption; resize with both pages open; extreme content in every spread; inspection of the served file. v03.23.0 records report 148 product tests and desktop windows from 800x600 to 1440x900. These are historical evidence for that revision, not current skill execution, an FPS guarantee or native-installer validation.
+
+
+## Executable extraction and exact comparison
+
+The [NeuronPassport adapter](reusable-components.md#neuronpassport-integration) packages the approved v03.23 JavaScript and the current CSS explicitly authorized for the 2026-10-29 comparison. These are preserved source files, not a Three translation. The full historical CSS revision was unavailable; do not erase that distinction. A same-origin frame protects host styles and keeps the original system/Georgia typography, leather layers, page grain, glint and ground shadow. National artwork remains an external, attributed resource rather than bundled Forma artwork.
+
+Match actual yaw, pitch, scale and pan: the engine derives glint position/angle from yaw and ground placement from pan/scale. Match viewport, container query context, DPR, browser/GPU, theme, material policy, content and loaded asset bytes. The Neuron Settings host also supplies page-width and font rules; an isolated object comparison alone cannot prove that consumer. Compare closed, open, turned, oblique and held corner states before, during and after input. Record pixel differences and inspect the images; do not infer fidelity from a shared source hash alone.
+
+Keep BookObject, LibraryColors, AppearanceEditor and the approved workspace intact during passport extraction. The earlier simplified Three module is retained only for existing consumers and must not be selected to fulfill a Neuron-fidelity request.

@@ -1,6 +1,6 @@
 {
   "name": "forma-community",
-  "version": "1.29.0",
+  "version": "1.32.1",
   "private": true,
   "description": "Build and validation tooling for Forma plugins and portable Agent Skills",
   "license": "MIT",

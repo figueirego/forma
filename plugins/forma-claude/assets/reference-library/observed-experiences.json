@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 1,
+  "collection": "observed-experiences",
+  "provenance": {
+    "author": "Forma",
+    "method": "Claim-level curation of dated browser observations; this lookup performs no network requests or new observations.",
+    "limits": [
+      "Evidence status belongs to individual claims, never every feature of an indexed site.",
+      "Use cases describe bounded adaptation opportunities, not a quality ranking or destination validation.",
+      "Third-party captures, code, fonts and assets are not distributed."
+    ],
+    "receipts": [
+      {
+        "id": "portfolio-observations-2026-10-29",
+        "date": "2026-10-29",
+        "path": "outputs/forma-validation-2026-10-29/evidence/reference-observations.json",
+        "sha256": "81a4553397e151312c9da13864ce3036e78d2ffe3594516ff50490fc60c954bf",
+        "distributed": false,
+        "summary": "references/site-experiences.md#portfolio-observation-provenance"
+      },
+      {
+        "id": "paco-observation-2026-10-29",
+        "date": "2026-10-29",
+        "path": "outputs/forma-readiness-2026-10-29/evidence/reference-paco.json",
+        "sha256": "a6c6344ce88c85b639fa5e3a1959bf899a67f0cfc7fd3c20036eda16632e968f",
+        "distributed": false,
+        "summary": "references/site-experiences.md#keyboard-project-selection"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "observed-brittany-chiang",
+      "name": "Brittany Chiang",
+      "url": "https://brittanychiang.com/",
+      "requestedUrl": "https://brittanychiang.com",
+      "sourceIdentity": {
+        "collection": "portfolios",
+        "id": "portfolio-d7c345f188eb7b53047d"
+      },
+      "claims": [
+        {
+          "id": "brittany-sticky-navigation",
+          "status": "observed",
+          "date": "2026-10-29",
+          "statement": "Header computed sticky at 1280x800 with top 0; static at 390x844. Section nav hidden on narrow layout.",
+          "features": [
+            "responsive sticky navigation",
+            "desktop header",
+            "mobile static header"
+          ],
+          "useCases": [
+            "responsive-portfolio-navigation"
+          ],
+          "conditions": "CUA browser DOM; 1280x800 desktop and 390x844 narrow CSS viewports; DPR not recorded; header and section navigation inspected.",
+          "caveats": [
+            "The narrow section navigation was hidden; this does not recommend hiding destination navigation.",
+            "No physical-device or keyboard-only navigation test."
+          ],
+          "evidence": {
+            "type": "observed-dom",
+            "source": "references/site-experiences.md#responsive-portfolio-navigation",
+            "assertion": "Header computed sticky at 1280x800 with top 0; static at 390x844. Section nav hidden on narrow layout.",
+            "receiptId": "portfolio-observations-2026-10-29"
+          },
+          "sourceUrl": "https://brittanychiang.com/"
+        },
+        {
+          "id": "brittany-section-anchors",
+          "status": "observed",
+          "date": "2026-10-29",
+          "statement": "Projects navigation click updated URL to #projects and moved document while header remained visible. Screenshot taken during scrolling, not proof of animation final position.",
+          "features": [
+            "section anchor navigation",
+            "project links",
+            "visible header"
+          ],
+          "useCases": [
+            "portfolio-section-navigation"
+          ],
+          "conditions": "CUA browser click on Projects at the desktop layout; screenshot captured during scrolling; 1280x800 CSS viewport; DPR not recorded.",
+          "caveats": [
+            "The capture does not establish the final scroll position, easing, duration, or animation mechanism."
+          ],
+          "evidence": {
+            "type": "observed-interaction",
+            "source": "references/site-experiences.md#responsive-portfolio-navigation",
+            "assertion": "Projects navigation click updated URL to #projects and moved document while header remained visible. Screenshot taken during scrolling, not proof of animation final position.",
+            "receiptId": "portfolio-observations-2026-10-29"
+          },
+          "sourceUrl": "https://brittanychiang.com/"
+        },
+        {
+          "id": "brittany-dark-typography",
+          "status": "observed",
+          "date": "2026-10-29",
+          "statement": "Measured body background rgb(15,23,42), h1 rgb(226,232,240), h1 48px desktop and 36px mobile. Body font differed from inherited content font: content uses Inter family.",
+          "features": [
+            "dark editorial typography",
+            "responsive heading size",
+            "inherited content font"
+          ],
+          "useCases": [
+            "portfolio-typographic-hierarchy"
+          ],
+          "conditions": "CUA browser computed styles; 1280x800 and 390x844 CSS viewports; DPR not recorded; body and h1 inspected separately.",
+          "caveats": [
+            "Measured colors and declared font family do not establish complete contrast, loaded-font coverage, or a theme-switching feature."
+          ],
+          "evidence": {
+            "type": "observed-dom",
+            "source": "references/site-experiences.md#responsive-portfolio-navigation",
+            "assertion": "Measured body background rgb(15,23,42), h1 rgb(226,232,240), h1 48px desktop and 36px mobile. Body font differed from inherited content font: content uses Inter family.",
+            "receiptId": "portfolio-observations-2026-10-29"
+          },
+          "sourceUrl": "https://brittanychiang.com/"
+        },
+        {
+          "id": "brittany-unverified",
+          "status": "unverified",
+          "date": "2026-10-29",
+          "statement": "No screen reader or touch event observation. Technology names in footer are author claims, not bundle verification. No full contrast or motion audit.",
+          "features": [],
+          "useCases": [],
+          "conditions": "Limits recorded with the same 2026-10-29 browser study.",
+          "caveats": [
+            "This dated observation is not a current full-site audit or destination validation."
+          ],
+          "evidence": {
+            "type": "not-tested",
+            "source": "references/site-experiences.md#responsive-portfolio-navigation",
+            "assertion": "No screen reader or touch event observation. Technology names in footer are author claims, not bundle verification. No full contrast or motion audit.",
+            "receiptId": "portfolio-observations-2026-10-29"
+          },
+          "sourceUrl": "https://brittanychiang.com/"
+        }
+      ],
+      "rights": {
+        "license": "No site asset reuse license established by this observation.",
+        "scope": "Site identity, content and assets remain with their respective owners. Forma distributes original research metadata only."
+      }
+    },
+    {
+      "id": "observed-lee-robinson",
+      "name": "Lee Robinson",
+      "url": "https://leerob.com/",
+      "requestedUrl": "https://leerob.io",
+      "sourceIdentity": {
+        "collection": "portfolios",
+        "id": "portfolio-22dc6f16f0921028c678"
+      },
+      "claims": [
+        {
+          "id": "lee-progressive-biography",
+          "status": "observed",
+          "date": "2026-10-29",
+          "statement": "Clicking Long changed bio content length from 443 to 4908 characters and aria-pressed from false to true; Default returned to 443.",
+          "features": [
+            "progressive biography",
+            "expand collapse introduction",
+            "pressed state"
+          ],
+          "useCases": [
+            "compact-expandable-biography"
+          ],
+          "conditions": "CUA browser interaction; Long followed by Default; desktop CSS dimensions and DPR were not recorded in the receipt.",
+          "caveats": [
+            "This sequence does not establish keyboard-only behavior, persistence, or other biography controls."
+          ],
+          "evidence": {
+            "type": "observed-interaction",
+            "source": "references/site-experiences.md#progressive-portfolio-biography",
+            "assertion": "Clicking Long changed bio content length from 443 to 4908 characters and aria-pressed from false to true; Default returned to 443.",
+            "receiptId": "portfolio-observations-2026-10-29"
+          },
+          "sourceUrl": "https://leerob.com/"
+        },
+        {
+          "id": "lee-editorial-regions",
+          "status": "observed",
+          "date": "2026-10-29",
+          "statement": "Compact biography, notes list and dated article links remain separate semantic regions.",
+          "features": [
+            "compact editorial layout",
+            "biography notes articles",
+            "semantic reading regions"
+          ],
+          "useCases": [
+            "portfolio-reading-organization"
+          ],
+          "conditions": "CUA browser DOM inspection of biography, notes list, and article links; desktop dimensions and DPR not recorded.",
+          "caveats": [
+            "This dated observation is not a current full-site audit or destination validation."
+          ],
+          "evidence": {
+            "type": "observed-dom",
+            "source": "references/site-experiences.md#progressive-portfolio-biography",
+            "assertion": "Compact biography, notes list and dated article links remain separate semantic regions.",
+            "receiptId": "portfolio-observations-2026-10-29"
+          },
+          "sourceUrl": "https://leerob.com/"
+        },
+        {
+          "id": "lee-narrow-reading",
+          "status": "observed",
+          "date": "2026-10-29",
+          "statement": "At 390x844 document scrollWidth equaled 390 after returning to Default.",
+          "features": [
+            "responsive reading layout",
+            "mobile horizontal overflow"
+          ],
+          "useCases": [
+            "narrow-portfolio-reading"
+          ],
+          "conditions": "CUA browser DOM; 390x844 CSS viewport after selecting Default; document scrollWidth measured 390; DPR not recorded.",
+          "caveats": [
+            "One state and width do not establish every expanded biography state, zoom level, or physical-device behavior."
+          ],
+          "evidence": {
+            "type": "observed-dom",
+            "source": "references/site-experiences.md#progressive-portfolio-biography",
+            "assertion": "At 390x844 document scrollWidth equaled 390 after returning to Default.",
+            "receiptId": "portfolio-observations-2026-10-29"
+          },
+          "sourceUrl": "https://leerob.com/"
+        },
+        {
+          "id": "lee-unverified",
+          "status": "unverified",
+          "date": "2026-10-29",
+          "statement": "No code/framework verification. No keyboard-only or screen reader audit. No performance measurements.",
+          "features": [],
+          "useCases": [],
+          "conditions": "Limits recorded with the same 2026-10-29 browser study.",
+          "caveats": [
+            "This dated observation is not a current full-site audit or destination validation."
+          ],
+          "evidence": {
+            "type": "not-tested",
+            "source": "references/site-experiences.md#progressive-portfolio-biography",
+            "assertion": "No code/framework verification. No keyboard-only or screen reader audit. No performance measurements.",
+            "receiptId": "portfolio-observations-2026-10-29"
+          },
+          "sourceUrl": "https://leerob.com/"
+        }
+      ],
+      "rights": {
+        "license": "No site asset reuse license established by this observation.",
+        "scope": "Site identity, content and assets remain with their respective owners. Forma distributes original research metadata only."
+      }
+    },
+    {
+      "id": "observed-dialkit",
+      "name": "DialKit",
+      "url": "https://www.dialkit.dev/",
+      "requestedUrl": "https://www.dialkit.dev/",
+      "sourceIdentity": {
+        "collection": "sites",
+        "id": "opl-dialkit"
+      },
+      "claims": [
+        {
+          "id": "dialkit-weight-preview",
+          "status": "observed",
+          "date": "2026-10-29",
+          "statement": "the typography weight control changed from 450 to 800 using the End key; the heading's computed `font-weight` followed the change.",
+          "features": [
+            "typography weight control preview",
+            "keyboard end key"
+          ],
+          "useCases": [
+            "control-preview-consistency"
+          ],
+          "conditions": "IAB browser; 1280x720 CSS viewport; DPR 2; End key on the typography weight control.",
+          "caveats": [
+            "Only this control and desktop interaction were observed.",
+            "Read code snapshot 1ef9fe8c3abfe7fd3338b45e5f4350407d49ac2c was not proven to be the deployed site revision."
+          ],
+          "evidence": {
+            "type": "observed-interaction",
+            "source": "references/site-experiences.md#controls-connected-to-the-preview",
+            "assertion": "the typography weight control changed from 450 to 800 using the End key; the heading's computed `font-weight` followed the change."
+          },
+          "sourceUrl": "https://www.dialkit.dev/"
+        },
+        {
+          "id": "dialkit-unverified",
+          "status": "unverified",
+          "date": "2026-10-29",
+          "statement": "Upstream tests were not run.",
+          "features": [],
+          "useCases": [],
+          "conditions": "Static code read accompanied the bounded desktop interaction; no upstream test execution.",
+          "caveats": [
+            "This dated observation is not a current full-site audit or destination validation."
+          ],
+          "evidence": {
+            "type": "not-tested",
+            "source": "references/site-experiences.md#controls-connected-to-the-preview",
+            "assertion": "Upstream tests were not run."
+          },
+          "sourceUrl": "https://www.dialkit.dev/"
+        }
+      ],
+      "rights": {
+        "license": "Studied repository snapshot is MIT, copyright 2026 Josh Puckett; no source code is redistributed here.",
+        "scope": "The code license does not prove rights to every website asset or equivalence with the deployed site."
+      }
+    },
+    {
+      "id": "observed-neue-montreal",
+      "name": "PP Neue Montreal",
+      "url": "https://neuemontreal.com/",
+      "requestedUrl": "https://neuemontreal.com/",
+      "sourceIdentity": {
+        "collection": "sites",
+        "id": "aww-pp-neue-montreal"
+      },
+      "claims": [
+        {
+          "id": "neue-montreal-weight-specimen",
+          "status": "observed",
+          "date": "2026-10-29",
+          "statement": "section navigation and comparison of weights in headings/body text. Clicking Weights moved to the demonstration region.",
+          "features": [
+            "typography weight specimen",
+            "heading body comparison",
+            "section navigation"
+          ],
+          "useCases": [
+            "type-specimen-comparison"
+          ],
+          "conditions": "IAB browser; 1280x720 CSS viewport; DPR 2; Weights link clicked and typography region inspected.",
+          "caveats": [
+            "A Framer string in the DOM does not identify every animation mechanism.",
+            "The commercial typeface and site assets were not licensed or incorporated."
+          ],
+          "evidence": {
+            "type": "observed-interaction",
+            "source": "references/site-experiences.md#typography-demonstrated-in-content",
+            "assertion": "section navigation and comparison of weights in headings/body text. Clicking Weights moved to the demonstration region."
+          },
+          "sourceUrl": "https://neuemontreal.com/"
+        },
+        {
+          "id": "neue-montreal-unverified",
+          "status": "unverified",
+          "date": "2026-10-29",
+          "statement": "Mobile, screen readers, all scroll states and reduced motion were not tested.",
+          "features": [],
+          "useCases": [],
+          "conditions": "Limits of the 1280x720, DPR 2 desktop study.",
+          "caveats": [
+            "This dated observation is not a current full-site audit or destination validation."
+          ],
+          "evidence": {
+            "type": "not-tested",
+            "source": "references/site-experiences.md#typography-demonstrated-in-content",
+            "assertion": "Mobile, screen readers, all scroll states and reduced motion were not tested."
+          },
+          "sourceUrl": "https://neuemontreal.com/"
+        }
+      ],
+      "rights": {
+        "license": "No site asset reuse license established by this observation.",
+        "scope": "Site identity, content and assets remain with their respective owners. Forma distributes original research metadata only."
+      }
+    },
+    {
+      "id": "observed-thoughtbot-report",
+      "name": "The State of Software Delivery in Healthcare",
+      "url": "https://thoughtbot.com/healthcare-software-delivery-report",
+      "requestedUrl": "https://thoughtbot.com/healthcare-software-delivery-report",
+      "sourceIdentity": {
+        "collection": "sites",
+        "id": "opl-the-state-of-software-delivery-in-health"
+      },
+      "claims": [
+        {
+          "id": "thoughtbot-text-data",
+          "status": "observed",
+          "date": "2026-10-29",
+          "statement": "editorial regions, statistics, comparison lists and a methodology section. The DOM exposed values through accessible labels, such as percentages, and eight canvas elements.",
+          "features": [
+            "data text representation",
+            "statistics accessible labels",
+            "editorial methodology",
+            "canvas elements"
+          ],
+          "useCases": [
+            "data-text-equivalence"
+          ],
+          "conditions": "IAB browser; 1280x720 CSS viewport; DPR 2; entry state and DOM inspected; an intermediate animated count was captured.",
+          "caveats": [
+            "Canvas does not prove WebGL or a particular library.",
+            "The intermediate counter frame is not the final statistic; data validity was not audited."
+          ],
+          "evidence": {
+            "type": "observed-dom",
+            "source": "references/site-experiences.md#data-with-a-text-representation",
+            "assertion": "editorial regions, statistics, comparison lists and a methodology section. The DOM exposed values through accessible labels, such as percentages, and eight canvas elements."
+          },
+          "sourceUrl": "https://thoughtbot.com/healthcare-software-delivery-report"
+        },
+        {
+          "id": "thoughtbot-unverified",
+          "status": "unverified",
+          "date": "2026-10-29",
+          "statement": "Scientific validity, real screen-reader use, performance and mobile behavior were not audited.",
+          "features": [],
+          "useCases": [],
+          "conditions": "Limits of the 1280x720, DPR 2 desktop study.",
+          "caveats": [
+            "This dated observation is not a current full-site audit or destination validation."
+          ],
+          "evidence": {
+            "type": "not-tested",
+            "source": "references/site-experiences.md#data-with-a-text-representation",
+            "assertion": "Scientific validity, real screen-reader use, performance and mobile behavior were not audited."
+          },
+          "sourceUrl": "https://thoughtbot.com/healthcare-software-delivery-report"
+        }
+      ],
+      "rights": {
+        "license": "No site asset reuse license established by this observation.",
+        "scope": "Site identity, content and assets remain with their respective owners. Forma distributes original research metadata only."
+      }
+    },
+    {
+      "id": "observed-francisco-salido",
+      "name": "Francisco Salido",
+      "url": "https://paco.fyi/?utm_source=gh",
+      "requestedUrl": "https://paco.fyi?utm_source=gh",
+      "sourceIdentity": {
+        "collection": "portfolios",
+        "id": "portfolio-37001f2ad0b391a1c963"
+      },
+      "claims": [
+        {
+          "id": "paco-project-selection",
+          "status": "observed",
+          "date": "2026-10-29",
+          "statement": "Clicking slide 1 exposed ParkHub in the accessibility tree; pressing Enter on slide 2 exposed Frameless and changed the highlighted dot.",
+          "features": [
+            "keyboard project selection",
+            "project carousel controls"
+          ],
+          "useCases": [
+            "project-carousel-selection"
+          ],
+          "conditions": "CUA IAB; 1280x720 CSS viewport; DPR 2; click on slide 1 and Enter on slide 2, followed by accessibility-tree and DOM reads.",
+          "caveats": [
+            "Automatic cycling occurred between calls. Final opacity, timing and interruption behavior were not established.",
+            "Selected dots had no aria-current or aria-pressed attribute. This is not an accessibility endorsement.",
+            "Touch, reduced motion and physical mobile were not tested."
+          ],
+          "evidence": {
+            "type": "observed-interaction",
+            "source": "references/site-experiences.md#keyboard-project-selection",
+            "assertion": "Clicking slide 1 exposed ParkHub in the accessibility tree; pressing Enter on slide 2 exposed Frameless and changed the highlighted dot.",
+            "receiptId": "paco-observation-2026-10-29"
+          },
+          "sourceUrl": "https://paco.fyi/?utm_source=gh"
+        }
+      ],
+      "rights": {
+        "license": "No site asset reuse license established by this observation.",
+        "scope": "Forma distributes original research metadata only. Third-party screenshots, code, media and fonts are not included."
+      }
+    }
+  ]
+}

@@ -116,7 +116,7 @@ Select **Forma** in the plugin catalog or invoke `$forma:forma`. Example: "Use F
 
 The coordinator is at [skills/forma/SKILL.md](skills/forma/SKILL.md). The shared root contains `references/`, `assets/`, `scripts/`, `tests/` and `evals/`. Example paths using `<forma-root>` point to this root, including when the skill is in the installed cache.
 
-This package preserves Forma {version}'s executable resources; `provenance.json` records source and packaged files. The complete appearance editor has implementation contracts, not a ready-made component. BookObject has a reusable implementation and documented dependencies. This plugin does not install ECC, REA, Figma or the Design Agent runtime.
+This package preserves Forma {version}'s executable resources; `provenance.json` records source and packaged files. BookObject, AppearanceEditor and the extracted NeuronPassport have reusable implementations and documented adapters or dependencies. The legacy Three passport is separate from the approved CSS mechanism. Consumer integration still needs its own validation. This plugin does not install ECC, REA, Figma or the Design Agent runtime.
 
 Build: edit `source/forma/` in the [public repository](https://github.com/figueirego/forma), run `npm run build`, then `npm run check`. This directory is generated; do not edit a second copy of the principles here. Marketplace installation copies a snapshot; later source changes require rebuilding and updating the plugin. The standalone skill is a separate distribution.
 
