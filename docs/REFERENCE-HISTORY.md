@@ -1,8 +1,10 @@
-# Taste integration — Forma 1.24–1.25
+> Archived release evidence. Version 1.26 replaces the imported catalog with Forma-authored patterns; see [current authorship boundaries](ORIGINALITY.md). Counts and checks below describe the earlier releases only.
+
+# Reference research history — Forma 1.24–1.25
 
 The first sections below record the 1.24 methods-only release. Version 1.25 adds the executable reference and media library described at the end; the earlier runtime exclusions are historical.
 
-This change adapts design methods from Taste Skill 2.1.5, pinned to commit `12af471f627f866411b4bd785b19646d3672784c`. The [source-to-decision map](../source/forma/references/taste-study.md) records coverage, licensing, adopted principles, rejected defaults, and runtime limitations.
+This change adapts design methods from Taste Skill 2.1.5, pinned to commit `12af471f627f866411b4bd785b19646d3672784c`. The [source-to-decision map](history/frontend-reference-study-2026-10-28.md) records coverage, licensing, adopted principles, rejected defaults, and runtime limitations.
 
 ## What changed
 

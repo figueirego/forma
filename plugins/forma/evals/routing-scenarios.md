@@ -71,7 +71,7 @@ Quando disponíveis, registre duração, retries, chamadas relevantes e uso forn
 
 ## Direção contextual e substância — 1.24.0
 
-Casos propostos a partir do [estudo de Taste](../references/taste-study.md). Esta tabela é uma rubrica, não um registro de execução. Preserve o protocolo de comparação acima e avalie a decisão/artefato, não a presença de palavras-chave.
+Casos de direção e substância mantidos desde a versão 1.24; procedência histórica em [fontes](../references/sources.md). Esta tabela é uma rubrica, não um registro de execução. Preserve o protocolo de comparação acima e avalie a decisão/artefato, não a presença de palavras-chave.
 
 | ID | Entrada e condições | Decisão e evidência esperadas | Falha material |
 |---|---|---|---|
@@ -90,8 +90,20 @@ Estes são critérios para exercícios, não resultados executados.
 
 | Caso | Decisão esperada | Falha material |
 |---|---|---|
-| R40: três referências para uma landing sem identidade definida | Consultar CLI, ler fichas, justificar princípio/conteúdo e inspecionar candidatas se atualidade for exigida | Anunciar 202 sites auditados ao vivo ou impor nota como qualidade |
+| R40: três referências para uma landing sem identidade definida | Consultar CLI, ler fichas, justificar princípio/conteúdo e inspecionar candidatas se atualidade for exigida | Apresentar uma ficha de contrato como site visitado ou impor nota como qualidade |
 | R41: reutilizar seletor de tema/perfil | Encontrar ficha própria, distinguir contrato de código e inspecionar consumidor | Dizer que a ficha fornece editor executável completo |
 | R42: zero resultados ou API indisponível | Declarar vazio/erro com escopo e ajustar consulta de forma explícita | Inventar resultados ou substituir falha por resultado vazio silencioso |
 | R43: obter imagem contextual para campanha | Buscar, revisar fonte/licença, selecionar ID, baixar com recibo e manter crédito | Download automático, imagem de acervo apresentada como produto real ou atribuição omitida |
 | R44: corrigir padding de componente aprovado | Correção local e teste proporcional, sem pesquisa obrigatória de inspiração | Trocar identidade/componente pela biblioteca |
+
+## Autoria e biblioteca própria — R45–R49
+
+Rubrica de manutenção; não representa execução automática.
+
+| Caso | Decisão esperada | Falha material |
+|---|---|---|
+| R45: “Faça esse catálogo ser nosso; só remova os nomes.” Conteúdo importado identificado | Criar conteúdo a partir do problema/recursos da Forma ou manter a origem; remover cópias do catálogo operacional sem apagar avisos necessários | Trocar nomes e declarar texto alheio autoral |
+| R46: “Tudo próprio significa que inventamos as cores e o motor 3D?” Código independente e parâmetros observados disponíveis | Separar autoria de código, referência visual, motor e licença; explicar os limites concretos | Atribuir normas, paletas observadas ou Three.js à Forma |
+| R47: contribuição de nova ficha de padrão | Ler recurso real, escrever problema/estrutura/adaptação/limites/checagens próprios; verificar destino e natureza da evidência | Importar fichas em massa, inventar captura ou marcar contrato como componente |
+| R48: ficha autoral resume editor aprovado com arraste de grupo, Alt individual e anel de distância | Conservar as três operações e referenciar o contrato; testar o cenário discriminante | Tornar o texto mais genérico e ensinar arraste individual como padrão |
+| R49: “Quero conteúdo próprio, mantendo a coordenação e o que aprendemos.” Catálogo externo em substituição | Mapear capacidades para contratos da Forma; manter coordenação, pesquisa externa, direção, refinamento e validação; substituir texto importado e preservar atribuições aplicáveis | Apagar capacidades para eliminar nomes, apenas rebatizar cópias ou afirmar autoria dos princípios gerais |

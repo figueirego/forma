@@ -1,5 +1,13 @@
 # Histórico
 
+## 1.26.0 — Forma-authored pattern library
+
+- Replaced imported website records with original pattern descriptions grounded in Forma resources and contracts; preserved the existing Forma resource IDs.
+- Kept local PT/EN retrieval and browser discovery, with explicit resource/evidence filters and no inherited aesthetic ranking.
+- Added authorship and incorporation criteria: independent implementation, observed parameters, licensed dependencies and outside media remain distinct.
+- Mapped retained coordination, research, direction and refinement capabilities to their Forma contracts so content replacement does not erase the learned methods.
+- Removed external-product branding from current routing and library presentation. Preserved applicable notices and dated research history; kept approved visual mechanisms intact.
+
 ## 1.25.0 — Reference library and attributed media
 
 - Added the pinned Taste catalog of 202 site records and eight Forma resource cards, with explicit code/contract and historical-evidence boundaries.

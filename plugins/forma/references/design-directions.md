@@ -36,7 +36,7 @@ Na ficha da direção, ligue **fato → conceito → composição → recurso di
 
 Quando uma demonstração ajudar a entender o produto, escolha uma interação curta que prove a ideia: comparar estados reais, filtrar um acervo ou experimentar uma opção disponível. Deve funcionar por teclado e toque e manter uma alternativa legível. Não adicionar um minijogo, calculadora fictícia ou animação obrigatória a toda página.
 
-Esta extensão adapta o método de inventário/conceito do [estudo Taste](taste-study.md). O repertório é apoio à escolha; suas cotas de imagens, movimento e proibições estéticas não são defaults da Forma.
+A Forma decide pelo contrato do projeto: conteúdo disponível, tarefa, restrições e evidência de uso. Não há quota de imagens ou movimento. Ao ampliar o repertório, escreva uma decisão verificável segundo [autoria e incorporação](authorship.md), em vez de importar instruções de outro produto.
 
 Julgue primeiro tarefa, acesso, integridade e legibilidade; depois adequação de marca e expressão. Preferência de um avaliador, aprovação do usuário, teste de tarefa e resultado de conversão são evidências diferentes. Sem pesquisa, apresente uma recomendação fundamentada, não uma vencedora estatística.
 

@@ -3,14 +3,14 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { facets, rankReferences } from './lib/reference-search.mjs';
+import { facets, rankReferences, validateCatalog } from './lib/reference-search.mjs';
 export { facets, queryTerms, rankReferences } from './lib/reference-search.mjs';
 
 export const CATALOG_PATH = fileURLToPath(new URL('../assets/reference-library/catalog.json', import.meta.url));
 const USAGE = `Forma reference library — Node 18+, offline, no dependencies
 
 node references.mjs --query "barra lateral" [--kind interface] [--use-case sidebar]
-  [--origin forma|taste] [--limit 3] [--seed 42] [--json] [--out board.json]
+  [--origin forma] [--evidence implementation-contract] [--limit 3] [--seed 42] [--json] [--out board.json]
 node references.mjs --site <id> [--json] [--out board.json]
 node references.mjs --list [--json]
 
@@ -18,44 +18,32 @@ Filters are exact and combined. Query terms use lexical PT/EN aliases, not embed
 Every meaningful query term must match. Empty results do not trigger an unrelated fallback.
 The optional seed only varies equally ranked candidates. No network requests are made.
 --out creates a NEW JSON board; existing files are never overwritten.
-Site notes may be historical. Inspect the current site with the host's browser tools before adoption.
+The catalog contains Forma-authored patterns linked to package resources, not an external website inventory.
+A contract is not a ready component; inspect and verify the destination before claiming integration.
 `;
 
 export function loadCatalog(path = CATALOG_PATH) {
-  const catalog = JSON.parse(readFileSync(path, 'utf8'));
-  if (catalog.schemaVersion !== 1 || !catalog.provenance || !Array.isArray(catalog.entries)) {
-    throw new Error('Invalid reference catalog schema.');
-  }
-  const ids = new Set();
-  for (const entry of catalog.entries) {
-    if (!entry || typeof entry.id !== 'string' || !/^[a-z0-9-]+$/.test(entry.id) || ids.has(entry.id)
-      || typeof entry.name !== 'string' || typeof entry.idea !== 'string'
-      || !['forma', 'taste'].includes(entry.origin) || typeof entry.kind !== 'string'
-      || !Array.isArray(entry.useCases) || !Array.isArray(entry.tags)
-      || !Array.isArray(entry.resources) || !entry.evidence || !entry.rights) {
-      throw new Error(`Invalid or duplicate catalog entry: ${entry?.id ?? '(missing ID)'}`);
-    }
-    ids.add(entry.id);
-  }
-  return catalog;
+  return validateCatalog(JSON.parse(readFileSync(path, 'utf8')));
 }
 
 export function searchCatalog(catalog, options = {}) {
-  const { query = '', kind, useCase, origin, limit = 5, seed, site } = options;
+  validateCatalog(catalog);
+  const { query = '', kind, useCase, origin, evidenceType, limit = 5, seed, site } = options;
   if (!Number.isInteger(limit) || limit < 1 || limit > 50) throw new Error('limit must be an integer from 1 to 50.');
-  const filters = { ...(kind && { kind }), ...(useCase && { useCase }), ...(origin && { origin }) };
+  const filters = { ...(kind && { kind }), ...(useCase && { useCase }), ...(origin && { origin }), ...(evidenceType && { evidenceType }) };
   const matches = rankReferences(catalog, options);
   const total = matches.length;
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
+    catalogSchemaVersion: catalog.schemaVersion,
     method: 'local-lexical-alias-search',
     request: { query, ...filters, ...(site && { site }), limit, ...(seed !== undefined && { seed }) },
     totalMatches: total,
     provenance: catalog.provenance,
     limitations: [
       'Lexical matching and explicit aliases, not semantic search or a quality ranking.',
-      'No live site visit or screenshot capture is performed. Read each evidence record before using a reference.',
-      'Study scores are model judgments; site assets are not licensed by this catalog.',
+      'No live consumer or screenshot verification is performed. Read each evidence record before using a pattern.',
+      'Original editorial records do not claim invention of the principles, observed mechanisms or dependencies they describe.',
       'A selected reference does not authorize changing an approved brand, stack or mechanism.',
     ],
     results: matches.slice(0, limit),
@@ -63,7 +51,7 @@ export function searchCatalog(catalog, options = {}) {
 }
 
 export function parseArgs(argv) {
-  const valued = new Map([['query', 'query'], ['kind', 'kind'], ['use-case', 'useCase'], ['origin', 'origin'], ['site', 'site'], ['limit', 'limit'], ['seed', 'seed'], ['out', 'out']]);
+  const valued = new Map([['query', 'query'], ['kind', 'kind'], ['use-case', 'useCase'], ['origin', 'origin'], ['evidence', 'evidenceType'], ['site', 'site'], ['limit', 'limit'], ['seed', 'seed'], ['out', 'out']]);
   const options = {};
   for (let index = 0; index < argv.length; index++) {
     const arg = argv[index];
@@ -89,8 +77,8 @@ export function parseArgs(argv) {
   if (options.query?.length > 500) throw new Error('--query is limited to 500 characters.');
   if (options.help) return options;
   if (options.list && Object.keys(options).some(key => !['list', 'json'].includes(key))) throw new Error('--list can only be combined with --json.');
-  if (options.site && ['query', 'kind', 'origin', 'useCase', 'seed', 'limit'].some(key => options[key] !== undefined)) throw new Error('--site cannot be combined with search filters.');
-  if (!options.list && !['query', 'kind', 'useCase', 'origin', 'site'].some(key => options[key])) {
+  if (options.site && ['query', 'kind', 'origin', 'useCase', 'evidenceType', 'seed', 'limit'].some(key => options[key] !== undefined)) throw new Error('--site cannot be combined with search filters.');
+  if (!options.list && !['query', 'kind', 'useCase', 'origin', 'evidenceType', 'site'].some(key => options[key])) {
     throw new Error('Provide --query, a filter, --site or --list.');
   }
   return options;
@@ -102,12 +90,11 @@ function printBoard(board, full) {
   for (const { entry, match } of board.results) {
     lines.push(`${entry.id} — ${entry.name}`, `Origin: ${entry.origin}; kind: ${entry.kind}; evidence: ${entry.evidence.type}`,
       `Idea: ${entry.idea}`, `When: ${entry.whenToUse}`, `Matched: ${match.matchedTerms.map(item => `${item.term}→${item.matched} (${item.field})`).join(', ') || 'explicit filters or ID'}`,
-      `URL: ${entry.url}`, `Capture: ${entry.evidence.capture ?? 'not included; inspect with host browser tools'}`,
-      `Limits: ${entry.evidence.limits.join(' ')}`, `Rights: ${entry.rights.notes} ${entry.rights.siteAssets}`);
+      `Capture: ${entry.evidence.capture ?? 'not included; verify the consumer separately'}`,
+      `Limits: ${entry.evidence.limits.join(' ')}`, `Rights: ${entry.rights.notes} ${entry.rights.scope}`);
     if (full) {
-      for (const field of ['hero', 'type', 'colour', 'imagery', 'layout', 'motion', 'media']) if (entry[field]) lines.push(`${field}: ${entry[field]}`);
-      for (const section of entry.sections ?? []) lines.push(`Section (${section.role}): ${section.description}`);
-      lines.push(`Adapt: ${entry.adapt.join(' | ')}`, `Avoid: ${entry.avoid.join(' | ')}`);
+      lines.push(`Structure: ${entry.structure.join(' | ')}`, `Adapt: ${entry.adapt.join(' | ')}`,
+        `Avoid: ${entry.avoid.join(' | ')}`, `Verify: ${entry.verify.join(' | ')}`);
     }
     for (const resource of entry.resources) lines.push(`Package resource: ${resource.label} — ${resource.path}`);
     lines.push('');

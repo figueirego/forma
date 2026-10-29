@@ -387,7 +387,7 @@ A edição pública remove caminhos pessoais, o perfil de um projeto privado e b
 
 ## Taste 2.1.5 — integração contextual, Forma 1.24.0
 
-O [mapa do estudo](taste-study.md) fixa o snapshot12af471f627f866411b4bd785b19646d3672784c, cobertura, licença, mecanismos e limites da fonte. ECC orientou a pesquisa e a revisão de sobreposição; REA direcionou a análise para código disponível, sem engine binária.
+O estudo histórico usou o snapshot `12af471f627f866411b4bd785b19646d3672784c`. Atribuição preservada em [avisos de terceiros](../THIRD_PARTY_NOTICES.md); o relatório completo permanece no histórico do repositório, fora da skill instalada. ECC orientou a pesquisa e a revisão de sobreposição; REA direcionou a análise para código disponível, sem engine binária.
 
 Foram incorporados inventário específico, conceito, argumento por seção, rotas página/app/fragmento operacional, coerência de dados, crítica de substância e verificação de cenas por progresso. Permanecem preservados marca, stack, contratos de aparência e objetos aprovados. Catálogos, drivers de navegador, downloaders, dependências de movimento e mídia de terceiros não foram embutidos. Bans estéticos, cotas e scores da fonte não se tornam normas da Forma.
 
@@ -395,4 +395,10 @@ Os casos R32–R39 ampliam a rubrica de decisão; a presença dos casos não com
 
 ## Biblioteca de referências — 1.25.0
 
-O [catálogo](../assets/reference-library/catalog.json) incorpora 202 fichas de sites do snapshot Taste 2.1.5 já estudado e fichas próprias da Forma. A proveniência no JSON registra revisão e hash da entrada; a atribuição MIT está preservada. A [operação](reference-library.md) diferencia seleção lexical local, consulta visual, observação ao vivo pelo host e pesquisa/download de mídia com créditos. Não são distribuídas capturas ou assets dos sites. Novas observações não substituem silenciosamente o snapshot.
+Na versão 1.25, o catálogo incorporou 202 fichas do snapshot externo, além de oito fichas da Forma. Essa distribuição é histórica: na 1.26 as fichas importadas foram retiradas, não apenas renomeadas. A consulta e o utilitário de mídia continuaram implementações próprias. Os avisos preservam a procedência das revisões anteriores e das sínteses informadas pela pesquisa.
+
+## Biblioteca autoral — 1.26.0
+
+A biblioteca operacional passou a conter somente fichas escritas para os recursos, contratos e problemas tratados pela Forma. A seleção continua local, lexical e compartilhada entre CLI e navegador. As fichas apontam para recursos distribuídos, distinguem componente/exemplo/contrato e não alegam visita a sites. [Autoria e incorporação](authorship.md) define o processo de manutenção e os limites: princípios gerais e medições observadas não viram invenção inédita.
+
+ECC Research Ops orientou a distinção entre implementação, importação, dependência e observação. A inspeção dirigida encontrou o catálogo importado e a fonte Manrope licenciada da capa do repositório; não encontrou outro runtime de skill empacotado. Isso não é prova exaustiva de originalidade frente a todas as fontes existentes. Three.js continua opcional no consumidor; mídia consultada mantém autor/licença. Os resultados dos testes desta revisão ficam no registro de entrega, sem herdar as contagens anteriores.

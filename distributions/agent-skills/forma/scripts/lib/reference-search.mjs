@@ -6,7 +6,7 @@ const STOP = new Set('a as o os um uma uns umas de da das do dos e em no na nos 
 const ALIASES = {
   sidebar: ['sidebar', 'navigation'], lateral: ['sidebar'], navegacao: ['navigation', 'sidebar'],
   botoes: ['buttons', 'button'], botao: ['button', 'buttons'], campos: ['inputs', 'forms'], campo: ['input', 'inputs'],
-  perfil: ['profile', 'identity'], configuracoes: ['settings', 'preferences'], configuracao: ['settings'],
+  perfil: ['profile'], identidade: ['identity'], configuracoes: ['settings', 'preferences'], configuracao: ['settings'],
   temas: ['theme', 'themes'], tema: ['theme', 'themes'], noturno: ['dark'], escuro: ['dark'], claro: ['light'],
   cores: ['color', 'colour', 'palette'], cor: ['color', 'colour'], paleta: ['palette', 'colour'],
   luz: ['lighting', 'light'], luzes: ['lighting', 'pools'], iluminacao: ['lighting', 'pools'], granulado: ['grain'],
@@ -14,6 +14,10 @@ const ALIASES = {
   grafo: ['graph'], grafos: ['graph', 'graphs'], mapa: ['map'], mapas: ['map', 'maps'], dados: ['data'],
   movimento: ['motion', 'animation'], animacao: ['animation', 'motion'], animacoes: ['animation', 'motion'], rolagem: ['scroll'],
   celular: ['mobile', 'phone'], movel: ['mobile'], limpo: ['clean', 'quiet'], limpa: ['clean', 'quiet'],
+  espacamento: ['spacing', 'gap', 'insets'], espacamentos: ['spacing', 'gap', 'insets'], alinhamento: ['alignment'], centralizacao: ['centering'],
+  formulario: ['forms', 'form'], formularios: ['forms', 'form'], erro: ['error', 'errors'], salvar: ['save'],
+  busca: ['search'], buscar: ['search'], filtro: ['filter', 'filters'], filtros: ['filters'], historico: ['history'],
+  exportacao: ['export'], exportar: ['export'], acessibilidade: ['accessibility'], mascote: ['mascot'],
   restaurante: ['restaurant'], cafeteria: ['coffee', 'cafe', 'restaurant'], cafe: ['coffee', 'cafe'],
   tipografia: ['type', 'typography', 'typographic'], fonte: ['font', 'typeface'], fontes: ['fonts', 'typefaces'],
   fotografia: ['photography', 'photo'], fotos: ['photos', 'photography'],
@@ -30,12 +34,13 @@ export function queryTerms(query = '') {
 
 export function facets(catalog) {
   const counts = key => Object.fromEntries([...catalog.entries.reduce((map, entry) => {
-    for (const value of new Set(Array.isArray(entry[key]) ? entry[key] : [entry[key]])) {
+    const field = key === 'evidenceType' ? entry.evidence.type : entry[key];
+    for (const value of new Set(Array.isArray(field) ? field : [field])) {
       map.set(value, (map.get(value) ?? 0) + 1);
     }
     return map;
   }, new Map())].sort(([a], [b]) => a.localeCompare(b, 'en')));
-  return { total: catalog.entries.length, origins: counts('origin'), kinds: counts('kind'), useCases: counts('useCases') };
+  return { total: catalog.entries.length, origins: counts('origin'), kinds: counts('kind'), useCases: counts('useCases'), evidenceTypes: counts('evidenceType') };
 }
 
 function tieValue(id, seed) {
@@ -44,29 +49,56 @@ function tieValue(id, seed) {
   return hash >>> 0;
 }
 
+export function validateCatalog(catalog) {
+  if (catalog?.schemaVersion !== 2 || !catalog.provenance?.forma || !Array.isArray(catalog.entries)
+    || typeof catalog.provenance.forma.method !== 'string' || typeof catalog.provenance.forma.scope !== 'string') {
+    throw new Error('Invalid Forma pattern catalog schema. Expected version 2 with Forma authoring metadata.');
+  }
+  const ids = new Set();
+  const allowed = new Set(['id', 'name', 'origin', 'kind', 'useCases', 'tags', 'idea', 'whenToUse', 'structure', 'adapt', 'avoid', 'verify', 'resources', 'evidence', 'rights']);
+  const evidenceTypes = ['implementation-contract', 'executable-demo', 'reusable-component', 'guidance-with-helper'];
+  const strings = value => Array.isArray(value) && value.length > 0 && value.every(item => typeof item === 'string' && item.trim());
+  for (const entry of catalog.entries) {
+    if (!entry || Object.keys(entry).some(key => !allowed.has(key))
+      || typeof entry.id !== 'string' || !/^forma-[a-z0-9-]+$/.test(entry.id) || ids.has(entry.id)
+      || entry.origin !== 'forma'
+      || !['name', 'kind', 'idea', 'whenToUse'].every(key => typeof entry[key] === 'string' && entry[key].trim())
+      || !['useCases', 'tags', 'structure', 'adapt', 'avoid', 'verify'].every(key => strings(entry[key]))
+      || !Array.isArray(entry.resources) || !entry.resources.length || entry.resources.some(resource =>
+        typeof resource?.label !== 'string' || !resource.label.trim() || typeof resource.path !== 'string'
+        || !/^(assets|references)\/[a-zA-Z0-9_./-]+$/.test(resource.path) || resource.path.split('/').includes('..'))
+      || !evidenceTypes.includes(entry.evidence?.type) || entry.evidence?.liveVerified !== false
+      || entry.evidence?.capture !== null || !strings(entry.evidence?.limits)
+      || typeof entry.rights?.notes !== 'string' || typeof entry.rights?.scope !== 'string') {
+      throw new Error(`Invalid or duplicate Forma pattern entry: ${entry?.id ?? '(missing ID)'}`);
+    }
+    ids.add(entry.id);
+  }
+  return catalog;
+}
+
 function searchFields(entry) {
   return [
     ['name', new Set(words(`${entry.id} ${entry.name}`)), 4],
     ['classification', new Set(words([entry.kind, ...entry.useCases, ...entry.tags].join(' '))), 3],
     ['concept', new Set(words(`${entry.idea} ${entry.whenToUse ?? ''}`)), 2],
-    ['study-notes', new Set(words([entry.hero, entry.type, entry.colour, entry.imagery, entry.layout, entry.motion,
-      ...(entry.sections ?? []).map(section => section.description), ...(entry.adapt ?? [])].filter(Boolean).join(' '))), 1],
+    ['pattern-notes', new Set(words([...entry.structure, ...entry.adapt, ...entry.verify].join(' '))), 1],
   ];
 }
 
 export function rankReferences(catalog, options = {}) {
-  const { query = '', kind, useCase, origin, seed, site } = options;
+  const { query = '', kind, useCase, origin, evidenceType, seed, site } = options;
   const available = facets(catalog);
-  for (const [name, value, choices] of [['kind', kind, available.kinds], ['use-case', useCase, available.useCases], ['origin', origin, available.origins]]) {
+  for (const [name, value, choices] of [['kind', kind, available.kinds], ['use-case', useCase, available.useCases], ['origin', origin, available.origins], ['evidence', evidenceType, available.evidenceTypes]]) {
     if (value !== undefined && !Object.hasOwn(choices, value)) throw new Error(`Unknown ${name} "${value}". Use --list for valid filters.`);
   }
   const terms = queryTerms(query);
   if (query.trim() && !terms.length) throw new Error('The query needs a specific subject or component, not only generic words.');
-  const filters = { ...(kind && { kind }), ...(useCase && { useCase }), ...(origin && { origin }) };
+  const filters = { ...(kind && { kind }), ...(useCase && { useCase }), ...(origin && { origin }), ...(evidenceType && { evidenceType }) };
   const matches = [];
   for (const entry of catalog.entries) {
     if ((site && entry.id !== site) || (kind && entry.kind !== kind) || (origin && entry.origin !== origin)
-      || (useCase && !entry.useCases.includes(useCase))) continue;
+      || (useCase && !entry.useCases.includes(useCase)) || (evidenceType && entry.evidence.type !== evidenceType)) continue;
     const fields = searchFields(entry);
     const matchedTerms = [];
     for (const { term, alternatives } of terms) {
@@ -78,9 +110,15 @@ export function rankReferences(catalog, options = {}) {
       if (found) matchedTerms.push(found);
     }
     if (matchedTerms.length !== terms.length) continue;
-    matches.push({ entry, match: { lexicalScore: matchedTerms.reduce((total, item) => total + item.weight, 0), matchedTerms, filters } });
+    matches.push({ entry, match: {
+      lexicalScore: matchedTerms.reduce((total, item) => total + item.weight, 0),
+      literalMatches: matchedTerms.filter(item => item.matched === item.term).length,
+      matchedTerms, filters,
+    } });
   }
   matches.sort((a, b) => b.match.lexicalScore - a.match.lexicalScore
+    // An explicit subject wins a tie against a broader alias; field relevance still comes first.
+    || b.match.literalMatches - a.match.literalMatches
     || (seed === undefined ? 0 : tieValue(a.entry.id, seed) - tieValue(b.entry.id, seed))
     || a.entry.id.localeCompare(b.entry.id, 'en'));
   return matches;

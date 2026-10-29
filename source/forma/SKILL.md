@@ -2,7 +2,7 @@
 name: forma
 description: "Coordenar especialistas de design para criar, refinar, adaptar ou auditar interfaces, sistemas visuais e materiais de marca. Seleciona por caso a skill interna de interface, cores/layout, produto, 3D, grafos, movimento, plataforma, marca, referência, handoff ou validação. Use também para reaplicar componentes aprovados em outro projeto; não para backend isolado."
 metadata:
-  version: 1.25.0
+  version: 1.26.0
 ---
 
 # Forma
@@ -51,7 +51,7 @@ Incorporar métodos de um agente não instala seu runtime. Para agentes de produ
 
 ## Preservar mecanismos aprovados
 
-Quando precisar de exemplos, use a [biblioteca pesquisável](references/reference-library.md): fichas próprias e sites estudados, seleção por contexto, consulta visual e pesquisa de mídia com créditos. Leia somente as candidatas relevantes; catálogo histórico não é captura atual. Uma correção local não exige pesquisa de inspiração. A biblioteca não substitui o mecanismo aprovado do consumidor.
+Quando precisar de exemplos, use a [biblioteca pesquisável](references/reference-library.md): fichas autorais sobre recursos e padrões da Forma, seleção por contexto, consulta visual e pesquisa opcional de mídia com créditos. Leia somente as candidatas relevantes; uma ficha de padrão não comprova sua execução no consumidor. Uma correção local não exige pesquisa de inspiração. A biblioteca não substitui o mecanismo aprovado do consumidor.
 
 Distinguir **aplicar princípios** de **reutilizar um mecanismo** é obrigatório para pedidos de transferência. Adaptar marca/conteúdo não autoriza trocar um volume por CSS inclinado ou um editor manipulável por três cores fixas. Se o pedido for **igual à implementação aprovada**, preserve também sua composição, paleta e comportamento responsivo: a instrução explícita prevalece sobre a adaptação genérica à marca. Use a cascata final e o estado renderizado daquela revisão, não apenas uma especificação anterior. Dados, rotas e conteúdo do destino continuam preservados. Siga [reúso no consumidor](references/playbooks.md#h-reutilizar-capacidades-em-outro-projeto): contrato → implementação disponível → consumidor → operação discriminante observada.
 
@@ -85,6 +85,8 @@ Teste tarefa, foco, conteúdo extremo e estados afetados. Static/bundle, UI obse
 - “Use $forma-interface para aplicar sidebar, fundo limpo e controles no meu app.”
 
 ## Manutenção
+
+Para conteúdo novo, siga [autoria e incorporação](references/authorship.md): escreva a solução para um problema real, ligue-a ao recurso e verifique; renomear conteúdo externo não o torna autoral. Ao substituir conteúdo importado, preserve as capacidades aprendidas e confira seu destino nos contratos próprios, inclusive coordenação, pesquisa, direção e refinamento. Referências, normas, dependências e mídia preservam suas origens.
 
 Ao melhorar esta skill, mantenha a entrada pequena, cada especialista com responsabilidade distinta e a teoria em sua referência canônica. Preserve links, recursos aprovados e histórico em [fontes](references/sources.md). Valide estrutura e [cenários de decisão](evals/scenarios.md), incluindo [roteamento](evals/routing-scenarios.md). Leitura, avaliação documental e execução de produto não são provas intercambiáveis.
 

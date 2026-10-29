@@ -2,7 +2,7 @@
 name: forma-foundations
 description: "Definir ou refinar hierarquia, tipografia, cor, layout, espaçamento e tokens de um sistema visual. Use para inconsistências de composição ou fundações; não para redesenhar fluxos de produto ou reproduzir um mecanismo 3D."
 metadata:
-  version: 1.17.1
+  version: 1.26.0
 ---
 
 # Fundações visuais
@@ -42,6 +42,6 @@ Se faltar acesso ao render ou uma escolha de identidade, registre a lacuna e o q
 
 ## Apoios opcionais e limites
 
-`ecc:design-system`, `design-taste-frontend`, Impeccable e Font Pairing podem resolver dúvidas específicas de consistência, composição ou fontes.
+`ecc:design-system`, Impeccable e Font Pairing podem resolver dúvidas específicas de consistência, composição ou fontes.
 Se disponíveis e pertinentes, leia o `SKILL.md` atual antes de usá-los, conforme [integrações](../../references/integrations.md). Um nome não garante ferramenta ou conexão.
 Não instale apoios por padrão. Snippets e JSONs de exemplo não são um design system já integrado; confirme uso e efeito no destino.

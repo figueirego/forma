@@ -1,5 +1,5 @@
 {
-  "version": "1.25.0",
+  "version": "1.26.0",
   "source": "canonical Forma skill",
   "transformations": [
     "Flatten skill directories",
@@ -16,14 +16,14 @@
     {
       "source": "SKILL.md",
       "packaged": "skills/forma/SKILL.md",
-      "source_sha256": "a742ba6521051fd6d1cff432d3f4e8fd2f611cbccbc200da538208b19f32bd8b",
-      "packaged_sha256": "07a0fb283eab75a914f39435c1655a377ef9f26a3ea72bac484033cb922efd33"
+      "source_sha256": "c235d539c9967e49a2d2fe48b8ae7537058f807967b8ee77e32ac112245a7d38",
+      "packaged_sha256": "2171bbb4ff382f03b003fd5a67615381b6cb8bee86b73f19ed5a70a8e190eb95"
     },
     {
       "source": "THIRD_PARTY_NOTICES.md",
       "packaged": "THIRD_PARTY_NOTICES.md",
-      "source_sha256": "e93f617f438ffd679ba59b0e43fff8c7db4be1f45f818a3cdf47f55bfcbdb1ab",
-      "packaged_sha256": "e93f617f438ffd679ba59b0e43fff8c7db4be1f45f818a3cdf47f55bfcbdb1ab"
+      "source_sha256": "370ca6573291b1596aae76e062df74d0561b9f9a92c1ee3b93f18faa8398d2dc",
+      "packaged_sha256": "370ca6573291b1596aae76e062df74d0561b9f9a92c1ee3b93f18faa8398d2dc"
     },
     {
       "source": "agents/openai.yaml",
@@ -202,20 +202,20 @@
     {
       "source": "assets/reference-browser.html",
       "packaged": "assets/reference-browser.html",
-      "source_sha256": "c7365212e6d999bb0cd9ff53a951981169b0a57ef36d83b62c5f9aee6f7e5ad9",
-      "packaged_sha256": "c7365212e6d999bb0cd9ff53a951981169b0a57ef36d83b62c5f9aee6f7e5ad9"
+      "source_sha256": "6de79aeea5a928d9f67fca4e1218966b2db59c54bbedefe95561c524bc611136",
+      "packaged_sha256": "6de79aeea5a928d9f67fca4e1218966b2db59c54bbedefe95561c524bc611136"
     },
     {
       "source": "assets/reference-browser.js",
       "packaged": "assets/reference-browser.js",
-      "source_sha256": "e7eb2943116062a8628c4f3b5042b7df6bce9b261c390e4a58d62f0b39343a0f",
-      "packaged_sha256": "e7eb2943116062a8628c4f3b5042b7df6bce9b261c390e4a58d62f0b39343a0f"
+      "source_sha256": "72590566a9fd2e2fd706287efd2771765273d1209dd9a8f039232fb4fabe3390",
+      "packaged_sha256": "72590566a9fd2e2fd706287efd2771765273d1209dd9a8f039232fb4fabe3390"
     },
     {
       "source": "assets/reference-library/catalog.json",
       "packaged": "assets/reference-library/catalog.json",
-      "source_sha256": "4027adaaa33b2f1b6a9da8f9cb0892e02f2de26ea846597568c3eb09d452f923",
-      "packaged_sha256": "4027adaaa33b2f1b6a9da8f9cb0892e02f2de26ea846597568c3eb09d452f923"
+      "source_sha256": "09d8224eeceeca184c5433ca71f184648659d9be31263ae9c11bd95dc5982b92",
+      "packaged_sha256": "09d8224eeceeca184c5433ca71f184648659d9be31263ae9c11bd95dc5982b92"
     },
     {
       "source": "assets/reference-profiles/compact-appearance-v1.fidelity.json",
@@ -262,8 +262,8 @@
     {
       "source": "evals/routing-scenarios.md",
       "packaged": "evals/routing-scenarios.md",
-      "source_sha256": "94c678a2a553f0f3b9f135a2da1f6606ec415d06137d9807bfaeca0aa3cfc773",
-      "packaged_sha256": "94c678a2a553f0f3b9f135a2da1f6606ec415d06137d9807bfaeca0aa3cfc773"
+      "source_sha256": "eb1552d6e3f18d0c405c81c139ef4a2e20708b45d5e3805d0503e36d09ea24b9",
+      "packaged_sha256": "eb1552d6e3f18d0c405c81c139ef4a2e20708b45d5e3805d0503e36d09ea24b9"
     },
     {
       "source": "evals/scenarios.md",
@@ -308,6 +308,12 @@
       "packaged_sha256": "7f44d376958e7c8f864b09b7b9d130f89ccdbcab4e2565fa5751b54c152895e9"
     },
     {
+      "source": "references/authorship.md",
+      "packaged": "references/authorship.md",
+      "source_sha256": "26d01d196212cd81486201d64625b193362952a71e9a09c7513b2efe47efc813",
+      "packaged_sha256": "26d01d196212cd81486201d64625b193362952a71e9a09c7513b2efe47efc813"
+    },
+    {
       "source": "references/book-polish-case-study.md",
       "packaged": "references/book-polish-case-study.md",
       "source_sha256": "da9a7f8b2ee9f2abef6028eda2f1e7d1e719b6e72bee2864e00b6358bb1715bb",
@@ -340,8 +346,8 @@
     {
       "source": "references/conflicts.md",
       "packaged": "references/conflicts.md",
-      "source_sha256": "3a7b33e1be92884aeab810fa78d78d34d88a4cc94034430408bb958667b055bf",
-      "packaged_sha256": "3a7b33e1be92884aeab810fa78d78d34d88a4cc94034430408bb958667b055bf"
+      "source_sha256": "53493da49c007fd48d087ff93d8d79082720acc326ea5fad658b6010165cfb23",
+      "packaged_sha256": "53493da49c007fd48d087ff93d8d79082720acc326ea5fad658b6010165cfb23"
     },
     {
       "source": "references/contracts-trust.md",
@@ -352,14 +358,14 @@
     {
       "source": "references/data-dashboards.md",
       "packaged": "references/data-dashboards.md",
-      "source_sha256": "c6eac3e03bbf3b4fb2db2839fc836faa481e7db249d295ee9b95f9cb5c306b8e",
-      "packaged_sha256": "c6eac3e03bbf3b4fb2db2839fc836faa481e7db249d295ee9b95f9cb5c306b8e"
+      "source_sha256": "c862eabbdfda84a9c18ede798e5b8fb8847f4df6c7f12c24f038f3588ccabe66",
+      "packaged_sha256": "c862eabbdfda84a9c18ede798e5b8fb8847f4df6c7f12c24f038f3588ccabe66"
     },
     {
       "source": "references/design-directions.md",
       "packaged": "references/design-directions.md",
-      "source_sha256": "37a74ebb3d95796431e52b6b398df65d95782065fad6a7a22896be652aa8e31c",
-      "packaged_sha256": "37a74ebb3d95796431e52b6b398df65d95782065fad6a7a22896be652aa8e31c"
+      "source_sha256": "7e48b7095596ffd410b5ad29f88e7d17e0ada4d3e92d3a5c9edc26696f2bbbc5",
+      "packaged_sha256": "7e48b7095596ffd410b5ad29f88e7d17e0ada4d3e92d3a5c9edc26696f2bbbc5"
     },
     {
       "source": "references/desktop-distribution.md",
@@ -382,8 +388,8 @@
     {
       "source": "references/integrations.md",
       "packaged": "references/integrations.md",
-      "source_sha256": "593ef39f6e207edd5df08e3a15addadc2e5332f8681cebd333c92540f8b0251a",
-      "packaged_sha256": "593ef39f6e207edd5df08e3a15addadc2e5332f8681cebd333c92540f8b0251a"
+      "source_sha256": "27637b651eeb7a69d98362c1fd4141cde72a7d471519aae319003acb7405e4c8",
+      "packaged_sha256": "27637b651eeb7a69d98362c1fd4141cde72a7d471519aae319003acb7405e4c8"
     },
     {
       "source": "references/interaction-content.md",
@@ -424,8 +430,8 @@
     {
       "source": "references/motion.md",
       "packaged": "references/motion.md",
-      "source_sha256": "607961b4049b4d6c1b285f914186b7e8ff9dab06e027474806866a2123504c61",
-      "packaged_sha256": "607961b4049b4d6c1b285f914186b7e8ff9dab06e027474806866a2123504c61"
+      "source_sha256": "6c00056eaae7e970fa2a0af484e57ac9aff129ffadd88b2386df8e857abbd832",
+      "packaged_sha256": "6c00056eaae7e970fa2a0af484e57ac9aff129ffadd88b2386df8e857abbd832"
     },
     {
       "source": "references/passport-polish-case-study.md",
@@ -472,14 +478,14 @@
     {
       "source": "references/reference-library.md",
       "packaged": "references/reference-library.md",
-      "source_sha256": "6e94eea0400ad03e673e7f95214f52e581d0c308015f140b1933e0d41ff03b2f",
-      "packaged_sha256": "b4315b45c3fde9f7ff6eb7573e113211d78f8c7714348d1144e27c3770edb149"
+      "source_sha256": "1543cd2007dceccd5c47a50a9838083a84c4583deadee9703ae3f50ed6f8cb9e",
+      "packaged_sha256": "dccd23227ab63b609beb87f00700c40293ed30b64a56f7dc825ab15e232958ff"
     },
     {
       "source": "references/rendered-validation.md",
       "packaged": "references/rendered-validation.md",
-      "source_sha256": "49fc3f5653e25eee4853d4dbdee35b15fe22480c499ac3a1451c9bcf3570f0fc",
-      "packaged_sha256": "49fc3f5653e25eee4853d4dbdee35b15fe22480c499ac3a1451c9bcf3570f0fc"
+      "source_sha256": "a43a4eecf97dcd436470d251eb98b2277eff8e2323b044ff5105c6fdd6aeb520",
+      "packaged_sha256": "a43a4eecf97dcd436470d251eb98b2277eff8e2323b044ff5105c6fdd6aeb520"
     },
     {
       "source": "references/research-protocol.md",
@@ -490,8 +496,8 @@
     {
       "source": "references/resources.md",
       "packaged": "references/resources.md",
-      "source_sha256": "98ec6ec6e82a852713c2d5bd2e8449b302ba3fb94e1aa2292bb1c30d754aa372",
-      "packaged_sha256": "6411aa780cf26dbcd5f1ea2f7bc53e418882882bbef137860108aad84b07d8dc"
+      "source_sha256": "5866405ee60cd359a480303982f4cc3ac1cf890475ebcf508c75a04ab0a827e6",
+      "packaged_sha256": "991c3802dce5e2e188d564cab9b19c7d657aa648f6d1e18e23fa8537b00d44a4"
     },
     {
       "source": "references/reusable-objects.md",
@@ -520,26 +526,20 @@
     {
       "source": "references/source-use-cases.md",
       "packaged": "references/source-use-cases.md",
-      "source_sha256": "ad5915a575c7f01ca7597f1b40ad70c9dfb7cf5829e3ccba420ed90bde274d6b",
-      "packaged_sha256": "ad5915a575c7f01ca7597f1b40ad70c9dfb7cf5829e3ccba420ed90bde274d6b"
+      "source_sha256": "7591da60fbc1abe95bf4f6250608737b8f945c81f58fffcbb78d647b0c92f984",
+      "packaged_sha256": "7591da60fbc1abe95bf4f6250608737b8f945c81f58fffcbb78d647b0c92f984"
     },
     {
       "source": "references/sources.md",
       "packaged": "references/sources.md",
-      "source_sha256": "51382da4f9e40b7a6f10754f2bb48d0e21ad1056ae9238b02260aa7264c3b9ce",
-      "packaged_sha256": "5b90000aadcf7407ce9dd23d7b3c7de37a73ab9d60e342d56b12401daea9f837"
+      "source_sha256": "f41444240960a2cdfb54e3ccdf2c69272d943d4e22cd600b5172a5be21de7140",
+      "packaged_sha256": "dd58773998d899f3507b62e1bae756d7c1025ab29dcc61e57e22ae1a4d0d75dc"
     },
     {
       "source": "references/specialized-surfaces.md",
       "packaged": "references/specialized-surfaces.md",
       "source_sha256": "21bbe050d8c8977c7248acb41a77f9e495ac819583bd61a969388242f9706f99",
       "packaged_sha256": "21bbe050d8c8977c7248acb41a77f9e495ac819583bd61a969388242f9706f99"
-    },
-    {
-      "source": "references/taste-study.md",
-      "packaged": "references/taste-study.md",
-      "source_sha256": "81c37b1d5fa084924aad5f289b9ee60fe791e429785426111f9658c778e97bdb",
-      "packaged_sha256": "de2f528ed124e270c260d878e00028fb5f532eea0daa4031ddad52d41b37f976"
     },
     {
       "source": "references/templates.md",
@@ -622,8 +622,8 @@
     {
       "source": "scripts/lib/reference-search.mjs",
       "packaged": "scripts/lib/reference-search.mjs",
-      "source_sha256": "57261bacae12b19b12e0e71595d917321c28cb1a55bae79cc49ddc811cc88269",
-      "packaged_sha256": "57261bacae12b19b12e0e71595d917321c28cb1a55bae79cc49ddc811cc88269"
+      "source_sha256": "3296fa8ab79f3b3530cb73b0e07f5fc5e6f46b9afdfcc0d2d868d8eefbd529af",
+      "packaged_sha256": "3296fa8ab79f3b3530cb73b0e07f5fc5e6f46b9afdfcc0d2d868d8eefbd529af"
     },
     {
       "source": "scripts/media.mjs",
@@ -634,14 +634,14 @@
     {
       "source": "scripts/references.mjs",
       "packaged": "scripts/references.mjs",
-      "source_sha256": "e07e3fa4c13e1397e03149af16ee8aa666522abdf119619675c6f66dc28bd9e4",
-      "packaged_sha256": "e07e3fa4c13e1397e03149af16ee8aa666522abdf119619675c6f66dc28bd9e4"
+      "source_sha256": "bf2e60adfca2dcbf44298efb702b819e1524ba41cdb772ec0e5dc894527d2f6b",
+      "packaged_sha256": "bf2e60adfca2dcbf44298efb702b819e1524ba41cdb772ec0e5dc894527d2f6b"
     },
     {
       "source": "skills/brand/SKILL.md",
       "packaged": "skills/forma-brand/SKILL.md",
-      "source_sha256": "8d1ce6398feab90934300f5c94ad41c8dc14db73a1b97aa56222733af98df8dc",
-      "packaged_sha256": "54b32ec3bb0c4b6eb4fe7ccd5593a2a85b165db75df7826d48119725646b403f"
+      "source_sha256": "8cdb0520cf84c37bfa73b1198c128f2a89307b688b7d18c3b844c0579a0b57b3",
+      "packaged_sha256": "a12869b938aa049722193af584202aed1c50d6cf31f19876f58d1de8445b4fe5"
     },
     {
       "source": "skills/brand/agents/openai.yaml",
@@ -652,8 +652,8 @@
     {
       "source": "skills/foundations/SKILL.md",
       "packaged": "skills/forma-foundations/SKILL.md",
-      "source_sha256": "edd0cfa82783c0fb12cb2d9d040b041c249a55fcb0fc04c607a4c8ce7923ccb8",
-      "packaged_sha256": "edd0cfa82783c0fb12cb2d9d040b041c249a55fcb0fc04c607a4c8ce7923ccb8"
+      "source_sha256": "7ef1a98fa0a32cc435d23b1aad3500577a7c2d7f8402f5bbe0ad2fc9d27f7df4",
+      "packaged_sha256": "7ef1a98fa0a32cc435d23b1aad3500577a7c2d7f8402f5bbe0ad2fc9d27f7df4"
     },
     {
       "source": "skills/foundations/agents/openai.yaml",
@@ -748,8 +748,8 @@
     {
       "source": "skills/reference/SKILL.md",
       "packaged": "skills/forma-reference/SKILL.md",
-      "source_sha256": "d67a0d966400578da29e428aa753dfb9118c9a39b2cfcef222b8c9efb7106b3e",
-      "packaged_sha256": "d67a0d966400578da29e428aa753dfb9118c9a39b2cfcef222b8c9efb7106b3e"
+      "source_sha256": "98cfc4b4f7475c8159c5e827f7e905720e6b1c86e13d0782dc07cb43b0e8aea1",
+      "packaged_sha256": "98cfc4b4f7475c8159c5e827f7e905720e6b1c86e13d0782dc07cb43b0e8aea1"
     },
     {
       "source": "skills/reference/agents/openai.yaml",
@@ -802,8 +802,8 @@
     {
       "source": "tests/references.test.cjs",
       "packaged": "tests/references.test.cjs",
-      "source_sha256": "63f9ba614b6f367c05740cb21ccd041201623e065d981ea93df0d1e5df700d55",
-      "packaged_sha256": "63f9ba614b6f367c05740cb21ccd041201623e065d981ea93df0d1e5df700d55"
+      "source_sha256": "7fa8e33a7347cc608ac20ade144269a3160d7c5617c1d461eff15beed6dbcebf",
+      "packaged_sha256": "7fa8e33a7347cc608ac20ade144269a3160d7c5617c1d461eff15beed6dbcebf"
     },
     {
       "source": "tests/test_check_fidelity.py",

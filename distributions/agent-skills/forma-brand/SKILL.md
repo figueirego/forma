@@ -2,7 +2,7 @@
 name: forma-brand
 description: "Criar ou adaptar identidade, campanhas, landing pages, peças gráficas e materiais de marketing com mensagem, canal e exportação definidos. Use para comunicação de marca; não para aplicar estética promocional a fluxos operacionais sem motivo."
 metadata:
-  version: 1.25.0
+  version: 1.26.0
 ---
 
 # Marca e comunicação
@@ -46,6 +46,6 @@ Um moodboard não conclui uma landing implementada; uma imagem de objeto não de
 
 ## Apoios opcionais e limites
 
-`ai-graphic-design:ai-graphic-design`, `design-taste-frontend`, `imagegen` e Font Pairing podem apoiar produção ou direção conforme o artefato.
+`ai-graphic-design:ai-graphic-design`, `imagegen` e Font Pairing podem apoiar produção ou direção conforme o artefato.
 Se disponíveis, leia o `SKILL.md` atual e [integrações](../forma/references/integrations.md) antes do uso; uma lista de apoios não garante conexão ou créditos.
 Não duplique gerações, instale provedores ou publique para completar o fluxo. A autorização do pedido define a ação externa permitida.

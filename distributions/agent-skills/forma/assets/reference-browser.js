@@ -1,7 +1,13 @@
-import { rankReferences } from '../scripts/lib/reference-search.mjs';
+import { rankReferences, validateCatalog } from '../scripts/lib/reference-search.mjs';
 const el = id => document.getElementById(id);
 const root = new URL('../', import.meta.url);
-const pageSize = 24;
+const pageSize = 12;
+const evidenceLabels = {
+  'executable-demo': 'Demonstração executável',
+  'reusable-component': 'Componente reutilizável',
+  'implementation-contract': 'Contrato para implementar',
+  'guidance-with-helper': 'Guia com utilitário',
+};
 let entries = [], visible = [], count = pageSize;
 
 function text(tag, value, className) {
@@ -32,22 +38,21 @@ function link(parent, label, value, local = false) {
   } catch { /* A malformed catalog URL is data, never executable content. */ }
 }
 function detail(entry) {
-  el('detail-origin').textContent = entry.origin === 'forma' ? 'Forma · recurso próprio' : 'Taste · registro histórico';
+  el('detail-origin').textContent = `Forma · ${evidenceLabels[entry.evidence.type]}`;
   const content = el('detail-content');
   content.replaceChildren(text('h2', entry.name));
   content.firstChild.id = 'detail-title';
   section(content, 'Ideia', entry.idea);
   section(content, 'Quando usar', entry.whenToUse);
-  section(content, 'Como adaptar', entry.adapt?.length ? entry.adapt : entry.steal);
+  section(content, 'Estrutura', entry.structure);
+  section(content, 'Como adaptar', entry.adapt);
   section(content, 'O que evitar', entry.avoid);
-  for (const [key, label] of [['hero','Composição inicial'],['type','Tipografia'],['colour','Cor'],['layout','Organização'],['imagery','Imagens'],['motion','Movimento'],['sections','Seções']]) section(content, label, entry[key]);
-  section(content, 'Evidência e limites', [entry.evidence?.type, ...(entry.evidence?.limits ?? [])].filter(Boolean));
-  content.append(text('p', 'A ficha não inclui uma captura ao vivo. Confira o site ou o recurso e registre as condições antes de concluir fidelidade ou comportamento.', 'warning'));
+  section(content, 'Como verificar', entry.verify);
+  section(content, 'Evidência e limites', [evidenceLabels[entry.evidence.type], ...(entry.evidence.limits ?? [])].filter(Boolean));
+  content.append(text('p', 'A ficha não inclui uma captura ao vivo. Confira o recurso e teste o projeto de destino antes de concluir fidelidade ou comportamento.', 'warning'));
   section(content, 'Direitos', Object.values(entry.rights ?? {}));
-  content.append(text('h3', 'Consultar a fonte'));
-  link(content, 'Abrir fonte original ↗', entry.url);
+  content.append(text('h3', 'Recursos no pacote'));
   for (const resource of entry.resources ?? []) link(content, resource.label, resource.path, true);
-  if (entry.origin === 'taste') content.append(text('p', 'Notas e descrições do estudo são avaliações de modelos, não pontuação oficial nem teste de usuário.'));
   el('detail').showModal();
 }
 function render() {
@@ -56,7 +61,7 @@ function render() {
   for (const entry of visible.slice(0, count)) {
     const card = document.createElement('article'); card.className = 'card';
     const meta = document.createElement('div'); meta.className = 'card-meta';
-    meta.append(text('span', entry.origin === 'forma' ? 'FORMA' : 'TASTE', 'tag'), text('span', entry.kind));
+    meta.append(text('span', 'FORMA', 'tag'), text('span', evidenceLabels[entry.evidence.type]));
     const paragraph = String(entry.idea ?? entry.whenToUse ?? '');
     const button = text('button', 'Ler ficha →'); button.type = 'button';
     button.setAttribute('aria-label', `Ler ficha: ${entry.name}`);
@@ -65,7 +70,8 @@ function render() {
     fragment.append(card);
   }
   cards.replaceChildren(fragment);
-  el('status').textContent = `${visible.length} referências · ${Math.min(count, visible.length)} exibidas`;
+  const shown = Math.min(count, visible.length);
+  el('status').textContent = `${visible.length} ${visible.length === 1 ? 'padrão' : 'padrões'} · ${shown} ${shown === 1 ? 'exibido' : 'exibidos'}`;
   el('empty').hidden = visible.length !== 0;
   el('more').hidden = count >= visible.length;
 }
@@ -73,7 +79,7 @@ function filter() {
   try {
     visible = rankReferences({ entries }, {
       query: el('query').value,
-      ...(el('origin').value && { origin: el('origin').value }),
+      ...(el('evidence').value && { evidenceType: el('evidence').value }),
       ...(el('kind').value && { kind: el('kind').value }),
     }).map(result => result.entry);
   } catch (error) {
@@ -88,7 +94,7 @@ function filter() {
 }
 el('filters').addEventListener('submit', event => event.preventDefault());
 el('query').addEventListener('input', filter);
-for (const id of ['origin', 'kind']) el(id).addEventListener('change', filter);
+for (const id of ['evidence', 'kind']) el(id).addEventListener('change', filter);
 el('more').addEventListener('click', () => {
   const previousCount = count;
   count += pageSize;
@@ -100,9 +106,11 @@ el('close-detail').addEventListener('click', () => el('detail').close());
 try {
   const response = await fetch(new URL('reference-library/catalog.json', import.meta.url));
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  const catalog = await response.json();
-  if (catalog.schemaVersion !== 1 || !Array.isArray(catalog.entries)) throw new Error('Formato de catálogo inválido');
-  entries = [...catalog.entries].sort((a, b) => (a.origin === 'forma' ? 0 : 1) - (b.origin === 'forma' ? 0 : 1) || a.name.localeCompare(b.name));
+  const catalog = validateCatalog(await response.json());
+  entries = [...catalog.entries].sort((a, b) => a.name.localeCompare(b.name));
+  for (const evidence of [...new Set(entries.map(entry => entry.evidence.type))].sort()) {
+    const option = text('option', evidenceLabels[evidence]); option.value = evidence; el('evidence').append(option);
+  }
   for (const kind of [...new Set(entries.map(entry => entry.kind))].sort()) {
     const option = text('option', kind); option.value = kind; el('kind').append(option);
   }

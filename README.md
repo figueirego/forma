@@ -60,15 +60,15 @@ Explore the [reusable resources](source/forma/references/resources.md), [evaluat
 
 Forma connects the project’s own content to a visual concept, maps each section to a claim and its evidence, and treats marketing pages and working app screens differently. Refinement checks substance, hierarchy, real data, responsive behavior, and the final rendered result.
 
-The [Taste study and integration map](source/forma/references/taste-study.md) records what was adapted, what was already covered, and what was deliberately left out. Your approved brand and components take precedence over stylistic bans or image and animation quotas. See the [integration checks and decision exercises](docs/TASTE-INTEGRATION.md) for evidence and limits.
+Forma maintains its own instructions, pattern descriptions and tools. Each addition starts with a project problem, connects to an actual resource and defines a check that can reveal a failure. Your approved brand and components take precedence over stylistic bans or image and animation quotas. See [authorship, dependencies and scope](docs/ORIGINALITY.md).
 
 ## Reference library
 
-Forma includes a searchable collection of studied sites and its own reusable resources. Each entry explains the context, evidence, adaptation, limitations, and rights. Use the local selector or the lightweight browser to explore candidates; live site verification uses the browser tools available in your assistant.
+Forma includes a searchable library of patterns written for its reusable resources and implementation contracts. Each entry explains the task, structure, adaptation, limitations and verification. Use the local selector or the lightweight browser to explore candidates. To discover current external sites, use the browser tools available in your assistant.
 
 > Use Forma to find three references for this project, explain what fits our content, preserve the approved brand, and inspect the selected sites before implementing.
 
-The media helper searches Openverse, Wikimedia Commons, the Art Institute of Chicago, and the Met, and downloads only an explicitly selected result with its attribution record. See the [reference and media guide](source/forma/references/reference-library.md). The bundled catalog is a pinned historical snapshot, not a continuously updated gallery or a license to reuse the sites' assets.
+The media helper searches Openverse, Wikimedia Commons, the Art Institute of Chicago, and the Met, and downloads only an explicitly selected result with its attribution record. See the [reference and media guide](source/forma/references/reference-library.md). The bundled library contains Forma-authored patterns, not an imported website catalog. Media retains its original authorship and license.
 
 ## Install
 

@@ -54,7 +54,7 @@ Além de procurar defeitos, confirme o que o artefato entrega. Uma página sem o
 
 Registre os problemas de maior impacto com captura/estado, efeito e correção concreta. Corrija um pequeno lote e reobserve os estados afetados; três achados podem ser um lote útil, nunca uma quota. Barreira de acesso, dados incorretos e tarefa quebrada precedem gosto visual. Se restarem defeitos materiais, mantenha-os abertos; um limite de rodadas controla esforço, não transforma falha em aprovação. Notas de um modelo ou critérios de uma galeria não medem conversão nem equivalem a teste com usuários.
 
-Quando houver build, confira a saída produzida pelo pipeline existente além do dev server, nos caminhos afetados: fontes, assets, cascata, animações e interações podem mudar na compilação. Build servido localmente não prova deploy público. Se um scanner externo aplicar proibições de estilo, declare seu perfil e exceções legítimas separadamente; não o edite para esconder defeitos nem trate seu `0 FAIL` como aceite visual completo. A [auditoria Taste](taste-study.md) registra exemplos dessa diferença.
+Quando houver build, confira a saída produzida pelo pipeline existente além do dev server, nos caminhos afetados: fontes, assets, cascata, animações e interações podem mudar na compilação. Build servido localmente não prova deploy público. Se um scanner externo aplicar proibições de estilo, declare seu perfil e exceções legítimas separadamente; não o edite para esconder defeitos nem trate seu `0 FAIL` como aceite visual completo. Registre a evidência exigida para cada critério; lint de fonte e julgamento visual continuam verificações diferentes.
 
 ## Controles sobrepostos e regressão por CSS
 
