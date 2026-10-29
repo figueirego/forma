@@ -64,11 +64,11 @@ Forma maintains its own instructions, pattern descriptions and tools. Each addit
 
 ## Reference library
 
-Forma includes a searchable library of patterns written for its reusable resources and implementation contracts. Each entry explains the task, structure, adaptation, limitations and verification. Use the local selector or the lightweight browser to explore candidates. To discover current external sites, use the browser tools available in your assistant.
+Forma includes a searchable library of patterns written for its reusable resources and implementation contracts, plus **202 external site references mapped to Forma use cases**. Patterns explain implementation; the site index provides candidates and questions to investigate. Use the local selector or the lightweight browser to explore both. Historical mappings are starting hypotheses, not claims that the sites were recently tested.
 
 > Use Forma to find three references for this project, explain what fits our content, preserve the approved brand, and inspect the selected sites before implementing.
 
-The media helper searches Openverse, Wikimedia Commons, the Art Institute of Chicago, and the Met, and downloads only an explicitly selected result with its attribution record. See the [reference and media guide](source/forma/references/reference-library.md). The bundled library contains Forma-authored patterns, not an imported website catalog. Media retains its original authorship and license.
+The media helper searches Openverse, Wikimedia Commons, the Art Institute of Chicago, and the Met, and downloads only an explicitly selected result with its attribution record. See the [reference and media guide](source/forma/references/reference-library.md). Pattern guidance, use-case questions and tools are maintained by Forma. External sites, the historical inventory and media retain their provenance; imported descriptions and aesthetic scores are not presented as Forma-authored work.
 
 ## Install
 
@@ -147,3 +147,7 @@ Plugins, catalogs, and Agent Skills are generated and versioned; CI checks that 
 ## License
 
 [MIT](LICENSE). ECC informed part of the organizational approach; Forma is independent and does not install ECC or LangChain. See the [provenance and third-party notices](source/forma/THIRD_PARTY_NOTICES.md). External references retain their own rights and licenses.
+
+### Learning from references
+
+Forma keeps site candidates separate from verified experience. The [experience workflow](source/forma/references/experience-library.md) connects observations, implementation techniques, licenses, adaptation decisions and tests. [Three bounded studies](source/forma/references/site-experiences.md) illustrate this process; the 202-site index is not a claim that every site has been audited or copied.

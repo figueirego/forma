@@ -1,12 +1,12 @@
 # Forma authorship and dependencies
 
-Version 1.26 replaces the imported reference catalog with patterns written for Forma's own components, examples and implementation contracts. This is a content replacement, not a renamed copy. The local selector, shared browser matcher, media tools and validators remain Forma implementations.
+The 1.26 series replaces imported descriptions with patterns written for Forma's own components, examples and implementation contracts. Version 1.26.1 also retains the 202 site names and URLs as an external reference index, mapped to Forma-authored investigation cases. This is a content replacement and a new routing layer, not a renamed copy. The local selector, shared browser matcher, media tools and validators remain Forma implementations.
 
 ## What belongs to Forma
 
 The coordinator, specialists, project-specific synthesis, procedural BookObject implementation, clean-shell example, validation scripts and library tools are maintained in `source/forma`. Pattern entries describe an actual local resource, an applicable task, adaptation limits and checks. They do not pretend to be fresh audits of external websites or ready-made components when only a contract is available.
 
-The contributor procedure is [authorship and incorporation](../source/forma/references/authorship.md). The operating catalog contains only Forma-authored entries; current external websites can still be researched with the assistant's browser. Project research does not automatically become a public catalog entry.
+The contributor procedure is [authorship and incorporation](../source/forma/references/authorship.md). Implementation patterns and use-case guidance are written for Forma. External site names, URLs and the historical selection remain attributed. A case tells the assistant what to investigate and which Forma contracts may apply; it does not assert a site's current behavior. Project research does not automatically become a public catalog entry.
 
 The replacement preserves coordination, contextual reference research, project-specific direction, color and spatial reasoning, the separation of marketing and operational screens, motion and material refinement, and rendered critique. Their [continuity map](../source/forma/references/authorship.md#preservar-capacidades-ao-tornar-o-conteúdo-próprio) points to the Forma contracts that own each capability. Independent content does not mean discarding what was learned or claiming to have invented established methods.
 
@@ -24,7 +24,9 @@ The scoped file audit found the imported catalog and licensed cover font; it did
 
 ## Migration from 1.25
 
-Imported website IDs and their origin filter are no longer part of the current library. Use `references.mjs --list` to discover the Forma IDs and filters. The eight existing Forma resource IDs are preserved. New boards use `schemaVersion: 2` and `catalogSchemaVersion: 2` for the pattern record contract. Recreate a board when its result needs to reflect this version; an old board remains a historical file and is not silently rewritten.
+Use `references.mjs --list` for Forma patterns and `references.mjs --sites --list` for the external reference index and its cases. The eight existing Forma resource IDs are preserved. Site names and URLs from the historical inventory remain available in the separate mode; descriptive paragraphs, aesthetic scores and instructions from the imported catalog are not carried forward. New boards identify their record contract; a pattern board and a site-investigation board are different outputs. Recreate a board when its result needs to reflect this version; an old board remains a historical file and is not silently rewritten.
+
+The mapping covers the inventory, not 202 newly verified live websites or 202 unique design problems. Similar sites can share a case and a site can have several candidate cases. Confirm the association on the current site before adapting a mechanism. Site media, logos, source code and styles are not bundled or relicensed by this index.
 
 The prior research and test records remain in [release history](REFERENCE-HISTORY.md), outside the installed skill. Applicable notices remain in [third-party notices](../source/forma/THIRD_PARTY_NOTICES.md). Names in attribution/history do not imply endorsement or an operational dependency.
 

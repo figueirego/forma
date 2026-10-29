@@ -1,5 +1,13 @@
 # Histórico
 
+## 1.26.1 — Use-case routing for external references
+
+- Retained all 202 historical site names and URLs in a separate index mapped to Forma-authored investigation cases and existing patterns.
+- Added site/case lookup to the CLI and browser while keeping the implementation-pattern library separate.
+- Preserved source attribution and marked mappings as hypotheses pending current-site verification; no imported descriptions, aesthetic scores or implied ownership of external sites.
+
+- Added a reference-experience workflow, reusable study template, three bounded live studies and control/preview acceptance rules. Source code, observed behavior and consumer validation remain separate.
+
 ## 1.26.0 — Forma-authored pattern library
 
 - Replaced imported website records with original pattern descriptions grounded in Forma resources and contracts; preserved the existing Forma resource IDs.

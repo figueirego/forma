@@ -142,9 +142,9 @@ test('browser-safe shared matcher gives the same Portuguese results and order as
 
 test('browser and CLI use the shared schema and lexical matcher', () => {
   const source = fs.readFileSync(path.join(root, 'assets/reference-browser.js'), 'utf8');
-  assert.match(source, /import \{ rankReferences, validateCatalog \} from ['"]\.\.\/scripts\/lib\/reference-search\.mjs['"]/);
-  assert.match(source, /visible = rankReferences\(\{ entries \}/);
-  assert.match(source, /validateCatalog\(await response\.json\(\)\)/);
+  assert.match(source, /import \{ rankReferences, validateCatalog, validateSiteIndex, rankSites \} from ['"]\.\.\/scripts\/lib\/reference-search\.mjs['"]/);
+  assert.match(source, /rankReferences\(\{ entries \}/);
+  assert.match(source, /validateCatalog\(patternResult\.value\)/);
   assert.doesNotMatch(source, /const aliases\s*=/);
 });
 

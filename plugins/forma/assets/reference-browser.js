@@ -1,4 +1,4 @@
-import { rankReferences, validateCatalog } from '../scripts/lib/reference-search.mjs';
+import { rankReferences, validateCatalog, validateSiteIndex, rankSites } from '../scripts/lib/reference-search.mjs';
 const el = id => document.getElementById(id);
 const root = new URL('../', import.meta.url);
 const pageSize = 12;
@@ -8,7 +8,9 @@ const evidenceLabels = {
   'implementation-contract': 'Contrato para implementar',
   'guidance-with-helper': 'Guia com utilitário',
 };
-let entries = [], visible = [], count = pageSize;
+let entries = [], visible = [], count = pageSize, catalog = null, siteIndex = null, siteError = '';
+const isSites = () => el('collection').value === 'sites';
+const casesFor = entry => siteIndex.cases.filter(item => entry.caseIds.includes(item.id) && (!el('case').value || item.id === el('case').value));
 
 function text(tag, value, className) {
   const node = document.createElement(tag);
@@ -29,7 +31,7 @@ function link(parent, label, value, local = false) {
   try {
     if (local && (!/^(assets|references)\//.test(value) || value.split('/').includes('..'))) return;
     const url = new URL(value, local ? root : undefined);
-    if (!['https:', 'http:'].includes(url.protocol)) return;
+    if (!['https:', 'http:'].includes(url.protocol) || url.username || url.password) return;
     const anchor = text('a', label);
     anchor.href = url.href;
     anchor.target = '_blank';
@@ -38,6 +40,7 @@ function link(parent, label, value, local = false) {
   } catch { /* A malformed catalog URL is data, never executable content. */ }
 }
 function detail(entry) {
+  if (isSites()) { siteDetail(entry); return; }
   el('detail-origin').textContent = `Forma · ${evidenceLabels[entry.evidence.type]}`;
   const content = el('detail-content');
   content.replaceChildren(text('h2', entry.name));
@@ -55,15 +58,50 @@ function detail(entry) {
   for (const resource of entry.resources ?? []) link(content, resource.label, resource.path, true);
   el('detail').showModal();
 }
+function siteDetail(entry) {
+  el('detail-origin').textContent = 'Site externo · candidato histórico';
+  const content = el('detail-content');
+  content.replaceChildren(text('h2', entry.name));
+  content.firstChild.id = 'detail-title';
+  link(content, 'Visitar o site original ↗', entry.url);
+  content.append(text('p', 'Não visitado nesta consulta; sem captura incluída. Os casos abaixo propõem o que investigar, não atestam características deste site. Identidade, código e assets pertencem aos respectivos autores.', 'warning'));
+  link(content, 'Estudos e experiências da Forma', 'references/site-experiences.md', true);
+  const selectedCases = casesFor(entry);
+  for (const item of selectedCases) {
+    section(content, `Caso Forma: ${item.name}`, item.whenToUse);
+    section(content, 'Perguntas para investigar', item.questions);
+    section(content, 'Possíveis adaptações', item.adapt);
+    section(content, 'Como verificar', item.verify);
+  }
+  const patternIds = new Set(selectedCases.flatMap(item => item.patternIds));
+  content.append(text('h3', 'Padrões relacionados no pacote'));
+  for (const pattern of entries.filter(item => patternIds.has(item.id))) {
+    section(content, pattern.name, evidenceLabels[pattern.evidence.type]);
+    for (const resource of pattern.resources) link(content, resource.label, resource.path, true);
+  }
+  el('detail').showModal();
+}
+function updateSource() {
+  const sites = isSites();
+  el('evidence-field').hidden = sites;
+  el('kind-field').hidden = sites;
+  el('case-field').hidden = !sites;
+  el('filters').classList.toggle('site-filters', sites);
+  el('source-note').textContent = sites ? 'URLs históricas · casos de investigação da Forma' : 'Autoria editorial Forma · seleção local';
+  el('query').placeholder = sites ? 'Cafeteria, typography, editorial…' : 'Sidebar, typography, perfil…';
+  el('more').textContent = sites ? 'Mostrar mais sites' : 'Mostrar mais padrões';
+  el('empty').textContent = sites ? 'Nenhum site corresponde aos filtros. Tente outro termo ou caso de investigação.' : 'Nenhum padrão corresponde aos filtros. Tente outro termo ou amplie o contexto.';
+  filter();
+}
 function render() {
   const cards = el('cards');
   const fragment = document.createDocumentFragment();
   for (const entry of visible.slice(0, count)) {
     const card = document.createElement('article'); card.className = 'card';
     const meta = document.createElement('div'); meta.className = 'card-meta';
-    meta.append(text('span', 'FORMA', 'tag'), text('span', evidenceLabels[entry.evidence.type]));
-    const paragraph = String(entry.idea ?? entry.whenToUse ?? '');
-    const button = text('button', 'Ler ficha →'); button.type = 'button';
+    meta.append(text('span', isSites() ? 'SITE EXTERNO' : 'FORMA', 'tag'), text('span', isSites() ? 'Não verificado ao vivo' : evidenceLabels[entry.evidence.type]));
+    const paragraph = isSites() ? `Investigar: ${casesFor(entry).map(item => item.name).join(' · ')}` : String(entry.idea ?? entry.whenToUse ?? '');
+    const button = text('button', isSites() ? 'Ver caso de investigação →' : 'Ler ficha →'); button.type = 'button';
     button.setAttribute('aria-label', `Ler ficha: ${entry.name}`);
     button.addEventListener('click', () => detail(entry));
     card.append(meta, text('h2', entry.name), text('p', paragraph.length > 230 ? `${paragraph.slice(0, 227)}…` : paragraph), button);
@@ -71,13 +109,17 @@ function render() {
   }
   cards.replaceChildren(fragment);
   const shown = Math.min(count, visible.length);
-  el('status').textContent = `${visible.length} ${visible.length === 1 ? 'padrão' : 'padrões'} · ${shown} ${shown === 1 ? 'exibido' : 'exibidos'}`;
+  const noun = isSites() ? (visible.length === 1 ? 'site' : 'sites') : (visible.length === 1 ? 'padrão' : 'padrões');
+  el('status').textContent = `${visible.length} ${noun} · ${shown} ${shown === 1 ? 'exibido' : 'exibidos'}`;
   el('empty').hidden = visible.length !== 0;
   el('more').hidden = count >= visible.length;
 }
 function filter() {
   try {
-    visible = rankReferences({ entries }, {
+    if (isSites() && !siteIndex) throw new Error(siteError || 'Índice de sites ainda não carregado.');
+    visible = isSites() ? rankSites(siteIndex, catalog, {
+      query: el('query').value, ...(el('case').value && { caseId: el('case').value }),
+    }).map(result => result.entry) : rankReferences({ entries }, {
       query: el('query').value,
       ...(el('evidence').value && { evidenceType: el('evidence').value }),
       ...(el('kind').value && { kind: el('kind').value }),
@@ -94,7 +136,8 @@ function filter() {
 }
 el('filters').addEventListener('submit', event => event.preventDefault());
 el('query').addEventListener('input', filter);
-for (const id of ['evidence', 'kind']) el(id).addEventListener('change', filter);
+el('collection').addEventListener('change', updateSource);
+for (const id of ['evidence', 'kind', 'case']) el(id).addEventListener('change', filter);
 el('more').addEventListener('click', () => {
   const previousCount = count;
   count += pageSize;
@@ -103,18 +146,30 @@ el('more').addEventListener('click', () => {
   el('cards').children[previousCount]?.querySelector('button')?.focus();
 });
 el('close-detail').addEventListener('click', () => el('detail').close());
-try {
-  const response = await fetch(new URL('reference-library/catalog.json', import.meta.url));
+async function readJSON(name) {
+  const response = await fetch(new URL(`reference-library/${name}`, import.meta.url));
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  const catalog = validateCatalog(await response.json());
+  return response.json();
+}
+try {
+  const [patternResult, siteResult] = await Promise.allSettled([readJSON('catalog.json'), readJSON('site-index.json')]);
+  if (patternResult.status !== 'fulfilled') throw patternResult.reason;
+  catalog = validateCatalog(patternResult.value);
   entries = [...catalog.entries].sort((a, b) => a.name.localeCompare(b.name));
+  if (siteResult.status === 'fulfilled') {
+    try { siteIndex = validateSiteIndex(siteResult.value, catalog); }
+    catch (error) { siteError = `Índice de sites inválido: ${error.message}`; }
+  } else siteError = `Índice de sites indisponível: ${siteResult.reason.message}`;
+  for (const item of siteIndex?.cases ?? []) {
+    const option = text('option', item.name); option.value = item.id; el('case').append(option);
+  }
   for (const evidence of [...new Set(entries.map(entry => entry.evidence.type))].sort()) {
     const option = text('option', evidenceLabels[evidence]); option.value = evidence; el('evidence').append(option);
   }
   for (const kind of [...new Set(entries.map(entry => entry.kind))].sort()) {
     const option = text('option', kind); option.value = kind; el('kind').append(option);
   }
-  filter();
+  updateSource();
 } catch (error) {
   el('status').textContent = 'Catálogo indisponível';
   el('error').hidden = false;

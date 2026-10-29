@@ -1,0 +1,3330 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "inventory": {
+      "url": "https://github.com/leonxlnx/taste-skill/blob/12af471f627f866411b4bd785b19646d3672784c/skills/taste-skill/library/sites.json",
+      "revision": "12af471f627f866411b4bd785b19646d3672784c",
+      "license": "MIT (inventory); see notice. Individual websites and their assets retain their own rights.",
+      "noticePath": "THIRD_PARTY_NOTICES.md",
+      "copyright": "Copyright (c) 2026 Leonxlnx",
+      "retainedFields": [
+        "id",
+        "name",
+        "url"
+      ]
+    },
+    "mapping": {
+      "author": "Forma",
+      "method": "Each inventory record was reviewed against its historical category and study metadata, then assigned manually to one or more task-oriented cases authored for Forma. Case descriptions start from implementation questions and acceptance checks; they are not descriptions of the referenced websites. No upstream descriptive paragraphs, ratings, mood labels or screenshots are included.",
+      "limits": [
+        "Every assignment is a research hypothesis derived from historical metadata, not a verified statement about the current website or its implementation.",
+        "No website was revisited or captured for this index. Availability, current appearance, interactions, underlying technologies and mobile behavior remain unverified.",
+        "A case lists questions to investigate and adaptations to test; it does not assert that a candidate website already implements, passes or permits any of them.",
+        "The 202 external candidates may share cases. They are neither 202 distinct implementation problems nor Forma-owned designs.",
+        "Names and URLs preserve attribution to the external destinations. This index grants no permission to copy website code, branding, images, fonts or other assets.",
+        "Before implementation, inspect only the selected candidates on the target viewports, record date and state, and validate the resulting implementation independently."
+      ]
+    }
+  },
+  "cases": [
+    {
+      "id": "editorial-reading",
+      "name": "Extended reading and report navigation",
+      "whenToUse": "Use when an essay, research report, documentation page or cultural story must remain readable through several chapters and screen sizes.",
+      "questions": [
+        "What should a reader understand before following the next link?",
+        "Which headings need stable URLs, a contents list or return-to-reading behavior?"
+      ],
+      "adapt": [
+        "Build the heading hierarchy and reading width with the project’s real text before adding decorative media.",
+        "Keep chapter navigation separate from content; retain the reading position when opening a citation or returning from a detail."
+      ],
+      "verify": [
+        "Test long headings, text zoom, a narrow viewport and keyboard navigation without loss of reading order.",
+        "Check that citations remain reachable when motion and background media are disabled."
+      ],
+      "patternIds": [
+        "forma-typography",
+        "forma-spatial-layout",
+        "forma-adaptive-list-detail"
+      ]
+    },
+    {
+      "id": "typographic-interface",
+      "name": "Type specimen and expressive text",
+      "whenToUse": "Use for typography, fonts, typefaces, large labels, wordmarks and text-led interfaces whose hierarchy depends on actual character metrics.",
+      "questions": [
+        "Which text is information, and which text is a brand asset?",
+        "How do font loading, alternate languages and long names change the intended composition?"
+      ],
+      "adapt": [
+        "Choose a type scale from the content hierarchy; give display text and controls different wrapping constraints.",
+        "Keep essential text selectable and readable; test the fallback font before adding font-dependent motion."
+      ],
+      "verify": [
+        "Inspect clipping, line breaks and baseline alignment at desktop and phone widths.",
+        "Confirm that a font failure, 200% text scaling and reduced motion leave all labels usable."
+      ],
+      "patternIds": [
+        "forma-typography",
+        "forma-spatial-layout",
+        "forma-color-system"
+      ]
+    },
+    {
+      "id": "portfolio-navigation",
+      "name": "Browse projects without losing context",
+      "whenToUse": "Use for a portfolio, work archive, image gallery or project index where a visitor alternates between a collection and one selected item.",
+      "questions": [
+        "What information is required to choose a project without opening every item?",
+        "Does back navigation restore the previous selection, filter and scroll position?"
+      ],
+      "adapt": [
+        "Create a stable project model with IDs, titles, media and destinations, then select a grid or list for the available content.",
+        "Keep selection and ordering in state rather than deriving them from the visual position of an animated card."
+      ],
+      "verify": [
+        "Open an item, return, resize and refresh; confirm the selected item and surrounding context remain understandable.",
+        "Check empty collections, missing thumbnails, long project titles and keyboard access to every item."
+      ],
+      "patternIds": [
+        "forma-adaptive-list-detail",
+        "forma-search-discovery",
+        "forma-reference-media"
+      ]
+    },
+    {
+      "id": "functional-product-demo",
+      "name": "Demonstrate a real software task",
+      "whenToUse": "Use for a SaaS, AI product, developer tool or consumer app page that must show what a control does instead of relying on a decorative mockup.",
+      "questions": [
+        "Which action and observable result prove the product claim?",
+        "Is the demonstration using real functionality, an isolated fixture or a noninteractive recording?"
+      ],
+      "adapt": [
+        "Implement one bounded task with initial, loading, success and failure states; label fixtures and recordings accurately.",
+        "Use the existing product components where possible and prevent demo input from altering a real account."
+      ],
+      "verify": [
+        "Exercise the demonstrated action with keyboard and touch and verify its result.",
+        "Test slow responses, empty input, retries and cancellation; do not imply an integration that the demo does not execute."
+      ],
+      "patternIds": [
+        "forma-clean-shell",
+        "forma-recoverable-forms",
+        "forma-rendered-review"
+      ]
+    },
+    {
+      "id": "object-inspection",
+      "name": "Inspect a physical or 3D object",
+      "whenToUse": "Use when product decisions require inspecting a book, device, package, material, cover, spine or other physical object from more than one view.",
+      "questions": [
+        "Which geometry and material details must be visible for the task?",
+        "Which angles, colors and text surfaces define acceptance rather than a single attractive pose?"
+      ],
+      "adapt": [
+        "Separate geometry, material, lighting and camera parameters so each cause can be refined independently.",
+        "Provide explicit front, side and back views, readable surface text and a useful static fallback that shares the same object data."
+      ],
+      "verify": [
+        "Compare silhouette, joins, occlusion and surface readability at every required angle, including grazing views.",
+        "Test rotation with touch and keyboard, dark and light surroundings, reduced motion and unavailable WebGL."
+      ],
+      "patternIds": [
+        "forma-book-object",
+        "forma-color-system",
+        "forma-fidelity-audit"
+      ]
+    },
+    {
+      "id": "spatial-navigation",
+      "name": "Navigate an interactive scene",
+      "whenToUse": "Use when a room, map, orbit or other spatial scene is itself the route to content rather than a background behind ordinary navigation.",
+      "questions": [
+        "What objects can receive focus, and what destination or state does each expose?",
+        "What is the equivalent path when spatial rendering, pointer precision or motion is unavailable?"
+      ],
+      "adapt": [
+        "Model destinations independently of camera coordinates, then connect scene hotspots and a conventional list to the same IDs.",
+        "Bound camera movement and transitions; keep a visible escape route and avoid trapping page scrolling."
+      ],
+      "verify": [
+        "Reach every destination with keyboard and touch and return to the prior view.",
+        "Verify loading failure, reduced motion, orientation changes and a rendering fallback without losing access to content."
+      ],
+      "patternIds": [
+        "forma-knowledge-graph",
+        "forma-adaptive-list-detail",
+        "forma-purposeful-motion"
+      ]
+    },
+    {
+      "id": "cinematic-media",
+      "name": "Video and photographic sequences",
+      "whenToUse": "Use for a showreel, artist page, hospitality film or image-led project where media selection, loading and playback affect the meaning of the page.",
+      "questions": [
+        "Is this media necessary to understand the content or optional atmosphere?",
+        "Who owns the media, and what still image, caption or transcript can represent it when playback is unavailable?"
+      ],
+      "adapt": [
+        "Use approved media with a traceable source; set dimensions and a meaningful poster before the player loads.",
+        "Design play, pause, mute and still-image states and keep overlay text readable independently of the current frame."
+      ],
+      "verify": [
+        "Test autoplay rejection, a failed media request, slow loading and offscreen playback behavior.",
+        "Check keyboard controls, captions when required, contrast over changing frames and reduced-motion treatment."
+      ],
+      "patternIds": [
+        "forma-reference-media",
+        "forma-purposeful-motion",
+        "forma-rendered-review"
+      ]
+    },
+    {
+      "id": "character-feedback",
+      "name": "Character and mascot as interface feedback",
+      "whenToUse": "Use when a character, mascot, avatar or illustrated guide communicates a product identity or responds to an interaction.",
+      "questions": [
+        "Which recognizable features must remain stable across poses and sizes?",
+        "Does each expression communicate a state, or is it purely decorative?"
+      ],
+      "adapt": [
+        "Define silhouette, proportions, facial anchors and a small set of intentional expressions before refining material or motion.",
+        "Separate personality animation from functional status; expose errors and progress in ordinary text as well."
+      ],
+      "verify": [
+        "Compare the character at avatar size, full size and all supported themes.",
+        "Verify interrupted transitions, reduced motion and failure states without misleading emotional or progress cues."
+      ],
+      "patternIds": [
+        "forma-mascot-refinement",
+        "forma-purposeful-motion",
+        "forma-color-system"
+      ]
+    },
+    {
+      "id": "identity-system",
+      "name": "Translate identity into reusable UI roles",
+      "whenToUse": "Use when a brand’s color, shape or visual motif needs to support buttons, sections, content and navigation across several pages.",
+      "questions": [
+        "Which attributes identify the brand, and which controls must remain conventional for comprehension?",
+        "Can the same visual roles work with real content in light and dark modes?"
+      ],
+      "adapt": [
+        "Create separate tokens for text, surface, border, action and status before assigning decorative colors.",
+        "Apply the motif to a small reusable set of components; preserve labels, focus indication and a clear primary action."
+      ],
+      "verify": [
+        "Review hover, focus, selected, disabled and error states in both themes.",
+        "Check contrast and information hierarchy with the decorative motif removed and with color perception differences."
+      ],
+      "patternIds": [
+        "forma-color-system",
+        "forma-clean-shell",
+        "forma-spatial-layout"
+      ]
+    },
+    {
+      "id": "venue-booking",
+      "name": "Restaurant, cafe and destination booking forms",
+      "whenToUse": "Use for a restaurant, coffee shop, cafe, hotel or destination page where a booking form supports reserving or checking availability alongside practical visit information.",
+      "questions": [
+        "Can a visitor quickly find location, opening times, accessible contact and booking conditions?",
+        "Which date, party size or accommodation constraints must be checked before a reservation can succeed?"
+      ],
+      "adapt": [
+        "Place practical visit information alongside the relevant action; use current verified content rather than decorative sample details.",
+        "Preserve entered dates and guest details across validation or provider failures, and distinguish an enquiry from a confirmed booking."
+      ],
+      "verify": [
+        "Complete the booking or enquiry path on a narrow screen and verify the confirmation state.",
+        "Test unavailable dates, invalid party size, external-provider failure and a visitor who cannot use a map."
+      ],
+      "patternIds": [
+        "forma-recoverable-forms",
+        "forma-brand-argument",
+        "forma-reference-media"
+      ]
+    },
+    {
+      "id": "event-registration",
+      "name": "Event agenda and registration forms",
+      "whenToUse": "Use for a conference, festival, talk, invitation or recurring event with sessions, participants and a registration form.",
+      "questions": [
+        "Which date, time zone, venue and admission conditions must be visible before registration?",
+        "How will visitors compare sessions and recover their place in the schedule?"
+      ],
+      "adapt": [
+        "Use structured event and session data for the agenda and any calendar export; make sold-out and changed sessions explicit.",
+        "Keep registration and payment boundaries understandable and preserve the attendee’s draft when validation fails."
+      ],
+      "verify": [
+        "Check time-zone display, session overlaps, agenda navigation and mobile registration.",
+        "Verify empty and sold-out states, expired links and the difference between submitted interest and a confirmed place."
+      ],
+      "patternIds": [
+        "forma-adaptive-list-detail",
+        "forma-recoverable-forms",
+        "forma-artifact-export"
+      ]
+    },
+    {
+      "id": "collection-discovery",
+      "name": "Find and compare items in a collection",
+      "whenToUse": "Use for an archive, product catalogue, reference library, icon collection or saved-item app that requires search, filters or comparison.",
+      "questions": [
+        "Which facets and metadata help a user narrow the collection without guessing?",
+        "What identifies an item when its image, ordering or display label changes?"
+      ],
+      "adapt": [
+        "Define stable IDs and explicit filter scope, then keep query, selection and visible results synchronized.",
+        "Provide a list alternative to unusual visual arrangements and explain a genuine empty result without replacing it with unrelated items."
+      ],
+      "verify": [
+        "Test combined filters, duplicate labels, missing media, long queries and back navigation.",
+        "Verify keyboard and touch selection and ensure late responses cannot replace results for a newer query."
+      ],
+      "patternIds": [
+        "forma-search-discovery",
+        "forma-adaptive-list-detail",
+        "forma-knowledge-graph"
+      ]
+    },
+    {
+      "id": "data-explanation",
+      "name": "Explain metrics, flows and relationships",
+      "whenToUse": "Use when a report, finance product, timeline, map or operational view must explain numbers, connections or process status.",
+      "questions": [
+        "What dataset, units, period and source support each visible claim?",
+        "Does a line represent a measured relationship, a process step or only decoration?"
+      ],
+      "adapt": [
+        "Keep chart, table, labels and summaries connected to one declared dataset.",
+        "Use semantic colors and explicit legends; distinguish real relationships from illustrative layouts and mark simulated values."
+      ],
+      "verify": [
+        "Check totals, rounding, missing values and changes in the selected time range.",
+        "Compare the visual account against a readable table or list, including keyboard access and narrow-screen behavior."
+      ],
+      "patternIds": [
+        "forma-data-dashboard",
+        "forma-knowledge-graph",
+        "forma-color-system"
+      ]
+    },
+    {
+      "id": "appearance-controls",
+      "name": "Live appearance controls and persistence",
+      "whenToUse": "Use for theme selection, color picking, lighting, typography controls or a preview panel that lets a user change a visual setting.",
+      "questions": [
+        "Which value belongs to the preview draft, and when does it become the saved setting?",
+        "Which values and positions must remain unchanged when one control is edited?"
+      ],
+      "adapt": [
+        "Reuse the canonical control and state model; separate mode, context color, light positions and intensity instead of coupling them.",
+        "Keep save, cancel and reset behavior explicit; changing the selected object must not move unrelated objects or discard their values."
+      ],
+      "verify": [
+        "Test every starting state, add and remove action, selection and reopen cycle.",
+        "Compare desktop and mobile rendering, keyboard operation, system-theme changes and saved-state restoration."
+      ],
+      "patternIds": [
+        "forma-lighting-editor",
+        "forma-settings",
+        "forma-color-system"
+      ]
+    },
+    {
+      "id": "service-enquiry",
+      "name": "Service proof and recoverable enquiry forms",
+      "whenToUse": "Use for an agency, consultancy, professional practice, architecture service or property presentation that must lead from evidence to an enquiry form.",
+      "questions": [
+        "Which authentic project, qualification or service detail supports the visitor’s decision?",
+        "What is the minimum information needed to route the enquiry to the appropriate team?"
+      ],
+      "adapt": [
+        "Arrange the offer, relevant proof and next action around the customer’s task rather than a generic collection of visual effects.",
+        "Use a short labelled form, make any external handoff visible and preserve the draft when submission fails."
+      ],
+      "verify": [
+        "Verify that claims and images belong to the service being offered and remain readable on a phone.",
+        "Exercise validation, repeated submission, confirmation and failure recovery; do not confuse a local form demo with message delivery."
+      ],
+      "patternIds": [
+        "forma-brand-argument",
+        "forma-recoverable-forms",
+        "forma-rendered-review"
+      ]
+    },
+    {
+      "id": "scroll-narrative",
+      "name": "Sequential explanation driven by progress",
+      "whenToUse": "Use when scrolling, paging or a progress control reveals an ordered explanation, comparison or process instead of simply moving a static page.",
+      "questions": [
+        "What information changes at each step, and can the sequence be understood without animation?",
+        "Can a visitor reverse, interrupt or jump into the sequence without seeing a contradictory state?"
+      ],
+      "adapt": [
+        "Define the sequence as explicit states with content first, then connect scroll or page progress to those states.",
+        "Keep the ordinary document order meaningful and provide reduced-motion behavior without removing the explanation."
+      ],
+      "verify": [
+        "Test forward and reverse traversal, rapid input, resize and restored scroll position.",
+        "Check keyboard reading order, short viewports, content loaded late and interruption while a transition is active."
+      ],
+      "patternIds": [
+        "forma-purposeful-motion",
+        "forma-spatial-layout",
+        "forma-rendered-review"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "aww-pp-neue-montreal",
+      "name": "PP Neue Montreal",
+      "url": "https://neuemontreal.com/",
+      "caseIds": [
+        "typographic-interface",
+        "editorial-reading",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-seasats",
+      "name": "Seasats",
+      "url": "https://www.seasats.com/",
+      "caseIds": [
+        "object-inspection",
+        "cinematic-media",
+        "service-enquiry"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-ai-in-design-report-2026",
+      "name": "Ai in Design Report 2026",
+      "url": "https://stateofaidesign.com/",
+      "caseIds": [
+        "editorial-reading",
+        "data-explanation",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-house-of-honey-1",
+      "name": "House of Honey",
+      "url": "https://www.houseofhoney.com/",
+      "caseIds": [
+        "service-enquiry",
+        "typographic-interface",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-white-desert",
+      "name": "White Desert",
+      "url": "https://white-desert.com/",
+      "caseIds": [
+        "venue-booking",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-applied-imagination",
+      "name": "Applied Imagination",
+      "url": "https://applied-imagination.gpc.consulting",
+      "caseIds": [
+        "editorial-reading",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-compile",
+      "name": "Cursor Compile",
+      "url": "https://cursor.com/compile",
+      "caseIds": [
+        "event-registration",
+        "typographic-interface",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-the-new-industrials",
+      "name": "The New Industrials",
+      "url": "https://thenewindustrials.com/",
+      "caseIds": [
+        "editorial-reading",
+        "object-inspection",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-wild-as",
+      "name": "wild",
+      "url": "https://craft.wild.as",
+      "caseIds": [
+        "editorial-reading",
+        "service-enquiry",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-hilden-kaira",
+      "name": "Hildén & Kaira",
+      "url": "https://www.hildenkaira.fi/",
+      "caseIds": [
+        "service-enquiry",
+        "object-inspection",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-px-push",
+      "name": "PX PUSH",
+      "url": "https://pxpush.com/",
+      "caseIds": [
+        "service-enquiry",
+        "character-feedback",
+        "object-inspection"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-illoca",
+      "name": "Illoca",
+      "url": "https://illoca.unseen.co/",
+      "caseIds": [
+        "functional-product-demo",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-aspen-search",
+      "name": "Aspen Search",
+      "url": "https://www.aspensearch.com/",
+      "caseIds": [
+        "service-enquiry",
+        "typographic-interface",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-dragonfly-redux",
+      "name": "Dragonfly Redux",
+      "url": "https://dragonfly2.studiofreight.dev/",
+      "caseIds": [
+        "service-enquiry",
+        "data-explanation",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-monolog",
+      "name": "MONOLOG",
+      "url": "https://bymonolog.com/",
+      "caseIds": [
+        "portfolio-navigation",
+        "service-enquiry",
+        "typographic-interface"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-the-queue",
+      "name": "The Queue",
+      "url": "https://sheets.works/data-viz/the-queue/",
+      "caseIds": [
+        "editorial-reading",
+        "character-feedback",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-paul-kalkbrenner",
+      "name": "Paul Kalkbrenner",
+      "url": "https://www.paulkalkbrenner.net/",
+      "caseIds": [
+        "cinematic-media",
+        "event-registration",
+        "typographic-interface"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-vero-new-york",
+      "name": "Vero New-York",
+      "url": "https://verostudio.com/",
+      "caseIds": [
+        "object-inspection",
+        "cinematic-media",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-depo-luxe",
+      "name": "Depo Luxe",
+      "url": "https://depoluxe.xyz/",
+      "caseIds": [
+        "portfolio-navigation",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-longbow",
+      "name": "longbow",
+      "url": "https://db-longbow.webflow.io/",
+      "caseIds": [
+        "object-inspection",
+        "identity-system",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-mosbys-files",
+      "name": "Mosby’s Files",
+      "url": "https://www.mosbyfiles.com/",
+      "caseIds": [
+        "collection-discovery",
+        "object-inspection"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-sarah-matt-wedding",
+      "name": "Sarah & Matt Wedding",
+      "url": "https://sarahandmatt.wedding",
+      "caseIds": [
+        "event-registration",
+        "object-inspection",
+        "typographic-interface"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-zara-webb",
+      "name": "Zara Webb",
+      "url": "https://zperinatal.com",
+      "caseIds": [
+        "service-enquiry",
+        "character-feedback",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-noho",
+      "name": "Noho",
+      "url": "https://noho.ink",
+      "caseIds": [
+        "object-inspection",
+        "cinematic-media",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-juggle",
+      "name": "Juggle",
+      "url": "https://www.joinjuggle.com",
+      "caseIds": [
+        "functional-product-demo",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-serotoninn",
+      "name": "Serotoninn",
+      "url": "https://serotoninn.com/",
+      "caseIds": [
+        "identity-system",
+        "typographic-interface",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-alethia",
+      "name": "Alethia",
+      "url": "https://www.alethia.earth/",
+      "caseIds": [
+        "functional-product-demo",
+        "data-explanation",
+        "object-inspection"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-made-with-gsap-1",
+      "name": "Made With Gsap",
+      "url": "https://madewithgsap.com/",
+      "caseIds": [
+        "functional-product-demo",
+        "collection-discovery",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-dialkit",
+      "name": "DialKit",
+      "url": "https://www.dialkit.dev/",
+      "caseIds": [
+        "functional-product-demo",
+        "appearance-controls",
+        "typographic-interface"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-heyclicky",
+      "name": "heyclicky",
+      "url": "https://www.heyclicky.com",
+      "caseIds": [
+        "functional-product-demo",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-the-content-architecture",
+      "name": "The Content Architecture",
+      "url": "https://www.contentarchitecture.dev/",
+      "caseIds": [
+        "functional-product-demo",
+        "typographic-interface",
+        "data-explanation"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-trevor-noah",
+      "name": "Trevor Noah",
+      "url": "https://www.trevornoah.com/",
+      "caseIds": [
+        "collection-discovery",
+        "character-feedback",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-select26",
+      "name": "Select26",
+      "url": "https://select.supabase.com",
+      "caseIds": [
+        "event-registration",
+        "typographic-interface",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-le-petit-bleu",
+      "name": "Le Petit Bleu",
+      "url": "https://www.lepetitbleucafe.com/",
+      "caseIds": [
+        "venue-booking",
+        "identity-system",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-dabbit",
+      "name": "Dabbit",
+      "url": "https://dabbit.app",
+      "caseIds": [
+        "functional-product-demo",
+        "appearance-controls"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-decathlon-yestalgia",
+      "name": "Decathlon Yestalgia",
+      "url": "https://decathlonyestalgia.com/",
+      "caseIds": [
+        "identity-system",
+        "typographic-interface",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-vessa",
+      "name": "Vessa",
+      "url": "https://vessa.design",
+      "caseIds": [
+        "functional-product-demo",
+        "appearance-controls",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-poetry-camera",
+      "name": "poetry camera",
+      "url": "https://poetry.camera/",
+      "caseIds": [
+        "object-inspection",
+        "typographic-interface",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-sstr-friction-reduction",
+      "name": "SSTR - Friction Reduction",
+      "url": "https://sstr.tech/en/",
+      "caseIds": [
+        "object-inspection",
+        "identity-system",
+        "service-enquiry"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-no-art",
+      "name": "No Art",
+      "url": "https://www.noartmusic.com/",
+      "caseIds": [
+        "cinematic-media",
+        "event-registration",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-cerebrium",
+      "name": "Cerebrium",
+      "url": "https://cerebrium.ai/",
+      "caseIds": [
+        "functional-product-demo",
+        "object-inspection",
+        "data-explanation"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-spatial",
+      "name": "Spatial",
+      "url": "https://spatial-festival.com/",
+      "caseIds": [
+        "event-registration",
+        "typographic-interface",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-aardvark-book-club",
+      "name": "Aardvark Book Club",
+      "url": "https://aardvarkbookclub.com",
+      "caseIds": [
+        "collection-discovery",
+        "object-inspection",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-rendez-vous-franceclat",
+      "name": "Rendez-vous Francéclat",
+      "url": "https://rendez-vous.franceclat.fr",
+      "caseIds": [
+        "event-registration",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-when-you-wish-upon-a-starboy",
+      "name": "starboy",
+      "url": "https://lilguy.net/",
+      "caseIds": [
+        "object-inspection",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-warm-fuzzy",
+      "name": "Warm & Fuzzy",
+      "url": "https://www.warmnfuzzy.tv/",
+      "caseIds": [
+        "portfolio-navigation",
+        "service-enquiry",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-the-sapphic-bar-index",
+      "name": "The Sapphic Bar Index",
+      "url": "https://sapphicindex.com",
+      "caseIds": [
+        "collection-discovery",
+        "editorial-reading",
+        "data-explanation"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-textmode-overlay",
+      "name": "Textmode Overlay",
+      "url": "https://extension.textmode.art",
+      "caseIds": [
+        "functional-product-demo",
+        "typographic-interface",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-hebbia",
+      "name": "Hebbia",
+      "url": "https://design.hebbia.com",
+      "caseIds": [
+        "portfolio-navigation",
+        "typographic-interface",
+        "service-enquiry"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-revelatio-studio",
+      "name": "Revelatio Studio",
+      "url": "https://revelatio.studio/",
+      "caseIds": [
+        "service-enquiry",
+        "cinematic-media",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-haoqi-design",
+      "name": "HAOQI.DESIGN",
+      "url": "https://haoqi.design",
+      "caseIds": [
+        "portfolio-navigation",
+        "object-inspection"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-pensatori-irrazionali",
+      "name": "Pensatori Irrazionali",
+      "url": "https://pensatori-irrazionali.com/",
+      "caseIds": [
+        "service-enquiry",
+        "portfolio-navigation",
+        "object-inspection"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-belgrade-architecture",
+      "name": "Architecture of Socialist-Era Belgrade",
+      "url": "https://belgrade.klmln.com",
+      "caseIds": [
+        "editorial-reading",
+        "collection-discovery",
+        "typographic-interface"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-tengile-malamala-collection",
+      "name": "Tengile Malamala Collection",
+      "url": "https://tengilemalamala.com/",
+      "caseIds": [
+        "venue-booking",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-boc-studio",
+      "name": "Boc.Studio",
+      "url": "https://boc.studio/",
+      "caseIds": [
+        "portfolio-navigation",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-gil-huybrecht",
+      "name": "Gil Huybrecht",
+      "url": "https://gilhuybrecht.com/",
+      "caseIds": [
+        "portfolio-navigation",
+        "collection-discovery"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-city-of-angels",
+      "name": "City of Angels",
+      "url": "https://cityxofxangels.com",
+      "caseIds": [
+        "editorial-reading",
+        "cinematic-media",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-era-residence",
+      "name": "ERA Residence",
+      "url": "https://www.era-residence.com/",
+      "caseIds": [
+        "venue-booking",
+        "object-inspection",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-sharplink",
+      "name": "Sharplink",
+      "url": "https://www.sharplink.com/",
+      "caseIds": [
+        "data-explanation",
+        "object-inspection",
+        "service-enquiry"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-leo-parpeix-portfolio-2026",
+      "name": "Léo Parpeix - Portfolio 2026",
+      "url": "https://leoparpeix.com/",
+      "caseIds": [
+        "portfolio-navigation",
+        "spatial-navigation",
+        "character-feedback"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-anidachi",
+      "name": "Anidachi",
+      "url": "https://anidachi.com",
+      "caseIds": [
+        "object-inspection",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-butter",
+      "name": "Butter",
+      "url": "https://www.butter.video/",
+      "caseIds": [
+        "functional-product-demo",
+        "object-inspection"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-lxl-creative",
+      "name": "LxL Creative",
+      "url": "https://www.lxlcreative.co.uk/",
+      "caseIds": [
+        "portfolio-navigation",
+        "service-enquiry",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-screentune",
+      "name": "ScreenTune",
+      "url": "https://screentune.app",
+      "caseIds": [
+        "functional-product-demo",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-adam-ho",
+      "name": "Adam Ho, I.S.P.",
+      "url": "https://www.adamho.com/",
+      "caseIds": [
+        "portfolio-navigation",
+        "collection-discovery"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-postaway",
+      "name": "Postaway",
+      "url": "https://www.postaway.space",
+      "caseIds": [
+        "functional-product-demo",
+        "cinematic-media",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-samuel-raikkonen-portfolio",
+      "name": "Samuel Räikkönen Portfolio",
+      "url": "https://honest.fi/",
+      "caseIds": [
+        "portfolio-navigation",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-lovably",
+      "name": "Lovably",
+      "url": "https://www.lovably.com",
+      "caseIds": [
+        "portfolio-navigation",
+        "editorial-reading"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-marina-rachello",
+      "name": "Marina Rachello",
+      "url": "https://www.marinarachello.com",
+      "caseIds": [
+        "portfolio-navigation",
+        "typographic-interface"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-21-hrs-on-the-moon",
+      "name": "21 Hrs On The Moon",
+      "url": "https://www.21hrs.space/",
+      "caseIds": [
+        "spatial-navigation",
+        "data-explanation",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-transport",
+      "name": "Transport",
+      "url": "https://usb.club/transport",
+      "caseIds": [
+        "object-inspection",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-the-deep-end",
+      "name": "The Deep End",
+      "url": "https://thedeepend.space",
+      "caseIds": [
+        "event-registration",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-jesper-landberg-4",
+      "name": "Jesper Landberg",
+      "url": "http://jesperlandberg.com",
+      "caseIds": [
+        "portfolio-navigation",
+        "spatial-navigation"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-eagles-nest",
+      "name": "Eagle’s Nest",
+      "url": "https://eaglesnest.webflow.io/",
+      "caseIds": [
+        "venue-booking",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-glitch-grit",
+      "name": "Glitch&Grit",
+      "url": "https://glitchandgrit.com/",
+      "caseIds": [
+        "portfolio-navigation",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-bleibtgleich26",
+      "name": "bleibtgleich’26",
+      "url": "https://bleibtgleich.dev",
+      "caseIds": [
+        "portfolio-navigation",
+        "typographic-interface",
+        "editorial-reading"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-lorenzo-bocchi-photography",
+      "name": "Lorenzo Bocchi – Shot on iPhone",
+      "url": "https://shotoniphone.lorenzobocchi.com",
+      "caseIds": [
+        "portfolio-navigation",
+        "spatial-navigation",
+        "collection-discovery"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-obys-r-experiment-space",
+      "name": "Obys® Experiment Space",
+      "url": "https://experiment.obys.agency/",
+      "caseIds": [
+        "portfolio-navigation",
+        "spatial-navigation",
+        "collection-discovery"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-squarespace-foundations",
+      "name": "Squarespace Foundations",
+      "url": "https://brand.squarespace.com/",
+      "caseIds": [
+        "collection-discovery",
+        "spatial-navigation",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-milledollars",
+      "name": "Milledollars",
+      "url": "https://milledollars.fr/",
+      "caseIds": [
+        "portfolio-navigation",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-2xa-studio",
+      "name": "2xA Studio",
+      "url": "https://2xa.studio/",
+      "caseIds": [
+        "portfolio-navigation",
+        "typographic-interface",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-locker-land",
+      "name": "Locker Land",
+      "url": "https://www.lockerland.com.au/",
+      "caseIds": [
+        "service-enquiry",
+        "character-feedback",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-rows",
+      "name": "Rows",
+      "url": "https://rows.gg/",
+      "caseIds": [
+        "functional-product-demo",
+        "collection-discovery"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-shawn-golden",
+      "name": "Shawn Golden",
+      "url": "https://shawngolden.org/",
+      "caseIds": [
+        "portfolio-navigation",
+        "functional-product-demo",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-medium-rare",
+      "name": "Medium Rare",
+      "url": "https://www.mediumrare.site",
+      "caseIds": [
+        "portfolio-navigation",
+        "collection-discovery"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-berd",
+      "name": "Berd",
+      "url": "https://berd.xyz/",
+      "caseIds": [
+        "functional-product-demo",
+        "character-feedback"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-davesocozy",
+      "name": "davesocozy",
+      "url": "https://davesocozy.com",
+      "caseIds": [
+        "portfolio-navigation",
+        "cinematic-media",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-nodeck",
+      "name": "Nodeck",
+      "url": "https://www.nodeck.online",
+      "caseIds": [
+        "service-enquiry",
+        "editorial-reading",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-vestris",
+      "name": "Vestris",
+      "url": "https://vestris.ai",
+      "caseIds": [
+        "functional-product-demo",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-rsquad",
+      "name": "RSquad",
+      "url": "https://rsquad.io",
+      "caseIds": [
+        "service-enquiry",
+        "typographic-interface",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-nia-creative",
+      "name": "Nia Creative",
+      "url": "https://niacreative.co",
+      "caseIds": [
+        "portfolio-navigation",
+        "typographic-interface",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-uglycash",
+      "name": "UGLYCASH",
+      "url": "https://ugly.cash/",
+      "caseIds": [
+        "functional-product-demo",
+        "object-inspection",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-united-carriers",
+      "name": "United Carriers",
+      "url": "https://unitedcarriers.com/",
+      "caseIds": [
+        "data-explanation",
+        "spatial-navigation",
+        "service-enquiry"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-l-i-s-a",
+      "name": "L.I.S.A.",
+      "url": "https://lisa.locomotive.ca/en",
+      "caseIds": [
+        "service-enquiry",
+        "character-feedback",
+        "spatial-navigation"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-risk",
+      "name": "RISK",
+      "url": "https://www.risk.film",
+      "caseIds": [
+        "portfolio-navigation",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-proooof",
+      "name": "PROOOOF",
+      "url": "https://proooof.app",
+      "caseIds": [
+        "functional-product-demo",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-artem-shcherbakov",
+      "name": "Artem Shcherbakov",
+      "url": "https://artemartemartem.com/",
+      "caseIds": [
+        "portfolio-navigation",
+        "cinematic-media",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-builders-table",
+      "name": "Builders Table",
+      "url": "https://builderstable.net",
+      "caseIds": [
+        "event-registration",
+        "functional-product-demo"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-nothin",
+      "name": "NOTHIN’",
+      "url": "https://www.noth.in",
+      "caseIds": [
+        "service-enquiry",
+        "typographic-interface"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-superlocal-2026",
+      "name": "Superlocal 2026",
+      "url": "https://www.superlocaldesign.com/",
+      "caseIds": [
+        "event-registration",
+        "spatial-navigation",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-produx-design",
+      "name": "Produx Design",
+      "url": "https://www.produx.design",
+      "caseIds": [
+        "portfolio-navigation",
+        "service-enquiry",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-kononenko-architectural-bureau",
+      "name": "Kononenko Architectural Bureau",
+      "url": "https://kononenkogroup.com",
+      "caseIds": [
+        "portfolio-navigation",
+        "service-enquiry",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-studio-k95-3",
+      "name": "Studio K95",
+      "url": "https://k95.it",
+      "caseIds": [
+        "portfolio-navigation",
+        "spatial-navigation",
+        "object-inspection"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-julien-calot",
+      "name": "Julien Calot",
+      "url": "https://www.juliencalot.com",
+      "caseIds": [
+        "portfolio-navigation",
+        "collection-discovery",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-cominvi",
+      "name": "CoMinVi",
+      "url": "https://www.cominvi.com.mx/",
+      "caseIds": [
+        "service-enquiry",
+        "object-inspection",
+        "data-explanation"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-kereliott",
+      "name": "Kereliott",
+      "url": "https://kereliott.com/",
+      "caseIds": [
+        "venue-booking",
+        "cinematic-media",
+        "typographic-interface"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-normal-is-boring",
+      "name": "NORMAL IS BORING",
+      "url": "https://normalisboring.es/",
+      "caseIds": [
+        "venue-booking",
+        "typographic-interface",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-rafael-derolez-2026",
+      "name": "Rafael Derolez",
+      "url": "https://derolez.dev/",
+      "caseIds": [
+        "portfolio-navigation",
+        "functional-product-demo",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-moto-finance",
+      "name": "Moto Finance",
+      "url": "https://www.moto-card.com/",
+      "caseIds": [
+        "object-inspection",
+        "data-explanation"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-the-state-of-the-gallery",
+      "name": "The state of the gallery",
+      "url": "https://mesh3d.gallery/the-state-of-the-gallery",
+      "caseIds": [
+        "editorial-reading",
+        "data-explanation",
+        "spatial-navigation"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-aevion",
+      "name": "Aevion",
+      "url": "https://drone.riotters.com",
+      "caseIds": [
+        "object-inspection",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-hiroto-sato",
+      "name": "hiroto-sato",
+      "url": "https://www.hirotos.com",
+      "caseIds": [
+        "portfolio-navigation",
+        "spatial-navigation",
+        "object-inspection"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-specia1ne",
+      "name": "Specia1ne",
+      "url": "https://specia1ne.com",
+      "caseIds": [
+        "portfolio-navigation",
+        "typographic-interface"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-fynza",
+      "name": "Fynza",
+      "url": "https://fynza.com",
+      "caseIds": [
+        "data-explanation",
+        "functional-product-demo"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-colonia-zacamil",
+      "name": "Colonia Zacamil",
+      "url": "https://coloniazacamil.com/",
+      "caseIds": [
+        "editorial-reading",
+        "typographic-interface",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-zeroz-brand-site",
+      "name": "/zeroz Brand Site",
+      "url": "https://otsuka-air.jp/",
+      "caseIds": [
+        "object-inspection",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-elva",
+      "name": "Elva",
+      "url": "https://elvalabs.ai/",
+      "caseIds": [
+        "functional-product-demo"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-tara",
+      "name": "Tara",
+      "url": "https://tara.com",
+      "caseIds": [
+        "functional-product-demo",
+        "data-explanation",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-realevate",
+      "name": "Realevate",
+      "url": "https://realevate.agency/",
+      "caseIds": [
+        "venue-booking",
+        "collection-discovery"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-typewave",
+      "name": "Typewave",
+      "url": "https://typewave.blendmodes.com",
+      "caseIds": [
+        "functional-product-demo",
+        "typographic-interface",
+        "appearance-controls"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-humanoid-index",
+      "name": "Humanoid Index",
+      "url": "https://humanoid-index.com/",
+      "caseIds": [
+        "collection-discovery",
+        "object-inspection"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-uni",
+      "name": "Uni",
+      "url": "https://www.getuni.co/",
+      "caseIds": [
+        "functional-product-demo"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-smallbits",
+      "name": "Smallbits",
+      "url": "https://smallbits.design",
+      "caseIds": [
+        "collection-discovery",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-madie",
+      "name": "Madie",
+      "url": "https://madie.es",
+      "caseIds": [
+        "venue-booking",
+        "collection-discovery",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-archiv",
+      "name": "ARCHIV",
+      "url": "https://www.archiv.systems/",
+      "caseIds": [
+        "collection-discovery",
+        "object-inspection"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-beige-force",
+      "name": "BEIGE FORCE",
+      "url": "https://beigeforce.com/",
+      "caseIds": [
+        "collection-discovery",
+        "character-feedback",
+        "typographic-interface"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-mat",
+      "name": "Mat",
+      "url": "https://www.matwidget.com",
+      "caseIds": [
+        "functional-product-demo",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-ohhmydesign",
+      "name": "OhhMyDesign",
+      "url": "https://ohhmydesign.com",
+      "caseIds": [
+        "service-enquiry",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-glide-typeface",
+      "name": "Glide Typeface",
+      "url": "https://blode.co/glide",
+      "caseIds": [
+        "portfolio-navigation",
+        "identity-system",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-belen-jones",
+      "name": "Belen Jones",
+      "url": "https://www.belenjones.com",
+      "caseIds": [
+        "portfolio-navigation",
+        "object-inspection",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-tiny-computer-co",
+      "name": "Tiny Computer Co.",
+      "url": "https://tinycomputer.co",
+      "caseIds": [
+        "portfolio-navigation",
+        "editorial-reading"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-weeksync",
+      "name": "WeekSync",
+      "url": "https://weeksync.app/",
+      "caseIds": [
+        "functional-product-demo",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-the-tuscan-journey-begins",
+      "name": "The Tuscan Journey Begins",
+      "url": "https://weekend-mm-2026-pasticcino-bag-master.monogrid.io/en/",
+      "caseIds": [
+        "object-inspection",
+        "spatial-navigation",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-oimachi",
+      "name": "Oimachi",
+      "url": "https://www.oimachi.co",
+      "caseIds": [
+        "portfolio-navigation",
+        "collection-discovery"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-artem-taradash",
+      "name": "Artem Taradash",
+      "url": "https://taradash.me/",
+      "caseIds": [
+        "portfolio-navigation",
+        "object-inspection"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-sobha-privy-collection",
+      "name": "Sobha Privy Collection",
+      "url": "https://sobha-privy-collection.com/",
+      "caseIds": [
+        "venue-booking",
+        "object-inspection",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-coffeetech-r",
+      "name": "CoffeeTech®",
+      "url": "https://coffee-tech.com/",
+      "caseIds": [
+        "object-inspection",
+        "service-enquiry"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-shelf",
+      "name": "Shelf",
+      "url": "https://www.savetoshelf.com",
+      "caseIds": [
+        "functional-product-demo",
+        "collection-discovery"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-midnight-2",
+      "name": "Midnight",
+      "url": "https://www.askmidnight.com",
+      "caseIds": [
+        "functional-product-demo",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-plastic",
+      "name": "Plastic",
+      "url": "https://myplastic.app",
+      "caseIds": [
+        "functional-product-demo",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-brikkenco",
+      "name": "Brikken+Co",
+      "url": "https://www.brikken.co",
+      "caseIds": [
+        "service-enquiry",
+        "typographic-interface",
+        "object-inspection"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-the-state-of-software-delivery-in-health",
+      "name": "The State of Software Delivery in Healthcare",
+      "url": "https://thoughtbot.com/healthcare-software-delivery-report",
+      "caseIds": [
+        "editorial-reading",
+        "data-explanation"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-michael-pumo",
+      "name": "Michael Pumo",
+      "url": "https://michaelpumo.com",
+      "caseIds": [
+        "portfolio-navigation",
+        "appearance-controls"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-neuropelvic-surgery",
+      "name": "Neuropelvic Surgery",
+      "url": "https://neuropelvicsurgery.com",
+      "caseIds": [
+        "service-enquiry",
+        "object-inspection"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-mammut-studios",
+      "name": "Mammut Studios",
+      "url": "https://www.mammutstudios.com",
+      "caseIds": [
+        "service-enquiry",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-atlas-by-workos",
+      "name": "Atlas by WorkOS",
+      "url": "https://workos.com/atlas",
+      "caseIds": [
+        "functional-product-demo",
+        "character-feedback"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-cipher",
+      "name": "Cipher",
+      "url": "https://cipher.tv/",
+      "caseIds": [
+        "portfolio-navigation",
+        "cinematic-media",
+        "spatial-navigation"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-viewport-2",
+      "name": "Viewport",
+      "url": "https://viewport.theresonance.studio",
+      "caseIds": [
+        "functional-product-demo",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-uncle-rudy",
+      "name": "Uncle Rudy",
+      "url": "https://www.unclerudy.app",
+      "caseIds": [
+        "functional-product-demo",
+        "character-feedback"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-april-leihuanani-evangelista",
+      "name": "April Leihuanani Evangelista",
+      "url": "https://aprilleihuanani.com",
+      "caseIds": [
+        "portfolio-navigation",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-izanami",
+      "name": "IZANAMI",
+      "url": "https://izanami-official.com/",
+      "caseIds": [
+        "service-enquiry",
+        "object-inspection",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-deeo-studio-2",
+      "name": "Deeo Studio",
+      "url": "https://deeo.studio",
+      "caseIds": [
+        "portfolio-navigation",
+        "object-inspection",
+        "typographic-interface"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-estacion-venenta",
+      "name": "estacion venenta",
+      "url": "https://estacionvenenta.com",
+      "caseIds": [
+        "cinematic-media",
+        "typographic-interface",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-leedlime",
+      "name": "Leedlime",
+      "url": "https://leedlime.com",
+      "caseIds": [
+        "functional-product-demo",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-is-that-pigeon-a-fed",
+      "name": "Is That Pigeon a Fed?",
+      "url": "https://readymag.website/u2492934797/isthatpigeonafed/",
+      "caseIds": [
+        "functional-product-demo",
+        "character-feedback"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-alterg-resources",
+      "name": "AlterG Resources",
+      "url": "https://altergresources.com",
+      "caseIds": [
+        "service-enquiry",
+        "identity-system",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-amanda-guo-design",
+      "name": "Amanda Guo Design",
+      "url": "https://byamandaguo.com",
+      "caseIds": [
+        "portfolio-navigation",
+        "typographic-interface"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-sand-studio",
+      "name": "Sand Studio",
+      "url": "https://www.sandstudio.shop/",
+      "caseIds": [
+        "collection-discovery",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-desktop-fm",
+      "name": "Desktop.fm",
+      "url": "https://desktop.fm/",
+      "caseIds": [
+        "object-inspection",
+        "cinematic-media",
+        "functional-product-demo"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-depo-budget-app",
+      "name": "Depo Budget App",
+      "url": "https://depobudget.com",
+      "caseIds": [
+        "functional-product-demo",
+        "data-explanation",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-spotify-wrapped-party",
+      "name": "Spotify Wrapped Party",
+      "url": "https://wrapped-party.activetheory.dev",
+      "caseIds": [
+        "event-registration",
+        "typographic-interface",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-lama-lama-2",
+      "name": "Lama Lama",
+      "url": "https://lamalama.com/",
+      "caseIds": [
+        "service-enquiry",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-likova",
+      "name": "LIKOVA",
+      "url": "https://likova.space",
+      "caseIds": [
+        "venue-booking",
+        "cinematic-media",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-britt-taylor",
+      "name": "Britt Taylor",
+      "url": "https://www.btay.ca",
+      "caseIds": [
+        "portfolio-navigation",
+        "character-feedback"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-billow",
+      "name": "Billow",
+      "url": "https://www.billow.so",
+      "caseIds": [
+        "functional-product-demo",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-ayush-halder-portfolio",
+      "name": "Ayush Halder Portfolio",
+      "url": "https://www.thoughtsofayush.com",
+      "caseIds": [
+        "portfolio-navigation",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-digital-original-xr",
+      "name": "Digital Original XR",
+      "url": "https://digitaloriginal.app/xr",
+      "caseIds": [
+        "functional-product-demo",
+        "spatial-navigation",
+        "object-inspection"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-woblo",
+      "name": "Woblo",
+      "url": "https://woblo.in",
+      "caseIds": [
+        "functional-product-demo",
+        "appearance-controls"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-protip-marketing",
+      "name": "Protip Marketing",
+      "url": "https://protipmarketing.com",
+      "caseIds": [
+        "service-enquiry",
+        "cinematic-media",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-goodgoodgreat",
+      "name": "GoodGoodGreat®",
+      "url": "https://goodgoodgreat.studio",
+      "caseIds": [
+        "service-enquiry",
+        "editorial-reading",
+        "typographic-interface"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-george-wood",
+      "name": "George Wood",
+      "url": "https://www.georgewood.me",
+      "caseIds": [
+        "portfolio-navigation",
+        "data-explanation"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-near",
+      "name": "near",
+      "url": "https://near.com",
+      "caseIds": [
+        "functional-product-demo",
+        "data-explanation"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-trionn-2",
+      "name": "TRIONN",
+      "url": "https://trionn.com",
+      "caseIds": [
+        "service-enquiry",
+        "spatial-navigation",
+        "object-inspection"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-flowjam-2",
+      "name": "Flowjam",
+      "url": "https://flowjam.com",
+      "caseIds": [
+        "service-enquiry",
+        "editorial-reading"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-the-watch",
+      "name": "The Watch",
+      "url": "https://thewatch.60fps.fr/",
+      "caseIds": [
+        "object-inspection",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-justin-lerner",
+      "name": "Justin Lerner",
+      "url": "https://jlern.com",
+      "caseIds": [
+        "portfolio-navigation",
+        "collection-discovery",
+        "typographic-interface"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-monte",
+      "name": "Monte",
+      "url": "https://montecafe.com.au/",
+      "caseIds": [
+        "venue-booking",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-tab-kitchen-bakery",
+      "name": "TAB Kitchen & Bakery",
+      "url": "https://tabkitchenbakery.com/",
+      "caseIds": [
+        "venue-booking",
+        "character-feedback",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-lacoste-ace-breaker",
+      "name": "Lacoste Ace Breaker",
+      "url": "https://members-play.lacoste.com/ace-breaker-rg",
+      "caseIds": [
+        "identity-system",
+        "character-feedback"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-the-tie-break",
+      "name": "The Tie-break",
+      "url": "https://thetiebreak.merci-michel.com/",
+      "caseIds": [
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "opl-lennys-newsletter-product-pass",
+      "name": "Lenny’s Newsletter Product Pass",
+      "url": "https://www.lennysproductpass.com",
+      "caseIds": [
+        "collection-discovery",
+        "object-inspection"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-heron-ai",
+      "name": "Heron AI",
+      "url": "https://heronaiapp.com/",
+      "caseIds": [
+        "functional-product-demo",
+        "data-explanation"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-huy-phan-vol-2",
+      "name": "Huy Phan",
+      "url": "https://huyml.co/",
+      "caseIds": [
+        "portfolio-navigation",
+        "spatial-navigation",
+        "collection-discovery"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-ciao-energy-launch-website",
+      "name": "Ciao Energy",
+      "url": "https://www.ciaoenergy.com/",
+      "caseIds": [
+        "object-inspection",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-neutomni",
+      "name": "Neutomni",
+      "url": "https://neutomni.com/",
+      "caseIds": [
+        "service-enquiry",
+        "identity-system",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-belgrade-arbor",
+      "name": "Belgrade Arbor",
+      "url": "https://belgradearbor.rs/en",
+      "caseIds": [
+        "venue-booking",
+        "identity-system",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-nick-ho",
+      "name": "Nick Ho",
+      "url": "https://nickho-motorsports.nl/",
+      "caseIds": [
+        "portfolio-navigation",
+        "data-explanation",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-odyssee",
+      "name": "Odyssée",
+      "url": "https://www.odysseeclinic.com.au/",
+      "caseIds": [
+        "service-enquiry",
+        "object-inspection",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-usavionix",
+      "name": "USAvionix",
+      "url": "https://www.usavionix.com/",
+      "caseIds": [
+        "object-inspection",
+        "spatial-navigation",
+        "data-explanation",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-maria-vasilyeva-portfolio",
+      "name": "Maria Vasilyeva",
+      "url": "https://www.mariavasilyeva.com/",
+      "caseIds": [
+        "portfolio-navigation",
+        "collection-discovery",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-michael-gatt",
+      "name": "Michael Gatt",
+      "url": "https://michaelgatt.com/",
+      "caseIds": [
+        "portfolio-navigation",
+        "spatial-navigation",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-miu-miu-a-house-that-we-shaped",
+      "name": "Miu Miu A House That We Shaped",
+      "url": "https://immersivebags.miumiu.com/",
+      "caseIds": [
+        "collection-discovery",
+        "spatial-navigation",
+        "object-inspection"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-twks-1",
+      "name": "twks",
+      "url": "https://twks.ch/en",
+      "caseIds": [
+        "portfolio-navigation",
+        "service-enquiry",
+        "object-inspection"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-vectr",
+      "name": "Vectr",
+      "url": "https://vectrfl.com/",
+      "caseIds": [
+        "functional-product-demo",
+        "spatial-navigation",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-lpas",
+      "name": "LPAS",
+      "url": "https://lpas.com/",
+      "caseIds": [
+        "portfolio-navigation",
+        "service-enquiry",
+        "identity-system"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-lacoste-polo-factory",
+      "name": "Lacoste Polo Factory",
+      "url": "https://members-play.lacoste.com/polo-factory-experience",
+      "caseIds": [
+        "collection-discovery",
+        "object-inspection",
+        "spatial-navigation"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-offfforum",
+      "name": "OFFFForum",
+      "url": "https://www.offforum.com/",
+      "caseIds": [
+        "event-registration",
+        "cinematic-media",
+        "typographic-interface"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-20-years-inspired-by-people",
+      "name": "20 Years Inspired by People",
+      "url": "https://inspiring.nk.studio/es",
+      "caseIds": [
+        "collection-discovery",
+        "spatial-navigation",
+        "editorial-reading"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-hearst-exhibit-2026",
+      "name": "Hearst Exhibit 2026",
+      "url": "https://www.hollywoodexhibit2026.com",
+      "caseIds": [
+        "collection-discovery",
+        "spatial-navigation",
+        "cinematic-media"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-meer-mohsin",
+      "name": "Meer Mohsin",
+      "url": "https://www.meermohsin.me/",
+      "caseIds": [
+        "portfolio-navigation",
+        "object-inspection",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-gionatan-nese-26",
+      "name": "Gionatan Nese",
+      "url": "https://www.gionatannese.com/",
+      "caseIds": [
+        "portfolio-navigation",
+        "spatial-navigation",
+        "collection-discovery"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    },
+    {
+      "id": "aww-noomo-showcase",
+      "name": "Noomo Showcase",
+      "url": "https://showcase.noomoagency.com",
+      "caseIds": [
+        "portfolio-navigation",
+        "typographic-interface",
+        "scroll-narrative"
+      ],
+      "evidence": {
+        "status": "historical-candidate",
+        "liveVerified": false,
+        "capture": null
+      }
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 name: forma-brand
 description: "Criar ou adaptar identidade, campanhas, landing pages, peças gráficas e materiais de marketing com mensagem, canal e exportação definidos. Use para comunicação de marca; não para aplicar estética promocional a fluxos operacionais sem motivo."
 metadata:
-  version: 1.26.0
+  version: 1.26.1
 ---
 
 # Marca e comunicação

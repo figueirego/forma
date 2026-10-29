@@ -402,3 +402,10 @@ Na versão 1.25, o catálogo incorporou 202 fichas do snapshot externo, além de
 A biblioteca operacional passou a conter somente fichas escritas para os recursos, contratos e problemas tratados pela Forma. A seleção continua local, lexical e compartilhada entre CLI e navegador. As fichas apontam para recursos distribuídos, distinguem componente/exemplo/contrato e não alegam visita a sites. [Autoria e incorporação](authorship.md) define o processo de manutenção e os limites: princípios gerais e medições observadas não viram invenção inédita.
 
 ECC Research Ops orientou a distinção entre implementação, importação, dependência e observação. A inspeção dirigida encontrou o catálogo importado e a fonte Manrope licenciada da capa do repositório; não encontrou outro runtime de skill empacotado. Isso não é prova exaustiva de originalidade frente a todas as fontes existentes. Three.js continua opcional no consumidor; mídia consultada mantém autor/licença. Os resultados dos testes desta revisão ficam no registro de entrega, sem herdar as contagens anteriores.
+
+
+## Referências externas por caso — 1.26.1
+
+29/10/2026. Após a substituição das descrições importadas, o índice retém os 202 nomes/URLs do inventário histórico identificado acima. A Forma organiza essas candidatas em casos de investigação escritos para as tarefas e contratos já presentes no pacote. Cada associação é uma hipótese de curadoria, não comprovação de tecnologia, qualidade ou comportamento atual do site. Não houve visita e teste dos 202 sites nesta revisão.
+
+O índice separa procedência da seleção histórica, orientação autoral e propriedade dos sites. Não inclui os parágrafos descritivos, instruções de cópia, notas estéticas, imagens ou código do catálogo anterior. Coordenação, contexto, pesquisa, materiais, cores, movimento e critérios de refinamento continuam nos contratos existentes. A fonte e os avisos aplicáveis permanecem identificados; a identidade operacional e as ferramentas são da Forma.

@@ -2,7 +2,7 @@
 name: forma
 description: "Coordenar especialistas de design para criar, refinar, adaptar ou auditar interfaces, sistemas visuais e materiais de marca. Seleciona por caso a skill interna de interface, cores/layout, produto, 3D, grafos, movimento, plataforma, marca, referência, handoff ou validação. Use também para reaplicar componentes aprovados em outro projeto; não para backend isolado."
 metadata:
-  version: 1.26.0
+  version: 1.26.1
 ---
 
 # Forma
@@ -14,6 +14,8 @@ Neste pacote de Agent Skills, as especialistas estão nas pastas irmãs. Os link
 Uma entrada para o sistema: entenda o pedido, selecione a especialidade, leia suas instruções e referências pertinentes, execute o trabalho autorizado e verifique o resultado. Responda no idioma do usuário; preserve marca, stack, dados, componentes e decisões aprovadas. Não prometa perfeição nem cobertura universal.
 
 Para instalar, atualizar, conferir a distribuição ou distinguir a skill avulsa do plugin, consulte [operação do plugin](references/plugin-operation.md). A identidade visual da Forma pertence à ferramenta; nunca substitui a marca do projeto atendido.
+
+Para transformar referências em repertório técnico reutilizável, encaminhe ao módulo `reference` e ao [protocolo de experiências](references/experience-library.md): fonte → evidência → mecanismo → adaptação → teste, preservando licença e limites.
 
 ## Como coordenar
 
@@ -55,7 +57,7 @@ Incorporar métodos de um agente não instala seu runtime. Para agentes de produ
 
 ## Preservar mecanismos aprovados
 
-Quando precisar de exemplos, use a [biblioteca pesquisável](references/reference-library.md): fichas autorais sobre recursos e padrões da Forma, seleção por contexto, consulta visual e pesquisa opcional de mídia com créditos. Leia somente as candidatas relevantes; uma ficha de padrão não comprova sua execução no consumidor. Uma correção local não exige pesquisa de inspiração. A biblioteca não substitui o mecanismo aprovado do consumidor.
+Quando precisar de exemplos, use a [biblioteca pesquisável](references/reference-library.md): fichas autorais sobre recursos e padrões da Forma, índice de sites associados a casos de investigação próprios, seleção por contexto, consulta visual e pesquisa opcional de mídia com créditos. Leia somente as candidatas relevantes; uma ficha de padrão não comprova sua execução no consumidor. Uma correção local não exige pesquisa de inspiração. A biblioteca não substitui o mecanismo aprovado do consumidor.
 
 Distinguir **aplicar princípios** de **reutilizar um mecanismo** é obrigatório para pedidos de transferência. Adaptar marca/conteúdo não autoriza trocar um volume por CSS inclinado ou um editor manipulável por três cores fixas. Se o pedido for **igual à implementação aprovada**, preserve também sua composição, paleta e comportamento responsivo: a instrução explícita prevalece sobre a adaptação genérica à marca. Use a cascata final e o estado renderizado daquela revisão, não apenas uma especificação anterior. Dados, rotas e conteúdo do destino continuam preservados. Siga [reúso no consumidor](references/playbooks.md#h-reutilizar-capacidades-em-outro-projeto): contrato → implementação disponível → consumidor → operação discriminante observada.
 

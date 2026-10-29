@@ -100,15 +100,7 @@ export function rankReferences(catalog, options = {}) {
     if ((site && entry.id !== site) || (kind && entry.kind !== kind) || (origin && entry.origin !== origin)
       || (useCase && !entry.useCases.includes(useCase)) || (evidenceType && entry.evidence.type !== evidenceType)) continue;
     const fields = searchFields(entry);
-    const matchedTerms = [];
-    for (const { term, alternatives } of terms) {
-      let found;
-      for (const [field, tokens, weight] of fields) {
-        const matched = alternatives.find(token => tokens.has(token));
-        if (matched) { found = { term, matched, field, weight }; break; }
-      }
-      if (found) matchedTerms.push(found);
-    }
+    const matchedTerms = matchFields(fields, terms);
     if (matchedTerms.length !== terms.length) continue;
     matches.push({ entry, match: {
       lexicalScore: matchedTerms.reduce((total, item) => total + item.weight, 0),
@@ -116,10 +108,94 @@ export function rankReferences(catalog, options = {}) {
       matchedTerms, filters,
     } });
   }
+  return orderMatches(matches, seed);
+}
+
+function orderMatches(matches, seed) {
   matches.sort((a, b) => b.match.lexicalScore - a.match.lexicalScore
     // An explicit subject wins a tie against a broader alias; field relevance still comes first.
     || b.match.literalMatches - a.match.literalMatches
     || (seed === undefined ? 0 : tieValue(a.entry.id, seed) - tieValue(b.entry.id, seed))
     || a.entry.id.localeCompare(b.entry.id, 'en'));
   return matches;
+}
+
+function matchFields(fields, terms) {
+  const matchedTerms = [];
+  for (const { term, alternatives } of terms) {
+    for (const [field, tokens, weight] of fields) {
+      const matched = alternatives.find(token => tokens.has(token));
+      if (matched) { matchedTerms.push({ term, matched, field, weight }); break; }
+    }
+  }
+  return matchedTerms;
+}
+
+export function validateSiteIndex(index, catalog) {
+  const nonempty = value => typeof value === 'string' && value.trim();
+  const strings = value => Array.isArray(value) && value.length > 0 && value.every(nonempty);
+  const safeURL = value => {
+    if (!nonempty(value) || /[\u0000-\u0020]/.test(value)) return false;
+    try { const url = new URL(value); return ['http:', 'https:'].includes(url.protocol) && !url.username && !url.password; }
+    catch { return false; }
+  };
+  if (index?.schemaVersion !== 1 || !index.provenance?.inventory || !index.provenance?.mapping
+    || !Array.isArray(index.cases) || !Array.isArray(index.entries)
+    || !safeURL(index.provenance.inventory.url) || !nonempty(index.provenance.inventory.revision)
+    || !nonempty(index.provenance.inventory.license) || !nonempty(index.provenance.inventory.noticePath)
+    || !nonempty(index.provenance.mapping.author) || !nonempty(index.provenance.mapping.method)
+    || !strings(index.provenance.mapping.limits)) throw new Error('Invalid site index schema or provenance.');
+  validateCatalog(catalog);
+  const patternIds = new Set(catalog.entries.map(entry => entry.id)), caseIds = new Set(), siteIds = new Set();
+  const caseFields = new Set(['id', 'name', 'whenToUse', 'questions', 'adapt', 'verify', 'patternIds']);
+  for (const item of index.cases) {
+    if (!item || Object.keys(item).some(key => !caseFields.has(key)) || !/^[a-z0-9-]+$/.test(item.id ?? '')
+      || caseIds.has(item.id) || !nonempty(item.name) || !nonempty(item.whenToUse)
+      || !['questions', 'adapt', 'verify', 'patternIds'].every(key => strings(item[key]))
+      || item.patternIds.some(id => !patternIds.has(id))) throw new Error(`Invalid site case: ${item?.id ?? '(missing ID)'}`);
+    caseIds.add(item.id);
+  }
+  const entryFields = new Set(['id', 'name', 'url', 'caseIds', 'evidence']);
+  for (const entry of index.entries) {
+    if (!entry || Object.keys(entry).some(key => !entryFields.has(key)) || !/^[a-z0-9-]+$/.test(entry.id ?? '')
+      || siteIds.has(entry.id) || !nonempty(entry.name) || !safeURL(entry.url) || !strings(entry.caseIds)
+      || entry.caseIds.some(id => !caseIds.has(id)) || entry.evidence?.status !== 'historical-candidate'
+      || entry.evidence?.liveVerified !== false || entry.evidence?.capture !== null)
+      throw new Error(`Invalid site candidate: ${entry?.id ?? '(missing ID)'}`);
+    siteIds.add(entry.id);
+  }
+  return index;
+}
+
+export function siteFacets(index) {
+  return { total: index.entries.length, cases: Object.fromEntries(index.cases.map(item => [item.id,
+    index.entries.filter(entry => entry.caseIds.includes(item.id)).length])) };
+}
+
+export function rankSites(index, catalog, options = {}) {
+  const { query = '', caseId, site, seed } = options;
+  if (caseId !== undefined && !index.cases.some(item => item.id === caseId)) throw new Error(`Unknown case "${caseId}". Use --sites --list.`);
+  const terms = queryTerms(query);
+  if (query.trim() && !terms.length) throw new Error('The query needs a specific subject or component, not only generic words.');
+  const matches = [];
+  for (const entry of index.entries) {
+    if ((site && entry.id !== site) || (caseId && !entry.caseIds.includes(caseId))) continue;
+    const cases = index.cases.filter(item => entry.caseIds.includes(item.id) && (!caseId || item.id === caseId));
+    const fields = [
+      ['name', new Set(words(`${entry.id} ${entry.name}`)), 4],
+      ['classification', new Set(words(cases.map(item => `${item.id} ${item.name}`).join(' '))), 3],
+      ['concept', new Set(words(cases.map(item => item.whenToUse).join(' '))), 2],
+      ['investigation-questions', new Set(words(cases.flatMap(item => [...item.questions, ...item.adapt, ...item.verify]).join(' '))), 1],
+      ['url', new Set(words(entry.url)), 1],
+    ];
+    const matchedTerms = matchFields(fields, terms);
+    if (matchedTerms.length !== terms.length) continue;
+    const selectedPatternIds = new Set(cases.flatMap(item => item.patternIds));
+    matches.push({ entry, cases, patterns: catalog.entries.filter(item => selectedPatternIds.has(item.id)), match: {
+      lexicalScore: matchedTerms.reduce((total, item) => total + item.weight, 0),
+      literalMatches: matchedTerms.filter(item => item.matched === item.term).length,
+      matchedTerms, filters: { ...(caseId && { caseId }) },
+    } });
+  }
+  return orderMatches(matches, seed);
 }

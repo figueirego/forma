@@ -2,7 +2,7 @@
 name: forma-reference
 description: "Encontrar e selecionar exemplos de design no catálogo da Forma, pesquisar mídia com créditos, analisar fontes e investigar divergências visuais ou tecnológicas com REA quando necessário. Use para inspiração, reprodução, comparação ou incorporação fundamentada; não para inferir runtime a partir de documentação."
 metadata:
-  version: 1.26.0
+  version: 1.26.1
 ---
 
 # Referências, evidência e fidelidade
@@ -22,7 +22,7 @@ Preserve marca e stack do destino salvo mudança explicitamente pedida; fidelida
 
 ## Procedimento
 
-Se o usuário ainda não trouxe uma referência e quer exemplos, comece pela [biblioteca e pesquisa](../forma/references/reference-library.md). Execute `scripts/references.mjs` na raiz compartilhada da skill, filtre pela tarefa, leia as fichas candidatas e explique a escolha. Para imagens/vídeos contextuais, `scripts/media.mjs` pesquisa coleções e registra créditos; baixar é uma ação explícita por ID. A ficha distingue código, exemplo e contrato. A biblioteca descreve recursos locais. Se pesquisar sites externos, observe somente as referências selecionadas quando a tarefa exigir evidência atual; não anuncie uma ficha local como visita ou validação de outro produto.
+Se o usuário ainda não trouxe uma referência e quer exemplos, comece pela [biblioteca e pesquisa](../forma/references/reference-library.md). Execute `scripts/references.mjs` na raiz compartilhada da skill para padrões locais; use `--sites` para candidatas externas organizadas por caso de uso. Filtre pela tarefa, leia o caso e explique a escolha. As associações históricas são hipóteses: observe as candidatas selecionadas antes de afirmar comportamento atual, descarte associações que não se sustentem e ligue a evidência ao padrão/consumidor. Não anuncie a consulta como visita. Para imagens/vídeos contextuais, `scripts/media.mjs` pesquisa coleções e registra créditos; baixar é uma ação explícita por ID. Ficha, site de referência, código, exemplo e contrato são recursos distintos.
 
 1. Classifique a fonte como norma, documentação, código, skill, catálogo, app ou exemplo.
    Leia [casos de uso das fontes](../forma/references/source-use-cases.md) e [proveniência](../forma/references/sources.md); versões históricas não confirmam estado atual.
@@ -33,6 +33,7 @@ Se o usuário ainda não trouxe uma referência e quer exemplos, comece pela [bi
 4. Ligue achado a decisão no alvo: adotar, adaptar, já coberto, rejeitar ou aguardar evidência.
    Use reprodução/reúso em [playbooks](../forma/references/playbooks.md). Se implementar estiver autorizado, leve código/assets e conecte o consumidor; documentação sozinha não executa a capacidade.
    Para estudar outro agente, separe catálogo de skills, métodos, verificadores e runtime conforme [produção coordenada](../forma/references/agent-production.md). Inventário completo não é leitura de todos os corpos nem execução de todas as capacidades.
+   Converta aprendizados reutilizáveis pelo [protocolo de experiências](../forma/references/experience-library.md), com estados de evidência, licença, contraindicações e testes. Consulte os [estudos delimitados](../forma/references/site-experiences.md) sem promover seus limites a uma auditoria de todos os sites.
 5. Compare os estados acordados com conteúdo e condições equivalentes.
    Use [verificação](../forma/references/verification.md); para objetos, [fidelidade 3D](../forma/references/3d-reference-fidelity.md). Registre diferenças por dimensão, sem uma nota global que esconda lacunas.
 

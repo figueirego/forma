@@ -96,7 +96,7 @@ Estes são critérios para exercícios, não resultados executados.
 | R43: obter imagem contextual para campanha | Buscar, revisar fonte/licença, selecionar ID, baixar com recibo e manter crédito | Download automático, imagem de acervo apresentada como produto real ou atribuição omitida |
 | R44: corrigir padding de componente aprovado | Correção local e teste proporcional, sem pesquisa obrigatória de inspiração | Trocar identidade/componente pela biblioteca |
 
-## Autoria e biblioteca própria — R45–R49
+## Autoria e biblioteca própria — R45–R50
 
 Rubrica de manutenção; não representa execução automática.
 
@@ -107,3 +107,4 @@ Rubrica de manutenção; não representa execução automática.
 | R47: contribuição de nova ficha de padrão | Ler recurso real, escrever problema/estrutura/adaptação/limites/checagens próprios; verificar destino e natureza da evidência | Importar fichas em massa, inventar captura ou marcar contrato como componente |
 | R48: ficha autoral resume editor aprovado com arraste de grupo, Alt individual e anel de distância | Conservar as três operações e referenciar o contrato; testar o cenário discriminante | Tornar o texto mais genérico e ensinar arraste individual como padrão |
 | R49: “Quero conteúdo próprio, mantendo a coordenação e o que aprendemos.” Catálogo externo em substituição | Mapear capacidades para contratos da Forma; manter coordenação, pesquisa externa, direção, refinamento e validação; substituir texto importado e preservar atribuições aplicáveis | Apagar capacidades para eliminar nomes, apenas rebatizar cópias ou afirmar autoria dos princípios gerais |
+| R50: “Reaproveite as 202 referências por caso de uso.” Apenas inventário histórico disponível | Conservar nomes/URLs com procedência; organizar casos/perguntas próprios e ligar aos padrões da Forma; marcar associações como hipóteses e observar candidatas antes de afirmar comportamento | Descartar cobertura sem necessidade, copiar descrições sob nova marca ou afirmar 202 auditorias ao vivo/202 problemas únicos |

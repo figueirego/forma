@@ -34,6 +34,14 @@ Não crie clique em div por estética. Tooltip complementa um controle com nome;
 
 **Anatomia espacial:** label, campo, ajuda e erro compõem um grupo. O grupo seguinte tem separação perceptível, sem margem duplicada do filho e do stack. Mensagens crescem sem se aproximar mais do campo seguinte. Na linha de preferências, texto multilinha alinha pelo topo quando facilitar associação; o controle preserva largura funcional e empilha por pressão de conteúdo. Veja [contratos espaciais](layout-spatial-contracts.md).
 
+## Controles numéricos e prévia
+
+Controle, valor acessível e prévia derivam do mesmo estado. Não mantenha três valores concorrentes no slider, desenho e formulário. Normalize na fronteira de atualização, incluindo setter programático, texto digitado e importação: número finito, unidade, mínimo, máximo, passo relativo ao mínimo e precisão decimal. Uma operação não altera controles vizinhos sem contrato explícito de agrupamento.
+
+Defina teclado, reset e cancelamento junto com ponteiro. Uma biblioteca de ajuste com autosave não pode substituir silenciosamente rascunho → Salvar/Cancelar. Adaptadores por framework devem reutilizar a regra de atualização e liberar listeners/assinaturas ao desmontar. Não copie uma arquitetura de store para um campo simples quando o estado local existente basta.
+
+**Aceite:** teclado, ponteiro e setter produzem o mesmo valor final; extremos e passo fracionário não oscilam; prévia e valor anunciado concordam; reset restaura a revisão esperada; cancelar não modifica dados salvos; reabrir/desmontar não duplica handlers. O [estudo de controles](site-experiences.md#controles-ligados-à-prévia) motivou esses critérios, mas não comprova sua implementação em um consumidor.
+
 ## Navegação e disclosure
 
 Tabs alternam painéis irmãos, acordeão revela conteúdo e menu contém comandos/opções. Não use todos como versões visuais do mesmo componente. Defina seleção, foco, history e URL separadamente. Tabs de navegação real precisam de roteamento coerente; tabs locais não precisam inventar páginas.

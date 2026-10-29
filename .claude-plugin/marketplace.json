@@ -8,7 +8,7 @@
     {
       "name": "forma",
       "source": "./plugins/forma-claude",
-      "version": "1.26.0",
+      "version": "1.26.1",
       "description": "Design com uma coordenadora e 11 especialistas, da intenção ao acabamento."
     }
   ]

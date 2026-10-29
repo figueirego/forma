@@ -2,7 +2,7 @@
 name: forma-foundations
 description: "Definir ou refinar hierarquia, tipografia, cor, layout, espaçamento e tokens de um sistema visual. Use para inconsistências de composição ou fundações; não para redesenhar fluxos de produto ou reproduzir um mecanismo 3D."
 metadata:
-  version: 1.26.0
+  version: 1.26.1
 ---
 
 # Fundações visuais

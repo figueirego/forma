@@ -65,6 +65,27 @@ Critério que faria reconsiderar:
 Verificação executada:
 ```
 
+## Experiência reutilizável
+
+Use com [experiências de design](experience-library.md). Preencha no registro de pesquisa já existente; não crie documentação sem uma decisão útil.
+
+```markdown
+ID e tarefa/caso de uso:
+Site/padrão relacionado e pergunta investigada:
+Fonte: URL inicial/final, repositório, commit/versão, arquivo e linhas disponíveis:
+Data UTC, ferramenta, viewport CSS/DPR, estado e conteúdo:
+Observado: ação → resultado; medições; evidências locais e hashes:
+Confirmado no código: caminho de entrada → estado → saída; limite da leitura:
+Inferido ou ainda desconhecido:
+Mecanismo que explica o resultado:
+Decisão Forma: adotar/adaptar/rejeitar/aguardar; motivo e contraindicações:
+Código/mídia: autor, licença confirmada ou desconhecida, reutilização e avisos:
+Adaptação independente ou dependência: arquivo/componente e consumidor:
+Verificação: passos, esperado, obtido, comando/captura e escopo:
+Estado por afirmação: candidata/observada/código/implementada/validada/rejeitada:
+Falhas, regressão necessária e condições para reabrir a decisão:
+```
+
 ## Achado de auditoria
 
 ```markdown

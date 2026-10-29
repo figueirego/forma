@@ -42,7 +42,7 @@ Uma ficha entra por curadoria e PR: problema concreto, estrutura explicável, re
 
 Não importar catálogos de descrições para mudar o nome do autor. Se um recurso externo exigir cópia, a incorporação fica separada e identificada, com licença e decisão explícitas; não entra como ficha autoral. Conhecimento geral pode informar uma implementação independente, preservando atribuições pertinentes e limites de observação.
 
-O catálogo atual descreve mecanismos da Forma. Para achar sites atuais, a especialista Reference usa as ferramentas do host e registra a fonte selecionada. As notas dessa pesquisa pertencem ao projeto e não são promovidas automaticamente ao catálogo público. Da mesma forma, mídia baixada por `media.mjs` não vira asset autoral da Forma.
+O catálogo de padrões descreve mecanismos da Forma. O índice externo conserva nomes/URLs como referências, associados a casos e perguntas próprios; sites e seleção histórica mantêm procedência. Essas associações orientam investigação, não comprovam o que está implementado atualmente. A especialista Reference usa as ferramentas do host para observar as candidatas. As notas dessa pesquisa pertencem ao projeto e não são promovidas automaticamente ao catálogo público. Da mesma forma, mídia baixada por `media.mjs` não vira asset autoral da Forma.
 
 ## Mudanças de procedência
 
