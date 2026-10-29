@@ -1,50 +1,50 @@
-# Desktop, instaladores e distribuição
+# Desktop, installers, and distribution
 
-EXE pode ser aplicação ou instalador; DMG é uma imagem de disco que pode conter app e outros arquivos. Identifique artefato, sistema, arquitetura e tecnologia antes de decidir UI ou executar conteúdo. WPF, WinUI, Avalonia, Qt, AppKit, SwiftUI, Electron e Tauri têm contratos diferentes.
+An EXE may be an application or an installer; a DMG is a disk image that may contain an app and other files. Identify the artifact, system, architecture, and technology before deciding on UI or executing content. WPF, WinUI, Avalonia, Qt, AppKit, SwiftUI, Electron, and Tauri have different contracts.
 
-## Aplicação desktop
+## Desktop application
 
-| Área | Decisões a explicitar |
+| Area | Decisions to make explicit |
 |---|---|
-| Janelas | Tamanho mínimo, resize, maximize, fullscreen, múltiplas janelas, restauração de posição |
-| Sistemas de entrada | Teclado, menus, atalhos locais, foco, pointer, touch quando suportado |
-| Displays | Escala/DPI por monitor, múltiplos monitores, mudança de tela e área útil |
-| Documentos | Abrir/salvar, recentes, alterações não salvas, autosave, recovery, impressão |
-| Integração | File associations, drag/drop, clipboard, tray/menu bar, notificações e deep links |
-| Acessibilidade | Semântica nativa, ordem de foco, alto contraste, zoom/text scale e leitores de tela |
-| Processamento | Operações em background, progresso, cancelamento, pausa e encerramento seguro |
+| Windows | Minimum size, resizing, maximizing, fullscreen, multiple windows, position restoration |
+| Input systems | Keyboard, menus, local shortcuts, focus, pointer, touch when supported |
+| Displays | Per-monitor scaling/DPI, multiple monitors, screen changes, and usable area |
+| Documents | Open/save, recent files, unsaved changes, autosave, recovery, printing |
+| Integration | File associations, drag/drop, clipboard, tray/menu bar, notifications, and deep links |
+| Accessibility | Native semantics, focus order, high contrast, zoom/text scaling, and screen readers |
+| Processing | Background operations, progress, cancellation, pause, and safe shutdown |
 
-Não redesenhe controles de janela e diálogos de arquivo sem necessidade. Atalhos devem respeitar convenções de cada SO e evitar conflito global. Fechar janela, sair do app e minimizar para tray não são equivalentes; torne o comportamento previsível.
+Do not redraw window controls and file dialogs unnecessarily. Shortcuts must respect each OS's conventions and avoid global conflicts. Closing a window, quitting the app, and minimizing to the tray are not equivalent; make behavior predictable.
 
-## Jornada de distribuição
+## Distribution journey
 
-Projete descoberta → download → verificação → instalação → primeiro uso → atualização → recuperação → desinstalação. Cada etapa informa produto, editor, versão/compatibilidade quando pertinente, destino e resultado.
+Design discovery -> download -> verification -> installation -> first use -> update -> recovery -> uninstallation. Each step identifies the product, publisher, version/compatibility when relevant, destination, and outcome.
 
-- Download: diferenciar SO/arquitetura e formato; explicar requisitos reais, tamanho e alternativa compatível.
-- Windows: distinguir instalador por usuário/máquina, elevação quando necessária, caminhos, associações, startup opcional e políticas corporativas. Não afirmar SmartScreen/reputação resolvidos só por assinar.
-- macOS: distinguir app em DMG de instalador PKG; instrução de arrastar para Applications só quando corresponde ao pacote real. Não orientar desativar Gatekeeper para tornar o fluxo “suave”.
-- Linux: respeitar formato/canal adotado e modelo de permissões; AppImage, pacote de distribuição e sandbox não são intercambiáveis.
-- Instalação: prever espaço insuficiente, versão anterior, processo aberto, cancelamento, privilégios negados e falha parcial. Progresso determinado exige medição real.
-- Atualização: verificar autenticidade pelo mecanismo existente, explicar restart, preservar trabalho, tratar falha e rollback compatível. Evitar reinício surpresa.
-- Desinstalação: distinguir remover programa de apagar dados; permitir exportar/preservar quando aplicável, sem retenção manipulativa.
+- Download: distinguish OS/architecture and format; explain actual requirements, size, and compatible alternatives.
+- Windows: distinguish per-user/per-machine installers, elevation when necessary, paths, associations, optional startup, and corporate policies. Do not claim SmartScreen/reputation is resolved merely by signing.
+- macOS: distinguish an app in a DMG from a PKG installer; instruct dragging to Applications only when this matches the actual package. Do not advise disabling Gatekeeper to make the flow "smooth."
+- Linux: respect the adopted format/channel and permissions model; AppImage, distribution packages, and sandboxes are not interchangeable.
+- Installation: account for insufficient space, previous versions, a running process, cancellation, denied privileges, and partial failure. Determinate progress requires real measurement.
+- Update: verify authenticity through the existing mechanism, explain restart, preserve work, and handle failure and compatible rollback. Avoid surprise restarts.
+- Uninstallation: distinguish removing the program from deleting data; allow export/preservation when applicable without manipulative retention.
 
-## Verificação e limites
+## Verification and limits
 
-Instalar, atualizar e desinstalar só em ambiente autorizado. Prefira VM/sandbox ou conta de teste quando houver risco de afetar o computador principal. Inspeção estática não prova instalação bem-sucedida. Registre arquitetura e versão do SO testadas.
+Install, update, and uninstall only in an authorized environment. Prefer a VM/sandbox or test account when the main computer could be affected. Static inspection does not prove successful installation. Record the tested OS architecture and version.
 
-Code signing, notarização, canais de distribuição e requisitos de loja mudam. Consulte Apple/Microsoft/fornecedor no momento da implementação; não inclua comandos desatualizados ou credenciais na skill. Design do fluxo não autoriza assinar, publicar ou alterar configuração de segurança.
+Code signing, notarization, distribution channels, and store requirements change. Consult Apple/Microsoft/the vendor at implementation time; do not include obsolete commands or credentials in the skill. Designing the flow does not authorize signing, publishing, or changing security settings.
 
-## Atualização interrompida
+## Interrupted update
 
-| Estado | Informação | Ações | Preservação |
+| State | Information | Actions | Preservation |
 |---|---|---|---|
-| Disponível | Versão, motivo, restart | Atualizar/adiar conforme política | Sessão |
-| Baixando | Progresso real e erro | Pausar/cancelar só se suportado | App atual utilizável |
-| Pronta | Trabalho não salvo, encerramento | Salvar/reiniciar ou continuar se suportado | Documentos/rascunhos |
-| Aplicando | Operação em andamento | Sem cancelamento fictício se inseguro | Dados separados do app |
-| Falhou | Etapa e recuperação | Retry/suporte/versão anterior só se suportada | Estado conhecido |
-| Recuperada | Versão ativa e estado dos dados | Retomar tarefa | Sem anunciar versão nova após rollback |
+| Available | Version, reason, restart | Update/postpone according to policy | Session |
+| Downloading | Real progress and error | Pause/cancel only if supported | Current app remains usable |
+| Ready | Unsaved work, shutdown | Save/restart or continue if supported | Documents/drafts |
+| Applying | Operation in progress | No fictional cancellation when unsafe | Data separate from the app |
+| Failed | Stage and recovery | Retry/support/previous version only if supported | Known state |
+| Recovered | Active version and data state | Resume task | Do not announce the new version after rollback |
 
-Sem percentual exposto pelo atualizador, mostre progresso indeterminado. Rollback do binário pode ser incompatível com migração de dados; não prometê-lo sem contrato.
+When the updater exposes no percentage, show indeterminate progress. Binary rollback may be incompatible with data migrations; do not promise it without a contract.
 
-**Testes conforme escopo:** instalação limpa sem admin, versão existente, documento não salvo, espaço insuficiente, rede perdida, privilégio recusado, interrupção/retomada, assinatura inválida em fixture segura, remoção preservando dados. Registre SO/arquitetura, versão anterior, dados antes/depois e evidência. Falhas destrutivas não são testadas no host pessoal.
+**Tests according to scope:** clean installation without admin, existing version, unsaved document, insufficient space, lost network, denied privileges, interruption/resumption, invalid signature in a safe fixture, removal that preserves data. Record OS/architecture, previous version, before/after data, and evidence. Do not test destructive failures on the personal host.

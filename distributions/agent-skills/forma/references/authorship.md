@@ -1,51 +1,51 @@
-# Autoria e incorporação na Forma
+# Authorship and incorporation into Forma
 
-Use ao criar uma ficha, ampliar uma especialista ou trazer aprendizado externo. A Forma mantém suas próprias instruções, implementações e critérios de revisão. Independência de conteúdo não significa ter inventado os princípios de UX, normas, algoritmos, cores observadas ou dependências usadas por um consumidor.
+Use when creating a card, expanding a specialist, or incorporating external learning. Forma maintains its own instructions, implementations, and review criteria. Independent content does not mean having invented UX principles, standards, algorithms, observed colors, or dependencies used by a consumer.
 
-## Do problema ao recurso
+## From problem to resource
 
-1. **Descreva a falha ou tarefa.** Identifique quem precisa fazer o quê, em qual estado e superfície. Exemplo: escolher uma biblioteca sem confundir seleção temporária com biblioteca ativa. Não parta de uma lista de recursos de outro plugin.
-2. **Encontre o proprietário na Forma.** Leia a especialista e o contrato existentes; corrija-os antes de criar um documento paralelo. Separe decisão específica do produto e mecanismo reutilizável.
-3. **Escreva a solução no contexto da Forma.** Declare anatomia, dados, ações, estados, adaptação e limites. Uma ficha deve ajudar a implementar ou verificar; adjetivos estéticos e uma troca de nomes não bastam. Se houver recurso executável, aponte ao arquivo real; se houver apenas contrato, diga isso. Compare a ficha com as operações discriminantes do contrato: uma redação nova não pode transformar arraste de grupo em arraste individual, mudar a ordem de persistência ou apagar o fallback.
-4. **Implemente pela stack do destino.** Preserve o mecanismo aprovado, dados e marca. Reuse código próprio existente. Bibliotecas externas continuam dependências identificadas, não código alegadamente criado pela Forma. Não recrie um motor só para apagar sua procedência.
-5. **Defina uma prova que poderia falhar.** Para seleção, abrir → escolher → cancelar/salvar → reabrir; para material, ângulos e luz comparáveis; para layout, conteúdo longo e container estreito. Um link válido prova localização, não funcionamento no consumidor.
-6. **Revise o que pode ser publicado.** Verifique autoria, licença, ausência de dados privados, links e comportamento afetado. Registre resultado e limite na revisão. Fonte consultada, dependência, asset autorizado e conteúdo autoral têm papéis diferentes.
+1. **Describe the failure or task.** Identify who needs to do what, in which state and surface. Example: choosing a library without confusing a temporary selection with the active library. Do not start from another plugin's feature list.
+2. **Find the owner within Forma.** Read the existing specialist and contract; correct them before creating a parallel document. Separate product-specific decisions from reusable mechanisms.
+3. **Write the solution in Forma's context.** Declare anatomy, data, actions, states, adaptation, and limits. A card must help implement or verify; aesthetic adjectives and renamed terms are not enough. If an executable resource exists, point to the real file; if only a contract exists, say so. Compare the card against the contract's distinguishing operations: new wording must not turn group dragging into individual dragging, change persistence order, or remove the fallback.
+4. **Implement using the destination stack.** Preserve the approved mechanism, data, and brand. Reuse existing original code. External libraries remain identified dependencies, not code allegedly created by Forma. Do not recreate an engine merely to erase its provenance.
+5. **Define evidence that could fail.** For selection, open -> choose -> cancel/save -> reopen; for a material, comparable angles and lighting; for layout, long content and a narrow container. A valid link proves location, not functionality in the consumer.
+6. **Review what can be published.** Check authorship, licensing, absence of private data, links, and affected behavior. Record the result and its limits in the review. Consulted sources, dependencies, authorized assets, and original content serve different roles.
 
-## Preservar capacidades ao tornar o conteúdo próprio
+## Preserving capabilities when making content original
 
-Autoria não é redução de capacidade. Uma mudança de procedência preserva a coordenação, os métodos úteis já incorporados e os mecanismos aprovados. A Forma expressa esses aprendizados nos seus contratos e ferramentas, com responsabilidade e verificação próprias; não precisa remover pesquisa externa, padrões conhecidos ou dependências necessárias.
+Authorship does not mean reducing capability. A provenance change preserves coordination, useful methods already incorporated, and approved mechanisms. Forma expresses these lessons through its own contracts and tools, with its own accountability and verification; it need not remove external research, established patterns, or necessary dependencies.
 
-| Capacidade a conservar | Responsável e contrato da Forma | Como conferir a continuidade |
+| Capability to retain | Forma owner and contract | How to verify continuity |
 |---|---|---|
-| Coordenar especialistas e integrar resultados | Coordenadora → [roteamento](routing.md) e [produção coordenada](agent-production.md) | Selecionar pela tarefa, transmitir decisões já resolvidas e conferir a saída de cada apoio antes de concluir |
-| Descobrir referências e mídia | Reference → [biblioteca e pesquisa](reference-library.md) | Consultar padrões locais; pesquisar sites atuais quando pedido; distinguir consulta, visita, captura e mídia licenciada |
-| Criar uma direção específica | Brand/Product → [direções](design-directions.md) | Ligar fatos do projeto a conceito e composição, comparar alternativas úteis e preservar decisões aprovadas |
-| Organizar cores, tipo e espaço | Foundations → [sistema visual](visual-system.md), [refinamento de cor](color-refinement.md) e [contratos espaciais](layout-spatial-contracts.md) | Conferir valores e relações nos consumidores, estados e larguras afetados |
-| Separar marketing, app e demonstração | Brand/Interface → [marca e conteúdo](brand-marketing.md) e [dados](data-dashboards.md) | Manter argumento e evidência na página; tarefa, dados e ações reais no app; identificar limites da demonstração |
-| Refinar movimento e materiais | Motion/Objects 3D → [movimento](motion.md) e [objetos](reusable-objects.md) | Exercitar continuidade, interrupção, redução, ângulos e fallback pertinentes; não trocar o mecanismo para parecer original |
-| Criticar e corrigir a saída real | Validation → [ciclo renderizado](rendered-validation.md) | Observar composição e substância além do scanner; corrigir e confirmar a revisão carregada e o build afetado |
+| Coordinate specialists and integrate results | Coordinator -> [routing](routing.md) and [coordinated production](agent-production.md) | Select by task, pass along resolved decisions, and verify each supporting output before concluding |
+| Discover references and media | Reference -> [library and research](reference-library.md) | Consult local patterns; research current sites when requested; distinguish consultation, visits, captures, and licensed media |
+| Create a specific direction | Brand/Product -> [directions](design-directions.md) | Connect project facts to concept and composition, compare useful alternatives, and preserve approved decisions |
+| Organize color, type, and space | Foundations -> [visual system](visual-system.md), [color refinement](color-refinement.md), and [spatial contracts](layout-spatial-contracts.md) | Verify values and relationships in affected consumers, states, and widths |
+| Separate marketing, app, and demonstration | Brand/Interface -> [brand and content](brand-marketing.md) and [data](data-dashboards.md) | Keep arguments and evidence on the page; real tasks, data, and actions in the app; identify demonstration limits |
+| Refine motion and materials | Motion/Objects 3D -> [motion](motion.md) and [objects](reusable-objects.md) | Exercise relevant continuity, interruption, reduction, angles, and fallbacks; do not replace the mechanism to appear original |
+| Critique and correct the real output | Validation -> [rendered cycle](rendered-validation.md) | Observe composition and substance beyond the scanner; correct and confirm the loaded revision and affected build |
 
-Ao retirar uma fonte operacional, mapeie **capacidade anterior → contrato próprio → recurso disponível → prova ou limite**. Remover um catálogo importado não deve remover a possibilidade de encontrar sites ou fazer curadoria. Retirar uma chamada a uma skill externa não deve apagar a pergunta que ela ajudava a resolver. Se uma capacidade realmente mudar ou deixar de existir, informe isso como migração, em vez de declarar equivalência.
+When removing an operational source, map **previous capability -> original contract -> available resource -> evidence or limit**. Removing an imported catalog must not remove the ability to find sites or curate references. Removing a call to an external skill must not erase the question it helped resolve. If a capability actually changes or ceases to exist, report this as a migration instead of declaring equivalence.
 
-## Quatro categorias que não devem se misturar
+## Four categories that must remain distinct
 
-| Categoria | Como representar | O que não afirmar |
+| Category | How to represent it | What not to claim |
 |---|---|---|
-| Texto, código ou ficha escritos para a Forma | Autor/recurso da Forma, problema, revisão e checagens | Que uma nova redação comprova novidade de toda a ideia |
-| Princípio, norma ou medição consultada | Fonte e escopo na proveniência; decisão independente no contrato | Que a Forma inventou a norma, o algoritmo ou a paleta observada |
-| Dependência ou fonte tipográfica licenciada | Nome, versão quando relevante, licença e posição na distribuição | Que é código ou desenho tipográfico próprio |
-| Mídia pesquisada/gerada | Autor ou mecanismo de geração, direitos e finalidade; recibo quando disponível | Que uma imagem de acervo é foto real do produto/cliente |
+| Text, code, or card written for Forma | Forma author/resource, problem, revision, and checks | That new wording proves the entire idea is novel |
+| Consulted principle, standard, or measurement | Source and scope in provenance; independent decision in the contract | That Forma invented the standard, algorithm, or observed palette |
+| Dependency or licensed typeface | Name, version when relevant, license, and distribution location | That its code or type design is original to Forma |
+| Researched/generated media | Author or generation mechanism, rights, and purpose; receipt when available | That a stock image is a real photograph of the product/customer |
 
-## Critério para a biblioteca operacional
+## Criteria for the operational library
 
-Uma ficha entra por curadoria e PR: problema concreto, estrutura explicável, recurso local existente, adaptação ao destino, erro a evitar e checagens. Identificadores próprios são estáveis. Campos de evidência descrevem o que existe agora; não recebem `liveVerified` ou captura fictícia por causa de um teste unitário.
+A card enters through curation and a PR: a concrete problem, explainable structure, existing local resource, adaptation to the destination, an error to avoid, and checks. Original identifiers are stable. Evidence fields describe what exists now; they do not receive `liveVerified` or a fictional capture because a unit test passed.
 
-Não importar catálogos de descrições para mudar o nome do autor. Se um recurso externo exigir cópia, a incorporação fica separada e identificada, com licença e decisão explícitas; não entra como ficha autoral. Conhecimento geral pode informar uma implementação independente, preservando atribuições pertinentes e limites de observação.
+Do not import description catalogs to change the author's name. If an external resource requires copying, keep that incorporation separate and identified, with an explicit license and decision; it does not enter as an original card. General knowledge may inform an independent implementation while preserving relevant attribution and observation limits.
 
-O catálogo de padrões descreve mecanismos da Forma. O índice externo conserva nomes/URLs como referências, associados a casos e perguntas próprios; sites e seleção histórica mantêm procedência. Essas associações orientam investigação, não comprovam o que está implementado atualmente. A especialista Reference usa as ferramentas do host para observar as candidatas. As notas dessa pesquisa pertencem ao projeto e não são promovidas automaticamente ao catálogo público. Da mesma forma, mídia baixada por `media.mjs` não vira asset autoral da Forma.
+The pattern catalog describes Forma mechanisms. The external index retains names/URLs as references, associated with original use cases and questions; sites and the historical selection retain their provenance. These associations guide investigation, not proof of what is currently implemented. The Reference specialist uses host tools to observe candidates. Research notes belong to the project and are not automatically promoted to the public catalog. Similarly, media downloaded by `media.mjs` does not become an original Forma asset.
 
-## Mudanças de procedência
+## Provenance changes
 
-Quando remover conteúdo importado, retire o conteúdo de fato, revise consultas/testes/documentação e informe a migração. Preserve os avisos que continuarem necessários e a história da revisão. Não reescreva o passado, esconda uma dependência ou troque nomes em uma cópia para declarar independência. Autoria editorial, originalidade visual e execução técnica são verificações distintas.
+When removing imported content, actually remove the content, review queries/tests/documentation, and report the migration. Preserve notices that remain necessary and the review history. Do not rewrite the past, conceal a dependency, or rename a copy to claim independence. Editorial authorship, visual originality, and technical execution are separate checks.
 
-Consulte [fontes](sources.md), [avisos](../THIRD_PARTY_NOTICES.md), [biblioteca](reference-library.md) e [verificação](verification.md) somente conforme a questão. O objetivo é uma solução mantida e verificável pela Forma, não um certificado de perfeição ou uma obrigação de reinventar infraestrutura.
+Consult [sources](sources.md), [notices](../THIRD_PARTY_NOTICES.md), [library](reference-library.md), and [verification](verification.md) only as relevant to the question. The goal is a solution maintained and verifiable by Forma, not a certificate of perfection or an obligation to reinvent infrastructure.

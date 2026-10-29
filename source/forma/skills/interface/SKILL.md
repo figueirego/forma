@@ -1,55 +1,55 @@
 ---
 name: forma-interface
-description: "Construir ou refinar interfaces operacionais, base limpa, formulários, navegação, busca, configurações, editor de aparência e perfil material. Use para componentes e estados utilizáveis; não para pesquisa ampla, campanhas ou implementação de geometria 3D."
+description: "Build or refine operational interfaces, clean shells, forms, navigation, search, settings, appearance editors and material profiles. Use for usable components and states; not for broad research, campaigns or 3D geometry implementation."
 metadata:
   version: 1.24.0
 ---
 
-# Interface e estados
+# Interface and states
 
-## Quando usar
+## When to use
 
-- Use para sidebar, fundo/painel/controles, forms, busca, preferências, perfil e seus estados.
-- Não use para transformar uma melhoria de UI em redesign completo ou apresentar um mockup como integração de dados.
+- Use for sidebars, backgrounds/panels/controls, forms, search, preferences, profiles and their states.
+- Do not use to turn a UI improvement into a complete redesign or present a mockup as a data integration.
 
-Este módulo exige leitura pelo agente; não aciona ferramentas nem outros módulos automaticamente.
-Preserve marca, stack, domínio, componentes e contratos existentes.
+This module requires the agent to read it; it does not trigger tools or other modules automatically.
+Preserve the existing brand, stack, domain, components and contracts.
 
-Uma tela operacional organiza trabalho: objetos, recorte, dados e próxima ação. Uma página que comunica oferta segue [Marca](../brand/SKILL.md). Se a página contém fragmentos do app, trate seu interior como interface: reutilize o sistema existente, dados coerentes e estados reais ou demonstrações identificadas. A composição promocional ao redor não justifica alterar tabelas, unidades, precisão ou fluxos do produto.
+An operational screen organizes work: objects, scope, data and the next action. A page communicating an offer follows [Brand](../brand/SKILL.md). If the page contains app fragments, treat their interiors as an interface: reuse the existing system, coherent data and actual states or labeled demonstrations. The surrounding promotional composition does not justify changing the product's tables, units, precision or flows.
 
-## Entradas
+## Inputs
 
-- Tarefa concreta, rota/componente, ação esperada, dados reais ou fixtures identificadas e acesso ao consumidor.
-- Estados atuais, contratos de API/armazenamento, limites de permissão e referência aprovada quando houver.
+- Concrete task, route/component, expected action, actual data or labeled fixtures, and access to the consumer.
+- Current states, API/storage contracts, permission limits and an approved reference when available.
 
-## Procedimento
+## Procedure
 
-1. Percorra entrada, ação, sucesso e recuperação; identifique os donos de estado e persistência.
-   Leia [interação e conteúdo](../../references/interaction-content.md) e, quando houver dados/permissões, [contratos e confiança](../../references/contracts-trust.md). Identifique objetos, unidades, frequência de uso e a decisão que a tela apoia. Valores repetidos usam a mesma fonte e recorte; totais e deltas respeitam o cálculo e arredondamento do domínio, sem ajustes para favorecer a imagem. Se a direção estiver aberta, use [direções e comparação](../../references/design-directions.md); não importe uma receita de hero para um dashboard aprovado.
-2. Para o conjunto fundo/sidebar/painel/controles, leia [base limpa](../../references/clean-shell.md).
-   Inspecione os assets indicados e adapte consumidores/eventos à stack. Para campos, navegação e tabelas, use [padrões de componentes](../../references/component-patterns.md).
-3. Leia apenas os contratos do recurso pedido: [busca](../../references/search-discovery.md), [configurações](../../references/settings-modes.md), [editor de aparência](../../references/lighting-editors-icons.md) ou [perfil material](../../references/adaptive-visual-systems.md).
-   Especifique semântica da consulta, preview/commit/cancel/reset, camadas e exportação somente quando fizerem parte do escopo.
-   Para o editor completo, leia também [primeiro uso e controle selecionado](../../references/lighting-editors-icons.md#primeiro-uso-reabertura-e-controle-selecionado): default, limite máximo, estado salvo e visibilidade inicial do anel são contratos distintos. Inclua-os também em prompts de transferência; “pontos arrastáveis” sozinho não especifica esse mecanismo.
-   Fixe as âncoras relativas ao stage: modos no topo central, reset no topo direito, menos/mais no inferior direito; não as reposicione conforme o pool. Separe a cor vívida de handles/swatches do chroma do wash e a intensidade padrão42% de um valor salvo5%. Para reprodução do editor aprovado, leia o [perfil compacto portátil](../../assets/reference-profiles/compact-appearance-v1.json): ele já define desktop e toque, superfícies noturnas e transição de2 para3 luzes. Não invente novos breakpoints/tamanhos nem herde um botão de outra cor. Fora desse pedido, declare adaptações de plataforma.
-4. Implemente a fatia que prova o recurso e conecte handlers, dados e armazenamento ao dono correto.
-   Perfil usa os campos do domínio e o objeto aprovado no destino; não imponha cartão/papel da referência a um passaporte existente. Confira escopo global/contextual, enquadramento do objeto aberto e atualização dos consumidores sem destruir a sessão ou o retorno de foco.
-   Siga reúso em outro projeto nos [playbooks](../../references/playbooks.md). Contratos de editor/perfil exigem código; a demo da base limpa não fornece backend.
-   Em reprodução fiel, congele os critérios da fonte aprovada antes de editar o consumidor. Use [contratos de fidelidade](../../references/fidelity-contracts.md) para comparar medições; para o perfil compacto existe uma amostra portátil de layout, cores e trajetórias. Ela não substitui save/reload, cache, acesso ou inspeção das capturas.
-5. Exercite teclado, foco, erros, extremos e reabertura quando houver promessa de persistência.
-   Use [validação renderizada](../../references/rendered-validation.md) e [verificação](../../references/verification.md); valide cada capacidade de busca contratada com resultados esperados.
-   Diferencie código local, resposta servida, contexto isolado de teste e aba já aberta. Compare a identidade individual do CSS e JS afetados com o artefato testado; um `data-revision` igual não resolve cache antigo. Se houver rascunho, preserve-o e deixe salvar/descartar sob decisão do usuário antes de recarregar. Exercite o gesto em passos pequenos também: atualizar um acumulador com o rótulo arredondado pode ocultar movimento contínuo.
-   No editor, compare a referência e o destino na mesma escala, fonte, modo e configuração. Meça caixas e cores computadas após toda a cascata; examine também fundo da página, sidebar e workspace. Ao clicar em +, confira posição, perfil de gradiente, hue, ordem, seleção e anel do terceiro pool, não apenas contagem3. Meça posições relativas antes/depois de seleção, movimento, terceiro pool, claro/escuro e reabertura. Compare todos os pools antes/durante/depois de arrasto comum, Alt e anel; cor/modo não podem mover posições. No perfil fiel, pontos externos mantêm coordenadas visuais reais e ficam recortados, sem proxies na borda. Teste foco sem scroll que desloque controles; botões existentes e testes do modelo não provam composição nem acesso.
+1. Walk through entry, action, success and recovery; identify the owners of state and persistence.
+   Read [interaction and content](../../references/interaction-content.md) and, when data/permissions are involved, [contracts and trust](../../references/contracts-trust.md). Identify objects, units, usage frequency and the decision the screen supports. Repeated values use the same source and scope; totals and deltas follow the domain's calculation and rounding, without adjustments to improve the image. If the direction is open, use [directions and comparison](../../references/design-directions.md); do not import a hero recipe into an approved dashboard.
+2. For the background/sidebar/panel/control system, read [clean shell](../../references/clean-shell.md).
+   Inspect the indicated assets and adapt consumers/events to the stack. For fields, navigation and tables, use [component patterns](../../references/component-patterns.md).
+3. Read only the contracts for the requested capability: [search](../../references/search-discovery.md), [settings](../../references/settings-modes.md), [appearance editor](../../references/lighting-editors-icons.md) or [material profile](../../references/adaptive-visual-systems.md).
+   Specify query semantics, preview/commit/cancel/reset, layers and export only when they are in scope.
+   For the complete editor, also read [first use and selected control](../../references/lighting-editors-icons.md#first-use-reopening-and-selected-control): defaults, the maximum limit, saved state and initial ring visibility are distinct contracts. Include them in transfer prompts too; "draggable points" alone does not specify this mechanism.
+   Fix the stage-relative anchors: modes at the top center, reset at the top right, minus/plus at the bottom right; do not reposition them according to the pool. Separate vivid handle/swatch color from wash chroma, and the default intensity of 42% from a saved value of 5%. To reproduce the approved editor, read the [portable compact profile](../../assets/reference-profiles/compact-appearance-v1.json): it already defines desktop and touch, nighttime surfaces and the transition from 2 to 3 lights. Do not invent new breakpoints/sizes or inherit a differently colored button. Outside that request, declare platform adaptations.
+4. Implement the slice that proves the capability and connect handlers, data and storage to the correct owner.
+   The profile uses the domain's fields and the approved object in the destination; do not impose the reference's card/role on an existing passport. Check global/contextual scope, framing of the open object and consumer updates without destroying the session or focus return.
+   Follow reuse in another project in [playbooks](../../references/playbooks.md). Editor/profile contracts require code; the clean-shell demo does not provide a backend.
+   For faithful reproduction, freeze the approved source's criteria before editing the consumer. Use [fidelity contracts](../../references/fidelity-contracts.md) to compare measurements; the compact profile has a portable sample of layout, colors and trajectories. It does not replace save/reload, cache, access or screenshot inspection.
+5. Exercise keyboard input, focus, errors, extremes and reopening when persistence is promised.
+   Use [rendered validation](../../references/rendered-validation.md) and [verification](../../references/verification.md); validate each agreed search capability against expected results.
+   Distinguish local code, served response, isolated test context and an already-open tab. Compare the individual identity of affected CSS and JS with the tested artifact; a matching `data-revision` does not resolve an old cache. If a draft exists, preserve it and leave saving/discarding to the user before reloading. Exercise the gesture in small steps too: updating an accumulator from the rounded label can conceal continuous movement.
+   In the editor, compare the reference and destination at the same scale, font, mode and configuration. Measure computed boxes and colors after the entire cascade; also inspect the page background, sidebar and workspace. When clicking +, check the third pool's position, gradient profile, hue, order, selection and ring, not only a count of 3. Measure relative positions before/after selection, movement, the third pool, light/dark mode and reopening. Compare all pools before/during/after ordinary dragging, Alt and ring gestures; color/mode changes must not move positions. In the faithful profile, outside points retain their actual visual coordinates and are clipped, without edge proxies. Test focus without scrolling that shifts controls; existing buttons and model tests do not prove composition or access.
 
-## Saída e parada
+## Output and stopping condition
 
-Entregue interface funcional ou especificação explicitamente pedida, estados e resultado observável da tarefa.
-Identifique dados simulados, alterações só em memória e integrações ainda ausentes.
-Pare quando a operação discriminante funcionar no consumidor e os estados afetados não tiverem regressões relevantes.
-Um toast não comprova salvamento; trocar cores não comprova reúso da composição; foco no input não comprova paleta de comandos.
+Deliver a working interface or an explicitly requested specification, states and the observable task result.
+Identify simulated data, in-memory-only changes and integrations that are still missing.
+Stop when the distinguishing operation works in the consumer and affected states have no relevant regressions.
+A toast does not prove saving; changing colors does not prove composition reuse; focusing an input does not prove a command palette.
 
-## Apoios opcionais e limites
+## Optional support and limits
 
-`ecc:click-path-audit`, `ecc:design-system`, Impeccable e `accessibility` podem apoiar diagnóstico de handlers, consistência e acesso.
-Leia o `SKILL.md` atual de cada apoio disponível antes de usar, conforme [integrações](../../references/integrations.md); não suponha ferramentas pelo nome.
-Não substitua volume/interação solicitados por uma imagem ou plano apenas inclinado. CSS 3D articulado já aprovado continua sendo um mecanismo válido; não o troque por WebGL por associação. Mantenha o limite de implementação de cada recurso visível na entrega.
+`ecc:click-path-audit`, `ecc:design-system`, Impeccable and `accessibility` can support handler diagnosis, consistency and access.
+Read each available supporting skill's current `SKILL.md` before use, as described in [integrations](../../references/integrations.md); do not assume tools from a name.
+Do not replace requested volume/interaction with an image or merely tilted plane. Previously approved articulated CSS 3D remains a valid mechanism; do not replace it with WebGL by association. Keep each capability's implementation boundary visible in the delivery.

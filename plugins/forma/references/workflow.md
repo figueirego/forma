@@ -1,67 +1,67 @@
-# Processo compartilhado de design
+# Shared design process
 
-A coordenadora escolhe a especialidade; este processo conecta diagnóstico, construção, verificação e entrega quando o trabalho exige múltiplas etapas. Para uma correção pequena, leia apenas o trecho pertinente.
+The coordinator selects the specialty; this process connects diagnosis, construction, verification and delivery when work requires multiple steps. For a small correction, read only the relevant section.
 
-## Processo proporcional ao trabalho
+## A process proportionate to the work
 
-Para trabalho amplo, escolha um playbook em [playbooks](playbooks.md) e use seus entregáveis mínimos. Para ajuste pequeno, trabalhe direto no alvo. O objetivo é reduzir decisões repetidas, não obrigar um processo inteiro para cada edição.
+For broad work, choose a playbook in [playbooks](playbooks.md) and use its minimum deliverables. For a small adjustment, work directly on the target. The goal is to reduce repeated decisions, not require a complete process for every edit.
 
-Quando o usuário pedir ajuda para refinar um artefato existente, conduza o diagnóstico, a correção autorizada e a comparação. Escolha outras skills, ferramentas ou referências pela dúvida que precisam resolver, conforme [integrações](integrations.md#escolher-apoio-durante-o-refinamento). Um pedido apenas de explicação continua sendo explicação; não transforma uma conversa conceitual em edição de projeto.
+When the user asks for help refining an existing artifact, conduct diagnosis, the authorized correction and comparison. Choose other skills, tools or references according to the question they must resolve, following [integrations](integrations.md#choose-support-during-refinement). An explanation-only request remains an explanation; it does not turn a conceptual conversation into a project edit.
 
-### 1. Entender e estabelecer a referência
+### 1. Understand and establish the reference
 
-Leia instruções locais e inspecione arquivos, fluxos, tokens, assets, dependências, testes e restrições relevantes. Para interfaces existentes, observe a experiência quando acessível; screenshots são evidência visual, código é evidência estrutural. Registre o que não foi observado.
+Read local instructions and inspect relevant files, flows, tokens, assets, dependencies, tests and constraints. For existing interfaces, observe the experience when accessible; screenshots are visual evidence, code is structural evidence. Record what was not observed.
 
-Para novos produtos, defina tarefa, público, contexto, conteúdo, canais, restrições e sucesso. Para um botão desalinhado, não abra um processo de descoberta de produto inteiro.
+For new products, define the task, audience, context, content, channels, constraints and success. For a misaligned button, do not start an entire product discovery process.
 
-Quando várias fontes forem fornecidas, classifique capacidade, evidência e licença antes de combinar suas recomendações. Catálogo, prompt, componente e aplicativo não têm a mesma autoridade. Separe adotar, adaptar, já coberto, rejeitar e pendente; leia [casos de uso](source-use-cases.md). Se a direção estiver aberta, compare alternativas com condições equivalentes em [direções](design-directions.md); não exigir variantes para uma escolha já feita.
+When several sources are supplied, classify capability, evidence and license before combining their recommendations. A catalog, prompt, component and application do not have the same authority. Separate adopt, adapt, already covered, reject and pending; read [use cases](source-use-cases.md). If the direction is open, compare alternatives under equivalent conditions in [directions](design-directions.md); do not require variants for a choice already made.
 
-### 2. Projetar fluxo e estados antes do acabamento
+### 2. Design flows and states before polish
 
-Trace o caminho principal, decisões, entrada/saída, erros recuperáveis, cancelamento e ações destrutivas. Identifique conteúdo mínimo, típico e extremo. Mapeie dados reais e autorização. Só então escolha composição, tipografia, cor e movimento.
+Trace the primary path, decisions, entry/exit, recoverable errors, cancellation and destructive actions. Identify minimum, typical and extreme content. Map actual data and authorization. Only then choose composition, typography, color and motion.
 
-Para composição nova ou defeito de layout, leia [contratos espaciais](layout-spatial-contracts.md). Antes de estilizar, defina container de referência, eixos de alinhamento, limites de largura, insets compartilhados, distâncias intra/intergrupo e regra de wrap/stack/scroll. Uma escala de tokens não substitui essas relações. Centralizar um painel não significa centralizar todo o seu conteúdo.
+For a new composition or layout defect, read [spatial contracts](layout-spatial-contracts.md). Before styling, define the reference container, alignment axes, width limits, shared insets, within/between-group distances and wrap/stack/scroll rules. A token scale does not replace these relationships. Centering a panel does not mean centering all its content.
 
-Para grafos e ligações, leia [grafos e conhecimento](knowledge-graphs.md) antes de escolher o renderer. Defina identidade, procedência, direção, resolução, contagens e atualização após rename/delete. Separe relações reais, sugestões semânticas, agrupamentos e posição visual. A interface precisa permitir explicar e abrir a fonte de cada relação.
+For graphs and links, read [graphs and knowledge](knowledge-graphs.md) before choosing the renderer. Define identity, provenance, direction, resolution, counts and updates after rename/delete. Separate actual relationships, semantic suggestions, groups and visual position. The interface must let users explain and open the source of each relationship.
 
-Para novos sistemas ou mudanças amplas, registre a direção em documentação existente; crie DESIGN.md apenas se útil e não houver equivalente. Use tokens semânticos e componentes com estados. Dials opcionais de expressão, movimento e densidade são comunicação, não obrigações de efeito.
+For new systems or broad changes, record the direction in existing documentation; create DESIGN.md only if useful and no equivalent exists. Use semantic tokens and components with states. Optional expression, motion and density dials support communication; they do not mandate effects.
 
-### 3. Construir na plataforma certa
+### 3. Build on the right platform
 
-Reutilize o que existe. Um EXE é um artefato executável, não uma estética; DMG é distribuição, não framework. Detecte a tecnologia antes de indicar implementação. Não instale sistemas de UI apenas porque a referência lembra sua marca.
+Reuse what exists. An EXE is an executable artifact, not an aesthetic; DMG is a distribution format, not a framework. Identify the technology before recommending implementation. Do not install UI systems simply because the reference resembles their brand.
 
-Quando o pedido for “copiar a tecnologia para adaptar”, entregue um mecanismo reutilizável com dados, materiais, dimensões, interação, fallback e ciclo de vida separados do produto. Uma cópia visual fixa não atende esse pedido. Para reproduzir uma referência, medir também geometria, UV/normais, cadeia de cor, enquadramento nominal versus canvas expandido e resposta aos gestos: usar a mesma biblioteca 3D não estabelece equivalência. Leia [objetos reutilizáveis](reusable-objects.md); para cenas de campanha, compare mecanismos e custos em [web imersiva](immersive-web-tech.md), sem importar toda a stack por associação.
+When the request is to "copy the technology for adaptation," deliver a reusable mechanism with data, materials, dimensions, interaction, fallback and lifecycle separated from the product. A fixed visual copy does not satisfy that request. To reproduce a reference, also measure geometry, UVs/normals, the color pipeline, nominal framing versus expanded canvas and gesture response: using the same 3D library does not establish equivalence. Read [reusable objects](reusable-objects.md); for campaign scenes, compare mechanisms and costs in [immersive web](immersive-web-tech.md), without importing the entire stack by association.
 
-No pedido de fidelidade, fixe tolerâncias e compare geometria, projeção, paleta, shader, gestos, transições e adaptação separadamente. Inclua frente/lateral/verso e estados de repouso/hover/arraste/soltar/sair quando pertinentes. Registre observado, confirmado estaticamente, inferido e proposto. FLIP de posição/escala não comprova interpolação de pose/material; fallback e testes funcionais aprovados não tornam um exemplo genérico equivalente à referência.
+For a fidelity request, establish tolerances and compare geometry, projection, palette, shader, gestures, transitions and adaptation separately. Include front/side/back and rest/hover/drag/release/exit states when relevant. Record observed, statically confirmed, inferred and proposed findings. Position/scale FLIP does not prove pose/material interpolation; approved fallback and functional tests do not make a generic example equivalent to the reference.
 
-Quando persistirem diferenças em objetos 3D, use o [protocolo do pacote ao pixel](3d-reference-fidelity.md): rastreie configuração até o consumidor, preserve unidades/UV por face, autoria de normais, máscaras, fonte exata e resolução de atlas/buffer/saída. Comparar EXE e DMG pode confirmar módulos equivalentes sem validar os runtimes. Corrija a especificação antes de alterar números sem diagnóstico.
+When differences persist in 3D objects, use the [package-to-pixel protocol](3d-reference-fidelity.md): trace configuration to the consumer, preserve units/UVs per face, normal authorship, masks, exact font and atlas/buffer/output resolution. Comparing EXE and DMG may confirm equivalent modules without validating their runtimes. Correct the specification before changing numbers without a diagnosis.
 
-Associe sintoma → mecanismo → correção → regressão → comparação renderizada. Brilho pode divergir por normais; estrias por UV que perde uma dimensão; fechamento de uma peça não prova contato com a outra. O [caso do livro aprovado](book-polish-case-study.md) mostra essa cadeia com evidências. Transfira o método, mantendo constantes específicas no perfil de referência.
+Connect symptom -> mechanism -> correction -> regression -> rendered comparison. Gloss may differ because of normals; striations because UVs lose a dimension; closing one piece does not prove contact with another. The [approved book case](book-polish-case-study.md) demonstrates this chain with evidence. Transfer the method while keeping specific constants in the reference profile.
 
-Use conteúdo e assets autorizados. Mocks devem ser identificados como demonstração. Nunca invente clientes, depoimentos, escassez, métricas, preços ou capacidades. Gere imagens quando contribuírem e a tarefa autorizar; texto legível e interações não devem virar uma imagem rasterizada.
+Use authorized content and assets. Identify mocks as demonstrations. Never invent customers, testimonials, scarcity, metrics, prices or capabilities. Generate images when useful and authorized by the task; readable text and interactions must not become a rasterized image.
 
-### 4. Verificar e corrigir com evidência
+### 4. Verify and correct with evidence
 
-Use [verificação](verification.md) e, para interfaces implementadas, o [ciclo renderizado](rendered-validation.md). Faça uma rodada agrupada nos estados e dispositivos relevantes, corrija os problemas encontrados e confirme as mudanças. Pare o polimento quando critérios estiverem satisfeitos. Se persistirem defeitos relevantes, continue a correção funcional necessária ou reporte o bloqueio; nunca transforme limite de rodadas em aprovação fictícia.
+Use [verification](verification.md) and, for implemented interfaces, the [rendered loop](rendered-validation.md). Run a grouped round across relevant states and devices, fix the issues found and confirm the changes. Stop polishing when criteria are satisfied. If relevant defects remain, continue the necessary functional correction or report the blocker; never turn a round limit into fictitious approval.
 
-Declare a superfície realmente testada: viewport mobile no navegador não é teste em aparelho físico, e um layout desktop não é validação de aplicativo nativo. Inspeção do bundle confirma mecanismos presentes, não sua execução nem paridade de pixels. Ao reaproveitar um componente da skill, confira o contrato e a revisão efetivamente distribuídos junto com seus testes. Verifique também a integração no destino: rota → componente → estado/renderizador → interação observada. Testes do asset, layout ou contraste não aprovam um mecanismo substituído ou nunca carregado.
+Declare the surface actually tested: a mobile browser viewport is not a physical-device test, and a desktop layout is not native-application validation. Bundle inspection confirms mechanisms present, not their execution or pixel parity. When reusing a skill component, check the contract and revision actually distributed along with its tests. Also verify integration in the destination: route -> component -> state/renderer -> observed interaction. Asset, layout or contrast tests do not approve a replaced mechanism or one that never loaded.
 
-Quando incorporar um resultado aprovado, preserve a revisão por hash, o antes/depois e os limites conhecidos; confirme que fonte, instalação e pacote carregam o mesmo asset. Aprovação humana, teste executado, teste ignorado e equivalência visual medida são evidências distintas.
+When incorporating an approved result, preserve its revision by hash, before/after comparison and known limits; confirm that source, installation and package carry the same asset. Human approval, an executed test, a skipped test and measured visual equivalence are different evidence.
 
-### 5. Entregar algo utilizável
+### 5. Deliver something usable
 
-Entregue o artefato solicitado, não apenas sugestões. Informe o que mudou, motivo, verificações executadas e limitações materiais. Em auditorias, priorize achados reproduzíveis com alvo, impacto e menor correção. Em planos, entregue especificações implementáveis, sem alegar implementação.
+Deliver the requested artifact, not just suggestions. State what changed, why, executed checks and material limitations. In audits, prioritize reproducible findings with target, impact and smallest correction. In plans, deliver implementable specifications without claiming implementation.
 
-## Invariantes
+## Invariants
 
-- A tarefa principal funciona sem depender de hover, animação, cor isolada ou gesto sem alternativa.
-- Conteúdo permanece alcançável com texto ampliado, tradução e janelas pequenas.
-- Cada distância e divisória tem um responsável identificável; alinhamento e centralização são verificados no container correto, com estilos computados, medidas e leitura visual. Correção óptica não encobre defeito estrutural.
-- Estado persistido, rascunho, pendência e falha não são apresentados como sucesso equivalente. Operações que escrevem em mais de um armazenamento exigem transação, compensação verificável ou feedback explícito de sucesso parcial.
-- Não descarte dados silenciosamente nem substitua fluxos nativos por simulações decorativas.
-- Grafo, mapa de coleções e Canvas autoral têm contratos diferentes. Proximidade, cor e animação não provam relação semântica; renderização, simulação, índice e armazenamento exigem evidências próprias.
-- Inspeção de referência não concede permissão para copiar marca, assets restritos ou publicar.
-- Solicitar design não autoriza compras, publicação, deploy, alteração de credenciais ou instalação de binários desconhecidos.
-- Ferramenta ausente não bloqueia especificações e trabalho local independentes. Explique a limitação concreta; não invente integração executada.
-- Preview, fonte editável, arquivo exportado e publicação são entregas distintas. Declare perdas de conversão e valide o arquivo final; a extensão não comprova editabilidade ou funcionamento.
+- The primary task works without depending on hover, animation, color alone or a gesture without an alternative.
+- Content remains reachable with enlarged text, translation and small windows.
+- Each distance and divider has an identifiable owner; alignment and centering are checked in the correct container using computed styles, measurements and visual reading. Optical correction does not conceal a structural defect.
+- Persisted state, drafts, pending work and failure are not presented as equivalent success. Operations that write to more than one store require a transaction, verifiable compensation or explicit partial-success feedback.
+- Do not silently discard data or replace native flows with decorative simulations.
+- A graph, collection map and authored Canvas have different contracts. Proximity, color and animation do not prove a semantic relationship; rendering, simulation, index and storage require their own evidence.
+- Reference inspection does not grant permission to copy branding, restricted assets or publish.
+- A design request does not authorize purchases, publication, deployment, credential changes or installation of unknown binaries.
+- A missing tool does not block independent specifications and local work. Explain the concrete limitation; do not invent an executed integration.
+- A preview, editable source, exported file and publication are separate deliverables. Declare conversion losses and validate the final file; the extension does not prove editability or functionality.
 

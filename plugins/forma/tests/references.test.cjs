@@ -87,10 +87,10 @@ test('Portuguese aliases retrieve the intended component and explain the literal
   assert.deepEqual(ids(board), ['forma-clean-shell']);
   assert.equal(board.results[0].match.matchedTerms[0].term, 'sidebar');
   assert.deepEqual(board.results[0].match.filters, { kind: 'interface', origin: 'forma' });
-  assert.equal(ids(api.searchCatalog(catalog, { query: 'iluminação', origin: 'forma' }))[0], 'forma-lighting-editor');
+  assert.equal(ids(api.searchCatalog(catalog, { query: 'ilumina\u00e7\u00e3o', origin: 'forma' }))[0], 'forma-lighting-editor');
   assert.deepEqual(ids(api.searchCatalog(catalog, { query: 'lombada', origin: 'forma' })), ['forma-book-object']);
-  assert.equal(ids(api.searchCatalog(catalog, { query: 'espaçamento', kind: 'layout' }))[0], 'forma-spatial-layout');
-  assert.ok(ids(api.searchCatalog(catalog, { query: 'formulário' })).includes('forma-recoverable-forms'));
+  assert.equal(ids(api.searchCatalog(catalog, { query: 'espa\u00e7amento', kind: 'layout' }))[0], 'forma-spatial-layout');
+  assert.ok(ids(api.searchCatalog(catalog, { query: 'formul\u00e1rio' })).includes('forma-recoverable-forms'));
 });
 
 test('literal subject wins an alias tie without replacing field relevance or related matches', () => {
@@ -102,7 +102,7 @@ test('literal subject wins an alias tie without replacing field relevance or rel
   const related = board.results.find(({ entry }) => entry.id === 'forma-adaptive-list-detail');
   assert.equal(shell.match.lexicalScore, related.match.lexicalScore);
   assert.ok(shell.match.literalMatches > related.match.literalMatches);
-  const navigation = ids(api.searchCatalog(catalog, { query: 'navegação', limit: 50 }));
+  const navigation = ids(api.searchCatalog(catalog, { query: 'navega\u00e7\u00e3o', limit: 50 }));
   assert.ok(navigation.includes('forma-clean-shell'));
   assert.ok(navigation.includes('forma-adaptive-list-detail'));
   const higherField = structuredClone(catalog);
@@ -129,7 +129,7 @@ test('browser-safe shared matcher gives the same Portuguese results and order as
   const moduleSource = fs.readFileSync(path.join(root, 'scripts/lib/reference-search.mjs'), 'utf8');
   const browserSource = moduleSource.replace(/^export /gm, '')
     + '\nJSON.stringify(rankReferences(validateCatalog(catalog), {query}).map(result => ({id: result.entry.id, match: result.match})));';
-  for (const query of ['perfil', 'identidade', 'barra lateral', 'lombada', 'fotografia', 'espaçamento', 'formulário']) {
+  for (const query of ['perfil', 'identidade', 'barra lateral', 'lombada', 'fotografia', 'espa\u00e7amento', 'formul\u00e1rio']) {
     const browserResults = JSON.parse(vm.runInNewContext(browserSource, { catalog, query }, { timeout: 5000 }));
     const result = cli('--query', query, '--limit', '50', '--json');
     assert.equal(result.status, 0, result.stderr);

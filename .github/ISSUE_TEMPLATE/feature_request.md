@@ -1,15 +1,15 @@
 ---
-name: Propor melhoria
-about: Um caso de uso ou refinamento concreto
-title: "[Melhoria] "
+name: Suggest an improvement
+about: A concrete use case or refinement
+title: "[Improvement] "
 ---
 
-### Caso de uso e problema
+### Use case and problem
 
-### Mudança proposta
+### Proposed change
 
-### Como verificar o resultado
+### How to verify the result
 
-### Referências e direitos de uso
+### References and usage rights
 
-Use links públicos e não envie material privado sem autorização.
+Use public links and do not submit private material without authorization.

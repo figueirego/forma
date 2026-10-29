@@ -1,6 +1,6 @@
 interface:
   display_name: "Forma Graphs & Data"
-  short_description: "Grafos, mapas e visualizações com dados reais"
-  default_prompt: "Use $forma-graphs-data para projetar esta visualização com relações, fontes e interações verificáveis."
+  short_description: "Graphs, maps, and visualizations with real data"
+  default_prompt: "Use $forma-graphs-data to design this visualization with verifiable relationships, sources, and interactions."
 policy:
   allow_implicit_invocation: true

@@ -34,9 +34,9 @@ class PackageTests(unittest.TestCase):
         self.addCleanup(self.tmp.cleanup)
         self.base = Path(self.tmp.name)
         self.source = self.base / "canonical"
-        write(self.source, "SKILL.md", '---\nname: forma\ndescription: "Synthetic fixture"\n---\n# Forma\n[Guide](references/guide.md#título-útil)\n[Again](references/guide.md#repetido-1)\n')
-        write(self.source, "references/guide.md", "# Título útil\n## Repetido\n## Repetido\n\n```markdown\n[Not a real link](absent.md)\n```\n")
-        write(self.source, "agents/openai.yaml", 'interface:\n  default_prompt: "Use $forma para esta fixture."\npolicy:\n  allow_implicit_invocation: true\n')
+        write(self.source, "SKILL.md", '---\nname: forma\ndescription: "Synthetic fixture"\n---\n# Forma\n[Guide](references/guide.md#t\u00edtulo-\u00fatil)\n[Again](references/guide.md#repetido-1)\n')
+        write(self.source, "references/guide.md", "# T\u00edtulo \u00fatil\n## Repetido\n## Repetido\n\n```markdown\n[Not a real link](absent.md)\n```\n")
+        write(self.source, "agents/openai.yaml", 'interface:\n  default_prompt: "Use $forma for this fixture."\npolicy:\n  allow_implicit_invocation: true\n')
         write(self.source, "assets/icon.svg", '<svg viewBox="0 0 64 64"></svg>\n')
 
     def plugin(self):
@@ -101,7 +101,7 @@ class PackageTests(unittest.TestCase):
     def test_reference_definition_and_angle_path_with_spaces(self):
         write(self.source, "references/a b.md", "# Another\n")
         with (self.source / "SKILL.md").open("a", encoding="utf-8") as stream:
-            stream.write('\n[Space](<references/a b.md#another> "title")\n[Named][ref]\n[ref]: references/guide.md#título-útil\n')
+            stream.write('\n[Space](<references/a b.md#another> "title")\n[Named][ref]\n[ref]: references/guide.md#t\u00edtulo-\u00fatil\n')
         self.assertEqual(audit(self.source)["status"], "pass")
 
     def test_broken_file_and_heading_fail_separately(self):

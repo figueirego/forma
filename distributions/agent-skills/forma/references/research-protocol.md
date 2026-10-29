@@ -1,34 +1,34 @@
-# Pesquisa prática
+# Practical research
 
-## Teste curto de tarefa
+## Short task test
 
-**Pergunta:** a pessoa consegue alterar uma preferência sem perder o restante do formulário?
+**Question:** can the person change a preference without losing the rest of the form?
 
-**Estado inicial:** conta fictícia com valores conhecidos, tela inicial, sem alterações. **Tarefa neutra:** “Você quer receber apenas avisos importantes. Ajuste sua preferência e confirme que ficou como desejava.” Não revelar caminho ou nome do botão.
+**Initial state:** a fictional account with known values, the home screen and no changes. **Neutral task:** "You want to receive only important notifications. Adjust your preference and confirm that it is set as you intended." Do not reveal the path or button name.
 
-**Sucesso observável:** preferência persistida correta, resultado entendido e outros dados preservados. **Registro:** caminho, hesitações, erros, ajuda, abandono e estado final. Tempo só compara condições equivalentes.
+**Observable success:** the correct preference is persisted, the result is understood and other data is preserved. **Record:** path, hesitation, errors, assistance, abandonment and final state. Time comparisons require equivalent conditions.
 
-**Moderação:** a interface está sendo testada, não a pessoa. Não ensine o caminho; se houver bloqueio, registre ponto e ajuda antes de continuar. Conclusão com ajuda não vira sucesso sem ajuda. Use consentimento e dados fictícios; grave somente quando permitido.
+**Moderation:** the interface is being tested, not the person. Do not teach the path; if they are blocked, record the point and assistance before continuing. Assisted completion is not unassisted success. Obtain consent and use fictional data; record only when permitted.
 
-**Síntese:** observação → impacto → hipótese → alteração → reteste. Se duas pessoas buscam o controle em Privacidade, há hipótese de vocabulário/agrupamento, não prova de que toda a população faz isso.
+**Synthesis:** observation -> impact -> hypothesis -> change -> retest. If two people look for the control in Privacy, that suggests a vocabulary/grouping hypothesis, not proof that the entire population does so.
 
-## Método e participantes
+## Method and participants
 
-Recrute pelo trabalho, experiência, contexto e acesso relevantes. Amostra qualitativa pequena revela problemas, não estima prevalência populacional. Não use “cinco usuários provam usabilidade”. Registre limitações do recrutamento.
+Recruit for the relevant work, experience, context and access needs. A small qualitative sample reveals problems; it does not estimate population prevalence. Do not claim that "five users prove usability." Record recruitment limitations.
 
-Card sorting investiga agrupamento; tree testing verifica localização; teste de compreensão verifica mensagem; preferência estética não prova conversão. Escolha o método pela incerteza.
+Card sorting investigates grouping; tree testing checks findability; comprehension testing checks the message; aesthetic preference does not prove conversion. Choose the method according to the uncertainty.
 
-## Comparação e métricas
+## Comparison and metrics
 
-Compare mesma tarefa/conteúdo/condição, alterne ordem quando viável e registre aprendizagem. Defina melhora antes de mostrar versões. Para A/B, fixe unidade de randomização, exposição, sucesso, janela, segmentos e guardrails; dimensione amostra com análise apropriada. Não declarar vitória por poucos eventos ou inspeção precoce. Sem tráfego suficiente, use qualitativo e monitoramento sem alegar causalidade.
+Compare the same task/content/conditions, alternate the order where feasible and record learning effects. Define improvement before showing versions. For A/B tests, fix the randomization unit, exposure, success, window, segments and guardrails; size the sample using an appropriate analysis. Do not declare victory from a few events or early inspection. Without sufficient traffic, use qualitative research and monitoring without claiming causality.
 
-| Métrica | Definição necessária | Armadilha |
+| Metric | Required definition | Pitfall |
 |---|---|---|
-| Conclusão | Quem iniciou e qual estado persistido conta | Clique confundido com resultado |
-| Erro | Etapa, evento e recuperação | Validação útil contada como defeito |
-| Tempo | Início/fim, interrupção e ajuda | Abandono parece tarefa rápida |
-| Ativação | Primeiro valor real | Cadastro sem uso |
-| Conversão | Exposição e janela | Tráfego diferente confundido com efeito |
-| Suporte | Contato por fluxo/usuário e causa | Canal inacessível parece menos problemas |
+| Completion | Who started and which persisted state counts | Confusing a click with an outcome |
+| Error | Stage, event and recovery | Counting useful validation as a defect |
+| Time | Start/end, interruptions and assistance | Abandonment looks like a fast task |
+| Activation | First real value | Registration without use |
+| Conversion | Exposure and window | Confusing different traffic with an effect |
+| Support | Contact per flow/user and cause | An inaccessible channel looks like fewer problems |
 
-Sem participantes/evidência, entregue plano e hipóteses, não uma pesquisa fictícia.
+Without participants/evidence, deliver a plan and hypotheses, not fictional research.

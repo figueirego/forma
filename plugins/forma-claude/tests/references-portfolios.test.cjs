@@ -63,7 +63,7 @@ test('CLI keeps portfolios, sites and patterns as explicit independent collectio
 });
 
 test('accented name lookup and source details survive CLI serialization without URL normalization', () => {
-  const name = 'Ana Sá Oliveira';
+  const name = 'Ana S\u00e1 Oliveira';
   const entry = index.entries.find(item => item.name === name);
   assert.ok(entry);
   for (const query of [name, 'ana sa oliveira']) {

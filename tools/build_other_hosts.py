@@ -44,14 +44,14 @@ def adapt(codex, portable=False):
                     replacement += '#' + parsed.fragment
                 return match.group(0).replace('(' + raw + ')', '(' + replacement + ')')
             text = re.sub(r'\[[^\]\n]*\]\(([^)\n]+)\)', link, data.decode())
-            root = 'a pasta `forma/` instalada junto às especialistas' if portable else 'a raiz deste plugin, que contém `.claude-plugin/`'
-            text = re.sub(r'^Neste plugin, `<forma-root>`[^\n]*',
-                          f'Nesta distribuição, `<forma-root>` é {root}; contém `references/`, `assets/`, `scripts/` e `tests/`. Resolva-a a partir deste arquivo.',
+            root = 'the `forma/` directory installed beside the specialists' if portable else 'this plugin root, containing `.claude-plugin/`'
+            text = re.sub(r'^In this plugin, `<forma-root>`[^\n]*',
+                          f'In this distribution, `<forma-root>` is {root}; it contains `references/`, `assets/`, `scripts/` and `tests/`. Resolve it relative to this file.',
                           text, flags=re.M)
             if portable and path == Path('skills/forma/SKILL.md'):
-                text = text.replace('No plugin, as especialistas estão nas pastas irmãs.',
-                                    'Neste pacote de Agent Skills, as especialistas estão nas pastas irmãs.')
-                text = text.replace('# Forma\n', '# Forma\n\nA notação `$forma` identifica a skill; use a invocação realmente disponível no host (por exemplo `/forma`), ou peça em linguagem natural para usar Forma. Os recursos compartilhados ficam nesta pasta; mantenha as 12 pastas juntas no mesmo diretório de skills.\n', 1)
+                text = text.replace('In this plugin, specialists are in sibling directories.',
+                                    'In this Agent Skills package, specialists are in sibling directories.')
+                text = text.replace('# Forma\n', '# Forma\n\nThe `$forma` notation identifies the skill; use the invocation supported by your host (for example `/forma`), or ask to use Forma in natural language. Shared resources are in this directory; keep all 12 directories together in the same skills directory.\n', 1)
             data = text.encode()
         if path.suffix == '.md' or (path.name == 'openai.yaml' and path.parent.name == 'agents'):
             replacement = r'$\1' if portable else r'/forma:\1'
@@ -67,7 +67,7 @@ def build_other_hosts(destination):
     files, entries, version = adapt(codex)
     manifest = {
         'name': 'forma', 'version': version,
-        'description': 'Design com uma coordenadora e 11 especialistas, da intenção ao acabamento.',
+        'description': 'Design with one coordinator and 11 specialists, from intent to refinement.',
         'author': {'name': 'Forma'}, 'license': 'MIT',
         'homepage': 'https://github.com/figueirego/forma',
         'repository': 'https://github.com/figueirego/forma',
@@ -80,23 +80,23 @@ def build_other_hosts(destination):
     files[Path('catalog.json')] = json_bytes(catalog)
     files[Path('provenance.json')] = json_bytes({'version': version, 'source': 'canonical Forma skill',
         'transformations': ['Flatten skill directories', 'Rebase local Markdown links', 'Use Claude Code skill invocations'], 'files': entries})
-    files[Path('README.md')] = f'''# Forma {version} para Claude Code
+    files[Path('README.md')] = f'''# Forma {version} for Claude Code
 
-Uma coordenadora e 11 especialistas. Use `/forma:forma` ou `/forma:forma-interface`.
-O marketplace comunitário está na raiz do repositório: `claude plugin marketplace add figueirego/forma`, depois `claude plugin install forma@forma-community`.
-Para experimentar este checkout: `claude --plugin-dir ./plugins/forma-claude` a partir da raiz do repositório.
+One coordinator and 11 specialists. Use `/forma:forma` or `/forma:forma-interface`.
+The community marketplace is at the repository root: `claude plugin marketplace add figueirego/forma`, then `claude plugin install forma@forma-community`.
+To try this checkout: `claude --plugin-dir ./plugins/forma-claude` from the repository root.
 
-[Coordenadora](skills/forma/SKILL.md), [catálogo](catalog.json) e [operação](references/plugin-operation.md).
-Os arquivos de apresentação `agents/openai.yaml` são preservados para procedência; Claude Code não depende deles.
-Não instala ECC, REA, ferramentas de navegador, modelos, serviços ou hooks. Confira recursos e permissões do seu host.
-O editor de aparência é um contrato de implementação, não um componente automaticamente instalado em produtos.
+[Coordinator](skills/forma/SKILL.md), [catalog](catalog.json) and [operation](references/plugin-operation.md).
+The `agents/openai.yaml` presentation files are preserved for provenance; Claude Code does not depend on them.
+This package does not install ECC, REA, browser tools, models, services or hooks. Check your host's capabilities and permissions.
+The appearance editor is an implementation contract, not a component automatically installed in products.
 
-Gerado por `npm run build` a partir de `source/forma/`. Não editar esta cópia.
-[MIT](LICENSE) e [avisos de terceiros](THIRD_PARTY_NOTICES.md).
+Generated by `npm run build` from `source/forma/`. Do not edit this copy.
+[MIT](LICENSE) and [third-party notices](THIRD_PARTY_NOTICES.md).
 '''.encode()
     write_files(destination / 'plugins/forma-claude', files)
     marketplace = {'name': 'forma-community', 'owner': {'name': 'Forma'},
-                   'description': 'Forma: sistema comunitário de design, da intenção ao acabamento.',
+                   'description': 'Forma: a community design system, from intent to refinement.',
                    'plugins': [{'name': 'forma', 'source': './plugins/forma-claude', 'version': version,
                                 'description': manifest['description']}]}
     write_files(destination, {Path('.claude-plugin/marketplace.json'): json_bytes(marketplace)})

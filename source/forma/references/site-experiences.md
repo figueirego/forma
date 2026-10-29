@@ -1,33 +1,33 @@
-# Estudos de sites: técnicas e limites
+# Website studies: techniques and limits
 
-Amostra investigada em 29/10/2026, no navegador IAB, viewport CSS **1280 × 720**, DPR **2**. Os três estudos abaixo são delimitados; não representam auditoria dos 202 sites. A consulta ao índice continua marcada como candidata histórica. Não foram copiados código, mídia ou fontes para o pacote, nem instaladas dependências desses sites. Capturas brutas de terceiros ficam fora da distribuição. Para repetir ou ampliar, use o [protocolo de experiências](experience-library.md).
+Sample investigated on 2026-10-29 in the IAB browser, CSS viewport **1280 x 720**, DPR **2**. The three studies below are bounded; they do not represent an audit of the 202 sites. Index lookup remains marked as a historical candidate. No code, media or fonts were copied into the package, and no dependencies from these sites were installed. Raw third-party captures remain outside the distribution. To repeat or expand the work, use the [experience protocol](experience-library.md).
 
-## Controles ligados à prévia
+## Controls connected to the preview
 
-**Fonte:** [DialKit](https://www.dialkit.dev/). **Observado:** o controle de peso tipográfico passou de 450 a 800 pela tecla End; o `font-weight` computado do título acompanhou a alteração. Isso confirma essa interação desktop, não todos os controles.
+**Source:** [DialKit](https://www.dialkit.dev/). **Observed:** the typography weight control changed from 450 to 800 using the End key; the heading's computed `font-weight` followed the change. This confirms that desktop interaction, not every control.
 
-**Código lido:** [store](https://github.com/joshpuckett/dialkit/blob/1ef9fe8c3abfe7fd3338b45e5f4350407d49ac2c/src/store/DialStore.ts#L516), [normalização](https://github.com/joshpuckett/dialkit/blob/1ef9fe8c3abfe7fd3338b45e5f4350407d49ac2c/src/numeric.ts#L9) e [adaptador React](https://github.com/joshpuckett/dialkit/blob/1ef9fe8c3abfe7fd3338b45e5f4350407d49ac2c/src/hooks/useDialStorePanel.ts#L47). Snapshot `1ef9fe8c3abfe7fd3338b45e5f4350407d49ac2c`, pacote 2.1.0, [MIT ©2026 Josh Puckett](https://github.com/joshpuckett/dialkit/blob/1ef9fe8c3abfe7fd3338b45e5f4350407d49ac2c/LICENSE). Há store compartilhado e adaptadores; não foi comprovado que esse commit está publicado no site. Testes upstream não foram executados.
+**Code read:** [store](https://github.com/joshpuckett/dialkit/blob/1ef9fe8c3abfe7fd3338b45e5f4350407d49ac2c/src/store/DialStore.ts#L516), [normalization](https://github.com/joshpuckett/dialkit/blob/1ef9fe8c3abfe7fd3338b45e5f4350407d49ac2c/src/numeric.ts#L9) and [React adapter](https://github.com/joshpuckett/dialkit/blob/1ef9fe8c3abfe7fd3338b45e5f4350407d49ac2c/src/hooks/useDialStorePanel.ts#L47). Snapshot `1ef9fe8c3abfe7fd3338b45e5f4350407d49ac2c`, package 2.1.0, [MIT copyright 2026 Josh Puckett](https://github.com/joshpuckett/dialkit/blob/1ef9fe8c3abfe7fd3338b45e5f4350407d49ac2c/LICENSE). There is a shared store and adapters; this study did not prove that the site deploys that commit. Upstream tests were not run.
 
-**Decisão Forma:** preservar uma fonte de estado para controle e prévia, normalizar todas as entradas e liberar assinaturas ao desmontar. O caminho programático lido não normaliza todos os sliders; autosave de presets também não equivale a Salvar/Cancelar. Portanto, não transferir essas políticas para nossos editores.
+**Forma decision:** preserve one state source for the control and preview, normalize every input and release subscriptions on unmount. The programmatic path examined does not normalize every slider; preset autosave is also not equivalent to Save/Cancel. Therefore, do not transfer those policies to our editors.
 
-**Aplicação documental:** [contrato de controles](component-patterns.md#controles-numéricos-e-prévia). Implementação no consumidor permanece pendente. Testar teclado, ponteiro, setter, extremos, passos fracionários, reset, cancelamento e controles vizinhos.
+**Documented application:** [control contract](component-patterns.md#numeric-controls-and-preview). Consumer implementation remains pending. Test keyboard, pointer, setter, extremes, fractional steps, reset, cancellation and neighboring controls.
 
-## Tipografia demonstrada no conteúdo
+## Typography demonstrated in content
 
-**Fonte:** [PP Neue Montreal](https://neuemontreal.com/). **Observado:** navegação por seções e comparação de pesos em título/texto. Clicar em Weights levou à região de demonstração. O DOM declarou `Framer b354274`; o título inicial usou família PP Neue Montreal Text Regular e 24px. Isso não identifica o mecanismo de todas as animações.
+**Source:** [PP Neue Montreal](https://neuemontreal.com/). **Observed:** section navigation and comparison of weights in headings/body text. Clicking Weights moved to the demonstration region. The DOM declared `Framer b354274`; the initial heading used the PP Neue Montreal Text Regular family at 24px. This does not identify every animation mechanism.
 
-**Decisão Forma:** comparar título e leitura com conteúdo real, acentos e números; guardar tamanho, peso, entrelinha e comprimento de linha como papéis distintos. A amostra visual com texto muito fino sobre vídeo exige teste de legibilidade, não adoção automática. Use o [sistema visual](visual-system.md) e [contratos espaciais](layout-spatial-contracts.md).
+**Forma decision:** compare headings and reading text using real content, accents and numbers; preserve size, weight, line height and line length as distinct roles. The visual sample with very thin text over video requires legibility testing, not automatic adoption. Use the [visual system](visual-system.md) and [spatial contracts](layout-spatial-contracts.md).
 
-**Direitos e limites:** fonte comercial e assets não foram incorporados; licença de reuso não foi estabelecida neste estudo. Reconstrução independente usa fontes autorizadas do projeto. Não foram testados mobile, leitor de tela, todos os estados de rolagem ou redução de movimento. Validação no consumidor deve cobrir essas condições e fallback de fonte.
+**Rights and limits:** the commercial typeface and assets were not incorporated; a reuse license was not established in this study. Independent reconstruction uses the project's authorized fonts. Mobile, screen readers, all scroll states and reduced motion were not tested. Consumer validation must cover those conditions and font fallback.
 
-## Dados com representação textual
+## Data with a text representation
 
-**Fonte:** [relatório de software em saúde da thoughtbot](https://thoughtbot.com/healthcare-software-delivery-report). **Observado:** regiões editoriais, estatísticas, listas comparativas e seção de metodologia. O DOM expôs valores por rótulos acessíveis, como percentual, e oito elementos canvas. O recorte capturado durante a entrada mostrou contagem intermediária; não usar esse frame como valor final.
+**Source:** [thoughtbot's healthcare software report](https://thoughtbot.com/healthcare-software-delivery-report). **Observed:** editorial regions, statistics, comparison lists and a methodology section. The DOM exposed values through accessible labels, such as percentages, and eight canvas elements. The excerpt captured during entry showed an intermediate count; do not use that frame as the final value.
 
-**Decisão Forma:** separar dados finais da animação de apresentação e manter representação textual equivalente. A existência de canvas não comprova WebGL nem uma biblioteca específica. Quando um contador anima, teclado/leitor e captura de comparação devem distinguir transição de resultado estável. Use [dados e dashboards](data-dashboards.md).
+**Forma decision:** separate final data from presentation animation and retain an equivalent text representation. Canvas elements do not prove WebGL or any specific library. When a counter animates, keyboard/screen-reader behavior and comparison captures must distinguish transitions from stable results. Use [data and dashboards](data-dashboards.md).
 
-**Direitos e limites:** não reutilizamos números de pesquisa como dados do produto, nem código/assets do site. Não auditamos validade científica, leitor de tela real, desempenho ou comportamento mobile. Para o consumidor, comparar valores/legenda/texto, interromper animação, testar movimento reduzido, carregamento e ausência de dados.
+**Rights and limits:** research figures were not reused as product data, and site code/assets were not reused. Scientific validity, real screen-reader use, performance and mobile behavior were not audited. For the consumer, compare values/legend/text, interrupt animation, and test reduced motion, loading and missing data.
 
-## O que entra no repertório
+## What enters the knowledge base
 
-Entram perguntas, decisões, contraindicações, fontes e caminhos de verificação. O código público pode ser estudado ou adotado conforme licença; não se torna autoria Forma por receber outro nome. Uma experiência só passa a validada no destino quando houver consumidor e prova próprios. Os demais sites continuam como candidatas para investigação conforme o caso de uso.
+Include questions, decisions, contraindications, sources and verification paths. Public code may be studied or adopted according to its license; renaming it does not make it Forma-authored. An experience becomes validated at the destination only when it has its own consumer and evidence. The other sites remain investigation candidates according to the use case.

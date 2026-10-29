@@ -1,115 +1,115 @@
-# Busca e descoberta
+# Search and discovery
 
-Use esta referência para campo de busca, sugestões, filtros, catálogo, paleta de comandos e pesquisa semântica. Aparência, relevância, escopo, concorrência e recuperação fazem parte do mesmo contrato. Preserve o domínio do produto: tarefas de estudo não ganham busca visual apenas por receberem um botão colorido.
+Use this reference for search fields, suggestions, filters, catalogs, command palettes and semantic search. Appearance, relevance, scope, concurrency and recovery are part of the same contract. Preserve the product domain: study tasks do not gain visual search merely by receiving a colorful button.
 
-## Comece por uma consulta concreta
+## Start with a concrete query
 
-Exemplo de especificação: “azul” no acervo atual + tag “referência” deve retornar itens daquela biblioteca que atendam ao filtro escolhido. Defina se azul significa palavra no título, cor atribuída pelo usuário ou cor extraída da imagem. Esses resultados são diferentes. Mostre o filtro ativo e permita removê-lo sem apagar filtros independentes.
+Specification example: "blue" in the current collection + the "reference" tag should return items from that library matching the selected filter. Define whether blue means a word in the title, a user-assigned color or a color extracted from an image. These are different results. Show the active filter and let users remove it without erasing independent filters.
 
-Antes de implementar, registre:
+Before implementation, record:
 
-| Dimensão | Decisão necessária |
+| Dimension | Required decision |
 |---|---|
-| Universo | Biblioteca/workspace, coleção e descendentes, favoritos, lixeira, permissão e tipos de item |
-| Consulta | Campos pesquisados, prefixo/frase, normalização Unicode, acentos, idioma, comprimento mínimo |
-| Filtros | AND/OR entre tags, cor, tipo, data e texto; chips, valores e remoção |
-| Motor | Substring, índice textual, vetores ou combinação; estado de instalação/indexação |
-| Ranking | Relevância, data, grupos por tipo, deduplicação e desempate estável |
-| Completude | Paginação, limites, itens ainda não indexados, resultados parciais |
-| Estado | Texto digitado, consulta aplicada, request em andamento, resultado aceito e histórico |
-| Persistência | Sessão versus biblioteca versus perfil; histórico, recentes e privacidade |
+| Universe | Library/workspace, collection and descendants, favorites, trash, permissions and item types |
+| Query | Searched fields, prefix/phrase, Unicode normalization, accents, language, minimum length |
+| Filters | AND/OR between tags, color, type, date and text; chips, values and removal |
+| Engine | Substring, text index, vectors or a combination; installation/indexing state |
+| Ranking | Relevance, date, type groups, deduplication and stable tie-breaking |
+| Completeness | Pagination, limits, items not yet indexed, partial results |
+| State | Typed text, applied query, in-flight request, accepted result and history |
+| Persistence | Session versus library versus profile; history, recents and privacy |
 
-Não apresente concatenação de listas como fusão de scores. Se o ranking for relevância, um botão que diz “Mais recentes” precisa refletir a ordenação efetiva ou explicar a exceção.
+Do not present list concatenation as score fusion. If ranking is relevance-based, a button labeled "Most recent" must reflect actual ordering or explain the exception.
 
-## Superfícies e geometria
+## Surfaces and geometry
 
-Um campo na toolbar pode abrir sugestões ancoradas abaixo, com mesma largura e espaçamento consistente. O ícone de cor pode abrir outro popover; Cmd/Ctrl+K pode abrir uma paleta modal. Observe cada um separadamente: retângulo, âncora, elevação, scrim, blur, foco, rolagem, clique fora e Escape.
+A toolbar field can open suggestions anchored below, at the same width and with consistent spacing. The color icon may open another popover; Cmd/Ctrl+K may open a modal palette. Observe each separately: rectangle, anchor, elevation, scrim, blur, focus, scrolling, outside click and Escape.
 
-- Diferencie `focused-empty`, `typing`, `loading`, `results`, `no-results`, `error`, `partial` e `unavailable`. Espaços em branco não devem produzir comportamento arbitrário.
-- Não use scrim ou blur por convenção estética: reproduza o contrato observado. Um popover pode escurecer o contexto sem criar um modal com foco preso.
-- Limite o painel à área visível, faça flip/shift quando necessário e teste bordas, zoom e teclado virtual. Medidas desktop não provam mobile.
-- Em faixas horizontais, indique conteúdo fora da área com fade ou controle. Não confunda seis chips visíveis com seis opções totais.
-- Suporte nomes longos, RTL, cor selecionada, hover, foco, toque e arraste sem disparar clique ao terminar o gesto.
+- Distinguish `focused-empty`, `typing`, `loading`, `results`, `no-results`, `error`, `partial` and `unavailable`. Whitespace must not produce arbitrary behavior.
+- Do not use a scrim or blur as an aesthetic convention: reproduce the observed contract. A popover may dim context without creating a focus-trapped modal.
+- Bound the panel to the visible area, flip/shift when needed and test edges, zoom and the virtual keyboard. Desktop measurements do not prove mobile behavior.
+- In horizontal strips, indicate offscreen content with a fade or control. Do not confuse six visible chips with six total options.
+- Support long names, RTL, selected colors, hover, focus, touch and dragging without firing a click when the gesture ends.
 
-## Cores com significados independentes
+## Colors with independent meanings
 
-Mantenha separados: accent da interface; ambiente/pools; cor atribuída a item/coleção; paleta extraída dos pixels; material de perfil/livro. Uma nota com papel verde não é automaticamente uma imagem que contém verde.
+Keep separate: interface accent; environment/pools; color assigned to an item/collection; palette extracted from pixels; profile/book material. A note with green paper is not automatically an image containing green.
 
-Busca por cor exige definição de espaço de cor, distância/tolerância, percentual mínimo de pixels, tratamento de preto/branco/cinza e de transparência. A cor de um chip é representação do filtro, não prova de correspondência exata de RGB. Mostre nomes acessíveis e estado selecionado além da cor.
+Color search requires a defined color space, distance/tolerance, minimum pixel percentage, handling of black/white/gray and transparency. A chip's color represents the filter, not proof of an exact RGB match. Show accessible names and selected state beyond color alone.
 
-Escolher um chip nomeado, arrastar um seletor e informar um valor customizado podem produzir filtros diferentes. Defina commit, preview, remoção e reset de cada ação. Não altere o tema ao aplicar um filtro de conteúdo.
+Choosing a named chip, dragging a selector and entering a custom value may produce different filters. Define commit, preview, removal and reset for each action. Do not change the theme when applying a content filter.
 
-## Teclado e foco
+## Keyboard and focus
 
-Use o padrão semântico adequado ao comportamento real. Sugestões navegáveis pedem input identificado, relação com painel/lista, expansão e item ativo; grupos de filtros podem usar botões/toggles com nomes próprios. Não aplique `combobox` apenas para decorar um input.
+Use the semantic pattern appropriate to actual behavior. Navigable suggestions need an identified input, panel/list relationship, expansion and active item; filter groups may use buttons/toggles with their own names. Do not apply `combobox` merely to decorate an input.
 
-Especifique Tab, Shift+Tab, setas, Enter, Escape, Backspace com campo vazio e atalho global. Diferencie:
+Specify Tab, Shift+Tab, arrows, Enter, Escape, Backspace with an empty field and the global shortcut. Distinguish:
 
-- **Fechar:** oculta sugestões ou perde foco; não implica apagar consulta.
-- **Limpar texto:** remove apenas texto, se esse for o rótulo.
-- **Limpar busca:** pode remover texto e todos os filtros, mas deve ficar explícito.
-- **Cancelar consulta:** interrompe ou invalida trabalho pendente; blur sozinho não faz isso.
+- **Close:** hides suggestions or removes focus; does not imply clearing the query.
+- **Clear text:** removes only text, if that is the label.
+- **Clear search:** may remove text and all filters, but must be explicit.
+- **Cancel query:** interrupts or invalidates pending work; blur alone does not.
 
-Não capture atalhos de edição indevidamente. IME/composição deve terminar antes de enviar Enter ou disparar requisição definitiva. Preserve foco ao remover chip e devolva-o ao disparador ao fechar modal. Resultados precisam de anúncio resumido, sem ler todo o acervo a cada tecla.
+Do not improperly intercept editing shortcuts. IME/composition must finish before submitting Enter or triggering a definitive request. Preserve focus when removing a chip and return it to the trigger when closing a modal. Results need a concise announcement without reading the entire collection on every keystroke.
 
-## Concorrência e contexto
+## Concurrency and context
 
-Debounce reduz trabalho; não impede resposta fora de ordem. Mantenha uma identidade por consulta com biblioteca, filtros, texto, tipo, ordenação e página. Ao resolver, aceite o resultado somente se essa identidade e a geração ainda forem atuais. Invalide também ao limpar texto, trocar coleção, biblioteca, modo ou fechar a superfície quando o contrato exigir cancelamento.
+Debouncing reduces work; it does not prevent out-of-order responses. Maintain an identity per query with library, filters, text, type, sort and page. On resolution, accept the result only if that identity and generation remain current. Also invalidate when clearing text, changing collection, library or mode, or closing the surface when its contract requires cancellation.
 
-Cancelamento no cliente e cancelamento do motor são coisas diferentes. Se o motor não aborta, descarte respostas antigas e limite concorrência. No backend, fixe a conexão/identidade da biblioteca antes de qualquer `await`; não retome uma operação antiga sobre um banco global recém-trocado.
+Client cancellation and engine cancellation are different. If the engine cannot abort, discard old responses and limit concurrency. In the backend, pin the library connection/identity before any `await`; do not resume an old operation against a newly switched global database.
 
-Se o frontend aguarda 220ms e a grade mais 90ms, a espera pode acumular. Registre o orçamento ponta a ponta; não copie dois timers sem necessidade. Enter deve drenar a pendência sem duplicar chamadas. Loading acompanha a consulta que poderá pintar a tela, não qualquer Promise antiga.
+If the frontend waits 220ms and the grid another 90ms, waits may accumulate. Record the end-to-end budget; do not copy two timers without need. Enter should flush pending work without duplicate calls. Loading follows the query that can paint the screen, not any old Promise.
 
-Cache precisa incluir identidade de biblioteca, escopo, versão dos índices e filtros relevantes. Invalide/versione ao alterar memberships, tags, conteúdo, cor extraída, lixeira, restauração, importação e indexação. Use o mesmo contrato de descendentes nos motores textual e semântico. Se diferirem por decisão de produto, exponha a diferença.
+Cache must include library identity, scope, index versions and relevant filters. Invalidate/version on changes to memberships, tags, content, extracted color, trash, restoration, import and indexing. Use the same descendants contract in text and semantic engines. If they differ by product decision, expose the difference.
 
-## Semântica e estados de dados
+## Semantics and data states
 
-Separar instalação do modelo, indexação do acervo e consulta. Modelo instalado não significa acervo completo ou relevante. Documente execução local/remota, custo de download, espaço, cancelamento, falha e fallback. Não simule “IA” com resultados estáticos nem prometa busca semântica a partir de um campo bonito.
+Separate model installation, collection indexing and querying. An installed model does not mean the collection is complete or relevant. Document local/remote execution, download cost, disk space, cancellation, failure and fallback. Do not simulate "AI" with static results or promise semantic search from an attractive field.
 
-Resultados vazios podem significar: nenhum item; filtros muito restritos; acervo não indexado; modelo ausente; permissão; erro. Mostre estado correto e recuperação. Em falha parcial, preserve resultados válidos, indique fonte indisponível e permita retry. Se houver limite sem paginação, não mostre total como se fosse completo.
+Empty results may mean: no items; overly restrictive filters; collection not indexed; missing model; permissions; error. Show the correct state and recovery. On partial failure, preserve valid results, identify the unavailable source and allow retry. If there is a limit without pagination, do not present a total as complete.
 
-Histórico de consultas e itens vistos são entidades diferentes. Defina deduplicação, limite, escopo e expiração. “Clear history” precisa informar se limpa consultas, vistos recentes ou ambos; não misture bibliotecas. Não carregue títulos privados em evidências compartilhadas sem necessidade.
+Query history and viewed items are different entities. Define deduplication, limits, scope and expiration. "Clear history" must say whether it clears queries, recently viewed items or both; do not mix libraries. Do not include private titles in shared evidence unnecessarily.
 
-## Evidência da referência desktop — artefato 0.19.0
+## Desktop reference evidence - artifact 0.19.0
 
-Extração estática do renderer SHA256 `038a8f7cbd96a203799799468673ce7bdb1e3f2c6ef32dcae36672876925a184`, confrontada com capturas do usuário. Observação nativa confirmou a toolbar em repouso; a ferramenta de controle da janela não permitiu testar a digitação nesta revisão. Estes detalhes descrevem o build analisado, não regras universais:
+Static extraction from renderer SHA256 `038a8f7cbd96a203799799468673ce7bdb1e3f2c6ef32dcae36672876925a184`, compared with user captures. Native observation confirmed the toolbar at rest; the window-control tool did not permit typing tests in this revision. These details describe the analyzed build, not universal rules:
 
-- Campo `R3`: pill de 40px, min240/max560px; painel abaixo a 8px, mesma largura, raio20px. Focus + consulta aparada vazia + seletor fechado abre sugestões. Digitar oculta esse painel; a grade continua sendo o destino da busca.
-- Painel ancorado usa scrim sem blur; a paleta `S3` de Cmd/Ctrl+K é outra superfície modal. O seletor `M3` também é separado. Não reutilizar o backdrop de Settings para todos.
-- 17 cores nomeadas em faixa horizontal; a captura mostra apenas a primeira parte. São filtros sobre paleta extraída de imagens, não os 11 accents nem os matizes dos pools.
-- Consulta de header tem debounce220ms; Enter aplica e registra histórico, depois perde foco. Escape apenas perde foco; não limpa consulta nem prova cancelamento da pendência. O clear geral limpa texto, tags e cor.
-- Pesquisa textual usa SQLite FTS5 com AND entre termos e prefixo somente no último: `glass ring` vira `"glass" AND "ring"*`. Aspas digitadas não criam busca de frase neste parser. Semântica usa CLIP local quando disponível; resultados heterogêneos são concatenados/deduplicados, não uma fusão de ranking comparável entre tipos.
-- A rota semântica ativa automaticamente com modelo instalado, texto aparado com mais de1 caractere e fora de Trash/Favorites. Cor/tags sem texto seguem o caminho SQL. Tags são filtros exatos, AND e sem diferenciar caixa. Somente a paleta `S3` interpreta `#` inicial e Space/Tab como adição de tag; não atribua essa sintaxe ao campo inline `R3`.
-- Picker usa SV + hue, presets, hex e conta-gotas quando disponível. A cor provisória só é aplicada por preset/Search/Enter. O build não limita sua posição ao viewport e pode aplicar a última cor válida quando Enter recebe hex inválido; são pontos de correção ao adaptar, não padrões a copiar.
-- Histórico guarda até20 consultas e24 itens vistos por biblioteca, em arquivos separados dos acervos; o painel mostra até8 consultas. Clear history e Clear recently viewed são ações distintas. O placeholder de significado depende do modelo instalado, sem provar que a indexação está completa.
-- Riscos estáticos a não herdar: escopo recursivo da consulta textual versus coleção exata em vetores; cache de vetores sem invalidação em alguns caminhos de membership; tratamento incompleto de falhas/cancelamento. Não foram reproduzidos por injeção de falhas no acervo do usuário.
+- `R3` field: 40px pill, min240/max560px; panel 8px below, same width, 20px radius. Focus + empty trimmed query + closed picker opens suggestions. Typing hides that panel; the grid remains the search destination.
+- The anchored panel uses a scrim without blur; the Cmd/Ctrl+K `S3` palette is a separate modal surface. The `M3` picker is also separate. Do not reuse the Settings backdrop for all of them.
+- 17 named colors in a horizontal strip; the screenshot shows only the first portion. They filter image-extracted palettes, not the 11 accents or pool hues.
+- Header querying has a 220ms debounce; Enter applies and records history, then blurs. Escape only blurs; it neither clears the query nor proves pending work was canceled. General clear removes text, tags and color.
+- Text search uses SQLite FTS5 with AND between terms and a prefix only on the last: `glass ring` becomes `"glass" AND "ring"*`. Typed quotes do not create phrase searches in this parser. Semantics uses local CLIP when available; heterogeneous results are concatenated/deduplicated, not fused into comparable rankings across types.
+- The semantic route activates automatically with an installed model, trimmed text longer than 1 character and outside Trash/Favorites. Color/tags without text use the SQL path. Tags are exact, case-insensitive AND filters. Only the `S3` palette interprets a leading `#` and Space/Tab as tag addition; do not attribute that syntax to the inline `R3` field.
+- The picker uses SV + hue, presets, hex and an eyedropper when available. Provisional color applies only through preset/Search/Enter. The build does not constrain its position to the viewport and may apply the last valid color when Enter receives invalid hex; these are adaptation fixes, not patterns to copy.
+- History stores up to 20 queries and 24 viewed items per library, in files separate from collections; the panel shows up to 8 queries. Clear history and Clear recently viewed are separate actions. The semantic placeholder depends on an installed model without proving complete indexing.
+- Static risks not to inherit: recursive text scope versus exact collection in vectors; vector cache without invalidation in some membership paths; incomplete failure/cancellation handling. These were not reproduced by injecting failures into the user's collection.
 
-Reprodução fiel exige identidade/versionamento e registro de desvios, como em [fidelidade](reference-fidelity.md). Um defeito comprovado na referência deve ser corrigido deliberadamente, preservando o registro do comportamento original.
+Faithful reproduction requires identity/versioning and a deviation record, as in [fidelity](reference-fidelity.md). A proven reference defect should be corrected deliberately while retaining the original behavior record.
 
-## Matriz mínima de aceite
+## Minimum acceptance matrix
 
-1. Focar vazio, fechar, reabrir, digitar, confirmar, limpar e remover apenas um filtro; conferir estado final e foco.
-2. Aplicar texto + duas tags + cor em escopo definido; comprovar AND/OR e conteúdo retornado.
-3. Consultas A→B com A resolvendo por último; somente B pode substituir resultados.
-4. Trocar biblioteca durante requisição; nenhum item, histórico ou resultado antigo pode surgir no contexto novo.
-5. Aquecer consulta, mover item entre coleções, repetir; resultado precisa refletir o novo membership.
-6. Comparar coleção pai/filha nos motores; testar lixeira, tipo e permissão.
-7. Simular modelo ausente, indexação parcial e falha de uma fonte; diferenciar do vazio legítimo.
-8. Verificar teclado, leitor de tela, janela estreita, zoom, toque, IME e posição do popover junto às bordas.
+1. Focus empty, close, reopen, type, confirm, clear and remove only one filter; check final state and focus.
+2. Apply text + two tags + color within a defined scope; demonstrate AND/OR and returned content.
+3. Queries A -> B with A resolving last; only B may replace results.
+4. Switch libraries during a request; no old item, history or result may appear in the new context.
+5. Warm a query, move an item between collections and repeat; results must reflect new membership.
+6. Compare parent/child collections in the engines; test trash, type and permissions.
+7. Simulate a missing model, partial indexing and one source failing; distinguish these from a legitimate empty result.
+8. Verify keyboard, screen reader, narrow window, zoom, touch, IME and popover positioning near edges.
 
-Escolha casos adequados ao produto e registre os efetivamente executados. Estática confirma mecanismos; screenshot confirma aparência de um estado; só a execução confirma a transição observada.
+Choose cases appropriate to the product and record those actually executed. Static analysis confirms mechanisms; a screenshot confirms one state's appearance; only execution confirms the observed transition.
 
-## Lições de implementação — busca local no Pauta
+## Implementation lessons - local search in Pauta
 
-Exemplo de aceite: uma tarefa “Planejar índices do banco” pode aparecer para “acelerar consultas” sem compartilhar essas palavras. Execute esse caso com o modelo real, registre posição/score e inclua um item irrelevante como controle. Um teste que devolve vetores simulados verifica integração, não relevância semântica.
+Acceptance example: a task "Plan database indexes" may appear for "speed up queries" without sharing those words. Execute that case with the actual model, record rank/score and include an irrelevant item as a control. A test returning simulated vectors verifies integration, not semantic relevance.
 
-- **Modalidade é parte do contrato.** O Pauta implementa embeddings de texto multilíngue (`paraphrase-multilingual-MiniLM-L12-v2`, 384 dimensões, mean pooling normalizado, q8), em Worker/WASM. A referência desktop analisada usa CLIP para relações entre texto e imagem. O primeiro não reconhece sozinho o conteúdo visual de uma imagem. Paleta de pixels e tags também não transformam um encoder textual em multimodal.
-- **Local tem custo e fronteira.** O manifesto desta implementação soma aproximadamente158MB de modelo, tokenizer e runtime, servidos pela origem da aplicação, com modelos remotos desativados. Consulta e conteúdo não precisam sair para um serviço de inferência. Documentar versão, revisão, hashes/licenças, primeira carga e cache; medir tempo/memória em dispositivo alvo. Assets presentes no projeto não provam que o navegador os carregou nem que funcionará offline após uma nova sessão.
-- **Ranking precisa de avaliação.** A implementação apresenta hits semânticos e acrescenta matches textuais ainda ausentes. Isso é concatenação/deduplicação, não fusão de scores calibrados. O limiar depende do modelo e do acervo; não transformar um valor usado no protótipo em constante universal. Avaliar paráfrases, português, notas longas, termos exatos, itens irrelevantes e filtros combinados.
-- **Pendente não é vazio.** Durante download/inicialização/inferência, preservar hits textuais provisórios e indicar busca em andamento. Só mostrar vazio definitivo depois de concluir as fontes previstas. Erro deve oferecer retry e identificar fallback textual; limpar/trocar biblioteca deve encerrar o estado pendente da consulta anterior.
-- **Uma consulta possui identidade.** Biblioteca + revisão dos dados + filtros + texto + modo formam o contexto. Cancelar timer/cliente, invalidar geração e validar identidade após cada `await`. Cancelamento cooperativo no Worker pode deixar a inferência atual terminar; descarte da resposta obsoleta e limite de trabalho continuam necessários. Timeout com encerramento do Worker é uma recuperação distinta, com custo de reinicialização.
-- **Histórico não é conteúdo nem autenticação.** Consultas (20) e vistos (24) têm limites e ações de limpeza separados por biblioteca; deduplicar tags como conjunto. Validar schema, versão, cor e modo ao ler; erro de storage/corrupção não equivale a histórico vazio e não autoriza sobrescrita automática. Escopo por ID evita mistura acidental, mas `localStorage` não isola usuários que compartilham a mesma origem/perfil do navegador.
-- **Cor exige procedência.** Na tarefa sem imagem, usar a cor atribuída é uma adaptação explícita de domínio. Com imagem, a paleta deriva dos pixels; uma paleta explicitamente vazia não pode cair silenciosamente na cor da tarefa. Neutralidade, hue circular, luminosidade, cromaticidade e proporção mínima de pixels precisam de testes próprios. Amostragem/quantização diferente da referência impede prometer resultados idênticos.
-- **Seletor tem draft e foco próprios.** Hex inválido + Enter mantém erro e não aplica a última cor válida. Escape/clique fora descarta; Search/preset confirma. Limitar/virar popover nas bordas, oferecer sliders acessíveis para S/V, devolver foco ao disparador e fechar ao trocar biblioteca. Um picker antigo não deve interceptar Escape de um novo modal acima dele.
+- **Modality is part of the contract.** Pauta implements multilingual text embeddings (`paraphrase-multilingual-MiniLM-L12-v2`, 384 dimensions, normalized mean pooling, q8), in Worker/WASM. The analyzed desktop reference uses CLIP for text-image relationships. The former does not independently recognize an image's visual contents. Pixel palettes and tags do not make a text encoder multimodal.
+- **Local has a cost and a boundary.** This implementation's manifest totals approximately 158MB of model, tokenizer and runtime, served from the application origin with remote models disabled. Queries and content need not leave for an inference service. Document version, revision, hashes/licenses, first load and cache; measure time/memory on the target device. Assets present in the project do not prove the browser loaded them or that offline operation will work after a new session.
+- **Ranking needs evaluation.** The implementation presents semantic hits and appends missing text matches. This is concatenation/deduplication, not calibrated score fusion. The threshold depends on the model and collection; do not turn a prototype value into a universal constant. Evaluate paraphrases, Portuguese, long notes, exact terms, irrelevant items and combined filters.
+- **Pending is not empty.** During download/initialization/inference, retain provisional text hits and indicate an ongoing search. Show definitive emptiness only after planned sources complete. Errors should offer retry and identify textual fallback; clearing/switching libraries must end the previous query's pending state.
+- **A query has an identity.** Library + data revision + filters + text + mode form the context. Cancel timers/client work, invalidate generation and validate identity after every `await`. Cooperative Worker cancellation may allow current inference to finish; discarding obsolete responses and limiting work remain necessary. Timeout with Worker termination is a different recovery with reinitialization cost.
+- **History is neither content nor authentication.** Queries (20) and viewed items (24) have separate limits and clearing actions per library; deduplicate tags as a set. Validate schema, version, color and mode on read; storage errors/corruption are not equivalent to empty history and do not authorize automatic overwrite. ID-based scope prevents accidental mixing, but `localStorage` does not isolate users sharing an origin/browser profile.
+- **Color requires provenance.** Using assigned color for a task without an image is an explicit domain adaptation. With an image, the palette derives from pixels; an explicitly empty palette must not silently fall back to task color. Neutrality, circular hue, lightness, chromaticity and minimum pixel proportion need their own tests. Sampling/quantization different from the reference prevents promises of identical results.
+- **The picker has its own draft and focus.** Invalid hex + Enter retains the error and does not apply the last valid color. Escape/outside click discards; Search/preset commits. Constrain/flip the popover at edges, offer accessible S/V sliders, return focus to the trigger and close when switching libraries. An old picker must not intercept Escape from a new modal above it.
 
-Estas são decisões e requisitos derivados da implementação e leitura do código. A validação visual, latência real e qualidade dos embeddings no navegador devem constar separadamente no registro de execução.
+These are decisions and requirements derived from implementation and code reading. Visual validation, actual latency and browser embedding quality must appear separately in the execution record.

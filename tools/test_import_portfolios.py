@@ -10,9 +10,9 @@ REVISION = 'c2ee35d6363e7b2ee4c34f40accb478c0f828e4f'
 
 class PortfolioImportTests(unittest.TestCase):
     def test_complete_listing_with_whitespace_and_unicode(self):
-        text = '# List\n## Current Portfolio Count: 999\n## A\n- [Ana] (https://ana.example) [Do not import]\n## J\n- [João](https://joao.example)\n## Contributing\n- [Guide](guide.md)'
+        text = '# List\n## Current Portfolio Count: 999\n## A\n- [Ana] (https://ana.example) [Do not import]\n## J\n- [Jo\u00e3o](https://joao.example)\n## Contributing\n- [Guide](guide.md)'
         index, receipt = build(text, [{'name': 'Ana', 'url': 'https://old.example'}], REVISION)
-        self.assertEqual(['Ana', 'João'], [entry['name'] for entry in index['entries']])
+        self.assertEqual(['Ana', 'Jo\u00e3o'], [entry['name'] for entry in index['entries']])
         self.assertEqual(4, index['entries'][0]['source']['line'])
         self.assertNotIn('Do not import', json.dumps(index))
         self.assertEqual(3, receipt['counts']['union'])

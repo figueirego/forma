@@ -1,7 +1,7 @@
-# Segurança
+# Security
 
-Não publique credenciais, dados pessoais ou exploração detalhada em issues. Use a opção **Report a vulnerability** na aba Security do repositório quando disponível. Se o canal privado estiver indisponível, abra apenas uma solicitação genérica de contato, sem detalhes sensíveis.
+Do not publish credentials, personal data or detailed exploits in issues. Use **Report a vulnerability** in the repository's Security tab when available. If the private channel is unavailable, open only a generic contact request without sensitive details.
 
-Relate a versão, o arquivo ou fluxo afetado, o impacto e uma reprodução sintética mínima. Não acesse dados de outras pessoas para demonstrar o problema.
+Report the version, affected file or workflow, impact and a minimal synthetic reproduction. Do not access other people's data to demonstrate a problem.
 
-O mantenedor avalia relatos conforme disponibilidade, sem prazo de atendimento garantido. O foco inicial de manutenção é a versão mais recente. A Forma fornece instruções e recursos: revise comandos e mudanças no projeto consumidor e mantenha as permissões do host adequadas.
+The maintainer reviews reports as availability permits, with no guaranteed response time. Maintenance initially focuses on the latest version. Forma provides instructions and resources: review commands and changes in the consumer project, and keep host permissions appropriate.

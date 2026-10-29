@@ -1,14 +1,14 @@
-# Instalar Forma no seu assistente
+# Install Forma in your assistant
 
-A mesma fonte gera três formatos: plugin Codex, plugin Claude Code e Agent Skills. Escolha **um formato por host** para evitar entradas duplicadas. Este pacote fornece instruções, referências e recursos locais; não inclui um modelo, editor visual independente, assinatura ou conexão automática com ferramentas externas.
+The same source generates three formats: a Codex plugin, a Claude Code plugin and Agent Skills. Choose **one format per host** to avoid duplicate entries. This package provides instructions, references and local resources; it does not include a model, standalone visual editor, subscription or automatic connection to external tools.
 
-## Baixar
+## Download
 
-Clone `https://github.com/figueirego/forma.git` ou use **Code → Download ZIP** no repositório e extraia tudo. Os diretórios `plugins/` e `distributions/` já estão gerados. Node e dependências de desenvolvimento só são necessários para regenerar ou executar os testes do repositório. O instalador opcional usa Python 3.12+ e somente a biblioteca padrão.
+Clone `https://github.com/figueirego/forma.git` or choose **Code > Download ZIP** in the repository and extract everything. The `plugins/` and `distributions/` directories are already generated. Node and development dependencies are needed only to rebuild the packages or run repository tests. The optional installer uses Python 3.12+ and only the standard library.
 
 ## Codex
 
-Na raiz do clone, com uma versão que tenha `codex plugin`:
+From the clone root, using a version that supports `codex plugin`:
 
 ```sh
 codex plugin marketplace add .
@@ -16,9 +16,9 @@ codex plugin add forma@forma-community
 codex plugin list --marketplace forma-community --json
 ```
 
-Em sessão nova ou após o reload suportado, use `$forma:forma`. Preserve o clone: ele é a origem local do marketplace. Confira no retorno do gerenciador a versão e origem escolhidas. `forma-local`, uma skill avulsa e `forma-community` são instalações independentes.
+In a new session or after a supported reload, use `$forma:forma`. Keep the clone: it is the marketplace's local source. Check the selected version and source in the manager's response. `forma-local`, a standalone skill and `forma-community` are separate installations.
 
-Atualização: atualize o clone, consulte `codex plugin marketplace upgrade --help` e atualize o snapshot de `forma-community` com a sintaxe da sua versão. Depois confira o catálogo e a instalação novamente; não presuma que uma conversa aberta já usa os arquivos novos. Remoção: `codex plugin remove forma@forma-community`; o catálogo pode ser retirado com `codex plugin marketplace remove forma-community`.
+To update: update the clone, inspect `codex plugin marketplace upgrade --help` and refresh the `forma-community` snapshot using your version's syntax. Then check the catalog and installation again; do not assume an open conversation already uses the new files. To remove: `codex plugin remove forma@forma-community`; remove the catalog with `codex plugin marketplace remove forma-community`.
 
 ## Claude Code
 
@@ -28,74 +28,74 @@ claude plugin install forma@forma-community
 claude plugin list
 ```
 
-Em sessão nova, invoque `/forma:forma` seguido do pedido. A especialista de interface, por exemplo, usa `/forma:forma-interface`. Para testar uma branch/clone, sem registrar o marketplace, execute `claude --plugin-dir ./plugins/forma-claude` na raiz desse clone.
+In a new session, invoke `/forma:forma` followed by your request. For example, the interface specialist uses `/forma:forma-interface`. To test a branch or clone without registering the marketplace, run `claude --plugin-dir ./plugins/forma-claude` from that clone's root.
 
-Validação de manifestos, sem chamar modelo:
+Validate manifests without calling a model:
 
 ```sh
 claude plugin validate ./plugins/forma-claude
 claude plugin validate .
 ```
 
-Atualize o catálogo e o plugin com `claude plugin marketplace update forma-community` e `claude plugin update forma@forma-community`, depois inicie nova sessão. Remova somente esta instalação com `claude plugin uninstall forma@forma-community`.
+Update the catalog and plugin with `claude plugin marketplace update forma-community` and `claude plugin update forma@forma-community`, then start a new session. Remove only this installation with `claude plugin uninstall forma@forma-community`.
 
-Essas instruções são para **Claude Code**. Não implicam disponibilidade no chat Claude, Cowork ou loja oficial. Fontes: [plugins](https://code.claude.com/docs/en/plugins), [marketplaces](https://code.claude.com/docs/en/plugin-marketplaces) e [manifesto](https://code.claude.com/docs/en/plugins-reference).
+These instructions are for **Claude Code**. They do not imply availability in Claude chat, Cowork or an official store. Sources: [plugins](https://code.claude.com/docs/en/plugins), [marketplaces](https://code.claude.com/docs/en/plugin-marketplaces) and [manifest reference](https://code.claude.com/docs/en/plugins-reference).
 
-## Agent Skills: Cursor, Copilot, OpenCode e Gemini CLI
+## Agent Skills: Cursor, Copilot, OpenCode and Gemini CLI
 
-O pacote `distributions/agent-skills/` tem 12 pastas irmãs, cada uma com seu `SKILL.md`. O nome da pasta coincide com o nome da skill. Os recursos comuns ficam em `forma/`; links das especialistas apontam para essa pasta. Instale todas juntas. Isso evita depender da descoberta recursiva, que varia entre os hosts.
+The `distributions/agent-skills/` package has 12 sibling directories, each with its own `SKILL.md`. Each directory name matches its skill name. Shared resources live in `forma/`; specialist links point there. Install all directories together. This avoids relying on recursive discovery, which varies by host.
 
-Diretórios aceitos nas documentações consultadas em 28/10/2026:
+Directories supported by documentation consulted on October 28, 2026:
 
-| Host | Projeto | Usuário | Descoberta/invocação |
+| Host | Project | User | Discovery/invocation |
 |---|---|---|---|
-| Cursor | `.agents/skills/` ou `.cursor/skills/` | `~/.agents/skills/` ou `~/.cursor/skills/` | Automática ou `/forma`; recursos do usuário não são necessariamente propagados para cloud/SSH |
-| GitHub Copilot | `.agents/skills/` ou `.github/skills/` | `~/.agents/skills/` ou `~/.copilot/skills/` | Por relevância; no VS Code também `/forma`. Escopo pessoal depende da superfície |
-| OpenCode | `.agents/skills/` ou `.opencode/skills/` | `~/.agents/skills/` ou `~/.config/opencode/skills/` | Agente usa a ferramenta de skill, sujeita às permissões do host |
-| Gemini CLI | `.agents/skills/` ou `.gemini/skills/` | `~/.agents/skills/` ou `~/.gemini/skills/` | `/skills list` e `/skills reload`; ativação pelo agente com consentimento do usuário |
+| Cursor | `.agents/skills/` or `.cursor/skills/` | `~/.agents/skills/` or `~/.cursor/skills/` | Automatic or `/forma`; user resources are not necessarily forwarded to cloud/SSH environments |
+| GitHub Copilot | `.agents/skills/` or `.github/skills/` | `~/.agents/skills/` or `~/.copilot/skills/` | By relevance; also `/forma` in VS Code. Personal scope depends on the surface |
+| OpenCode | `.agents/skills/` or `.opencode/skills/` | `~/.agents/skills/` or `~/.config/opencode/skills/` | The agent uses the skill tool, subject to host permissions |
+| Gemini CLI | `.agents/skills/` or `.gemini/skills/` | `~/.agents/skills/` or `~/.gemini/skills/` | `/skills list` and `/skills reload`; the agent activates skills with user consent |
 
-Fontes: [Cursor](https://cursor.com/docs/skills), [Copilot](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills), [VS Code](https://code.visualstudio.com/docs/agent-customization/agent-skills), [OpenCode](https://opencode.ai/docs/skills/), [Gemini CLI](https://geminicli.com/docs/cli/skills/) e [Agent Skills](https://agentskills.io/specification). Confira a versão instalada: diretórios suportados não significam que todo ambiente remoto recebe seus arquivos pessoais.
+Sources: [Cursor](https://cursor.com/docs/skills), [Copilot](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills), [VS Code](https://code.visualstudio.com/docs/agent-customization/agent-skills), [OpenCode](https://opencode.ai/docs/skills/), [Gemini CLI](https://geminicli.com/docs/cli/skills/) and [Agent Skills](https://agentskills.io/specification). Check your installed version: supported directories do not mean every remote environment receives your personal files.
 
-### Instalação por projeto
+### Project installation
 
-Na raiz do repositório Forma, substitua o caminho pelo seu projeto. A primeira execução apenas mostra o plano:
+From the Forma repository root, substitute your project's path. The first command only displays the plan:
 
 ```sh
-python3 tools/install_skills.py --destination /caminho/do/projeto/.agents/skills
-python3 tools/install_skills.py --destination /caminho/do/projeto/.agents/skills --apply
+python3 tools/install_skills.py --destination /path/to/project/.agents/skills
+python3 tools/install_skills.py --destination /path/to/project/.agents/skills --apply
 ```
 
-No PowerShell, por exemplo:
+For example, in PowerShell:
 
 ```powershell
-py -3 tools/install_skills.py --destination "C:\Projetos\MeuApp\.agents\skills"
-py -3 tools/install_skills.py --destination "C:\Projetos\MeuApp\.agents\skills" --apply
+py -3 tools/install_skills.py --destination "C:\Projects\MyApp\.agents\skills"
+py -3 tools/install_skills.py --destination "C:\Projects\MyApp\.agents\skills" --apply
 ```
 
-Para instalação pessoal, indique o diretório de usuário da tabela. Prefira projeto quando quiser que a equipe ou um agente remoto receba os mesmos arquivos; revise antes de versioná-los. Não use simultaneamente dois diretórios com cópias diferentes da Forma.
+For a personal installation, use the user directory in the table. Prefer a project installation when your team or a remote agent needs the same files; review them before committing. Do not use two directories with different Forma copies at the same time.
 
-O instalador não muda configurações do assistente, não usa rede e não sobrescreve arquivos. Pastas idênticas ficam intactas; qualquer conflito interrompe a instalação antes das cópias. Não rode instalações concorrentes e use somente diretórios sob seu controle. Symlinks são recusados. Uma falha de cópia tenta desfazer apenas os itens criados nesta execução; se a limpeza não puder ser concluída, o erro informa isso.
+The installer does not change assistant settings, use the network or overwrite files. Identical directories remain untouched; any conflict stops installation before copying. Do not run concurrent installations, and use only directories you control. Symlinks are rejected. If copying fails, the installer attempts to remove only items created in that run; the error reports any cleanup it could not complete.
 
-Sem Python, copie as 12 pastas pelo gerenciador de arquivos para o diretório escolhido. Confira se `forma/SKILL.md` e `forma-interface/SKILL.md` ficaram diretamente sob a raiz de skills. Evite uma pasta intermediária como `.agents/skills/agent-skills/`.
+Without Python, copy all 12 directories to your chosen location using a file manager. Verify that `forma/SKILL.md` and `forma-interface/SKILL.md` are directly under the skills root. Avoid an intermediate directory such as `.agents/skills/agent-skills/`.
 
-### Confirmar e usar
+### Verify and use
 
-1. Atualize as skills no host ou abra uma sessão nova.
-2. Confira que `forma` e as 11 especialistas estão disponíveis na origem escolhida. Não confunda listagem com execução.
-3. Peça: “Use Forma para revisar este formulário. Primeiro identifique a origem carregada e a especialista de interface, leia os contratos pertinentes e proponha o ajuste sem editar”.
-4. Confira os arquivos realmente lidos. Depois autorize a implementação e teste o resultado no produto.
+1. Refresh skills in your host or open a new session.
+2. Confirm that `forma` and all 11 specialists are available from the selected source. Listing a skill is not executing it.
+3. Ask: "Use Forma to review this form. First identify the loaded source and interface specialist, read the relevant contracts and propose a change without editing."
+4. Check which files were actually read. Then authorize implementation and test the result in the product.
 
-O `$forma` nos textos portáteis identifica a skill, mas não é um comando universal. No Cursor/VS Code, selecione `/forma` quando disponível; no OpenCode ou Gemini, use linguagem natural e o mecanismo de ativação oferecido pelo host.
+In portable instructions, `$forma` identifies the skill; it is not a universal command. In Cursor/VS Code, select `/forma` when available; in OpenCode or Gemini, use natural language and the host's activation mechanism.
 
-### Atualizar e remover
+### Update and remove
 
-Faça backup das 12 pastas Forma existentes para fora do diretório monitorado. Confira se há mudanças locais antes de movê-las. Instale a nova versão no diretório agora livre; o instalador recusa mesclar versões automaticamente. Mantenha outras skills intactas. Para remover, retire somente `forma/` e as pastas `forma-*` que constam na distribuição instalada, após conferir seus nomes; não use remoção por wildcard se houver skills de terceiros com nomes semelhantes.
+Back up the 12 existing Forma directories outside the watched directory. Check for local changes before moving them. Install the new version in the now-empty location; the installer refuses to merge versions automatically. Leave other skills intact. To remove Forma, remove only `forma/` and the `forma-*` directories listed in the installed distribution after checking their names; do not use wildcard deletion if third-party skills have similar names.
 
-## O que foi verificado
+## What was verified
 
-- Geração determinística e ausência de divergências entre fonte e distribuições.
-- Catálogos, frontmatter, caminhos, links, proveniência dos plugins e igualdade dos recursos executáveis.
-- Instalação em diretório temporário independente, com espaços no caminho; simulação, conflito, idempotência e preservação de outras skills.
-- Manifestos Claude Code podem ser verificados pelo CLI local com os comandos acima; o resultado observado nesta alteração será registrado no PR.
+- Deterministic generation and agreement between source and distributions.
+- Catalogs, frontmatter, paths, links, plugin provenance and identical executable resources.
+- Installation in an independent temporary directory with spaces in its path; dry run, conflicts, idempotence and preservation of other skills.
+- Claude Code manifests can be checked with the local CLI commands above; the result observed for a change is recorded in its PR.
 
-Esses checks não executam tarefas de design em cada assistente. A descoberta e o comportamento precisam ser confirmados na versão/sessão real do host; Windows e dispositivos físicos não são certificados por um teste local no macOS. Ferramentas indisponíveis devem ser declaradas e substituídas por evidência acessível, nunca simuladas.
+These checks do not execute design tasks in every assistant. Discovery and behavior must be confirmed in the host's actual version and session; a local macOS test does not certify Windows or physical devices. Report unavailable tools and use accessible evidence instead of simulating results.

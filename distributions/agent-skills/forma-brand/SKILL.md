@@ -1,51 +1,51 @@
 ---
 name: forma-brand
-description: "Criar ou adaptar identidade, campanhas, landing pages, peças gráficas e materiais de marketing com mensagem, canal e exportação definidos. Use para comunicação de marca; não para aplicar estética promocional a fluxos operacionais sem motivo."
+description: "Create or adapt identities, campaigns, landing pages, graphics and marketing materials with a defined message, channel and export format. Use for brand communication; not to impose promotional styling on operational flows without a reason."
 metadata:
   version: 1.26.1
 ---
 
-# Marca e comunicação
+# Brand and communication
 
-## Quando usar
+## When to use
 
-- Use para marca, campanha, marketing, apresentação, peça gráfica, impressão e comunicação de produto.
-- Não use para transformar dashboard em landing page ou inventar benefícios, depoimentos e resultados.
+- Use for branding, campaigns, marketing, presentations, graphics, print and product communication.
+- Do not use to turn a dashboard into a landing page or invent benefits, testimonials and results.
 
-Este módulo orienta o agente após leitura; não publica, compra mídia ou chama outros módulos automaticamente.
-Preserve identidade aprovada, stack do destino e escopo dos canais solicitados.
+This module guides the agent after it is read; it does not publish, buy media or call other modules automatically.
+Preserve the approved identity, destination stack and scope of the requested channels.
 
-Classifique a superfície antes da direção: página de comunicação organiza leitura, argumento e ação; tela operacional organiza uma tarefa recorrente, dados e estados e segue [Interface](../forma-interface/SKILL.md). Numa landing que mostra o produto, a página segue Marca e os fragmentos internos seguem Interface: mesma identidade, nomes, unidades e estados coerentes. Não simule uma integração funcional com barras e números decorativos.
+Classify the surface before choosing a direction: a communication page organizes reading, argument and action; an operational screen organizes a recurring task, data and states and follows [Interface](../forma-interface/SKILL.md). On a landing page that shows the product, the page follows Brand and the internal product fragments follow Interface: one identity, with consistent names, units and states. Do not simulate a working integration with decorative bars and numbers.
 
-## Entradas
+## Inputs
 
-- Objetivo, público, oferta/mensagem, ação desejada, canais e formatos pedidos.
-- Identidade, conteúdo comprovável, assets/licenças e destino da ação; limites de produção conhecidos.
+- Objective, audience, offer/message, desired action, channels and requested formats.
+- Identity, verifiable content, assets/licenses and action destination; known production limits.
 
-## Procedimento
+## Procedure
 
-1. Fixe mensagem, argumento comprovável, voz e ação; diferencie identidade existente de redesign autorizado.
-   Leia [marca e marketing](../forma/references/brand-marketing.md) e o playbook de campanha em [playbooks](../forma/references/playbooks.md). Para uma página nova, relacione cada seção à afirmação, prova disponível, conteúdo, asset e ação; não preencha lacunas com clientes, números ou depoimentos inventados.
-2. Relacione cada peça a canal, dimensão, mensagem, asset, destino e requisito de exportação.
-   Se a direção estiver aberta, use [direções e comparação](../forma/references/design-directions.md): inventarie fatos próprios do sujeito e ligue o conceito a eles. Teste se apenas trocar o nome por um concorrente deixaria a ideia igual; compare alternativas com conteúdo e condições equivalentes, sem sorteio obrigatório. Não reabra identidade aprovada para uma correção local.
-3. Produza no formato útil ao pedido: peça editável, página implementada ou material de apresentação.
-   Para comparar exemplos ou buscar imagens de acervo, use [biblioteca de referências e mídia](../forma/references/reference-library.md). Selecione pelo argumento/conteúdo real; preserve origem, licença e limites e não faça downloads sem seleção explícita.
-   Leia [artefatos e edição](../forma/references/artifact-workflows.md); para campanha 2.5D/3D, [web imersiva](../forma/references/immersive-web-tech.md), sem impor uma stack pela referência.
-   Em restyle, preserve o contrato editorial; em filme ou deck animado, use a [produção temporal](../forma/references/motion.md#filmes-e-sequências-renderizadas). O pacote de identidade do projeto reúne fatos aprovados, não as preferências da ferramenta de geração.
-4. Adapte composição e copy aos canais autorizados, conservando hierarquia e coerência com o destino.
-   Para fontes/cor, consulte [sistema visual](../forma/references/visual-system.md) e [cor](../forma/references/color-refinement.md); mantenha texto editável quando contratado.
-5. Revise claims, links, recorte, leitura e arquivo exportado no tamanho real de uso.
-   Use [verificação](../forma/references/verification.md) e o preflight de [marca e marketing](../forma/references/brand-marketing.md) quando houver impressão.
+1. Establish the message, verifiable argument, voice and action; distinguish an existing identity from an authorized redesign.
+   Read [brand and marketing](../forma/references/brand-marketing.md) and the campaign playbook in [playbooks](../forma/references/playbooks.md). For a new page, connect each section to its claim, available evidence, content, asset and action; do not fill gaps with invented customers, numbers or testimonials.
+2. Connect each deliverable to its channel, dimensions, message, asset, destination and export requirement.
+   If the direction is open, use [directions and comparison](../forma/references/design-directions.md): inventory facts specific to the subject and connect the concept to them. Test whether simply replacing the name with a competitor's would leave the idea unchanged; compare alternatives with equivalent content and conditions, without mandatory random selection. Do not reopen an approved identity for a local correction.
+3. Produce the format useful to the request: an editable graphic, an implemented page or presentation material.
+   To compare examples or find stock images, use the [reference and media library](../forma/references/reference-library.md). Select based on the actual argument/content; preserve provenance, license and limits, and do not download without explicit selection.
+   Read [artifacts and editing](../forma/references/artifact-workflows.md); for a 2.5D/3D campaign, read [immersive web](../forma/references/immersive-web-tech.md), without imposing a stack based on the reference.
+   When restyling, preserve the editorial contract; for a film or animated deck, use [temporal production](../forma/references/motion.md#films-and-rendered-sequences). The project's identity package records approved facts, not the preferences of the generation tool.
+4. Adapt composition and copy to the authorized channels, preserving hierarchy and consistency with the destination.
+   For fonts/color, consult the [visual system](../forma/references/visual-system.md) and [color](../forma/references/color-refinement.md); keep text editable when required by the delivery contract.
+5. Review claims, links, cropping, readability and the exported file at its actual usage size.
+   Use [verification](../forma/references/verification.md) and the [brand and marketing](../forma/references/brand-marketing.md) preflight when printing is involved.
 
-## Saída e parada
+## Output and stopping condition
 
-Entregue peças/páginas pedidas, arquivos editáveis ou exportados pertinentes e fontes dos claims/ativos.
-Identifique assets gerados, licenciados e pendentes; não prometa direitos não verificados.
-Pare quando mensagem, ação e requisitos de canal/exportação estiverem atendidos no artefato real.
-Um moodboard não conclui uma landing implementada; uma imagem de objeto não demonstra um mecanismo 3D solicitado.
+Deliver the requested graphics/pages, relevant editable or exported files, and sources for claims/assets.
+Identify generated, licensed and pending assets; do not promise unverified rights.
+Stop when the message, action and channel/export requirements are met in the actual artifact.
+A moodboard does not complete an implemented landing page; an object image does not demonstrate a requested 3D mechanism.
 
-## Apoios opcionais e limites
+## Optional support and limits
 
-`ai-graphic-design:ai-graphic-design`, `imagegen` e Font Pairing podem apoiar produção ou direção conforme o artefato.
-Se disponíveis, leia o `SKILL.md` atual e [integrações](../forma/references/integrations.md) antes do uso; uma lista de apoios não garante conexão ou créditos.
-Não duplique gerações, instale provedores ou publique para completar o fluxo. A autorização do pedido define a ação externa permitida.
+`ai-graphic-design:ai-graphic-design`, `imagegen` and Font Pairing can support production or direction depending on the artifact.
+If available, read the current `SKILL.md` and [integrations](../forma/references/integrations.md) before use; a list of supporting tools does not guarantee a connection or credits.
+Do not duplicate generations, install providers or publish merely to complete the workflow. The request's authorization determines the permitted external action.

@@ -1,17 +1,17 @@
-## Problema e resultado
+## Problem and result
 
-Explique o problema, a mudança e o que ela preserva.
+Explain the problem, the change and what it preserves.
 
-## Verificação
+## Verification
 
-- [ ] Executei `python3 tools/build.py` e `npm run check`.
-- [ ] Incluí a fonte e a distribuição gerada correspondentes.
-- [ ] Adicionei evidências de comportamento/visual quando relevantes, sem dados privados.
-- [ ] Diferenciei verificado, inferido e não testado.
-- [ ] Revisei direitos, atribuições e ausência de credenciais/dados pessoais.
+- [ ] I ran `python3 tools/build.py` and `npm run check`.
+- [ ] I included the corresponding source and generated distribution.
+- [ ] I added behavioral/visual evidence when relevant, without private data.
+- [ ] I distinguished verified, inferred and untested findings.
+- [ ] I reviewed rights, attribution and the absence of credentials/personal data.
 
-Comandos executados, resultados e limitações:
+Commands run, results and limitations:
 
-## Impacto
+## Impact
 
-Indique mudanças de contrato, instalação, dependências, workflows ou requisitos do consumidor.
+Identify changes to contracts, installation, dependencies, workflows or consumer requirements.

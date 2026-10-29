@@ -1,31 +1,31 @@
-# Heurísticas de UX aplicadas
+# Applied UX heuristics
 
-Inspirado na organização de Laws of UX e no aprendizado por prática de UXplained. Use apenas as heurísticas que explicam um problema observado. Elas não são provas universais, limites numéricos obrigatórios nem motivo para manipular usuários.
+Inspired by the organization of Laws of UX and UXplained's practice-based learning. Use only heuristics that explain an observed problem. They are not universal proofs, mandatory numerical limits or reasons to manipulate users.
 
-| Família | Princípios | Aplicação e limite |
+| Family | Principles | Application and limit |
 |---|---|---|
-| Percepção | Proximidade, semelhança, região comum, conexão uniforme, Prägnanz | Relacionar elementos pelo agrupamento; não encaixotar toda tela |
-| Aquisição e escolha | Fitts, Hick, sobrecarga de escolha | Aumentar alvos e organizar opções; não esconder funções importantes só para reduzir contagem |
-| Memória | Chunking, memória de trabalho, Miller, posição serial | Manter contexto e agrupar; 7±2 não é regra de menu |
-| Familiaridade | Jakob, modelos mentais, paradoxo do usuário ativo | Convenções úteis e aprendizado durante uso; não copiar produto cegamente |
-| Foco e complexidade | Carga cognitiva, atenção seletiva, Tesler, Occam | Simplificar trabalho e expor complexidade necessária no momento certo |
-| Feedback | Doherty, flow, goal-gradient | Resposta rápida e progresso verdadeiro; animação não torna rede mais rápida |
-| Lembrança | Peak-end, Zeigarnik, Von Restorff | Encerrar com clareza e destacar pendências; evitar culpa, ansiedade e distração |
-| Julgamento | Efeito estética-usabilidade, viés cognitivo | Aparência afeta percepção, mas não corrige funcionalidade; usar persuasão honesta |
-| Robustez e prioridade | Postel, Pareto, Parkinson | Aceitar formatos seguros e priorizar tarefas reais; não relaxar validação ou inventar percentuais |
+| Perception | Proximity, similarity, common region, uniform connectedness, Pragnanz | Relate elements through grouping; do not put every screen in boxes |
+| Acquisition and choice | Fitts, Hick, choice overload | Enlarge targets and organize options; do not hide important functions just to reduce the count |
+| Memory | Chunking, working memory, Miller, serial position | Preserve context and group information; 7 +/- 2 is not a menu rule |
+| Familiarity | Jakob, mental models, active user paradox | Useful conventions and learning during use; do not copy a product blindly |
+| Focus and complexity | Cognitive load, selective attention, Tesler, Occam | Simplify the work and expose necessary complexity at the right time |
+| Feedback | Doherty, flow, goal-gradient | Fast responses and truthful progress; animation does not make the network faster |
+| Recall | Peak-end, Zeigarnik, Von Restorff | End clearly and highlight unfinished tasks; avoid guilt, anxiety and distraction |
+| Judgment | Aesthetic-usability effect, cognitive bias | Appearance affects perception but does not fix functionality; use honest persuasion |
+| Robustness and priority | Postel, Pareto, Parkinson | Accept safe formats and prioritize real tasks; do not relax validation or invent percentages |
 
-## Procedimento
+## Procedure
 
-Para centralização, alinhamento e organização, consulte o [mapeamento de leis para relações espaciais](layout-spatial-contracts.md#4-organização-orientada-à-tarefa-e-leis-de-ux). Distinga o princípio da receita numérica sugerida por uma fonte: nomes de leis não justificam limites arbitrários de opções, padding fixo ou nota universal.
+For centering, alignment and organization, consult the [mapping from laws to spatial relationships](layout-spatial-contracts.md#4-task-oriented-organization-and-ux-laws). Distinguish the principle from a source's proposed numerical recipe: law names do not justify arbitrary option limits, fixed padding or a universal score.
 
-1. Descreva o problema em termos de tarefa: “o usuário associa o erro ao campo errado”.
-2. Identifique evidência: distância, estrutura, comportamento ou observação de teste.
-3. Escolha princípio explicativo: proximidade e feedback.
-4. Proponha mudança pequena: aproximar erro e associá-lo semanticamente ao campo.
-5. Verifique sucesso: compreensão, leitura por tecnologia assistiva, correção do dado.
+1. Describe the problem in task terms: "the user associates the error with the wrong field."
+2. Identify evidence: distance, structure, behavior or test observations.
+3. Choose an explanatory principle: proximity and feedback.
+4. Propose a small change: move the error closer and associate it semantically with the field.
+5. Verify success: understanding, assistive-technology reading and data correction.
 
-Em código, forneça correção na stack real. Em Figma, descreva relações/layout/estados. Em pesquisa, formule hipótese testável. Não force JSX em uma auditoria de app nativo ou artefato físico.
+In code, provide the fix in the real stack. In Figma, describe relationships/layout/states. In research, formulate a testable hypothesis. Do not force JSX into an audit of a native app or physical artifact.
 
-## Prática deliberada
+## Deliberate practice
 
-Para aprender, escolha um fluxo curto, capture baseline, altere uma relação importante e compare. Explique o efeito esperado e o observado. O formato de desafio de UXplained inspira esse método; regras de submissão de cada issue pertencem àquela atividade e não são incorporadas à skill geral.
+To learn, choose a short flow, capture a baseline, change one important relationship and compare. Explain the expected and observed effects. UXplained's challenge format inspires this method; each issue's submission rules belong to that activity and are not incorporated into the general skill.

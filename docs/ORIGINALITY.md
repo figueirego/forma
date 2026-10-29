@@ -8,7 +8,7 @@ The coordinator, specialists, project-specific synthesis, procedural BookObject 
 
 The contributor procedure is [authorship and incorporation](../source/forma/references/authorship.md). Implementation patterns and use-case guidance are written for Forma. External site names, URLs and the historical selection remain attributed. A case tells the assistant what to investigate and which Forma contracts may apply; it does not assert a site's current behavior. Project research does not automatically become a public catalog entry.
 
-The replacement preserves coordination, contextual reference research, project-specific direction, color and spatial reasoning, the separation of marketing and operational screens, motion and material refinement, and rendered critique. Their [continuity map](../source/forma/references/authorship.md#preservar-capacidades-ao-tornar-o-conteúdo-próprio) points to the Forma contracts that own each capability. Independent content does not mean discarding what was learned or claiming to have invented established methods.
+The replacement preserves coordination, contextual reference research, project-specific direction, color and spatial reasoning, the separation of marketing and operational screens, motion and material refinement, and rendered critique. Their [continuity map](../source/forma/references/authorship.md#preserving-capabilities-when-making-content-original) points to the Forma contracts that own each capability. Independent content does not mean discarding what was learned or claiming to have invented established methods.
 
 ## What remains external
 

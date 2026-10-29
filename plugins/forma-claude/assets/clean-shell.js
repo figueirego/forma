@@ -1,5 +1,5 @@
 /*
- * Optional, standalone demo controller — not a router, backend or framework adapter.
+ * Optional, standalone demo controller - not a router, backend or framework adapter.
  * Synthetic collections and mutations live in memory. localStorage holds preferences
  * only; storage failure leaves the demo operational and produces a visible message.
  * Public CSS/markup contract is documented at the top of clean-shell.css.
@@ -56,7 +56,7 @@
   let storageAvailable = true;
   function reportStorageFailure() {
     storageAvailable = false;
-    const message = "Não foi possível acessar o armazenamento. As preferências valem apenas nesta sessão.";
+    const message = "Storage is unavailable. Preferences will last only for this session.";
     $("#dc-storage-status").textContent = message;
     $("#dc-status").textContent = message;
   }
@@ -87,7 +87,7 @@
     $$("[data-dc-view-button]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.dcViewButton === preferences.view)));
     $$("input[name='dc-theme']").forEach((input) => { input.checked = input.value === preferences.theme; });
     $("#dc-ambient").checked = preferences.ambient;
-    const label = preferences.collapsed ? "Expandir barra lateral" : "Recolher barra lateral";
+    const label = preferences.collapsed ? "Expand sidebar" : "Collapse sidebar";
     $(".dc-sidebar-toggle").setAttribute("aria-label", label);
     $(".dc-sidebar-toggle").setAttribute("title", label);
     $(".dc-sidebar-toggle").setAttribute("aria-expanded", String(!preferences.collapsed));
@@ -95,22 +95,22 @@
   systemTheme.addEventListener("change", applyPreferences);
   applyPreferences();
 
-  const categories = ["Design", "Pesquisa", "Produto"];
+  const categories = ["Design", "Research", "Product"];
   const collections = [
-    { id: 1, name: "Formas de ver", description: "Composição, cor e pequenos detalhes que fazem diferença.", category: "Design", favorite: true, archived: false, color: "paper", art: "frames", created: 7, references: ["Estudo de composição", "Notas sobre contraste", "Uma paleta para explorar"] },
-    { id: 2, name: "Interfaces com calma", description: "Ideias para tornar o cotidiano um pouco mais simples.", category: "Design", favorite: false, archived: false, color: "blue", art: "grid", created: 6, references: ["Navegação essencial", "Estados e feedback", "Ritmo entre elementos"] },
-    { id: 3, name: "Conversas e descobertas", description: "Perguntas, observações e aprendizados de pesquisa.", category: "Pesquisa", favorite: true, archived: false, color: "green", art: "circles", created: 5, references: ["Roteiro de conversa", "Observações de uma jornada", "Perguntas em aberto"] },
-    { id: 4, name: "Objetos do cotidiano", description: "Material, textura e a beleza de coisas bem resolvidas.", category: "Design", favorite: false, archived: false, color: "rose", art: "arch", created: 4, references: ["Caderno de materiais", "Formas e funções", "Pequenos gestos"] },
-    { id: 5, name: "Próximos caminhos", description: "Hipóteses e possibilidades para o que vem depois.", category: "Produto", favorite: false, archived: false, color: "lilac", art: "square", created: 3, references: ["Mapa de oportunidades", "Hipóteses iniciais", "Critérios para um experimento"] },
-    { id: 6, name: "Notas de leitura", description: "Trechos e reflexões para voltar com mais tempo.", category: "Pesquisa", favorite: false, archived: false, color: "paper", art: "lines", created: 2, references: ["Anotações da semana", "Uma ideia para revisitar", "Conexões entre temas"] },
-    { id: 7, name: "Primeiros rascunhos", description: "Um ciclo encerrado, guardado para consulta.", category: "Produto", favorite: false, archived: true, color: "blue", art: "frames", created: 1, references: ["Ponto de partida", "Aprendizados do ciclo"] },
+    { id: 1, name: "Ways of seeing", description: "Composition, color and small details that make a difference.", category: "Design", favorite: true, archived: false, color: "paper", art: "frames", created: 7, references: ["Composition study", "Notes on contrast", "A palette to explore"] },
+    { id: 2, name: "Calm interfaces", description: "Ideas to make everyday life a little simpler.", category: "Design", favorite: false, archived: false, color: "blue", art: "grid", created: 6, references: ["Essential navigation", "States and feedback", "Rhythm between elements"] },
+    { id: 3, name: "Conversations and discoveries", description: "Questions, observations and research findings.", category: "Research", favorite: true, archived: false, color: "green", art: "circles", created: 5, references: ["Interview guide", "Journey observations", "Open questions"] },
+    { id: 4, name: "Everyday objects", description: "Material, texture and the beauty of thoughtful objects.", category: "Design", favorite: false, archived: false, color: "rose", art: "arch", created: 4, references: ["Material notebook", "Form and function", "Small gestures"] },
+    { id: 5, name: "Next steps", description: "Hypotheses and possibilities for what comes next.", category: "Product", favorite: false, archived: false, color: "lilac", art: "square", created: 3, references: ["Opportunity map", "Initial hypotheses", "Experiment criteria"] },
+    { id: 6, name: "Reading notes", description: "Excerpts and reflections to revisit when you have more time.", category: "Research", favorite: false, archived: false, color: "paper", art: "lines", created: 2, references: ["Weekly notes", "An idea to revisit", "Connections between topics"] },
+    { id: 7, name: "Early drafts", description: "A completed cycle, saved for reference.", category: "Product", favorite: false, archived: true, color: "blue", art: "frames", created: 1, references: ["Starting point", "Lessons from the cycle"] },
   ];
   let nextId = 8;
   let currentFilter = "all";
   let currentDetail = null;
   const dialogOpeners = new WeakMap();
-  const filterLabels = { all: "Coleções", favorites: "Favoritas", archived: "Arquivadas", Design: "Design", Pesquisa: "Pesquisa", Produto: "Produto" };
-  const normalize = (value) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("pt-BR");
+  const filterLabels = { all: "Collections", favorites: "Favorites", archived: "Archived", Design: "Design", Research: "Research", Product: "Product" };
+  const normalize = (value) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("en-US");
   const announce = (message) => { $("#dc-status").textContent = message; };
 
   function matchesFilter(item) {
@@ -138,7 +138,7 @@
     open.type = "button";
     open.className = "dc-card-open";
     open.dataset.dcOpen = String(item.id);
-    open.setAttribute("aria-label", `Abrir coleção ${item.name}`);
+    open.setAttribute("aria-label", `Open collection ${item.name}`);
     const cover = document.createElement("span");
     cover.className = `dc-cover dc-cover--${item.color}`;
     cover.setAttribute("aria-hidden", "true");
@@ -147,18 +147,18 @@
     cover.append(artwork);
     const body = document.createElement("span");
     body.className = "dc-card-body";
-    body.append(textElement("span", "dc-card-title", item.name), textElement("span", "dc-card-description", item.description || "Um novo espaço para suas referências."));
+    body.append(textElement("span", "dc-card-title", item.name), textElement("span", "dc-card-description", item.description || "A new space for your references."));
     open.append(cover, body);
     open.addEventListener("click", () => showDetail(item.id, open));
     const footer = document.createElement("div");
     footer.className = "dc-card-footer";
-    footer.append(textElement("span", "dc-card-meta", `${item.references.length} referências · ${item.category}`));
+    footer.append(textElement("span", "dc-card-meta", `${item.references.length} references - ${item.category}`));
     const favorite = document.createElement("button");
     favorite.type = "button";
     favorite.className = "dc-icon-button dc-favorite";
     favorite.dataset.dcFavorite = String(item.id);
-    favorite.setAttribute("aria-label", `Favoritar ${item.name}`);
-    favorite.setAttribute("title", item.favorite ? "Remover dos favoritos" : "Adicionar aos favoritos");
+    favorite.setAttribute("aria-label", `Favorite ${item.name}`);
+    favorite.setAttribute("title", item.favorite ? "Remove from favorites" : "Add to favorites");
     favorite.setAttribute("aria-pressed", String(item.favorite));
     favorite.append(icon("star"));
     favorite.addEventListener("click", () => {
@@ -166,7 +166,7 @@
       renderCollections();
       const replacement = $(`[data-dc-favorite="${item.id}"]`);
       (replacement || $("#dc-search")).focus({ preventScroll: true });
-      announce(`${item.name}: ${item.favorite ? "adicionada aos favoritos" : "removida dos favoritos"}. Alteração apenas nesta sessão.`);
+      announce(`${item.name}: ${item.favorite ? "added to favorites" : "removed from favorites"}. This change lasts only for this session.`);
     });
     footer.append(favorite);
     article.append(open, footer);
@@ -175,15 +175,15 @@
   function renderCollections() {
     const query = normalize($("#dc-search").value.trim());
     const visible = collections.filter((item) => matchesFilter(item) && (!query || normalize(`${item.name} ${item.description} ${item.category}`).includes(query)));
-    visible.sort($("#dc-sort").value === "name" ? (a, b) => a.name.localeCompare(b.name, "pt-BR") : (a, b) => b.created - a.created);
+    visible.sort($("#dc-sort").value === "name" ? (a, b) => a.name.localeCompare(b.name, "en-US") : (a, b) => b.created - a.created);
     $("#dc-collections").replaceChildren(...visible.map(renderCard));
     $("#dc-empty").hidden = visible.length > 0;
-    $("#dc-result-count").textContent = `${visible.length} ${visible.length === 1 ? "coleção" : "coleções"}${query ? (visible.length === 1 ? " encontrada" : " encontradas") : ""}`;
-    $("#dc-empty-copy").textContent = query ? "Nenhuma coleção corresponde à busca neste filtro. Tente outro termo ou limpe a busca e os filtros." : "Este filtro ainda não tem coleções. Você pode criar uma ou voltar a todas as coleções.";
-    $("#dc-filter-hint").textContent = currentFilter === "all" && !query ? "Seu repertório, em construção." : "";
+    $("#dc-result-count").textContent = `${visible.length} ${visible.length === 1 ? "collection" : "collections"}${query ? (visible.length === 1 ? " found" : " found") : ""}`;
+    $("#dc-empty-copy").textContent = query ? "No collections match your search within this filter. Try another term or clear the search and filters." : "This filter has no collections yet. Create one or return to all collections.";
+    $("#dc-filter-hint").textContent = currentFilter === "all" && !query ? "Your reference library, taking shape." : "";
     $("#dc-page-title").textContent = filterLabels[currentFilter];
     $("#dc-breadcrumb-label").textContent = filterLabels[currentFilter];
-    $("#dc-page-description").textContent = currentFilter === "archived" ? "Referências guardadas para revisitar quando precisar." : currentFilter === "favorites" ? "As ideias que você quer manter por perto." : "Um lugar para organizar o que inspira seu trabalho.";
+    $("#dc-page-description").textContent = currentFilter === "archived" ? "References saved to revisit when you need them." : currentFilter === "favorites" ? "Ideas you want to keep close." : "A place to organize what inspires your work.";
     $$("[data-dc-filter]").forEach((button) => {
       if (button.dataset.dcFilter === currentFilter) button.setAttribute("aria-current", "page");
       else button.removeAttribute("aria-current");
@@ -216,17 +216,17 @@
     const item = collections.find((entry) => entry.id === currentDetail);
     if (!item) return;
     $("#dc-detail-title").textContent = item.name;
-    $("#dc-detail-meta").textContent = `${item.category} · ${item.references.length} referências${item.archived ? " · Arquivada" : ""}`;
-    $("#dc-detail-description").textContent = item.description || "Sua coleção está pronta para receber ideias.";
+    $("#dc-detail-meta").textContent = `${item.category} - ${item.references.length} references${item.archived ? " - Archived" : ""}`;
+    $("#dc-detail-description").textContent = item.description || "Your collection is ready for ideas.";
     $("#dc-detail-list").replaceChildren(...item.references.map((reference) => {
       const li = document.createElement("li");
       li.append(icon("document"), textElement("span", "", reference));
       return li;
     }));
-    $("#dc-detail-note").textContent = item.references.length ? "Referências fictícias, sem documentos ou links associados. Favoritar e arquivar alteram apenas esta sessão." : "Coleção criada nesta sessão. A inclusão de referências não faz parte desta demonstração.";
-    $("#dc-detail-favorite").textContent = "Favoritar";
+    $("#dc-detail-note").textContent = item.references.length ? "Synthetic references with no attached documents or links. Favoriting and archiving affect only this session." : "Collection created in this session. Adding references is not part of this demo.";
+    $("#dc-detail-favorite").textContent = "Favorite";
     $("#dc-detail-favorite").setAttribute("aria-pressed", String(item.favorite));
-    $("#dc-detail-archive").textContent = item.archived ? "Restaurar coleção" : "Arquivar";
+    $("#dc-detail-archive").textContent = item.archived ? "Restore collection" : "Archive";
   }
   $("#dc-detail-favorite").addEventListener("click", () => {
     const item = collections.find((entry) => entry.id === currentDetail);
@@ -234,7 +234,7 @@
     item.favorite = !item.favorite;
     renderDetail();
     renderCollections();
-    announce(`${item.name}: ${item.favorite ? "adicionada aos favoritos" : "removida dos favoritos"}.`);
+    announce(`${item.name}: ${item.favorite ? "added to favorites" : "removed from favorites"}.`);
   });
   $("#dc-detail-archive").addEventListener("click", () => {
     const item = collections.find((entry) => entry.id === currentDetail);
@@ -242,15 +242,15 @@
     item.archived = !item.archived;
     renderDetail();
     renderCollections();
-    announce(`${item.name}: ${item.archived ? "arquivada" : "restaurada"}. Alteração apenas nesta sessão.`);
+    announce(`${item.name}: ${item.archived ? "archived" : "restored"}. This change lasts only for this session.`);
   });
 
   function setMobileNavigation(open, restoreFocus = false) {
     shell.dataset.dcNavOpen = String(open);
     const button = $(".dc-mobile-toggle");
     button.setAttribute("aria-expanded", String(open));
-    button.setAttribute("aria-label", open ? "Fechar navegação" : "Abrir navegação");
-    button.setAttribute("title", open ? "Fechar navegação" : "Abrir navegação");
+    button.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+    button.setAttribute("title", open ? "Close navigation" : "Open navigation");
     paintIcon(button.querySelector("svg"), open ? "close" : "menu");
     if (restoreFocus) button.focus({ preventScroll: true });
   }
@@ -276,21 +276,21 @@
     const form = event.currentTarget;
     const name = form.elements.name.value.trim();
     if (!name) {
-      $("#dc-form-error").textContent = "Digite um nome para a coleção.";
+      $("#dc-form-error").textContent = "Enter a collection name.";
       $("#dc-form-error").hidden = false;
-      $("#dc-name").setCustomValidity("Digite um nome para a coleção.");
+      $("#dc-name").setCustomValidity("Enter a collection name.");
       $("#dc-name").reportValidity();
       return;
     }
     const category = categories.includes(form.elements.category.value) ? form.elements.category.value : "Design";
-    collections.push({ id: nextId, name, description: form.elements.description.value.trim(), category, favorite: false, archived: false, color: { Design: "blue", Pesquisa: "green", Produto: "lilac" }[category], art: "frames", created: nextId, references: [] });
+    collections.push({ id: nextId, name, description: form.elements.description.value.trim(), category, favorite: false, archived: false, color: { Design: "blue", Research: "green", Product: "lilac" }[category], art: "frames", created: nextId, references: [] });
     nextId += 1;
     currentFilter = "all";
     $("#dc-search").value = "";
     $("#dc-sort").value = "recent";
     renderCollections();
     $("#dc-add-dialog").close();
-    announce(`Coleção “${name}” criada apenas nesta sessão.`);
+    announce(`Collection \"${name}\" created for this session only.`);
   });
   $("#dc-search").addEventListener("input", renderCollections);
   $("#dc-sort").addEventListener("change", renderCollections);
@@ -328,7 +328,7 @@
     if (!mobile.matches && active === $(".dc-mobile-toggle")) $(".dc-sidebar-toggle").focus();
   });
 
-  $("#dc-shortcut").textContent = /Mac|iPhone|iPad/.test(navigator.platform) ? "⌘ K" : "Ctrl K";
+  $("#dc-shortcut").textContent = /Mac|iPhone|iPad/.test(navigator.platform) ? "\u2318 K" : "Ctrl K";
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && mobile.matches && shell.dataset.dcNavOpen === "true" && !$("dialog[open]")) {
       setMobileNavigation(false, true);

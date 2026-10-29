@@ -1,6 +1,6 @@
 > Archived release evidence. Version 1.26 replaces the imported catalog with Forma-authored patterns; see [current authorship boundaries](ORIGINALITY.md). Counts and checks below describe the earlier releases only.
 
-# Reference research history — Forma 1.24–1.25
+# Reference research history - Forma 1.24-1.25
 
 The first sections below record the 1.24 methods-only release. Version 1.25 adds the executable reference and media library described at the end; the earlier runtime exclusions are historical.
 
@@ -23,7 +23,7 @@ On 2026-10-28:
 
 ## Decision exercises
 
-Two fresh evaluator contexts read the generated Codex and portable Agent Skills packages. Each received four hypothetical requests, with no consumer project and without reading the expected-answer rubrics or the study map. The maintainer agent assessed their responses against R32–R39 after collection.
+Two fresh evaluator contexts read the generated Codex and portable Agent Skills packages. Each received four hypothetical requests, with no consumer project and without reading the expected-answer rubrics or the study map. The maintainer agent assessed their responses against R32-R39 after collection.
 
 | Case | Observed decision | Assessment |
 |---|---|---|
@@ -40,7 +40,7 @@ These are eight decision simulations, not eight implemented or browser-tested pr
 
 The independent upstream checks and their omissions are recorded separately in the source map. They are not included in the 156 Forma tests above.
 
-## Reference library — 1.25.0
+## Reference library - 1.25.0
 
 The package now includes all 202 reference records from the pinned Taste snapshot, preserving the original fields and MIT attribution, plus eight Forma records linking existing components, examples and implementation contracts. External records are historical study notes, not newly visited sites or rights to their assets. Every record declares its evidence and limitations; none invents a live screenshot.
 
@@ -53,7 +53,7 @@ Verification performed on 2026-10-29 UTC:
 - Required install, build and checks passed: 72 Python source tests, 34 builder/installer tests and 81 Node tests, with no Node skips. The 31 new runtime tests cover retrieval and media behavior, including the review regressions.
 - All 421 generated files matched source. Catalog lookup and media help ran from an unrelated working directory in source, Codex, Claude Code and portable Agent Skills packages; catalog hashes matched.
 - Live image queries succeeded for all four providers after the strict-license fix. A selected AIC image downloaded with its credit receipt; Commons video search returned a licensed video. These are smoke checks, not exhaustive provider or video-download validation.
-- Browser checks covered context/origin filters, Portuguese retrieval, an empty result, pagination, detail dialogs, Escape and focus return. Actual measured CSS viewports were 1440×900 and 480×844, with no horizontal overflow in the checked list/dialog states. This is a responsive browser check, not a physical-phone test.
+- Browser checks covered context/origin filters, Portuguese retrieval, an empty result, pagination, detail dialogs, Escape and focus return. Actual measured CSS viewports were 1440x900 and 480x844, with no horizontal overflow in the checked list/dialog states. This is a responsive browser check, not a physical-phone test.
 - Independent review found and resolved two defects: browser/CLI retrieval divergence and permissive handling of contradictory license metadata. Valid Commons, AIC and Met responses were checked again after the fix.
 
 No additional model, embedding service, autonomous crawler or browser driver is installed. Current-site observation uses the host's available browser and the [documented evidence workflow](../source/forma/references/reference-library.md). This release does not claim that all 202 live sites were re-audited, that every contract is a ready component, or that reference retrieval guarantees design quality.

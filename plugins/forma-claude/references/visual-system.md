@@ -1,65 +1,65 @@
-# Sistema visual, tipografia e espaçamento
+# Visual system, typography and spacing
 
-## Extrair antes de substituir
+## Extract before replacing
 
-Inspecione tokens, estilos computados, componentes e assets. Identifique fonte de verdade e divergências. Preserve decisões consistentes; diferencie bug pontual de dívida estrutural. Não introduza segundo sistema de tokens sem mapear o primeiro.
+Inspect tokens, computed styles, components and assets. Identify the source of truth and discrepancies. Preserve consistent decisions; distinguish a local bug from structural debt. Do not introduce a second token system without mapping the first.
 
-## Direção visual
+## Visual direction
 
-Escolha uma ideia composicional coerente com público e conteúdo: editorial, instrumental, lúdica, industrial, institucional ou outra fundamentada. Especifique hierarquia, ritmo, materialidade e tratamento de imagem; não use adjetivos como substituto de decisões.
+Choose a compositional idea consistent with the audience and content: editorial, instrumental, playful, industrial, institutional or another justified direction. Specify hierarchy, rhythm, material qualities and image treatment; do not use adjectives as substitutes for decisions.
 
-Uma direção distinta pode resultar de proporções, tipografia, recorte, densidade, cor ou movimento. Não precisa tornar navegação desconhecida. Gradientes, simetria, cards, serifas, preto e Inter são escolhas válidas quando fazem trabalho real.
+A distinct direction can emerge from proportions, typography, cropping, density, color or motion. It does not need to make navigation unfamiliar. Gradients, symmetry, cards, serifs, black and Inter are valid choices when they do real work.
 
-Quando a direção ainda estiver aberta, use [comparação de direções](design-directions.md). Fixe conteúdo, estado e dimensões antes de variar estrutura; catalogar estilos não substitui decidir quais relações ajudam a tarefa.
+When direction remains open, use [direction comparison](design-directions.md). Fix content, state and dimensions before varying structure; cataloging styles does not replace deciding which relationships help the task.
 
 ## Tokens
 
-Separe primitivos, semânticos e componentes. Exemplo conceitual:
+Separate primitives, semantic tokens and components. Conceptual example:
 
 ```text
 primitive.space.2 = 8
 semantic.space.controlGap -> primitive.space.2
-semantic.color.textPrimary -> tema.textoPrincipal
+semantic.color.textPrimary -> theme.primaryText
 component.button.primary.background -> semantic.color.actionPrimary
 ```
 
-Defina unidade, escala, alias, tema e origem. Não misture px, dp e pt sem adaptação. Inclua cor, tipografia, espaço, raio, borda, elevação, camadas e movimento apenas conforme necessário. Tema escuro é um mapeamento semântico, não inversão automática.
+Define units, scale, aliases, theme and origin. Do not mix px, dp and pt without adaptation. Include color, typography, spacing, radius, border, elevation, layers and motion only as needed. Dark theme is a semantic mapping, not automatic inversion.
 
-## Espaçamento e composição
+## Spacing and composition
 
-Para implementar ou corrigir layout, use o procedimento de [contratos espaciais](layout-spatial-contracts.md): container/eixos → agrupamento → largura/insets → responsável por cada distância → adaptação → medição renderizada. Esta seção resume decisões; não substitui essa execução.
+To implement or correct layout, use the [spatial contracts](layout-spatial-contracts.md) procedure: container/axes -> grouping -> width/insets -> owner of each distance -> adaptation -> rendered measurement. This section summarizes decisions; it does not replace that execution.
 
-Na ausência de escala existente, experimente 4, 8, 12, 16, 24, 32, 48 e 64 como ponto de partida, não obrigação. Relações intragrupo devem ser visualmente menores que separações entre grupos. Espaço deve indicar associação, prioridade e ritmo.
+Without an existing scale, try 4, 8, 12, 16, 24, 32, 48 and 64 as a starting point, not a requirement. Within-group distances should look smaller than separations between groups. Space should convey association, priority and rhythm.
 
-- Alinhe texto pela linha de base e elementos pela sua função; centro geométrico pode precisar de compensação óptica.
-- Defina largura de leitura e de trabalho separadamente. Texto longo costuma funcionar em cerca de 45–75 caracteres por linha, ajustado à escrita e ao tipo de conteúdo.
-- Use grid para relações bidimensionais, flex/layout nativo para fluxo unidimensional. Não transforme posicionamento absoluto de mockup em arquitetura responsiva.
-- Teste o menor conteúdo e o maior: título longo, zero, valores negativos, números grandes, tradução, nomes sem espaço, lista vazia e centenas de itens.
-- Escolha quebras pela pressão do conteúdo. Não use apenas nomes comerciais de dispositivos como evidência de responsividade.
-- Registre regra de densidade confortável/compacta quando útil. Compactar não remove legibilidade ou área de interação.
+- Align text by baseline and elements by function; the geometric center may need optical compensation.
+- Define reading and working widths separately. Long text often works at around 45-75 characters per line, adjusted to the writing system and content type.
+- Use grid for two-dimensional relationships and flex/native layout for one-dimensional flow. Do not turn a mockup's absolute positioning into responsive architecture.
+- Test minimum and maximum content: long titles, zero, negative values, large numbers, translation, names without spaces, empty lists and hundreds of items.
+- Choose breakpoints based on content pressure. Do not use commercial device names alone as evidence of responsiveness.
+- Record comfortable/compact density rules when useful. Compactness does not remove legibility or interaction area.
 
-## Tipografia
+## Typography
 
-Defina papéis: display, título, corpo, rótulo, auxiliar e número. Comece com uma família suficiente; adicione outra quando trouxer contraste funcional. Verifique pesos reais, licença de uso/redistribuição, caracteres do idioma, símbolos, números e fallback.
+Define roles: display, heading, body, label, supporting text and number. Start with one sufficient family; add another when it brings functional contrast. Check actual weights, use/redistribution licensing, language characters, symbols, numbers and fallback.
 
-Teste com conteúdo real: acentos, descendentes, itálico, caixa alta, números tabulares e moedas. Ajuste entrelinha pela fonte e tamanho; não há um valor único que evite todo clipping. Evite texto essencial minúsculo para acomodar layout. Em web, prefira unidades relativas e preserve zoom; em nativo, escalas tipográficas do sistema.
+Test with actual content: accents, descenders, italics, uppercase, tabular numbers and currencies. Adjust line height to font and size; no single value prevents all clipping. Avoid tiny essential text to fit a layout. On the web, prefer relative units and preserve zoom; in native apps, use system typographic scales.
 
-Font Pairing pode ajudar a comparar alternativas, mas um trio não exige três famílias em produção. Compare mesma frase, mesma largura e vários tamanhos. Fontes comerciais sugeridas não implicam licença disponível.
+Font Pairing can help compare alternatives, but a trio does not require three families in production. Compare the same phrase at the same width and multiple sizes. Suggested commercial fonts do not imply an available license.
 
-## Cor, forma e materialidade
+## Color, shape and material qualities
 
-Para escolher ou refinar uma paleta, use [cor: da teoria à decisão](color-refinement.md). Separe problema de legibilidade, significado, hierarquia percebida e fidelidade antes de mudar valores. Uma combinação pode passar contraste e ainda distribuir mal a atenção; uma paleta harmoniosa pode falhar no texto. O roteiro conecta papel/contexto, variável candidata, alteração e comparação, sem impor uma nova linguagem ao projeto.
+To choose or refine a palette, use [color: from theory to decision](color-refinement.md). Separate legibility, meaning, perceived hierarchy and fidelity problems before changing values. A combination may pass contrast checks yet distribute attention poorly; a harmonious palette may fail for text. The procedure connects role/context, candidate variable, change and comparison without imposing a new language on the project.
 
-Mapeie superfícies, texto, ação, seleção, foco, borda e estados. Cores de marca não substituem semântica de erro ou gráficos. Use também texto/ícone/padrão para diferenciar estados. Meça contraste no fundo composto real, inclusive fotos, blur e hover.
+Map surfaces, text, actions, selection, focus, borders and states. Brand colors do not replace error or chart semantics. Also use text/icons/patterns to distinguish states. Measure contrast against the actual composited background, including photos, blur and hover.
 
-Para mapas e indicadores, leia [dashboards de dados](data-dashboards.md) para distinguir categoria, magnitude, divergência, progresso e seleção. Alterar o tema não altera o significado da série; alterar a métrica exige legenda/unidade coerentes.
+For maps and indicators, read [data dashboards](data-dashboards.md) to distinguish category, magnitude, divergence, progress and selection. Changing the theme does not change a series' meaning; changing the metric requires consistent legends/units.
 
-Defina papéis de raio e elevação, não um raio obrigatório para tudo. Containers agrupam; sombras mostram sobreposição ou hierarquia. Transparência tem fallback sólido e deve continuar legível sem blur. Mantenha consistência de ícones, peso óptico e alinhamento; aproveite a biblioteca já instalada.
+Define radius and elevation roles, not one mandatory radius for everything. Containers group; shadows convey overlap or hierarchy. Transparency has a solid fallback and must remain legible without blur. Keep icons, optical weight and alignment consistent; use the installed library.
 
-## Componentes e governança
+## Components and governance
 
-Cada componente deve ter anatomia, propósito, variantes, estados, conteúdo, comportamento, acessibilidade e limites. Documente diferenças entre plataformas por intenção. Reutilize antes de generalizar; extraia abstração quando houver variação recorrente real.
+Every component should have anatomy, purpose, variants, states, content, behavior, accessibility and limits. Document platform differences by intent. Reuse before generalizing; extract an abstraction when there is actual recurring variation.
 
-Para mudanças no sistema, identifique consumidores, migração, compatibilidade e owner. No Figma, prefira variables, auto layout e instâncias; no código, tokens e componentes existentes. Não declare sincronização Figma/código sem conferir ambos.
+For system changes, identify consumers, migration, compatibility and owner. In Figma, prefer variables, auto layout and instances; in code, existing tokens and components. Do not claim Figma/code synchronization without checking both.
 
-Para exemplo preenchido de direção, espaçamento, CSS e migração, leia [tokens e handoff](tokens-handoff.md). Para anatomia e estados, leia [padrões](component-patterns.md). Uma escala numérica sozinha não produz hierarquia.
+For a worked example of direction, spacing, CSS and migration, read [tokens and handoff](tokens-handoff.md). For anatomy and states, read [patterns](component-patterns.md). A numerical scale alone does not create hierarchy.

@@ -1,6 +1,6 @@
 interface:
   display_name: "Forma Product"
-  short_description: "Tarefas, pesquisa e fluxos de produto"
-  default_prompt: "Use $forma-product para projetar este fluxo de produto com tarefa, estados e critérios de sucesso claros."
+  short_description: "Tasks, research, and product flows"
+  default_prompt: "Use $forma-product to design this product flow with a clear task, states, and success criteria."
 policy:
   allow_implicit_invocation: true

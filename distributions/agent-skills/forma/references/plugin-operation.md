@@ -1,58 +1,58 @@
-# Operar e verificar a distribuição Forma
+# Operate and verify the Forma distribution
 
-Nesta distribuição, `<forma-root>` é a pasta `forma/` instalada junto às especialistas; contém `references/`, `assets/`, `scripts/` e `tests/`. Resolva-a a partir deste arquivo.
+In this distribution, `<forma-root>` is the `forma/` directory installed beside the specialists; it contains `references/`, `assets/`, `scripts/` and `tests/`. Resolve it relative to this file.
 
-Leia ao instalar, atualizar, diagnosticar descoberta ou manter a própria Forma. Para criar uma interface, use a especialista pertinente; instalar novamente a ferramenta não corrige o produto.
+Read this when installing, updating, diagnosing discovery or maintaining Forma itself. To create an interface, use the relevant specialist; reinstalling the tool does not fix the product.
 
-## Uma fonte, formatos por ambiente
+## One source, formats for each environment
 
-A fonte canônica organiza uma coordenadora e especialistas aninhadas. O plugin gera skills irmãs descobertas pelo Codex, com referências e assets compartilhados. A skill avulsa e o plugin podem coexistir, mas são cópias distintas: confira o caminho efetivamente carregado. Edite a fonte de autoria, gere o pacote e atualize a instalação; editar o cache perde a mudança na próxima atualização.
+The canonical source organizes a coordinator and nested specialists. The plugin generates sibling skills discovered by Codex, with shared references and assets. The standalone skill and plugin can coexist, but they are separate copies: check the path actually loaded. Edit the authored source, generate the package and update the installation; editing the cache loses the change on the next update.
 
-A edição comunitária também gera um plugin Claude Code e um pacote Agent Skills plano. Neste último, `forma/` contém a coordenadora e os recursos, e as outras 11 pastas são suas irmãs. Todas devem ser mantidas juntas. A diferença é de descoberta, namespace e caminhos; não são 12 agentes em execução nem três implementações de design.
+The community edition also generates a Claude Code plugin and a flat Agent Skills package. In the latter, `forma/` contains the coordinator and resources, and the other 11 folders are its siblings. All must stay together. The difference is discovery, namespace and paths; these are not 12 running agents or three design implementations.
 
-O diretório `.agents/skills/` é compartilhado por versões compatíveis de Cursor, Copilot, OpenCode e Gemini CLI. Recursos pessoais podem não chegar a sessões cloud ou remotas: confirme o escopo efetivo. Use a [matriz de instalação pública](https://github.com/figueirego/forma/blob/main/docs/INSTALLATION.md) e a documentação atual do host. Não presuma que uma integração opcional existe só porque o pacote foi copiado.
+The `.agents/skills/` directory is shared by compatible versions of Cursor, Copilot, OpenCode and Gemini CLI. Personal resources may not reach cloud or remote sessions: confirm the effective scope. Use the [public installation matrix](https://github.com/figueirego/forma/blob/main/docs/INSTALLATION.md) and current host documentation. Do not assume an optional integration exists merely because the package was copied.
 
-Na distribuição avulsa, selecione a skill de nome `forma`. No plugin, o host acrescenta seu namespace à entrada e às especialistas. Use o nome anunciado pelo catálogo atual; não invente uma ferramenta `invoke_skill`. O gerador adapta links e prompts à distribuição. Metadados de agentes são apresentação e instrução, não processos em execução.
+In the standalone distribution, select the skill named `forma`. In the plugin, the host adds its namespace to the entry and specialists. Use the name announced by the current catalog; do not invent an `invoke_skill` tool. The generator adapts links and prompts to the distribution. Agent metadata provides presentation and instructions, not running processes.
 
-O pacote inclui contratos, helpers, exemplos e os componentes declarados em [recursos](resources.md). O editor completo de aparência continua sendo um contrato de implementação; o plugin não o injeta automaticamente em qualquer framework. Plugins externos, chaves, serviços, modelos e conexões não são instalados como dependência implícita.
+The package includes contracts, helpers, examples and the components declared in [resources](resources.md). The complete appearance editor remains an implementation contract; the plugin does not automatically inject it into any framework. External plugins, keys, services, models and connections are not installed as implicit dependencies.
 
-## Verificação repetível
+## Repeatable verification
 
-Resolva a raiz que contém `references/`, `assets/`, `scripts/` e `tests/`. No plugin ela também contém `.codex-plugin/` ou `.claude-plugin/`; no pacote Agent Skills ela é `forma/`. Não use a pasta de uma especialista como raiz. A variável `<package-root>` significa a raiz do plugin ou da fonte canônica; para Agent Skills, é a pasta **acima de `forma/`**, contendo as 12 pastas. Essa pasta de auditoria deve conter somente a distribuição Forma, sem outras skills.
+Resolve the root containing `references/`, `assets/`, `scripts/` and `tests/`. In the plugin it also contains `.codex-plugin/` or `.claude-plugin/`; in the Agent Skills package it is `forma/`. Do not use a specialist's folder as the root. The variable `<package-root>` means the plugin or canonical source root; for Agent Skills, it is the folder **above `forma/`**, containing the 12 folders. This audit folder must contain only the Forma distribution, without other skills.
 
 ```sh
 python3 <forma-root>/scripts/check_package.py --root <package-root>
 ```
 
-O verificador é local e somente leitura. Deriva o catálogo dos arquivos, confere links/âncoras Markdown, nomes, campos escalares de metadados e, quando existe manifesto, paths e prompts do plugin. Não é um parser completo de YAML, scanner de segurança ou avaliador de significado. A validação de frontmatter do host continua sendo uma etapa separada.
+The checker is local and read-only. It derives the catalog from the files and checks Markdown links/anchors, names, scalar metadata fields and, when a manifest exists, plugin paths and prompts. It is not a complete YAML parser, security scanner or meaning evaluator. Host frontmatter validation remains a separate step.
 
-Na autoria/atualização, acrescente apenas as comparações disponíveis:
+When authoring/updating, add only the comparisons available:
 
 ```sh
 python3 <forma-root>/scripts/check_package.py --root <plugin-root> --source <canonical-root> --installed <installed-root> --archive <plugin.zip>
 ```
 
-`--source` confere hashes e cobertura da proveniência; `--installed` confere a cópia; `--archive` confere o conteúdo distribuído. Uma comparação omitida não foi executada. O ZIP do marketplace pode incluir a raiz do catálogo ao redor do plugin; preserve essa estrutura ao distribuir. Nenhum desses checks executa hooks, inicia um servidor ou chama um modelo.
+`--source` checks hashes and provenance coverage; `--installed` checks the copy; `--archive` checks the distributed contents. An omitted comparison was not executed. The marketplace ZIP may include the catalog root around the plugin; preserve this structure when distributing. None of these checks executes hooks, starts a server or calls a model.
 
-## Instalação e descoberta
+## Installation and discovery
 
-Use o gerenciador disponível no host e verifique seu help/retorno. No Codex CLI auditado, a sequência é `codex plugin marketplace add <marketplace-root>`, `codex plugin add forma@forma-community` e `codex plugin list --marketplace forma-community --json`. O nome `forma-community` pertence ao catálogo comunitário distribuído; outro catálogo pode anunciar outra identidade. Não copie caminhos privados de outra máquina.
+Use the manager available in the host and check its help/output. In the audited Codex CLI, the sequence is `codex plugin marketplace add <marketplace-root>`, `codex plugin add forma@forma-community` and `codex plugin list --marketplace forma-community --json`. The name `forma-community` belongs to the distributed community catalog; another catalog may announce another identity. Do not copy private paths from another machine.
 
-No Claude Code, os comandos de shell são `claude plugin marketplace add figueirego/forma`, `claude plugin install forma@forma-community` e `claude plugin list`. Use a entrada anunciada pelo host; a sintaxe de invocação difere do Codex. No pacote Agent Skills, use linguagem natural ou o comando efetivamente disponível no host. O pacote não instala runtimes de modelo.
+In Claude Code, the shell commands are `claude plugin marketplace add figueirego/forma`, `claude plugin install forma@forma-community` and `claude plugin list`. Use the entry announced by the host; invocation syntax differs from Codex. In the Agent Skills package, use natural language or the command actually available in the host. The package does not install model runtimes.
 
-Depois da atualização, confira a descoberta em sessão nova ou reload suportado: entrada, especialistas, namespace, prompts e caminho do cache. Manifesto válido ou instalação habilitada não demonstra que uma conversa antiga recarregou a versão. Não apague a skill avulsa automaticamente; para evitar ambiguidade, selecione a entrada do plugin e confirme a origem.
+After updating, check discovery in a new session or supported reload: entry, specialists, namespace, prompts and cache path. A valid manifest or enabled installation does not demonstrate that an old conversation reloaded the version. Do not automatically delete the standalone skill; to avoid ambiguity, select the plugin entry and confirm its origin.
 
-## Quatro provas separadas
+## Four separate kinds of proof
 
-| Camada | Evidência | Limite |
+| Layer | Evidence | Limit |
 |---|---|---|
-| Pacote | Checagens, hashes, frontmatter e arquivos | Não executa a decisão do agente |
-| Host | Descoberta atual, nome, origem e estado habilitado | Não demonstra resultado de design |
-| Agente | Caso em sessão isolada lendo a instalação, artefato/diff e decisão observados | Uma amostra não mede confiabilidade universal |
-| Consumidor | Componente/rota real, estados, interações e render pertinentes | Uma fixture não aprova todos os projetos |
+| Package | Checks, hashes, frontmatter and files | Does not execute the agent's decision |
+| Host | Current discovery, name, origin and enabled state | Does not demonstrate a design result |
+| Agent | Case in an isolated session reading the installation, observed artifact/diff and decision | One sample does not measure universal reliability |
+| Consumer | Actual component/route, relevant states, interactions and rendering | A fixture does not approve every project |
 
-Para uma mudança de roteamento, siga a [comparação de versões](../evals/routing-scenarios.md#comparar-versões-sem-confundir-as-provas). Registre falhas, checks não aplicáveis e caminhos não testados. Não some essas camadas num selo “100%”.
+For a routing change, follow the [version comparison](../evals/routing-scenarios.md#compare-versions-without-confusing-evidence). Record failures, inapplicable checks and untested paths. Do not combine these layers into a "100%" seal.
 
-## Identidade do plugin
+## Plugin identity
 
-Os arquivos em `assets/plugin-brand/` identificam a Forma no catálogo e na sua apresentação. Símbolo, cor de marca, tipografia e hero não são defaults para apps criados com a ferramenta. Preserve a identidade aprovada de cada consumidor. O hero é uma imagem de marca gerada; não é componente WebGL, nem prova de modelagem ou movimento interativo.
+Files in `assets/plugin-brand/` identify Forma in the catalog and its presentation. The symbol, brand color, typography and hero are not defaults for apps created with the tool. Preserve each consumer's approved identity. The hero is a generated brand image; it is not a WebGL component or proof of modeling or interactive motion.

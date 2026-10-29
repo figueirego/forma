@@ -1,110 +1,108 @@
-# Validação em produto renderizado
+# Validation in a rendered product
 
-Use ao criar interface ou testar esta skill na prática. Documentar critérios não equivale a cumprir os critérios. Faça o ciclo composição → execução → observação → correção → confirmação.
+Use when creating an interface or testing this skill in practice. Documenting criteria is not equivalent to meeting them. Follow composition -> execution -> observation -> correction -> confirmation.
 
-## Contrato mínimo de execução
+## Minimum execution contract
 
-1. Declare a tarefa principal e a natureza do artefato: protótipo de navegador, implementação web, app nativo ou instalador. Uma viewport mobile e um layout desktop não comprovam comportamento nativo.
-2. Ao criar uma interface, implemente uma fatia vertical utilizável com conteúdo representativo: entrada, validação, sucesso observável, recuperação e persistência compatível com a promessa. Ao refinar uma existente, exercite o fluxo e os estados afetados, preservando os contratos existentes. Evite controles decorativos com aparência de ação.
-3. Renderize cada composição na largura e altura alvo. Inspecione captura do viewport e página inteira; uma captura longa pode mostrar uma barra fixa sobre conteúdo que será alcançável ao rolar. Verifique o alcance real antes de classificar como bloqueio.
-4. Execute a tarefa por teclado e ponteiro, incluindo retorno de foco e erro. Teste mudança de largura com um rascunho aberto. Teste conteúdo extremo.
-5. Registre achados com reprodução, efeito e correção. Confirme novamente somente estados afetados e caminhos críticos. Guarde capturas iniciais e finais em nomes diferentes; não sobrescreva a baseline.
+1. Declare the primary task and artifact type: browser prototype, web implementation, native app or installer. A mobile viewport and desktop layout do not prove native behavior.
+2. When creating an interface, implement a usable vertical slice with representative content: entry, validation, observable success, recovery and persistence matching the promise. When refining an existing interface, exercise the affected flow and states while preserving existing contracts. Avoid decorative controls that appear actionable.
+3. Render each composition at its target width and height. Inspect viewport and full-page captures; a long capture may show a fixed bar over content that scrolling can reach. Verify actual reachability before classifying it as blocked.
+4. Execute the task with keyboard and pointer, including return focus and errors. Test a width change with an open draft. Test extreme content.
+5. Record findings with reproduction, effect and correction. Reconfirm only affected states and critical paths. Save initial and final captures under different names; do not overwrite the baseline.
 
-Se a comparação não mostrar a melhora esperada, retorne à hipótese do [playbook de refinamento](playbooks.md#a-correção-pontual-ou-refinamento). Confira revisão carregada e condições reais da captura antes de concluir que a correção falhou. Escolha nova evidência para a próxima tentativa; não substitua diagnóstico por ajustes cosméticos sucessivos.
+If comparison does not show the expected improvement, return to the hypothesis in the [refinement playbook](playbooks.md#a-local-correction-or-refinement). Check the loaded revision and actual capture conditions before concluding the correction failed. Choose new evidence for the next attempt; do not replace diagnosis with successive cosmetic adjustments.
 
-## Falhas observadas no laboratório Pauta e regras transferíveis
+## Failures observed in the Pauta lab and transferable rules
 
-| Falha ou risco observado | Decisão exigida | Como confirmar |
+| Observed failure or risk | Required decision | How to confirm |
 |---|---|---|
-| Texto secundário com contraste abaixo do limiar | Medir a combinação efetivamente renderizada; tokens isolados não bastam | Scanner, quando disponível, e inspeção nas superfícies e estados suportados afetados; no experimento Pauta foram três composições |
-| Metadados de 9–11px visualmente frágeis | Escolher tamanho por função, distância e densidade; ampliar texto útil antes de esconder conteúdo | Ler em escala normal e ampliar; não inventar um mínimo WCAG universal |
-| `aria-label` omitia a disciplina visível no botão | Preferir nome vindo do conteúdo ou relacionar os textos relevantes | Comparar nome acessível e texto visível; testar comando por voz quando disponível |
-| Navegações sem nomes distintos | Dar nomes que expressem função | Inspecionar landmarks, além do resultado automático |
-| Detalhe sobreposto permitia foco no fundo | Decidir se é modal ou navegação; modal exige fundo inerte, Escape, contenção e retorno de foco | Tab/Shift+Tab nas bordas e fechamento com filtro ativo |
-| Lista recriada após concluir destruía o controle focado | Definir destino de foco por identidade/posição, com alternativa quando a lista fica vazia | Concluir por teclado e continuar a próxima tarefa |
-| Teste de checkbox por posição repetia a ação após a linha desaparecer | Localizar por identidade e afirmar o estado final de domínio; não repetir mutação até o controle parecer marcado | Item sai de pendentes, aparece concluído, persiste; evitar falso diagnóstico da UI |
+| Secondary text below the contrast threshold | Measure the actually rendered combination; isolated tokens are insufficient | Scanner when available, plus inspection of affected supported surfaces and states; the Pauta experiment used three compositions |
+| Visually fragile 9-11px metadata | Choose size by function, distance and density; enlarge useful text before hiding content | Read at normal scale and enlarged; do not invent a universal WCAG minimum |
+| `aria-label` omitted the subject visible in the button | Prefer a content-derived name or associate relevant text | Compare accessible name and visible text; test voice commands when available |
+| Navigation regions without distinct names | Provide names expressing function | Inspect landmarks as well as automated results |
+| An overlaid detail allowed background focus | Decide whether it is a modal or navigation; a modal requires inert background, Escape, focus containment and return | Tab/Shift+Tab at boundaries and closing with an active filter |
+| Recreating the list after completion destroyed the focused control | Define the focus destination by identity/position, with an alternative when the list becomes empty | Complete through the keyboard and continue to the next task |
+| A position-based checkbox test repeated the action after the row disappeared | Locate by identity and assert the final domain state; do not repeat a mutation until the control looks checked | Item leaves pending, appears completed and persists; avoid a false UI diagnosis |
 
-Valores tipográficos e alvos de toque devem respeitar a plataforma e o projeto. Não aplicar densidade compacta do desktop a todos os tamanhos. Títulos longos devem quebrar sem expulsar ações ou invadir outros controles.
+Typography values and touch targets must respect the platform and project. Do not apply compact desktop density at every size. Long headings must wrap without pushing actions away or invading other controls.
 
-## Casos mínimos para edição e armazenamento
+## Minimum editing and storage cases
 
-- Editar A → abrir B → voltar A: preservar rascunho na sessão.
-- Salvar → recarregar: confirmar conteúdo persistido, não apenas toast.
-- Simular falha real da camada de armazenamento → manter texto e exibir recuperação → tentar novamente.
-- Alterar viewport durante edição: preservar campo, seleção quando aplicável e acesso ao salvar.
-- Se reload perde rascunho não salvo, declarar esse limite; não chamar memória temporária de persistência.
-- Para timer, usar tempo decorrido/deadline, testar pausa e retomada e declarar se sobrevive a reload. Não prometer precisão de tarefa em background nativo com um timer web.
+- Edit A -> open B -> return to A: preserve the draft within the session.
+- Save -> reload: confirm persisted content, not just a toast.
+- Simulate actual storage-layer failure -> retain text and show recovery -> retry.
+- Change viewport while editing: preserve the field, selection where applicable and access to saving.
+- If reload loses an unsaved draft, state that limit; do not call temporary memory persistence.
+- For a timer, use elapsed time/deadline, test pause and resume and state whether it survives reload. Do not promise native background-task precision with a web timer.
 
-## Evidência e limites
+## Evidence and limits
 
-Axe sem violações detectadas não comprova conformidade completa. Separar resultados do scanner, inspeção visual e percurso por teclado; leitor de tela, zoom real, dispositivos físicos, desempenho em campo e instalação nativa permanecem pendentes até execução. Sem baseline preservada, comparação visual histórica é inconclusiva. Um protótipo aprovado para demonstração não é aprovado para produção.
+Axe reporting no detected violations does not prove full compliance. Separate scanner results, visual inspection and keyboard walkthroughs; screen reader, actual zoom, physical devices, field performance and native installation remain pending until executed. Without a preserved baseline, historical visual comparison is inconclusive. A prototype approved for demonstration is not approved for production.
 
-Ao corrigir a skill, transformar o achado em uma regra verificável e um cenário de avaliação, sem impor cores, componentes ou escolhas específicas do produto de teste a todos os projetos.
+When correcting the skill, turn the finding into a verifiable rule and evaluation scenario without imposing the test product's colors, components or choices on every project.
 
-## Crítica de composição e substância
+## Critique of composition and substance
 
-Além de procurar defeitos, confirme o que o artefato entrega. Uma página sem ornamentos pode continuar vazia; um dashboard neutro pode esconder informação necessária. Em criação/redesign, inspecione:
+Beyond looking for defects, confirm what the artifact delivers. An undecorated page can remain empty; a neutral dashboard can hide necessary information. In creation/redesign, inspect:
 
-- **Orientação:** o que é, de quem é, qual o recorte e o que a pessoa pode fazer? Em app, qual pergunta a tela responde e qual ação da tarefa está alcançável?
-- **Substância:** cada seção/área prometida contém informação útil, prova honesta e estados coerentes? Não aprovar um wireframe vazio porque o scanner ficou silencioso.
-- **Hierarquia e quadro:** há foco claro, relações de proximidade e eixos/insets consistentes? Distinga respiro intencional de buraco deixado por conteúdo removido. Meça no container real; sidebar não deve ser contada como margem da página.
-- **Identidade e continuidade:** o conceito aparece além do hero? A marca e os mecanismos aprovados continuam reconhecíveis? Familiaridade dos controles operacionais não é falha de originalidade.
-- **Tipo, cor e imagens:** fontes carregadas, quebras, recortes e papéis cromáticos permanecem legíveis em escala de uso? Não compensar fonte ausente com uma declaração CSS ou contraste insuficiente com uma nota de estética.
-- **Adaptação e interação:** leia toda a composição nos tamanhos pertinentes, não só o primeiro viewport. Confirme teclado, zoom, conteúdo extremo e movimento reduzido; verifique gestos e rolagem, que uma captura isolada não prova.
+- **Orientation:** what is it, whose is it, what is its scope and what can the person do? In an app, which question does the screen answer and which task action is reachable?
+- **Substance:** does each promised section/area contain useful information, honest evidence and coherent states? Do not approve an empty wireframe because the scanner was silent.
+- **Hierarchy and frame:** is there clear focus, proximity-based grouping and consistent axes/insets? Distinguish intentional breathing room from a hole left by removed content. Measure within the actual container; the sidebar must not count as page margin.
+- **Identity and continuity:** does the concept appear beyond the hero? Are the brand and approved mechanisms still recognizable? Familiar operational controls are not a failure of originality.
+- **Type, color and images:** do loaded fonts, line breaks, crops and color roles remain legible at usage scale? Do not compensate for a missing font with a CSS declaration or insufficient contrast with an aesthetic note.
+- **Adaptation and interaction:** read the entire composition at relevant sizes, not just the first viewport. Confirm keyboard, zoom, extreme content and reduced motion; verify gestures and scrolling, which an isolated capture cannot prove.
 
-Registre os problemas de maior impacto com captura/estado, efeito e correção concreta. Corrija um pequeno lote e reobserve os estados afetados; três achados podem ser um lote útil, nunca uma quota. Barreira de acesso, dados incorretos e tarefa quebrada precedem gosto visual. Se restarem defeitos materiais, mantenha-os abertos; um limite de rodadas controla esforço, não transforma falha em aprovação. Notas de um modelo ou critérios de uma galeria não medem conversão nem equivalem a teste com usuários.
+Record the highest-impact problems with capture/state, effect and concrete correction. Fix a small batch and reobserve affected states; three findings may form a useful batch, never a quota. Access barriers, incorrect data and broken tasks precede visual taste. If material defects remain, keep them open; a round limit controls effort, not whether failure becomes approval. A model's scores or a gallery's criteria do not measure conversion or equal user testing.
 
-Quando houver build, confira a saída produzida pelo pipeline existente além do dev server, nos caminhos afetados: fontes, assets, cascata, animações e interações podem mudar na compilação. Build servido localmente não prova deploy público. Se um scanner externo aplicar proibições de estilo, declare seu perfil e exceções legítimas separadamente; não o edite para esconder defeitos nem trate seu `0 FAIL` como aceite visual completo. Registre a evidência exigida para cada critério; lint de fonte e julgamento visual continuam verificações diferentes.
+When a build exists, check output from the existing pipeline as well as the dev server on affected paths: fonts, assets, cascade, animations and interactions may change during compilation. A locally served build does not prove public deployment. If an external scanner applies style prohibitions, declare its profile and legitimate exceptions separately; do not edit it to hide defects or treat its `0 FAIL` as complete visual acceptance. Record the evidence required for each criterion; source linting and visual judgment remain different checks.
 
-## Controles sobrepostos e regressão por CSS
+## Overlapping controls and CSS regressions
 
-Inspecionar tanto o elemento pintado quanto o alvo de interação. Um anel pode estar visualmente correto e ter seu botão invisível deslocado por uma regra genérica como `.stage button`. Conferir `getBoundingClientRect`, transform, background e border computados; não certificar apenas pelo teste da fórmula. Escopar regras por papel (`.pool-handle`, `.pool-distance-hit`), separar anel/handle/grip e verificar clique sem salto, arraste nos dois sentidos e reversão nos limites. Capturar o resultado com o painel aberto e o restante da aplicação utilizável.
+Inspect both the painted element and the interaction target. A ring can look correct while its invisible button is displaced by a generic rule such as `.stage button`. Check `getBoundingClientRect`, transform, computed background and border; do not certify it only through the formula test. Scope rules by role (`.pool-handle`, `.pool-distance-hit`), separate ring/handle/grip and verify clicking without jumps, dragging both ways and reversal at limits. Capture the result with the panel open and the rest of the application usable.
 
-Se o usuário estiver testando ao mesmo tempo, usar uma aba de QA separada para evitar que gestos de duas pessoas invalidem a evidência. Testes devem distinguir estado inicial, ação executada e estado resultante; mudanças concorrentes não são efeito comprovado do teste.
+If the user is testing simultaneously, use a separate QA tab so two people's gestures do not invalidate evidence. Tests must distinguish initial state, executed action and resulting state; concurrent changes are not proven test effects.
 
+## Regressions observed in Pauta 1.7
 
-## Regressões observadas no Pauta 1.7
+- Header `backdrop-filter` created a stacking context: suggestions with high z-index remained behind content. Inspect ancestors and the rendered layer; raising only the child is insufficient. When opening search, release the header context or use an anchored surface in the top layer.
+- An old `.search span` selector enlarged dropdown headings. Audit the cascade of new descendants, not only the component class.
+- Closing a palette and restoring input focus reopened suggestions after confirmation. Distinguish confirmation/navigation from Escape and restore focus only when consistent with the destination.
+- A sidebar-only button disappears with the sidebar on mobile. Verify function reachability, including maps, libraries and settings, in each adapted navigation.
+- Measure `document.documentElement.clientWidth` and overflow in addition to setting the viewport. Existing zoom can make CSS width differ from the dimension requested from the tool.
+- A test image with red pixels and green card metadata distinguishes pixel-based search from decorative filtering. Test persistence after reload and absence of results when combined with an incompatible tag.
+- Export the actual file, open it and check type/dimensions/content. An "exported" toast does not validate PNG, ZIP, UTF-8 or included data.
 
-- `backdrop-filter` no cabeçalho criou um contexto de empilhamento: sugestões com z-index alto continuaram atrás do conteúdo. Inspecione os ancestrais e a camada renderizada; elevar apenas o filho não basta. Ao abrir a busca, libere o contexto do cabeçalho ou use uma superfície na camada superior com posição ancorada.
-- Um seletor antigo `.search span` aumentou títulos do dropdown. Audite a cascata dos descendentes novos, não só a classe do componente.
-- Fechar uma paleta e restaurar foco no input reabria sugestões após confirmar. Diferencie confirmação/navegação de Escape e restaure foco apenas quando coerente com o destino.
-- Um botão apenas na sidebar desaparece junto com ela no mobile. Verifique a alcançabilidade das funções, incluindo mapa, bibliotecas e configurações, em cada navegação adaptada.
-- Meça `document.documentElement.clientWidth` e overflow além de configurar viewport. Zoom já ativo pode tornar a largura CSS diferente da dimensão pedida à ferramenta.
-- Uma imagem de teste com pixels vermelhos e metadado de cartão verde distingue busca por pixels de filtro decorativo. Teste persistência após reload e a ausência de resultado ao combinar uma tag incompatível.
-- Exporte o arquivo de verdade, abra-o e confira tipo/dimensões/conteúdo. Um toast “exportado” não valida PNG, ZIP, UTF-8 nem dados incluídos.
+These cases guide reusable criteria; they do not certify other products or every device.
 
-Esses casos orientam critérios reutilizáveis; não certificam outros produtos ou todos os dispositivos.
+## Layout regressions - spatial contracts
 
+- `Graph` acquired a 20px label and shadow because a text span inherited the icon rule and the button inherited action styling. Correct anatomy/class; confirm typography and elevation match other options, including rail/mobile.
+- Metadata and properties had neighboring borders for the same separation. Assign one owner to the boundary and measure the resulting space.
+- Palette-list height subtracted a fixed 125px even though filters could wrap into several lines. Use flex/grid with a scrollable region and stable footer; test multiline chips and a short window.
+- An inline name and explanation in a narrow profile compressed the field. Stack according to content pressure; the panel may scroll while the action remains reachable.
+- Tags without spaces need an explicit wrapping rule; `min-width:0` on the parent button alone does not resolve the child's `white-space:nowrap`.
 
-## Regressões de layout — contratos espaciais
+Use [spatial contracts](layout-spatial-contracts.md) and record measurements for each state. Do not universalize Pauta's values: the lesson is the relationship between elements, the rule's origin and the confirmation method.
 
-- `Grafo` ganhou rótulo20px e sombra porque um span de texto herdou a regra de ícones e o botão herdou estilo de ação. Corrigir anatomia/classe; confirmar tipografia e elevação iguais às outras opções, inclusive rail/mobile.
-- Metadata e propriedades tinham bordas vizinhas para a mesma separação. Definir um responsável pela fronteira e medir o espaço resultante.
-- Altura da lista da paleta descontava125px fixos, embora os filtros pudessem quebrar em várias linhas. Usar layout flex/grid com região rolável e rodapé estável, testar chips multilinha e janela baixa.
-- Nome e explicação em linha no perfil estreito comprimiam o campo. Empilhar pela pressão do conteúdo; o painel pode rolar enquanto a ação continua alcançável.
-- Tags sem espaços precisam de regra explícita de quebra; `min-width:0` no botão pai sozinho não resolve `white-space:nowrap` do filho.
+## Applying 1.10 to Pauta - scope, adaptation and execution identity
 
-Use [contratos espaciais](layout-spatial-contracts.md) e registre as medidas de cada estado. Não universalize os valores do Pauta: o aprendizado é a relação entre elementos, a origem da regra e o método de confirmação.
+Findings from this application become verification contracts, not a new mandatory style:
 
-## Aplicação da 1.10 no Pauta — recorte, adaptação e identidade da execução
-
-Achados desta aplicação viram contratos de verificação, não um novo estilo obrigatório:
-
-| Falha ou risco encontrado | Correção transferível | Confirmação |
+| Failure or risk found | Transferable correction | Confirmation |
 |---|---|---|
-| Resumo global desaparecia em faixas intermediárias e mobile | Reorganizar o conteúdo necessário em composição compacta e nomear seu escopo | Comparar total/denominador e alcançabilidade antes/depois de filtrar e estreitar o painel |
-| Accent recoloria badges de disciplina, enquanto o cartão tinha cor livre | Separar categoria, objeto e ação | Alterar tema/accent, salvar, recarregar e conferir identidade nos lugares correspondentes |
-| Atualização da mesma biblioteca reutilizava reset de troca de biblioteca | Passar identidade e política explícita de preservação ao callback | Mover item preserva recorte; trocar biblioteca executa apenas resets que pertencem à troca |
-| Última tarefa saía do filtro, mas a UI podia ampliar ou anunciar conclusão | Conservar recorte vazio, explicar o motivo e oferecer recuperação | Mover último membro, manter seleção do filtro e recuperar “todos” por ação explícita |
-| Segmentado/disciplina não atualizavam a seleção da navegação | Derivar todos os estados visuais/acessíveis do recorte final | Percorrer os controles em sequência e comparar seleção anunciada com os itens mostrados |
-| Swatch ganhou padding, mas regra mobile antiga manteve caixa pequena | Medir desenho e alvo depois de toda a cascata | Conferir pintura, alvo, seleção e foco na largura afetada; não olhar só a regra nova |
-| Mapa era tratado como grafo de relações | Explicar agrupamento e cor livre; oferecer Lista equivalente | Abrir título completo pela Lista e verificar foco no detalhe, sem inventar arestas |
-| Toolbar/legenda ocupavam área sobre a projeção | Reservar espaço de layout e encaixar na viewport real do mapa | Fit contém conteúdo útil; controles e última ação continuam alcançáveis em janela baixa |
+| Global summary disappeared at intermediate and mobile widths | Reorganize necessary content into a compact composition and name its scope | Compare total/denominator and reachability before/after filtering and narrowing the panel |
+| Accent recolored subject badges while the card had an independent color | Separate category, object and action | Change theme/accent, save, reload and check identity in the corresponding places |
+| Updating the same library reused the library-switch reset | Pass identity and an explicit preservation policy to the callback | Moving an item preserves scope; switching libraries performs only resets owned by the switch |
+| The last task left the filter, but the UI could broaden scope or announce completion | Retain the empty scope, explain why and offer recovery | Move the last member, retain filter selection and recover "all" through an explicit action |
+| Segmented/subject controls did not update navigation selection | Derive all visual/accessible states from the final scope | Traverse controls in sequence and compare announced selection with displayed items |
+| A swatch gained padding, but an old mobile rule kept its box small | Measure the drawing and target after the full cascade | Check painting, target, selection and focus at the affected width; do not inspect only the new rule |
+| A map was treated as a relationship graph | Explain grouping and independent color; offer an equivalent List | Open the full title through the List and verify detail focus without inventing edges |
+| Toolbar/legend occupied space over the projection | Reserve layout space and fit within the actual map viewport | Fit contains useful content; controls and the last action remain reachable in a short window |
 
-Antes de atribuir a falha à implementação, confirme a identidade dos arquivos efetivamente servidos e carregados. Nesta rodada, JavaScript antigo em cache mascarou uma correção local. Distinga quatro evidências: fonte local, resposta do servidor, recursos de um contexto novo de teste e recursos da aba já aberta pelo usuário. Um teste isolado não atualiza nem comprova a quarta.
+Before attributing failure to implementation, confirm the identity of files actually served and loaded. In this round, cached old JavaScript masked a local correction. Distinguish four kinds of evidence: local source, server response, resources in a new test context and resources in the user's already open tab. An isolated test neither updates nor proves the fourth.
 
-Compare a identidade individual de CSS e JavaScript afetados com o artefato testado, usando versão/hash de conteúdo ou recurso versionado cuja resposta foi verificada. Inclua módulos importados e overrides de estilo pertinentes. Um `data-revision`, título, parâmetro de caso ou número global de versão repetido não comprova os bytes executados; URL estável sozinha também não basta. Se a ferramenta não expõe conteúdo/cache carregado, registre esse limite e não afirme atualização da aba. Confira comportamento e estilos computados após confirmar os recursos. Use a estratégia de cache do projeto; não desligue cache permanentemente nem adicione query strings arbitrárias em cada interação.
+Compare the individual identity of affected CSS and JavaScript against the tested artifact, using a version/content hash or versioned resource whose response was verified. Include imported modules and relevant style overrides. A repeated `data-revision`, title, case parameter or global version number does not prove executed bytes; a stable URL alone is also insufficient. If the tool does not expose loaded content/cache, record that limit and do not claim the tab updated. Check behavior and computed styles after confirming resources. Use the project's caching strategy; do not permanently disable caching or add arbitrary query strings on every interaction.
 
-Antes de recarregar, fechar ou substituir uma aba, verifique alterações não salvas. Não salvar, descartar, resetar preferências ou limpar armazenamento só para testar. Preserve o rascunho por um mecanismo existente ou deixe a escolha de salvar/descartar ao usuário; enquanto isso, valide em contexto isolado e reporte separadamente. Um estado salvo com três luzes ou intensidade5% continua válido e não deve ser confundido com defaults defeituosos.
+Before reloading, closing or replacing a tab, check for unsaved changes. Do not save, discard, reset preferences or clear storage merely to test. Preserve the draft through an existing mechanism or leave the save/discard choice to the user; meanwhile, validate in an isolated context and report separately. A saved state with three lights or 5% intensity remains valid and must not be confused with defective defaults.
 
-Registre largura/altura CSS reais, dimensão solicitada à ferramenta, zoom e DPR quando relevantes. Uma viewport configurada não comprova que a página recebeu esses valores. Se diferirem, explique a medida usada; não arredonde o resultado para corresponder ao plano. As vistas de navegador desktop/mobile continuam distintas de aplicativo nativo, dispositivo físico ou validação de teclado virtual.
+Record actual CSS width/height, dimensions requested from the tool, zoom and DPR when relevant. A configured viewport does not prove the page received those values. If they differ, explain the measurement used; do not round the result to match the plan. Desktop/mobile browser views remain distinct from native applications, physical devices or virtual-keyboard validation.

@@ -1,49 +1,49 @@
 ---
 name: forma-handoff
-description: "Preparar e verificar entrega entre design e implementação: Figma, artefatos editáveis, tokens, componentes, exportação e integração no consumidor. Use para materializar o formato de entrega; não para substituir funcionalidade pedida por documentação ou screenshot."
+description: "Prepare and verify the handoff between design and implementation: Figma, editable artifacts, tokens, components, export and consumer integration. Use to deliver the required format; not to replace requested functionality with documentation or a screenshot."
 metadata:
   version: 1.21.0
 ---
 
-# Artefatos, tokens e handoff
+# Artifacts, tokens and handoff
 
-## Quando usar
+## When to use
 
-- Use para Figma, código a partir de design, artefato editável, exportação, tokens ou transferência de recurso para outro projeto.
-- Não use para publicar biblioteca sem autorização ou apresentar um screenshot completo como interface implementada.
+- Use for Figma, design-to-code work, editable artifacts, export, tokens or resource transfer to another project.
+- Do not use to publish a library without authorization or present a full screenshot as an implemented interface.
 
-Este módulo instrui o agente após leitura; não conecta serviços, faz exportações nem chama outros módulos automaticamente.
-Preserve marca, stack, IDs e fonte de verdade existentes; entregue no formato útil ao destino.
+This module instructs the agent after it is read; it does not connect services, export files or call other modules automatically.
+Preserve the existing brand, stack, IDs and source of truth; deliver the format useful to the destination.
 
-## Entradas
+## Inputs
 
-- Artefato/fonte, destino, formato solicitado, escopo de edição e requisitos de conteúdo/estado.
-- Componentes/tokens existentes, assets/licenças, acesso às ferramentas e critérios verificáveis de aceite.
+- Artifact/source, destination, requested format, editing scope and content/state requirements.
+- Existing components/tokens, assets/licenses, tool access and verifiable acceptance criteria.
 
-## Procedimento
+## Procedure
 
-1. Fixe fonte de verdade, rota de produção e natureza da entrega: especificação, editável, código ou arquivo final.
-   Leia [artefatos e edição](../forma/references/artifact-workflows.md); inventarie IDs e dependências reais para evitar duplicação e links inventados.
-2. Para Figma ou outro serviço, leia [integrações](../forma/references/integrations.md) e a skill operacional atual antes de usar ferramentas.
-   Inspecione contexto, render, componentes e bindings existentes. Código gerado é referência até estar adaptado, integrado e verificado.
-3. Para tokens/componentes, leia [tokens e handoff](../forma/references/tokens-handoff.md).
-   Mapeie papéis, aliases, modos, consumidores e exceções; JSON de exemplo tem formato próprio e não implica conformidade com outro pipeline.
-4. Ao transferir capacidade, siga reúso nos [playbooks](../forma/references/playbooks.md).
-   Conecte implementação, eventos, estado, assets e ciclo de vida ao consumidor. BookObject/helper são código; base limpa tem demo; editor/perfil são contratos a implementar.
-5. Abra o editável/exportado ou execute o consumidor no destino e confira o resultado final.
-   Use [validação renderizada](../forma/references/rendered-validation.md) e [verificação](../forma/references/verification.md); valide fontes, assets, tamanhos, links e estados conforme o formato.
-   Para entregas múltiplas, confira cada saída e sua revisão no contrato existente. Para vídeo, confira também [duração, frames e áudio](../forma/references/motion.md#filmes-e-sequências-renderizadas); preview, arquivo renderizado e entrega confirmada são etapas distintas.
-   Para recortes, confira [alpha e composição](../forma/references/artifact-workflows.md#transparência-e-composição) no arquivo final; formato PNG ou preview quadriculado não comprova transparência.
+1. Establish the source of truth, production route and type of delivery: specification, editable source, code or final file.
+   Read [artifacts and editing](../forma/references/artifact-workflows.md); inventory actual IDs and dependencies to avoid duplication and invented links.
+2. For Figma or another service, read [integrations](../forma/references/integrations.md) and the current operational skill before using tools.
+   Inspect existing context, render, components and bindings. Generated code remains a reference until adapted, integrated and verified.
+3. For tokens/components, read [tokens and handoff](../forma/references/tokens-handoff.md).
+   Map roles, aliases, modes, consumers and exceptions; example JSON has its own format and does not imply compliance with another pipeline.
+4. When transferring a capability, follow reuse in [playbooks](../forma/references/playbooks.md).
+   Connect implementation, events, state, assets and lifecycle to the consumer. BookObject/the helper are code; the clean shell has a demo; the editor/profile are contracts to implement.
+5. Open the editable/exported artifact or run the consumer in the destination and inspect the final result.
+   Use [rendered validation](../forma/references/rendered-validation.md) and [verification](../forma/references/verification.md); validate fonts, assets, sizes, links and states for the format.
+   For multiple deliverables, verify each output and its revision against the existing contract. For video, also check [duration, frames and audio](../forma/references/motion.md#films-and-rendered-sequences); preview, rendered file and confirmed delivery are distinct stages.
+   For cutouts, verify [alpha and composition](../forma/references/artifact-workflows.md#transparency-and-composition) in the final file; PNG format or a checkerboard preview does not prove transparency.
 
-## Saída e parada
+## Output and stopping condition
 
-Entregue arquivos/links reais, formato, localização, consumidor e instruções mínimas necessárias para uso.
-Identifique o que está editável, exportado, integrado, persistido ou apenas especificado, com evidência correspondente.
-Pare quando o destinatário puder usar o artefato no formato contratado e o resultado tiver sido aberto/exercitado.
-Se faltar integração, runtime ou ferramenta de exportação, declare o limite; não encerre implementação pedida com documentação isolada.
+Deliver real files/links, format, location, consumer and the minimum instructions needed for use.
+Identify what is editable, exported, integrated, persisted or only specified, with corresponding evidence.
+Stop when the recipient can use the artifact in the agreed format and the result has been opened/exercised.
+If integration, runtime or an export tool is missing, state the limit; do not conclude a requested implementation with isolated documentation.
 
-## Apoios opcionais e limites
+## Optional support and limits
 
-Figma, Open Design, Superdesign e `ecc:design-system` podem apoiar a rota escolhida; use um serviço principal por artefato quando suficiente.
-Se disponíveis, leia seu `SKILL.md` atual e descubra ferramentas reais. Disponibilidade de plugin, conexão e capacidade de edição são verificações distintas.
-Não instale serviços, regenere artefatos pagos ou publique por padrão. Contratos e demos em memória não comprovam persistência ou exportação no consumidor.
+Figma, Open Design, Superdesign and `ecc:design-system` can support the selected route; use one primary service per artifact when sufficient.
+If available, read their current `SKILL.md` and discover actual tools. Plugin availability, connection and editing capability are separate checks.
+Do not install services, regenerate paid artifacts or publish by default. In-memory contracts and demos do not prove persistence or export in the consumer.

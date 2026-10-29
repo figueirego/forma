@@ -9,10 +9,10 @@
 A design system for coding assistants. Forma brings together a coordinator and 11 specialists to create, refine, and verify interfaces, visual systems, and brand materials in your project. It selects instructions and references for each task while preserving your identity and stack. Available as plugins for **Codex** and **Claude Code**, and as **Agent Skills** for other compatible environments.
 
 <p>
-  <a href="#install">Install</a> ·
-  <a href="#try-it">Try it</a> ·
-  <a href="#specialties">Specialties</a> ·
-  <a href="#contribute">Contribute</a> ·
+  <a href="#install">Install</a> |
+  <a href="#try-it">Try it</a> |
+  <a href="#specialties">Specialties</a> |
+  <a href="#contribute">Contribute</a> |
   <a href="#license">License</a>
 </p>
 
@@ -38,27 +38,27 @@ In Codex, invoke **`$forma:forma`**; in Claude Code, **`/forma:forma`**. In othe
 
 ### Understand and direct
 
-- [**Coordinator**](source/forma/SKILL.md) — interprets the request and selects the relevant instructions.
-- [**Product**](source/forma/skills/product/SKILL.md) — research, journeys, information architecture, and flows.
-- [**Reference**](source/forma/skills/reference/SKILL.md) — source analysis, reproduction, and fidelity backed by evidence.
+- [**Coordinator**](source/forma/SKILL.md) - interprets the request and selects the relevant instructions.
+- [**Product**](source/forma/skills/product/SKILL.md) - research, journeys, information architecture, and flows.
+- [**Reference**](source/forma/skills/reference/SKILL.md) - source analysis, reproduction, and fidelity backed by evidence.
 
 ### Build and refine
 
-- [**Foundations**](source/forma/skills/foundations/SKILL.md) · [**Interface**](source/forma/skills/interface/SKILL.md) — color, typography, layout, components, and states.
-- [**3D Objects**](source/forma/skills/objects-3d/SKILL.md) · [**Motion**](source/forma/skills/motion/SKILL.md) — materials, volumes, gestures, animation, and films.
-- [**Graphs and Data**](source/forma/skills/graphs-data/SKILL.md) · [**Platforms**](source/forma/skills/platforms/SKILL.md) — visualizations and adaptation to web, mobile, and desktop.
+- [**Foundations**](source/forma/skills/foundations/SKILL.md) | [**Interface**](source/forma/skills/interface/SKILL.md) - color, typography, layout, components, and states.
+- [**3D Objects**](source/forma/skills/objects-3d/SKILL.md) | [**Motion**](source/forma/skills/motion/SKILL.md) - materials, volumes, gestures, animation, and films.
+- [**Graphs and Data**](source/forma/skills/graphs-data/SKILL.md) | [**Platforms**](source/forma/skills/platforms/SKILL.md) - visualizations and adaptation to web, mobile, and desktop.
 
 ### Communicate and deliver
 
-- [**Brand**](source/forma/skills/brand/SKILL.md) — identity, campaigns, presentations, and graphic assets.
-- [**Handoff**](source/forma/skills/handoff/SKILL.md) — editable artifacts, tokens, export, and integration.
-- [**Validation**](source/forma/skills/validation/SKILL.md) — accessibility, states, and quality checks within a defined scope.
+- [**Brand**](source/forma/skills/brand/SKILL.md) - identity, campaigns, presentations, and graphic assets.
+- [**Handoff**](source/forma/skills/handoff/SKILL.md) - editable artifacts, tokens, export, and integration.
+- [**Validation**](source/forma/skills/validation/SKILL.md) - accessibility, states, and quality checks within a defined scope.
 
 Explore the [reusable resources](source/forma/references/resources.md), [evaluation scenarios](source/forma/evals/routing-scenarios.md), and [changelog](CHANGELOG.md).
 
 ## Direction grounded in your project
 
-Forma connects the project’s own content to a visual concept, maps each section to a claim and its evidence, and treats marketing pages and working app screens differently. Refinement checks substance, hierarchy, real data, responsive behavior, and the final rendered result.
+Forma connects the project's own content to a visual concept, maps each section to a claim and its evidence, and treats marketing pages and working app screens differently. Refinement checks substance, hierarchy, real data, responsive behavior, and the final rendered result.
 
 Forma maintains its own instructions, pattern descriptions and tools. Each addition starts with a project problem, connects to an actual resource and defines a check that can reveal a failure. Your approved brand and components take precedence over stylistic bans or image and animation quotas. See [authorship, dependencies and scope](docs/ORIGINALITY.md).
 
@@ -67,7 +67,7 @@ Forma maintains its own instructions, pattern descriptions and tools. Each addit
 Forma includes a searchable library of patterns written for its reusable resources and implementation contracts, **202 external site references**, and **2,079 developer portfolios** from a pinned community listing. Patterns explain implementation; external collections provide candidates and Forma-authored questions to investigate. Explore all three in the local selector or lightweight browser. Indexed sites are not claimed to have been visited or tested.
 
 ```sh
-node <skill-dir>/scripts/references.mjs --portfolios --query "João" --limit 3 --json
+node <skill-dir>/scripts/references.mjs --portfolios --query "Joao" --limit 3 --json
 node <skill-dir>/scripts/references.mjs --portfolios --case portfolio-project-stories --limit 3
 ```
 
@@ -79,10 +79,10 @@ The media helper searches Openverse, Wikimedia Commons, the Art Institute of Chi
 
 ## Install
 
-Choose **one format per assistant**. The packages are ready to use in this repository; no build is required. You can also download the entire repository through **Code → Download ZIP** on GitHub.
+Choose **one format per assistant**. The packages are ready to use in this repository; no build is required. You can also download the entire repository through **Code -> Download ZIP** on GitHub.
 
 <details open>
-<summary><strong>Codex</strong> · native plugin</summary>
+<summary><strong>Codex</strong> | native plugin</summary>
 
 Use a version of Codex that supports `codex plugin`:
 
@@ -101,7 +101,7 @@ Registering the ready-to-use package does not require Node, Python, or API keys.
 </details>
 
 <details>
-<summary><strong>Claude Code</strong> · native plugin</summary>
+<summary><strong>Claude Code</strong> | native plugin</summary>
 
 ```sh
 claude plugin marketplace add figueirego/forma
@@ -114,7 +114,7 @@ Start a new session and use `/forma:forma` followed by your request. To try a cl
 </details>
 
 <details>
-<summary><strong>Cursor, Copilot, OpenCode, and Gemini CLI</strong> · Agent Skills</summary>
+<summary><strong>Cursor, Copilot, OpenCode, and Gemini CLI</strong> | Agent Skills</summary>
 
 From the root of the clone or extracted ZIP, replace the path with your project's path. The first command previews the plan; the second applies it:
 

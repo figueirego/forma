@@ -1,136 +1,136 @@
-# Sistemas visuais adaptáveis, perfil e mapas espaciais
+# Adaptive visual systems, profiles, and spatial maps
 
-Use em personalização, produtos de acervo, interfaces expressivas, perfis e vistas de dados espaciais. Síntese independente informada pela auditoria da referência desktop, artefato 0.19.0 (2026-10-25); os princípios são transferíveis, valores particulares não são padrões universais. Leia também visual-system, motion, contracts-trust, rea e rendered-validation conforme a tarefa.
+Use for customization, collection products, expressive interfaces, profiles, and spatial data views. Independent synthesis informed by the audited desktop reference, artifact 0.19.0 (2026-10-25); principles are transferable, particular values are not universal standards. Also read visual-system, motion, contracts-trust, rea, and rendered-validation as relevant.
 
-## 1. Contrato de tema antes da paleta
+## 1. Theme contract before the palette
 
-Quando a dificuldade for equilíbrio cromático, escala tonal ou aparência da cor, siga o [diagnóstico cromático](color-refinement.md); esta seção define escopo e precedência de estado. Avalie o modo resolvido e os pares/consumidores que realmente mudam, sem confundir um seletor de tema com prova de que todas as camadas foram atualizadas.
+When the problem concerns color balance, tonal scales, or color appearance, follow [color diagnosis](color-refinement.md); this section defines state scope and precedence. Evaluate the resolved mode and pairs/consumers that actually change, without confusing a theme selector with evidence that every layer updated.
 
-Modele separadamente: preferência (system/light/dark), modo resolvido, accent, ambiente, cor de contexto, contraste, transparência, movimento e densidade. Declare o dono de cada valor: SO, app, conta, biblioteca, documento ou sessão. Não misture preferência persistente e estado derivado.
+Model separately: preference (system/light/dark), resolved mode, accent, ambience, contextual color, contrast, transparency, motion, and density. Declare each value's owner: OS, app, account, library, document, or session. Do not mix persistent preferences with derived state.
 
-Entregue uma tabela de precedência. Exemplo a adaptar: preferência explícita vence SO; contraste elevado vence decoração; cor da coleção altera apenas ambiente quando “manter tema” estiver desligado; accent de ação continua semântico. Observe o tema antes do primeiro frame e após troca de contexto para evitar flashes e vazamento de preferência.
+Deliver a precedence table. Adaptable example: explicit preferences override the OS; elevated contrast overrides decoration; collection color changes only ambience when "keep theme" is off; action accents remain semantic. Observe theme before the first frame and after context switching to prevent flashes and preference leakage.
 
-Tokens mínimos: surface/base/raised/overlay, text/primary/secondary/disabled, border/default/strong, accent/fill/on-fill/text, focus/ring, status/success/warning/error, selection/bg/text. Estados selected, hover, pressed, disabled e focus são independentes. Cor de categoria não substitui cor de estado.
+Minimum tokens: surface/base/raised/overlay, text/primary/secondary/disabled, border/default/strong, accent/fill/on-fill/text, focus/ring, status/success/warning/error, selection/bg/text. Selected, hover, pressed, disabled, and focus states are independent. Category colors do not replace state colors.
 
-O hex no CSS não prova cor final: registre modo, preferência, override JS e estilo computado. Para alpha/blur/gradiente/imagem, avalie composição real nos extremos; não calcule contraste de texto sem considerar fundo. Dark requer novas luminâncias, bordas e sombras, não inversão automática.
+CSS hex values do not prove final colors: record mode, preference, JS override, and computed style. For alpha/blur/gradients/images, evaluate actual composition at extremes; do not calculate text contrast without accounting for the background. Dark mode requires new luminances, borders, and shadows, not automatic inversion.
 
-Na referência desktop auditada, accent de ações, wash ambiente, paleta do material do perfil e cor de tecido dos livros são sistemas separados. Não aplicar o mesmo hex aos quatro. Canvas precisa repintar ao mudar tokens; shader precisa atualizar uniforms/texturas; CSS só altera automaticamente a camada DOM. O editor de wash usa valores manuais no stage, enquanto a superfície principal pode resolver contexto. Precedência por superfície é parte do contrato de cor.
+In the audited desktop reference, action accents, ambient wash, profile-material palette, and book-cloth colors are separate systems. Do not apply the same hex to all four. Canvas needs repainting when tokens change; shaders need uniform/texture updates; CSS automatically updates only the DOM layer. The wash editor uses manual stage values while the main surface may resolve context. Per-surface precedence is part of the color contract.
 
-## 2. Materialidade com função
+## 2. Functional materiality
 
-Especifique quais superfícies são opacas, translúcidas e decorativas. Conteúdo essencial deve continuar legível sem blur, shader ou imagem. Uma receita inicial é fundo neutro com poucos campos de baixa saturação nas margens, painel de trabalho mais sólido e sombra por papel de elevação. É uma hipótese estética a testar, não obrigação.
+Specify which surfaces are opaque, translucent, and decorative. Essential content must remain legible without blur, shaders, or images. One initial recipe is a neutral background with a few low-saturation fields at the edges, a more solid workspace panel, and shadows by elevation role. This is an aesthetic hypothesis to test, not an obligation.
 
-Documente cor, posição, extensão, intensidade e limite de cada campo. Dê controles simples e redefinir; exponha ruído e posição apenas se ajudarem. Limite intensidade para não destruir hierarquia. Inclua fallback sólido, modo econômico e preferências de transparência/contraste. Meça custo em dispositivos alvo antes de impor animação contínua.
+Document each field's color, position, extent, intensity, and limits. Provide simple controls and reset; expose noise and position only when helpful. Limit intensity to preserve hierarchy. Include a solid fallback, economical mode, and transparency/contrast preferences. Measure cost on target devices before imposing continuous animation.
 
-Separe densidade de chrome, lista, inspector e área de leitura. Não diminua hit area só para tornar ícone menor. Traduza sidebar/inspector desktop em navegação e tela/sheet mobile, preservando tarefa e contexto.
+Separate chrome, list, inspector, and reading-area density. Do not shrink hit areas just to make icons smaller. Translate desktop sidebar/inspector into mobile navigation and screens/sheets while preserving task and context.
 
-## 3. Preview, salvar e desfazer
+## 3. Preview, save, and undo
 
-Escolha e comunique um contrato: (a) rascunho com commit explícito ou (b) aplicação imediata com desfazer. Não misture “Save” com persistência oculta não confirmada.
+Choose and communicate a contract: (a) draft with explicit commit or (b) immediate application with undo. Do not combine "Save" with hidden, unconfirmed persistence.
 
-Para rascunho: snapshot confirmado → preview local → validação → await commit → sucesso. Na falha, preservar draft e permitir retry. Escape/clique fora/fechamento precisam política única. Para aplicação imediata, cada mudança deve indicar pendência/erro e desfazer deve restaurar o estado correto.
+For drafts: confirmed snapshot -> local preview -> validation -> await commit -> success. Preserve drafts and permit retry on failure. Escape/outside click/closing need one consistent policy. For immediate application, each change must indicate pending/error status, and undo must restore the correct state.
 
-Inventariar por seção, não assumir uma transação para toda janela. Na referência desktop auditada, Profile/Appearance usam draft; Libraries renomeia/restiliza imediatamente; o editor compacto de iluminação persiste com debounce250ms e descartar grava reversão. O Pauta pode manter Save explícito, mas deve declarar adaptação. Overlay também varia: Settings é modal; iluminação é painel não modal no canto16px/16px, largura268px. Não transferir focus trap/inert de um para o outro.
+Inventory by section; do not assume one transaction for the whole window. In the audited desktop reference, Profile/Appearance use drafts; Libraries renames/restyles immediately; the compact lighting editor persists with a 250 ms debounce and discarding writes a reversal. Pauta may retain explicit Save but must declare the adaptation. Overlays also differ: Settings is modal; lighting is a nonmodal panel at corner 16 px/16 px, width 268 px. Do not transfer focus traps/inert between them.
 
-Debounce limita frequência; não garante ordem de gravação. Use revisão/fila por entidade, descarte resposta obsoleta e defina flush/cancel ao desmontar. Não fechar editor após flush falho. Undo não pode consumir entrada antes de sucesso sem reposição ou tratamento de resultado parcial.
+Debouncing limits frequency, not write ordering. Use per-entity revisions/queues, discard stale responses, and define flush/cancel on unmount. Do not close an editor after a failed flush. Undo must not consume an entry before success without restoration or partial-result handling.
 
-Ao mudar biblioteca/tenant/projeto: guardar ou descartar draft conscientemente, encerrar overlays, invalidar caches dependentes, manter identidade de contexto em jobs e rejeitar respostas antigas. Alterar membership exige invalidar busca/cache relevante. Local salvo e sincronizado remotamente são estados distintos.
+When switching library/tenant/project: consciously save or discard drafts, close overlays, invalidate dependent caches, retain context identity in jobs, and reject old responses. Membership changes require relevant search/cache invalidation. Locally saved and remotely synchronized are distinct states.
 
-## 4. Perfil expressivo utilizável
+## 4. Usable expressive profiles
 
-Defina finalidade: identificação, autoria, reputação ou compartilhamento. Dados necessários permanecem texto semântico em DOM/native; canvas é decoração. Não invente números de membro, selos ou credenciais para transmitir autoridade.
+Define the purpose: identification, authorship, reputation, or sharing. Necessary data remains semantic DOM/native text; canvas is decoration. Do not invent member numbers, badges, or credentials to convey authority.
 
-Um cartão pode ter base, material, brilho, borda e conteúdo, com identidade cromática determinística. Limite inclinação, preserve contraste no brilho máximo e evite deslocar ações com o ponteiro. Sem pointer fino, movimento reduzido, economia ou WebGL indisponível: versão estática equivalente. Pare RAF/timelines/shader fora de vista e ao desmontar; CSS de duração curta não cancela trabalho JS.
+A card may have base, material, highlights, borders, and content, with deterministic color identity. Limit tilt, retain contrast at maximum shine, and avoid moving actions with the pointer. Without a fine pointer, with reduced motion, in economical mode, or without WebGL: provide an equivalent static version. Stop RAF/timelines/shaders offscreen and on unmount; short CSS durations do not cancel JS work.
 
-Contrato recuperado na referência desktop auditada: DOM semântico sobre fundo WebGL2 próprio, e não Three. Cartão320×440, conteúdo inset24, perspectiva1000, camadas deep→canvas→tint→texto/emboss→bevel. Nome28/32px e papel12/14px; metadados mono.120paletas determinísticas (12famílias×10variantes), com shade/base/accent/glow e seed. Shuffle avança37módulo120. Tilt máximo7° por eixo; molas90/17/1, holo190/31/1, retorno após80ms. São medidas de referência, não defaults universais.
+Recovered contract in the audited desktop reference: semantic DOM over a custom WebGL2 background, not Three. Card 320x440, content inset 24, perspective 1000, layers deep -> canvas -> tint -> text/emboss -> bevel. Name 28/32 px and role 12/14 px; monospaced metadata. 120 deterministic palettes (12 families x 10 variants), with shade/base/accent/glow and seed. Shuffle advances 37 modulo 120. Maximum tilt 7 degrees per axis; springs 90/17/1, holo 190/31/1, return after 80 ms. These are reference measurements, not universal defaults.
 
-Na referência, perfil é global no aplicativo; bibliotecas não possuem pessoas diferentes. Nome/papel/variante são campos dessa referência, não campos obrigatórios no destino. Número pode vir de licença e não deve ser inventado. Salvar perfil local e sincronizar remotamente têm confirmações distintas. Mapear este dono antes de ligar o objeto ao armazenamento.
+In the reference, the profile is global to the application; libraries do not have different people. Name/role/variant are fields in that reference, not mandatory destination fields. A number may come from a license and must not be invented. Saving a local profile and synchronizing remotely have distinct confirmations. Map ownership before connecting the object to storage.
 
-Se o destino já aprovou um passaporte ou outro objeto de identidade, reutilize-o no perfil; o cartão material é uma alternativa, não substituição automática. Selecione os campos pelo domínio (por exemplo, foto/nome globais e objetivo por idioma), com uma prévia ligada ao mesmo draft do formulário. Tirar um campo sem propósito da tela não autoriza excluir seu valor legado. Um objeto visual de país/categoria não certifica cidadania, licença ou competência.
+If the destination already approved a passport or another identity object, reuse it in the profile; the material card is an alternative, not an automatic replacement. Select fields by domain (for example, global photo/name and per-language goals), with a preview connected to the form's draft. Removing a purposeless field from the screen does not authorize deleting its legacy value. A visual country/category object does not certify citizenship, licensing, or competence.
 
-Testar nome vazio/longo, CJK/RTL, imagem ausente, papel longo, escala de texto e tema. Exportar distingue cancelamento, falha e arquivo concluído. Reutilizar mesmo componente, fixar fontes/pose/enquadramento, esperar prontidão e validar dimensões: a referência desktop usa480×640CSSpx @3x para1440×1920PNG, independente do zoom da janela. Web/mobile precisam download/clipboard compatível com a plataforma, sem fingir bridge Electron. Não confundir personalização pública com dados privados da conta.
+Test empty/long names, CJK/RTL, missing images, long roles, text scaling, and themes. Export distinguishes cancellation, failure, and completed files. Reuse the same component, fix fonts/pose/framing, wait for readiness, and validate dimensions: the desktop reference uses 480x640 CSS px @3x for a 1440x1920 PNG, independently of window zoom. Web/mobile need platform-compatible download/clipboard behavior without pretending an Electron bridge exists. Do not confuse public customization with private account data.
 
-Falha observada estaticamente a não herdar: shader do perfil recebe tempo0 em reduced-motion, mas RAF continua renderizando. Parar só o relógio ou a transformação CSS não elimina trabalho GPU. Aceite exige mudança de preferência durante a sessão, pausa ao ocultar, retorno previsível e liberação de recursos/context loss. Uma captura estática não prova esses requisitos.
+Statically observed failure not to inherit: the profile shader receives time 0 in reduced motion, but RAF keeps rendering. Stopping only the clock or CSS transform does not eliminate GPU work. Acceptance requires preference changes during the session, pausing when hidden, predictable return, resource release/context-loss handling. A static capture does not prove these requirements.
 
-## 5. Grafo, mapa espacial e canvas
+## 5. Graph, spatial map, and canvas
 
-Primeiro identifique o modelo: grafo de relações tem nós/arestas com significado; mapa de coleções pode ter apenas agrupamentos. Não invente relações para decorar. Explique o que proximidade, tamanho, cor e conexão representam.
+First identify the model: a relationship graph has meaningful nodes/edges; a collection map may only have groups. Do not invent relationships for decoration. Explain what proximity, size, color, and connections represent.
 
-Para identidade, resolução de links, aliases, backlinks, travessia local/global e atualização do índice, leia [grafos e conhecimento](knowledge-graphs.md). Esses contratos antecedem câmera e pintura. O mapa de memberships da referência desktop auditada, o grafo derivado do Obsidian e um Canvas autoral não são capacidades intercambiáveis.
+For identity, link resolution, aliases, backlinks, local/global traversal, and index updates, read [graphs and knowledge](knowledge-graphs.md). These contracts precede camera and painting. The audited desktop reference's membership map, Obsidian's derived graph, and an authored Canvas are not interchangeable capabilities.
 
-Para território e indicadores, use [dashboards temporais e geográficos](data-dashboards.md): área geográfica, população e magnitude são medidas diferentes. Escala, legenda, cobertura e referência temporal precisam acompanhar cada modo; profundidade desenhada em Canvas não implica uso de WebGL ou motor 3D.
+For territories and indicators, use [temporal and geographic dashboards](data-dashboards.md): geographic area, population, and magnitude are different measurements. Scale, legend, coverage, and temporal reference must accompany every mode; depth painted in Canvas does not imply WebGL or a 3D engine.
 
-Separe coordenadas do conteúdo e câmera. Zoom ancorado deve preservar o ponto de interesse; fit/recentralizar deve estar visível. Declare limites, margens, comportamento no resize e recuperação de seleção fora da vista. Distinga mover posição de reclassificar item. Prévia de destino, cancelamento e undo precisam cobrir efeitos reais, inclusive tags automáticas.
+Separate content coordinates from the camera. Anchored zoom must preserve the point of interest; fit/recenter must be visible. Declare limits, margins, resize behavior, and recovery for offscreen selection. Distinguish moving position from reclassifying an item. Destination previews, cancellation, and undo must cover actual effects, including automatic tags.
 
-Ofereça lista/árvore semântica equivalente, busca, seleção por teclado e comando “mover para”. Descrição aria-label do canvas não substitui acesso aos objetos. Preservar foco com virtualização; limitar anúncios de contagem; selecionar todos deve explicitar se inclui itens não renderizados.
+Offer an equivalent semantic list/tree, search, keyboard selection, and a "move to" command. A canvas aria-label does not replace object access. Preserve focus with virtualization; limit count announcements; selecting all must explicitly state whether it includes unrendered items.
 
-Para grandes acervos: medir tempo até interação, latência de busca/drag, frames e memória; usar culling, cache com invalidação, workers quando justificados e descarte de bitmaps. Renderizar por dirty state quando possível. Não prometer 60fps pela presença de RAF/worker. Mobile precisa validar pinch/pan/scroll e alternativa sem gesto complexo.
+For large collections: measure time to interaction, search/drag latency, frames, and memory; use culling, invalidated caches, workers where justified, and bitmap disposal. Render from dirty state where possible. Do not promise 60 fps merely because RAF/workers exist. Mobile needs pinch/pan/scroll validation and an alternative without complex gestures.
 
-Caso da referência desktop auditada: Canvas2D offscreen com worker de miniaturas, composição final por lente WebGL1 opcional e fallback Canvas2D sem lente e payload agregado `{collections,items,links,unfiled}`. Links são memberships coleção/item; a tela agrupa previews, não inventa linhas semânticas. Altura de tile40, gaps18, aspecto limitado.45..2.4. Camera zoom.02..10, botões×/÷1.5, fit até1.5. Ao mudar escala por fator `r`, `x'=anchorX-(anchorX-x)*r`, idemY, preserva ponto sob ponteiro. Threshold de drag3px separa clique e arrasto; fundo/Space/botão do meio fazem pan; modificadores suportam seleção de área.
+Audited desktop reference case: offscreen Canvas2D with a thumbnail worker, final composition through an optional WebGL1 lens, a lens-free Canvas2D fallback, and aggregate payload `{collections,items,links,unfiled}`. Links are collection/item memberships; the screen groups previews without inventing semantic lines. Tile height 40, gaps 18, aspect limited to .45..2.4. Camera zoom .02..10, buttons multiply/divide by 1.5, fit up to 1.5. When changing scale by factor `r`, `x'=anchorX-(anchorX-x)*r`, likewise Y, preserves the point under the pointer. A 3 px drag threshold separates clicking from dragging; background/Space/middle button pan; modifiers support area selection.
 
-Persistir membership não comprova persistência de câmera/posições. Arrastar entre coleções grava add/remove e pode adicionar tags automáticas que sobrevivem à remoção da associação. Rollback/undo devem cobrir esses efeitos ou declarar limitação. Tema é resolvido de tokens computados para cores de canvas e exige invalidação. Cleanup termina worker, cancela animação/timers, remove listeners/observers e fecha bitmaps. Testar falha do worker, erro de gravação, duplicação de item entre grupos e dados grandes, além de teclado/lista equivalente.
+Persisting membership does not prove camera/position persistence. Dragging between collections writes add/remove and may add automatic tags that survive removal of the association. Rollback/undo must cover these effects or declare the limitation. Theme resolves computed tokens into canvas colors and requires invalidation. Cleanup terminates workers, cancels animation/timers, removes listeners/observers, and closes bitmaps. Test worker failure, write errors, item duplication across groups, and large datasets, plus keyboard/equivalent-list access.
 
-## 6. Objetos 3D ligados ao produto
+## 6. Product-connected 3D objects
 
-Para transformar a técnica em algo copiável/adaptável, use o contrato e o asset original de [objetos reutilizáveis](reusable-objects.md). Para produto GLB, retrato com profundidade e troca de materiais, use [web imersiva](immersive-web-tech.md). A decisão depende da tarefa e do orçamento; uma biblioteca operacional não precisa herdar uma cena de campanha.
+To make the technique copyable/adaptable, use the contract and original asset in [reusable objects](reusable-objects.md). For GLB products, depth portraits, and material switching, use [immersive web](immersive-web-tech.md). The decision depends on task and budget; an operational library need not inherit a campaign scene.
 
-Antes da cena, identifique o objeto persistido: biblioteca, coleção ou produto real. Cor, nome, padrão e metadados devem atualizar a entidade e sua representação. Pose de apresentação é outro estado; não salvá-la como identidade sem motivo. Uma capa inclinada em CSS pode ser fallback, mas não prova equivalência de mesh, material ou iluminação.
+Before the scene, identify the persisted object: library, collection, or real product. Color, name, pattern, and metadata must update the entity and its representation. Presentation pose is separate state; do not persist it as identity without a reason. A CSS-tilted cover can be a fallback but does not prove mesh, material, or lighting equivalence.
 
-Na referência desktop auditada, livros usam Three revision186, mesh com position/normal/UV/index e shader de tecido/foil/bump. Não é o renderer do perfil nem um OrbitControls demonstrado. Renderer tem alpha, antialias e resolução intermediária2×; componente limita DPR a2 e copia para canvas de saída. Cor perceptual combina hue da entidade com variação determinística por ID, produzindo deep/cloth/lit/edge. Mapas diffuse/bump/foil têm vida útil e cache próprios.
+In the audited desktop reference, books use Three revision 186, meshes with position/normal/UV/index, and cloth/foil/bump shaders. This is neither the profile renderer nor demonstrated OrbitControls. The renderer uses alpha, antialiasing, and intermediate 2x resolution; the component caps DPR at 2 and copies to an output canvas. Perceptual color combines entity hue with deterministic ID-based variation, producing deep/cloth/lit/edge. Diffuse/bump/foil maps have their own lifetimes and caches.
 
-Documente iluminação/material/câmera, não somente screenshot: referência ambient.54, key.9 na posição(7,0,4.5), back1, spot.05, exposure.7; shininess8, reflectiveness.04, bumpBase.006, bumpCustom.07, foilOpacity.6. Pose detalhada20.05°/28.65°/−8.59°; amplitudes hover11°/7°. Drag horizontal acrescenta.42°/px, vertical é limitado; suavização `alpha=1-exp(-min(64,dt)/120)` termina em repouso. Os números servem à comparação deste build, não ao tuning indiscriminado de qualquer modelo.
+Document lighting/material/camera, not just screenshots: reference ambient .54, key .9 at position (7,0,4.5), back 1, spot .05, exposure .7; shininess 8, reflectiveness .04, bumpBase .006, bumpCustom .07, foilOpacity .6. Detail pose 20.05/28.65/-8.59 degrees; hover amplitudes 11/7 degrees. Horizontal drag adds .42 degrees/px, vertical drag is bounded; smoothing `alpha=1-exp(-min(64,dt)/120)` ends at rest. These numbers serve this build's comparison, not indiscriminate tuning of every model.
 
-Checklist de entrega:
+Delivery checklist:
 
-- Nome acessível em DOM, foco visível e ativação de objeto por teclado; canvas decorativo não apaga conteúdo semântico.
-- Mouse/touch têm captura/cancelamento/limites; controles alternativos realizam a mesma tarefa. Sem hover, não esconder ação essencial.
-- Reduced-motion congela hover/drag/sway decorativos e reage a alteração durante sessão. Pose estática continua legível.
-- GPU indisponível ou perdida mostra capa estática e texto com as mesmas ações. Falha de lazy import não pode deixar região vazia silenciosa.
-- Culling/idle/visibilidade e dispose de textura/geometria/material são explícitos. Um renderer compartilhado precisa dono e política de encerramento.
-- Nome/cor/padrão salvos sobrevivem reload; erro preserva dados confirmados. Remover registro e remover arquivos são ações distintas.
-- Mesh, shader, textura e marca têm procedência/licença verificada; observação do artefato não autoriza redistribuição automática de conteúdo proprietário.
+- Accessible DOM name, visible focus, and keyboard object activation; decorative canvas does not erase semantic content.
+- Mouse/touch support capture/cancellation/limits; alternative controls perform the same task. Essential actions remain visible without hover.
+- Reduced motion freezes decorative hover/drag/sway and responds to session preference changes. Static poses remain legible.
+- Unavailable/lost GPU shows a static cover and text with the same actions. Lazy-import failure must not leave a silently empty region.
+- Culling/idle/visibility and texture/geometry/material disposal are explicit. A shared renderer needs an owner and shutdown policy.
+- Saved name/color/pattern survive reload; errors preserve confirmed data. Removing records and removing files are distinct actions.
+- Mesh, shader, texture, and brand provenance/licenses are verified; observing artifacts does not authorize automatic redistribution of proprietary content.
 
-## 7. Matriz de aceite prática
+## 7. Practical acceptance matrix
 
-| Sistema | Ensaio | Resultado exigido |
+| System | Rehearsal | Required outcome |
 |---|---|---|
-| Tema | claro/escuro/sistema; alterar SO | Modo coerente, sem flash e preferência preservada |
-| Personalização | accent extremo + fundo extremo + high contrast | Texto/foco/seleção distinguíveis; decoração não vence estado |
-| Persistência | alterar→descartar→reabrir; salvar→reiniciar; storage falha | Contrato cumprido; nenhum falso Saved |
-| Contexto | trocar coleção/biblioteca com draft e job | Nenhum dado no contexto errado; usuário entende destino |
-| Motion | reduced inicial e alterado em sessão | Efeito dispensável para e trabalho gráfico é interrompido |
-| Perfil | texto extremo, sem GPU, export cancel/erro/sucesso | Conteúdo e ações continuam disponíveis |
-| Export | zoom diferente, fontes lentas, resolução/DPR, arquivo aberto | Mesmo conteúdo, enquadramento e dimensão contratados |
-| Mapa | 0/1/muitos grupos, zoom limites, resize, fit | Orientação recuperável e objetos alcançáveis |
-| Organização | drag cancelado, destino inválido, undo falho | Sem alteração silenciosa; retry da operação correta |
-| Busca | resposta fora de ordem; membership após cache aquecido | Resultado respeita consulta e escopo atuais |
-| 3D | pose extrema, DPR, GPU off/context lost, entrada/saída20vezes | Sem clipping/perda de ações/crescimento indefinido de recursos |
-| Estado de biblioteca | restyle imediato, rename falho, trocar contexto | Persistência por ação explícita; nenhum rollback visual fictício |
-| Portabilidade | teclado, touch, texto ampliado, viewport estreita | Mesma tarefa realizável sem depender de hover/gesto |
+| Theme | Light/dark/system; change OS | Coherent mode, no flash, preserved preference |
+| Customization | Extreme accent + extreme background + high contrast | Distinguishable text/focus/selection; decoration does not override state |
+| Persistence | Change -> discard -> reopen; save -> restart; storage fails | Contract fulfilled; no false Saved |
+| Context | Switch collection/library with a draft and job | No data in the wrong context; user understands destination |
+| Motion | Reduced initially and changed during session | Nonessential effects and graphics work stop |
+| Profile | Extreme text, no GPU, export cancel/error/success | Content and actions remain available |
+| Export | Different zoom, slow fonts, resolution/DPR, opened file | Contracted content, framing, and dimensions |
+| Map | 0/1/many groups, zoom limits, resize, fit | Recoverable orientation and reachable objects |
+| Organization | Canceled drag, invalid destination, failed undo | No silent change; retry the correct operation |
+| Search | Out-of-order response; membership after warmed cache | Results respect current query and scope |
+| 3D | Extreme pose, DPR, GPU off/context lost, enter/exit 20 times | No clipping/lost actions/unbounded resource growth |
+| Library state | Immediate restyle, failed rename, context switch | Explicit persistence per action; no fictional visual rollback |
+| Portability | Keyboard, touch, enlarged text, narrow viewport | Same task achievable without depending on hover/gestures |
 
-Use combinações em pares mais extremos críticos para reduzir explosão de testes; isso não prova todas as combinações. Registre “observado”, “estático”, “testado” e “pendente” separadamente. Uma referência visual excelente pode conter defeitos funcionais: transfira princípios, não os defeitos.
+Use pairwise combinations plus critical extremes to reduce test explosion; this does not prove every combination. Record "observed," "static," "tested," and "pending" separately. An excellent visual reference may contain functional defects: transfer principles, not defects.
 
-Paridade tem três eixos: aparência, interação e dados/persistência. Inventariar cada capacidade antes de anunciar conclusão. No snapshot do Pauta auditado em25/10/2026, existiam tarefas/preferências/iluminação; perfil editável, mapa espacial e livros3D não estavam implementados. Este documento define requisitos práticos, não afirma que esses recursos já existem no Pauta ou que o produto inteiro é equivalente à referência desktop auditada. Alterações posteriores exigem nova evidência do código e runtime.
+Parity has three axes: appearance, interaction, and data/persistence. Inventory every capability before declaring completion. In the Pauta snapshot audited on 2026-10-25, tasks/preferences/lighting existed; editable profiles, spatial maps, and 3D books were not implemented. This document defines practical requirements; it does not claim those features already exist in Pauta or that the whole product equals the audited desktop reference. Later changes require new code and runtime evidence.
 
-Para inventariar cada opção e distinguir modos, defaults, donos e contratos de persistência, use [Modos e configurações](settings-modes.md).
+To inventory every option and distinguish modes, defaults, owners, and persistence contracts, use [Modes and settings](settings-modes.md).
 
-A lente do grafo usa distorção radial `p*(1+.07*r²)` e conversões correspondentes para hit-testing, incluindo inversão iterativa. Nunca distorcer apenas a pintura e manter clique/drag em coordenadas não transformadas. Validar o objeto sob o cursor nos cantos, no centro e nos extremos de zoom. Presença de WebGL não transforma a vista em um grafo 3D.
+The graph lens uses radial distortion `p*(1+.07*r*r)` and corresponding hit-testing conversions, including iterative inversion. Never distort painting alone while leaving click/drag in untransformed coordinates. Validate the object under the cursor at corners, center, and zoom extremes. WebGL presence does not turn the view into a 3D graph.
 
-## 8. Integrar busca, perfil, mapa e biblioteca
+## 8. Integrate search, profile, map, and library
 
-A implementação posterior do Pauta acrescentou módulos de busca local, workspace, perfil material, livros e mapa. A presença desses módulos atualiza o inventário estático; não encerra a comparação visual/interativa com a referência desktop auditada. Manter o registro anterior datado como histórico, e exigir nova evidência de runtime para cada capacidade.
+A later Pauta implementation added local-search, workspace, material-profile, book, and map modules. Their presence updates the static inventory; it does not close visual/interactive comparison with the audited desktop reference. Retain the dated earlier record as history and require fresh runtime evidence for each capability.
 
-| Dado | Representação | Contrato a preservar |
+| Data | Representation | Contract to preserve |
 |---|---|---|
-| Biblioteca ativa | Nome/capa, lista, mapa e histórico | Mesmo ID/contexto; troca invalida busca e jobs antigos |
-| Perfil confirmado versus draft | Nome/papel/cartão, sidebar e PNG | Preview não confirma Save; export declara se usa draft ou salvo |
-| Cor da biblioteca | Tecido/capa | Identidade local, independente de accent e filtro de busca |
-| Cor da tarefa ou paleta da imagem | Chip de busca e resultado | Procedência explícita; não alterar iluminação ao filtrar |
-| Preferências de acessibilidade | CSS, shader, 3D, mapa | Um contrato de contraste/movimento, aplicado em todos os renderers |
-| Item no mapa | Thumbnail, posição, seleção e ação | Mesmo conteúdo real da lista; sem relações inventadas |
+| Active library | Name/cover, list, map, and history | Same ID/context; switching invalidates search and old jobs |
+| Confirmed profile versus draft | Name/role/card, sidebar, and PNG | Preview does not confirm Save; export declares draft versus saved source |
+| Library color | Cloth/cover | Local identity independent of accent and search filter |
+| Task color or image palette | Search chip and result | Explicit provenance; filtering does not alter lighting |
+| Accessibility preferences | CSS, shader, 3D, map | One contrast/motion contract applied across all renderers |
+| Map item | Thumbnail, position, selection, and action | Same real content as the list; no invented relationships |
 
-Não confundir tecnologias: um encoder de texto local fornece busca semântica textual; um matcher de paleta fornece busca cromática; um shader fornece material; um mapa com lente fornece navegação espacial. Nenhum desses mecanismos, isoladamente, prova visão multimodal, grafo de conhecimento ou cena 3D navegável.
+Do not confuse technologies: a local text encoder provides textual semantic search; a palette matcher provides color search; a shader provides material; a map with a lens provides spatial navigation. None of these mechanisms alone proves multimodal vision, a knowledge graph, or a navigable 3D scene.
 
-Renderers, listeners e trabalhos assíncronos precisam de ciclo de vida. Em reabertura/rerender, remover listeners globais e cancelar RAF/jobs antigos; preferir eventos de pointer capture com `pointercancel`/`lostpointercapture` quando o gesto pertence ao componente. Testar abrir/fechar repetidamente e trocar contexto com upload, inferência e animação ativos. Exportar PNG é outro caminho de renderização: comparar conteúdo, dimensões, fontes, textura e transparência no arquivo aberto, não somente na prévia.
+Renderers, listeners, and asynchronous work need lifecycles. On reopening/rerendering, remove global listeners and cancel old RAF/jobs; prefer pointer-capture events with `pointercancel`/`lostpointercapture` when the gesture belongs to the component. Test repeated open/close and context switching with uploads, inference, and animation active. PNG export is another rendering path: compare content, dimensions, fonts, texture, and transparency in the opened file, not just the preview.
 
-Para distribuição web/mobile/desktop, registrar capacidades reais do ambiente. Clipboard de imagem, EyeDropper, GPU, armazenamento e downloads têm disponibilidade e falhas próprias; manter alternativa operável. Interface com moldura desktop não prova pacote nativo, integração de arquivos, atualização ou sincronização. Use [busca](search-discovery.md) e [configurações](settings-modes.md) para contratos de dados e recuperação.
+For web/mobile/desktop distribution, record actual environment capabilities. Image clipboard, EyeDropper, GPU, storage, and downloads have their own availability and failure modes; retain an operable alternative. An interface in a desktop frame does not prove native packaging, file integration, updates, or synchronization. Use [search](search-discovery.md) and [settings](settings-modes.md) for data and recovery contracts.

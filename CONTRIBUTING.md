@@ -1,30 +1,31 @@
-# Contribuir com a Forma
+# Contributing to Forma
 
-Contribuições são propostas por pull request. Faça um fork, crie uma branch e explique o problema antes de ampliar o escopo. Para uma mudança grande de comportamento, abra uma issue para discutir o objetivo.
+Propose contributions through pull requests. Fork the repository, create a branch and explain the problem before expanding the scope. Open an issue to discuss the goal of a major behavior change.
 
-## Fluxo
+## Workflow
 
-1. Edite a fonte em `source/forma/`, ou o tooling em `tools/` quando necessário.
-2. Preserve decisões aprovadas e a marca do consumidor; um exemplo específico não deve se tornar regra universal.
-3. Execute `npm ci --ignore-scripts`, `python3 tools/build.py` e `npm run check`.
-4. Inclua fonte e arquivos gerados no mesmo PR. Use um commit descritivo, por exemplo `fix: preservar posição das luzes ao selecionar`.
-5. Descreva o antes/depois e a verificação realizada. Aguarde a revisão de `@figueirego`.
+1. Edit the source in `source/forma/`, or the tooling in `tools/` when necessary.
+2. Preserve approved decisions and the consumer project's brand; a specific example must not become a universal rule.
+3. Run `npm ci --ignore-scripts`, `python3 tools/build.py` and `npm run check`.
+4. Include source and generated files in the same PR. Use a descriptive commit, such as `fix: preserve light positions on selection`.
+5. Describe the before/after behavior and the verification performed. Wait for review by `@figueirego`.
 
-Os comandos exigem Python 3.12+ e Node 24+. Three.js está fixado no lockfile para os testes de geometria. Instalar dependências de teste não instala uma stack nos projetos atendidos pela Forma.
+These commands require Python 3.12+ and Node 24+. Three.js is pinned in the lockfile for geometry tests. Installing test dependencies does not install a stack in projects served by Forma.
 
-## Qualidade e evidências
+## Quality and evidence
 
-- Mudança visual: inclua capturas sem dados pessoais, viewport/DPR, estados relevantes e interações exercitadas.
-- Bug: inclua reprodução mínima e regressão quando prática.
-- Roteamento/instruções: inclua casos esperados e adversos; mantenha explícito o que foi simulado e o que foi executado.
-- Fontes externas: preserve atribuição e licença. Não copie código, capturas privadas, marcas, binários ou conteúdo extenso sem direito de redistribuição.
-- Nunca inclua credenciais, dados de clientes, caminhos pessoais ou conversas privadas.
-- Não afirme que um teste estrutural comprova percepção visual, acessibilidade completa ou fidelidade universal.
+- Write Forma-authored content in US English with ASCII punctuation. Preserve original source names, URLs, copyright holders and multilingual behavior. `npm run check` includes `tools/check_editorial.py`; use `--json` to inventory every file. This guard catches encoding and known copy regressions, not every grammar error.
+- Visual changes: include captures without personal data, viewport/DPR, relevant states and exercised interactions.
+- Bugs: include a minimal reproduction and a regression test when practical.
+- Routing/instructions: include expected and adverse cases; state what was simulated and what was executed.
+- External sources: preserve attribution and licensing. Do not copy code, private captures, trademarks, binaries or substantial content without redistribution rights.
+- Never include credentials, customer data, personal paths or private conversations.
+- Do not claim that a structural test proves visual perception, complete accessibility or universal fidelity.
 
-Alterações em workflows, dependências, gerador, testes e políticas exigem atenção especial: elas podem enfraquecer a própria validação. Não introduza `pull_request_target`, tokens privilegiados ou publicação automática para executar contribuições.
+Changes to workflows, dependencies, generators, tests and policies require special attention: they can weaken validation itself. Do not introduce `pull_request_target`, privileged tokens or automatic publication to run contributions.
 
-## Revisão e licença
+## Review and licensing
 
-O mantenedor pode pedir ajustes ou recusar uma proposta. Não existe merge automático. A execução de workflows de contribuidores externos pode aguardar aprovação; isso é separado da aprovação da alteração.
+The maintainer may request adjustments or decline a proposal. There is no automatic merge. Workflows from external contributors may require approval to run; that is separate from approving the change.
 
-Ao contribuir, envie apenas material que você pode distribuir sob a [MIT](LICENSE), preservando os avisos compatíveis de terceiros. Veja [governança](docs/GOVERNANCE.md) e [segurança](SECURITY.md).
+Only contribute material you can distribute under [MIT](LICENSE), preserving compatible third-party notices. See [governance](docs/GOVERNANCE.md) and [security](SECURITY.md).

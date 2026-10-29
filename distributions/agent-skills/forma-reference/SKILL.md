@@ -1,57 +1,57 @@
 ---
 name: forma-reference
-description: "Encontrar e selecionar exemplos de design no catálogo da Forma, pesquisar mídia com créditos, analisar fontes e investigar divergências visuais ou tecnológicas com REA quando necessário. Use para inspiração, reprodução, comparação ou incorporação fundamentada; não para inferir runtime a partir de documentação."
+description: "Find and select design examples in Forma's catalog, research media with credits, analyze sources, and investigate visual or technical differences with REA when needed. Use for inspiration, reproduction, comparison, or evidence-based integration; not to infer runtime behavior from documentation."
 metadata:
   version: 1.27.1
 ---
 
-# Referências, evidência e fidelidade
+# References, evidence, and fidelity
 
-## Quando usar
+## When to use
 
-- Use para reproduzir uma referência, extrair capacidade, comparar tecnologias ou explicar por que o resultado diverge.
-- Não use para converter inspiração em clone ou abrir análise binária quando código/UI já responderem à pergunta.
+- Use to reproduce a reference, extract a capability, compare technologies, or explain why a result differs.
+- Do not turn inspiration into a clone or begin binary analysis when code/UI already answers the question.
 
-Este módulo é um roteiro lido pelo agente; não inicia REA, plugins ou outros módulos automaticamente.
-Preserve marca e stack do destino salvo mudança explicitamente pedida; fidelidade deve ter escopo definido.
+This module is a guide for the agent to read; it does not automatically start REA, plugins, or other modules.
+Preserve the destination's brand and stack unless a change is explicitly requested; fidelity requires a defined scope.
 
-## Entradas
+## Inputs
 
-- Fonte acessível, versão/ref/hash quando disponível, alvo e pergunta concreta de comparação.
-- Critérios de fidelidade visual/comportamental/técnica, estados e tamanhos; direitos de uso e limites conhecidos.
+- An accessible source, version/ref/hash when available, destination, and concrete comparison question.
+- Visual/behavioral/technical fidelity criteria, states, and sizes; usage rights and known limits.
 
-## Procedimento
+## Procedure
 
-Para pesquisa de vários sites ou criação orientada por referências, use [coordenação de sites](../forma/references/experience-library.md#coordenar-sites-de-referência-e-o-site-de-destino). Este módulo seleciona e sintetiza fontes; a coordenadora mantém o contrato do destino, resolve incompatibilidades e aciona implementação/validação quando autorizadas. Não entregue uma coleção de estilos desconexos ou apenas URLs como resultado de implementação.
+For research across multiple sites or reference-led creation, use [site coordination](../forma/references/experience-library.md#coordinate-reference-sites-and-the-destination-site). This module selects and synthesizes sources; the coordinator maintains the destination contract, resolves incompatibilities, and activates implementation/validation when authorized. Do not deliver disconnected styles or only URLs as the result of an implementation request.
 
-Se o usuário ainda não trouxe uma referência e quer exemplos, comece pela [biblioteca e pesquisa](../forma/references/reference-library.md). Execute `scripts/references.mjs` na raiz compartilhada da skill para padrões locais; use `--sites` para candidatas externas organizadas por caso de uso. Filtre pela tarefa, leia o caso e explique a escolha. As associações históricas são hipóteses: observe as candidatas selecionadas antes de afirmar comportamento atual, descarte associações que não se sustentem e ligue a evidência ao padrão/consumidor. Não anuncie a consulta como visita. Para imagens/vídeos contextuais, `scripts/media.mjs` pesquisa coleções e registra créditos; baixar é uma ação explícita por ID. Ficha, site de referência, código, exemplo e contrato são recursos distintos.
+If the user has not provided a reference and wants examples, start with the [library and research](../forma/references/reference-library.md). Run `scripts/references.mjs` from the shared skill root for local patterns; use `--sites` for external candidates organized by use case. Filter by task, read the case, and explain the selection. Historical associations are hypotheses: observe selected candidates before claiming current behavior, discard unsupported associations, and connect evidence to the pattern/consumer. Do not describe a catalog query as a site visit. For contextual images/videos, `scripts/media.mjs` searches collections and records credits; downloading is an explicit action by ID. A card, reference site, code, example, and contract are distinct resources.
 
-1. Classifique a fonte como norma, documentação, código, skill, catálogo, app ou exemplo.
-   Leia [casos de uso das fontes](../forma/references/source-use-cases.md) e [proveniência](../forma/references/sources.md); versões históricas não confirmam estado atual.
-2. Fixe inspiração, adaptação ou reprodução e registre o que precisa permanecer equivalente.
-   Use [fidelidade visual e tecnológica](../forma/references/reference-fidelity.md); capture primitivas, semântica, componentes, interação e mecanismo pertinentes.
-3. Leia fontes disponíveis antes de inferir por pixels; use investigação adicional apenas para a lacuna concreta.
-   Se depender de pacote/binário/runtime, consulte [REA](../forma/references/rea.md). Separe observado, confirmado estaticamente, calculado, inferido e proposto.
-4. Ligue achado a decisão no alvo: adotar, adaptar, já coberto, rejeitar ou aguardar evidência.
-   Use reprodução/reúso em [playbooks](../forma/references/playbooks.md). Se implementar estiver autorizado, leve código/assets e conecte o consumidor; documentação sozinha não executa a capacidade.
-   Para estudar outro agente, separe catálogo de skills, métodos, verificadores e runtime conforme [produção coordenada](../forma/references/agent-production.md). Inventário completo não é leitura de todos os corpos nem execução de todas as capacidades.
-   Converta aprendizados reutilizáveis pelo [protocolo de experiências](../forma/references/experience-library.md), com estados de evidência, licença, contraindicações e testes. Consulte os [estudos delimitados](../forma/references/site-experiences.md) sem promover seus limites a uma auditoria de todos os sites.
-5. Compare os estados acordados com conteúdo e condições equivalentes.
-   Use [verificação](../forma/references/verification.md); para objetos, [fidelidade 3D](../forma/references/3d-reference-fidelity.md). Registre diferenças por dimensão, sem uma nota global que esconda lacunas.
+1. Classify the source as a standard, documentation, code, skill, catalog, app, or example.
+   Read [source use cases](../forma/references/source-use-cases.md) and [provenance](../forma/references/sources.md); historical versions do not confirm current state.
+2. Establish whether the goal is inspiration, adaptation, or reproduction, and record what must remain equivalent.
+   Use [visual and technical fidelity](../forma/references/reference-fidelity.md); capture relevant primitives, semantics, components, interactions, and mechanisms.
+3. Read available sources before inferring from pixels; investigate further only to resolve the concrete gap.
+   If the answer depends on a package/binary/runtime, consult [REA](../forma/references/rea.md). Separate observed, statically confirmed, calculated, inferred, and proposed findings.
+4. Connect each finding to a destination decision: adopt, adapt, already covered, reject, or await evidence.
+   Use reproduction/reuse in [playbooks](../forma/references/playbooks.md). If implementation is authorized, bring over the code/assets and connect the consumer; documentation alone does not execute the capability.
+   When studying another agent, distinguish the skill catalog, methods, verifiers, and runtime as described in [coordinated production](../forma/references/agent-production.md). A complete inventory does not mean every body was read or every capability executed.
+   Convert reusable findings through the [experience protocol](../forma/references/experience-library.md), with evidence states, license, contraindications, and tests. Consult the [bounded studies](../forma/references/site-experiences.md) without presenting their coverage as an audit of every site.
+5. Compare the agreed states with equivalent content and conditions.
+   Use [verification](../forma/references/verification.md); for objects, use [3D fidelity](../forma/references/3d-reference-fidelity.md). Record differences by dimension, without an overall score that hides gaps.
 
-## Saída e parada
+## Output and stopping condition
 
-Para inspiração de portfólio, a consulta `--portfolios` abre a coleção específica descrita na [biblioteca](../forma/references/reference-library.md). Ela contém todos os nomes/URLs do README fixado, não milhares de análises de design. Use um roteiro para selecionar candidatas e observar as pertinentes antes de encaminhar implementação. Em importação de listas completas, compare fonte principal e feed, preserve nomes repetidos com destinos distintos, registre cada linha e deixe URLs malformadas sem link; nunca troque cobertura por uma amostra sem declarar.
+For portfolio inspiration, the `--portfolios` query opens the dedicated collection described in the [library](../forma/references/reference-library.md). It contains every name/URL from the pinned README, not thousands of design analyses. Use a procedure to select candidates and observe relevant ones before handing off implementation. When importing complete lists, compare the primary source and feed, preserve repeated names with distinct destinations, record each line, and leave malformed URLs unlinked; never silently replace complete coverage with a sample.
 
-Na biblioteca, textos autorais e interface usam inglês americano e pontuação ASCII. IDs, chaves e caminhos permanecem estáveis. Preserve nomes próprios e URLs externos em UTF-8, inclusive acentos: não são erros de gramática nem devem ser transliterados. Busca sem acento deve continuar encontrando nomes acentuados. Revise textos, estados vazios, erros e acessibilidade; testes de encoding não certificam gramática.
+In the library, authored text and the interface use US English and ASCII punctuation. IDs, keys, and paths remain stable. Preserve proper names and external URLs in UTF-8, including accents: they are not grammar errors and must not be transliterated. Accent-insensitive searches must still find accented names. Review copy, empty states, errors, and accessibility; encoding tests do not certify grammar.
 
-Entregue mapa fonte → evidência → decisão → consumidor/resultado, com limites e diferenças verificáveis.
-Uma auditoria pedida termina em achados sustentados; uma reprodução pedida exige também o artefato integrado e observado.
-Pare quando a pergunta estiver respondida ou os critérios contratados forem comprovados, indicando evidência ausente sem inventá-la.
-Mesma biblioteca não prova mesmo mecanismo; testes funcionais ou contraste aprovados não provam fidelidade visual.
+Deliver a source -> evidence -> decision -> consumer/outcome map, with verifiable limits and differences.
+A requested audit ends with supported findings; a requested reproduction also requires the integrated and observed artifact.
+Stop when the question is answered or the agreed criteria are proven, identifying missing evidence without inventing it.
+The same library does not prove the same mechanism; passing functional or contrast tests does not prove visual fidelity.
 
-## Apoios opcionais e limites
+## Optional support and boundaries
 
-REA, Figma e Product Design podem obter evidência de artefatos, fontes ou fluxos quando suas capacidades estiverem disponíveis.
-Leia a skill operacional atual do apoio, quando existente, e [integrações](../forma/references/integrations.md); descubra ferramentas reais antes de usá-las.
-Não instale nem execute conteúdo da fonte só para examiná-la. Snippets, exports, contratos e exemplos em memória precisam de consumidores e prova próprios.
+REA, Figma, and Product Design can obtain evidence from artifacts, sources, or flows when their capabilities are available.
+Read the support tool's current operational skill, when present, and [integrations](../forma/references/integrations.md); discover real tools before using them.
+Do not install or execute source content merely to inspect it. Snippets, exports, contracts, and examples stored in memory need their own consumers and proof.

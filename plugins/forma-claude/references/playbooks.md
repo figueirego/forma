@@ -1,98 +1,98 @@
-# Playbooks executáveis
+# Executable playbooks
 
-Use o menor fluxo que atende ao pedido. Mantenha produto, arquivos e decisões existentes como ponto de partida. Nenhum playbook autoriza publicação, cobrança, instalação ou mensagem externa.
+Use the smallest workflow that meets the request. Keep the existing product, files and decisions as the starting point. No playbook authorizes publication, charges, installation or external messaging.
 
-## A. Correção pontual ou refinamento
+## A. Local correction or refinement
 
-**Entrada:** componente/rota e comportamento ou aspecto a corrigir.
+**Input:** component/route and behavior or aspect to correct.
 
-1. Reproduza no estado reportado; localize estilos, tokens e consumidores. Preserve baseline com revisão, conteúdo, estado e tamanho reais. Para “não ficou bom” sem causa indicada, examine o artefato e identifique o principal problema observável; não exija que o usuário faça o diagnóstico técnico.
-2. Defina o que deve melhorar e como conferir: por exemplo, “título e campo compartilham o inset e o nome longo não empurra Salvar”. Separe defeito, divergência da referência e preferência estética. Priorize alcance da tarefa, acesso e dados, depois estrutura, consistência e acabamento; mantenha a reclamação específica do usuário como foco da rodada.
-3. Formule uma hipótese de causa e escolha a evidência que a distingue de outras causas. Meça container/cascata antes de trocar tokens; confirme o caminho de renderização antes de ajustar shader. Se faltar capacidade ou repertório pertinente, use [seleção de apoio](integrations.md#escolher-apoio-durante-o-refinamento). Não abra pesquisa externa para um erro já explicado pelo código local.
-4. Faça a menor alteração coerente, isolando a hipótese ou um grupo causal de mudanças. Antes de mudar um token global, confira consumidores; para exceção local, mantenha escopo local. Preserve a direção aprovada e os dados do usuário. Mantenha a versão anterior recuperável ao experimentar.
-5. Compare no mesmo contexto com o [ciclo renderizado](rendered-validation.md), confirme o estado reportado, os estados afetados, conteúdo extremo e checks pertinentes. Verifique que a revisão modificada foi carregada. Aceite a mudança quando resolver o critério sem regressão relevante; reverta a tentativa que piorou o resultado e retenha a evidência do motivo.
+1. Reproduce the reported state; locate styles, tokens and consumers. Preserve a baseline with the actual revision, content, state and size. For "it does not look good" without a stated cause, examine the artifact and identify the main observable problem; do not require the user to perform the technical diagnosis.
+2. Define what should improve and how to check it: for example, "the heading and field share the inset, and a long name does not push Save away." Separate defects, reference discrepancies and aesthetic preferences. Prioritize task completion, access and data, then structure, consistency and polish; keep the user's specific complaint as the round's focus.
+3. Form a causal hypothesis and choose evidence that distinguishes it from other causes. Measure the container/cascade before replacing tokens; confirm the rendering path before adjusting a shader. If relevant capability or knowledge is missing, use [support selection](integrations.md#choose-support-during-refinement). Do not start external research for an error already explained by local code.
+4. Make the smallest coherent change, isolating the hypothesis or a causal group of changes. Before changing a global token, check consumers; keep local exceptions local. Preserve the approved direction and user data. Keep the previous version recoverable while experimenting.
+5. Compare in the same context using the [rendered loop](rendered-validation.md), confirming the reported state, affected states, extreme content and relevant checks. Verify that the modified revision loaded. Accept the change when it meets the criterion without a relevant regression; revert an attempt that worsened the result and retain evidence of why.
 
-**Quando a tentativa não resolver:** registre o que ela descartou e obtenha evidência nova antes de outra alteração. Reconsidere medição, hipótese ou apoio quando o método atual não distinguir as causas. Repetir valores ou adicionar plugins sem informação nova não é avanço. Se depender de preferência indefinida ou acesso indisponível, faça uma pergunta específica e continue trabalho independente. Encerre quando o aceite estiver satisfeito ou declare a dependência concreta que impede concluir; número de rodadas não é critério de aprovação.
+**When an attempt does not resolve the issue:** record what it ruled out and obtain new evidence before another change. Reconsider measurement, the hypothesis or support when the current method cannot distinguish causes. Repeating values or adding plugins without new information is not progress. If an undefined preference or unavailable access is involved, ask a specific question and continue independent work. Finish when acceptance criteria are satisfied, or state the concrete dependency preventing completion; the number of rounds is not an approval criterion.
 
-**Condução com o usuário:** explique brevemente “o que observei → causa provável/confirmada → próximo teste”. Pergunte quando uma escolha mudar identidade, escopo ou direção; execute correções reversíveis já autorizadas sem confirmação a cada passo. Aprovação estética vale para o artefato e estado mostrados, não certifica outros dispositivos ou funcionalidades.
+**Working with the user:** briefly explain "what I observed -> probable/confirmed cause -> next test." Ask when a choice changes identity, scope or direction; execute already authorized reversible corrections without confirmation at every step. Aesthetic approval applies to the artifact and state shown, not other devices or functionality.
 
-**Entrega:** mudança funcional, razão e evidência. Não criar design system novo, moodboard ou campanha para ajustar um campo.
+**Delivery:** a functional change, reason and evidence. Do not create a new design system, moodboard or campaign to adjust one field.
 
-Quando também houver pedido para aperfeiçoar esta skill, registre **sintoma → mecanismo → correção transferível → verificação** e acrescente um cenário pertinente em [avaliações](../evals/scenarios.md). Constantes de cada referência ficam no respectivo perfil. Preserve decisões no registro existente do projeto; atualizar a skill instalada depende desse pedido ou de autorização já presente na sessão.
+When the request also includes improving this skill, record **symptom -> mechanism -> transferable correction -> verification** and add a relevant scenario to [evaluations](../evals/scenarios.md). Reference-specific constants stay in their respective profiles. Preserve decisions in the project's existing record; updating the installed skill requires that request or authorization already present in the session.
 
-## B. Nova tela ou fluxo de produto
+## B. New product screen or flow
 
-**Entrada:** tarefa, público, plataforma, dados e limites conhecidos.
+**Input:** task, audience, platform, data and known limits.
 
-1. Desenhe uma sequência curta de estados, incluindo entrada, saída, espera e recuperação. Exemplo: selecionar arquivo → validar → enviar → processar → confirmar; falhas se ligam ao ponto recuperável.
-2. Escolha componentes pelo trabalho: comparação tabular, formulário, lista, editor ou visualização. Faça wireframe com conteúdo real antes do acabamento quando houver dúvida estrutural.
-3. Especifique o que já existe no backend e o que será demonstração. Defina aceites observáveis: “reabrir preserva filtro”, “erro não apaga preenchimento”.
-4. Aplique sistema existente; se não existir, escolha uma direção com tipografia, papéis de cor, densidade e detalhe distintivo.
-5. Implemente happy path e falhas pertinentes. Teste tarefa, acesso, tamanho de conteúdo e adaptação.
+1. Draw a short sequence of states, including entry, exit, waiting and recovery. Example: select file -> validate -> upload -> process -> confirm; failures connect to the recoverable point.
+2. Choose components by their job: tabular comparison, form, list, editor or visualization. Wireframe with actual content before polishing when structure is uncertain.
+3. Specify what already exists in the backend and what will be a demonstration. Define observable acceptance criteria: "reopening preserves the filter," "an error does not erase entered values."
+4. Apply the existing system; if none exists, choose a direction with typography, color roles, density and a distinctive detail.
+5. Implement the happy path and relevant failures. Test the task, access, content size and adaptation.
 
-**Entrega mínima:** fluxo executável ou especificação pedida, estados, decisões materiais e evidências. Um botão que só mostra toast não equivale a salvar.
+**Minimum delivery:** the executable flow or requested specification, states, material decisions and evidence. A button that only shows a toast is not equivalent to saving.
 
-## C. Redesign de produto existente
+## C. Redesign an existing product
 
-1. Capture rotas, conteúdo, conversões, atalhos, marca e restrições de migração. Diferencie preservar identidade de substituir linguagem visual.
-2. Escolha um fluxo representativo e identifique sua fricção. Não redesenhe todas as telas antes de validar o padrão principal.
-3. Compare proposta com baseline usando a mesma tarefa e conteúdo. Registre comportamento mantido, modificado e a migrar.
-4. Propague o sistema aprovado ou claramente autorizado, verificando consumidores e regressões.
+1. Capture routes, content, conversions, shortcuts, branding and migration constraints. Distinguish preserving identity from replacing visual language.
+2. Choose a representative flow and identify its friction. Do not redesign every screen before validating the main pattern.
+3. Compare the proposal with the baseline using the same task and content. Record behavior retained, changed and requiring migration.
+4. Propagate the approved or clearly authorized system, checking consumers and regressions.
 
-**Entrega:** antes/depois com contexto equivalente, migração e pendências. Preservar slug, eventos e dados por padrão; alteração necessária deve ser explicitada.
+**Delivery:** before/after under equivalent conditions, migration and pending work. Preserve slugs, events and data by default; explicitly state any necessary change.
 
-## D. Extrair ou criar design system
+## D. Extract or create a design system
 
-1. Inventarie componentes e valores realmente usados; agrupe por papel e estado, não apenas por hex igual.
-2. Classifique valores em conservar, consolidar ou exceção. Mostre conflitos concretos.
-3. Defina tokens e contratos dos componentes mais recorrentes. Use [tokens e handoff](tokens-handoff.md).
-4. Monte uma amostra com formulário, conteúdo e estado adverso. Só migre outros consumidores depois de verificar os efeitos.
+1. Inventory components and values actually used; group by role and state, not just matching hex values.
+2. Classify values as retain, consolidate or exception. Show concrete conflicts.
+3. Define tokens and contracts for the most recurring components. Use [tokens and handoff](tokens-handoff.md).
+4. Build a sample with a form, content and an adverse state. Migrate other consumers only after verifying the effects.
 
-**Entrega:** tokens legíveis por máquina quando úteis, uso na stack real, catálogo curto de componentes/estados e decisões. O preview visual do ECC pode ser um HTML local ou o catálogo já existente; não criar Storybook só para cumprir formato.
+**Delivery:** machine-readable tokens when useful, usage in the actual stack, a short component/state catalog and decisions. ECC's visual preview may be local HTML or the existing catalog; do not create Storybook merely to satisfy a format.
 
-## E. App desktop e distribuição
+## E. Desktop app and distribution
 
-1. Separe UI do app de instalação/atualização. Detecte tecnologia e formatos reais.
-2. Projete janela/menus/documentos com [adaptação](platform-adapters.md).
-3. Modele estados da distribuição com [desktop](desktop-distribution.md).
-4. Teste em ambiente autorizado a versão nova e o caminho vindo da versão suportada anterior.
+1. Separate app UI from installation/updating. Identify the actual technology and formats.
+2. Design windows/menus/documents with [adaptation](platform-adapters.md).
+3. Model distribution states with [desktop](desktop-distribution.md).
+4. In an authorized environment, test the new version and the upgrade path from the previous supported version.
 
-**Entrega:** UI e/ou especificação solicitada, matriz de SO/arquitetura testada e recuperação de falhas. Sem acesso ao SO alvo, produza implementação e marque runtime não testado.
+**Delivery:** requested UI and/or specification, tested OS/architecture matrix and failure recovery. Without access to the target OS, produce the implementation and mark runtime untested.
 
-## F. Campanha e material gráfico
+## F. Campaign and graphic material
 
-1. Registre oferta, público, argumento comprovável, voz e ação.
-2. Monte matriz peça → canal → dimensão → mensagem → asset → destino → critério de exportação.
-3. Produza só os canais pedidos, adaptando composição e copy; não multiplicar peças automaticamente.
-4. Confira continuidade entre anúncio e destino e revise o arquivo exportado no tamanho de uso.
+1. Record the offer, audience, verifiable argument, voice and action.
+2. Build an asset -> channel -> dimensions -> message -> resource -> destination -> export criterion matrix.
+3. Produce only the requested channels, adapting composition and copy; do not multiply deliverables automatically.
+4. Check continuity between advertisement and destination and review the exported file at its intended size.
 
-**Entrega:** peças/editáveis autorizados, mapa de assets e claims, verificação. Planejar calendário não agenda publicação.
+**Delivery:** authorized pieces/editable sources, an asset and claims map, and verification. Planning a calendar does not schedule publication.
 
-## G. Reproduzir ou reconstruir por referência
+## G. Reproduce or reconstruct from a reference
 
-1. Capture a fonte e identifique o que deve ser fiel: visual, comportamento ou ambos.
-2. Se houver fonte Figma/código, use-a antes de inferir por pixels. Para artefatos sem fonte, aplique [REA](rea.md).
-3. Registre lacunas: imagens, estados não acessíveis, permissões, dados, gestos e escalas.
-4. Construa e compare no mesmo contexto. Não confundir referência de estilo com pedido de clone.
+1. Capture the source and identify what must be faithful: visuals, behavior or both.
+2. If Figma/code source is available, use it before inferring from pixels. For artifacts without source, apply [REA](rea.md).
+3. Record gaps: images, inaccessible states, permissions, data, gestures and scales.
+4. Build and compare in the same context. Do not confuse a style reference with a clone request.
 
-**Entrega:** reconstrução limitada pelo escopo, evidências e diferenças conhecidas; não alegar identidade completa com base em uma captura.
+**Delivery:** reconstruction bounded by scope, evidence and known differences; do not claim complete identity based on one screenshot.
 
-## H. Reutilizar capacidades em outro projeto
+## H. Reuse capabilities in another project
 
-**Entrada:** recurso solicitado, projeto de destino e intenção de adaptar princípios ou preservar um mecanismo. Infira essa intenção do pedido e do contexto aprovado; esclareça só uma ambiguidade material. Um pedido simples de claro/escuro não exige editor de luzes, perfil material ou 3D.
+**Input:** requested resource, destination project and intent to adapt principles or preserve a mechanism. Infer this intent from the request and approved context; clarify only a material ambiguity. A simple light/dark request does not require a light editor, material profile or 3D.
 
-1. Confira a versão da skill realmente lida, os arquivos acessíveis e o código servido no destino. Instalação correta não comprova integração. Se houver outra edição ativa nos mesmos arquivos, analise sem sobrescrevê-la e coordene a integração dentro da autorização existente.
-2. Para os recursos pedidos, ligue **contrato → implementação disponível → consumidor no destino → evidência de aceite**. Registre essa ligação na documentação/testes existentes; não é obrigatório criar outro manifesto. BookObject e helper de cores são código distribuído. A [base de interface limpa](clean-shell.md) tem CSS e demonstração HTML/JS; adapte à stack e aos dados reais. Editor completo e perfil material são contratos: implemente-os ou extraia componentes próprios autorizados, sem inventar exports ou depender da pasta do projeto de autoria.
-3. Separe o que muda (texto, domínio e adaptações autorizadas) do que deve permanecer (composição, estado, gestos e material solicitado). Num pedido explícito de reprodução aprovada, não adapte automaticamente marca, paleta ou proporções; registre a precedência em um [contrato de fidelidade](fidelity-contracts.md), mantendo a referência independente do destino. Se uma restrição exigir substituição, declare a capacidade perdida e o que falta, em vez de tratar a aproximação como conclusão.
-4. Faça a integração menor que exercite o recurso real. Importe/copie o asset correto, forneça dependências já disponíveis, conecte eventos e persistência ao dono certo e preserve descarte/erro/fallback. Um fallback que aparece após falha não prova o caminho principal.
-5. Teste uma operação que distinga o mecanismo de sua aproximação e examine o resultado renderizado. Exemplos condicionais abaixo; não impor todas as capacidades a todo projeto.
+1. Check the skill version actually read, accessible files and code served in the destination. Correct installation does not prove integration. If another edit is active in the same files, analyze without overwriting it and coordinate integration within existing authorization.
+2. For requested resources, connect **contract -> available implementation -> destination consumer -> acceptance evidence**. Record this connection in existing documentation/tests; another manifest is not mandatory. BookObject and the color helper are distributed code. The [clean interface foundation](clean-shell.md) has CSS and an HTML/JS demonstration; adapt it to the actual stack and data. The full editor and material profile are contracts: implement them or extract authorized authored components, without inventing exports or depending on the authoring project's directory.
+3. Separate what changes (text, domain and authorized adaptations) from what must remain (composition, state, gestures and requested material). For an explicit request to reproduce an approved reference, do not automatically adapt branding, palette or proportions; record precedence in a [fidelity contract](fidelity-contracts.md), keeping the reference independent from the destination. If a constraint requires substitution, declare the lost capability and what remains missing instead of treating the approximation as completion.
+4. Make the smallest integration that exercises the actual resource. Import/copy the correct asset, supply existing dependencies, connect events and persistence to the correct owner and preserve disposal/error/fallback. A fallback appearing after failure does not prove the main path.
+5. Test an operation that distinguishes the mechanism from its approximation and examine the rendered result. Conditional examples follow; do not impose every capability on every project.
 
-| Recurso contratado | Prova discriminante no destino | Aproximação que não demonstra o pedido |
+| Agreed resource | Discriminating proof in the destination | Approximation that does not demonstrate the request |
 |---|---|---|
-| Base de interface limpa | Fundo/sidebar/painel mantêm hierarquia; navegação e controles conectados, foco e estados coerentes, estreito sem perda de tarefa | Só trocar paleta, importar CSS sem consumidores ou aplicar estilos aos screenshots dentro dos cards |
-| Editor visual completo de iluminação | Painel não modal com stage; mover/adicionar/remover pools, distância, onda e grain respondem aos dados; salvar/reabrir preserva estado e zero pools; contexto e hold conforme o escopo | Painel de claro/escuro/acento, três cores fixas ou preview sem manipulação |
-| Volume/material do BookObject aprovado | Consumidor usa o asset e loader válidos; modo WebGL observado, vistas/gestos e material conferidos; fallback e redução de movimento testados separadamente | CSS inclinado, arquivo copiado sem uso, `interactive:true` sem loader ou Canvas2D apresentado como volume |
-| Perfil material solicitado | Camadas, dados reais, resposta visual, edição/persistência e exportação quando pedida; fallback e ciclo de vida | Cartão decorativo com uma animação arbitrária; número de membro ou capacidade inventados |
-| Busca com capacidades especificadas | Exercitar cada capacidade pedida com corpus pequeno e resultado esperado; atalho, superfície e semântica da consulta conferidos | Campo de substring ou atalho de foco apresentado como paleta ou busca semântica |
+| Clean interface foundation | Background/sidebar/panel preserve hierarchy; navigation and controls are connected, focus and states are consistent, narrow layouts preserve the task | Only changing the palette, importing CSS without consumers or styling screenshots inside cards |
+| Complete visual lighting editor | Nonmodal panel with a stage; moving/adding/removing pools, distance, wave and grain respond to data; save/reopen preserves state and zero pools; context and hold match scope | Light/dark/accent panel, three fixed colors or a preview without manipulation |
+| Approved BookObject volume/material | Consumer uses the valid asset and loader; observed WebGL mode, views/gestures and material checked; fallback and reduced motion tested separately | Tilted CSS, an unused copied file, `interactive:true` without a loader or Canvas2D presented as volume |
+| Requested material profile | Layers, actual data, visual response, editing/persistence and export when requested; fallback and lifecycle | A decorative card with arbitrary animation; invented member number or capability |
+| Search with specified capabilities | Exercise every requested capability with a small corpus and expected result; check shortcut, surface and query semantics | Substring field or focus shortcut presented as a command palette or semantic search |
 
-**Entrega:** diga quais recursos foram integrados, adaptados, substituídos ou ficaram pendentes, com evidência por recurso. Não anunciar “aplicada a skill inteira” por passar testes de utilitários. Se o usuário pediu só melhorar a skill, use o destino como caso de diagnóstico e não altere seu produto.
+**Delivery:** state which resources were integrated, adapted, substituted or remain pending, with evidence for each. Do not announce "the entire skill was applied" because utility tests passed. If the user only requested improving the skill, use the destination as a diagnostic case and do not change the product.

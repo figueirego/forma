@@ -76,7 +76,7 @@ test('reference browser declares English and UTF-8 without known Portuguese UI r
   assert.match(html, /<meta\s+charset="utf-8"\s*>/i);
   for (const [name, source] of [['html', html], ['script', script]]) {
     assert.doesNotMatch(source,
-      /\b(?:padr(?:õ|o)es|portfólios|carregando|nenhum|fechar|perfil|invalida|inválida)\b|mostrar mais|visitar o site|filtrar refer|candidato hist|n[aã]o verificado|indispon[ií]vel/iu,
+      /\b(?:padr(?:\u00f5|o)es|portf\u00f3lios|carregando|nenhum|fechar|perfil|invalida|inv\u00e1lida)\b|mostrar mais|visitar o site|filtrar refer|candidato hist|n[a\u00e3]o verificado|indispon[i\u00ed]vel/iu,
       `${name}: a known untranslated interface label returned`);
   }
 });

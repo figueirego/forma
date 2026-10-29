@@ -1,28 +1,28 @@
-# Superfícies especializadas
+# Specialized surfaces
 
-Carregar só para estas superfícies. Critérios de design não substituem guidelines atuais do fabricante ou validação especializada.
+Load only for these surfaces. Design criteria do not replace current manufacturer guidelines or specialist validation.
 
-| Superfície | Pergunta | Critérios |
+| Surface | Question | Criteria |
 |---|---|---|
-| Wearable | O que cabe num olhar? | Sessão curta, tipo nativo, alcance, energia, alternativa a haptic e continuidade com telefone |
-| TV | Como mover foco e voltar? | Foco visível, ordem espacial, leitura à distância, controle remoto, nenhum hover |
-| Kiosk | O que fica após sair? | Alcance físico, toque, privacidade, limpeza de sessão, timeout com aviso e assistência |
-| Industrial/automotivo | Qual consequência do erro? | Contexto, distração e revisão especializada; UI não é certificação de segurança |
-| AR/VR | Qual tarefa ganha por ser espacial? | Distância/escala, conforto, postura, seleção, movimento reduzido, entrada alternativa e saída |
-| Voz | O que requer confirmação? | Turnos curtos, interrupção, reparo, privacidade e fallback textual |
-| Vídeo/mídia | Consumir, editar ou apresentar? | Transporte acessível, captions/transcrição, volume, scrub, buffering e direitos |
-| Mapas/canvas | A precisão espacial é essencial? | Zoom/pan, desfazer, seleção, unidade, teclado e alternativa de dados |
+| Wearable | What fits into a glance? | Short sessions, native type, reach, energy, an alternative to haptics and continuity with a phone |
+| TV | How do users move focus and go back? | Visible focus, spatial order, reading at a distance, remote control, no hover |
+| Kiosk | What remains after leaving? | Physical reach, touch, privacy, session cleanup, timeout with warning and assistance |
+| Industrial/automotive | What are the consequences of an error? | Context, distraction and specialist review; UI is not safety certification |
+| AR/VR | Which task benefits from being spatial? | Distance/scale, comfort, posture, selection, reduced motion, alternative input and exit |
+| Voice | What requires confirmation? | Short turns, interruption, repair, privacy and text fallback |
+| Video/media | Consume, edit or present? | Accessible playback controls, captions/transcripts, volume, scrubbing, buffering and rights |
+| Maps/canvas | Is spatial precision essential? | Zoom/pan, undo, selection, units, keyboard and a data alternative |
 
-Declare distância de uso, entrada, duração, ambiente e risco; modele foco/seleção e saída antes de efeitos. Teste no equipamento ou marque simulação. Desktop reduzido não valida wearable/TV/VR.
+Declare viewing distance, input, duration, environment and risk; model focus/selection and exit before effects. Test on the equipment or label the simulation. A shrunken desktop does not validate wearable/TV/VR behavior.
 
-## Decks e players interativos
+## Interactive decks and players
 
-Derive playhead, estado e controles do relógio/eventos da mídia real; o botão mostrar “pausado” não prova que um vídeo ou iframe parou. Defina pausa ou continuidade ao sair de cena, descarte de listeners e retorno de ramificações sem áudio duplicado. Mute global deve alcançar as mídias abrangidas pelo contrato, respeitando o suporte de cada player.
+Derive the playhead, state and controls from the real media clock/events; a button showing "paused" does not prove that a video or iframe stopped. Define pause or continuation when leaving a scene, listener disposal and return from branches without duplicated audio. Global mute must reach all media within the contract, respecting each player's capabilities.
 
-Teste play/pause, seek, buffering/falha, próxima cena, retorno e teardown no navegador entregue. Quando houver janelas de apresentador/audiência, verifique ambas: um gesto em uma não comprova autoplay audível na outra. Use controle manual acessível quando a plataforma exigir interação, sem contornar a política. Um deck com ramificações navegáveis não prova que a exportação linear conserva todas as rotas ou mídias; explicite o percurso exportado e valide o arquivo conforme [artefatos](artifact-workflows.md).
+Test play/pause, seek, buffering/failure, next scene, return and teardown in the delivered browser. When presenter/audience windows exist, verify both: a gesture in one does not prove audible autoplay in the other. Use an accessible manual control when the platform requires interaction, without bypassing its policy. A deck with navigable branches does not prove that a linear export preserves every route or media item; state the exported path and validate the file according to [artifacts](artifact-workflows.md).
 
-## Produto físico e serviço
+## Physical products and services
 
-Para objeto, defina tarefa, dimensões de uso, materiais candidatos, fabricação e manutenção. Protótipo de baixa fidelidade testa pega, alcance, leitura e montagem antes de render final. Confirme tolerâncias com fornecedor/especialista; não invente resistência, certificação ou sustentabilidade.
+For an object, define its task, use dimensions, candidate materials, manufacturing and maintenance. A low-fidelity prototype tests grip, reach, reading and assembly before the final render. Confirm tolerances with the supplier/specialist; do not invent strength, certification or sustainability claims.
 
-Para serviço, acompanhe app, embalagem, atendimento e devolução. Marque responsável, entrega ao usuário e recuperação quando um canal falha. Não prometa prazo ou garantia sem capacidade operacional.
+For a service, follow the app, packaging, support and returns. Identify the owner, user delivery and recovery when a channel fails. Do not promise a deadline or guarantee without operational capacity.

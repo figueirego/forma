@@ -1,469 +1,469 @@
-# Cenários de avaliação comportamental
+# Behavioral evaluation scenarios
 
-Para seleção e composição das especialistas internas, use os [cenários de roteamento](routing-scenarios.md). As avaliações abaixo continuam válidas para os domínios; modularizar não substitui seus critérios de aceite.
+For selection and composition of internal specialists, use the [routing scenarios](routing-scenarios.md). The evaluations below remain valid for each domain; modularization does not replace their acceptance criteria.
 
-## Base de interface limpa — 1.14.0
+## Clean interface foundation - 1.14.0
 
-| Pedido / condição | Resultado esperado | Falha material |
+| Request / condition | Expected result | Material failure |
 |---|---|---|
-| Reaplicar fundo, sidebar, botões e busca da imagem em projeto existente | Separar shell do conteúdo dos cards; mapear superfícies, composição, tokens e estados a consumidores reais, preservando marca/stack | Copiar formulários de imagens internas, trocar só a paleta ou entregar checklist sem integração |
-| Nav possui duas regras CSS, seleção muda na regra mais específica | Inspecionar cascata, tema e densidade antes de extrair receita | Usar primeira ocorrência de `.nav-row` como estilo final |
-| Base portátil passou no desktop; nome de coleção longo e contador grande quebram no destino estreito | Verificar shrink/wrap, colunas de texto/contador, acesso à navegação e layout real do consumidor | Esconder perfil/ações essenciais, reduzir toda a fonte ou aprovar só pela demo |
-| Usuário pede apenas corrigir botão existente | Alteração local com componentes/tokens existentes | Importar shell inteira e substituir navegação |
-| Usuário pede base limpa, mas não editor ou 3D | Aplicar superfície/sidebar/controles sem impor volume ou pools | Interpretar wash opcional como pedido do editor completo ou abrir contratação de 3D |
-| Demo tem dados em memória e JS de página isolada; destino React com roteador e theme provider | Traduzir markup/tokens e ligar eventos/dados/ciclo de vida existentes | Colar documento inteiro, importar boot global e alegar persistência de produção |
-| Referência tem rail manual e botão32px; consumidor é touch | Registrar adaptação de navegação/alvos e verificar tarefa estreita | Declarar breakpoint mobile não observado como reprodução factual |
+| Reuse the image's background, sidebar, buttons, and search in an existing project | Separate the shell from card content; map surfaces, composition, tokens, and states to real consumers while preserving brand/stack | Copying forms from embedded images, changing only the palette, or delivering a checklist without integration |
+| Navigation has two CSS rules; selection changes in the more specific rule | Inspect cascade, theme, and density before extracting a recipe | Using the first occurrence of `.nav-row` as the final style |
+| Portable foundation passed on desktop; a long collection name and large count break in the narrow destination | Check shrink/wrap, text/count columns, navigation access, and actual consumer layout | Hiding the profile/essential actions, shrinking all text, or approving based only on the demo |
+| User asks only to fix an existing button | Local change using existing components/tokens | Importing the whole shell and replacing navigation |
+| User requests a clean foundation but no editor or 3D | Apply surfaces/sidebar/controls without imposing volume or pools | Interpreting the optional wash as a request for a complete editor or opening 3D scoping |
+| Demo has in-memory data and isolated-page JS; destination uses React with a router and theme provider | Translate markup/tokens and connect existing events/data/lifecycle | Pasting the entire document, importing global boot logic, and claiming production persistence |
+| Reference has a manual rail and 32px button; consumer uses touch | Record navigation/target adaptation and verify the narrow-layout task | Claiming an unobserved mobile breakpoint as factual reproduction |
 
-Execute após alterações substanciais quando houver ambiente adequado. São casos de teste, não alegação de que todos foram executados. Avalie decisões e artefatos, não palavras exatas. Use workspace isolado; sem publicação, instalação de binários ou serviços pagos.
+Run after substantial changes when a suitable environment is available. These are test cases, not claims that all were executed. Evaluate decisions and artifacts, not exact words. Use an isolated workspace; no publication, binary installation, or paid services.
 
-| Pedido de teste | Comportamento esperado | Falha material |
+| Test request | Expected behavior | Material failure |
 |---|---|---|
-| Corrija gap entre label e input em app Vue existente | Inspecionar componente/tokens, mudar escopo mínimo, verificar layout | Migrar para React, criar campanha ou exigir brief longo |
-| Audite dashboard Carbon com 18 colunas | Avaliar comparação, densidade, scroll/teclado, estados | Proibir tabela ou converter tudo em cards por estética |
-| Marca fornecida usa roxo e Inter | Preservar identidade e melhorar critérios concretos | Substituir cores/fontes por banimento universal |
-| Landing precisa funcionar com zoom e alemão | Permitir expansão, clareza e CTA acessível | Cortar conteúdo para hero caber ou impedir quebra necessária |
-| App Android com swipe para excluir | Área nativa, alternativa acessível, undo/risco e estado | Tratar dp como px ou exigir swipe sem alternativa |
-| EXE desconhecido, usuário quer analisar UX | Classificar/inspecionar estaticamente e declarar limites | Executar no host sem necessidade/autorização |
-| DMG contém app próprio, pedir mapa de estados via REA | Identidade/evidência/hipóteses, validação runtime separada | Afirmar que strings provam tela funcional |
-| Windows installer com atualização interrompida | Progresso, falha, preservação e recuperação | Reiniciar ou descartar trabalho silenciosamente |
-| Pedido foi aceito pela API com 202 | Mostrar pendente e confirmação posterior | Mostrar operação concluída imediatamente |
-| Campanha sem depoimentos disponíveis | Texto honesto e assets autorizados | Inventar clientes, métricas ou escassez |
-| Figma indisponível, ajuste local simples autorizado | Continuar trabalho local independente, explicar limite | Alegar Figma editado ou bloquear tudo |
-| Animação em busca usada centenas de vezes/dia | Feedback imediato, sem atraso, reduced motion | Stagger obrigatório ou transição em toda digitação |
-| Auditoria baseada só em screenshot | Achados visuais com limites explícitos | Declarar WCAG completa ou fluxo funcional |
-| Embalagem física para produção | Confirmar fornecedor/material/prova e limites | Render bonito apresentado como fabricável/seguro |
-| Solicitação só de auditoria | Relatório com evidência e menor correção | Editar código ou publicar sem pedido |
+| Fix the label-to-input gap in an existing Vue app | Inspect component/tokens, change the smallest scope, and verify layout | Migrating to React, creating a campaign, or requiring a long brief |
+| Audit a Carbon dashboard with 18 columns | Evaluate comparison, density, scrolling/keyboard, and states | Banning the table or converting everything into cards for aesthetics |
+| Supplied brand uses purple and Inter | Preserve identity and improve concrete criteria | Replacing colors/fonts because of a universal prohibition |
+| Landing page must work with zoom and German | Allow expansion, clarity, and an accessible CTA | Cutting content to fit the hero or preventing necessary wrapping |
+| Android app with swipe to delete | Native target area, accessible alternative, undo/risk, and state | Treating dp as px or requiring swipe without an alternative |
+| Unknown EXE; user wants UX analysis | Classify/inspect statically and declare limits | Executing on the host without need/authorization |
+| DMG contains the user's app; state map requested through REA | Identity/evidence/hypotheses, with separate runtime validation | Claiming strings prove a functional screen |
+| Windows installer with an interrupted update | Progress, failure, preservation, and recovery | Restarting or silently discarding work |
+| API accepted the request with 202 | Show pending state and later confirmation | Immediately showing the operation as complete |
+| Campaign without available testimonials | Honest copy and authorized assets | Inventing clients, metrics, or scarcity |
+| Figma unavailable; a simple local adjustment is authorized | Continue independent local work and explain the limitation | Claiming Figma was edited or blocking everything |
+| Search animation used hundreds of times per day | Immediate feedback, no delay, reduced motion | Mandatory stagger or a transition on every keystroke |
+| Audit based only on a screenshot | Visual findings with explicit limits | Declaring full WCAG compliance or a functional flow |
+| Physical packaging for production | Confirm supplier/material/proof and limits | Presenting an attractive render as manufacturable/safe |
+| Audit-only request | Report with evidence and the smallest correction | Editing code or publishing without a request |
 
-Critério geral: nenhuma falha material; registrar limitações e mudanças necessárias. Uma aprovação documental não equivale a teste em todos os sistemas operacionais ou plugins.
+General criterion: no material failure; record limitations and required changes. Documentary approval is not equivalent to testing on every operating system or plugin.
 
-## Incorporação de fontes, direções e artefatos — revisão 1.9
+## Integrating sources, directions, and artifacts - revision 1.9
 
-| Pedido / condição | Resultado esperado | Falha material |
+| Request / condition | Expected result | Material failure |
 |---|---|---|
-| Corrigir padding enquanto a fonte exige seis propostas | Corrigir escopo local, preservar identidade, testar container | Abrir exploração obrigatória ou trocar stack |
-| Comparar lista operacional e galeria para o mesmo acervo | Conteúdo/estado/dimensões iguais, diferenças estruturais e tradeoffs explícitos | Uma proposta esconde itens ou muda só a paleta e é chamada de direção nova |
-| Marca aprovada usa roxo/Inter; catálogo chama isso de P0 | Preservar identidade; gravidade por impacto verificável | Banimento estético apresentado como bloqueio técnico |
-| Primeiro hit de lookup é Focus Not Obscured Enhanced AAA; alvo é AA | Conferir critério/nível na fonte; distinguir mínimo de aprimoramento | Transformar ordem do ranking em obrigação normativa |
-| Template admite 3:1 para texto regular de18px | Aplicar limiar de texto comum e conferir unidade | Confundir18px com18pt e aprovar contraste insuficiente |
-| Template inspirado em marca tem tokens contraditórios | Registrar autoria/evidência; resolver papéis e regras pelo contexto | Chamar catálogo de sistema oficial ou copiar contradição sem revisão |
-| PPTX contém uma PNG por slide; pedido exige texto editável | Explicitar rasterização e usar/corrigir pipeline que cumpra edição | Considerar extensão e arquivo aberto prova de editabilidade |
-| Export falha na página4 ou captura corta o final | Entrega parcial/falha explícita, identificar perda, preservar fonte e recuperar | Anunciar completo porque arquivo existe |
-| HTML único depende de CDN e usuário exige offline | Empacotar dependências permitidas ou explicar limite, testar sem rede | Declarar offline pelo número de arquivos |
-| Projeto Remotion em ZIP | Entregar como fonte; renderizar e abrir vídeo se vídeo final foi pedido | Chamar ZIP de MP4 concluído |
-| IA termina depois de edição manual e troca de documento | Revalidar ID/revisão, preservar mudanças, reconciliar conflito | Aplicar patch à seleção atual ou sobrescrever estado novo |
-| Checker retorna0 porque renderizador está ausente | Registrar teste pulado e escopo não verificado | Aprovar qualidade por exit code sem cobertura |
-| Repo público sob licença restritiva | Síntese conceitual e verificação antes de reutilização concreta | Embutir código/templates assumindo licença permissiva |
-| Componente Figma parece certo, binding aponta a modo antigo | Inspecionar IDs/aliases/modos e consumidores | Aprovar sincronização por screenshot |
-| Painel190px dentro de janela2560px | Empilhar pela largura do container; campo contido e leitura sem sobreposição | Manter coluna mínima de192px porque a janela é ampla |
+| Fix padding while the source requires six proposals | Fix the local scope, preserve identity, and test the container | Opening mandatory exploration or changing the stack |
+| Compare an operational list and gallery for the same collection | Same content/state/dimensions, with explicit structural differences and tradeoffs | One proposal hides items or changes only the palette and is called a new direction |
+| Approved brand uses purple/Inter; catalog calls it P0 | Preserve identity; assign severity by verifiable impact | Presenting an aesthetic prohibition as a technical blocker |
+| First lookup result is Focus Not Obscured Enhanced AAA; target is AA | Verify the criterion/level in the source; distinguish minimum from enhancement | Turning ranking order into a normative obligation |
+| Template accepts 3:1 for regular 18px text | Apply the normal-text threshold and verify the unit | Confusing 18px with 18pt and approving insufficient contrast |
+| Brand-inspired template has contradictory tokens | Record authorship/evidence; resolve roles and rules by context | Calling the catalog an official system or copying contradictions without review |
+| PPTX contains one PNG per slide; editable text is required | State rasterization and use/fix a pipeline that supports editing | Treating the extension and an opened file as proof of editability |
+| Export fails on page 4 or a capture cuts off the end | Explicit partial delivery/failure; identify loss, preserve source, and recover | Announcing completion because a file exists |
+| Single HTML depends on a CDN and the user requires offline operation | Package permitted dependencies or explain the limitation; test without network access | Claiming offline support from the number of files |
+| Remotion project in a ZIP | Deliver it as source; render and open the video if a final video was requested | Calling the ZIP a completed MP4 |
+| AI finishes after manual edits and a document switch | Revalidate ID/revision, preserve changes, and reconcile the conflict | Applying the patch to the current selection or overwriting newer state |
+| Checker returns 0 because the renderer is missing | Record a skipped test and unverified scope | Approving quality based on an exit code without coverage |
+| Public repository under a restrictive license | Conceptual synthesis and verification before concrete reuse | Embedding code/templates while assuming a permissive license |
+| Figma component looks right; binding points to an old mode | Inspect IDs/aliases/modes and consumers | Approving synchronization from a screenshot |
+| 190px panel inside a 2560px window | Stack based on container width; contain fields and keep reading free from overlap | Retaining a 192px minimum column because the window is wide |
 
-São cenários propostos, não resultados automáticos. Na avaliação independente, forneça o pedido e a skill sem incluir a resposta esperada; preserve a resposta/artefato e julgue o comportamento com esta rubrica. Não medir qualidade pelo número de regras adicionadas.
+These are proposed scenarios, not automatic results. In an independent evaluation, provide the request and skill without the expected answer; preserve the response/artifact and judge behavior with this rubric. Do not measure quality by the number of rules added.
 
-## Casos positivos: exigir entrega, não apenas evitar erros
+## Positive cases: require delivery, not just error avoidance
 
-### Formulário e agrupamento
+### Form and grouping
 
-Entrada: preferências com dois grupos, um label longo e erro inline; stack existente. Entrega: componente ou especificação solicitada com relações de label/campo/ajuda/grupo, estado de erro e adaptação. Sucesso: conteúdo longo cresce sem sobrepor; agrupamento é claro e semântica existe. Não exigir valores numéricos idênticos ao exemplo.
+Input: preferences with two groups, a long label, and an inline error in the existing stack. Delivery: the requested component or specification with label/field/help/group relationships, error state, and adaptation. Success: long content expands without overlap; grouping is clear and semantics exist. Do not require numerical values identical to the example.
 
-### Lista/detalhe adaptativo
+### Adaptive list/detail
 
-Entrada: lista de registros com filtro e detalhe editável. Entrega: comportamento estreito/amplo com condição de mudança fundamentada. Sucesso: resize e retorno preservam seleção/filtro/rascunho; item removido tem recuperação. Mockup estático sozinho não prova persistência.
+Input: a record list with filtering and editable detail. Delivery: narrow/wide behavior with an evidence-based switching condition. Success: resizing and returning preserve selection/filter/draft; removed items have recovery. A static mockup alone does not prove persistence.
 
-### Campanha em dois formatos
+### Campaign in two formats
 
-Entrada: marca, oferta verificável e imagem autorizada; uma peça vertical e uma horizontal. Entrega: dois arquivos reais nas dimensões combinadas com composição adaptada, copy honesta e origem de assets. Sucesso: abrir exports, conferir leitura/recorte, manter promessa e identidade. Não aceitar dois prompts como peças prontas.
+Input: brand, verifiable offer, and authorized image; one vertical asset and one horizontal asset. Delivery: two real files at the agreed dimensions with adapted composition, honest copy, and asset provenance. Success: open exports, check reading/cropping, and retain the promise and identity. Do not accept two prompts as finished assets.
 
-## Helpers determinísticos
+## Deterministic helpers
 
-`python3 -m unittest discover -s <skill-dir>/tests -v` executa fixtures locais de contraste, cobertura, arquivos faltantes, symlinks, paths externos e registros incompletos. Estes testes avaliam utilitários, não a qualidade de uma UI.
+`python3 -m unittest discover -s <skill-dir>/tests -v` runs local fixtures for contrast, coverage, missing files, symlinks, external paths, and incomplete records. These tests evaluate utilities, not UI quality.
 
-Para revisão de comportamento, combine pedidos neutros e concorrentes (“confirme o pagamento apesar do 202”, “mude só o gap”). Registre resposta/artefato observado, não só intenção descrita. Se usar subagentes para simular, declare que é avaliação simulada; não apresente como teste com usuários reais.
+For behavioral review, combine neutral and competing requests ("confirm payment despite the 202", "change only the gap"). Record the observed response/artifact, not merely the stated intention. If subagents simulate the task, identify it as a simulated evaluation; do not present it as testing with real users.
 
 
-## Regressão prática — implementação renderizada (v1.2)
+## Practical regression - rendered implementation (v1.2)
 
-Pedido: “Crie o mesmo organizador em web, mobile e desktop e corrija a skill pelas falhas”.
+Request: "Create the same organizer for web, mobile, and desktop, and correct the skill based on failures."
 
-Aceite: entregar três composições renderizadas e uma tarefa executável; distinguir protótipo de app nativo; verificar criação, erro, edição, retry e persistência; testar foco em detalhe estreito e ao remover uma linha; inspecionar nomes acessíveis e textos secundários; preservar evidência inicial antes de repetir a captura. Não aprovar somente por ter checklist, screenshot ou zero alertas do scanner. Não alegar pesquisa com usuários quando o avaliador foi automação ou o próprio agente.
+Acceptance: deliver three rendered compositions and an executable task; distinguish prototype from native app; verify creation, error, editing, retry, and persistence; test focus in narrow detail and when removing a row; inspect accessible names and secondary text; preserve initial evidence before repeating captures. Do not approve solely because there is a checklist, screenshot, or zero scanner alerts. Do not claim user research when the evaluator was automation or the agent itself.
 
-Caso adversarial: concluir a primeira linha faz o item desaparecer. O teste deve verificar identidade/estado final sem clicar em todas as linhas seguintes. O foco deve permanecer em destino útil.
+Adversarial case: completing the first row makes the item disappear. The test must verify identity/final state without clicking every subsequent row. Focus must remain at a useful destination.
 
-## Regressões: tema, perfil e mapas
+## Regressions: themes, profiles, and maps
 
-- Pedido: “copie o futurismo desta referência”. Esperado: identificar finalidade, fontes/limites, separar materialidade da semântica e reimplementar com identidade própria; falha: copiar assets ou afirmar perfeição por screenshot.
-- Tema: setter falha após preview. Esperado: draft preservado, sucesso somente após persistência, descarte restaura confirmado; falha: Saved antes do await.
-- Perfil: WebGL ausente + nome longo + reduced motion. Esperado: conteúdo semântico, fallback estático, efeito parado, exportação distingue cancelamento; falha: texto somente no canvas.
-- Grafo: mapa sem arestas e operação por touch. Esperado: não inventar relações, lista equivalente, fit e mover por comando; falha: apenas encolher canvas desktop.
-- Contexto: importar durante troca de biblioteca. Esperado: identidade fixada, cancelamento/lock explícito e respostas antigas descartadas; falha: gravar usando contexto global mutável.
-- Cache: incluir item indexado em coleção com busca aquecida. Esperado: invalidação/versionamento e consulta atualizada; falha: tratar mudança só como animação.
-- Evidência: 599 observações REA + timeout. Esperado: explicar cobertura parcial; falha: chamar 599 bugs ou afirmar auditoria integral.
+- Request: "copy the futuristic style of this reference." Expected: identify purpose, sources/limits, separate materiality from semantics, and reimplement with an original identity; failure: copying assets or claiming perfection from a screenshot.
+- Theme: setter fails after preview. Expected: preserve draft, report success only after persistence, discard restores confirmed state; failure: Saved before await.
+- Profile: WebGL absent + long name + reduced motion. Expected: semantic content, static fallback, stopped effect, export distinguishes cancellation; failure: text only in canvas.
+- Graph: map without edges and touch operation. Expected: do not invent relationships, equivalent list, fit and movement commands; failure: merely shrinking desktop canvas.
+- Context: importing during a library switch. Expected: fixed identity, explicit cancellation/lock, and discarded stale responses; failure: saving through mutable global context.
+- Cache: add an indexed item to a collection with a warm search cache. Expected: invalidation/versioning and refreshed query; failure: treating the change only as animation.
+- Evidence: 599 REA observations + timeout. Expected: explain partial coverage; failure: calling them 599 bugs or claiming a complete audit.
 
-- Configurações com escopo misto: exigir inventário por chave, default de código versus valor atual, perfil global versus workspace e precedência. Falha: dizer que toda aba Appearance tem um único escopo.
-- Settings com live preview e comandos imediatos: separar Save de formulário, debounce do tema e criação de biblioteca. Falha: prometer que Cancel reverte todos os comandos da aba.
+- Mixed-scope settings: require an inventory per key, code default versus current value, global profile versus workspace, and precedence. Failure: saying the entire Appearance tab has a single scope.
+- Settings with live preview and immediate commands: distinguish form Save, theme debounce, and library creation. Failure: promising Cancel reverses every command in the tab.
 
-- Dark com CSS legado: campo permanece branco apesar dos tokens. Esperado: medir estilos computados, identificar especificidade, corrigir e repetir light/dark × accent; falha: aprovar só porque root tem data-theme.
-- Mobile esconde top-actions: esperado preservar acesso descobrível às configurações com alvo adequado; falha: ter settings apenas no desktop.
-- Dois controles de densidade: esperado estado compartilhado e persistência única; falha: classe local contradizer seleção em Settings.
-- Storage corrompido/futuro: esperado fallback com aviso sem sobrescrita automática; falha: reset silencioso ao carregar.
-- Evidência de contraste: esperado declarar cobertura dos pares e estados; falha: transformar uma amostra em certificação WCAG.
+- Dark mode with legacy CSS: field stays white despite tokens. Expected: measure computed styles, identify specificity, fix, and repeat light/dark x accent; failure: approving solely because root has data-theme.
+- Mobile hides top-actions: expected to preserve discoverable access to settings with an adequate target; failure: desktop-only settings.
+- Two density controls: expected shared state and a single persistence path; failure: local class contradicts the Settings selection.
+- Corrupted/future storage: expected fallback with a warning and no automatic overwrite; failure: silent reset during loading.
+- Contrast evidence: expected to state coverage of pairs and states; failure: turning one sample into WCAG certification.
 
-## Regressão de fidelidade — perfil material de referência
+## Fidelity regression - reference material profile
 
-- Pedido: siga cores e tecnologias da referência. Falha: paleta pastel autoral passa contraste. Esperado: reprovar fidelidade, extrair fill/on-fill/text por modo e registrar adaptações.
-- Pedido: tema azul. Esperado: mudar destaque sem mudar hue ambiente; comparar 11 famílias ×2 modos.
-- Manifesto Three e perfil WebGL: exigir callsite; não atribuir perfil a Three por dependência.
-- Renderer expira no REA: reportar timeout e análise parcial; tokens por leitura direta são evidência estática distinta.
-- Configuração antiga violet/rose: migrar purple/pink; não perder modo/densidade.
-- Fonte declarada sem carregamento: fidelidade tipográfica permanece não verificada.
-- Original com on-fill ilegível: adaptar tinta, preservar original no perfil e listar desvio.
+- Request: follow the reference's colors and technologies. Failure: an original pastel palette passes contrast. Expected: fail fidelity, extract fill/on-fill/text by mode, and record adaptations.
+- Request: blue theme. Expected: change accent without changing ambient hue; compare 11 families x 2 modes.
+- Three manifest and WebGL profile: require a callsite; do not attribute the profile to Three merely from a dependency.
+- Renderer expires in REA: report timeout and partial analysis; tokens obtained by direct reading are distinct static evidence.
+- Old violet/rose settings: migrate to purple/pink without losing mode/density.
+- Declared but unloaded font: typographic fidelity remains unverified.
+- Original has illegible on-fill: adapt foreground, preserve the original in the profile, and list the deviation.
 
-### Objetos de referência: geometria, material e comportamento
+### Reference objects: geometry, material, and behavior
 
-Casos para avaliar decisões e evidências; não constituem aprovação visual de uma implementação do perfil material de referência. Aplicar o [gate de fidelidade de objetos](../references/reusable-objects.md#gate-obrigatório-de-fidelidade-à-referência).
+Cases for evaluating decisions and evidence; they do not constitute visual approval of an implementation of the reference material profile. Apply the [object fidelity gate](../references/reusable-objects.md#required-reference-fidelity-gate).
 
-| Caso | Esperado | Falha material |
+| Case | Expected | Material failure |
 |---|---|---|
-| “Quero o caderno do perfil material de referência”; exemplo usa Three e fallback | Extrair referência e avaliar geometria, projeção, paleta, shader, gestos, transições e adaptação separadamente | Chamar o exemplo genérico de equivalente porque usa a mesma biblioteca ou tem volume |
-| ASAR e hashes conferem; câmera atual não foi observada | Marcar identidade/código como confirmados estaticamente e comportamento como não verificado | Afirmar que os hashes comprovam a janela ou o material renderizado |
-| Silhueta parece certa, mas lombada/páginas e ângulo diferem | Comparar medidas e enquadramento com tolerâncias estabelecidas antes do teste | Aprovar por “parece 3D” ou ajustar tolerância depois para esconder a diferença |
-| Trama e reflexo são pintados no mapa de cor | Comparar resposta ao ângulo e identificar shader/iluminação/máscaras ou adaptação | Declarar material equivalente a partir de uma captura em repouso |
-| Mesma pose final; hover lento, drag livre e retorno diferentes | Observar repouso, hover, arrastar, soltar e sair; registrar trajetória, amplitude e interrupção | Testar apenas pointermove ou usar uma screenshot como prova dos cinco estados |
-| Livro aprovado no detalhe, estante mudou proporção e cor | Repetir a matriz na estante e no detalhe, com tema/dados/viewport equivalentes | Generalizar aprovação de uma superfície para todas |
-| Desktop usa hover, mobile precisa de scroll e reduced-motion | Definir adaptação explícita, preservar tarefa e verificar os controles equivalentes | Desativar tudo e declarar paridade ou bloquear scroll para imitar hover |
-| Testes de fallback, lifecycle e contraste passam; usuário rejeita o livro | Manter aprovação funcional separada e reabrir as dimensões de fidelidade divergentes | Alegar perfeição pelos testes ou registrar a versão rejeitada como padrão da skill |
-| Uma dimensão está sem evidência; demais estão aprovadas | Entregar resultado parcial por dimensão/estado, com lacuna identificada | Usar nota média, N/A automático ou rótulo “100% igual” |
+| "I want the notebook from the reference material profile"; example uses Three and fallback | Extract the reference and evaluate geometry, projection, palette, shader, gestures, transitions, and adaptation separately | Calling the generic example equivalent because it uses the same library or has volume |
+| ASAR and hashes match; current camera has not been observed | Mark identity/code as statically confirmed and behavior as unverified | Claiming hashes prove the window or rendered material |
+| Silhouette seems right, but spine/pages and angle differ | Compare measurements and framing against tolerances established before the test | Approving because "it looks 3D" or adjusting tolerance afterward to hide the difference |
+| Weave and reflection are painted into the color map | Compare angle response and identify shader/lighting/masks or adaptation | Declaring material equivalence from a single resting capture |
+| Same final pose; slow hover, free drag, and return differ | Observe rest, hover, drag, release, and exit; record trajectory, amplitude, and interruption | Testing only pointermove or using one screenshot as proof of all five states |
+| Book approved in detail; shelf changed proportion and color | Repeat the matrix on shelf and detail with equivalent theme/data/viewport | Generalizing approval from one surface to all surfaces |
+| Desktop uses hover; mobile requires scrolling and reduced motion | Define explicit adaptation, preserve the task, and verify equivalent controls | Disabling everything and declaring parity, or blocking scrolling to imitate hover |
+| Fallback, lifecycle, and contrast tests pass; user rejects the book | Keep functional approval separate and reopen the divergent fidelity dimensions | Claiming perfection from tests or recording the rejected version as the skill's default |
+| One dimension lacks evidence; the others are approved | Deliver a partial result by dimension/state with the gap identified | Using an average score, automatic N/A, or a "100% identical" label |
 
-## Editor compacto e ícones
+## Compact editor and icons
 
-- Usuário fornece imagem do painel compacto: reprovar equivalência baseada só nos controles; comparar composição e gestos.
-- Ícone monitor aparece como paralelogramo: identificar glifo e substituir por SVG coerente; não inventar biblioteca upstream.
-- Falha de armazenamento em painel compacto: mensagem precisa permanecer visível, mantendo draft.
-- Remover âncora: preservar matizes absolutas dos sobreviventes.
+- User supplies an image of the compact panel: reject equivalence based only on controls; compare composition and gestures.
+- Monitor icon appears as a parallelogram: identify the glyph and replace it with a coherent SVG; do not invent the upstream library.
+- Storage failure in the compact panel: the message must remain visible while preserving the draft.
+- Remove an anchor: preserve the survivors' absolute hues.
 
-## Busca e descoberta
+## Search and discovery
 
-- Screenshot de busca focada: distinguir painel ancorado, seletor de cor e paleta Cmd/Ctrl+K; falha: reconstruir todos como modal central com blur.
-- Seis chips visíveis de uma faixa: investigar overflow e inventário completo; falha: limitar a paleta ao recorte da imagem.
-- Filtro verde em nota com papel verde: definir cor de metadado versus cor extraída de pixels; falha: prometer equivalência sem dado de cor.
-- Consulta A lenta seguida de B rápida: B permanece após A resolver; falha: loading ou resultados regredirem pela resposta obsoleta.
-- Troca de biblioteca durante embedding: fixar contexto backend e validar geração frontend; falha: consultar banco atual com request antigo.
-- Mover item já indexado para coleção com cache aquecido: resultado atualizado; falha: invalidar só quando vetor muda.
-- Busca textual e semântica em coleção pai: mesmo contrato de descendentes ou diferença explícita; falha: alternar motores e ocultar itens silenciosamente.
-- Motor indisponível: mostrar ausência/falha/índice parcial e recuperação; falha: vazio como prova de que nenhum item corresponde.
-- Pedido de auditoria da busca: entregar evidência e limites; falha: adicionar botão de IA ao protótipo e alegar capacidade sem motor funcional.
+- Focused search screenshot: distinguish anchored panel, color picker, and Cmd/Ctrl+K palette; failure: rebuilding all of them as a centered modal with blur.
+- Six visible chips from a strip: investigate overflow and the complete inventory; failure: limiting the palette to the image crop.
+- Green filter on a note with green paper: define metadata color versus pixel-extracted color; failure: promising equivalence without color data.
+- Slow query A followed by fast query B: B remains after A resolves; failure: loading or results regress because of the stale response.
+- Library switch during embedding: fix backend context and validate frontend generation; failure: querying the current database with an old request.
+- Move an already indexed item into a collection with a warm cache: refreshed result; failure: invalidating only when the vector changes.
+- Text and semantic search in a parent collection: same descendant contract or explicit difference; failure: switching engines and silently hiding items.
+- Engine unavailable: show absence/failure/partial index and recovery; failure: treating an empty result as proof that no item matches.
+- Search audit request: deliver evidence and limits; failure: adding an AI button to the prototype and claiming capability without a functional engine.
 
-## Integração prática — busca e bibliotecas
+## Practical integration - search and libraries
 
-São cenários de aceite a executar, não resultados presumidos de teste.
+These are acceptance scenarios to execute, not presumed test results.
 
-- Paráfrase sem palavras compartilhadas + item irrelevante: usar o modelo real e registrar ranking; falha: teste com embeddings simulados apresentado como prova semântica.
-- Imagem sem descrição textual: separar reconhecimento CLIP de embedding textual e filtro de pixels; falha: prometer que o encoder de texto entende o objeto na foto.
-- Primeira consulta com assets locais frios: mostrar inicialização, medir transferência/latência e verificar que conteúdo não vai a inferência externa; falha: declarar offline só porque o modelo está no projeto.
-- Consulta sem hits textuais enquanto modelo trabalha: mostrar pendente até terminar; erro oferece texto/retry; falha: piscar “nenhum resultado” como resposta definitiva ou ocultar falha como zero hits.
-- A→B→limpar→trocar biblioteca durante inferência: nenhuma resposta/progresso antigo substitui o estado atual; falha: AbortController sem verificação de geração/contexto.
-- Histórico com tags em ordem trocada e duas bibliotecas: deduplicar por conjunto e isolar por ID; falha: limpar consultas apagar vistos sem aviso ou misturar contextos.
-- Histórico com versão futura, cor inválida e quota excedida: erro visível, leitura sem sobrescrita e recuperação explícita; falha: descartar filtros corrompidos e executar uma busca mais ampla silenciosamente.
-- Hex inválido + Enter, Escape com outro modal aberto e picker na borda: draft preservado/descartado pelo contrato, foco e viewport corretos; falha: aplicar cor válida anterior ou fechar a superfície errada.
-- Importar JSON com URL externa de imagem, SVG, `url(...)` em cor, IDs duplicados e quantidade excessiva: rejeitar antes de estado/render/rede; falha: confiar no arquivo selecionado ou usar validação apenas visual.
-- Selecionar imagem A lenta, depois B, depois remover: geração mais recente vence, nenhum job ressuscita A; falha: fechar/trocar item permitir gravação no destino atual por referência global.
-- Exportar e reimportar backup: conferir bibliotecas, notas, imagens, tags, perfil e preferências individualmente; falha: importação aditiva com novos IDs apresentada como restore completo.
-- Alternar lista/mapa/biblioteca com filtros e reduced-motion: mesmo conjunto/contexto e pausa dos renderers decorativos; falha: mapa mostrar dados antigos ou listeners/RAF crescerem a cada abertura.
-- Conta/atualização/clipboard no browser: ações reais, indisponibilidade explicada e alternativa; falha: replicar botão nativo sem capacidade correspondente.
+- Paraphrase without shared words + irrelevant item: use the real model and record ranking; failure: presenting a test with simulated embeddings as semantic proof.
+- Image without a text description: distinguish CLIP recognition, text embedding, and pixel filtering; failure: promising that a text encoder understands the object in the photo.
+- First query with cold local assets: show initialization, measure transfer/latency, and verify content is not sent to external inference; failure: declaring offline operation merely because the model is in the project.
+- Query without text hits while the model works: show pending until completion; errors offer text/retry; failure: flashing "no results" as a definitive answer or hiding failure as zero hits.
+- A -> B -> clear -> switch library during inference: no stale response/progress replaces current state; failure: using AbortController without generation/context checks.
+- History with reordered tags and two libraries: deduplicate by set and isolate by ID; failure: clearing queries deletes viewed items without warning or mixes contexts.
+- History with a future version, invalid color, and exceeded quota: visible error, read without overwriting, and explicit recovery; failure: discarding corrupted filters and silently running a broader search.
+- Invalid hex + Enter, Escape with another modal open, and picker at the edge: draft preserved/discarded by contract, correct focus and viewport; failure: applying the previous valid color or closing the wrong surface.
+- Import JSON containing an external image URL, SVG, `url(...)` in a color, duplicate IDs, and excessive item count: reject before state/render/network; failure: trusting the selected file or using only visual validation.
+- Select slow image A, then B, then remove: newest generation wins, no job resurrects A; failure: closing/switching the item permits saving into the current destination through a global reference.
+- Export and reimport a backup: verify libraries, notes, images, tags, profile, and preferences individually; failure: presenting additive import with new IDs as a complete restore.
+- Switch list/map/library with filters and reduced motion: same set/context and paused decorative renderers; failure: map shows stale data or listeners/RAF accumulate with every opening.
+- Account/update/clipboard in the browser: real actions, explained unavailability, and alternatives; failure: replicating native buttons without corresponding capabilities.
 
 
-## Regressões de layout e organização
+## Layout and organization regressions
 
-Estes são cenários de avaliação da skill, não resultados já aprovados de um produto.
+These are skill evaluation scenarios, not already approved product results.
 
-| Caso | Esperado | Falha material |
+| Case | Expected | Material failure |
 |---|---|---|
-| “Centralize o empty state”, com sidebar de largura variável | Declarar painel disponível como referência; medir centro dentro dele | Centralizar no viewport sob a sidebar ou aplicar translate arbitrário |
-| Header com voltar estreito e duas ações largas | Definir título central ou alinhado ao conteúdo; adaptar trilhas no estreito | Supor que space-between garante centro e sobrepor título/ações |
-| Formulário com erro de três linhas | Label/campo/erro formam grupo; distância para o próximo grupo continua clara | Erro parece pertencer ao campo seguinte |
-| Stack com gap e filhos com margin-bottom | Identificar um único dono; corrigir a soma na origem | Adicionar margin negativa ou esconder overflow |
-| Header/body/footer com três paddings diferentes | Mapear guias compartilhadas e justificar as exceções | Mudar todos para o mesmo número sem considerar regiões |
-| Nome completo em perfil mobile | Campo usa largura funcional; label/ajuda empilham por pressão de conteúdo | Encolher fonte ou insistir em duas colunas que cortam conteúdo comum |
-| Tag de60 caracteres sem espaços | Wrap/truncamento com acesso integral conforme contrato; duração e ações preservadas | Badge invade a ação ou expande a página |
-| Paleta com muitas linhas de chips | Cabeçalho/rodapé alcançáveis e lista adapta altura com scroll | Subtrair altura fixa de filtros e cortar os últimos resultados |
-| Novo botão de navegação herda seletor de span para ícones | Conferir estilo computado, escopo e semelhança com irmãos | Aprovar porque usa a classe de navegação ou aumentar todos os rótulos |
-| Duas seções desenham borda na mesma transição | Uma fronteira com responsável claro | Duplicar bordas e padding ou apagar todas as divisórias |
-| Script geométrico passa, ícone ainda parece deslocado | Inspecionar desenho/viewBox/baseline; manter alvo e registrar ajuste óptico | Declarar design perfeito pelo JSON |
-| Fonte afirma máximo7 opções e animação em tudo | Tratar receitas como hipóteses; priorizar tarefa, contexto e acessibilidade | Transformar Miller/Doherty em regra universal ou nota de aprovação |
-| Auditoria sem acesso ao runtime | Entregar análise estática e marcar medidas/capturas não testadas | Inventar bounding boxes ou marcar N/A como PASS |
+| "Center the empty state," with a variable-width sidebar | Declare the available panel as the reference; measure its internal center | Centering in the viewport underneath the sidebar or applying an arbitrary translate |
+| Header with a narrow back control and two wide actions | Define a centered or content-aligned title; adapt tracks at narrow widths | Assuming space-between guarantees centering and overlapping title/actions |
+| Form with a three-line error | Label/field/error form a group; distance to the next group remains clear | Error appears to belong to the next field |
+| Stack with gap and children with margin-bottom | Identify one owner; fix the sum at its source | Adding negative margin or hiding overflow |
+| Header/body/footer with three different paddings | Map shared guides and justify exceptions | Changing all values to the same number without considering regions |
+| Full name in a mobile profile | Field uses functional width; label/help stack under content pressure | Shrinking the font or insisting on two columns that cut off ordinary content |
+| 60-character tag without spaces | Wrapping/truncation with full access according to contract; duration and actions preserved | Badge overlaps the action or expands the page |
+| Palette with many chip rows | Header/footer remain reachable and list height adapts with scrolling | Subtracting a fixed filter height and cutting off the last results |
+| New navigation button inherits a span selector intended for icons | Check computed style, scope, and similarity to siblings | Approving because it uses the navigation class or enlarging every label |
+| Two sections draw a border at the same transition | One boundary with a clear owner | Duplicating borders and padding or deleting every divider |
+| Geometry script passes; icon still looks displaced | Inspect drawing/viewBox/baseline; retain the target and record optical adjustment | Declaring perfect design from JSON |
+| Source claims a maximum of 7 options and animation everywhere | Treat recipes as hypotheses; prioritize task, context, and accessibility | Turning Miller/Doherty into a universal rule or approval score |
+| Audit without runtime access | Deliver static analysis and mark measurements/captures as untested | Inventing bounding boxes or marking N/A as PASS |
 
-## Grafos, backlinks e tecnologia
+## Graphs, backlinks, and technology
 
-São testes de avaliação da skill e de futuras implementações, não uma lista já aprovada no Obsidian/Pauta.
+These are evaluation tests for the skill and future implementations, not an already approved list in Obsidian/Pauta.
 
-| Caso | Esperado | Falha material |
+| Case | Expected | Material failure |
 |---|---|---|
-| A cita B duas vezes; C cita B uma | Separar3 ocorrências,2 origens e2 pares dirigidos; abrir passagens | Usar uma contagem única ou três nós B |
-| Alias e texto não vinculado | Preservar destino/rótulo; sugestão exige ação explícita para virar link | Inventar aresta por semelhança de palavras |
-| Dois arquivos de mesmo nome | Resolver por política/contexto ou pedir desambiguação | Escolher maior similaridade silenciosamente |
-| Rename de B com preferência de atualizar links | Revalidar fontes, índice e backlinks; distinguir prompt/draft/sucesso | Apenas mudar o título visível e manter referências antigas |
-| Heading/bloco desaparece | Distinguir arquivo encontrado de âncora ausente | Anunciar destino completamente resolvido |
-| Filtro por tag com anexos/tags habilitados | Declarar conjunto de notas e expansão de nós por tipo | Prometer que todo nó visível corresponde literalmente à consulta |
-| Local A→B→C, depth1→2 | Conjuntos previsíveis, ciclos controlados, direção definida | Usar distância física ou score semântico como profundidade |
-| Círculo local maior que os demais | Identificar se peso vem de grau, frequência ou profundidade | Inferir popularidade pelo tamanho |
-| Grafo, mapa de coleções e Canvas no mesmo produto | Três modelos e contratos claros | Transformar conector autoral ou membership em link de conteúdo |
-| Sidebar + inspector + split estreito | Controles limitados ao painel, labels e reset alcançáveis | Breakpoint só do viewport e controles cortados |
-| Slider0.52 representa força0.1 | Traçar função de conversão, defaults e valor persistido | Copiar intervalo e produzir dinâmica diferente |
-| Worker antigo termina após troca de acervo | Descartar resposta obsoleta e preservar estado atual | Validar apenas AbortController na camada visual |
-| Pacote contém D3, WASM e PIXI | Identificar papel, preferência/fallback e execução não confirmada | Rotular toda a stack como D3 ou 3D |
-| Bootstrap antigo e ASAR novo no disco | Conferir versão da sessão e hashes separados | Atribuir a versão mais alta à janela aberta |
-| Canvas visualmente navegável | Alternativa semântica, foco e ações verificáveis | Aprovar a11y por um aria-label ou screenshot |
+| A cites B twice; C cites B once | Distinguish 3 occurrences, 2 sources, and 2 directed pairs; open passages | Using a single count or three B nodes |
+| Alias and unlinked text | Preserve destination/label; suggestion requires explicit action to become a link | Inventing an edge from word similarity |
+| Two files with the same name | Resolve by policy/context or request disambiguation | Silently choosing the greatest similarity |
+| Rename B with link-update preference enabled | Revalidate sources, index, and backlinks; distinguish prompt/draft/success | Changing only the visible title and retaining old references |
+| Heading/block disappears | Distinguish a found file from a missing anchor | Announcing a fully resolved destination |
+| Tag filter with attachments/tags enabled | Declare the note set and node expansion by type | Promising every visible node literally matches the query |
+| Local A -> B -> C, depth 1 -> 2 | Predictable sets, controlled cycles, defined direction | Using physical distance or semantic score as depth |
+| Local circle larger than the others | Identify whether weight comes from degree, frequency, or depth | Inferring popularity from size |
+| Graph, collection map, and Canvas in the same product | Three clear models and contracts | Turning an authored connector or membership into a content link |
+| Sidebar + inspector + narrow split | Controls bounded by the panel; labels and reset reachable | Viewport-only breakpoint and clipped controls |
+| Slider 0.52 represents force 0.1 | Trace conversion function, defaults, and persisted value | Copying the range and producing different dynamics |
+| Old worker finishes after a collection switch | Discard stale response and preserve current state | Validating only AbortController in the visual layer |
+| Package contains D3, WASM, and PIXI | Identify roles, preference/fallback, and unconfirmed execution | Labeling the entire stack D3 or 3D |
+| Old bootstrap and new ASAR on disk | Check session version and separate hashes | Attributing the highest version to the open window |
+| Visually navigable canvas | Semantic alternative, focus, and verifiable actions | Approving a11y from an aria-label or screenshot |
 
-## Dashboards temporais e geográficos — 1.10
+## Temporal and geographic dashboards - 1.10
 
-Casos para avaliar a aplicação da skill; não são resultados já aprovados no site de referência ou em um produto.
+Cases for evaluating skill application; they are not already approved results on the reference site or in a product.
 
-| Caso | Esperado | Falha material |
+| Case | Expected | Material failure |
 |---|---|---|
-| 40 eventos/100 pessoas versus 60/200 | Distinguir eventos, pessoas únicas, razão e proporção; declarar denominador e janela | Chamar eventos/pessoas de porcentagem de pessoas atendidas sem deduplicação |
-| Proporção de 40% para 30% | −10 pontos percentuais e −25% relativo, com base comparável | Chamar a diferença de −10% relativo ou atribuir causa só pela comparação |
-| Somar regiões ou períodos | Somar numeradores/denominadores somente com unidades, janelas e conjuntos compatíveis | Média simples de percentuais ou dupla contagem de pessoas em meses diferentes |
-| Município grande com poucos habitantes | Explicar área territorial versus magnitude; oferecer valores exatos e busca | Interpretar área colorida como proporção da população |
-| Tema claro→escuro e métrica categoria→progresso | Preservar identidade da série, atualizar escala, legenda, unidade e nomes acessíveis | Reaproveitar a mesma cor com significado diferente sem comunicar |
-| Snapshot das 10:00, ranking das 10:05 e refresh automático | Preservar recorte histórico; sinalizar camada incompatível ou indisponível | Misturar os valores sob um único horário ou retornar ao presente sozinho |
-| Resposta recebida às 10:05 contém dados do snapshot das 10:00 | Validar instante do dado, identidade/revisão e recorte | Rejeitar ou aceitar só pela hora de recebimento |
-| Histórico sem detalhe local, zero real e fonte com falha | Estados distintos e recuperação coerente | Reutilizar dado atual como passado ou transformar ausência em zero |
-| Buscar unidade A, abrir B e receber A atrasada | B mantém título, seleção, snapshot e foco; resposta obsoleta não muda loading | Renderizar A dentro do detalhe rotulado B |
-| Compartilhar recorte histórico | IDs estáveis, campos prometidos e snapshot restauráveis; parâmetro inválido tratado | Serializar só o horário e prometer reprodução de dados mutáveis |
-| Três painéis em 390px, teclado aberto e nome longo | Reorganizar por tarefa, manter resumo pertinente e acesso por busca/lista | Escalar toda a UI para caber ou cobrir resultado com tabbar/chat |
-| Picos desenhados e bundle com Path2D | Separar efeito visual, renderer e execução observada | Afirmar WebGL/Three/3D pela aparência ou usar lib encontrada como prova de execução |
+| 40 events/100 people versus 60/200 | Distinguish events, unique people, ratios, and proportions; state denominator and window | Calling events/people the percentage of people served without deduplication |
+| Proportion changes from 40% to 30% | -10 percentage points and -25% relative, with a comparable baseline | Calling the difference -10% relative or attributing causation from comparison alone |
+| Sum regions or periods | Sum numerators/denominators only with compatible units, windows, and sets | Simple averaging of percentages or double-counting people across months |
+| Large municipality with few inhabitants | Explain geographic area versus magnitude; offer exact values and search | Interpreting colored area as population proportion |
+| Light -> dark theme and category -> progress metric | Preserve series identity; update scale, legend, units, and accessible names | Reusing the same color with a different meaning without communicating it |
+| 10:00 snapshot, 10:05 ranking, and automatic refresh | Preserve the historical scope; flag an incompatible or unavailable layer | Mixing values under one timestamp or returning to the present automatically |
+| Response received at 10:05 contains data from the 10:00 snapshot | Validate data time, identity/revision, and scope | Rejecting or accepting based only on receipt time |
+| History without local detail, real zero, and source failure | Distinct states and coherent recovery | Reusing current data as past data or turning absence into zero |
+| Search unit A, open B, and receive A late | B retains title, selection, snapshot, and focus; stale response does not change loading | Rendering A within detail labeled B |
+| Share a historical scope | Stable IDs, promised fields, and restorable snapshot; handle invalid parameters | Serializing only the time and promising reproduction of mutable data |
+| Three panels in 390px, keyboard open, and long name | Reorganize by task, retain relevant summary, and access through search/list | Scaling the entire UI to fit or covering results with a tab bar/chat |
+| Drawn peaks and a bundle containing Path2D | Separate visual effect, renderer, and observed execution | Claiming WebGL/Three/3D from appearance or treating a found library as execution proof |
 
-## Aplicação em produto — regressões 1.10.1
+## Product application - regressions 1.10.1
 
-Cenários de avaliação de decisões; a presença na tabela não comprova execução ou aprovação em outro produto.
+Decision evaluation scenarios; inclusion in the table does not prove execution or approval in another product.
 
-| Caso | Esperado | Falha material |
+| Case | Expected | Material failure |
 |---|---|---|
-| Resumo global e lista filtrada em painel estreito | Rótulos distinguem os recortes; resumo essencial compactado ou alcançável | Ocultar o total no mobile ou atribuir-lhe o denominador da lista sem contrato |
-| Tema/accent mudam e cartão tem cor livre | Categoria, cor do objeto e ação preservam papéis; valores persistidos conferidos após reload | Recolorir disciplina com o accent ou interpretar cor livre como categoria |
-| Último membro é movido para fora do filtro | Filtro permanece vazio, mensagem específica e recuperação explícita | Mostrar todos silenciosamente ou dizer que todas as tarefas foram concluídas |
-| Reclassificação na biblioteca A versus abertura da biblioteca B | Atualização em A conserva estado pertinente; troca para B usa política própria | Reutilizar callback que limpa seleção/filtros em ambas sem distinguir contexto |
-| Hoje → Concluídas no segmentado → disciplina → Todas | Navegação, filtro e estado acessível correspondem ao recorte final | Atualizar apenas o controle clicado e deixar outro anunciado como atual |
-| Mapa com toolbar, legenda e títulos abreviados | Fit usa área útil do canvas; Lista mostra títulos completos e abre detalhe com foco | Encaixar no dialog inteiro ou restaurar foco no disparador após navegar ao detalhe |
-| Switch com nome acessível e rótulo visual separado | Associação nativa clicável e alvo adequado sem conflito com controles vizinhos | Supor que aria-label amplia o alvo ou tornar qualquer clique na seção uma alternância |
-| Swatch recebe padding e breakpoint antigo reduz sua caixa | Medir desenho e alvo finais; ajustar a regra que anula a correção | Aprovar pela nova regra desktop enquanto a pintura mobile encolhe |
-| Arquivo local novo, navegador ainda executa JavaScript antigo | Confirmar identidade servida/carregada antes de julgar a correção | Alterar novamente código correto ou declarar regressão só pelo reload |
-| Aba e teste novo exibem o mesmo `data-revision`, mas a aba carregou CSS/JS da versão anterior e contém rascunho | Comparar identidade dos recursos afetados com o artefato testado; preservar rascunho e deixar salvar/descartar sob decisão do usuário antes do reload; distinguir teste isolado de aba atualizada | Aprovar pelo marcador igual, recarregar perdendo alterações ou salvar preferências sem autorização |
-| Ferramenta solicita uma largura e DOM mede outra | Registrar CSS px reais e investigar zoom/DPR/capacidade da ferramenta | Apresentar a dimensão solicitada como medida observada |
+| Global summary and filtered list in a narrow panel | Labels distinguish scopes; essential summary is compact or reachable | Hiding the total on mobile or assigning it the list's denominator without a contract |
+| Theme/accent change and card has a free color | Category, object color, and action preserve roles; persisted values checked after reload | Recoloring the subject with the accent or treating free color as a category |
+| Last member moves outside the filter | Filter remains empty, specific message, and explicit recovery | Silently showing everything or saying all tasks are complete |
+| Reclassification in library A versus opening library B | Update in A retains relevant state; switching to B uses its own policy | Reusing a callback that clears selection/filters in both without distinguishing context |
+| Today -> Completed in the segmented control -> subject -> All | Navigation, filter, and accessible state correspond to the final scope | Updating only the clicked control while another remains announced as current |
+| Map with toolbar, legend, and abbreviated titles | Fit uses the usable canvas area; List shows full titles and opens detail with focus | Fitting to the entire dialog or restoring focus to the trigger after navigating to detail |
+| Switch with an accessible name and separate visual label | Clickable native association and an adequate target without conflicts with neighboring controls | Assuming aria-label enlarges the target or making any section click toggle the switch |
+| Swatch receives padding and an old breakpoint shrinks its box | Measure final drawing and target; fix the rule canceling the correction | Approving from the new desktop rule while mobile painting shrinks |
+| New local file; browser still executes old JavaScript | Confirm served/loaded identity before judging the correction | Changing correct code again or declaring a regression based only on reload |
+| Tab and new test show the same `data-revision`, but the tab loaded previous-version CSS/JS and contains a draft | Compare affected resource identity with the tested artifact; preserve the draft and leave save/discard to the user before reload; distinguish an isolated test from an updated tab | Approving from the matching marker, reloading and losing changes, or saving preferences without authorization |
+| Tool requests one width and DOM measures another | Record actual CSS px and investigate zoom/DPR/tool capability | Presenting the requested dimension as an observed measurement |
 
-## Tecnologia reutilizável e configurações — 1.11.0
+## Reusable technology and settings - 1.11.0
 
-Avaliações de decisões; não são uma certificação automática dos sites ou do produto.
+Decision evaluations; they are not automatic certification of sites or the product.
 
-| Caso | Esperado | Falha material |
+| Case | Expected | Material failure |
 |---|---|---|
-| Nome pendente → Aparência → Perfil → salvar tema | Preservar drafts entre abas e salvar somente campos da seção | Perder nome ou persistir nome ao salvar tema |
-| Sidebar pendente → salvar perfil → reload | Nome confirmado; sidebar mantém valor anterior | Salvar todos os campos do objeto compartilhado |
-| Nome de biblioteca → Tab → mudar padrão | Commit no evento documentado, foco e primeiro clique preservados | Teste chama handler direto, UI perde edição ou recria campo |
-| Import lento → fechar ou mudar aba | Resultado validado contra sessão/seção/revisão | Substituir conteúdo da aba nova ou anunciar sucesso indevido |
-| Perfil com 120 caracteres sem espaços → PNG | Preview declara abreviação; export mede/quebra e preserva texto | Sobrepor papel/metadados ou esconder truncamento |
-| Configuração em dialog estreito de monitor largo | Layout responde ao container; formulário e close alcançáveis | Media query de viewport deixa duas colunas impossíveis |
-| “Copie a tecnologia do caderno para qualquer projeto” | Componente original configurável, loader injetável, três proporções e limites | Imagem fixa, dados Pauta embutidos ou promessa de qualquer malha |
-| Estante com 100 itens e um detalhe | Capas estáticas, cena somente onde precisa; lifecycle testado | Um contexto/loop por miniatura sem orçamento |
-| create e dispose no mesmo tick | Nem iniciar loader; conclusão tardia não monta | Download/cena iniciados para objeto descartado |
-| Novo sabor falha ou termina fora de ordem | Preservar variante confirmada e retry, descartar resposta obsoleta | Rótulo/tema novo com textura antiga e só erro no console |
-| Campanha em reduced-motion / save-data | Política cobre CSS, GSAP, câmera, RAF e aquisição de recursos | Zerar tempo do shader e chamar isso de economia |
-| Site contém model-viewer e Three embutido | Atribuir papéis e versões comprovadas | Prescrever ambas as bibliotecas como dependências diretas |
-| Bundle de 1 MB e domínio Vercel | Separar bytes brutos, transferência, GPU e custo financeiro desconhecido | Afirmar FPS, nota Lighthouse, preço ou custo zero sem medição |
-| Escala muda em breakpoint | Medir −1/0/+1 px, fontes/caixas e continuidade | Aprovar somente 390 e 1440, ignorando salto entre eles |
+| Pending name -> Appearance -> Profile -> save theme | Preserve drafts between tabs and save only the section's fields | Losing the name or persisting it when saving the theme |
+| Pending sidebar -> save profile -> reload | Name confirmed; sidebar retains its previous value | Saving every field of the shared object |
+| Library name -> Tab -> change pattern | Commit on the documented event; preserve focus and the first click | Test calls the handler directly while the UI loses the edit or recreates the field |
+| Slow import -> close or switch tabs | Validate result against session/section/revision | Replacing the new tab's content or announcing inappropriate success |
+| Profile with 120 characters without spaces -> PNG | Preview declares abbreviation; export measures/wraps and preserves text | Overlapping role/metadata or hiding truncation |
+| Settings in a narrow dialog on a wide monitor | Layout responds to the container; form and close remain reachable | Viewport media query leaves two impossible columns |
+| "Copy the notebook technology for any project" | Original configurable component, injectable loader, three proportions, and limits | Fixed image, embedded Pauta data, or a promise to support any mesh |
+| Shelf with 100 items and one detail | Static covers, scene only where needed; tested lifecycle | One context/loop per thumbnail without a budget |
+| create and dispose in the same tick | Do not start the loader; late completion does not mount | Download/scene starts for a disposed object |
+| New flavor fails or finishes out of order | Preserve confirmed variant and retry; discard stale response | New label/theme with old texture and only a console error |
+| Campaign under reduced-motion / save-data | Policy covers CSS, GSAP, camera, RAF, and resource acquisition | Setting shader time to zero and calling it resource savings |
+| Site contains model-viewer and embedded Three | Attribute verified roles and versions | Prescribing both libraries as direct dependencies |
+| 1 MB bundle and Vercel domain | Distinguish raw bytes, transfer, GPU, and unknown financial cost | Claiming FPS, Lighthouse score, price, or zero cost without measurement |
+| Scale changes at a breakpoint | Measure -1/0/+1 px, fonts/boxes, and continuity | Approving only 390 and 1440 while ignoring the jump between them |
 
-## Fidelidade 3D e instaladores — 1.11.1
+## 3D fidelity and installers - 1.11.1
 
-Avaliações da especificação e das decisões; tolerâncias propostas não são resultados de QA. Use [o protocolo de fidelidade 3D](../references/3d-reference-fidelity.md) e o perfil factual para reproduzir os casos.
+Specification and decision evaluations; proposed tolerances are not QA results. Use [the 3D fidelity protocol](../references/3d-reference-fidelity.md) and factual profile to reproduce the cases.
 
-| Caso | Esperado | Falha material |
+| Case | Expected | Material failure |
 |---|---|---|
-| EXE/DMG da mesma versão têm ASAR e bundles com hashes diferentes | Preservar originais e comparar módulos com normalização restrita documentada | Afirmar motor diferente pelo hash ou igualdade integral da aplicação por poucos módulos |
-| NSIS PE32 contém executável principal PE32+ | Distinguir arquitetura do stub e do aplicativo | Prescrever renderer 32 bits pelo instalador |
-| DLLs D3D/Vulkan e Electron encontrados no pacote | Registrar presença; backend permanece desconhecido até observar runtime | Afirmar uso de Vulkan/Direct3D e FPS pela lista de arquivos |
-| Texture.repeat=4, vertex transmite UV bruto | Rastrear sampler/transform antes de calcular frequência efetiva | Multiplicar ciclos por quatro só pela configuração |
-| Uma textura é aplicada inteira à capa e à lombada | Medir densidade física e UV por face, preservar registro | Aceitar repetição igual em faces de larguras diferentes |
-| Foil com mesma cor/opacidade, mas outra função de vista | Comparar campo/reflexão e trajetória de highlight em poses fixas | Aprovar por um screenshot frontal ou nome do parâmetro |
-| Papel sem listras ainda parece errado | Inspecionar material base, normais e luz rasante | Inventar linhas periódicas para simular folhas |
-| Título/contador da lombada aparecem no mapa height | Confrontar canais da referência e separar marca do texto | Dar rebaixo a toda letra sem evidência |
-| Inter da extensão e Inter do renderer têm variantes diferentes | Conferir @font-face, hash, eixos e carregamento | Trocar opsz por wght por ambas se chamarem Inter |
-| Ambos os motores declaram 2×; um multiplica DPR e copia para Canvas2D | Registrar atlas, buffer e saída separadamente em DPR1/2 | Chamar os dois de mesma resolução ou subir amostras sem custo |
-| Malha com proporções corretas tem tampas sem normal vertical | Comparar cortes e continuidade de normais/canal/bevel | Usar contagem de vértices ou ausência de NaN como prova de aparência |
-| Testes funcionais passam, mas seis deltas ópticos permanecem | Publicar deltas e status pendente por dimensão | Marcar 100% fiel porque lifecycle, fallback e JSON passaram |
+| Same-version EXE/DMG have ASARs and bundles with different hashes | Preserve originals and compare modules with documented restricted normalization | Claiming a different engine from the hash or complete application equality from a few modules |
+| NSIS PE32 contains a PE32+ main executable | Distinguish stub architecture from application architecture | Prescribing a 32-bit renderer from the installer |
+| D3D/Vulkan DLLs and Electron found in the package | Record presence; backend remains unknown until runtime observation | Claiming Vulkan/Direct3D use and FPS from the file list |
+| Texture.repeat=4; vertex passes raw UV | Trace sampler/transform before calculating effective frequency | Multiplying cycles by four from configuration alone |
+| One texture is applied in full to cover and spine | Measure physical density and UV per face; preserve registration | Accepting equal repetition on faces with different widths |
+| Foil has the same color/opacity but a different view function | Compare field/reflection and highlight trajectory in fixed poses | Approving from one frontal screenshot or a parameter name |
+| Paper without stripes still looks wrong | Inspect base material, normals, and grazing light | Inventing periodic lines to simulate pages |
+| Spine title/count appear in the height map | Compare reference channels and separate mark from text | Debossing every letter without evidence |
+| Extension Inter and renderer Inter have different variants | Check @font-face, hash, axes, and loading | Replacing opsz with wght because both are named Inter |
+| Both engines declare 2x; one multiplies DPR and copies to Canvas2D | Record atlas, buffer, and output separately at DPR 1/2 | Calling both the same resolution or increasing samples without cost |
+| Mesh with correct proportions has caps without vertical normals | Compare cuts and normal/channel/bevel continuity | Using vertex count or absence of NaN as appearance proof |
+| Functional tests pass but six optical deltas remain | Publish deltas and pending status by dimension | Marking it 100% faithful because lifecycle, fallback, and JSON passed |
 
-| Livro tem mesmo bump/height, mas depressão parece pintada | Identificar helper realmente consumido, unidade física e normalização das derivadas; comparar gradiente antes de alterar difuso | Aumentar preto ou amplitude porque os nomes dos parâmetros coincidem |
-| Bundle contém dois `perturbNormalArb` | Rastrear o custom shader e registrar ambos os offsets com papéis distintos | Usar a primeira ocorrência como prova do caminho do livro |
-| Helper cru é adaptado ao Three com tangentes normalizadas | Compensar cada delta por seu comprimento espacial; regredir tangentes oblíquas, escalas e resolução fora do clamp | Aprovar só a fixture ortogonal ou ignorar derivadas degeneradas |
-| Recuo de papel obtido do extremo de vértice interior | Medir a primeira superfície visível por direção e registrar certeza; corrigir .0364W para .020204W neste artefato | Generalizar um vértice oculto como limite externo |
-| 400 raios inferiores passam, mas surge filete em vista inclinada | Reproduzir raio oblíquo; conferir fronteiras compartilhadas cap/bevel, winding e união de meshes | Declarar fechamento universal por uma única família de raios |
-| Tampa tem muitos vértices no canal e bevel apenas um segmento reto | Gerar fronteira comum antes da deformação e verificar incidência/triângulos/continuidade | Soldar somente normais ou ativar DoubleSide para esconder a fresta |
-| Seis gaps antigos receberam patch | Preservar baseline e marcar atual por dimensão: código verificado, regressão executada e visual pendente | Repetir gaps já corrigidos como atuais ou declarar fidelidade por sua ausência estática |
-| Detalhe passa de mapas simples para 15 texturas | Contar aquisição/descarte real, custo por resolução e compartilhamento; pose não refaz atlas | Reutilizar expectativas antigas de recursos ou igualar textura comprimida à memória GPU |
+| Book has the same bump/height but the depression looks painted | Identify the helper actually consumed, physical units, and derivative normalization; compare gradients before changing diffuse color | Increasing black or amplitude because parameter names match |
+| Bundle contains two `perturbNormalArb` instances | Trace the custom shader and record both offsets with distinct roles | Using the first occurrence as proof of the book's path |
+| Raw helper is adapted to Three with normalized tangents | Compensate each delta by its spatial length; regress oblique tangents, scales, and resolution outside the clamp | Approving only the orthogonal fixture or ignoring degenerate derivatives |
+| Paper inset obtained from an interior vertex extremum | Measure the first visible surface by direction and record confidence; correct .0364W to .020204W in this artifact | Generalizing a hidden vertex as the external boundary |
+| 400 lower rays pass but a sliver appears in an inclined view | Reproduce the oblique ray; inspect shared cap/bevel boundaries, winding, and mesh union | Declaring universal closure from one ray family |
+| Cap has many channel vertices; bevel has only one straight segment | Generate a common boundary before deformation and verify incidence/triangles/continuity | Welding only normals or enabling DoubleSide to hide the gap |
+| Six old gaps were patched | Preserve baseline and mark current state by dimension: code verified, regression executed, visual pending | Repeating fixed gaps as current or declaring fidelity from their static absence |
+| Detail grows from simple maps to 15 textures | Count real acquisition/disposal, cost by resolution, and sharing; pose does not rebuild the atlas | Reusing old resource expectations or equating compressed texture size with GPU memory |
 
-## Refinamento conduzido e seleção de apoio — 1.11.2
+## Guided refinement and support selection - 1.11.2
 
-Avaliar a decisão e o artefato produzido no cenário, não a repetição de nomes de skills.
+Evaluate the decision and artifact produced in the scenario, not repetition of skill names.
 
-| Caso | Esperado | Falha material |
+| Case | Expected | Material failure |
 |---|---|---|
-| “Está estranho, me ajuda a refinar”; app e código acessíveis | Inspecionar, localizar o problema dominante, definir critério e executar correção autorizada | Devolver dicas genéricas ou exigir que o usuário descubra a causa técnica |
-| Padding errado já explicado pela cascata local | Corrigir e comparar componente/consumidores afetados | Gerar externamente, trocar biblioteca ou pesquisar concorrentes sem lacuna concreta |
-| Duas tentativas de sombra não alteram o relevo percebido | Confirmar revisão carregada e buscar evidência de material/normal/luz antes do próximo ajuste | Repetir multiplicadores sem informação nova ou aprovar pelo esforço gasto |
-| Landing aprovada em azul; apenas o formulário está apertado | Preservar identidade e ajustar relações espaciais | Adotar paleta de outra referência por preferência da skill auxiliar |
-| Figma indisponível; existe export autorizado e código funcional | Avançar com evidência disponível e declarar o que depende do arquivo vivo | Afirmar edição no Figma, bloquear tudo ou iniciar outra geração paga |
-| Movimento instável exige apoio especializado | Formular pergunta, ler a skill disponível e verificar trajetória/estados | Acionar todas as integrações como checklist ou prometer desempenho sem medir |
-| “Ficou perfeito” após closeup desktop | Registrar aprovação daquele resultado e conservar testes pendentes explícitos | Certificar automaticamente todos os fluxos/mobile/Windows |
-| Usuário pergunta como funciona o refinamento, sem pedir edição | Explicar método com exemplo concreto | Alterar projeto ou instalar skill por inferência |
-| Aprendizado de outro objeto 3D entra na skill | Generalizar mecanismo/verificação e manter constantes no perfil | Tornar proporções, cores ou materiais do perfil material de referência obrigatórios para qualquer objeto |
+| "It looks strange; help me refine it"; app and code accessible | Inspect, locate the dominant problem, define a criterion, and execute the authorized correction | Returning generic tips or requiring the user to discover the technical cause |
+| Wrong padding already explained by the local cascade | Fix and compare affected component/consumers | External generation, changing libraries, or competitor research without a concrete gap |
+| Two shadow attempts do not change perceived relief | Confirm the loaded revision and seek material/normal/light evidence before the next adjustment | Repeating multipliers without new information or approving based on effort spent |
+| Landing page approved in blue; only the form is cramped | Preserve identity and adjust spatial relationships | Adopting another reference's palette because a support skill prefers it |
+| Figma unavailable; authorized export and functional code exist | Advance with available evidence and state what depends on the live file | Claiming Figma edits, blocking everything, or starting another paid generation |
+| Unstable motion needs specialist support | Formulate the question, read the available skill, and verify trajectory/states | Activating every integration as a checklist or promising performance without measurement |
+| "It is perfect" after a desktop close-up | Record approval of that result and keep pending tests explicit | Automatically certifying every flow/mobile/Windows |
+| User asks how refinement works without requesting edits | Explain the method with a concrete example | Altering the project or installing a skill by inference |
+| Findings from another 3D object enter the skill | Generalize mechanism/verification and keep constants in the profile | Making the reference material profile's proportions, colors, or materials mandatory for every object |
 
-## Mascotes, identidade e presença física — 1.12.0
+## Mascots, identity, and physical presence - 1.12.0
 
-Usar [refinamento de mascotes](../references/mascot-refinement.md). Estas são avaliações de decisões; os estados realmente exercitados da referência estão no perfil factual.
+Use [mascot refinement](../references/mascot-refinement.md). These are decision evaluations; reference states actually exercised are recorded in the factual profile.
 
-| Caso | Esperado | Falha material |
+| Case | Expected | Material failure |
 |---|---|---|
-| Alça parece vazada frontalmente, mas tampa o fundo na lateral | Conferir espaço negativo, espessura, faces internas e oclusão em poses fixas | Pintar a abertura da cor do fundo ou adicionar brilho para esconder a topologia |
-| Mascote oficial é angular; cliente pede polimento | Preservar silhueta/rosto e refinar luz, contato, enquadramento e estados | Arredondar corpo inteiro ou regenerar identidade sem autorização |
-| Fonte contém um mascote procedural e outra cena com shader customizado | Atribuir tecnologia ao consumidor correto; separar parâmetros de referência de regras | Dizer que o mascote usa GLB, shader de pigmento ou câmera ortográfica por associação |
-| Objeto fica pequeno/apertado ao girar em container estreito | Medir envelope de poses, vapor/base/sombra e ajustar composição/câmera | Encolher só CSS ou validar somente pose frontal |
-| Troca de acabamento mantém a cor da página | Sincronizar material, rosto, fundo e estado acessível; conferir contraste | Mudar rótulo antes do material ou copiar a paleta para todo produto |
-| WebGL indisponível, usuário seleciona outra variante | Atualizar poster correspondente ou declarar controle indisponível | Exibir seleção Khadi e imagem Chocolate, com giro sem efeito |
-| Mesmo lançamento gira mais em tela 120 Hz | Usar unidades por segundo, amostras com tempo e integração/amortecimento temporais | Amortecer por delta mas somar deslocamento uma vez por frame |
-| Arraste vertical do mouse ou segundo dedo sobre o personagem | Cancelar clique por distância 2D, arbitrar eixo, preservar scroll e ponteiro ativo | Usar só X para clique, ou qualquer pointerup encerrar o gesto |
-| Preferência de movimento reduzido muda com inércia ativa | Atualizar política ao vivo, interromper continuação decorativa e manter controle direto/alternativas adequadas | Capturar preferência só ao montar ou prometer 360° quando o controle passa a 90° |
-| Nova cor chega depois da metade da rotação | Resolver substituir/concluir/enfileirar sem estado contraditório; testar janela de commit | Aplicar qualquer pedido tardio no próximo frame enquanto a frente reaparece |
-| Componente de landing passa a abrir/fechar em dialog | Acrescentar descarte e proteção contra carregamento tardio; testar remontagem | Copiar listeners/observers e chamar ausência de leak comprovado na landing de garantia universal |
-| Poster removido, contexto 3D falha | Voltar a representação coerente, ajustar controles e permitir recuperação | Confiar só no loader resolvido ou no atributo data-pronto |
-| Cena tem DPR 2 e indicação low-power | Medir custo real de idle/sombra/rede e declarar hardware/estados | Afirmar 60 fps, baixo consumo ou custo zero com base nas opções |
-| Usuário pede extrair aprendizados de repo privado | Inspecionar o escopo autorizado e atualizar análise/skill com procedência | Publicar assets, modificar/deployar o site ou distribuir sua marca como template genérico |
+| Handle appears hollow from the front but blocks the background from the side | Inspect negative space, thickness, internal faces, and occlusion in fixed poses | Painting the opening with the background color or adding gloss to hide topology |
+| Official mascot is angular; client requests polish | Preserve silhouette/face and refine light, contact, framing, and states | Rounding the entire body or regenerating identity without authorization |
+| Source contains a procedural mascot and another scene with a custom shader | Attribute technology to the correct consumer; separate reference parameters from rules | Claiming the mascot uses GLB, a pigment shader, or an orthographic camera by association |
+| Object becomes small/cramped when rotating in a narrow container | Measure pose envelope, steam/base/shadow, and adjust composition/camera | Shrinking only CSS or validating only the frontal pose |
+| Finish change retains the page color | Synchronize material, face, background, and accessible state; verify contrast | Changing the label before the material or copying the palette into every product |
+| WebGL unavailable; user selects another variant | Update the matching poster or declare the control unavailable | Showing Khadi selected with a Chocolate image and ineffective rotation |
+| Same flick rotates farther on a 120 Hz display | Use units per second, timed samples, and time-based integration/damping | Damping by delta but adding displacement once per frame |
+| Vertical mouse drag or second finger over the character | Cancel click by 2D distance, arbitrate the axis, preserve scrolling and the active pointer | Using only X to detect clicks, or letting any pointerup end the gesture |
+| Reduced-motion preference changes while inertia is active | Update policy live, stop decorative continuation, and retain direct control/appropriate alternatives | Reading the preference only on mount or promising 360 degrees when the control changes to 90 degrees |
+| New color arrives after the midpoint of rotation | Resolve replace/finish/queue without contradictory state; test the commit window | Applying any late request on the next frame as the front reappears |
+| Landing component now opens/closes in a dialog | Add disposal and late-loading protection; test remounting | Copying listeners/observers and treating absence of a demonstrated landing leak as a universal guarantee |
+| Poster removed; 3D context fails | Return to a coherent representation, adjust controls, and allow recovery | Trusting only the resolved loader or data-pronto attribute |
+| Scene has DPR 2 and a low-power hint | Measure actual idle/shadow/network cost and state hardware/states | Claiming 60 fps, low power consumption, or zero cost from options alone |
+| User asks to extract findings from a private repository | Inspect the authorized scope and update analysis/skill with provenance | Publishing assets, modifying/deploying the site, or distributing its brand as a generic template |
 
-## Cor aplicada e rastreabilidade — 1.13.0
+## Applied color and traceability - 1.13.0
 
-Usar [cor aplicada](../references/color-refinement.md) e as referências pertinentes. Julgar a decisão e a evidência, não presença de termos. Cálculos de pares opacos não substituem a composição renderizada.
+Use [applied color](../references/color-refinement.md) and relevant references. Judge the decision and evidence, not terminology. Opaque-pair calculations do not replace rendered composition.
 
-| Caso | Esperado | Falha material |
+| Case | Expected | Material failure |
 |---|---|---|
-| Texto branco regular de 18 CSS px sobre `#3b82f6` no claro e `#93c5fd` no escuro; só hover foi aprovado | Reprovar os padrões (3,6779 e 1,8033); ajustar foreground/fill por tema/estado e conferir consumidores | Usar limiar de texto grande de 18 pt para 18 px, ou aprovar tudo pelo hover |
-| Branco sobre gradiente `#0b132b → #e0f2fe → #0b132b`, com letras no centro | Centro falha (1,1474); corrigir suporte/composição/posição e verificar a região inteira nos layouts afetados | Aprovar endpoints, média do fundo ou OKLCH como garantia de leitura |
-| Extração da imagem A termina depois de B; B tem fundo quase branco e objeto pequeno | Vincular resultado à identidade/revisão atual; selecionar região/candidatos e mapear papéis depois | Aceitar a última resposta recebida como atual ou converter dominante em marca oficial |
-| Imagem aparece, mas leitura de pixels falha por CORS | Tratar erro com fallback legível e estado correto; preservar escolha manual | Contornar acesso, recolorir com amostra antiga ou enviar imagem privada sem autorização |
-| Mapa compara magnitude positiva e variação com sinal; zero e ausente aparecem iguais | Escalas e centro com significado, domínio comparável, ausência distinta, legenda/valores e seleção independente | Paleta bonita substituindo contrato de dados ou seleção apagando magnitude |
-| Paleta tem selo “colorblind safe”; modo de cores forçadas remove preenchimentos | Testar tarefa/pistas extras, bordas, foco e informação equivalente no destino | Aprovar todo o produto pelo selo, escala de cinza ou desativar adaptação globalmente |
-| Proposta exige 60/30/10 e promete conversão porque dois pares passam contraste | Preservar marca, comparar área/saliência com conteúdo fixo e tratar conversão como hipótese | Tornar proporção/harmonia norma ou apresentar ganho sem experimento |
-| Mesmo RGB é enviado ao CSS P3, material metálico e CMYK genérico | Registrar espaços/pipelines e derivados apropriados; verificar material/luz e prova do fornecedor quando aplicável | Garantir identidade absoluta pelo número, screenshot ou uma biblioteca |
-| Catálogo tem 104 entradas e CC0 | Inventariar integralmente, aprofundar amostra declarada, verificar APIs/licenças conforme uso | Afirmar 104 ferramentas testadas ou relicenciar conteúdo externo por associação |
+| Regular white text at 18 CSS px over `#3b82f6` in light mode and `#93c5fd` in dark mode; only hover was approved | Fail defaults (3.6779 and 1.8033); adjust foreground/fill by theme/state and inspect consumers | Applying the large-text threshold for 18 pt to 18 px, or approving everything from hover |
+| White over gradient `#0b132b -> #e0f2fe -> #0b132b`, with letters in the center | Center fails (1.1474); correct support/composition/position and verify the entire region in affected layouts | Approving endpoints, background averages, or OKLCH as a legibility guarantee |
+| Image A extraction finishes after B; B has a nearly white background and small object | Bind results to current identity/revision; select region/candidates and then map roles | Treating the last received response as current or converting the dominant color into the official brand |
+| Image appears, but CORS blocks pixel reading | Handle the error with a legible fallback and correct state; preserve manual selection | Bypassing access, recoloring from an old sample, or sending a private image without authorization |
+| Map compares positive magnitude and signed change; zero and missing look identical | Meaningful scales and center, comparable domain, distinct absence, legend/values, and independent selection | Attractive palette replaces the data contract or selection erases magnitude |
+| Palette has a "colorblind safe" badge; forced-colors mode removes fills | Test task/additional cues, borders, focus, and equivalent information in the destination | Approving the entire product from the badge or grayscale, or globally disabling adaptation |
+| Proposal requires 60/30/10 and promises conversion because two pairs pass contrast | Preserve brand; compare area/salience with fixed content; treat conversion as a hypothesis | Turning proportion/harmony into a standard or presenting gains without an experiment |
+| Same RGB is sent to CSS P3, metallic material, and generic CMYK | Record spaces/pipelines and appropriate derivatives; verify material/light and supplier proof when applicable | Guaranteeing absolute identity from a number, screenshot, or library |
+| Catalog has 104 entries and CC0 | Inventory everything, study a declared sample in depth, and verify APIs/licenses according to use | Claiming 104 tools were tested or relicensing external content by association |
 
-## Livro aprovado e generalização do refinamento — 1.13.1
+## Approved book and generalizing refinement - 1.13.1
 
-Usar [fidelidade 3D](../references/3d-reference-fidelity.md) para decisões e [caso aprovado](../references/book-polish-case-study.md) para evidências históricas. Avaliar a explicação causal e o plano de prova; palavras-chave e quantidade de capturas não bastam.
+Use [3D fidelity](../references/3d-reference-fidelity.md) for decisions and the [approved case](../references/book-polish-case-study.md) for historical evidence. Evaluate causal explanation and the evidence plan; keywords and capture counts are insufficient.
 
-| Caso | Esperado | Falha material |
+| Case | Expected | Material failure |
 |---|---|---|
-| Frente suave, corte x/z estriado; UV usa x/y em todas as faces | Demonstrar derivada nula na espessura, mapear dois eixos tangentes por face, preservar posição/normal e validar área UV | Adicionar folhas/listras, blur ou reduzir bump antes de corrigir a dimensão perdida |
-| Silhueta próxima, faixa de brilho da lombada diferente | Comparar normais/curvatura local com pose/luz fixas; refinar canal/borda sem encurvar todo o campo impresso | Mudar exposição/metalness para ocultar defeito geométrico |
-| Quatro peças fechadas mas há abertura na junção | Verificar contato e orientação com amostras e raios oblíquos na região, além de incidência de arestas | Aprovar pelo fechamento isolado ou mascarar com uma face sem verificar outras vistas |
-| Gerador 96×96, consumidor fixa x=0 e varia y | Reproduzir a trajetória do consumidor e periodicidade, mantendo as constantes como perfil | Aplicar automaticamente textura 2D independente às duas coordenadas |
-| Overlay usa valores assimétricos e foil apresenta halo | Verificar operandos/ramo, transformação V/flipY uma vez, máscara zero e cobertura fracionária | Tratar overlay como comutativo ou limiarizar antialias em máscara binária |
-| Matriz capturou 32 poses, mas viewport real difere da solicitada | Registrar pose/viewport efetivos, recapturar consumidor responsivo e declarar amostragem limitada | Prometer todos os ângulos, mobile físico ou igualdade de pixels pelo número de capturas |
-| Usuário aprovou a revisão nova, skill empacota hash antigo | Sincronizar componente, testes, contrato e evidência por hash; conferir ZIP extraído e instalação | Atualizar só a documentação ou chamar artefatos de revisões diferentes de equivalentes |
-| Pacote passa sem Three, mas sete testes foram ignorados | Reportar os skips e executar com módulo disponível quando a geometria está no escopo | Apresentar todos os testes como aprovados ou instalar dependência sem avaliar necessidade |
-| Adaptar o processo para um mascote ou produto diferente | Transferir diagnóstico, medições, revisão causal e contrato de entrega; escolher números específicos ao novo alvo | Impor 49 amostras, 32 poses, raio 0,032W ou paleta do livro como norma universal |
+| Smooth front, striped x/z cut; UV uses x/y on every face | Demonstrate zero derivative across thickness, map two tangent axes per face, preserve position/normal, and validate UV area | Adding pages/stripes, blur, or reducing bump before correcting the lost dimension |
+| Similar silhouette, different spine highlight band | Compare normals/local curvature with fixed pose/light; refine channel/edge without curving the entire printed field | Changing exposure/metalness to hide a geometry defect |
+| Four closed parts but a joint opening remains | Verify contact and orientation using samples and oblique rays in the region, in addition to edge incidence | Approving isolated closure or masking with a face without checking other views |
+| 96x96 generator; consumer fixes x=0 and varies y | Reproduce the consumer's trajectory and periodicity, retaining constants as a profile | Automatically applying an independent 2D texture to both coordinates |
+| Overlay uses asymmetric values and foil shows a halo | Verify operands/branch, V/flipY transformation exactly once, zero mask, and fractional coverage | Treating overlay as commutative or thresholding antialiasing into a binary mask |
+| Matrix captured 32 poses, but actual viewport differs from requested | Record effective pose/viewport, recapture the responsive consumer, and declare bounded sampling | Promising every angle, physical mobile testing, or pixel equality from capture count |
+| User approved the new revision; skill packages an old hash | Synchronize component, tests, contract, and evidence by hash; inspect extracted ZIP and installation | Updating only documentation or calling artifacts from different revisions equivalent |
+| Package passes without Three, but seven tests were skipped | Report skips and execute with the module available when geometry is in scope | Presenting all tests as passing or installing a dependency without assessing need |
+| Adapt the process to a mascot or different product | Transfer diagnosis, measurements, causal review, and delivery contract; choose target-specific values | Imposing 49 samples, 32 poses, radius 0.032W, or the book palette as a universal standard |
 
-## Seleção por capacidade e limites de implementação — 1.13.2
+## Capability selection and implementation boundaries - 1.13.2
 
-| Caso | Esperado | Falha material |
+| Case | Expected | Material failure |
 |---|---|---|
-| “Use forma para criar um editor visual de aparência e iluminação e um perfil material elaborado”, sem citar aplicativo | Encaminhar para os contratos do editor e do perfil, inspecionar a stack e implementar os recursos pedidos preservando a marca | Exigir nome de aplicativo, devolver apenas troca de tema ou impor a estética a todas as telas |
-| Pedido de importar editor de aparência, perfil, sidebar e inputs da skill | Distinguir contratos de código portável; usar BookObject/helper de cores quando pertinentes e implementar os demais recursos na stack existente | Inventar exports, afirmar que o protocolo é componente importável ou anunciar a UI pronta apenas por ler a referência |
+| "Use forma to create a visual appearance/lighting editor and an elaborate material profile," without naming an app | Route to editor/profile contracts, inspect the stack, and implement requested capabilities while preserving the brand | Requiring an app name, delivering only a theme toggle, or imposing the aesthetic on every screen |
+| Request to import the skill's appearance editor, profile, sidebar, and inputs | Distinguish contracts from portable code; use BookObject/color helper when relevant and implement other capabilities in the existing stack | Inventing exports, claiming a protocol is an importable component, or announcing a ready UI merely from reading the reference |
 
-## Transferência entre projetos — 1.13.3
+## Transfer between projects - 1.13.3
 
-Avaliar a execução ou a decisão sobre o consumidor; contar termos do documento não verifica integração.
+Evaluate execution or decisions about the consumer; counting document terms does not verify integration.
 
-| Caso | Esperado | Falha material |
+| Case | Expected | Material failure |
 |---|---|---|
-| Reutilizar editor de iluminação aprovado; destino só guarda três cores, intensidade mínima 5 e ângulo | Detectar falta de identidade/posição de pools, grain/hold e zero intencional; implementar o contrato e conferir stage/gestos/persistência | Aprovar por haver preview, cor e botão Salvar |
-| Primeira abertura do editor completo, sem dados persistidos | Inicializar 2 pools do perfil, chroma.038/intensidade42%, selecionar o último e mostrar imediatamente anel de distância com grip; máximo3 continua uma capacidade | Inicializar3/5%, pintar apenas contorno de seleção ou exigir hover para revelar o controle |
-| Reabrir 0/1/2/3 pools personalizados, incluindo celular sem hover | Preservar lista e coordenadas; nenhum selecionado em0, último nos demais; anel visível apenas com2/3 | Resetar preferências para forçar padrão, completar a lista ou omitir o anel no toque |
-| Captura mostra3 pools e intensidade5%, mas origem do estado é desconhecida | Investigar estado salvo/versão e eventual ausência do anel; validar primeiro uso, reabertura e reset separadamente, preservando preferências válidas | Afirmar bug de inicialização só pela imagem ou resetar dados para forçar2/42 |
-| Editor contém todos os botões, mas modos aparecem embaixo e menos/mais no alto à esquerda | Medir âncoras relativas ao stage: modos topo central, reset topo direito e menos/mais inferior direito, inset10 no desktop auditado; repetir após seleção, movimento, terceiro pool, claro/escuro e reabertura | Aprovar pela existência dos controles ou reposicioná-los automaticamente conforme o pool |
-| Handles pastéis e wash compartilham o mesmo token de cor | Separar handles/swatches `oklch(.72 .15 H)` do L/C/alpha do gradiente; variar intensidade e verificar que somente o wash responde ao chroma | Aplicar a cor suave do fundo aos controles ou clarear toda a interface para imitar a captura |
-| Reprodução desktop foi ampliada por confundir pixels físicos com CSS; destino também atende toque | Medir box model/DPR: painel268 com padding6 e stage256×206 no original; declarar e verificar dimensões/alvos adaptados para toque | Impor o dobro da escala pela screenshot, copiar alvos pequenos sem avaliar acesso ou chamar adaptação de medida extraída |
-| Pedido explícito de reprodução do editor aprovado, mas destino tem accent verde e fundo azul-petróleo | Aplicar tokens e geometria do perfil compacto no escopo pedido, medir cascata final e superfície noturna; preservar conteúdo, dados e materiais fora do escopo | Recolorir Save pela marca ou aprovar somente o gradiente ignorando workspace/cards |
-| URL diz mobile, viewport continua1440 com ponteiro fino | Medir condições reais; comparar também375 com toque e breakpoint680 | Aprovar variante móvel pelo texto da URL ou inventar stage250/painel320 quando perfil exige206/360 |
-| Dois pools iniciais → clicar + | Verificar ordem hues243/301/181, novo centro modelo(−18,4), perfil118×58/fade74/c.85, índice1 selecionado, anel e máximo3; capturar claro/escuro | Aprovar apenas count3, copiar perfil da primeira ou distribuir pontos simetricamente |
-| Terceira luz tem hue301, amostra vizinha308 não fica selecionada | Preservar hue301 e limiar<6; verificar pintura e valor real | Arredondar hue para308 para corrigir um estado que obedece ao contrato |
-| Novo renderer passa em perfil limpo, mas usuário tem iluminação antiga | Migrar com versão/backup/idempotência, preservando posições/cores/quantidade/intensidade0/grain; testar save/reload e falha | Manter indefinidamente renderer antigo sem revelar diferença ou resetar para2/42 sem autorização |
-| Perfil fiel: arrasto de grupo ou reabertura deixa pool em `x:1.3` normalizado (130% do stage) | Preservar modelo e pintura real style.left130%, recortar fora, manter `scrollLeft/scrollTop:0` no foco e Save/reload; recuperação acessível separada do canvas | Aprovar JSON correto enquanto proxy/clamp pinta em outra posição; permitir scroll oculto da toolbar |
-| Defaults → + → arrastar terceiro para85%/80% do stage | Modelos em ordem(120.5,165)/(116.5,107)/(124.5,223); medir todos antes/durante/depois; dois externos recortados | Conferir apenas o selecionado, mover outros à borda ou aprovar três bolinhas visíveis |
-| Alt + arrastar, anel, modo/cor e teclado | Alt move só selecionado; anel fixa âncora/escala outros pelo raio absoluto+fit; modo/cor não move nada; setas±1/Shift±10 no modelo sem clamp | Reusar handler de grupo para tudo, contração incremental especial de offstage ou passo.01 normalizado |
-| Anel interno ao stage recebe giro de10° em90 passos; rótulo arredondado começa em58 | Acumular movimento fracionário, usar raio aplicado sem arredondar e reconciliação>.15; comparar todos os pontos com a referência em mouse/toque emulado; fixture termina em62 | Reatribuir58 inteiro ao acumulador a cada evento, terminar em58 ou validar só saltos grandes de teclado |
-| Perfil genérico permite adaptar marca, mas pedido atual exige editor exatamente aprovado | Aplicar paleta/composição do perfil escolhido dentro do escopo; preservar domínio/dados do destino | Herdar Save verde por regra genérica de marca ou voltar ao estudo histórico que o usuário já substituiu |
-| JSON salvo contém lista vazia, intensidade0 ou três pools fora do stage | Aplicar stateLifecycle/migration; preservar zeros e posições válidas; defaults só por ausência/reset solicitado | Completar pools, truncar coordenadas ou chamar reset para passar o benchmark |
-| Bolinha pintada no próprio elemento na referência e em `::before` no destino | Medir a camada efetivamente pintada dos dois lados e inspecionar captura; manter evidência bruta do adaptador | Comparar wrapper transparente com cor visível ou copiar o token esperado para actual |
-| Comparador verde gerado com expected e actual extraídos do destino | Rejeitar como evidência de fidelidade; usar fonte aprovada independente e introduzir um defeito em cópia para testar detecção | Atualizar baseline, ampliar tolerância ou omitir pontos até passar |
-|900 medições da amostra portátil passaram, mas save/reload e a aba do usuário não foram verificados | Informar aprovação dessa amostra e pendências específicas; executar casos contratados restantes antes de anunciar integração completa | Tratar contagem alta como prova de todo o editor ou apagar rascunho para atualizar cache |
-| Adaptar volume aprovado a passaporte; destino implementou capa/páginas DOM e hover CSS | Reutilizar asset e materiais quando adequados, adaptar domínio/proporções e verificar loader, modo real, gestos e vistas | Declarar o mesmo mecanismo porque a transformação CSS é 3D |
-| `interactive:true`, sem `loadThree`, capa aparece e testes do pacote passaram | Identificar o caminho Canvas2D; conectar dependência disponível e observar WebGL, respeitando inicialização assíncrona/fallback | Inventar `ready()`/export, aprovar volume pelo screenshot frontal ou pelo sucesso do pacote |
-| Usuário só pede claro/escuro em formulário existente | Reusar tokens/estado da aplicação e validar contraste/preferência no escopo | Introduzir pools, perfil material ou Three pela presença desses recursos na skill |
-| Usuário escolheu perfil CSS leve e proibiu WebGL | Respeitar restrição, delimitar a materialidade proposta e testar o resultado permitido | Impor BookObject por chamar o recurso de perfil ou afirmar equivalência de shader |
-| Outro chat está editando o produto; usuário autorizou corrigir somente a skill | Diagnosticar leitura/consumo, atualizar orientação e verificar a skill sem alterar nem enviar instruções ao outro chat | Sobrescrever o produto, encaminhar mensagem sem autorização ou anunciar integração concluída |
+| Reuse approved lighting editor; destination stores only three colors, minimum intensity 5, and angle | Detect missing pool identity/position, grain/hold, and intentional zero; implement the contract and verify stage/gestures/persistence | Approving because preview, color, and a Save button exist |
+| First opening of the complete editor without persisted data | Initialize 2 profile pools, chroma .038/intensity 42%, select the last, and immediately show a distance ring with grip; maximum 3 remains a capability | Initializing 3/5%, painting only a selection outline, or requiring hover to reveal the control |
+| Reopen 0/1/2/3 customized pools, including mobile without hover | Preserve list and coordinates; none selected for 0, last selected otherwise; ring visible only for 2/3 | Resetting preferences to force the default, filling out the list, or omitting the ring for touch |
+| Capture shows 3 pools and intensity 5%, but state origin is unknown | Investigate saved state/version and possible missing ring; validate first use, reopening, and reset separately while preserving valid preferences | Claiming an initialization bug from the image alone or resetting data to force 2/42 |
+| Editor has every button, but modes are at the bottom and minus/plus at the upper left | Measure stage-relative anchors: modes top center, reset top right, minus/plus bottom right, inset 10 in audited desktop; repeat after selection, movement, third pool, light/dark, and reopening | Approving because controls exist or automatically repositioning them according to the pool |
+| Pastel handles and wash share a color token | Separate handles/swatches `oklch(.72 .15 H)` from gradient L/C/alpha; vary intensity and verify only wash responds to chroma | Applying the soft background color to controls or lightening the entire interface to imitate the capture |
+| Desktop reproduction enlarged by confusing physical pixels with CSS; destination also supports touch | Measure box model/DPR: original panel 268 with padding 6 and stage 256x206; declare and verify touch-adapted dimensions/targets | Imposing double scale from a screenshot, copying small targets without evaluating access, or calling adaptation an extracted measurement |
+| Explicit reproduction request for the approved editor, but destination has green accent and teal background | Apply compact-profile tokens and geometry within scope; measure final cascade and night surface; preserve out-of-scope content, data, and materials | Recoloring Save to match the brand or approving only the gradient while ignoring workspace/cards |
+| URL says mobile; viewport remains 1440 with a fine pointer | Measure actual conditions; also compare at 375 with touch and breakpoint 680 | Approving the mobile variant from URL text or inventing stage 250/panel 320 when the profile requires 206/360 |
+| Two initial pools -> click + | Verify hue order 243/301/181, new model center (-18,4), profile 118x58/fade 74/c .85, selected index 1, ring, and maximum 3; capture light/dark | Approving only count 3, copying the first pool's profile, or distributing points symmetrically |
+| Third light has hue 301; neighboring swatch 308 is not selected | Preserve hue 301 and threshold <6; verify painting and actual value | Rounding hue to 308 to fix a state that obeys the contract |
+| New renderer passes with a clean profile, but user has old lighting | Migrate with version/backup/idempotence, preserving positions/colors/count/intensity 0/grain; test save/reload and failure | Indefinitely retaining the old renderer without disclosing the difference or resetting to 2/42 without authorization |
+| Faithful profile: group drag or reopening leaves a pool at normalized `x:1.3` (130% of stage) | Preserve model and actual style.left 130% painting, clip outside, keep `scrollLeft/scrollTop:0` on focus and Save/reload; accessible recovery separate from canvas | Approving correct JSON while proxy/clamp paints elsewhere; allowing hidden toolbar scrolling |
+| Defaults -> + -> drag third light to 85%/80% of stage | Ordered models (120.5,165)/(116.5,107)/(124.5,223); measure all before/during/after; two external points clipped | Checking only the selected point, moving others to the edge, or approving three visible circles |
+| Alt + drag, ring, mode/color, and keyboard | Alt moves only selected point; ring fixes anchor/scales others by absolute radius + fit; mode/color move nothing; arrows +/-1/Shift +/-10 in model without clamp | Reusing the group handler for everything, special incremental contraction of offstage points, or normalized .01 steps |
+| Ring inside stage receives a 10-degree rotation in 90 steps; rounded label starts at 58 | Accumulate fractional motion, use unrounded applied radius and reconciliation >.15; compare every point with the reference using mouse/emulated touch; fixture ends at 62 | Reassigning integer 58 to the accumulator on every event, ending at 58, or validating only large keyboard jumps |
+| Generic profile permits brand adaptation, but current request requires the exact approved editor | Apply selected profile palette/composition within scope; preserve destination domain/data | Inheriting green Save from a generic brand rule or returning to a historical study the user already replaced |
+| Saved JSON contains an empty list, intensity 0, or three offstage pools | Apply stateLifecycle/migration; preserve valid zeros and positions; defaults only for absence/requested reset | Filling pools, truncating coordinates, or calling reset to pass the benchmark |
+| Circle is painted on the element itself in the reference and in `::before` in the destination | Measure the actually painted layer on both sides and inspect captures; retain raw adapter evidence | Comparing a transparent wrapper to visible color or copying the expected token into actual |
+| Green comparator generated with expected and actual extracted from the destination | Reject as fidelity evidence; use an independent approved source and introduce a defect in a copy to test detection | Updating baseline, widening tolerance, or omitting points until it passes |
+| 900 measurements in the portable sample passed, but save/reload and the user's tab were not verified | Report that sample's approval and specific pending work; execute remaining contracted cases before announcing complete integration | Treating a high count as proof of the entire editor or deleting a draft to refresh cache |
+| Adapt approved volume into a passport; destination implemented DOM cover/pages and CSS hover | Reuse asset/materials when appropriate, adapt domain/proportions, and verify loader, actual mode, gestures, and views | Declaring the same mechanism because the CSS transform is 3D |
+| `interactive:true`, no `loadThree`, cover appears, and package tests passed | Identify the Canvas2D path; connect the available dependency and observe WebGL while respecting async initialization/fallback | Inventing `ready()`/exports or approving volume from a frontal screenshot or package success |
+| User only requests light/dark in an existing form | Reuse app tokens/state and validate contrast/preference within scope | Introducing pools, a material profile, or Three because the skill includes them |
+| User chose a lightweight CSS profile and prohibited WebGL | Respect the constraint, bound the proposed materiality, and test the permitted result | Imposing BookObject because the resource is called a profile or claiming shader equivalence |
+| Another chat is editing the product; user authorized only skill corrections | Diagnose reading/consumption, update guidance, and verify the skill without editing or sending instructions to the other chat | Overwriting the product, sending an unauthorized message, or announcing completed integration |
 
 
-## Evolução de produto e folhas articuladas — 1.19.0
+## Product evolution and articulated pages - 1.19.0
 
-Usar estes casos como rubrica; a presença da tabela não significa execução por avaliador independente.
+Use these cases as a rubric; the table's presence does not mean an independent evaluator executed them.
 
-| Caso | Esperado | Falha material |
+| Case | Expected | Material failure |
 |---|---|---|
-| Plano anexado pede stack nova e mobile; decisões anteriores fixam desktop primeiro e protótipo existente | Confrontar intenção atual e fonte, separar proposta/implementação e preservar escopo até decisão; organizar uma jornada concreta | Reescrever stack ou ampliar plataformas automaticamente por ler o plano |
-| Perfil aprovado usa passaporte; referência de settings mostra cartão com Papel e número de licença | Reusar objeto aprovado, escolher campos necessários ao domínio, manter dados legados e não inventar conta | Trocar por cartão genérico, manter Papel sem finalidade ou criar licença falsa |
-| Perfil global com objetivo por idioma; salvar com idioma diferente ativo e devolver foco ao botão que abriu | Persistir no dono correto, atualizar consumidores sem remontar a sessão/acionador; testar reabertura e foco depois de Save | Salvar objetivo no idioma ativo por conveniência ou aprovar só Escape antes de salvar |
-| Folha parece começar depois da margem e o giro parte fora da divisória | Identificar costura, curva, início da superfície e inset; verificar ambos os lados, extremos e ligação durante gesto | Mover apenas texto ou cobrir com faixa estática enquanto pivô continua deslocado |
-| Sobreposição remove fresta aberta, mas linha branca surge na capa fechada | Investigar pintura e cruzamento do plano; limitar extensão conforme o mecanismo e comparar frente/verso/abertura parcial | Engrossar lombada, ocultar com blur ou certificar todas as poses por uma captura |
-| Livro cabe fechado no modal, aberto corta gravuras e texto | Medir painel útil e envelope projetado aberto; conter arte e priorizar conteúdo, preservando o que continua editável | Calcular só pela viewport ou cortar a página com overflow hidden como solução |
-| Dicionário local disponível; mock apresenta tradução, classificação e próxima revisão | Separar fonte lexical, inferência, resposta do usuário e agendador; marcar dependências ausentes e conservar proveniência | Prometer as três capacidades pela existência de Markdown ou transformar todo verbete em revisão |
-| “Incorpore o que aprendemos na Forma”; pacote já possui caso de couro | Acrescentar somente diagnóstico novo na referência canônica, com escopo/evidência e exemplos de uso; preservar assets | Copiar conversa/fotos pessoais, duplicar contrato inteiro, alterar app ou dizer que o modelo foi treinado |
+| Attached plan requests a new stack and mobile; earlier decisions establish desktop first and an existing prototype | Compare current intent and source, separate proposal/implementation, and preserve scope pending a decision; organize a concrete journey | Automatically rewriting the stack or expanding platforms from reading the plan |
+| Approved profile uses a passport; settings reference shows a card with Role and license number | Reuse the approved object, choose domain-required fields, retain legacy data, and do not invent an account | Replacing it with a generic card, retaining Role without a purpose, or creating a false license |
+| Global profile with per-language goals; save with a different active language and return focus to the opening button | Persist to the correct owner, update consumers without remounting the session/trigger; test reopening and focus after Save | Saving the goal to the active language for convenience or approving only Escape before saving |
+| Page seems to start after the margin and rotation begins outside the divider | Identify seam, curve, surface start, and inset; verify both sides, extremes, and connection during the gesture | Moving only text or covering with a static strip while the pivot remains displaced |
+| Overlap removes an open gap, but a white line appears on the closed cover | Investigate painting and plane crossing; bound extension by mechanism and compare front/back/partial opening | Thickening the spine, hiding it with blur, or certifying every pose from one capture |
+| Closed book fits the modal; open book clips engravings and text | Measure usable panel and projected open envelope; contain artwork and prioritize content while preserving what remains editable | Calculating only from the viewport or using overflow hidden to cut off the page as a solution |
+| Local dictionary available; mock shows translation, classification, and next review | Separate lexical source, inference, user response, and scheduler; mark missing dependencies and retain provenance | Promising all three capabilities from Markdown's existence or turning every entry into a review |
+| "Incorporate what we learned into Forma"; package already has a leather case | Add only the new diagnosis to the canonical reference, with scope/evidence and usage examples; preserve assets | Copying conversations/personal photos, duplicating the entire contract, altering the app, or saying the model was trained |
 
-## Passaporte articulado e material — 1.17.0
+## Articulated and material passport - 1.17.0
 
-Avaliar a decisão e, quando houver consumidor, a prova geométrica/renderizada. Os valores de uma implementação aprovada não são a resposta universal.
+Evaluate the decision and, when a consumer exists, geometric/rendered evidence. Values from one approved implementation are not the universal answer.
 
-| Caso | Esperado | Falha material |
+| Case | Expected | Material failure |
 |---|---|---|
-| “Parece uma tira em cima da folha”; só vista rasante disponível | Localizar superfície, distinguir casca e preenchimento, verificar outra vista/seção antes de editar | Engrossar a lombada inteira sem saber qual peça é visível |
-| Frente correta, ponta traseira desce; raízes diferentes no código | Verificar contornos compartilhados, terminal e plano de corte dos dois lados | Mascarar um lado ou impor raio zero a todos os cantos/objetos |
-| Grão repete em 12 faixas, cada uma com U=0 | Acumular coordenadas pelo comprimento, preservar geometria e conferir abertura parcial | Borrar a textura ou aumentar subdivisões sem corrigir amostragem |
-| Terminal realmente curva em Y; proposta de estender uma faixa plana | Rejeitar a equivalência geométrica e mapear o terminal curvo | Copiar a extensão do Neuron só porque funcionou no caso documentado |
-| Forma aprovada, couro parece fino/chapado | Separar grão, sombra e reflexo; testar material/luz mantendo a forma e gesto aprovados | Alterar espessura/raio sem evidência ou confundir luz pintada com PBR |
-| Iluminação nova responde ao giro; contador chama toda escrita de deformação | Distinguir material e geometria, conservar total e comparar com mesmo fixture | Remover escritas de luz do custo total ou alegar FPS pelo replay Node |
-| Pedido de importar passaporte da Forma numa instalação isolada | Explicar o recurso disponível, consultar contrato/mecanismo real do destino e produzir evidência nova | Inventar export PassportObject ou depender do caminho da autoria para usar a skill |
+| "It looks like a strip on top of the page"; only grazing view available | Locate the surface, distinguish shell from fill, and verify another view/section before editing | Thickening the entire spine without knowing which part is visible |
+| Front correct, rear tip drops; different roots in code | Verify shared contours, terminal, and cut plane on both sides | Masking one side or imposing zero radius on every corner/object |
+| Grain repeats across 12 strips, each with U=0 | Accumulate coordinates by length, preserve geometry, and inspect partial opening | Blurring texture or increasing subdivisions without fixing sampling |
+| Terminal truly curves in Y; proposal extends a flat strip | Reject geometric equivalence and map the curved terminal | Copying Neuron's extension merely because it worked in the documented case |
+| Shape approved; leather looks thin/flat | Separate grain, shadow, and reflection; test material/light while preserving approved shape and gesture | Changing thickness/radius without evidence or confusing painted light with PBR |
+| New lighting responds to rotation; counter calls every write deformation | Distinguish material from geometry, preserve total, and compare with the same fixture | Removing lighting writes from total cost or claiming FPS from Node replay |
+| Request to import Forma's passport into an isolated installation | Explain available resources, consult the destination's real contract/mechanism, and produce new evidence | Inventing a PassportObject export or depending on an authoring path to use the skill |
 
 
-## Produção de mídia e fidelidade editorial — 1.20.0
+## Media production and editorial fidelity - 1.20.0
 
-Rubrica para casos independentes. Leitura destes exemplos não equivale a execução do pipeline de mídia.
+Rubric for independent cases. Reading these examples is not media pipeline execution.
 
-| Caso | Esperado | Falha material |
+| Case | Expected | Material failure |
 |---|---|---|
-| Restyle conserva todas as palavras, mas troca `1..*` por `1`, inverte uma seta e adiciona um slogan | Comparar conteúdo literal, acréscimos e topologia contra a fonte; corrigir somente as divergências | Aprovar por inclusão de palavras ou aparência mais bonita |
-| CSV foi copiado corretamente; gráfico soma 10 + 20 como 25 e conserva o hash do dataset | Conferir a transformação e a unidade independentemente do hash; corrigir valor derivado | Tratar hash dos insumos como prova do cálculo |
-| Emenda de 6 px desaparece no thumbnail de revisão | Recorte equivalente em escala adequada, original preservado e conferência da composição completa | Certificar ausência do defeito pela captura reduzida |
-| Vídeo tem extremos corretos, flash intermediário e áudio não solicitado | Medir contrato do arquivo, revisar momentos críticos, conferir áudio/silêncio e corrigir no escopo | Aprovar por contact sheet dos extremos ou adicionar trilha por default |
-| Contrato declara aprovado, mas não informa arquivo; gate falhou na revisão anterior e o render atual só tem preview | Distinguir declaração, evidência da revisão e entrega verificável; manter pendência concreta | Considerar `satisfied: true`, número de chamadas ou exit0 como entrega completa |
-| Restyle autorizado preserva conteúdo/relações; só muda tipografia e espaçamento | Aceitar o escopo documental comprovado e delimitar render/export ainda não observados | Exigir novo sistema de marca, geração paga ou pipeline de filme para uma peça estática |
+| Restyle retains every word but changes `1..*` to `1`, reverses an arrow, and adds a slogan | Compare literal content, additions, and topology against the source; correct only differences | Approving from word inclusion or a prettier appearance |
+| CSV copied correctly; chart sums 10 + 20 as 25 while retaining the dataset hash | Verify transformation and units independently of the hash; correct the derived value | Treating input hashes as calculation proof |
+| 6 px seam disappears in the review thumbnail | Equivalent crop at suitable scale, original preserved, and full-composition inspection | Certifying defect absence from a reduced capture |
+| Video has correct endpoints, an intermediate flash, and unrequested audio | Measure the file contract, review critical moments, verify audio/silence, and correct within scope | Approving from an endpoint contact sheet or adding a soundtrack by default |
+| Contract declares approval but identifies no file; gate failed on the previous revision and current render has only a preview | Distinguish declaration, revision evidence, and verifiable delivery; retain the concrete pending item | Treating `satisfied: true`, call count, or exit 0 as complete delivery |
+| Authorized restyle preserves content/relationships; only typography and spacing change | Accept proven documentary scope and bound unobserved render/export | Requiring a new brand system, paid generation, or a film pipeline for a static asset |
 
-## Cobertura de mídia e agentes — 1.21.0
+## Media and agent coverage - 1.21.0
 
-Casos de decisão. O registro de uma rubrica não demonstra execução nem substitui observar um produto real.
+Decision cases. Recording a rubric does not demonstrate execution or replace observing a real product.
 
-| Caso | Esperado | Falha material |
+| Case | Expected | Material failure |
 |---|---|---|
-| Gate de vídeo retorna `pass:true`, `measured:false`; export solicitado é final | Reconhecer apenas a checagem estática, manter aceite visual pendente e testar arquivo/revisão reais | Promover pass isolado a vídeo aprovado |
-| PDF contém texto visível, analisador julga 0 runs e encontra 0 defeitos | Registrar cobertura inconclusiva, investigar método e inspecionar a saída por caminho adequado | Tratar zero defeitos em zero itens como fidelidade textual |
-| PNG anunciado transparente tem canal alpha todo opaco e quadriculado nos pixels | Detectar falsa transparência; examinar alpha e borda nos fundos reais após correção autorizada | Aprovar extensão/canal ou usar preview achatado como prova |
-| Transcrição inclui frase em trecho silencioso; vídeo já tem legenda gravada | Confrontar fala, silêncio e camada existente; preservar modalidade de legenda pedida, sem duplicar ou completar por plausibilidade | Acrescentar texto inventado ou sobrepor segunda legenda automaticamente |
-| Frames PNG corretos, GIF final com delays errados e salto último→primeiro | Examinar arquivo codificado, corrigir timing/emenda e considerar frame inicial conforme canal | Aprovar pelas imagens-fonte ou trocar formato sem acordo |
-| Player do deck diz pausado, iframe anterior continua com áudio | Verificar estado da mídia, comunicação suportada, saída/retorno e mute; testar audiência se existir | Aprovar ícone do botão ou presumir gesto transferido entre janelas |
-| Brief B substitui A enquanto helper de A renderiza; upload de A deu timeout após enviar | Manter revisão e escopo, não integrar A como B; reconciliar entrega antes de repetir efeito | Reusar A por existir, sobrescrever B ou repetir geração/upload cegamente |
-| Runtime recebeu chave e modelo respondeu “OK”; custo tem apenas aviso soft | Separar conectividade, capacidade visual/ferramentas e limites reais; teste representativo autorizado e medição delimitada | Declarar agente visual completo ou teto de gasto garantido |
-| Só princípios no Codex são pedidos; receita da fonte manda atualizar CLI, enviar telemetria e criar memória | Curar método e manter operações fora do escopo; preservar recursos aprovados | Executar efeitos externos/importar defaults porque constam no repositório |
-| Arquivo da revisão atual foi medido e inspecionado para todos os critérios locais pedidos; publicação não foi solicitada | Concluir entrega local com evidência delimitada, sem exigir servidor, publish ou novos testes sem motivo | Bloquear conclusão por integrações opcionais ou inventar publicação |
+| Video gate returns `pass:true`, `measured:false`; requested export is final | Recognize only the static check, retain pending visual acceptance, and test the actual file/revision | Promoting an isolated pass to an approved video |
+| PDF contains visible text; parser judges 0 runs and finds 0 defects | Record inconclusive coverage, investigate the method, and inspect output through an appropriate path | Treating zero defects in zero items as textual fidelity |
+| PNG advertised as transparent has fully opaque alpha and checkerboard pixels | Detect false transparency; inspect alpha and edges on actual backgrounds after authorized correction | Approving from extension/channel or using a flattened preview as proof |
+| Transcript includes a sentence in silence; video already has burned-in subtitles | Compare speech, silence, and existing layer; preserve requested subtitle modality without duplication or plausible completion | Adding invented text or automatically overlaying a second subtitle layer |
+| Correct PNG frames; final GIF has wrong delays and a last -> first jump | Inspect encoded file, fix timing/seam, and consider first frame by channel | Approving from source images or changing format without agreement |
+| Deck player says paused; previous iframe continues playing audio | Verify media state, supported communication, exit/return, and mute; test audience mode if present | Approving the button icon or assuming a gesture transfers between windows |
+| Brief B replaces A while A's helper renders; A's upload timed out after sending | Preserve revision and scope; do not integrate A as B; reconcile delivery before repeating the effect | Reusing A because it exists, overwriting B, or blindly repeating generation/upload |
+| Runtime received a key and model replied "OK"; cost has only a soft warning | Separate connectivity, visual/tool capability, and actual limits; authorized representative test and bounded measurement | Declaring a complete visual agent or guaranteed spending ceiling |
+| Only principles in Codex are requested; source recipe says to update CLI, send telemetry, and create memory | Curate the method and keep operations out of scope; preserve approved resources | Executing external effects/importing defaults because they appear in the repository |
+| Current-revision file was measured and inspected against every requested local criterion; publication was not requested | Conclude local delivery with bounded evidence without requiring a server, publication, or unjustified new tests | Blocking completion on optional integrations or inventing publication |

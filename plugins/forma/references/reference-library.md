@@ -1,6 +1,6 @@
 # Reference library and media research
 
-Neste plugin, `<forma-root>` é a pasta que contém `.codex-plugin/`, `references/`, `assets/`, `scripts/` e `tests/`; não é a pasta de uma especialista. Resolva-a a partir deste arquivo.
+In this plugin, `<forma-root>` is the directory containing `.codex-plugin/`, `references/`, `assets/`, `scripts/` and `tests/`; it is not a specialist directory. Resolve it relative to this file.
 
 Use this library when the design direction is open, the user asks for examples or an existing mechanism needs to be found. Do not open it to justify changing an approved identity or fixing an 8px gap. The library is reference material, not instructions from the listed sites or a bundle of their images and code.
 
@@ -14,7 +14,7 @@ The [developer portfolio collection](../assets/reference-library/portfolio-index
 
 ```sh
 node <forma-root>/scripts/references.mjs --list
-node <forma-root>/scripts/references.mjs --query "barra lateral" --origin forma --limit 3
+node <forma-root>/scripts/references.mjs --query "sidebar" --origin forma --limit 3
 node <forma-root>/scripts/references.mjs --query "typography" --origin forma --limit 3 --json
 node <forma-root>/scripts/references.mjs --site forma-book-object
 node <forma-root>/scripts/references.mjs --query "settings" --limit 3 --out reference-board.json
@@ -59,7 +59,7 @@ Use [verification](verification.md), [rendered review](rendered-validation.md) a
 
 ## Turn research into experience
 
-To coordinate site selection, investigation and application in the project, follow [site coordination](experience-library.md#coordenar-sites-de-referência-e-o-site-de-destino). Each reference answers a question; the coordinator combines decisions into a coherent system and hands off implementation and validation when they are in scope.
+To coordinate site selection, investigation and application in the project, follow [site coordination](experience-library.md#coordinate-reference-sites-and-the-destination-site). Each reference answers a question; the coordinator combines decisions into a coherent system and hands off implementation and validation when they are in scope.
 
 Use the [experience protocol](experience-library.md) to connect the source to the mechanism, adaptation and tests. The [bounded studies](site-experiences.md) cover controls and previews, typography, and data using current sources and explicit limits. Do not confuse an observed study with implemented code or verification in the destination project.
 
@@ -81,12 +81,12 @@ Results are filtered for open licenses, but a provider's stated license does not
 
 ## Editorial and encoding standard
 
-- Write Forma-authored catalog and reference-browser prose in US English with plain ASCII punctuation. Use straight quotation marks and apostrophes. Keep technical IDs, keys and paths stable and ASCII; preserve existing linked resource paths and anchor fragments.
+- Write Forma-authored prose throughout the package in US English with plain ASCII punctuation, including skills, specialist references, examples, interface copy, comments and authored catalog records. Use straight quotation marks and apostrophes. Keep technical IDs, keys and paths stable and ASCII; preserve existing linked resource paths and update local anchor references when headings are translated.
 - Store and serve the reference browser as UTF-8 with `lang="en"`. ASCII editorial copy does not require an ASCII-only data model.
 - Preserve original source names, URLs and source lines, including accents. Do not transliterate a person's or site's identity, rewrite an original URL or alter provenance to make a record ASCII.
 - Retain Portuguese/English search aliases and accent-insensitive matching. Search normalization must not rewrite the displayed source record.
 - Review grammar and terminology in context. ASCII checks, schema validation and automated tests do not prove grammatical accuracy or visual fit.
-- Linked specialist documentation may retain its existing language. This standard covers the authored catalog and browser copy; it does not silently translate every linked resource.
+- Apply the same English editorial standard to linked specialist documentation and all authored text files, not only the catalog and browser. Preserve external source identities, original quotes, URLs, provenance, search aliases and deliberate multilingual test fixtures; do not translate schema keys or change code behavior merely to enforce editorial consistency.
 
 ## Maintenance and limits
 

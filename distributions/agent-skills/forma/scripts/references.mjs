@@ -9,7 +9,7 @@ export { facets, queryTerms, rankReferences, validateSiteIndex, siteFacets, rank
 export const CATALOG_PATH = fileURLToPath(new URL('../assets/reference-library/catalog.json', import.meta.url));
 export const SITE_INDEX_PATH = fileURLToPath(new URL('../assets/reference-library/site-index.json', import.meta.url));
 export const PORTFOLIO_INDEX_PATH = fileURLToPath(new URL('../assets/reference-library/portfolio-index.json', import.meta.url));
-const USAGE = `Forma reference library — Node 18+, offline, no dependencies
+const USAGE = `Forma reference library - Node 18+, offline, no dependencies
 
 node references.mjs --query "barra lateral" [--kind interface] [--use-case sidebar]
   [--origin forma] [--evidence implementation-contract] [--limit 3] [--seed 42] [--json] [--out board.json]
@@ -134,15 +134,15 @@ function printBoard(board, full) {
   const lines = [`Forma references: ${board.totalMatches} matches; showing ${board.results.length}.`,
     'Local lexical lookup; no fresh browser verification or quality guarantee.', ''];
   for (const { entry, match } of board.results) {
-    lines.push(`${entry.id} — ${entry.name}`, `Origin: ${entry.origin}; kind: ${entry.kind}; evidence: ${entry.evidence.type}`,
-      `Idea: ${entry.idea}`, `When: ${entry.whenToUse}`, `Matched: ${match.matchedTerms.map(item => `${item.term}→${item.matched} (${item.field})`).join(', ') || 'explicit filters or ID'}`,
+    lines.push(`${entry.id} - ${entry.name}`, `Origin: ${entry.origin}; kind: ${entry.kind}; evidence: ${entry.evidence.type}`,
+      `Idea: ${entry.idea}`, `When: ${entry.whenToUse}`, `Matched: ${match.matchedTerms.map(item => `${item.term}->${item.matched} (${item.field})`).join(', ') || 'explicit filters or ID'}`,
       `Capture: ${entry.evidence.capture ?? 'not included; verify the consumer separately'}`,
       `Limits: ${entry.evidence.limits.join(' ')}`, `Rights: ${entry.rights.notes} ${entry.rights.scope}`);
     if (full) {
       lines.push(`Structure: ${entry.structure.join(' | ')}`, `Adapt: ${entry.adapt.join(' | ')}`,
         `Avoid: ${entry.avoid.join(' | ')}`, `Verify: ${entry.verify.join(' | ')}`);
     }
-    for (const resource of entry.resources) lines.push(`Package resource: ${resource.label} — ${resource.path}`);
+    for (const resource of entry.resources) lines.push(`Package resource: ${resource.label} - ${resource.path}`);
     lines.push('');
   }
   if (!board.results.length) lines.push('No matches. Change the subject or explicit filters; no unrelated reference was substituted.');
@@ -153,11 +153,11 @@ function printBoard(board, full) {
 function printSitesBoard(board) {
   const lines = [`Forma ${board.sourceType === 'portfolios' ? 'portfolio' : 'site'} candidates: ${board.totalMatches} matches; showing ${board.results.length}.`, ...board.limitations, ''];
   for (const { entry, cases, patterns, match } of board.results) {
-    lines.push(`${entry.id} — ${entry.name}`, `URL: ${entry.url ?? 'quarantined; not a visit link'}`, `Evidence: ${entry.evidence.status}; no live capture.`,
-      `Matched: ${match.matchedTerms.map(item => `${item.term}→${item.matched} (${item.field})`).join(', ') || 'explicit case or ID'}`);
+    lines.push(`${entry.id} - ${entry.name}`, `URL: ${entry.url ?? 'quarantined; not a visit link'}`, `Evidence: ${entry.evidence.status}; no live capture.`,
+      `Matched: ${match.matchedTerms.map(item => `${item.term}->${item.matched} (${item.field})`).join(', ') || 'explicit case or ID'}`);
     if (entry.source) lines.push(`README source: ${board.provenance.inventory.url}#L${entry.source.line}`,
       `Original URL (text): ${JSON.stringify(entry.source.originalUrl)}`, `Source issue: ${entry.source.issue ?? 'none'}`);
-    for (const item of cases) lines.push(`Forma case: ${item.id} — ${item.name}`, `When: ${item.whenToUse}`,
+    for (const item of cases) lines.push(`Forma case: ${item.id} - ${item.name}`, `When: ${item.whenToUse}`,
       `Investigate: ${item.questions.join(' | ')}`, `Adapt: ${item.adapt.join(' | ')}`, `Verify: ${item.verify.join(' | ')}`);
     for (const pattern of patterns) for (const resource of pattern.resources) lines.push(`Forma pattern ${pattern.id}: ${resource.path}`);
     lines.push('');

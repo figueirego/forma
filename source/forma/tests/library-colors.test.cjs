@@ -11,7 +11,7 @@ const luminance=hex=>{
 };
 
 test('automatic color is stable per ID across calls and independent of collection order',()=>{
- const ids=['research','atelier','arquivo','😀','',42];
+ const ids=['research','atelier','arquivo','\u{1f600}','',42];
  const first=new Map(ids.map(id=>[id,auto({id})]));
  for(const id of [...ids].reverse())assert.deepEqual(auto({id}),first.get(id));
  assert.deepEqual(auto({id:42}),auto({id:'42'}));
@@ -19,7 +19,7 @@ test('automatic color is stable per ID across calls and independent of collectio
 });
 
 test('dark lifts automatic cloth while explicit colors remain unchanged',()=>{
- for(const id of ['research','atelier','arquivo','😀',42]){
+ for(const id of ['research','atelier','arquivo','\u{1f600}',42]){
   const light=auto({id}),dark=auto({id,dark:true});
   assert.ok(luminance(dark.base)>luminance(light.base));
   assert.notEqual(dark.base,light.base);

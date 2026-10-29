@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "scope": "EXEMPLO NÃO EXECUTADO: salvar preferências em web",
+  "scope": "UNEXECUTED EXAMPLE: saving web preferences",
   "targets": ["web-estreito", "web-amplo"],
   "checks": [
-    { "id": "layout-long-content", "target": "web-estreito", "status": "untested", "reason": "Substituir após renderizar com tradução e erro longos." },
-    { "id": "keyboard-save-recovery", "target": "web-amplo", "status": "untested", "reason": "Substituir após percorrer salvar, falha e recuperação por teclado." }
+    { "id": "layout-long-content", "target": "web-estreito", "status": "untested", "reason": "Replace after rendering long translated copy and error messages." },
+    { "id": "keyboard-save-recovery", "target": "web-amplo", "status": "untested", "reason": "Replace after testing save, failure and recovery with the keyboard." }
   ]
 }

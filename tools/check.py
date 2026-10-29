@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     commands = [
+        [sys.executable, '-B', 'tools/check_editorial.py'],
         [sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'source/forma/tests', '-p', 'test_*.py', '-v'],
         [sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'tools', '-p', 'test_*.py', '-v'],
         ['node', 'tools/test-node.mjs'],
