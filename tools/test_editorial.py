@@ -4,7 +4,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from check_editorial import audit, inspect_text
+from check_editorial import audit, inspect_text, PRESERVED_NEURON
 
 
 class EditorialTests(unittest.TestCase):
@@ -35,6 +35,15 @@ class EditorialTests(unittest.TestCase):
 
     def test_json_escapes_cannot_hide_authored_copy(self):
         self.assertTrue(inspect_text('source/forma/assets/new.json', json.dumps({'summary': 'Configura\u00e7\u00f5es'}))[1])
+
+    def test_preserved_neuron_exception_is_bounded_and_hash_checked(self):
+        source = Path(__file__).resolve().parents[1] / 'source/forma/assets/neuron-passport'
+        for name in PRESERVED_NEURON:
+            relative = 'source/forma/assets/neuron-passport/' + name
+            original = (source / name).read_text()
+            self.assertFalse(inspect_text(relative, original)[1])
+            self.assertTrue(inspect_text(relative, original + '\n')[1])
+        self.assertTrue(inspect_text('source/forma/assets/neuron-passport/new.js', 'Nao ' + 'altere o fluxo.')[1])
 
     def test_html_requires_correct_document_language(self):
         self.assertFalse(inspect_text('example.html', '<html lang="en-US">')[1])

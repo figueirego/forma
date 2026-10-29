@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-29",
+  "scope": "Approved closed Pauta book transferred to Forma; passport separate",
+  "referenceEngineSha256": "17bf1f572d0eaabc8486866fcf4b8b0cb9524bf191151d20580cb881b54e7cd4",
+  "candidateFiles": {
+    "assets/book-object.js": "ab63b0f8db78d6d5d8aa720a29f5702fa796015967855d97e745006aaa21197a",
+    "assets/book-preset.js": "d92b209eb873016ac667c90f3e00c48a5d07b507a23a3b8699e3b9b1eca6630d",
+    "assets/book-lab.js": "59c3322979505d4cf85b593196e5a4e46691a5f9d68a6215f0a0aaccdc26733b",
+    "assets/book-lab.css": "c337455c1cac88794b0154d9935acc4a79a207bb25c3272da6ca0ea35b7144e8",
+    "assets/book-lab.html": "154d3d04dd99b48a7a0cbbb921dce831264db69a837420583a165df50278110c",
+    "assets/fonts/inter-latin-opsz-normal.woff2": "2c295d99e26dcf357d4d01bcf270fd6924b600c9a13dd8c363ef114f4c6976fa"
+  },
+  "testCounts": {
+    "pairs": 32,
+    "exact": 29,
+    "residualPairs": 3
+  },
+  "backend": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+  "conditions": {
+    "desktop": {
+      "viewport": [
+        1280,
+        1100
+      ],
+      "dpr": 1,
+      "host": [
+        320,
+        422.3203125
+      ]
+    },
+    "narrow": {
+      "iframe": [
+        390,
+        650
+      ],
+      "dpr": 2,
+      "host": [
+        249.59375,
+        329.3984375
+      ]
+    }
+  },
+  "residual": {
+    "differentPixelsPerPair": 3,
+    "maxChannelDifference": 1,
+    "cause": "Unverified; raster/compositor precision is a hypothesis only"
+  },
+  "limitations": [
+    "32 observed states, not all possible combinations",
+    "No physical touch device validation",
+    "No cross-browser or cross-GPU equality claim",
+    "Real pointer gesture tested in destination; synchronized gesture trajectories not compared frame by frame",
+    "No opening articulation in the closed-book engine"
+  ],
+  "evidenceSummary": "Local audit retained 32 paired screenshots with REA receipts, DOM diagnostics and independently recomputed crop differences. This summary is not the raw screenshots."
+}

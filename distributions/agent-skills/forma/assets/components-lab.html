@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Forma component lab</title>
+  <link rel="stylesheet" href="appearance-editor.css">
+  <link rel="stylesheet" href="components-lab.css">
+</head>
+<body>
+  <div class="lab-wash" aria-hidden="true"></div>
+  <header class="lab-header"><a href="reference-browser.html">Forma</a><span>Executable component lab</span><button id="motion" type="button" aria-pressed="false">Reduce motion</button></header>
+  <nav aria-label="Related components"><a href="book-lab.html">Approved closed book: geometry, materials and lighting</a></nav><main class="lab-main">
+    <section class="lab-intro"><p class="lab-eyebrow">ORIGINAL REUSABLE MODULES</p><h1>Color, light and a little volume.</h1><p>Try a saved appearance and the Neuron passport. The passport retains its original pages, materials, lighting and direct gestures inside an isolated frame. The profile below is sample data.</p></section>
+    <div class="lab-grid">
+      <section class="lab-card">
+        <div class="lab-card-heading"><div><p class="lab-eyebrow">01 / APPEARANCE</p><h2>A draft you can manipulate.</h2></div><button id="reopen" type="button">Reopen saved</button></div>
+        <div id="editor"></div>
+        <p id="save-status" class="lab-note" role="status">Changes preview immediately. Save writes only to this browser's local storage.</p>
+      </section>
+      <section class="lab-card lab-passport-card" aria-labelledby="passport-title">
+        <p class="lab-eyebrow">02 / NEURON PASSPORT</p><h2 id="passport-title">Open the cover. Turn the page.</h2>
+        <div id="passport" aria-busy="true"></div>
+        <div class="lab-passport-controls">
+          <label for="profile-name">Sample name<input id="profile-name" value="Alex Morgan" maxlength="100" autocomplete="off"></label>
+          <button id="passport-skins" type="button" disabled>Choose passport cover</button>
+        </div>
+        <p id="passport-status" class="lab-note" role="status">Loading the Neuron passport. Profile and cover changes in this lab stay in memory.</p>
+        <p class="lab-note">Use the passport's own page arrows, or drag a page corner. Appearance changes update its light or dark theme; the passport keeps its original color and light treatment.</p>
+      </section>
+    </div>
+    <details class="lab-diagnostics"><summary>Runtime state and limits</summary><p>The passport reports its actual CSS 3D/DOM state. It does not require Three.js. These diagnostics are not GPU timing, FPS or a claim about unobserved devices.</p><button id="refresh-diagnostics" type="button">Refresh state</button> <button id="dispose-components" type="button">Dispose components</button><pre id="diagnostics"></pre></details>
+    <p id="lab-error" role="alert" hidden></p>
+    <noscript>This lab requires JavaScript. Both component source files and their integration guide remain available in the package.</noscript>
+  </main>
+  <script src="appearance-editor.js"></script>
+  <script src="neuron-passport.js"></script>
+  <script type="module" src="components-lab.js"></script>
+</body>
+</html>

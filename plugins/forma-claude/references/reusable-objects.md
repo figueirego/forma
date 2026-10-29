@@ -51,7 +51,7 @@ Trace **configured -> consumed -> rendered**. In the audited artifact, the base 
 
 ## Knowledge case: articulated passport
 
-The [passport case](passport-polish-case-study.md) covers a wrapping shell, straight end caps, binding during gestures, continuous texture and light revealing curvature. It is a CSS 3D/DOM implementation in the source product, distinct from BookObject. The skill includes the lessons and manifest without exporting a `PassportObject` or supplying the application. Preserve the suitable engine already approved in the consumer; do not attribute shaders, physics or APIs to this case that it does not have.
+The [passport case](passport-polish-case-study.md) covers a wrapping shell, straight end caps, binding during gestures, continuous texture and light revealing curvature. It is a CSS 3D/DOM implementation in the source product, distinct from BookObject. Since 1.31.0 the [NeuronPassport extraction](reusable-components.md#neuronpassport-integration) packages the approved engine and authorized CSS with source hashes, preserving its distinct visual mechanism. Since 1.30.0 the separate [PassportObject module](reusable-components.md#passportobject-integration) provides simplified articulated Three covers/pages, material/fit controls and lifecycle, using the original BookObject cover painter. It does not reproduce the CSS case or inherit its approval. Preserve the suitable engine already approved in the consumer; do not attribute shaders, physics or APIs to the historical case that it does not have.
 
 ## Available implementation: BookObject
 
@@ -60,6 +60,10 @@ The [passport case](passport-polish-case-study.md) covers a wrapping shell, stra
 For remaining differences in spine details, depth, paper, foil or sharpness, apply [package-to-pixel 3D fidelity](3d-reference-fidelity.md). Audit 1.11.1 recorded a baseline of six differences: UV/weave, optical function, paper, spine height/layout, Retina resolution and normal continuity. The [approved polish cycle](book-polish-case-study.md) later corrected the channel/rim, blending and foil, plus degenerate UVs on paper cuts. The distributed synthesis records the revision, tests and remaining differences; paired captures stay in the external authoring archive and may not accompany the skill. User approval applies to that observed result; the contracts below allow reuse and do not certify pixel equality or every adaptation.
 
 [Original engine](../assets/book-object.js), extracted from Pauta and tested with Three.js 0.186.0. It is an example of a reusable component; it is not the desktop reference book or proof of equivalence to it. It contains no code, textures or branding from that reference. Static Canvas2D works without dependencies; volume uses Three supplied by the consumer. Retain Three's MIT license when redistributing the dependency. For a fidelity request, apply the gate above before considering this example suitable.
+
+### Approved book transfer
+
+For the approved book, use [BookPreset and the complete integration](book-integration.md) before the generic examples below. Its executable lab includes the exact font, dimensions, color pipeline, stage and light-preserving inspection/reset. Bare engine defaults do not reproduce that preset.
 
 ### Minimum example: static cover
 

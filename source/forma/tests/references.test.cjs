@@ -46,7 +46,7 @@ test('every pattern points to real package resources and preserves established I
   for (const id of ['clean-shell', 'material-profile', 'settings', 'lighting-editor', 'book-object', 'knowledge-graph', 'color-system', 'purposeful-motion']) {
     assert.ok(catalog.entries.some(entry => entry.id === `forma-${id}`), id);
   }
-  assert.equal(catalog.entries.find(entry => entry.id === 'forma-lighting-editor').evidence.type, 'implementation-contract');
+  assert.equal(catalog.entries.find(entry => entry.id === 'forma-lighting-editor').evidence.type, 'reusable-component');
   assert.equal(catalog.entries.find(entry => entry.id === 'forma-book-object').evidence.type, 'reusable-component');
   assert.equal(catalog.entries.find(entry => entry.id === 'forma-clean-shell').evidence.type, 'executable-demo');
 });
@@ -165,11 +165,13 @@ test('availability filter separates supplied code from implementation contracts'
   const result = cli('--evidence', 'reusable-component', '--json');
   assert.equal(result.status, 0, result.stderr);
   const board = JSON.parse(result.stdout);
-  assert.deepEqual(ids(board), ['forma-book-object']);
+  assert.deepEqual(ids(board).sort(), ['forma-book-object', 'forma-lighting-editor', 'forma-passport-object']);
   assert.equal(board.request.evidenceType, 'reusable-component');
   assert.equal(board.results[0].match.filters.evidenceType, 'reusable-component');
   const contracts = api.searchCatalog(catalog, { evidenceType: 'implementation-contract', limit: 50 });
-  assert.ok(ids(contracts).includes('forma-lighting-editor'));
+  assert.ok(!ids(contracts).includes('forma-lighting-editor'));
+  assert.ok(ids(contracts).includes('forma-material-profile'));
+  assert.ok(!ids(contracts).includes('forma-passport-object'));
   assert.ok(!ids(contracts).includes('forma-clean-shell'));
   assert.throws(() => api.searchCatalog(catalog, { evidenceType: 'finished-product' }), /Unknown evidence/);
 });
@@ -281,4 +283,26 @@ test('catalog validation rejects old imports, duplicate IDs, invalid resources a
       assert.throws(() => api.loadCatalog(target), /Invalid/);
     }
   } finally { fs.rmSync(temporary, { recursive: true, force: true }); }
+});
+
+
+test('component lookup exposes executable assets and keeps the identity-card contract separate', () => {
+  for (const [query, id, files] of [
+    ['lighting', 'forma-lighting-editor', ['assets/appearance-editor.js', 'assets/appearance-editor.css']],
+    ['articulated passport', 'forma-passport-object', ['assets/passport-object.js', 'assets/passport-object.css', 'assets/book-object.js']],
+  ]) {
+    const result = cli('--query', query, '--evidence', 'reusable-component', '--json');
+    assert.equal(result.status, 0, result.stderr);
+    const entry = JSON.parse(result.stdout).results.find(result => result.entry.id === id)?.entry;
+    assert.ok(entry, id);
+    const paths = entry.resources.map(resource => resource.path);
+    for (const file of [...files, 'assets/components-lab.html', 'references/reusable-components.md']) assert.ok(paths.includes(file), file);
+    assert.equal(entry.evidence.liveVerified, false);
+    assert.equal(entry.evidence.capture, null);
+  }
+  const profile = catalog.entries.find(entry => entry.id === 'forma-material-profile');
+  assert.equal(profile.name, 'Editable identity card');
+  assert.equal(profile.evidence.type, 'implementation-contract');
+  assert.ok(!profile.resources.some(resource => resource.path === 'assets/passport-object.js'));
+  assert.equal(api.facets(catalog).evidenceTypes['reusable-component'], 3);
 });

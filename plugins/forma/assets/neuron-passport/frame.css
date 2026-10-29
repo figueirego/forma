@@ -1,0 +1,56 @@
+/* Host-only layout. The preserved passport CSS owns every object pixel. */
+html, body { margin: 0; width: 100%; height: 100%; background: transparent !important; }
+body { display: block; }
+html:is([data-neuron-layout="object"],[data-neuron-layout="settings"]), :is([data-neuron-layout="object"],[data-neuron-layout="settings"]) body { overflow: hidden; }
+:is([data-neuron-layout="object"],[data-neuron-layout="settings"]) #passport-host { width: var(--neuron-host-width, 100%); height: var(--neuron-host-height, 100%); }
+:is([data-neuron-layout="object"],[data-neuron-layout="settings"]) .np-profile.p-page { width: 100%; height: 100%; min-height: 0; max-width: none; margin: 0; padding: 0; }
+:is([data-neuron-layout="object"],[data-neuron-layout="settings"]) .np-heading { display: none; }
+:is([data-neuron-layout="object"],[data-neuron-layout="settings"]) .np-experience { display: flex; flex-direction: column; height: 100%; min-height: 0; margin: 0; }
+:is([data-neuron-layout="object"],[data-neuron-layout="settings"]) .np-stage { flex: 1; width: 100%; height: auto !important; min-height: 0; }
+:is([data-neuron-layout="object"],[data-neuron-layout="settings"]) .np-book-controls { flex: none; }
+[data-neuron-layout="object"] .np-book-controls { margin-bottom: 8px; }
+
+/* Explicit consumer profile: Neuron settings.css lines 9,32-38,59-66.
+   The frame occupies the measured .ns-passport slot, not the whole dialog. */
+/* Neuron clean-shell.css supplies these inherited host tokens. In particular,
+   page artwork uses currentColor, so the consumer ink must remain identical. */
+:root[data-neuron-layout="settings"][data-theme="light"] {
+  --canvas: #f0f4f6;
+  --bg: #f0f4f6;
+  --surface: #fff;
+  --surface-2: #f7f8fa;
+  --field: #fff;
+  --text: #000;
+  --muted: rgb(0 0 0 / .64);
+  --border: rgb(0 0 0 / .08);
+  --control-border: rgb(0 0 0 / .08);
+  --shell-glass: rgb(255 255 255 / .78);
+}
+:root[data-neuron-layout="settings"][data-theme="dark"] {
+  --canvas: #0e0e10;
+  --bg: #0e0e10;
+  --surface: #131315;
+  --surface-2: #19191c;
+  --field: #18181b;
+  --text: rgb(255 255 255 / .93);
+  --muted: rgb(255 255 255 / .64);
+  --border: rgb(255 255 255 / .1);
+  --control-border: rgb(255 255 255 / .1);
+  --shell-glass: rgb(24 24 27 / .74);
+}
+:root[data-neuron-layout="settings"][data-theme][data-contrast="high"] {
+  --muted: var(--text);
+  --border: #637183;
+  --control-border: #637183;
+}
+:root[data-neuron-layout="settings"][data-theme="dark"][data-contrast="high"] {
+  --border: #b9c9df;
+  --control-border: #b9c9df;
+}
+[data-neuron-layout="settings"] #passport-host { font: 15px/1.5 var(--font-ui, Inter, system-ui, sans-serif); -webkit-font-smoothing: antialiased; }
+[data-neuron-layout="settings"] .np-stage { overflow: hidden; border-radius: 12px; }
+[data-neuron-layout="settings"] .np-book { --page-w: clamp(240px, 42cqi, 340px); --page-h: calc(var(--page-w) * 1.42); }
+[data-neuron-layout="settings"] .np-book-controls { gap: 8px; margin-top: 12px; }
+
+/* The consumer can keep its existing arrows and bind them to setPage/next/previous. */
+[data-neuron-controls="host"] .np-book-controls { display: none; }

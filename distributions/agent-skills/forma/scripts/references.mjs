@@ -3,12 +3,13 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { facets, rankReferences, validateCatalog, validateSiteIndex, siteFacets, rankSites, suggestSiteCases } from './lib/reference-search.mjs';
-export { facets, queryTerms, rankReferences, validateSiteIndex, siteFacets, rankSites, suggestSiteCases } from './lib/reference-search.mjs';
+import { facets, rankReferences, validateCatalog, validateSiteIndex, siteFacets, rankSites, suggestSiteCases, validateObservedExperiences, observedFacets, rankObservedExperiences, observedEvidencePaths, validateObservedEvidence } from './lib/reference-search.mjs';
+export { facets, queryTerms, rankReferences, validateSiteIndex, siteFacets, rankSites, suggestSiteCases, validateObservedExperiences, observedFacets, rankObservedExperiences, observedEvidencePaths, validateObservedEvidence } from './lib/reference-search.mjs';
 
 export const CATALOG_PATH = fileURLToPath(new URL('../assets/reference-library/catalog.json', import.meta.url));
 export const SITE_INDEX_PATH = fileURLToPath(new URL('../assets/reference-library/site-index.json', import.meta.url));
 export const PORTFOLIO_INDEX_PATH = fileURLToPath(new URL('../assets/reference-library/portfolio-index.json', import.meta.url));
+export const OBSERVED_INDEX_PATH = fileURLToPath(new URL('../assets/reference-library/observed-experiences.json', import.meta.url));
 const USAGE = `Forma reference library - Node 18+, offline, no dependencies
 
 node references.mjs --query "barra lateral" [--kind interface] [--use-case sidebar]
@@ -21,6 +22,9 @@ node references.mjs --sites --list [--json]
 node references.mjs --portfolios --query "developer" [--case <case-id>] [--json] [--out portfolios.json]
 node references.mjs --portfolios --site <id> [--json]
 node references.mjs --portfolios --list [--json]
+node references.mjs --observed --query "sticky navigation" [--use-case <id>] [--json]
+node references.mjs --observed --site <observed-id> [--json]
+node references.mjs --observed --list [--json]
 
 Filters are exact and combined. Patterns and investigation guides use lexical PT/EN aliases, not embeddings.
 External candidate searches match literal names and URLs only, without translating identities.
@@ -32,7 +36,9 @@ The optional seed only varies equally ranked candidates. No network requests are
 The catalog contains Forma-authored patterns linked to package resources, not an external website inventory.
 Use --sites for historical external URL candidates and Forma investigation cases; those sites are not Forma assets.
 Use --portfolios for the separate developer portfolio inventory; original README lines are preserved.
---sites and --portfolios are mutually exclusive. Malformed portfolio URLs remain text, never visit links.
+--observed searches dated observed features and use cases, with supporting claims and limitations.
+It uses literal feature words, not concept aliases; inferred and unverified claims never supply matches.
+--sites, --portfolios and --observed are mutually exclusive. Malformed portfolio URLs remain text, never visit links.
 A contract is not a ready component; inspect and verify the destination before claiming integration.
 `;
 
@@ -99,6 +105,33 @@ export function searchSites(index, catalog, options = {}) {
   };
 }
 
+export function loadObservedExperiences(path = OBSERVED_INDEX_PATH) {
+  const index = validateObservedExperiences(JSON.parse(readFileSync(path, 'utf8')));
+  const root = fileURLToPath(new URL('../', import.meta.url));
+  const sources = Object.fromEntries(observedEvidencePaths(index).map(source => [source, readFileSync(resolve(root, source), 'utf8')]));
+  return validateObservedEvidence(index, sources);
+}
+
+export function searchObservedExperiences(index, options = {}) {
+  validateObservedExperiences(index);
+  const { query = '', useCase, limit = 5, seed, site } = options;
+  if (!Number.isInteger(limit) || limit < 1 || limit > 50) throw new Error('limit must be an integer from 1 to 50.');
+  const matches = rankObservedExperiences(index, options);
+  return {
+    schemaVersion: 2, sourceType: 'observed', catalogSchemaVersion: index.schemaVersion,
+    method: 'local-literal-claim-search', searchScope: 'observed-features',
+    request: { query, ...(useCase && { useCase }), ...(site && { site }), limit, ...(seed !== undefined && { seed }) },
+    totalMatches: matches.length, provenance: index.provenance,
+    limitations: [
+      'Results retrieve dated claims under their recorded conditions; this command performs no fresh site visits.',
+      'Every meaningful query term must match the same observed claim or its source identity. Caveats, inferred and unverified claims do not provide feature matches.',
+      'Literal feature matching is not semantic retrieval, a quality ranking, framework proof or destination validation.',
+      "Site identities, code and assets retain their owners' rights. Original receipts and captures may remain outside this distribution.",
+    ],
+    results: matches.slice(0, limit),
+  };
+}
+
 export function parseArgs(argv) {
   const valued = new Map([['query', 'query'], ['case', 'caseId'], ['kind', 'kind'], ['use-case', 'useCase'], ['origin', 'origin'], ['evidence', 'evidenceType'], ['site', 'site'], ['limit', 'limit'], ['seed', 'seed'], ['out', 'out']]);
   const options = {};
@@ -108,7 +141,7 @@ export function parseArgs(argv) {
     const name = arg.slice(2);
     const key = valued.get(name) ?? name;
     if (Object.hasOwn(options, key)) throw new Error(`Repeated option: --${name}`);
-    if (['json', 'list', 'help', 'sites', 'portfolios'].includes(name)) options[key] = true;
+    if (['json', 'list', 'help', 'sites', 'portfolios', 'observed'].includes(name)) options[key] = true;
     else if (valued.has(name)) {
       const value = argv[++index];
       if (value === undefined || !value.trim() || value.startsWith('--')) throw new Error(`--${name} needs a value.`);
@@ -124,11 +157,12 @@ export function parseArgs(argv) {
   }
   if (options.seed !== undefined) options.seed = Number(options.seed);
   if (options.query?.length > 500) throw new Error('--query is limited to 500 characters.');
-  if (options.sites && options.portfolios) throw new Error('--sites and --portfolios are mutually exclusive.');
+  if ([options.sites, options.portfolios, options.observed].filter(Boolean).length > 1) throw new Error('--sites, --portfolios and --observed are mutually exclusive.');
   if (options.help) return options;
-  if (options.list && Object.keys(options).some(key => !['list', 'json', 'sites', 'portfolios'].includes(key))) throw new Error('--list can only be combined with --json and one external collection.');
+  if (options.list && Object.keys(options).some(key => !['list', 'json', 'sites', 'portfolios', 'observed'].includes(key))) throw new Error('--list can only be combined with --json and one external collection.');
   if (options.caseId && !options.sites && !options.portfolios) throw new Error('--case requires --sites or --portfolios.');
   if ((options.sites || options.portfolios) && ['kind', 'origin', 'useCase', 'evidenceType'].some(key => options[key] !== undefined)) throw new Error('External collections use --case, not pattern filters.');
+  if (options.observed && ['kind', 'origin', 'caseId', 'evidenceType'].some(key => options[key] !== undefined)) throw new Error('Observed experiences use --use-case, not pattern or research-guide filters.');
   if (options.site && ['query', 'kind', 'origin', 'useCase', 'evidenceType', 'caseId', 'seed', 'limit'].some(key => options[key] !== undefined)) throw new Error('--site cannot be combined with search filters.');
   if (!options.list && !['query', 'kind', 'useCase', 'origin', 'evidenceType', 'caseId', 'site'].some(key => options[key])) {
     throw new Error('Provide --query, a filter, --site or --list.');
@@ -180,25 +214,44 @@ function printSitesBoard(board) {
   return lines.join('\n');
 }
 
+function printObservedBoard(board) {
+  const lines = [`Forma observed experiences: ${board.totalMatches} matches; showing ${board.results.length}.`, ...board.limitations, ''];
+  for (const { entry, matchedClaims } of board.results) {
+    lines.push(`${entry.id} - ${entry.name}`, `Source: ${entry.url}`, `Original identity: ${entry.sourceIdentity.collection} / ${entry.sourceIdentity.id}`);
+    for (const { claim, match } of matchedClaims) {
+      lines.push(`Observed claim: ${claim.id} / ${claim.date} / ${claim.evidence.type}`, `Finding: ${claim.statement}`,
+        `Conditions: ${claim.conditions}`, `Use cases: ${claim.useCases.join(', ')}`,
+        `Matched: ${match.matchedTerms.map(item => `${item.term} (${item.field})`).join(', ') || 'explicit filter or ID'}`,
+        `Evidence source: ${claim.evidence.source}`, `Evidence assertion: ${claim.evidence.assertion}`,
+        `Caveats: ${claim.caveats.join(' ')}`);
+    }
+    for (const claim of entry.claims.filter(item => item.status !== 'observed')) lines.push(`${claim.status}: ${claim.statement}`);
+    lines.push(`Rights: ${entry.rights.license} ${entry.rights.scope}`, '');
+  }
+  if (!board.results.length) lines.push('No observed claims match; no candidate, guide, or unrelated experience was substituted.');
+  return lines.join('\n');
+}
+
 export function main(argv = process.argv.slice(2)) {
   const options = parseArgs(argv);
   if (options.help) { console.log(USAGE); return; }
   const catalog = loadCatalog();
+  const observed = options.observed ? loadObservedExperiences() : null;
   const index = options.portfolios ? loadPortfolioIndex(PORTFOLIO_INDEX_PATH, catalog)
     : options.sites ? loadSiteIndex(SITE_INDEX_PATH, catalog) : null;
   if (options.list) {
-    const values = index ? siteFacets(index) : facets(catalog);
+    const values = observed ? observedFacets(observed) : index ? siteFacets(index) : facets(catalog);
     console.log(options.json ? JSON.stringify(values, null, 2) : Object.entries(values).map(([key, value]) => `${key}: ${typeof value === 'object' ? Object.entries(value).map(([name, count]) => `${name} (${count})`).join(', ') : value}`).join('\n'));
     return;
   }
-  const board = index ? searchSites(index, catalog, options) : searchCatalog(catalog, options);
+  const board = observed ? searchObservedExperiences(observed, options) : index ? searchSites(index, catalog, options) : searchCatalog(catalog, options);
   if (options.site && !board.totalMatches) throw new Error(`Unknown reference ID: ${options.site}`);
   if (options.out) {
     const output = resolve(options.out);
     writeFileSync(output, `${JSON.stringify(board, null, 2)}\n`, { flag: 'wx', mode: 0o600 });
     console.error(`Created reference board: ${output}`);
   }
-  console.log(options.json ? JSON.stringify(board, null, 2) : (index ? printSitesBoard(board) : printBoard(board, Boolean(options.site))));
+  console.log(options.json ? JSON.stringify(board, null, 2) : (observed ? printObservedBoard(board) : index ? printSitesBoard(board) : printBoard(board, Boolean(options.site))));
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

@@ -231,9 +231,11 @@
         "The distance ring keeps its selected anchor fixed and scales the other radial vectors; it is not a position control."
       ],
       "adapt": [
+        "Mount the supplied AppearanceEditor with scoped styles, then connect preview, confirmed save, cancel and contextual color to the destination owners. The lab demonstrates local storage only.",
         "Use the portable profile for the initial two pools, third-pool insertion and selection; adding or choosing a pool does not redistribute existing coordinates.",
         "Clamp the selected pointer target to the stage, then apply the same model delta to the other pools. Paint actual coordinates and clip offstage points; do not clamp the group or pin visual substitutes to the edge.",
-        "Preserve finite offstage coordinates when saving and reopening. Color, mode and selection changes do not move any pool."
+        "Preserve finite offstage coordinates when saving and reopening. Color, mode and selection changes do not move any pool.",
+        "For a selected anchor outside the stage, keep positive radial scaling and clip the painting; a negative stage edge-fit must not reverse or amplify the vectors."
       ],
       "avoid": [
         "Do not make ordinary center drag local-only or make Alt drag translate the group.",
@@ -248,6 +250,22 @@
       ],
       "resources": [
         {
+          "label": "AppearanceEditor implementation",
+          "path": "assets/appearance-editor.js"
+        },
+        {
+          "label": "Scoped editor styles",
+          "path": "assets/appearance-editor.css"
+        },
+        {
+          "label": "Runnable component lab",
+          "path": "assets/components-lab.html"
+        },
+        {
+          "label": "Adapters, persistence and lifecycle",
+          "path": "references/reusable-components.md"
+        },
+        {
           "label": "Editor contract",
           "path": "references/lighting-editors-icons.md"
         },
@@ -261,11 +279,12 @@
         }
       ],
       "evidence": {
-        "type": "implementation-contract",
+        "type": "reusable-component",
         "liveVerified": false,
         "capture": null,
         "limits": [
-          "The distributed profile and contract are not an executable editor.",
+          "The original vanilla module and styles are executable; framework adapters, production persistence and contextual data still belong to the consumer.",
+          "The compact profile is an independent fidelity contract. This record supplies no fresh capture or proof that every destination measurement matches it.",
           "The profile records an approved observed mechanism; this editorial entry does not claim that Forma invented the appearance or interaction."
         ]
       },
@@ -333,6 +352,89 @@
         "limits": [
           "The consumer supplies Three.js when selecting WebGL volume rendering.",
           "The geometry helper is reusable code; each new object and visual target needs its own validation."
+        ]
+      },
+      "rights": {
+        "notes": "Original editorial record authored for Forma, distributed under the package MIT license.",
+        "scope": "Linked resources retain their stated provenance and dependency requirements. This record does not claim invention of the underlying design principles or grant rights to consumer assets."
+      }
+    },
+    {
+      "id": "forma-passport-object",
+      "name": "PassportObject: articulated cover and turning page",
+      "origin": "forma",
+      "kind": "3d",
+      "useCases": [
+        "passport",
+        "articulated-object",
+        "material",
+        "3d"
+      ],
+      "tags": [
+        "cover",
+        "hinge",
+        "pages",
+        "leather",
+        "fit",
+        "webgl",
+        "three",
+        "lifecycle"
+      ],
+      "idea": "A hinged cover, page block and turning leaf share attached roots while their opening, materials and orientation remain independently adjustable.",
+      "whenToUse": "The destination needs a portable articulated object and accepts a simplified Three mechanism with its own validation, rather than requiring parity with an existing approved CSS passport.",
+      "structure": [
+        "Separate the rotating assembly from the centered model so back and open views remain framed.",
+        "Keep the cover hinge and turning leaf attached, limit page turning by cover opening, and retain a labeled static fallback."
+      ],
+      "adapt": [
+        "Mount the supplied PassportObject and scoped CSS with the original BookObject cover painter and the destination's explicit Three loader.",
+        "Connect content, opening, page turning, material and fit to the actual consumer; keep complete identity text and actions accessible in its DOM.",
+        "Preserve an already approved CSS passport when that exact mechanism or visual result is required; this Three module is a separate implementation."
+      ],
+      "avoid": [
+        "Do not treat a static fallback or geometry-only tests as working articulated rendering.",
+        "Do not claim the historical CSS passport's wrapping leather, end caps, physical simulation or visual approval for this simplified object.",
+        "Do not treat CPU render submission time as GPU utilization or a physical-device benchmark."
+      ],
+      "verify": [
+        "Observe actual WebGL output while opening the cover, turning the page and rotating front/back views at narrow and wide sizes.",
+        "Check the full open envelope, long content, live reduced motion, loader/context failure and repeated disposal/remount.",
+        "Keep input/range controls synchronized with keyboard changes; test restoration separately from a full reload."
+      ],
+      "resources": [
+        {
+          "label": "PassportObject implementation",
+          "path": "assets/passport-object.js"
+        },
+        {
+          "label": "Scoped passport styles",
+          "path": "assets/passport-object.css"
+        },
+        {
+          "label": "Required original cover painter",
+          "path": "assets/book-object.js"
+        },
+        {
+          "label": "Runnable component lab",
+          "path": "assets/components-lab.html"
+        },
+        {
+          "label": "Integration and simplified-mechanism limits",
+          "path": "references/reusable-components.md"
+        },
+        {
+          "label": "Separate approved CSS passport case",
+          "path": "references/passport-polish-case-study.md"
+        }
+      ],
+      "evidence": {
+        "type": "reusable-component",
+        "liveVerified": false,
+        "capture": null,
+        "limits": [
+          "Executable original Three adaptation with explicit dependencies; no current consumer or browser capture is certified by this catalog record.",
+          "This is separate from the approved CSS passport and does not inherit its geometry, material, content or visual acceptance.",
+          "The material-profile identity-card record remains an implementation contract; this component does not supply its account backend or editing workflow."
         ]
       },
       "rights": {

@@ -17,14 +17,15 @@
     <section class="intro" aria-labelledby="title">
       <p class="eyebrow">FROM REFERENCE TO IMPLEMENTATION</p>
       <h1 id="title">A clear starting point.<br>A design of your own.</h1>
-      <p>Choose Forma patterns to implement or external sites to study. Research guides help you ask useful questions; they do not report verified findings about each site.</p>
+      <p>Choose Forma patterns to implement, dated observations to examine, or external sites to study. Research guides ask useful questions; observed records carry specific evidence and limits.</p>
     </section>
-    <div class="library-source"><label for="collection">Collection</label><select id="collection"><option value="patterns">Forma patterns</option><option value="sites">Website references</option><option value="portfolios">Developer portfolios</option></select><a href="../references/reference-library.md">How to use references</a></div>
+    <div class="library-source"><label for="collection">Collection</label><select id="collection"><option value="patterns">Forma patterns</option><option value="sites">Website references</option><option value="portfolios">Developer portfolios</option><option value="observed">Observed experiences</option></select><a href="../references/reference-library.md">How to use references</a></div>
     <form id="filters" role="search" aria-label="Filter references">
       <div class="field query"><label id="query-label" for="query">What do you want to create?</label><input id="query" type="search" placeholder="Sidebar, typography, profile..." autocomplete="off" aria-describedby="query-help"><p id="query-help" class="field-help">Find a local pattern for your design task.</p></div>
       <div class="field" id="evidence-field"><label for="evidence">Resource type</label><select id="evidence"><option value="">All</option></select></div>
       <div class="field" id="kind-field"><label for="kind">Context</label><select id="kind"><option value="">All</option></select></div>
     <div class="field" id="case-field" hidden><label for="case">Research guide</label><select id="case"><option value="">All</option></select></div>
+    <div class="field" id="use-case-field" hidden><label for="use-case">Observed use case</label><select id="use-case"><option value="">All observed use cases</option></select></div>
     </form>
     <div class="result-line"><p id="status" role="status" aria-live="polite">Loading the library...</p><p><span id="source-note">Written by Forma / Local search</span></p></div>
     <p id="scope-note" class="scope-note" hidden></p>
@@ -37,7 +38,7 @@
     <div id="cards" class="cards"></div>
     <p id="empty" hidden>No patterns match these filters. Try another term or a broader context.</p>
     <button id="more" type="button" hidden>Show more patterns</button>
-    <aside class="note"><strong>References with context.</strong> Pattern records distinguish reusable code, demos and implementation requirements. External sites are candidates for research. Forma's guides suggest what to investigate; they do not verify each site. Inspect selected references before adapting them and respect their authors' rights.</aside>
+    <aside class="note"><strong>References with context.</strong> Pattern records distinguish reusable code, demos and implementation requirements. External inventories remain research candidates. Observed experiences support only their dated claims; they do not certify entire sites. Inspect relevant conditions before adapting a finding and respect its author's rights.</aside>
   </main>
   <dialog id="detail" aria-labelledby="detail-title">
     <header class="detail-head"><span id="detail-origin"></span><button id="close-detail" type="button" aria-label="Close reference" autofocus>Close <span aria-hidden="true">&times;</span></button></header>
