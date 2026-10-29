@@ -30,6 +30,12 @@ Se uma proporção passar de 40% a 30% em períodos comparáveis, são −10 pon
 
 ## Composição e linguagem visual
 
+Antes de escolher um estilo, formule **pergunta da tela → observação sustentada pelos dados → ação disponível**. Mostre produto e recorte; não substitua orientação por uma saudação genérica nem force um insight quando os dados não o sustentam. A área inicial deve priorizar a tarefa frequente, sem comprimir toda a aplicação acima da dobra. Densidade depende da tarefa, frequência de uso e dimensões reais.
+
+Valores repetidos em KPI, gráfico, tabela, tooltip e fragmento promocional devem derivar da mesma fonte e das mesmas transformações declaradas. Preserve a política de precisão do domínio: não altere cálculos financeiros para fazer a soma visual dos valores arredondados coincidir. Quando necessário, explique diferenças de arredondamento. Um aumento não é automaticamente bom: a cor de uma variação representa significado (por exemplo, latência maior pode ser pior), com sinal/texto redundante; categoria e identidade não viram semântica de sucesso.
+
+Derive marcas e legendas do mesmo mapeamento de série/estado. Se afastamento usa hachura, a legenda deve mostrar a hachura, não apenas uma cor aproximada. Legendas distinguem os tipos apresentados e deixam explícitas omissões quando pertinente. Em tabela, alinhe números para comparação, conserve unidades e precisão; em largura estreita, ofereça acesso aos campos necessários em vez de ocultá-los apenas para caber. As heurísticas de superfícies calmas do [estudo Taste](taste-study.md) são repertório, não proibição de zebra, bordas, cards ou cores aprovadas.
+
 Organize por tarefa: recorte e atualidade → resumo → exploração → detalhe. Em monitor amplo, um mapa central pode conviver com resumo estável e painel contextual; cada área precisa de largura, insets, rolagem e prioridade definidos. Calcule o centro útil após os painéis, sem centralizar todo o texto. Compare conteúdo mínimo, nomes longos e detalhe aberto.
 
 Uma família para UI e outra para manchetes pode distinguir operação de interpretação. Essa escolha é opcional: verifique pesos, números tabulares, carregamento, licença e legibilidade efetiva. Densidade vem de alinhamento, agrupamento e redução de repetição; encolher toda a interface não substitui reflow.

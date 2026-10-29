@@ -41,6 +41,21 @@ Axe sem violações detectadas não comprova conformidade completa. Separar resu
 
 Ao corrigir a skill, transformar o achado em uma regra verificável e um cenário de avaliação, sem impor cores, componentes ou escolhas específicas do produto de teste a todos os projetos.
 
+## Crítica de composição e substância
+
+Além de procurar defeitos, confirme o que o artefato entrega. Uma página sem ornamentos pode continuar vazia; um dashboard neutro pode esconder informação necessária. Em criação/redesign, inspecione:
+
+- **Orientação:** o que é, de quem é, qual o recorte e o que a pessoa pode fazer? Em app, qual pergunta a tela responde e qual ação da tarefa está alcançável?
+- **Substância:** cada seção/área prometida contém informação útil, prova honesta e estados coerentes? Não aprovar um wireframe vazio porque o scanner ficou silencioso.
+- **Hierarquia e quadro:** há foco claro, relações de proximidade e eixos/insets consistentes? Distinga respiro intencional de buraco deixado por conteúdo removido. Meça no container real; sidebar não deve ser contada como margem da página.
+- **Identidade e continuidade:** o conceito aparece além do hero? A marca e os mecanismos aprovados continuam reconhecíveis? Familiaridade dos controles operacionais não é falha de originalidade.
+- **Tipo, cor e imagens:** fontes carregadas, quebras, recortes e papéis cromáticos permanecem legíveis em escala de uso? Não compensar fonte ausente com uma declaração CSS ou contraste insuficiente com uma nota de estética.
+- **Adaptação e interação:** leia toda a composição nos tamanhos pertinentes, não só o primeiro viewport. Confirme teclado, zoom, conteúdo extremo e movimento reduzido; verifique gestos e rolagem, que uma captura isolada não prova.
+
+Registre os problemas de maior impacto com captura/estado, efeito e correção concreta. Corrija um pequeno lote e reobserve os estados afetados; três achados podem ser um lote útil, nunca uma quota. Barreira de acesso, dados incorretos e tarefa quebrada precedem gosto visual. Se restarem defeitos materiais, mantenha-os abertos; um limite de rodadas controla esforço, não transforma falha em aprovação. Notas de um modelo ou critérios de uma galeria não medem conversão nem equivalem a teste com usuários.
+
+Quando houver build, confira a saída produzida pelo pipeline existente além do dev server, nos caminhos afetados: fontes, assets, cascata, animações e interações podem mudar na compilação. Build servido localmente não prova deploy público. Se um scanner externo aplicar proibições de estilo, declare seu perfil e exceções legítimas separadamente; não o edite para esconder defeitos nem trate seu `0 FAIL` como aceite visual completo. A [auditoria Taste](taste-study.md) registra exemplos dessa diferença.
+
 ## Controles sobrepostos e regressão por CSS
 
 Inspecionar tanto o elemento pintado quanto o alvo de interação. Um anel pode estar visualmente correto e ter seu botão invisível deslocado por uma regra genérica como `.stage button`. Conferir `getBoundingClientRect`, transform, background e border computados; não certificar apenas pelo teste da fórmula. Escopar regras por papel (`.pool-handle`, `.pool-distance-hit`), separar anel/handle/grip e verificar clique sem salto, arraste nos dois sentidos e reversão nos limites. Capturar o resultado com o painel aberto e o restante da aplicação utilizável.

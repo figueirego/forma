@@ -1,6 +1,6 @@
 # Fontes: casos de uso e critérios de incorporação
 
-Use para escolher repertório, revisar uma skill ou combinar várias referências. Esta tabela organiza os materiais examinados em 25/10/2026; não é um ranking de qualidade nem instrução para instalar todos. Leia só o método pertinente à tarefa e confira a versão atual antes de executar uma integração.
+Use para escolher repertório, revisar uma skill ou combinar várias referências. Esta tabela organiza os materiais examinados desde 25/10/2026, com revisões identificadas abaixo; não é um ranking de qualidade nem instrução para instalar todos. Leia só o método pertinente à tarefa e confira a versão atual antes de executar uma integração.
 
 ## Como incorporar uma fonte
 
@@ -16,6 +16,7 @@ Ficha mínima: `fonte + identidade → capacidade/caso → evidência → princ�
 
 | Fonte / natureza | Casos de uso separados | Incorporar / destino | Limites e o que não importar |
 |---|---|---|---|
+| **Taste Skill 2.1.5** — skill, repertório e verificadores de frontend | Páginas de comunicação, telas operacionais, fragmentos de app em landing, direção específica ao sujeito e crítica renderizada | Inventário/conceito em [direções](design-directions.md), argumento em [marca](brand-marketing.md), rotas Marca/Interface e [mapeamento por capacidade](taste-study.md) | Síntese contextual; não importar sorteio obrigatório, quotas de imagens/animações, banimentos estéticos ou pontuação como certificação. Estudo declarado pela fonte não é validação independente da Forma; scripts e repertório não ficam instalados implicitamente |
 | **Colorful** — catálogo comunitário de cores | Explorar harmonias; extrair candidatos de imagem; interpolar gradientes; escolher escalas de dados; organizar primitivas de UI | Diagnóstico por papel/contexto e verificação em [cor aplicada](color-refinement.md); conexão com temas, tokens, dados e materiais | Não é aplicativo nem motor. 104 entradas inventariadas; amostra primária examinada, sem executar os 104 destinos. Catálogo não garante manutenção, licença externa, acessibilidade ou psicologia universal |
 | **Huashu Design** — skill e pipeline HTML | Explorar direções; produzir páginas/protótipos; slides, infográficos e outros exports | Comparação com conteúdo e formato fixos em [direções](design-directions.md); contrato de conversão em [artefatos](artifact-workflows.md) | Fluxo 6→3, catálogo de estilos e HTML-first são escolhas da fonte. Exportadores distintos podem rasterizar ou falhar parcialmente; não garantir edição integral |
 | **HTML Anything** — editor/agente e exportadores | Editar documento HTML; adaptar conteúdo por superfície; exportar imagem/deck/Markdown; prévia de material gerado | Separar formato autoral, preview e entrega; conversão por subconjunto e isolamento em [artefatos](artifact-workflows.md) | O caminho PPTX inspecionado coloca PNG por slide; não equivale a objetos editáveis. Quantidade de skills/superfícies não comprova cada fluxo |
@@ -27,6 +28,8 @@ Ficha mínima: `fonte + identidade → capacidade/caso → evidência → princ�
 | **Design Agent (organização langchain-ai)** — agente de produção de mídia, skills e verificadores | Peças, diagramas, slides, filmes, legendas e loops; identidade consistente, restyle fiel, revisão e operação de agente | [Marca](brand-marketing.md), [artefatos/alpha](artifact-workflows.md), [dados/topologia](data-dashboards.md), [movimento/legendas/GIF](motion.md), [players](specialized-surfaces.md#decks-e-players-interativos), [verificação](verification.md#cobertura-de-verificadores-e-recibos) e [produção coordenada](agent-production.md) | Catálogo de 36 skills de produção +15 de manutenção mapeado; runtime lido por famílias, sem execução. Métodos não instalam LangChain/Deep Agents, HyperFrames, providers ou canais. Preferências e gates têm limites; [proveniência](sources.md#estudo-integral-do-catálogo-e-fronteiras-de-runtime--1210) |
 
 Snapshots auditados (licença do repositório não abrange automaticamente assets/fontes de terceiros):
+
+- [Taste Skill — 12af471f](https://github.com/Leonxlnx/taste-skill/tree/12af471f627f866411b4bd785b19646d3672784c), versão 2.1.5, examinada em 28/10/2026: MIT no repositório; síntese original, sem redistribuir seu catálogo de imagens, assets ou scripts. [Escopo, decisões e limites](taste-study.md).
 
 - [Colorful — 3af5997a](https://github.com/Siddharth11/Colorful/tree/3af5997a081170eae9f745c2203a41f9fef316d1): 16 bibliotecas, 38 aplicações web, 23 paletas e 27 artigos; síntese original, sem redistribuir imagens ou ferramentas.
 - [Design Agent — 9fd563be](https://github.com/langchain-ai/design-agent/tree/9fd563be8be0f3a2c956599f8ed4672ae0d1f281): core Apache-2.0; componentes, fontes e ferramentas têm termos próprios conforme NOTICE. Apenas síntese original incorporada.
@@ -52,7 +55,7 @@ Snapshots auditados (licença do repositório não abrange automaticamente asset
 | Fonte | Usar quando | Regra transferível / limite |
 |---|---|---|
 | Impeccable | Refinar, auditar, extrair ou adaptar UI existente | Preservar vs redesenhar, contexto e revisão renderizada; absolutos estéticos não são normas |
-| Design Taste Frontend | Landing, portfólio e composição editorial | Direção expressiva, conteúdo/rotas preservados; não aplicar hero/imagery obrigatório a produto denso |
+| Design Taste Frontend / taste-skill | Página, app ou fragmento de produto conforme a rota; exploração e refinamento quando pertinentes | Inventário específico, argumento e crítica; preservar identidade e decisões aprovadas. Diferenciar instruções, scripts e resultados observados conforme o [estudo](taste-study.md) |
 | Design Motion Principles | Criar/auditar movimento | Propósito, frequência, interrupção, continuidade e alternativa reduzida; não garantir GPU por propriedade CSS |
 | API Design | Converter contratos técnicos em estados de experiência | Validação, conflito, paginação, autorização, retry e 202 pendente; preservar convenções do backend |
 | UI/UX Pro Max | Lookup pontual por domínio/stack | Query curta, pertinência e fonte verificadas; ranking de resultado não determina nível WCAG |

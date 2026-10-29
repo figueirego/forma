@@ -22,6 +22,22 @@ Registre: tarefa favorecida; regra composicional; hierarquia e relações espaci
 
 Mostre alternativas com o mesmo conteúdo e estado. Se uma usa dados curtos, assets melhores ou outra escala, declare a diferença. Inspecione a silhueta/composição geral e depois os detalhes; uma paleta coerente não compensa relações espaciais incorretas.
 
+## Direção que nasce do projeto
+
+Em criação ou redesign autorizado, faça um inventário curto do que torna o projeto específico: objeto ou serviço, lugar, materiais, vocabulário, restrições reais, processo, acervo e resultados demonstráveis. Separe fatos confirmados de exemplos propostos. Não complete uma quantidade de itens inventando história, clientes ou números. Numa correção local, use a direção existente.
+
+Converta um desses fatos em uma decisão implementável: **neste projeto, [fato ou material próprio] orienta [composição, sequência ou interação]**. Por exemplo demonstrativo, uma oficina que já documenta cada etapa de restauração pode organizar a página pelo antes/processo/depois de uma peça real. O conceito depende desse acervo disponível; não basta escrever “artesanal e premium”.
+
+Teste a especificidade trocando mentalmente o nome pelo de um concorrente: se nada muda, investigue o conteúdo antes de adicionar decoração. Esse teste ajuda expressão de marca; não obriga controles familiares, formulários ou tabelas a serem inéditos.
+
+Escolha alternativas compatíveis com conteúdo, direitos dos assets, orçamento e stack. Uma composição que exige fotos ausentes, cinco depoimentos inexistentes ou WebGL fora do escopo não é uma boa escolha só por parecer distinta. Registre o motivo de descartar ou adaptar uma proposta. Se usar um sorteador externo, registre versão, seed e escolhas para repetibilidade; aleatoriedade não decide adequação nem substitui a direção aprovada.
+
+Na ficha da direção, ligue **fato → conceito → composição → recurso disponível → adaptação estreita → aceite observável**. Considere a página inteira: uma abertura específica seguida de seções intercambiáveis perde a direção. Repetir uma estrutura é válido quando serve comparação, continuidade ou consistência.
+
+Quando uma demonstração ajudar a entender o produto, escolha uma interação curta que prove a ideia: comparar estados reais, filtrar um acervo ou experimentar uma opção disponível. Deve funcionar por teclado e toque e manter uma alternativa legível. Não adicionar um minijogo, calculadora fictícia ou animação obrigatória a toda página.
+
+Esta extensão adapta o método de inventário/conceito do [estudo Taste](taste-study.md). O repertório é apoio à escolha; suas cotas de imagens, movimento e proibições estéticas não são defaults da Forma.
+
 Julgue primeiro tarefa, acesso, integridade e legibilidade; depois adequação de marca e expressão. Preferência de um avaliador, aprovação do usuário, teste de tarefa e resultado de conversão são evidências diferentes. Sem pesquisa, apresente uma recomendação fundamentada, não uma vencedora estatística.
 
 ## Usar referências e remixes

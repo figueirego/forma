@@ -56,6 +56,12 @@ In Codex, invoke **`$forma:forma`**; in Claude Code, **`/forma:forma`**. In othe
 
 Explore the [reusable resources](source/forma/references/resources.md), [evaluation scenarios](source/forma/evals/routing-scenarios.md), and [changelog](CHANGELOG.md).
 
+## Direction grounded in your project
+
+Forma connects the project’s own content to a visual concept, maps each section to a claim and its evidence, and treats marketing pages and working app screens differently. Refinement checks substance, hierarchy, real data, responsive behavior, and the final rendered result.
+
+The [Taste study and integration map](source/forma/references/taste-study.md) records what was adapted, what was already covered, and what was deliberately left out. Your approved brand and components take precedence over stylistic bans or image and animation quotas. See the [integration checks and decision exercises](docs/TASTE-INTEGRATION.md) for evidence and limits.
+
 ## Install
 
 Choose **one format per assistant**. The packages are ready to use in this repository; no build is required. You can also download the entire repository through **Code → Download ZIP** on GitHub.

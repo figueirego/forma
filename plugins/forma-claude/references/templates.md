@@ -16,6 +16,26 @@ Critérios de aceite:
 Suposições e questões abertas:
 ```
 
+## Ficha de direção e conteúdo
+
+Para direção nova ou redesign amplo, use também a ficha abaixo. Ajuste local de padding não precisa dela; o procedimento está em [direções](design-directions.md) e [argumento editorial](brand-marketing.md#argumento-conteúdo-e-interface-demonstrada).
+
+```markdown
+Tipo: página de comunicação / tela operacional / composição mista
+Tarefa, público e recorte:
+Marca, mecanismos e stack que permanecem:
+Fatos e materiais próprios (fonte; confirmado/proposto/ausente):
+Conceito e decisão composicional:
+Alternativas pertinentes, escolha e motivo:
+Seções/áreas: pergunta → afirmação → prova/origem → conteúdo/asset → ação
+Apps demonstrados: fonte de dados, unidades, estados e rótulo de demonstração
+Tipos, papéis de cor e layout da direção:
+Assets: origem, autor, licença, alterações, crédito, disponibilidade e recorte
+Interação útil, se necessária, e alternativa acessível:
+Adaptação de conteúdo/recortes; movimento normal/reduzido quando aplicável:
+Verificação: revisão servida, estados/tamanhos, achados, correções e pendências
+```
+
 ## Especificação de componente
 
 ```markdown

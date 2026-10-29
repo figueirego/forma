@@ -2,7 +2,7 @@
 name: forma-interface
 description: "Construir ou refinar interfaces operacionais, base limpa, formulários, navegação, busca, configurações, editor de aparência e perfil material. Use para componentes e estados utilizáveis; não para pesquisa ampla, campanhas ou implementação de geometria 3D."
 metadata:
-  version: 1.19.0
+  version: 1.24.0
 ---
 
 # Interface e estados
@@ -15,6 +15,8 @@ metadata:
 Este módulo exige leitura pelo agente; não aciona ferramentas nem outros módulos automaticamente.
 Preserve marca, stack, domínio, componentes e contratos existentes.
 
+Uma tela operacional organiza trabalho: objetos, recorte, dados e próxima ação. Uma página que comunica oferta segue [Marca](../brand/SKILL.md). Se a página contém fragmentos do app, trate seu interior como interface: reutilize o sistema existente, dados coerentes e estados reais ou demonstrações identificadas. A composição promocional ao redor não justifica alterar tabelas, unidades, precisão ou fluxos do produto.
+
 ## Entradas
 
 - Tarefa concreta, rota/componente, ação esperada, dados reais ou fixtures identificadas e acesso ao consumidor.
@@ -23,7 +25,7 @@ Preserve marca, stack, domínio, componentes e contratos existentes.
 ## Procedimento
 
 1. Percorra entrada, ação, sucesso e recuperação; identifique os donos de estado e persistência.
-   Leia [interação e conteúdo](../../references/interaction-content.md) e, quando houver dados/permissões, [contratos e confiança](../../references/contracts-trust.md).
+   Leia [interação e conteúdo](../../references/interaction-content.md) e, quando houver dados/permissões, [contratos e confiança](../../references/contracts-trust.md). Identifique objetos, unidades, frequência de uso e a decisão que a tela apoia. Valores repetidos usam a mesma fonte e recorte; totais e deltas respeitam o cálculo e arredondamento do domínio, sem ajustes para favorecer a imagem. Se a direção estiver aberta, use [direções e comparação](../../references/design-directions.md); não importe uma receita de hero para um dashboard aprovado.
 2. Para o conjunto fundo/sidebar/painel/controles, leia [base limpa](../../references/clean-shell.md).
    Inspecione os assets indicados e adapte consumidores/eventos à stack. Para campos, navegação e tabelas, use [padrões de componentes](../../references/component-patterns.md).
 3. Leia apenas os contratos do recurso pedido: [busca](../../references/search-discovery.md), [configurações](../../references/settings-modes.md), [editor de aparência](../../references/lighting-editors-icons.md) ou [perfil material](../../references/adaptive-visual-systems.md).

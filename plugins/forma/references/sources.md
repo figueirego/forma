@@ -383,3 +383,12 @@ A identidade própria do plugin inclui vetores, tokens e hero gerado. É apresen
 ## Distribuição comunitária — 1.22.1
 
 A edição pública remove caminhos pessoais, o perfil de um projeto privado e blocos literais de CSS de terceiros. Não distribui binários, fontes, notas, contas ou capturas dos produtos auditados. As observações preservadas indicam sua natureza e limites; a licença da Forma não concede direitos sobre as referências externas. Código e documentação originais da Forma são distribuídos sob MIT. O aviso do ECC é preservado nas atribuições da distribuição.
+
+
+## Taste 2.1.5 — integração contextual, Forma 1.24.0
+
+O [mapa do estudo](taste-study.md) fixa o snapshot12af471f627f866411b4bd785b19646d3672784c, cobertura, licença, mecanismos e limites da fonte. ECC orientou a pesquisa e a revisão de sobreposição; REA direcionou a análise para código disponível, sem engine binária.
+
+Foram incorporados inventário específico, conceito, argumento por seção, rotas página/app/fragmento operacional, coerência de dados, crítica de substância e verificação de cenas por progresso. Permanecem preservados marca, stack, contratos de aparência e objetos aprovados. Catálogos, drivers de navegador, downloaders, dependências de movimento e mídia de terceiros não foram embutidos. Bans estéticos, cotas e scores da fonte não se tornam normas da Forma.
+
+Os casos R32–R39 ampliam a rubrica de decisão; a presença dos casos não comprova sua execução. Testes estruturais e auditorias históricas não são aprovação visual de novos consumidores.

@@ -4,7 +4,7 @@ Esta skill sintetiza critérios e pode trabalhar localmente. Não é um wrapper 
 
 | Fonte/ferramenta | Quando ajuda | Fronteira operacional |
 |---|---|---|
-| Design Taste Frontend | Composição e identidade de landing/portfólio | Não aplicar suas regras de marketing a dashboards/nativo |
+| Design Taste Frontend / taste-skill 2.1.5 | Direção de páginas, telas operacionais e fragmentos de produto, com rotas distintas | Selecionar pelo trabalho e conferir a instalação atual. [Estudo e adaptação](taste-study.md): princípios incorporados não instalam seus scripts; quotas de imagens/movimento e proibições estéticas não são normas universais |
 | Design Motion Principles | Criar ou auditar movimento | Escolher workflow adequado e respeitar reduced motion |
 | Impeccable | Refinar, estruturar, auditar e adaptar UI | Em trabalho real de UI, rodar context conforme a skill; autoria desta síntese não é edição de interface |
 | UI/UX Pro Max | Consultar padrões, fontes e stack | Busca curta, domínio explícito, verificar pertinência; output é recomendação |

@@ -63,3 +63,12 @@ Confira ordem, sincronização, duração útil de leitura, quebras e legibilida
 Inspecione o arquivo codificado: dimensões, delays dos frames, duração, repetição e transição do último para o primeiro. PNGs intermediários corretos não comprovam ritmo nem emenda do GIF. Confira também entrada, desenvolvimento e repouso para evitar recorte que só funciona no frame final. Reenquadrar não autoriza esticar texto ou alterar o conteúdo fora do pedido.
 
 Se o canal mostrar apenas o primeiro frame quando não anima, este precisa comunicar a informação contratada. Limitações de paleta, transparência ou compressão devem ser avaliadas no formato de entrega; não trocar silenciosamente GIF por vídeo ou impor uma taxa de frames universal. Ajustar timing exige verificar o resultado e a continuidade, não apenas o parâmetro do encoder.
+
+
+## Cenas vinculadas à rolagem
+
+Quando o escopo incluir uma cena por scroll, defina a informação que ela comunica, região de início/fim, estado inicial/final e relação entre progresso e pose. Use a infraestrutura existente; GSAP, Lenis e um catálogo externo são opções, não requisitos. O catálogo ou demo citado precisa existir na versão disponível antes de planejar sua reutilização.
+
+Inspecione antes/durante/depois da fixação, pontos intermediários e percurso reverso. Uma folha de frames ajuda a localizar cortes e sobreposição, mas não prova continuidade entre amostras: percorra a cena de verdade. Confirme resize, retorno à rota e desmontagem de listeners/observers/timelines quando aplicáveis; reposicionar a página não deve deixar conteúdo preso ou invisível.
+
+Em largura estreita, toque ou movimento reduzido, priorize o acesso ao conteúdo e à ação. Escolha sequência estática ou transição simples quando a viagem espacial não ajudar; sem JavaScript, mantenha conteúdo essencial legível quando esse fallback fizer parte da entrega. Não use autoplay, pins longos ou um número mínimo de elementos animados para provar acabamento. Use orçamento de peso, duração e custo de render adequado ao alvo e meça onde houver risco. Esta adaptação do [estudo Taste](taste-study.md) preserva as regras de acesso e continuidade deste documento.

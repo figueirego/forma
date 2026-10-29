@@ -30,5 +30,9 @@ As fontes são insumos para julgamento. Esta síntese não importa automaticamen
 | PPTX/HTML exportado versus artefato editável | Verificar propriedades por camada e arquivo reaberto; screenshot em slide não torna texto editável |
 | Repositório público versus reutilização permitida | Verificar licença do código e de cada asset; acesso público não concede uso comercial irrestrito |
 | HTML-first/scene graph obrigatório versus stack existente | Usar o formato que preserva as capacidades pedidas; pipeline de uma fonte não obriga migração |
+| Taste v2 estabelece cotas de imagens/movimento e incentiva vídeo | Escolher mídia e movimento pela tarefa, direitos, custo e acesso; nenhuma quota universal. Preservar tipografia, ilustração ou fundo material aprovado |
+| Estudo de screenshots versus regra universal | Manter amostra, método e limites. Preferência do autor, julgamento de modelo e norma têm pesos diferentes |
+| Números exibidos precisam somar após arredondar | Manter a precisão e a fonte de verdade do domínio; explicar reconciliação, sem alterar cálculo para melhorar a aparência |
+| Scanner estético sem alertas versus design completo | Confirmar conteúdo, tarefa e composição no alvo; exceção de gosto não encobre falha funcional ou de contraste |
 
 Registre exceções relevantes com: regra/contexto, evidência, alternativa escolhida, consequência e verificação. Não crie justificativas para defeitos reais sob o rótulo de direção artística.

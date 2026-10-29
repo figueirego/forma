@@ -22,6 +22,24 @@ A estrutura depende da decisão: comparação pode exigir tabela; serviço pode 
 
 SEO e analytics apoiam objetivos reais. Eventos devem representar ações verificáveis, sem coleta desnecessária. Não prometa melhora de conversão sem medição.
 
+## Argumento, conteúdo e interface demonstrada
+
+Antes de compor uma landing nova, conecte cada seção à pergunta do visitante e ao que a sustenta. Use esta ficha no documento existente; não é necessário abrir um arquivo por seção:
+
+| Pergunta/afirmação | Prova e origem | Conteúdo/asset disponível | Composição e próximo passo |
+|---|---|---|---|
+| O que é e para quem serve? | Oferta confirmada | Nome, descrição, produto ou demonstração | Título legível, contexto e ação pertinente |
+| Como funciona? | Processo verificável | Etapas reais e exemplos identificados | Sequência que permita entender o serviço |
+| Quanto custa e quais limites? | Condições aprovadas | Valores, escopo e restrições | Comparação ou leitura completa, sem esconder condições |
+
+As linhas são exemplos, não uma ordem fixa. Remova uma seção redundante; mantenha informação necessária mesmo sem apelo promocional. Conteúdo obrigatório não pode desaparecer para produzir uma composição minimalista. Não invente prova social, métricas, preços ou detalhes operacionais para preencher um template. Exemplos autorizados ficam identificados como demonstração e pendentes de confirmação quando pertinente.
+
+Escreva títulos e apoio com o conteúdo real antes de fixar medidas. Estime a ocupação pela fonte, largura e idioma e confirme no render, incluindo tradução e zoom. Duas linhas podem ser uma preferência editorial, não limite universal: não reduzir legibilidade, mutilar nomes ou esconder condições para caber. A primeira tela deve orientar; conteúdo longo continua acessível por rolagem.
+
+Uma landing que mostra software possui duas camadas: a composição promocional e o fragmento operacional dentro dela. O fragmento conserva marca, unidades, labels, estados e dataset coerentes com o produto. Prefira captura autorizada atual ou componente real reutilizado; se for protótipo, identifique-o. Não simule um app funcional com barras cinzas nem apresente fixtures como resultados de clientes. Recorte e escala não podem tornar a prova ilegível. Para dashboard, leia [dados](data-dashboards.md); a página externa segue sua direção editorial.
+
+Para imagens encontradas, mantenha origem, autor, licença específica, alterações e crédito exigido. A licença do repositório que encontrou uma imagem não cobre a imagem. Fotografia de contexto não representa automaticamente o produto, a equipe ou o local do cliente; quando houver risco de confusão, torne a distinção clara no conteúdo. Se não há imagens adequadas, use tipografia, material próprio ou outra composição completa. Nenhuma quota de imagens ou vídeo justifica representar algo falso.
+
 ## Produção por canal
 
 | Canal | Verificações específicas |
