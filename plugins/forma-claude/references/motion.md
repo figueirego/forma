@@ -2,6 +2,21 @@
 
 Before animating, answer: what changes, why, who needs to notice, how often, and what happens without motion? The restraint, polish and expression axes of Design Motion Principles are contextual lenses, not author endorsements or a single recipe.
 
+## Default motion for new interactive designs
+
+Treat purposeful animation as part of creating an interface or interactive page, even when the brief does not list individual effects. Reuse the project's timing and mechanisms; otherwise define a small shared set. Implement applicable moments below, with intensity suited to the content and frequency of use. Record a concrete reason for an omitted moment, such as no theme switching, no scrolling, reduced motion, or an explicitly static request. This does not require 3D, a new library, or adding motion outside a local correction.
+
+| Moment | Implementation and acceptance |
+|---|---|
+| Light/dark change | When both modes exist, transition related surfaces, text, borders, and icons coherently. Choose properties/timing that retain readable intermediate states; avoid a bright flash or fading all content away. Simultaneous foreground/background interpolation can cross an unreadable midpoint even when both endpoints pass. When appropriate, reveal an opaque snapshot of the new palette instead of blending palettes; feature-detect that mechanism and provide an immediate safe fallback. Do not delay applying the requested theme while waiting for an effect. Preserve focus, scroll position, and saved/system preference semantics. Initialize the correct theme without an entrance animation; observe manual changes, rapid reversal, and OS changes while following system mode. |
+| Hover, press, and focus | Provide brief, consistent feedback for actionable controls. Gate hover effects to hover-capable input, provide equivalent information and visible focus for keyboard use, and keep touch/press feedback available. Do not shift layout or move the hit target away from the pointer; focus indication and action remain immediate. |
+| Scroll | Consider a subtle progressive reveal or progress cue for narrative pages. Reveal once, keep important content immediately available, and preserve normal wheel/touch scrolling. Prefer stable visible content for repetitive workspaces where reveals slow scanning. Without JS or with reduced motion, content stays readable and reachable; do not require scrolling through long pins or hijack scroll to demonstrate polish. |
+| State, panels, and feedback | Connect opening/closing, selection, loading, success, and errors to clear state changes with brief continuity. Preserve focus management and interruption; never delay a real action or manufacture progress to finish an animation. |
+
+Respect reduced motion across all moments, including when the OS preference changes during interaction. Remove decorative travel, parallax, zoom, and loops; use an immediate update or subtle fade when appropriate. No perpetual motion is required. The default layer and its alternatives must be exercised in the actual browser: normal/rapid input, keyboard/touch, theme change, scroll/reverse scroll, reduced motion, and JS-free content where applicable. Static captures and presence of transition declarations alone do not prove behavior, continuity, or acceptable cost.
+
+ECC `motion-foundations` and `motion-patterns` can support shared timing, interruption, and component sequences when their stack fits. Read the current skills before applying them through [integrations](integrations.md). Their React-specific implementations are not a reason to change a CSS/native stack; use the existing engine and inspect the result.
+
 ## Selection
 
 | Situation | Direction |

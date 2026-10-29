@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light dark">
   <title>Reference Library | Forma</title>
-  <link rel="stylesheet" href="reference-browser.css">
-  <script type="module" src="reference-browser.js"></script>
+  <link rel="stylesheet" href="reference-browser.css?v=1.28.1">
+  <script type="module" src="reference-browser.js?v=1.28.1"></script>
 </head>
 <body>
   <header class="masthead">
@@ -21,13 +21,19 @@
     </section>
     <div class="library-source"><label for="collection">Collection</label><select id="collection"><option value="patterns">Forma patterns</option><option value="sites">Website references</option><option value="portfolios">Developer portfolios</option></select><a href="../references/reference-library.md">How to use references</a></div>
     <form id="filters" role="search" aria-label="Filter references">
-      <div class="field query"><label for="query">What do you want to create?</label><input id="query" type="search" placeholder="Sidebar, typography, profile..." autocomplete="off"></div>
+      <div class="field query"><label id="query-label" for="query">What do you want to create?</label><input id="query" type="search" placeholder="Sidebar, typography, profile..." autocomplete="off" aria-describedby="query-help"><p id="query-help" class="field-help">Find a local pattern for your design task.</p></div>
       <div class="field" id="evidence-field"><label for="evidence">Resource type</label><select id="evidence"><option value="">All</option></select></div>
       <div class="field" id="kind-field"><label for="kind">Context</label><select id="kind"><option value="">All</option></select></div>
     <div class="field" id="case-field" hidden><label for="case">Research guide</label><select id="case"><option value="">All</option></select></div>
     </form>
     <div class="result-line"><p id="status" role="status" aria-live="polite">Loading the library...</p><p><span id="source-note">Written by Forma / Local search</span></p></div>
+    <p id="scope-note" class="scope-note" hidden></p>
     <div id="error" role="alert" hidden></div>
+    <section id="guide-suggestions" class="guide-suggestions" aria-labelledby="guide-title" hidden>
+      <h2 id="guide-title">Research guides for this topic</h2>
+      <p>These guides suggest questions to explore. Their candidate counts do not confirm which sites have the feature you searched for.</p>
+      <div id="guide-cards" class="guide-cards"></div>
+    </section>
     <div id="cards" class="cards"></div>
     <p id="empty" hidden>No patterns match these filters. Try another term or a broader context.</p>
     <button id="more" type="button" hidden>Show more patterns</button>

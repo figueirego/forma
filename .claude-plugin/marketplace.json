@@ -8,7 +8,7 @@
     {
       "name": "forma",
       "source": "./plugins/forma-claude",
-      "version": "1.28.0",
+      "version": "1.29.0",
       "description": "Design with one coordinator and 11 specialists, from intent to refinement."
     }
   ]

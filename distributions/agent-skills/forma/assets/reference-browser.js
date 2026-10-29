@@ -1,4 +1,4 @@
-import { rankReferences, validateCatalog, validateSiteIndex, rankSites } from '../scripts/lib/reference-search.mjs';
+import { rankReferences, validateCatalog, validateSiteIndex, rankSites, suggestSiteCases } from '../scripts/lib/reference-search.mjs?v=1.28.1';
 const el = id => document.getElementById(id);
 const root = new URL('../', import.meta.url);
 const pageSize = 12;
@@ -102,9 +102,11 @@ function updateSource() {
   el('case-field').hidden = !sites;
   el('filters').classList.toggle('site-filters', sites);
   el('source-note').textContent = sites ? `${isPortfolios() ? 'External portfolios with source lines' : 'External website inventory'} / Forma research guides` : 'Written by Forma / Local search';
-  el('query').placeholder = isPortfolios() ? 'Name, developer, portfolio...' : sites ? 'Cafe, typography, editorial...' : 'Sidebar, typography, profile...';
+  el('query-label').textContent = sites ? 'Find a name or website address' : 'What do you want to create?';
+  el('query-help').textContent = sites ? 'Topics such as motion suggest research guides separately; they do not identify verified features.' : 'Find a local pattern for your design task.';
+  el('query').placeholder = sites ? 'Name or URL; topics suggest guides...' : 'Sidebar, typography, profile...';
   el('more').textContent = isPortfolios() ? 'Show more portfolios' : sites ? 'Show more websites' : 'Show more patterns';
-  el('empty').textContent = isPortfolios() ? 'No portfolios match these filters. Try another name or research guide.' : sites ? 'No websites match these filters. Try another term or research guide.' : 'No patterns match these filters. Try another term or a broader context.';
+  el('empty').textContent = sites ? 'No names or website addresses match. Try a name or URL, or explicitly browse candidates from a research guide.' : 'No patterns match these filters. Try another term or a broader context.';
   filter();
 }
 function render() {
@@ -128,7 +130,32 @@ function render() {
   el('empty').hidden = visible.length !== 0;
   el('more').hidden = count >= visible.length;
 }
+function renderGuideSuggestions(suggestions) {
+  const cards = el('guide-cards');
+  cards.replaceChildren();
+  el('guide-suggestions').hidden = suggestions.length === 0;
+  for (const { case: guide, candidateCount } of suggestions) {
+    const card = document.createElement('article');
+    card.className = 'guide-card';
+    card.append(text('h3', guide.name), text('p', guide.whenToUse));
+    card.append(text('p', `${candidateCount} assigned candidates / Not verified for this topic`, 'candidate-count'));
+    const button = text('button', `Browse candidates for: ${guide.name}`);
+    button.type = 'button';
+    button.addEventListener('click', () => {
+      // Browsing a guide is explicit; a topic must never silently match every assigned site.
+      el('query').value = '';
+      el('case').value = guide.id;
+      filter();
+      el('case').focus();
+    });
+    card.append(button);
+    cards.append(card);
+  }
+}
 function filter() {
+  renderGuideSuggestions([]);
+  el('scope-note').hidden = true;
+  el('scope-note').textContent = '';
   try {
     const siteIndex = currentIndex();
     if (isExternal() && !siteIndex) throw new Error(externalErrors[el('collection').value] || 'The index has not loaded yet.');
@@ -139,6 +166,15 @@ function filter() {
       ...(el('evidence').value && { evidenceType: el('evidence').value }),
       ...(el('kind').value && { kind: el('kind').value }),
     }).map(result => result.entry);
+    if (isExternal()) {
+      renderGuideSuggestions(suggestSiteCases(siteIndex, {
+        query: el('query').value, ...(el('case').value && { caseId: el('case').value }),
+      }));
+      el('scope-note').hidden = false;
+      el('scope-note').textContent = el('case').value
+        ? 'Browsing an assigned research pool. Guide assignments are not confirmed features; inspect individual sites before using them as evidence.'
+        : 'Results match names and website addresses only. A technology word in an address does not verify the technology used by that site.';
+    }
   } catch (error) {
     visible = [];
     count = pageSize;

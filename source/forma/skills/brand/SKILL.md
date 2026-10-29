@@ -33,7 +33,8 @@ Classify the surface before choosing a direction: a communication page organizes
    Read [artifacts and editing](../../references/artifact-workflows.md); for a 2.5D/3D campaign, read [immersive web](../../references/immersive-web-tech.md), without imposing a stack based on the reference.
    When restyling, preserve the editorial contract; for a film or animated deck, use [temporal production](../../references/motion.md#films-and-rendered-sequences). The project's identity package records approved facts, not the preferences of the generation tool.
 4. Adapt composition and copy to the authorized channels, preserving hierarchy and consistency with the destination.
-   For fonts/color, consult the [visual system](../../references/visual-system.md) and [color](../../references/color-refinement.md); keep text editable when required by the delivery contract.
+   For a new surface or broad visual refinement, apply the [shared visual foundation](../../references/visual-system.md#coordinate-the-foundation), including any product fragments. Use only the roles relevant to the medium; a static graphic does not require interface states or a theme switch. Consult [color](../../references/color-refinement.md) for palette decisions; keep text editable when required by the delivery contract.
+   New interactive pages include [Motion](../motion/SKILL.md) and its [default layer](../../references/motion.md#default-motion-for-new-interactive-designs), preserving the same concept and foundation. Consider hover, theme changes when supported, and restrained scroll reveals; 3D remains conditional on the brief and message.
 5. Review claims, links, cropping, readability and the exported file at its actual usage size.
    Use [verification](../../references/verification.md) and the [brand and marketing](../../references/brand-marketing.md) preflight when printing is involved.
 

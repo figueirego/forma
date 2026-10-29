@@ -29,6 +29,7 @@ Preserve scope, brand, and stack. Distinguish verified, inferred, untested, and 
    Use [rendered validation](../forma/references/rendered-validation.md); verify persistence after reopening if promised, and distinguish an in-memory prototype from real operation.
 3. For access, read [accessibility](../forma/references/accessibility.md) and exercise the relevant keyboard, focus, semantics, zoom, and alternative paths.
    If layout/color is affected, use [spatial contracts](../forma/references/layout-spatial-contracts.md) and [color refinement](../forma/references/color-refinement.md).
+   For a new surface or broad visual refinement, inspect the [coordinated foundation](../forma/references/verification.md#coordinated-foundation-review) in representative consumers and supported modes. Isolated token or contrast checks do not establish a coherent composition.
 4. For reference work or reuse, test the operation that distinguishes the requested mechanism from an approximation.
    Consult reuse in [playbooks](../forma/references/playbooks.md) and [fidelity](../forma/references/reference-fidelity.md); observe the primary path, fallback, and relevant states separately.
    When frozen reference values exist, run the [fidelity verifier](../forma/references/fidelity-contracts.md) against consumer measurements. Missing fields, NaN, omitted points, or different revisions cannot pass through averaging. A passing numerical fixture does not prove that the browser loaded the revision or that the contract covers everything; confirm those facts separately.

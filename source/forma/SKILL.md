@@ -2,7 +2,7 @@
 name: forma
 description: "Coordinate design specialists to create, refine, adapt, or audit interfaces, visual systems, and brand assets. Select the internal interface, color/layout, product, 3D, graphs, motion, platform, brand, reference, handoff, or validation skill for each case. Also use to reuse approved components in another project; not for isolated backend work."
 metadata:
-  version: 1.28.0
+  version: 1.29.0
 ---
 
 # Forma
@@ -15,11 +15,14 @@ To turn references into reusable technical knowledge, route the work to the `ref
 
 Coordination also covers websites: finding references, investigating their techniques, and creating or refining the destination site. In research involving several sources, `reference` gathers evidence; the coordinator selects a coherent direction and routes decisions to the relevant specialists. Follow [site coordination](references/experience-library.md#coordinate-reference-sites-and-the-destination-site). Do not end a creation request with a list of links.
 
+External lookup matches names and URLs; topic queries suggest research guides separately. A guide assignment is an investigation lens, not proof that a site has that feature. State the question and unknowns before selecting candidates. Evaluate retrieval, routing, implemented output and repeatability separately; a valid plan or a large catalog does not prove design quality.
+
 ## How to coordinate
 
 1. **Identify the real task:** plan, create, refine, redesign, reproduce, audit, or extract a system; identify the destination and platform. Inspect the available project/source before substantial decisions. A request for explanation remains an explanation; an audit does not authorize editing. Clarify only an ambiguity that materially changes the result.
 2. **Select the primary internal skill from the table below and read its `SKILL.md`.** Start with the predominant task, not every word mentioned. Read the references selected by that specialist; a link alone is not consultation. For a small adjustment, one specialist and the reference addressing the defect may be enough.
 3. **Add support only for a distinct need.** For example: interface integrates the editor; foundations resolves its color; objects-3d handles explicitly requested volume. For composition, precedence, ambiguous tasks, and fallback, use [routing and coordination](references/routing.md). Avoid opening the entire library or chaining specialists without a new question.
+   For a new surface or broad visual refinement, establish the [shared visual foundation](references/visual-system.md#coordinate-the-foundation) before splitting work. Interface or Brand can apply it directly; add Foundations for unresolved system decisions. For new interactive designs, also read [Motion](skills/motion/SKILL.md) and implement the [default motion layer](references/motion.md#default-motion-for-new-interactive-designs), with intensity adapted to the brief. Carry the same roles and rules into each specialist. Additional expressive detail and 3D remain conditional; a local fix does not activate a redesign.
 4. **Execute; do not stop at a referral.** If the user requested implementation, specialist selection is an internal step. If they only asked which one to use, deliver the recommendation. For broad work, follow the [shared workflow](references/workflow.md) and [relevant playbook](references/playbooks.md); for a local adjustment, keep the scope local.
 5. **Close the loop in the destination:** verify the files actually loaded, the affected interactions, and acceptance. A repeated revision marker does not prove that CSS/JS is current; check the identity of affected resources and preserve unsaved changes before any reload. The validation specialist supports broad audits; all work requires proportionate verification even without loading another skill. Report the change, evidence, and actual limitations.
 

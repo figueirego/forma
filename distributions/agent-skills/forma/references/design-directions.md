@@ -20,6 +20,10 @@ These examples do not require creating three product modes. Varying only color, 
 
 Record: favored task; compositional rule; hierarchy and spatial relationships; type/color roles; narrow-layout behavior; distinctive detail; cost/risk; evaluation criterion. The description must enable implementation, not merely name an aesthetic.
 
+Match expressive intensity to the brief. New interactive designs include the [default motion layer](motion.md#default-motion-for-new-interactive-designs); richer detail can justify a stronger composition, illustration, material treatment, or sequence without requiring all of them. Name what each addition communicates or helps the user do, where it belongs, and how it behaves at small sizes and without motion. A request for simplicity, static output, or no 3D remains binding. "Creative" or "premium" alone does not select a renderer or justify elaborate choreography. When actual volume or a specific motion is requested, preserve that mechanism instead of silently simplifying it away.
+
+Keep the [shared visual foundation](visual-system.md#coordinate-the-foundation) consistent across the chosen expression. Distinctiveness can come from content, typography, rhythm, and precise details; consistency does not require stripping those details away. Motion receives the same identity, modes, and acceptance context; add Objects 3D only when volume serves the brief.
+
 Show alternatives using the same content and state. If one uses shorter data, better assets, or a different scale, declare the difference. Inspect the overall silhouette/composition before details; a coherent palette does not compensate for incorrect spatial relationships.
 
 ## A direction rooted in the project

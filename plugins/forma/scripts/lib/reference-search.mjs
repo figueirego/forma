@@ -197,20 +197,46 @@ export function siteFacets(index) {
     index.entries.filter(entry => entry.caseIds.includes(item.id)).length])) };
 }
 
+function validateCaseId(index, caseId) {
+  if (caseId !== undefined && !index.cases.some(item => item.id === caseId)) throw new Error(`Unknown case "${caseId}". Use --${index.collection === 'developer-portfolios' ? 'portfolios' : 'sites'} --list.`);
+}
+
+export function suggestSiteCases(index, { query = '', caseId } = {}) {
+  validateCaseId(index, caseId);
+  const terms = queryTerms(query);
+  if (!terms.length) return [];
+  const suggestions = [];
+  for (const guide of index.cases) {
+    if (caseId && guide.id !== caseId) continue;
+    const fields = [
+      ['name', new Set(words(`${guide.id} ${guide.name}`)), 4],
+      ['concept', new Set(words(guide.whenToUse)), 2],
+      ['investigation-questions', new Set(words([...guide.questions, ...guide.adapt, ...guide.verify].join(' '))), 1],
+    ];
+    const matchedTerms = matchFields(fields, terms);
+    if (matchedTerms.length !== terms.length) continue;
+    suggestions.push({ case: guide, candidateCount: index.entries.filter(entry => entry.caseIds.includes(guide.id)).length, match: {
+      lexicalScore: matchedTerms.reduce((total, item) => total + item.weight, 0),
+      literalMatches: matchedTerms.filter(item => item.matched === item.term).length,
+      matchedTerms, filters: { ...(caseId && { caseId }) },
+    } });
+  }
+  return suggestions.sort((a, b) => b.match.lexicalScore - a.match.lexicalScore
+    || b.match.literalMatches - a.match.literalMatches || a.case.id.localeCompare(b.case.id, 'en'));
+}
+
 export function rankSites(index, catalog, options = {}) {
   const { query = '', caseId, site, seed } = options;
-  if (caseId !== undefined && !index.cases.some(item => item.id === caseId)) throw new Error(`Unknown case "${caseId}". Use --${index.collection === 'developer-portfolios' ? 'portfolios' : 'sites'} --list.`);
-  const terms = queryTerms(query);
-  if (query.trim() && !terms.length) throw new Error('The query needs a specific subject or component, not only generic words.');
+  validateCaseId(index, caseId);
+  // Names and URLs are identities: translating them can match a different candidate.
+  const terms = [...new Set(words(query))].map(term => ({ term, alternatives: [term] }));
+  if (query.trim() && !terms.length) throw new Error('The query needs a literal name or URL; use --site for an exact ID.');
   const matches = [];
   for (const entry of index.entries) {
     if ((site && entry.id !== site) || (caseId && !entry.caseIds.includes(caseId))) continue;
     const cases = index.cases.filter(item => entry.caseIds.includes(item.id) && (!caseId || item.id === caseId));
     const fields = [
-      ['name', new Set(words(`${entry.id} ${entry.name}`)), 4],
-      ['classification', new Set(words(cases.map(item => `${item.id} ${item.name}`).join(' '))), 3],
-      ['concept', new Set(words(cases.map(item => item.whenToUse).join(' '))), 2],
-      ['investigation-questions', new Set(words(cases.flatMap(item => [...item.questions, ...item.adapt, ...item.verify]).join(' '))), 1],
+      ['name', new Set(words(entry.name)), 4],
       ['url', new Set(words(entry.url ?? entry.source?.originalUrl ?? '')), 1],
     ];
     const matchedTerms = matchFields(fields, terms);

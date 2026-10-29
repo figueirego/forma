@@ -4,6 +4,21 @@
 
 Inspect tokens, computed styles, components and assets. Identify the source of truth and discrepancies. Preserve consistent decisions; distinguish a local bug from structural debt. Do not introduce a second token system without mapping the first.
 
+## Coordinate the foundation
+
+For a new surface or broad visual refinement, establish one compact foundation in the existing brief, tokens, or component definitions. Reuse approved choices; resolve missing relationships before specialists invent incompatible values. This is a shared implementation contract, not a requirement for a new document or for loading every specialist. A local correction inspects only affected roles and consumers.
+
+| Decision | Shared rule and canonical detail |
+|---|---|
+| Palette and attention | Assign surface, text, action, selection, focus, state, and relevant data roles. Connect hue relationships, lightness, chroma, and occupied area to hierarchy; harmony generates candidates, while actual content determines suitability. Use [color composition](color-refinement.md#composition-brand-and-meaning), not an arbitrary color count or universal ratio. |
+| Light and dark | Identify the modes required by the brief and existing product. When both apply, map the same semantic roles in both before propagating components; include surfaces, borders, icons, focus, and state pairs. Preserve meaning and hierarchy, not identical hex values or automatic inversion. A single-mode task does not authorize a theme feature. |
+| Type and spacing | Connect reading hierarchy and density to one spacing system. Declare page margins, section gaps, component padding, and label/icon gaps, with one owner for each distance. Use [spatial contracts](layout-spatial-contracts.md) for grouping and narrow-layout adaptation. |
+| Shape and depth | Give controls, containers, overlays, and pill/circular exceptions deliberate radius roles; equivalent components reuse the same role. Relate nested curves to their inset and inspect the result. Border and elevation must support grouping and overlap. See [shape and material](#color-shape-and-material-qualities). |
+| Icons | Use the project's coherent family and assign each icon a recognizable action, object, or state. Define optical size, stroke/fill, alignment, and labels; omit icons that merely repeat nearby text without aiding recognition. Apply the general [icon asset contract](lighting-editors-icons.md#icons-are-interface-assets-not-typographic-characters), without inheriting its editor-specific silhouettes. |
+| Motion | New interactive designs include a purposeful [default motion layer](motion.md#default-motion-for-new-interactive-designs), with shared timing/behavior and reduced-motion alternatives. Coordinate theme, hover/press, scroll, and state feedback with the same roles; explicitly static deliverables and local fixes retain their scope. |
+
+Apply these decisions to a representative slice with real content before propagation. Inspect the related surfaces, text, controls, and states together in each supported mode and at relevant widths, using [coordinated foundation review](verification.md#coordinated-foundation-review). Additional expressive details belong to the [chosen direction](design-directions.md); they share this foundation rather than introducing competing palettes, scales, or icon styles.
+
 ## Visual direction
 
 Choose a compositional idea consistent with the audience and content: editorial, instrumental, playful, industrial, institutional or another justified direction. Specify hierarchy, rhythm, material qualities and image treatment; do not use adjectives as substitutes for decisions.

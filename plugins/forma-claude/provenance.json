@@ -1,5 +1,5 @@
 {
-  "version": "1.28.0",
+  "version": "1.29.0",
   "source": "canonical Forma skill",
   "transformations": [
     "Flatten skill directories",
@@ -16,8 +16,8 @@
     {
       "source": "SKILL.md",
       "packaged": "skills/forma/SKILL.md",
-      "source_sha256": "2f9b1edac56d9c98f195b1341d4c5cbe87164d2e617dc4d359972a6968aab7ff",
-      "packaged_sha256": "a7d8a02b37abecb5ec2c36ffca6390cfb16235a00375e846d769956120bff7d4"
+      "source_sha256": "019126074498a0603e37ba767b866363ed9f973df23006d0c49f77ffea698def",
+      "packaged_sha256": "73dcb8e53facce7c0ad8e9d3e6f6938a08192c27589caab7b20b5f8d32e0f016"
     },
     {
       "source": "THIRD_PARTY_NOTICES.md",
@@ -196,20 +196,20 @@
     {
       "source": "assets/reference-browser.css",
       "packaged": "assets/reference-browser.css",
-      "source_sha256": "e8d5a70ba7ced7b79c8e1d98c2f2be550441cc3d4c3988e106bfffb58e04d6c1",
-      "packaged_sha256": "e8d5a70ba7ced7b79c8e1d98c2f2be550441cc3d4c3988e106bfffb58e04d6c1"
+      "source_sha256": "8a94b32e3315dc05bc09a66790d4d5eebe10e1e9356bbcd0df3c720de2e068de",
+      "packaged_sha256": "8a94b32e3315dc05bc09a66790d4d5eebe10e1e9356bbcd0df3c720de2e068de"
     },
     {
       "source": "assets/reference-browser.html",
       "packaged": "assets/reference-browser.html",
-      "source_sha256": "e4ba9b060abee7657db1521b93c886edc97f5d363a6c1a0203ee40c5d96b0e5f",
-      "packaged_sha256": "e4ba9b060abee7657db1521b93c886edc97f5d363a6c1a0203ee40c5d96b0e5f"
+      "source_sha256": "4050ccc9bc32172a884c8e4a4bcfef14653c2031d15d13bea6171190cd8b7131",
+      "packaged_sha256": "4050ccc9bc32172a884c8e4a4bcfef14653c2031d15d13bea6171190cd8b7131"
     },
     {
       "source": "assets/reference-browser.js",
       "packaged": "assets/reference-browser.js",
-      "source_sha256": "fc1e621250db21faac02bd42148d76eba84ba4e9facf25483567e435d754345f",
-      "packaged_sha256": "fc1e621250db21faac02bd42148d76eba84ba4e9facf25483567e435d754345f"
+      "source_sha256": "efe44e465fe8009def777e559ac95273124c187d9a3bc000fab94c48d303e57f",
+      "packaged_sha256": "efe44e465fe8009def777e559ac95273124c187d9a3bc000fab94c48d303e57f"
     },
     {
       "source": "assets/reference-library/catalog.json",
@@ -280,8 +280,8 @@
     {
       "source": "evals/routing-scenarios.md",
       "packaged": "evals/routing-scenarios.md",
-      "source_sha256": "4d8e0130cd117e8cd0ad88cb8ca12e75657fff4726b8101d5dd8fbbba8379a26",
-      "packaged_sha256": "4d8e0130cd117e8cd0ad88cb8ca12e75657fff4726b8101d5dd8fbbba8379a26"
+      "source_sha256": "e79790f6cb79b4b2b2543a6bc848945b95ef5e62c0123dac4e25564b83de88be",
+      "packaged_sha256": "e79790f6cb79b4b2b2543a6bc848945b95ef5e62c0123dac4e25564b83de88be"
     },
     {
       "source": "evals/scenarios.md",
@@ -382,8 +382,8 @@
     {
       "source": "references/design-directions.md",
       "packaged": "references/design-directions.md",
-      "source_sha256": "ce0f37fc663c1dbdade138fbe590677537ad11f52db94f0f17605dacce50326d",
-      "packaged_sha256": "ce0f37fc663c1dbdade138fbe590677537ad11f52db94f0f17605dacce50326d"
+      "source_sha256": "3e4af4c5bbbe9dc5d1daed64df112480f7c808fe57f8807b1f0ed6588a1f9a9b",
+      "packaged_sha256": "3e4af4c5bbbe9dc5d1daed64df112480f7c808fe57f8807b1f0ed6588a1f9a9b"
     },
     {
       "source": "references/desktop-distribution.md",
@@ -394,8 +394,8 @@
     {
       "source": "references/experience-library.md",
       "packaged": "references/experience-library.md",
-      "source_sha256": "b6220c9659a08389b9b0ae981206994b9700109ffb916f0d021d0463489ba257",
-      "packaged_sha256": "b6220c9659a08389b9b0ae981206994b9700109ffb916f0d021d0463489ba257"
+      "source_sha256": "53ea8f7c5c562c5f24f93da212249f04e1b36af1c1185f670266a1917f3f226d",
+      "packaged_sha256": "53ea8f7c5c562c5f24f93da212249f04e1b36af1c1185f670266a1917f3f226d"
     },
     {
       "source": "references/fidelity-contracts.md",
@@ -454,8 +454,8 @@
     {
       "source": "references/motion.md",
       "packaged": "references/motion.md",
-      "source_sha256": "2d642aa9a723410bc4c72fe6ce6224a70d36e10a85bbfc709aeb4080db093dc1",
-      "packaged_sha256": "2d642aa9a723410bc4c72fe6ce6224a70d36e10a85bbfc709aeb4080db093dc1"
+      "source_sha256": "7721d4b4469bce1c378565e69487b2dc9575d7d57db9a55c7aa5c4da43960f0b",
+      "packaged_sha256": "7721d4b4469bce1c378565e69487b2dc9575d7d57db9a55c7aa5c4da43960f0b"
     },
     {
       "source": "references/passport-polish-case-study.md",
@@ -502,8 +502,8 @@
     {
       "source": "references/reference-library.md",
       "packaged": "references/reference-library.md",
-      "source_sha256": "bb01b5ba977c079d7429dd9162e8b9e64644893934a09ecaab0423bfa3ce1ea0",
-      "packaged_sha256": "4f3c7a86a9cda06dfd31a4c00d389d1f69bcf07cb6decc3df5717c8cf2257f71"
+      "source_sha256": "9ef664b9cfd00fd26723cbd9b95924373ada7244cfbbbea5464f1f7598441ca6",
+      "packaged_sha256": "a657b03d5522bce2d982f9b5276a2e33396692b17d6a31bd8dc09ff136240194"
     },
     {
       "source": "references/rendered-validation.md",
@@ -532,8 +532,8 @@
     {
       "source": "references/routing.md",
       "packaged": "references/routing.md",
-      "source_sha256": "5dad005dcfef95ee800a5bade5334fc94e27d521cea29d3bbd1d24f4f8d77670",
-      "packaged_sha256": "1bdb2e803b9c38656c7197b01738faeb748ba15a39240326764f7389d420aa72"
+      "source_sha256": "1f6dd4acb4f14269ff2d03faf801c7f2b365f96361eb6042d4dc063134c65795",
+      "packaged_sha256": "f74a17b3ccecbe1ce22c9856df6da7b8f459653e98fbef81d628c3743a17fdd4"
     },
     {
       "source": "references/search-discovery.md",
@@ -592,14 +592,14 @@
     {
       "source": "references/verification.md",
       "packaged": "references/verification.md",
-      "source_sha256": "32bfbfc0d0c4b2e851fc85c4a618c529067c0899b8c8341f05cb58815ca6a426",
-      "packaged_sha256": "43bd62c59069bfcb92f02f0ebcf9e596f2b4f9de3c1724c540c56ee12d220083"
+      "source_sha256": "e65ca11cdccde0a3ae0952ac1b7e9b65659fe9da9e8dd8f78f3b121715fb7c8e",
+      "packaged_sha256": "a054013d70ef5c6dbd3162ace15368668069112116912a62287807c74193da94"
     },
     {
       "source": "references/visual-system.md",
       "packaged": "references/visual-system.md",
-      "source_sha256": "0f5d3a64b0a72b85298a1d779191923f4623d74df36d011f804f20132969d727",
-      "packaged_sha256": "0f5d3a64b0a72b85298a1d779191923f4623d74df36d011f804f20132969d727"
+      "source_sha256": "079b2e83356e3a60164b9e43688014acc9218f35a93f89ca07f3387d43092464",
+      "packaged_sha256": "079b2e83356e3a60164b9e43688014acc9218f35a93f89ca07f3387d43092464"
     },
     {
       "source": "references/web.md",
@@ -652,8 +652,8 @@
     {
       "source": "scripts/lib/reference-search.mjs",
       "packaged": "scripts/lib/reference-search.mjs",
-      "source_sha256": "a19c1facb59d5282f2ee6e90a0afecbcf6c8823c27b6f44e22173e52df1cbeee",
-      "packaged_sha256": "a19c1facb59d5282f2ee6e90a0afecbcf6c8823c27b6f44e22173e52df1cbeee"
+      "source_sha256": "6edcc52582ced41deca73b5f7e84591b2780cc1f34459155e404d4236a7ef8eb",
+      "packaged_sha256": "6edcc52582ced41deca73b5f7e84591b2780cc1f34459155e404d4236a7ef8eb"
     },
     {
       "source": "scripts/media.mjs",
@@ -664,14 +664,14 @@
     {
       "source": "scripts/references.mjs",
       "packaged": "scripts/references.mjs",
-      "source_sha256": "27e5434d226194f47fe9f0b6d132f36953868f2b2485c9334dc296624c1f93e3",
-      "packaged_sha256": "27e5434d226194f47fe9f0b6d132f36953868f2b2485c9334dc296624c1f93e3"
+      "source_sha256": "20d4d3af0905d766823d958b55fc45b0eb080f33eaf54cd85d42d1df636c474b",
+      "packaged_sha256": "20d4d3af0905d766823d958b55fc45b0eb080f33eaf54cd85d42d1df636c474b"
     },
     {
       "source": "skills/brand/SKILL.md",
       "packaged": "skills/forma-brand/SKILL.md",
-      "source_sha256": "ee326df1b27a672e83a36e1f07de069300351b5dc4d0160b45270e07152441b2",
-      "packaged_sha256": "41a7ef24964ddda97ea87789ed964ad161e12a5f1b6f8f9f2357240632577ad1"
+      "source_sha256": "977a95b6dea5ecbb65f0dbb0812ff5d098729dd7d22942f60f7b582e0075db82",
+      "packaged_sha256": "cea638d0e4915645e516fc6c54b8c7342d316a1c461445134f5165772f6bb6a0"
     },
     {
       "source": "skills/brand/agents/openai.yaml",
@@ -682,8 +682,8 @@
     {
       "source": "skills/foundations/SKILL.md",
       "packaged": "skills/forma-foundations/SKILL.md",
-      "source_sha256": "fc613ad22afa9a5eb5e818aaef64d4857248f04844b47cd1ffda1a6821282c74",
-      "packaged_sha256": "fc613ad22afa9a5eb5e818aaef64d4857248f04844b47cd1ffda1a6821282c74"
+      "source_sha256": "9029c730c8f9e78a51ac497aa96c5e0ff8ee84a2052cec0df6d87fdaa2de6a25",
+      "packaged_sha256": "9029c730c8f9e78a51ac497aa96c5e0ff8ee84a2052cec0df6d87fdaa2de6a25"
     },
     {
       "source": "skills/foundations/agents/openai.yaml",
@@ -718,8 +718,8 @@
     {
       "source": "skills/interface/SKILL.md",
       "packaged": "skills/forma-interface/SKILL.md",
-      "source_sha256": "9e1a890685df397956ec3d22bdc9f76fcf3037f00be6c47f78bc129babbbb0c7",
-      "packaged_sha256": "1a5a51d96cae3eea85d51036e7226c98878c19cb8e6aabccee68e04706cad3f7"
+      "source_sha256": "21ee6e7ab0ec236666cdc88de8c96445a0b8cd7a69d48bd11061e2ff38e9c1d1",
+      "packaged_sha256": "3d46a9f9a9ee132c5533a16e507506d046300ae43ab40c4cc645d96be69a8a8d"
     },
     {
       "source": "skills/interface/agents/openai.yaml",
@@ -730,8 +730,8 @@
     {
       "source": "skills/motion/SKILL.md",
       "packaged": "skills/forma-motion/SKILL.md",
-      "source_sha256": "4e259388d1d8f62c25966cff0272989a1aa53ce9afc9412e06d5a2e2237ec7a1",
-      "packaged_sha256": "4e259388d1d8f62c25966cff0272989a1aa53ce9afc9412e06d5a2e2237ec7a1"
+      "source_sha256": "b92f8eddbecb67cbc14bce1540d8fbf2b920ffed1276dacd6530678c242b3db7",
+      "packaged_sha256": "b92f8eddbecb67cbc14bce1540d8fbf2b920ffed1276dacd6530678c242b3db7"
     },
     {
       "source": "skills/motion/agents/openai.yaml",
@@ -778,8 +778,8 @@
     {
       "source": "skills/reference/SKILL.md",
       "packaged": "skills/forma-reference/SKILL.md",
-      "source_sha256": "3bc68285aef36afb022e0599fd64b354a28f4a231d8c196d7f8f7a9d1951dc38",
-      "packaged_sha256": "3bc68285aef36afb022e0599fd64b354a28f4a231d8c196d7f8f7a9d1951dc38"
+      "source_sha256": "f298eada626540e9b9870af809f8cf8b0a294552c5e887bccc744771e2cd6416",
+      "packaged_sha256": "f298eada626540e9b9870af809f8cf8b0a294552c5e887bccc744771e2cd6416"
     },
     {
       "source": "skills/reference/agents/openai.yaml",
@@ -790,8 +790,8 @@
     {
       "source": "skills/validation/SKILL.md",
       "packaged": "skills/forma-validation/SKILL.md",
-      "source_sha256": "accb8453d7c125c88c4cf51bfef7179e4096c30b4f31168b81285508d8786ad0",
-      "packaged_sha256": "accb8453d7c125c88c4cf51bfef7179e4096c30b4f31168b81285508d8786ad0"
+      "source_sha256": "ed63d39751fea3ef83db29cced0a3799b6a489f32c53b890e4f1eec00d0a1bd4",
+      "packaged_sha256": "ed63d39751fea3ef83db29cced0a3799b6a489f32c53b890e4f1eec00d0a1bd4"
     },
     {
       "source": "skills/validation/agents/openai.yaml",
@@ -838,20 +838,20 @@
     {
       "source": "tests/references-portfolios.test.cjs",
       "packaged": "tests/references-portfolios.test.cjs",
-      "source_sha256": "1df902147a60107735899bb9243df40435ad26e11f3c62f5c9bd306f4b6d7558",
-      "packaged_sha256": "1df902147a60107735899bb9243df40435ad26e11f3c62f5c9bd306f4b6d7558"
+      "source_sha256": "cb0cf05f7ad583931fb236f633a3e201a8d84e5b382ce36128e7553212023b09",
+      "packaged_sha256": "cb0cf05f7ad583931fb236f633a3e201a8d84e5b382ce36128e7553212023b09"
     },
     {
       "source": "tests/references-sites.test.cjs",
       "packaged": "tests/references-sites.test.cjs",
-      "source_sha256": "cc35672c32931a17dfd555753ece6c720751c295d27c31b1f86f249c5d26160c",
-      "packaged_sha256": "cc35672c32931a17dfd555753ece6c720751c295d27c31b1f86f249c5d26160c"
+      "source_sha256": "83ff3a2f13435b050618eec1ce2f90a92ea557154d37481b85a0b3ca413c8b39",
+      "packaged_sha256": "83ff3a2f13435b050618eec1ce2f90a92ea557154d37481b85a0b3ca413c8b39"
     },
     {
       "source": "tests/references.test.cjs",
       "packaged": "tests/references.test.cjs",
-      "source_sha256": "8197b7ee49ab56dd3e5ef3451ae5699198db01cd7f5bcbd4d7a31b297c4c7df3",
-      "packaged_sha256": "8197b7ee49ab56dd3e5ef3451ae5699198db01cd7f5bcbd4d7a31b297c4c7df3"
+      "source_sha256": "ba99597e40b33ca9b9a16c7237fffd382717fa9e69ae232d55fb753a8e8fc422",
+      "packaged_sha256": "ba99597e40b33ca9b9a16c7237fffd382717fa9e69ae232d55fb753a8e8fc422"
     },
     {
       "source": "tests/test_check_fidelity.py",

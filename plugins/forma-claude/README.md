@@ -1,4 +1,4 @@
-# Forma 1.28.0 for Claude Code
+# Forma 1.29.0 for Claude Code
 
 One coordinator and 11 specialists. Use `/forma:forma` or `/forma:forma-interface`.
 The community marketplace is at the repository root: `claude plugin marketplace add figueirego/forma`, then `claude plugin install forma@forma-community`.

@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.29.0 - 2026-10-29
+
+- Coordinate palette roles, light/dark modes, spacing, radius and icon decisions before splitting new visual work across specialists. Preserve local fixes and existing project conventions.
+- Make purposeful motion standard for new interactive designs: theme switching, hover/press/focus, contextual scroll treatment and state feedback. Keep 3D conditional, with reduced-motion, interruption and content-access requirements.
+- Require readable intermediate theme states, safe feature fallbacks and observation in the consumer; endpoint contrast and transition declarations alone are insufficient.
+- Add R61-R65 decision scenarios and expand foundation review to supporting text and control boundaries. An exploratory paired pilot identified these gaps; its small sample does not establish general superiority or repeatability.
+
+## 1.28.1 - 2026-10-29
+
+- Fix external lookup contamination: shared guide questions no longer make every assigned site match a topic. Preserve all external identities and URLs; search them literally with accent normalization.
+- Return topic-based research guide suggestions separately in the CLI and browser, with candidate counts and explicit browsing. A guide assignment or a technology word in a URL does not verify a site's features or stack.
+- Add regressions for generic topics, unknown queries, multilingual aliases, identity matching, explicit candidate browsing and keyboard focus. Preserve the internal pattern matcher.
+- Clarify coordination evidence: retrieval, a routing plan, an implemented artifact, comparative improvement and repeatability need separate proof. Add six evaluation scenarios for these failure modes; scenarios alone do not certify execution.
+
 ## 1.28.0 - 2026-10-29
 
 - Standardize all authored package documentation, specialist skills, evaluations, examples, runtime labels, accessibility text, contributor guides, and generated plugin instructions in English.

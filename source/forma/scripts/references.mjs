@@ -3,8 +3,8 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { facets, rankReferences, validateCatalog, validateSiteIndex, siteFacets, rankSites } from './lib/reference-search.mjs';
-export { facets, queryTerms, rankReferences, validateSiteIndex, siteFacets, rankSites } from './lib/reference-search.mjs';
+import { facets, rankReferences, validateCatalog, validateSiteIndex, siteFacets, rankSites, suggestSiteCases } from './lib/reference-search.mjs';
+export { facets, queryTerms, rankReferences, validateSiteIndex, siteFacets, rankSites, suggestSiteCases } from './lib/reference-search.mjs';
 
 export const CATALOG_PATH = fileURLToPath(new URL('../assets/reference-library/catalog.json', import.meta.url));
 export const SITE_INDEX_PATH = fileURLToPath(new URL('../assets/reference-library/site-index.json', import.meta.url));
@@ -22,7 +22,10 @@ node references.mjs --portfolios --query "developer" [--case <case-id>] [--json]
 node references.mjs --portfolios --site <id> [--json]
 node references.mjs --portfolios --list [--json]
 
-Filters are exact and combined. Query terms use lexical PT/EN aliases, not embeddings.
+Filters are exact and combined. Patterns and investigation guides use lexical PT/EN aliases, not embeddings.
+External candidate searches match literal names and URLs only, without translating identities.
+Use --site <id> for an exact ID lookup; generated IDs are not free-text search terms.
+Guide suggestions are separate; use --case to browse their unverified candidates.
 Every meaningful query term must match. Empty results do not trigger an unrelated fallback.
 The optional seed only varies equally ranked candidates. No network requests are made.
 --out creates a NEW JSON board; existing files are never overwritten.
@@ -79,16 +82,19 @@ export function searchSites(index, catalog, options = {}) {
   const matches = rankSites(index, catalog, options);
   return {
     schemaVersion: 2, sourceType: index.collection === 'developer-portfolios' ? 'portfolios' : 'sites', catalogSchemaVersion: index.schemaVersion,
-    patternCatalogSchemaVersion: catalog.schemaVersion, method: 'local-lexical-alias-search',
+    patternCatalogSchemaVersion: catalog.schemaVersion, method: 'local-literal-identity-search', searchScope: 'identity-only',
     request: { query, ...(caseId && { caseId }), ...(site && { site }), limit, ...(seed !== undefined && { seed }) },
     totalMatches: matches.length, provenance: index.provenance,
     limitations: [
       'External URLs are historical candidates, not sites visited or validated by this command.',
       'Forma investigation cases propose questions and adaptations; they are not observations of each site.',
       'Site identity, code and assets belong to their respective owners; inventory metadata grants no reuse rights.',
-      'Matching uses literal words and PT/EN aliases, not semantic inference or a quality score.',
+      'Identity matching uses literal names and URLs; a URL match does not verify technology, design features or quality.',
+      'Generated IDs are excluded from free-text search; --site selects an exact ID.',
+      'Suggested investigation guides use PT/EN aliases separately. Their counts describe unverified candidates assigned to a guide, not observed capabilities.',
       ...(index.collection === 'developer-portfolios' ? ['Source rows are preserved, including malformed URLs quarantined as text; no automatic correction or visit is performed.'] : []),
     ],
+    suggestedCases: suggestSiteCases(index, { query, caseId }),
     results: matches.slice(0, limit),
   };
 }
@@ -152,6 +158,14 @@ function printBoard(board, full) {
 
 function printSitesBoard(board) {
   const lines = [`Forma ${board.sourceType === 'portfolios' ? 'portfolio' : 'site'} candidates: ${board.totalMatches} matches; showing ${board.results.length}.`, ...board.limitations, ''];
+  if (board.suggestedCases.length) {
+    lines.push('Suggested investigation guides (not verified site features):');
+    for (const { case: guide, candidateCount } of board.suggestedCases) {
+      lines.push(`${guide.id} - ${guide.name}: ${candidateCount} unverified candidates assigned.`,
+        `Browse: node references.mjs --${board.sourceType} --case ${guide.id}`);
+    }
+    lines.push('');
+  }
   for (const { entry, cases, patterns, match } of board.results) {
     lines.push(`${entry.id} - ${entry.name}`, `URL: ${entry.url ?? 'quarantined; not a visit link'}`, `Evidence: ${entry.evidence.status}; no live capture.`,
       `Matched: ${match.matchedTerms.map(item => `${item.term}->${item.matched} (${item.field})`).join(', ') || 'explicit case or ID'}`);

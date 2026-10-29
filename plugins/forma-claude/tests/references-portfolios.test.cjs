@@ -92,11 +92,65 @@ test('portfolio lookup uses the same deterministic browser-safe matcher as exist
   }
 });
 
+test('shared portfolio guide terms never become identity matches or technology evidence', () => {
+  for (const query of ['motion', '3d', 'typography']) {
+    const board = api.searchSites(index, catalog, { query, limit: 50 });
+    assert.ok(board.totalMatches < index.entries.length, query);
+    assert.equal(board.searchScope, 'identity-only');
+    assert.ok(board.results.every(result => result.match.matchedTerms.every(term => ['name', 'url'].includes(term.field))));
+    assert.ok(board.suggestedCases.length > 0, query);
+    assert.ok(board.suggestedCases.every(item => item.candidateCount === 2079));
+  }
+  const board = api.searchSites(index, catalog, { query: 'react' });
+  assert.ok(board.results.length > 0);
+  assert.ok(board.results.every(result => result.match.matchedTerms.every(term => term.field === 'url')));
+  assert.ok(board.results.every(result => result.entry.evidence.liveVerified === false));
+  assert.ok(board.limitations.some(item => item.includes('does not verify technology')));
+});
+
+test('generated portfolio ID prefixes never expand name and URL search while exact ID lookup remains available', () => {
+  const containsPortfolio = value => (String(value).normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? []).includes('portfolio');
+  const expected = index.entries.filter(entry => containsPortfolio(entry.name) || containsPortfolio(entry.url ?? entry.source.originalUrl));
+  assert.ok(expected.length > 0 && expected.length < index.entries.length);
+  const board = api.searchSites(index, catalog, { query: 'portfolio', limit: 50 });
+  assert.equal(board.totalMatches, expected.length);
+  assert.ok(board.results.every(result => expected.some(entry => entry.id === result.entry.id)));
+  const candidate = index.entries.find(entry => !expected.includes(entry));
+  assert.deepEqual(api.searchSites(index, catalog, { query: candidate.id }).results, []);
+  const detail = cli('--portfolios', '--site', candidate.id, '--json');
+  assert.equal(detail.status, 0, detail.stderr);
+  assert.deepEqual(JSON.parse(detail.stdout).results.map(result => result.entry.id), [candidate.id]);
+});
+
+test('portfolio guide suggestions preserve aliases, all-term matching and browser/CLI parity', () => {
+  const source = fs.readFileSync(path.join(root, 'scripts/lib/reference-search.mjs'), 'utf8').replace(/^export /gm, '');
+  for (const options of [{ query: 'movimento' }, { query: '3d' }, { query: '3d xyzunmatchable' }, { query: 'motion', caseId: index.cases[0].id }, {}]) {
+    const browser = JSON.parse(vm.runInNewContext(`${source}\nJSON.stringify(suggestSiteCases(index, options));`, { URL, index, options }, { timeout: 5000 }));
+    const board = api.searchSites(index, catalog, options);
+    assert.deepEqual(board.suggestedCases, browser);
+    if (options.query) {
+      const result = cli('--portfolios', '--query', options.query, ...(options.caseId ? ['--case', options.caseId] : []), '--json');
+      assert.equal(result.status, 0, result.stderr);
+      assert.deepEqual(JSON.parse(result.stdout).suggestedCases, browser);
+    }
+  }
+  assert.deepEqual(api.suggestSiteCases(index), []);
+  assert.deepEqual(api.suggestSiteCases(index, { query: 'motion xyzunmatchable' }), []);
+  assert.equal(api.rankSites(index, catalog, { query: 'movimento' }).length, 0);
+  assert.equal(api.rankSites(index, catalog, { query: 'moti' }).length, 0);
+  assert.throws(() => api.suggestSiteCases(index, { query: 'motion', caseId: 'unknown' }), /Unknown case/);
+  const result = cli('--portfolios', '--query', 'motion');
+  assert.equal(result.status, 0, result.stderr);
+  assert.match(result.stdout, /Suggested investigation guides/);
+  assert.match(result.stdout, /2079 unverified candidates/);
+  assert.match(result.stdout, /--portfolios --case portfolio-navigation/);
+});
+
 test('portfolio relevance ties use readable alphabetical names while seed and legacy site order remain stable', () => {
   const expected = [...index.entries].sort((a, b) => a.name.localeCompare(b.name, 'en') || a.id.localeCompare(b.id, 'en')).map(entry => entry.id);
   const ranked = options => api.rankSites(index, catalog, options).map(result => result.entry.id);
   assert.deepEqual(ranked({}), expected);
-  assert.deepEqual(ranked({ query: 'developer' }), expected);
+  assert.deepEqual(ranked({ caseId: index.cases[0].id }), expected);
   assert.deepEqual(ranked({ seed: 42 }), ranked({ seed: 42 }));
   assert.notDeepEqual(ranked({ seed: 42 }), expected);
   assert.deepEqual(api.rankSites(sites, catalog).map(result => result.entry.id), [...sites.entries].map(entry => entry.id).sort((a, b) => a.localeCompare(b, 'en')));
@@ -184,7 +238,7 @@ async function browserHarness({ missingPortfolio = false } = {}) {
     showModal() { this.open = true; }
     close() { this.open = false; }
   }
-  const ids = ['collection', 'query', 'case', 'evidence', 'kind', 'filters', 'cards', 'status', 'empty', 'more', 'error', 'source-note', 'case-field', 'kind-field', 'evidence-field', 'detail', 'detail-origin', 'detail-content', 'close-detail'];
+  const ids = ['collection', 'query', 'query-label', 'query-help', 'case', 'evidence', 'kind', 'filters', 'cards', 'status', 'empty', 'more', 'error', 'source-note', 'scope-note', 'guide-suggestions', 'guide-cards', 'case-field', 'kind-field', 'evidence-field', 'detail', 'detail-origin', 'detail-content', 'close-detail'];
   for (const id of ids) nodes.set(id, new Node(['collection', 'case', 'evidence', 'kind'].includes(id) ? 'select' : 'div'));
   for (const id of ['case', 'evidence', 'kind']) { const option = new Node('option'); option.value = ''; nodes.get(id).append(option); }
   nodes.get('collection').value = 'patterns';
@@ -197,7 +251,8 @@ async function browserHarness({ missingPortfolio = false } = {}) {
     return { ok: true, json: async () => ({ 'catalog.json': catalog, 'site-index.json': sites, 'portfolio-index.json': index })[name] };
   };
   await vm.runInNewContext(`(async () => {${source}})()`, { document, URL, fetch,
-    rankReferences: api.rankReferences, validateCatalog: value => value, validateSiteIndex: api.validateSiteIndex, rankSites: api.rankSites });
+    rankReferences: api.rankReferences, validateCatalog: value => value, validateSiteIndex: api.validateSiteIndex,
+    rankSites: api.rankSites, suggestSiteCases: api.suggestSiteCases });
   return { nodes, document, change(id, value) { nodes.get(id).value = value; nodes.get(id).listeners[id === 'query' ? 'input' : 'change'](); } };
 }
 const descend = node => [node, ...node.children.flatMap(child => typeof child === 'string' ? [] : descend(child))];
@@ -233,4 +288,35 @@ test('a missing portfolio inventory does not disable sites or patterns', async (
   assert.match(page.nodes.get('status').textContent, /Portfolio index unavailable/);
   page.change('collection', 'sites'); assert.match(page.nodes.get('status').textContent, /^202 websites/);
   page.change('collection', 'patterns'); assert.match(page.nodes.get('status').textContent, /^20 patterns/);
+});
+
+test('browser separates guide suggestions from identity results and makes candidate browsing explicit', async () => {
+  const page = await browserHarness();
+  page.change('collection', 'portfolios');
+  page.change('query', 'motion');
+  assert.equal(page.nodes.get('cards').children.length, 0);
+  const guides = page.nodes.get('guide-cards');
+  assert.ok(guides.children.length > 0);
+  const browse = descend(guides).find(node => node.tag === 'button' && node.textContent.startsWith('Browse candidates for: '));
+  assert.ok(browse);
+  const guide = api.suggestSiteCases(index, { query: 'motion' })[0].case;
+  assert.equal(browse.textContent, `Browse candidates for: ${guide.name}`);
+  browse.listeners.click();
+  assert.equal(page.nodes.get('query').value, '');
+  assert.equal(page.nodes.get('case').value, guide.id);
+  assert.equal(page.document.activeElement, page.nodes.get('case'));
+  assert.match(page.nodes.get('status').textContent, /^2079 portfolios/);
+  assert.match(page.nodes.get('scope-note').textContent, /not confirmed features/i);
+  assert.equal(guides.children.length, 0);
+  page.change('query', 'motion');
+  assert.ok(guides.children.length > 0);
+  page.change('query', 'xyzunmatchable');
+  assert.equal(guides.children.length, 0);
+  page.change('query', 'motion');
+  page.change('query', '!!!');
+  assert.equal(guides.children.length, 0);
+  assert.equal(page.nodes.get('cards').children.length, 0);
+  page.change('query', 'motion');
+  page.change('collection', 'patterns');
+  assert.equal(guides.children.length, 0);
 });

@@ -9,8 +9,8 @@ metadata:
 
 ## When to use
 
-- Use for transitions, gestures, control responses, visual narrative or continuity/performance defects.
-- Do not use to hide latency, replace actual progress or add effects to a request that does not need motion.
+- Use for the default motion layer of new interactive designs, transitions, gestures, control responses, visual narrative or continuity/performance defects.
+- Do not use to hide latency, replace actual progress or expand a local correction into a motion redesign.
 
 This module guides the agent reading it; it does not execute animations or call other modules.
 Preserve the brand, stack, interaction and platform expectations.
@@ -21,6 +21,8 @@ Preserve the brand, stack, interaction and platform expectations.
 - Runtime, existing mechanism, devices/targets and expected behavior without motion.
 
 ## Procedure
+
+For a new interactive design, apply [default motion](../../references/motion.md#default-motion-for-new-interactive-designs): coordinated hover/press, supported theme transitions, context-appropriate scroll treatment, and state/panel feedback. Respect explicit static requests and reduced motion. The default is purposeful implementation, not a requirement to animate every element or add 3D.
 
 For a film, teaser or animated deck, follow [films and rendered sequences](../../references/motion.md#films-and-rendered-sequences): composition, timing, audio when requested and final file. The gesture/interruption steps below apply to interactive interfaces; do not confuse them with editing a timeline. A local correction in an approved film does not require rebuilding its storyboard.
 
