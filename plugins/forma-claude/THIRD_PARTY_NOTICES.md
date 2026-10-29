@@ -41,3 +41,32 @@ A edição comunitária exclui blocos literais de CSS extraídos de terceiros, p
 ## Perfis de observação
 
 `desktop-material-reference-v1.json` registra observações de uma aplicação desktop 0.19.0. `library-colors.js` é uma implementação independente informada por essa paleta e por parâmetros observados; esses parâmetros não são apresentados como criação visual inédita da Forma. A identidade e os artefatos originais permanecem no arquivo de autoria e não integram a distribuição pública. O perfil público mantém medidas estruturadas e exclui dumps de CSS e expressões CSS literais. Observar uma referência não constitui licença para redistribuir seu código ou sua identidade, nem indica afiliação ou endosso.
+
+
+## Taste Skill
+
+A síntese de direção específica, argumento por seção, rotas de página/app e crítica renderizada foi informada por [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), snapshot12af471f627f866411b4bd785b19646d3672784c. O [mapeamento](references/taste-study.md) registra adaptações e limites. Não incorporamos seus scripts, catálogos, screenshots, fontes ou imagens. Seus ativos externos mantêm licenças próprias. Preservamos o aviso da fonte:
+
+```text
+MIT License
+
+Copyright (c) 2026 Leonxlnx
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```

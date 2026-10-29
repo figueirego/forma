@@ -2,7 +2,7 @@
 name: forma
 description: "Coordenar especialistas de design para criar, refinar, adaptar ou auditar interfaces, sistemas visuais e materiais de marca. Seleciona por caso a skill interna de interface, cores/layout, produto, 3D, grafos, movimento, plataforma, marca, referência, handoff ou validação. Use também para reaplicar componentes aprovados em outro projeto; não para backend isolado."
 metadata:
-  version: 1.23.0
+  version: 1.24.0
 ---
 
 # Forma

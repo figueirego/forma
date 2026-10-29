@@ -2,7 +2,7 @@
 name: forma-brand
 description: "Criar ou adaptar identidade, campanhas, landing pages, peças gráficas e materiais de marketing com mensagem, canal e exportação definidos. Use para comunicação de marca; não para aplicar estética promocional a fluxos operacionais sem motivo."
 metadata:
-  version: 1.20.0
+  version: 1.24.0
 ---
 
 # Marca e comunicação
@@ -15,6 +15,8 @@ metadata:
 Este módulo orienta o agente após leitura; não publica, compra mídia ou chama outros módulos automaticamente.
 Preserve identidade aprovada, stack do destino e escopo dos canais solicitados.
 
+Classifique a superfície antes da direção: página de comunicação organiza leitura, argumento e ação; tela operacional organiza uma tarefa recorrente, dados e estados e segue [Interface](../interface/SKILL.md). Numa landing que mostra o produto, a página segue Marca e os fragmentos internos seguem Interface: mesma identidade, nomes, unidades e estados coerentes. Não simule uma integração funcional com barras e números decorativos.
+
 ## Entradas
 
 - Objetivo, público, oferta/mensagem, ação desejada, canais e formatos pedidos.
@@ -23,9 +25,9 @@ Preserve identidade aprovada, stack do destino e escopo dos canais solicitados.
 ## Procedimento
 
 1. Fixe mensagem, argumento comprovável, voz e ação; diferencie identidade existente de redesign autorizado.
-   Leia [marca e marketing](../../references/brand-marketing.md) e o playbook de campanha em [playbooks](../../references/playbooks.md).
+   Leia [marca e marketing](../../references/brand-marketing.md) e o playbook de campanha em [playbooks](../../references/playbooks.md). Para uma página nova, relacione cada seção à afirmação, prova disponível, conteúdo, asset e ação; não preencha lacunas com clientes, números ou depoimentos inventados.
 2. Relacione cada peça a canal, dimensão, mensagem, asset, destino e requisito de exportação.
-   Se a direção estiver aberta, use [direções e comparação](../../references/design-directions.md); compare propostas com conteúdo e condições equivalentes.
+   Se a direção estiver aberta, use [direções e comparação](../../references/design-directions.md): inventarie fatos próprios do sujeito e ligue o conceito a eles. Teste se apenas trocar o nome por um concorrente deixaria a ideia igual; compare alternativas com conteúdo e condições equivalentes, sem sorteio obrigatório. Não reabra identidade aprovada para uma correção local.
 3. Produza no formato útil ao pedido: peça editável, página implementada ou material de apresentação.
    Leia [artefatos e edição](../../references/artifact-workflows.md); para campanha 2.5D/3D, [web imersiva](../../references/immersive-web-tech.md), sem impor uma stack pela referência.
    Em restyle, preserve o contrato editorial; em filme ou deck animado, use a [produção temporal](../../references/motion.md#filmes-e-sequências-renderizadas). O pacote de identidade do projeto reúne fatos aprovados, não as preferências da ferramenta de geração.

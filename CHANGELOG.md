@@ -1,5 +1,13 @@
 # Histórico
 
+## 1.24.0 — direção específica e crítica contextual
+
+- Estudo do Taste2.1.5 com snapshot, mapa fonte→decisão→destino, atribuição MIT e limites de execução.
+- Inventário do projeto, conceito verificável e estrutura de conteúdo por pergunta, argumento e prova.
+- Rotas distintas para landing, tela operacional e fragmento de app; dados e identidade coerentes entre os três.
+- Crítica de composição e substância, saída de build e cenas por progresso com alternativas acessíveis.
+- Oito cenários adicionais de decisão; preservação dos mecanismos aprovados, sem importar bans estéticos, cotas ou dependências.
+
 ## 1.23.0 — distribuições para outros assistentes
 
 - Plugin para Claude Code com catálogo próprio e invocações `/forma:forma`, preservando o plugin do Codex.
