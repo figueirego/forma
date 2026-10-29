@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Referências · Forma</title>
+  <link rel="stylesheet" href="reference-browser.css">
+  <script type="module" src="reference-browser.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="https://github.com/figueirego/forma" aria-label="Forma no GitHub"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 3h7v26H3zm10 0h16v7H13zm0 10h12v7H13z"/></svg>Forma</a>
+    <span>Biblioteca de referências</span>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow">DA REFERÊNCIA À DECISÃO</p>
+      <h1 id="title">Um ponto de partida.<br>Um projeto com identidade.</h1>
+      <p>Explore composições, mecanismos e casos de uso. Leia a origem e os limites antes de adaptar ao seu projeto.</p>
+    </section>
+    <form id="filters" role="search" aria-label="Filtrar referências">
+      <div class="field query"><label for="query">O que você quer criar?</label><input id="query" type="search" placeholder="Sidebar, typography, perfil…" autocomplete="off"></div>
+      <div class="field"><label for="origin">Origem</label><select id="origin"><option value="">Todas</option><option value="forma">Forma</option><option value="taste">Estudo Taste</option></select></div>
+      <div class="field"><label for="kind">Contexto</label><select id="kind"><option value="">Todos</option></select></div>
+    </form>
+    <div class="result-line"><p id="status" role="status" aria-live="polite">Carregando catálogo…</p><p>Fichas documentais · seleção local</p></div>
+    <div id="error" role="alert" hidden></div>
+    <div id="cards" class="cards"></div>
+    <p id="empty" hidden>Nenhuma referência corresponde aos filtros. Tente outro termo ou amplie o contexto.</p>
+    <button id="more" type="button" hidden>Mostrar mais referências</button>
+    <aside class="note"><strong>Inspiração com contexto.</strong> As fichas externas são registros históricos do estudo Taste, sem capturas incluídas nem visita ao vivo nesta consulta. As fichas Forma distinguem código, exemplos e contratos. Uma referência não transfere direitos sobre os assets do site.</aside>
+  </main>
+  <dialog id="detail" aria-labelledby="detail-title">
+    <header class="detail-head"><span id="detail-origin"></span><button id="close-detail" type="button" aria-label="Fechar ficha" autofocus>Fechar <span aria-hidden="true">×</span></button></header>
+    <div id="detail-content"></div>
+  </dialog>
+  <footer>Forma · From intent to craft. <a href="../references/reference-library.md">Guia de uso e limites</a></footer>
+</body>
+</html>

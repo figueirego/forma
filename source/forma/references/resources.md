@@ -4,6 +4,8 @@ Consulte quando precisar reutilizar um asset ou executar um verificador. Os cami
 
 ## Disponibilidade
 
+**Consulta executável:** a [biblioteca de referências](reference-library.md) inclui catálogo com procedência, `scripts/references.mjs` para seleção local e [página de consulta](../assets/reference-browser.html). `scripts/media.mjs` pesquisa coleções abertas e baixa somente um resultado explicitamente escolhido, com recibo/créditos e limites de rede/arquivo. Consulta local precisa de Node 18+; mídia de Node 22+ e rede. Não instala Taste nem incorpora os assets dos sites catalogados. O guia descreve comandos, opções, coleta pelo navegador do host e limites.
+
 **Código portável disponível:** `BookObject`, helper de cores `assets/library-colors.js` e [base de interface limpa](clean-shell.md), com CSS encapsulado e exemplo HTML/JS funcional. A base fornece composição e controles demonstráveis; rotas, dados e ciclo de vida devem ser integrados na stack escolhida. **Contratos a implementar:** editor completo de aparência e iluminação e perfil material. Não confundir o tema do exemplo com o editor de pools. Reutilize os componentes existentes do projeto e implemente somente o que faltar.
 
 **Conhecimento documentado:** [passaporte articulado](passport-polish-case-study.md), com manifesto de revisão e lições de geometria/material/desempenho. O código do passaporte permanece no consumidor e não é um novo componente exportado pela skill.

@@ -2,7 +2,7 @@
 name: forma-brand
 description: "Criar ou adaptar identidade, campanhas, landing pages, peças gráficas e materiais de marketing com mensagem, canal e exportação definidos. Use para comunicação de marca; não para aplicar estética promocional a fluxos operacionais sem motivo."
 metadata:
-  version: 1.24.0
+  version: 1.25.0
 ---
 
 # Marca e comunicação
@@ -29,6 +29,7 @@ Classifique a superfície antes da direção: página de comunicação organiza 
 2. Relacione cada peça a canal, dimensão, mensagem, asset, destino e requisito de exportação.
    Se a direção estiver aberta, use [direções e comparação](../../references/design-directions.md): inventarie fatos próprios do sujeito e ligue o conceito a eles. Teste se apenas trocar o nome por um concorrente deixaria a ideia igual; compare alternativas com conteúdo e condições equivalentes, sem sorteio obrigatório. Não reabra identidade aprovada para uma correção local.
 3. Produza no formato útil ao pedido: peça editável, página implementada ou material de apresentação.
+   Para comparar exemplos ou buscar imagens de acervo, use [biblioteca de referências e mídia](../../references/reference-library.md). Selecione pelo argumento/conteúdo real; preserve origem, licença e limites e não faça downloads sem seleção explícita.
    Leia [artefatos e edição](../../references/artifact-workflows.md); para campanha 2.5D/3D, [web imersiva](../../references/immersive-web-tech.md), sem impor uma stack pela referência.
    Em restyle, preserve o contrato editorial; em filme ou deck animado, use a [produção temporal](../../references/motion.md#filmes-e-sequências-renderizadas). O pacote de identidade do projeto reúne fatos aprovados, não as preferências da ferramenta de geração.
 4. Adapte composição e copy aos canais autorizados, conservando hierarquia e coerência com o destino.

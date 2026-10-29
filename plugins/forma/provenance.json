@@ -1,5 +1,5 @@
 {
-  "version": "1.24.0",
+  "version": "1.25.0",
   "source": "canonical Forma skill",
   "transformations": [
     "Flatten skill directories",
@@ -17,14 +17,14 @@
     {
       "source": "SKILL.md",
       "packaged": "skills/forma/SKILL.md",
-      "source_sha256": "9beaddcb2b546c831d041d35eea53d4e61a7ad0186528e2e8cb3611c6292bf8a",
-      "packaged_sha256": "84727ad8e7ee893c4acfbd4f05c04133d915fb084564f3303ff1ec9e51283589"
+      "source_sha256": "a742ba6521051fd6d1cff432d3f4e8fd2f611cbccbc200da538208b19f32bd8b",
+      "packaged_sha256": "25f16c0719625928181811193f9d794440d4b0becf25e6845c4cd145698ffae6"
     },
     {
       "source": "THIRD_PARTY_NOTICES.md",
       "packaged": "THIRD_PARTY_NOTICES.md",
-      "source_sha256": "a80bc440407a4d9f51de73bd363c4b04b231dfa7c346771bd02dd31cf65d9634",
-      "packaged_sha256": "a80bc440407a4d9f51de73bd363c4b04b231dfa7c346771bd02dd31cf65d9634"
+      "source_sha256": "e93f617f438ffd679ba59b0e43fff8c7db4be1f45f818a3cdf47f55bfcbdb1ab",
+      "packaged_sha256": "e93f617f438ffd679ba59b0e43fff8c7db4be1f45f818a3cdf47f55bfcbdb1ab"
     },
     {
       "source": "agents/openai.yaml",
@@ -195,6 +195,30 @@
       "packaged_sha256": "4a1a4042e60d042f920d17e1bf65226cfcf9e9eec84c5c3c0380aaea58f8628f"
     },
     {
+      "source": "assets/reference-browser.css",
+      "packaged": "assets/reference-browser.css",
+      "source_sha256": "40a9200caef63f86571fbaa5b0fb2cf44b5475353d255edca7e3366c904b3b84",
+      "packaged_sha256": "40a9200caef63f86571fbaa5b0fb2cf44b5475353d255edca7e3366c904b3b84"
+    },
+    {
+      "source": "assets/reference-browser.html",
+      "packaged": "assets/reference-browser.html",
+      "source_sha256": "c7365212e6d999bb0cd9ff53a951981169b0a57ef36d83b62c5f9aee6f7e5ad9",
+      "packaged_sha256": "c7365212e6d999bb0cd9ff53a951981169b0a57ef36d83b62c5f9aee6f7e5ad9"
+    },
+    {
+      "source": "assets/reference-browser.js",
+      "packaged": "assets/reference-browser.js",
+      "source_sha256": "e7eb2943116062a8628c4f3b5042b7df6bce9b261c390e4a58d62f0b39343a0f",
+      "packaged_sha256": "e7eb2943116062a8628c4f3b5042b7df6bce9b261c390e4a58d62f0b39343a0f"
+    },
+    {
+      "source": "assets/reference-library/catalog.json",
+      "packaged": "assets/reference-library/catalog.json",
+      "source_sha256": "4027adaaa33b2f1b6a9da8f9cb0892e02f2de26ea846597568c3eb09d452f923",
+      "packaged_sha256": "4027adaaa33b2f1b6a9da8f9cb0892e02f2de26ea846597568c3eb09d452f923"
+    },
+    {
       "source": "assets/reference-profiles/compact-appearance-v1.fidelity.json",
       "packaged": "assets/reference-profiles/compact-appearance-v1.fidelity.json",
       "source_sha256": "6676c87a8a19960788d56c4629c2575980983fa8e877c391d3e9c048ee65d538",
@@ -239,8 +263,8 @@
     {
       "source": "evals/routing-scenarios.md",
       "packaged": "evals/routing-scenarios.md",
-      "source_sha256": "f557c9e5cbdb00f4dfe1a70435d2ab33acef4de12e37016a29f92d3bbd046d52",
-      "packaged_sha256": "f557c9e5cbdb00f4dfe1a70435d2ab33acef4de12e37016a29f92d3bbd046d52"
+      "source_sha256": "94c678a2a553f0f3b9f135a2da1f6606ec415d06137d9807bfaeca0aa3cfc773",
+      "packaged_sha256": "94c678a2a553f0f3b9f135a2da1f6606ec415d06137d9807bfaeca0aa3cfc773"
     },
     {
       "source": "evals/scenarios.md",
@@ -447,6 +471,12 @@
       "packaged_sha256": "3c7daac66e7e278f1eedc080c5822e1345c42c55830bf99733b695e1898ab1ca"
     },
     {
+      "source": "references/reference-library.md",
+      "packaged": "references/reference-library.md",
+      "source_sha256": "6e94eea0400ad03e673e7f95214f52e581d0c308015f140b1933e0d41ff03b2f",
+      "packaged_sha256": "98811d364465662bb95056fcb491ab4e4bc50b945acfe6a0c9ef288bb1caa699"
+    },
+    {
       "source": "references/rendered-validation.md",
       "packaged": "references/rendered-validation.md",
       "source_sha256": "49fc3f5653e25eee4853d4dbdee35b15fe22480c499ac3a1451c9bcf3570f0fc",
@@ -461,8 +491,8 @@
     {
       "source": "references/resources.md",
       "packaged": "references/resources.md",
-      "source_sha256": "6b62a837de91e5e9961bec5421a23987624976a44d5cdc0884e00052f62e8df0",
-      "packaged_sha256": "cdd237138ef63bd56b9b998272baa1ced323fe02feb4baa1e4dd1b2f992508d0"
+      "source_sha256": "98ec6ec6e82a852713c2d5bd2e8449b302ba3fb94e1aa2292bb1c30d754aa372",
+      "packaged_sha256": "c1cedbee63bb633d389c3c43d720b54b0574235f2a6ba46d764266404d109000"
     },
     {
       "source": "references/reusable-objects.md",
@@ -491,14 +521,14 @@
     {
       "source": "references/source-use-cases.md",
       "packaged": "references/source-use-cases.md",
-      "source_sha256": "3ec663ef6e1537c643bb637da3f6f140f98c636f7f6c65b6a3a8a292d7419ba3",
-      "packaged_sha256": "3ec663ef6e1537c643bb637da3f6f140f98c636f7f6c65b6a3a8a292d7419ba3"
+      "source_sha256": "ad5915a575c7f01ca7597f1b40ad70c9dfb7cf5829e3ccba420ed90bde274d6b",
+      "packaged_sha256": "ad5915a575c7f01ca7597f1b40ad70c9dfb7cf5829e3ccba420ed90bde274d6b"
     },
     {
       "source": "references/sources.md",
       "packaged": "references/sources.md",
-      "source_sha256": "e89c65e7b13b8083ae3dc7cea7afe19cd8df531f9bb0b989349c49dff9901056",
-      "packaged_sha256": "399a5cb0a88f1798cdaae409e49368c51d88e1f2763ae94a6d9f170b17f0b914"
+      "source_sha256": "51382da4f9e40b7a6f10754f2bb48d0e21ad1056ae9238b02260aa7264c3b9ce",
+      "packaged_sha256": "f521fdc7d18321dec81be2cbe68cce4123e12801899268529632c1534de6325c"
     },
     {
       "source": "references/specialized-surfaces.md",
@@ -509,8 +539,8 @@
     {
       "source": "references/taste-study.md",
       "packaged": "references/taste-study.md",
-      "source_sha256": "660682476b94d9a58b1f4ee57c80ce73f5799769cc109a648e9f5422ea77316d",
-      "packaged_sha256": "2d01f4984645ed50a25dddf62d7447e0ac006dc101b036a1886b180893f93e3b"
+      "source_sha256": "81c37b1d5fa084924aad5f289b9ee60fe791e429785426111f9658c778e97bdb",
+      "packaged_sha256": "de2f528ed124e270c260d878e00028fb5f532eea0daa4031ddad52d41b37f976"
     },
     {
       "source": "references/templates.md",
@@ -585,10 +615,34 @@
       "packaged_sha256": "3f111a227098b34a213b4ae4660bc6db7b78f84812aced9a485d33c14d823785"
     },
     {
+      "source": "scripts/lib/media-network.mjs",
+      "packaged": "scripts/lib/media-network.mjs",
+      "source_sha256": "aacb70ceddb2711e73ab2f85dd042db0c2ac1fa3cb49c01f79d8948d9104b2cb",
+      "packaged_sha256": "aacb70ceddb2711e73ab2f85dd042db0c2ac1fa3cb49c01f79d8948d9104b2cb"
+    },
+    {
+      "source": "scripts/lib/reference-search.mjs",
+      "packaged": "scripts/lib/reference-search.mjs",
+      "source_sha256": "57261bacae12b19b12e0e71595d917321c28cb1a55bae79cc49ddc811cc88269",
+      "packaged_sha256": "57261bacae12b19b12e0e71595d917321c28cb1a55bae79cc49ddc811cc88269"
+    },
+    {
+      "source": "scripts/media.mjs",
+      "packaged": "scripts/media.mjs",
+      "source_sha256": "d741b47a68c7738f654b14327d5a5259e498545eb3c841ef15c2f372008b4444",
+      "packaged_sha256": "d741b47a68c7738f654b14327d5a5259e498545eb3c841ef15c2f372008b4444"
+    },
+    {
+      "source": "scripts/references.mjs",
+      "packaged": "scripts/references.mjs",
+      "source_sha256": "e07e3fa4c13e1397e03149af16ee8aa666522abdf119619675c6f66dc28bd9e4",
+      "packaged_sha256": "e07e3fa4c13e1397e03149af16ee8aa666522abdf119619675c6f66dc28bd9e4"
+    },
+    {
       "source": "skills/brand/SKILL.md",
       "packaged": "skills/forma-brand/SKILL.md",
-      "source_sha256": "5402864643f1d712a5dc3405e1437023a0e9285731e1c1ee0d64ef37db525715",
-      "packaged_sha256": "41e4c06037c9c94a7ee0a0d6bf823960a4c617a1a71cae7411bb0028e852aa7e"
+      "source_sha256": "8d1ce6398feab90934300f5c94ad41c8dc14db73a1b97aa56222733af98df8dc",
+      "packaged_sha256": "54b32ec3bb0c4b6eb4fe7ccd5593a2a85b165db75df7826d48119725646b403f"
     },
     {
       "source": "skills/brand/agents/openai.yaml",
@@ -695,8 +749,8 @@
     {
       "source": "skills/reference/SKILL.md",
       "packaged": "skills/forma-reference/SKILL.md",
-      "source_sha256": "6ab290813004559df8c4b15350d4a87a2c6f63209bf8f105c4bda020bb28c1e3",
-      "packaged_sha256": "6ab290813004559df8c4b15350d4a87a2c6f63209bf8f105c4bda020bb28c1e3"
+      "source_sha256": "d67a0d966400578da29e428aa753dfb9118c9a39b2cfcef222b8c9efb7106b3e",
+      "packaged_sha256": "d67a0d966400578da29e428aa753dfb9118c9a39b2cfcef222b8c9efb7106b3e"
     },
     {
       "source": "skills/reference/agents/openai.yaml",
@@ -739,6 +793,18 @@
       "packaged": "tests/library-colors.test.cjs",
       "source_sha256": "ebe64c648d140fb75f34290062f277cc5c19554e048b0f5d2e42aeb3e4d870da",
       "packaged_sha256": "ebe64c648d140fb75f34290062f277cc5c19554e048b0f5d2e42aeb3e4d870da"
+    },
+    {
+      "source": "tests/media.test.cjs",
+      "packaged": "tests/media.test.cjs",
+      "source_sha256": "eeef43644823bbe826285fba195ad9aa38f8402964e960c73be40be885ae59c9",
+      "packaged_sha256": "eeef43644823bbe826285fba195ad9aa38f8402964e960c73be40be885ae59c9"
+    },
+    {
+      "source": "tests/references.test.cjs",
+      "packaged": "tests/references.test.cjs",
+      "source_sha256": "63f9ba614b6f367c05740cb21ccd041201623e065d981ea93df0d1e5df700d55",
+      "packaged_sha256": "63f9ba614b6f367c05740cb21ccd041201623e065d981ea93df0d1e5df700d55"
     },
     {
       "source": "tests/test_check_fidelity.py",

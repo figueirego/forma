@@ -45,7 +45,7 @@ A edição comunitária exclui blocos literais de CSS extraídos de terceiros, p
 
 ## Taste Skill
 
-A síntese de direção específica, argumento por seção, rotas de página/app e crítica renderizada foi informada por [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), snapshot12af471f627f866411b4bd785b19646d3672784c. O [mapeamento](references/taste-study.md) registra adaptações e limites. Não incorporamos seus scripts, catálogos, screenshots, fontes ou imagens. Seus ativos externos mantêm licenças próprias. Preservamos o aviso da fonte:
+A síntese de direção específica, argumento por seção, rotas de página/app e crítica renderizada foi informada por [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill), snapshot12af471f627f866411b4bd785b19646d3672784c. O [mapeamento](references/taste-study.md) registra adaptações e limites. Na versão 1.25.0, `assets/reference-library/catalog.json` também incorpora os 202 registros de `library/sites.json`, preservando os campos do snapshot e acrescentando metadados de uso/evidência. `provenance.taste` identifica origem, revisão e hash do arquivo de entrada. Os utilitários da Forma são implementações próprias. Não redistribuímos screenshots, fontes, imagens ou código dos sites; esses ativos externos mantêm licenças próprias. Preservamos o aviso da fonte:
 
 ```text
 MIT License

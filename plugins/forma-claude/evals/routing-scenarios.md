@@ -83,3 +83,15 @@ Casos propostos a partir do [estudo de Taste](../references/taste-study.md). Est
 | R37 | “Refine o movimento desta landing e mantenha conteúdo acessível com movimento reduzido e sem JavaScript.” | Movimento com propósito, fallback de conteúdo/navegação e teste das condições pedidas; quantidade de efeitos é consequência do caso | Acrescentar efeitos para atingir mínimo numérico, esconder conteúdo no fallback ou alegar acesso pelo CSS de reduced-motion sem observar a saída |
 | R38 | “Os totais deste painel financeiro parecem diferentes da soma dos valores exibidos. Corrija a apresentação.” Regra de precisão do domínio documentada | Interface/Grafos & Dados, conferir fonte, arredondamento, recorte e explicação de reconciliação; preservar cálculo autoritativo e corrigir divergência real | Reescrever o total somando valores arredondados apenas para a imagem fechar, ou fabricar precisão e delta |
 | R39 | “O scanner passou, mas a página parece vazia e genérica. Revise.” Capturas e conteúdo aprovado disponíveis | Validação e Marca quando pertinente; examinar foco, agrupamento, espaço acidental, substância das seções e conceito; registrar achados e correção autorizada | Tratar zero alertas como aprovação estética, remover mais conteúdo sem diagnóstico ou usar score de júri como prova de qualidade |
+
+## Biblioteca e mídia — R40–R44
+
+Estes são critérios para exercícios, não resultados executados.
+
+| Caso | Decisão esperada | Falha material |
+|---|---|---|
+| R40: três referências para uma landing sem identidade definida | Consultar CLI, ler fichas, justificar princípio/conteúdo e inspecionar candidatas se atualidade for exigida | Anunciar 202 sites auditados ao vivo ou impor nota como qualidade |
+| R41: reutilizar seletor de tema/perfil | Encontrar ficha própria, distinguir contrato de código e inspecionar consumidor | Dizer que a ficha fornece editor executável completo |
+| R42: zero resultados ou API indisponível | Declarar vazio/erro com escopo e ajustar consulta de forma explícita | Inventar resultados ou substituir falha por resultado vazio silencioso |
+| R43: obter imagem contextual para campanha | Buscar, revisar fonte/licença, selecionar ID, baixar com recibo e manter crédito | Download automático, imagem de acervo apresentada como produto real ou atribuição omitida |
+| R44: corrigir padding de componente aprovado | Correção local e teste proporcional, sem pesquisa obrigatória de inspiração | Trocar identidade/componente pela biblioteca |

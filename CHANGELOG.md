@@ -1,5 +1,13 @@
 # Histórico
 
+## 1.25.0 — Reference library and attributed media
+
+- Added the pinned Taste catalog of 202 site records and eight Forma resource cards, with explicit code/contract and historical-evidence boundaries.
+- Added a contextual local selector, optional deterministic tie-breaking, saved boards, and an accessible browser for the catalog.
+- Added open-collection media search and explicit selected-result downloads with bounded requests, attribution receipts, and provider failure reporting.
+- Connected Reference/Brand routing, source rights, live-capture procedure, and regression scenarios; regenerated all assistant distributions.
+
+
 ## 1.24.0 — direção específica e crítica contextual
 
 - Estudo do Taste2.1.5 com snapshot, mapa fonte→decisão→destino, atribuição MIT e limites de execução.

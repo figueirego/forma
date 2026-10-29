@@ -8,7 +8,7 @@ Leia para manter esta integração, escolher apoio externo ou rastrear uma regra
 - Skill publicada no snapshot: `design-taste-frontend`, em `skills/taste-skill/SKILL.md`. Não confundir com versões antigas de mesmo nome instaladas localmente; os conjuntos clássicos migraram para outros repositórios, não auditados nesta rodada.
 - Método: ECC `research-ops` para fonte/limites, `design-system` para sobreposição e `skill-stocktake` para utilidade/escopo; REA v49 orienta análise normal de fonte para repositório completo. Não foi necessário executar motor de binários ou instrumentar um app.
 - Cobertura: entrada, referências de design, inventário das bibliotecas, implementação dos scripts/helpers/assets e configuração de testes/distribuição. Mapeamento por família e mecanismo; não é inspeção visual dos sites catalogados nem reprodução integral dos experimentos do autor.
-- Licença de código/documentação: MIT, Copyright (c) 2026 Leonxlnx. A Forma incorpora uma síntese contextualizada, não o runtime, os catálogos completos, fotografias, marcas ou screenshots. Aviso preservado em [atribuições](../THIRD_PARTY_NOTICES.md).
+- Licença de código/documentação: MIT, Copyright (c) 2026 Leonxlnx. A Forma 1.24 incorporou uma síntese contextualizada. A versão 1.25 acrescenta os 202 registros do catálogo de sites, com proveniência, e utilitários próprios de consulta/mídia; não inclui o runtime Taste, fotografias, marcas ou screenshots. Aviso preservado em [atribuições](../THIRD_PARTY_NOTICES.md).
 
 ## Fonte → decisão → uso na Forma
 
@@ -27,16 +27,16 @@ Os caminhos da coluna Fonte são relativos ao snapshot acima. “Aplicado” des
 | `references/motion.md`, `library/motions.json` | Movimento com assinatura, feedback, continuidade e alternativa reduzida | **Já coberto:** [motion](motion.md); sem mínimo obrigatório de elementos animados |
 | `references/scenes.md`, `assets/scenes/stage.*`, `scripts/scenes.mjs` | Cenas por progresso, fallback, inspeção ao longo da rolagem | **Adaptado:** [motion](motion.md#cenas-vinculadas-à-rolagem); não importar dependências, catálogo prometido ou uma cena não presente no snapshot |
 | `references/critique.md`, `references/tells.md` | Olhar composição, substância e identidade; priorizar correções | **Adaptado:** [crítica renderizada](rendered-validation.md#crítica-de-composição-e-substância); maior impacto primeiro, sem certificado por nota estética |
-| `scripts/draw.mjs`, `scripts/lib/app-draw.mjs` e `library/directions.json` | Direções com seed, restrições de assets, histórico e reapresentação da escolha | **Opcional externo:** explorar só se direção estiver aberta; registrar escolha e motivo. Forma não inclui nem executa sorteador |
+| `scripts/draw.mjs`, `scripts/lib/app-draw.mjs` e `library/directions.json` | Direções com seed, restrições de assets, histórico e reapresentação da escolha | **Opcional externo:** explorar só se direção estiver aberta; registrar escolha e motivo. Forma não inclui o sorteador de estilo Taste; a versão 1.25 oferece seleção contextual de referências, com seed opcional apenas para desempates |
 | `scripts/lint.mjs`, `scripts/inspect.mjs`, `scripts/lib/probe.mjs`, `scripts/lib/rules.mjs` | Lint de fonte, observações de DOM/CSS e capturas por viewport/scroll | **Adaptado como método:** [validação renderizada](rendered-validation.md); separar heurística de defeito e confirmar a versão final servida |
 | `scripts/lib/cdp.mjs`, `scripts/lib/inspection-files.mjs` | Browser isolado, perfil temporário, nomes de arquivos sem colisão | **Não portado:** usar ferramentas suportadas pelo host; não criar segundo driver sem necessidade |
-| `references/research.md`, `library/sites.json`, `evals/evals.json` | Estudo editorial e comparação com baseline por julgadores | **Mapeado, sem herdar resultados:** cenários [R32–R39](../evals/routing-scenarios.md) e protocolo existente; notas de modelo não são teste de usuário |
+| `references/research.md`, `library/sites.json`, `evals/evals.json` | Estudo editorial e comparação com baseline por julgadores | **Catálogo de sites incorporado na 1.25 com proveniência, sem herdar resultados:** cenários [R32–R39](../evals/routing-scenarios.md) e protocolo existente; notas de modelo não são teste de usuário |
 | `assets/base.css`, `assets/base.js` | Reset/tokens/motion helpers de partida | **Não copiados:** Forma já possui base e contratos; preservar estilos/stack do consumidor |
 | `README.md`, `install.sh`, manifestos, `.github/workflows/*`, `tests/*`, `examples/v2/*` | Instalação, pacotes, validações e exemplos com créditos | **Mapeado:** [operação](plugin-operation.md) já separa descoberta, pacote, agente e consumidor; instalador e exemplos externos não executados/importados |
 
 ## O que o código comprova e o que não comprova
 
-O inventário do snapshot contém 20 direções, 56 paletas, 44 entradas de tipo, 58 heroes, 185 composições de seção, 18 movimentos e 202 registros de sites. `app.json` inclui 7 estilos, 5 shells e 25 padrões. Esses totais descrevem arquivos, não opções integradas à Forma nem garantia de qualidade.
+O inventário do snapshot contém 20 direções, 56 paletas, 44 entradas de tipo, 58 heroes, 185 composições de seção, 18 movimentos e 202 registros de sites. `app.json` inclui 7 estilos, 5 shells e 25 padrões. Esses totais descrevem o snapshot upstream. A Forma 1.25 distribui os 202 registros de sites acrescidos de suas fichas próprias, não os demais catálogos de direção/paleta/tipo; nenhum total garante qualidade.
 
 O README descreve estudo de 247 sites; não confundir essa amostra alegada com os 202 registros da biblioteca distribuída. A pesquisa explicita seleção por galerias, avaliações de modelos e limitações de screenshots/WebGL. O estudo de apps declara 23 telas desktop de 17 produtos, sem telas mobile/loading/erro e com cobertura limitada de settings; screenshots privados não permitem reproduzi-lo integralmente no clone. Regras extrapoladas são heurísticas da fonte.
 
@@ -55,3 +55,7 @@ O stage usa GSAP/ScrollTrigger, com SplitText e Lenis opcionais. `charts.js` des
 No snapshot e com Node 24.12.0: seis testes de limpeza/ownership de perfis e nomes de screenshots passaram; checagem de encoding passou; treze arquivos JS/MJS passaram em `node --check`. O teste de frontmatter ficou **não executado por completo** por ausência de `yaml@2.6.1`; essa dependência não foi instalada. Não foram executados navegador, pesquisa/download de mídia, cenas, instalação ou os dez casos de agente presentes em `evals/evals.json`.
 
 A CI da fonte exercita metadados, encoding, sintaxe e aqueles seis testes; não executa os dez evals de design. Testes da distribuição Forma e avaliações de decisão da versão resultante têm recibos próprios. Nenhuma contagem acima comprova que uma nova interface ficará correta sem execução e inspeção no consumidor.
+
+## Biblioteca executável — 1.25.0
+
+A [biblioteca e pesquisa de mídia](reference-library.md) descreve o catálogo distribuído, seleção por contexto, página de consulta, APIs de mídia e coleta pelo navegador do host. Referências externas permanecem registros históricos, sem captura incluída ou visita atual presumida. Scripts próprios não herdam bans de estilo, sorteio obrigatório, quotas ou notas como aprovação.
