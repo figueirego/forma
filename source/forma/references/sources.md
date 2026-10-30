@@ -18,6 +18,7 @@ Use this map to locate Forma's implementation, contracts, reference collections 
 | Identity, campaigns and editorial pages | Brand | [Brand and marketing](brand-marketing.md), [directions](design-directions.md) |
 | Sites, portfolios and fidelity investigation | Reference | [Library](reference-library.md), [experience protocol](experience-library.md) |
 | Regression, accessibility and rendered acceptance | Validation | [Verification](verification.md), [rendered validation](rendered-validation.md) |
+| Clean PDF guides, cards and comparison tables | Brand, with Foundations and Handoff | [Clear PDF guide](clear-pdf-guides.md), [print specimen](../assets/clear-pdf-guide.html) |
 | Editable sources, exports and delivery | Handoff | [Artifact workflows](artifact-workflows.md), [tokens and handoff](tokens-handoff.md) |
 
 ## Approved component mechanisms

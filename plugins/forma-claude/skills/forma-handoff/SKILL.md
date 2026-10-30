@@ -29,7 +29,7 @@ Preserve the existing brand, stack, IDs and source of truth; deliver the format 
 3. For tokens/components, read [tokens and handoff](../../references/tokens-handoff.md).
    Map roles, aliases, modes, consumers and exceptions; example JSON has its own format and does not imply compliance with another pipeline.
 4. When transferring a capability, follow reuse in [playbooks](../../references/playbooks.md).
-   Connect implementation, events, state, assets and lifecycle to the consumer. BookObject/the helper are code; the clean shell has a demo; the editor/profile are contracts to implement.
+   Connect implementation, events, state, assets and lifecycle to the consumer. BookPreset, AppearanceEditor and NeuronPassport have executable modules and integration contracts; the clean shell provides a scoped example. Preserve the approved mechanism and connect the destination's data and persistence adapters.
 5. Open the editable/exported artifact or run the consumer in the destination and inspect the final result.
    Use [rendered validation](../../references/rendered-validation.md) and [verification](../../references/verification.md); validate fonts, assets, sizes, links and states for the format.
    For multiple deliverables, verify each output and its revision against the existing contract. For video, also check [duration, frames and audio](../../references/motion.md#films-and-rendered-sequences); preview, rendered file and confirmed delivery are distinct stages.
@@ -47,3 +47,7 @@ If integration, runtime or an export tool is missing, state the limit; do not co
 Use Forma Foundations for token consistency, Forma Interface for consumer integration, and Forma Validation for rendered and exported acceptance. Use one primary production capability per artifact when sufficient.
 The coordinator selects additional modules; do not recursively dispatch between specialists. Use the available tools according to [capabilities](../../references/integrations.md); a tool name does not prove connection or execution.
 Do not install services, regenerate paid artifacts or publish by default. In-memory contracts and demos do not prove persistence or export in the consumer.
+
+## Clear PDF guides
+
+For clean PDF guides, follow the [clear-guide export contract](../../references/clear-pdf-guides.md#export-and-verification). Brand owns composition; support the actual export, page and text checks. Deliver the requested PDF and available editable source without treating an HTML specimen as a finished PDF.

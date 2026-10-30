@@ -96,6 +96,7 @@ Test the task, focus, extreme content, and affected states. Static/bundle analys
 - "Use $forma to implement the complete lighting editor with pools, save/reopen behavior, and colors by context."
 - "Use $forma to audit this flow; do not edit it yet."
 - "Use $forma to create a campaign and deliver editable files."
+- "Use $forma to create a clean PDF guide with cards and comparison tables. Preserve our branding and facts, deliver the PDF, and inspect every exported page."
 - "Use $forma-motion to refine this interface's animations."
 - "Use $forma-interface to apply the sidebar, clean background, and controls to my app."
 

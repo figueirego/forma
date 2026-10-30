@@ -45,3 +45,7 @@ If rendering access or an identity decision is missing, record the gap and what 
 For composition and controls, use Forma Interface through the coordinator; for color or layout verification, use Forma Validation. Font selection, roles and comparison stay in this module and its visual-system contract.
 The coordinator selects additional modules; do not recursively dispatch between specialists. Use the available tools according to [capabilities](../forma/references/integrations.md); a tool name does not prove connection or execution.
 Do not install supporting tools by default. Example snippets and JSON files are not an already-integrated design system; confirm their use and effect in the destination.
+
+## Clear PDF guides
+
+For clean PDF guides with situation/choice cards, resource tables and short copy, use [clear PDF guides](../forma/references/clear-pdf-guides.md). Adapt the optional profile to the consumer; inspect the exported PDF, not only the source.

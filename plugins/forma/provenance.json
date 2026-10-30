@@ -17,8 +17,8 @@
     {
       "source": "SKILL.md",
       "packaged": "skills/forma/SKILL.md",
-      "source_sha256": "ddd0c3426be0918ad2134041bb69e5f405a277f5f3d4807061d0f217d96e6663",
-      "packaged_sha256": "c86a6d4a6e5acf0babc3d627fd5be3deb3c75df27005ba53f4d344de92abbce2"
+      "source_sha256": "f3e0123d2b0a56f7e72d34b9ffb09fc35f185729215456664bc26fac4260781f",
+      "packaged_sha256": "f4c69d6e9dccede45259d3e47403e289a2ac0056653877013f2e6bbf8f951342"
     },
     {
       "source": "THIRD_PARTY_NOTICES.md",
@@ -109,6 +109,12 @@
       "packaged": "assets/clean-shell.js",
       "source_sha256": "c29b0ef74b33438e147584aef478e4ac58db414c057720ad6072108f8430913c",
       "packaged_sha256": "c29b0ef74b33438e147584aef478e4ac58db414c057720ad6072108f8430913c"
+    },
+    {
+      "source": "assets/clear-pdf-guide.html",
+      "packaged": "assets/clear-pdf-guide.html",
+      "source_sha256": "a08e95fbdab07a2334b9421fc68d24fb8f26a04b633ce653363638a59456dd71",
+      "packaged_sha256": "a08e95fbdab07a2334b9421fc68d24fb8f26a04b633ce653363638a59456dd71"
     },
     {
       "source": "assets/components-lab.css",
@@ -467,8 +473,8 @@
     {
       "source": "evals/scenarios.md",
       "packaged": "evals/scenarios.md",
-      "source_sha256": "e1a24b8bf0bfb60311294017389890101ab7cb2203a17a94094262517e81f6e7",
-      "packaged_sha256": "2bae233a487f7c5df4b9b42867a71e4551a1505183acb4fd56e9f6ade74fbe54"
+      "source_sha256": "bc581321c86f2a52365c21217ca2d3022b96ed805a7d4af06a4d31cd1508034d",
+      "packaged_sha256": "1795a21aa8923adcdc43e3f0c6c78c6452ef5f5cc38aaa2f025a81712861a3e1"
     },
     {
       "source": "references/3d-reference-fidelity.md",
@@ -509,8 +515,8 @@
     {
       "source": "references/artifact-workflows.md",
       "packaged": "references/artifact-workflows.md",
-      "source_sha256": "c340a8e5f4bd444db43a960951bd9b756e60ed469c199a85dca28573f736ee34",
-      "packaged_sha256": "c340a8e5f4bd444db43a960951bd9b756e60ed469c199a85dca28573f736ee34"
+      "source_sha256": "033c731acb08f22f225d8746e8968f2bd78eb25b34d14f35e01141393b567fc3",
+      "packaged_sha256": "033c731acb08f22f225d8746e8968f2bd78eb25b34d14f35e01141393b567fc3"
     },
     {
       "source": "references/authorship.md",
@@ -541,6 +547,12 @@
       "packaged": "references/clean-shell.md",
       "source_sha256": "ed051db37c38629b9656b0b94b340d6278041bea7fa5431f01ff6c36ec90b523",
       "packaged_sha256": "14da76a2a0523df040779af4f26c5d265270c5b825ba3951fa70ce533c9b81b2"
+    },
+    {
+      "source": "references/clear-pdf-guides.md",
+      "packaged": "references/clear-pdf-guides.md",
+      "source_sha256": "b7a3c31c64bf71b014d7b2d49981474584284d76a6e7de021b8049c811f3af31",
+      "packaged_sha256": "b7a3c31c64bf71b014d7b2d49981474584284d76a6e7de021b8049c811f3af31"
     },
     {
       "source": "references/color-refinement.md",
@@ -731,8 +743,8 @@
     {
       "source": "references/routing.md",
       "packaged": "references/routing.md",
-      "source_sha256": "4e151835c60f905d347dd0130e7b3ef6c2021b870ba7d89ac5f11e333017b067",
-      "packaged_sha256": "14a616971e57d71f2002415bc491798e0a8311c5175c1e40340b4f8a338995e9"
+      "source_sha256": "54feb728c31be5f799c6719155ad982422ebd848d9a27a335733e0452a6deda5",
+      "packaged_sha256": "5c98af1b1071a30ed9392c16760248e217b022592434b08c50108e5e0156844f"
     },
     {
       "source": "references/search-discovery.md",
@@ -755,14 +767,14 @@
     {
       "source": "references/source-use-cases.md",
       "packaged": "references/source-use-cases.md",
-      "source_sha256": "6f8e1488465b8b7994d5e2391f2f47d16edb5c356297a473ca35da42e33c51da",
-      "packaged_sha256": "6f8e1488465b8b7994d5e2391f2f47d16edb5c356297a473ca35da42e33c51da"
+      "source_sha256": "b4c31e4464b034e8a9e3ac43413f5bd35d317b693fde66e5a67ee93b9ca6e468",
+      "packaged_sha256": "b4c31e4464b034e8a9e3ac43413f5bd35d317b693fde66e5a67ee93b9ca6e468"
     },
     {
       "source": "references/sources.md",
       "packaged": "references/sources.md",
-      "source_sha256": "d5743be75774b10dfacfef2d8ba38ba265314f2f42572e8fc868a72ed8160e96",
-      "packaged_sha256": "c15e2fae11dc1d91cb6949ec026134c352f3a162f103ee6dd0a4eabedbf2df7c"
+      "source_sha256": "b3483d00e14c7daa6ea953fc48a124b88280f4a60e2b9b72133fe4395b898d7b",
+      "packaged_sha256": "f140bf2aded8b3600194c6a8802be02a570b8d0f92813dc63eb4c6cda037d1cc"
     },
     {
       "source": "references/specialized-surfaces.md",
@@ -869,8 +881,8 @@
     {
       "source": "skills/brand/SKILL.md",
       "packaged": "skills/forma-brand/SKILL.md",
-      "source_sha256": "7e858a7ed4608974a8fe14e1e90b1441de204e0debffd4d80f6d942a33a2b1ba",
-      "packaged_sha256": "0043a2696f1acebf82a9e408a997c4d72e8905e88fc07b2c6bd009b286258846"
+      "source_sha256": "72d8940e4921560bed1863353e1760cef62afc21732cda9a358ef66f32680e7c",
+      "packaged_sha256": "9243e006e9aaf05dec0f119466263e30c19be7000e9d293a24da261c5be34d01"
     },
     {
       "source": "skills/brand/agents/openai.yaml",
@@ -881,8 +893,8 @@
     {
       "source": "skills/foundations/SKILL.md",
       "packaged": "skills/forma-foundations/SKILL.md",
-      "source_sha256": "0d18241b38a61d4e32ed951518c461b5ab4b470e0674cd82bbf2da2cb6328f40",
-      "packaged_sha256": "0d18241b38a61d4e32ed951518c461b5ab4b470e0674cd82bbf2da2cb6328f40"
+      "source_sha256": "293c789d3efd1c20c12af8e32ad8cf5efa40cf662a74d6be83d363065be095bb",
+      "packaged_sha256": "293c789d3efd1c20c12af8e32ad8cf5efa40cf662a74d6be83d363065be095bb"
     },
     {
       "source": "skills/foundations/agents/openai.yaml",
@@ -905,8 +917,8 @@
     {
       "source": "skills/handoff/SKILL.md",
       "packaged": "skills/forma-handoff/SKILL.md",
-      "source_sha256": "ce89d323b2f286304c93e442e6b5fa06cce35e2d4c26c9dd6ee32087ddb2d4cc",
-      "packaged_sha256": "ce89d323b2f286304c93e442e6b5fa06cce35e2d4c26c9dd6ee32087ddb2d4cc"
+      "source_sha256": "bf7de6e4a08fb3df2c37d888ecd7c6c32233de0ebb92a1c8219e62be369f6391",
+      "packaged_sha256": "bf7de6e4a08fb3df2c37d888ecd7c6c32233de0ebb92a1c8219e62be369f6391"
     },
     {
       "source": "skills/handoff/agents/openai.yaml",

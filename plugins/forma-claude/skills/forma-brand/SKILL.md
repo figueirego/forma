@@ -50,3 +50,7 @@ A moodboard does not complete an implemented landing page; an object image does 
 Use Forma Foundations for typography and palette, Forma Motion for sequences, and Forma Handoff for editable production and export. Select a generation or canvas capability only when the deliverable requires it.
 The coordinator selects additional modules; do not recursively dispatch between specialists. Use the available tools according to [capabilities](../../references/integrations.md); a tool name does not prove connection or execution.
 Do not duplicate generations, install providers or publish merely to complete the workflow. The request's authorization determines the permitted external action.
+
+## Clear PDF guides
+
+For clean PDF guides with situation/choice cards, resource tables and short copy, use [clear PDF guides](../../references/clear-pdf-guides.md). Adapt the optional profile to the consumer; inspect the exported PDF, not only the source.
