@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.32.2 - 2026-10-30
+
+- Keep design routing inside Forma's coordinator and eleven specialists. Replace the external skill directory with a capability-based tool contract and a provider-neutral artifact investigation workflow.
+- Align all skill metadata with the package version and reject stale or missing skill versions during package validation.
+- Preserve the approved book/passport mechanisms, reusable refinement contracts, dependencies and source/license records.
+- Limit third-party notices to incorporated reference indexes and rendering dependencies; keep research history separate from presentation.
+- Replace distributed plugin-study diaries with Forma capability, coordination and use-case maps. Preserve approved components and website/portfolio reference data.
+
 ## 1.32.1 - 2026-10-29
 
 - Fix false dirty state in AppearanceEditor after saving first-use, newly added or reset lights. Keep default, draft and persisted records canonical without changing color values, geometry, gestures, gradient generation or styling.

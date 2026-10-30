@@ -1,6 +1,6 @@
 # Modes, themes and settings: an executable design contract
 
-Use whenever the request includes settings, preferences, themes, display modes, customization or an administrative panel. Complements adaptive-visual-systems and contracts-trust. Apply the ECC Click-path Audit method: map owners and resets before following controls; ECC Design System: audit consistency and states without inventing scores.
+Use whenever the request includes settings, preferences, themes, display modes, customization or an administrative panel. Complements adaptive-visual-systems and contracts-trust. Map state owners and resets before following controls, then audit consistency and states through Forma Interface and Validation without inventing scores.
 
 ## Required deliverable for broad changes
 
@@ -48,7 +48,7 @@ Swatches, switches and icons may have drawings smaller than their interactive ar
 
 For each control: event -> calls in order -> state read/written -> resets -> actual await -> return -> final rendering. Ask: does a later effect undo an earlier one? Does the optimistic parent restore a value not yet persisted? Does the response belong to the current context? Does the cache depend on this value? Does feedback confirm the same operation that just completed?
 
-In REA, record the hash/version and exact source. Distinguish UI observation, static recovery and reproduction. If the AST is partial, supplement with targeted reading and label the origin; never claim REA executed the control.
+During artifact inspection, record the hash/version and exact source. Distinguish UI observation, static recovery and reproduction. If the AST is partial, supplement with targeted reading and label the origin; never claim static inspection executed the control.
 
 ## Minimum acceptance criteria
 

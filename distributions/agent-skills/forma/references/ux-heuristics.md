@@ -24,7 +24,7 @@ For centering, alignment and organization, consult the [mapping from laws to spa
 4. Propose a small change: move the error closer and associate it semantically with the field.
 5. Verify success: understanding, assistive-technology reading and data correction.
 
-In code, provide the fix in the real stack. In Figma, describe relationships/layout/states. In research, formulate a testable hypothesis. Do not force JSX into an audit of a native app or physical artifact.
+In code, provide the fix in the real stack. In the design editor, describe relationships/layout/states. In research, formulate a testable hypothesis. Do not force JSX into an audit of a native app or physical artifact.
 
 ## Deliberate practice
 

@@ -73,4 +73,4 @@ For a transparent cutout or logo, check the final file's actual alpha. A PNG ext
 
 Composite the output over the destination's relevant backgrounds and inspect halos, fringes and details at a useful scale, as well as the whole composition. A cutout that works on white may have an unsuitable light edge in a dark theme. Investigate matte, premultiplication, color conversion or compression according to the cause; do not hide the defect with blur or impose out-of-scope themes. Recoloring a logo or deleting details must be part of the request. A flattened preview does not prove alpha survived the download.
 
-Conceptual basis: Huashu and HTML Anything (multiple formats), DeepSeek Design (editable document/selection/export), Open CoDesign and Kun (working context and versions). These are static evidence with distinct capabilities and licenses; consult [use cases](source-use-cases.md).
+Forma Handoff owns editable sources, export verification and delivery. Use the [case map](source-use-cases.md) to connect artifact work to the relevant domain specialist.

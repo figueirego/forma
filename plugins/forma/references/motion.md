@@ -1,6 +1,6 @@
 # Motion and feedback
 
-Before animating, answer: what changes, why, who needs to notice, how often, and what happens without motion? The restraint, polish and expression axes of Design Motion Principles are contextual lenses, not author endorsements or a single recipe.
+Before animating, answer: what changes, why, who needs to notice, how often, and what happens without motion? Choose the amount of movement from the task, interaction frequency and product identity; expressive motion must preserve orientation and input feedback.
 
 ## Default motion for new interactive designs
 
@@ -15,7 +15,7 @@ Treat purposeful animation as part of creating an interface or interactive page,
 
 Respect reduced motion across all moments, including when the OS preference changes during interaction. Remove decorative travel, parallax, zoom, and loops; use an immediate update or subtle fade when appropriate. No perpetual motion is required. The default layer and its alternatives must be exercised in the actual browser: normal/rapid input, keyboard/touch, theme change, scroll/reverse scroll, reduced motion, and JS-free content where applicable. Static captures and presence of transition declarations alone do not prove behavior, continuity, or acceptable cost.
 
-ECC `motion-foundations` and `motion-patterns` can support shared timing, interruption, and component sequences when their stack fits. Read the current skills before applying them through [integrations](integrations.md). Their React-specific implementations are not a reason to change a CSS/native stack; use the existing engine and inspect the result.
+Forma Motion owns shared timing, interruption and component sequences. Use the existing engine and inspect the result; a reference implementation in another framework does not justify changing the project stack.
 
 ## Selection
 

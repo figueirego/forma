@@ -1,10 +1,10 @@
-# REA: design-oriented reverse engineering
+# Artifact investigation for design
 
 Use when a question depends on an existing application or artifact and cannot be answered adequately through available code, UI, documentation or captures. Do not analyze binaries merely because an EXE/DMG appears in the request.
 
 ## Complete repository or skill collection
 
-Read sources directly, without starting binary engines or REA diagnostics as a ritual. Pin the repository/ref/commit, license and examined files. Reconstruct the `input -> normalization -> state -> effect -> persistence -> render/export` path only for relevant capabilities. A README describes intent; callsites demonstrate a static mechanism; existing tests count as executed only when they have been run. Record sparse-checkout limits, missing dependencies and partial coverage.
+Read sources directly, without starting binary engines or inspector diagnostics as a ritual. Pin the repository/ref/commit, license and examined files. Reconstruct the `input -> normalization -> state -> effect -> persistence -> render/export` path only for relevant capabilities. A README describes intent; callsites demonstrate a static mechanism; existing tests count as executed only when they have been run. Record sparse-checkout limits, missing dependencies and partial coverage.
 
 Classify the source as a catalog, instruction set, library, app or service before extracting principles. A link in a list does not verify the linked project. Do not execute installers, scripts or generated content merely to read the source. Separate conceptual adoption from code/asset reuse, which requires a compatible license. For syntheses from several references, use [source use cases](source-use-cases.md).
 
@@ -12,14 +12,14 @@ Classify the source as a catalog, instruction set, library, app or service befor
 
 Define the authorized target and a concrete question: recover assets from an owned app, map menu states, understand a legacy flow, identify strings or verify technology. Use a working copy and record the path, hash, version, OS and architecture. Do not run an unknown installer to inspect its appearance.
 
-Discover the appropriate REA tool and read its current schema. Examples observed in this session, whose availability must be checked when used:
+Select the smallest available inspection capability and read its real schema or command interface. These are capability categories, not tool names to invoke:
 
-- `inspect_artifact`: package graph and integrity; a compatible host may mount a DMG read-only. This is not equivalent to extraction or execution.
-- `analyze_javascript_application`: inert ASAR/JavaScript analysis; `source_paths` selects exact inventoried files without implicitly including dependencies. `detail: summary` reduces the response, not the work.
-- `inspect_analysis_view`: queries retained Evidence and its limitations; a complete view of partial results is not a complete target analysis.
-- `inspect_managed_artifact`: PE/CLI metadata without loading the code.
-- `inspect_electron_page`: passive inspection of a local Electron page with an explicitly resolved endpoint/target.
-- `trace_native_ui_action`: relationships for a specific native action; it does not prove actual execution.
+- Package inventory and integrity: identify containers and resources; a read-only mount is not extraction or execution.
+- Inert source analysis: examine exact inventoried scripts and callsites; a shorter response does not imply less analysis work.
+- Retained evidence queries: inspect findings and coverage limits; a complete view of partial results is still partial.
+- Managed metadata inspection: inspect executable metadata without loading its code.
+- Runtime page inspection: resolve the actual local endpoint and target, then observe the active page without modifying it by default.
+- Native action tracing: map a specific action to code/state; a static relationship does not prove execution.
 
 Do not invent target IDs, addresses, commands, functions or capabilities. Static analysis may have partial coverage; preserving that limit is part of the result.
 

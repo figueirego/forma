@@ -2,7 +2,7 @@
 name: forma-platforms
 description: "Adapt experiences to web, mobile, desktop, distribution and specialized surfaces, respecting actual input, navigation and runtime behavior. Use for platform differences and installers; not to choose a framework only by appearance or file extension."
 metadata:
-  version: 1.17.1
+  version: 1.32.2
 ---
 
 # Platforms and distribution
@@ -40,8 +40,8 @@ For distribution, distinguish generated, signed, installed, updated and publishe
 Stop when the relevant task and recovery work within the agreed support scope.
 Without the target OS/device, deliver the work possible and declare the untested runtime; visual simulation does not complete that requirement.
 
-## Optional support and limits
+## Coordination and execution boundaries
 
-`ecc:react-native-patterns`, `ecc:compose-multiplatform-patterns`, `ecc:liquid-glass-design` and `accessibility` can support the corresponding stack/surface.
-Read only the current `SKILL.md` for available, relevant support, as described in [integrations](../../references/integrations.md); do not infer tools from the name.
+Use Forma Interface for composition, Forma Motion for gestures, and Forma Validation for actual device and browser evidence. Read the existing stack and platform documentation for implementation details.
+The coordinator selects additional modules; do not recursively dispatch between specialists. Use the available tools according to [capabilities](../../references/integrations.md); a tool name does not prove connection or execution.
 Do not install frameworks or publish packages through this module's routing. Design criteria do not replace specialist certification.

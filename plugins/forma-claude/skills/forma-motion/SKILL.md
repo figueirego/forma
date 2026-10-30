@@ -2,7 +2,7 @@
 name: forma-motion
 description: "Create or audit feedback, gestures, animations and films with continuity, accessibility and execution cost in mind. Use for interactive motion or rendered sequences; not to animate every surface by default."
 metadata:
-  version: 1.21.0
+  version: 1.32.2
 ---
 
 # Motion and feedback
@@ -45,8 +45,8 @@ For an interface, deliver integrated motion or the requested specification, trig
 
 For a film, deliver the agreed sequence and format, with content, timing, transition and final-file review. Check audio/silence and requested variants; do not impose interface input tests on an MP4. Stop when the applicable criteria have been verified. Storyboard, snippet, preview and final render must be labeled according to the stage actually delivered.
 
-## Optional support and limits
+## Coordination and execution boundaries
 
-`design-motion-principles`, `ecc:motion-foundations`, `ecc:motion-patterns` and `ecc:motion-advanced` can answer specific questions.
-Select only relevant support and read its current `SKILL.md`, if available, as described in [integrations](../../references/integrations.md); there is no automatic invocation.
+Use Forma Foundations for shared visual roles, Forma Interface for control integration, and Forma Validation for input, reduced-motion and frame evidence. Timing, continuity, interruption and sequences remain in this module.
+The coordinator selects additional modules; do not recursively dispatch between specialists. Use the available tools according to [capabilities](../../references/integrations.md); a tool name does not prove connection or execution.
 Do not install an animation library for an effect the stack already handles, or replace an explicitly required 3D mechanism with CSS transforms.

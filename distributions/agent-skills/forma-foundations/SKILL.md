@@ -2,7 +2,7 @@
 name: forma-foundations
 description: "Define or refine hierarchy, typography, color, layout, spacing and visual-system tokens. Use for composition or foundation inconsistencies; not to redesign product flows or reproduce a 3D mechanism."
 metadata:
-  version: 1.26.1
+  version: 1.32.2
 ---
 
 # Visual foundations
@@ -40,8 +40,8 @@ If the task is a specification, deliver implementable rules with examples and va
 Stop when hierarchy, alignment, reading and adaptation criteria are met without a relevant regression.
 If rendering access or an identity decision is missing, record the gap and what remains unvalidated.
 
-## Optional support and limits
+## Coordination and execution boundaries
 
-`ecc:design-system`, Impeccable and Font Pairing can resolve specific questions about consistency, composition or fonts.
-If available and relevant, read the current `SKILL.md` before using them, as described in [integrations](../forma/references/integrations.md). A name does not guarantee a tool or connection.
+For composition and controls, use Forma Interface through the coordinator; for color or layout verification, use Forma Validation. Font selection, roles and comparison stay in this module and its visual-system contract.
+The coordinator selects additional modules; do not recursively dispatch between specialists. Use the available tools according to [capabilities](../forma/references/integrations.md); a tool name does not prove connection or execution.
 Do not install supporting tools by default. Example snippets and JSON files are not an already-integrated design system; confirm their use and effect in the destination.

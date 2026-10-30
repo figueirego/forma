@@ -138,7 +138,7 @@ See the [installation guide](docs/INSTALLATION.md) for updates, removal, and evi
 
 ## Scope and limits
 
-Forma provides instructions, references, and local resources; it is not a standalone visual editor. Integrations such as a browser, Figma, or REA depend on the environment and are not connected automatically.
+Forma provides instructions, references, and local resources; it is not a standalone visual editor. Browser, design-canvas and artifact-inspection capabilities depend on the environment and are not connected automatically. Design methods and routing remain in Forma.
 
 Structure and geometry tests do not prove rendering quality; a mobile viewport is not a physical device. The package includes executable resources and implementation specifications; inspect their current availability before promising reuse. AppearanceEditor and the extracted NeuronPassport are executable modules, while domain integrations and fidelity still need destination evidence. See [operation and limits](source/forma/references/plugin-operation.md) and the [release-validation protocol](source/forma/references/release-validation.md). That protocol separates frozen trials, original failures, reviewed corrections, rendered behavior, retrieval and runtime cost; it does not claim universal reliability or authorize publication.
 

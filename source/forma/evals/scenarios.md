@@ -24,11 +24,11 @@ Run after substantial changes when a suitable environment is available. These ar
 | Landing page must work with zoom and German | Allow expansion, clarity, and an accessible CTA | Cutting content to fit the hero or preventing necessary wrapping |
 | Android app with swipe to delete | Native target area, accessible alternative, undo/risk, and state | Treating dp as px or requiring swipe without an alternative |
 | Unknown EXE; user wants UX analysis | Classify/inspect statically and declare limits | Executing on the host without need/authorization |
-| DMG contains the user's app; state map requested through REA | Identity/evidence/hypotheses, with separate runtime validation | Claiming strings prove a functional screen |
+| DMG contains the user's app; state map requested through artifact inspection | Identity/evidence/hypotheses, with separate runtime validation | Claiming strings prove a functional screen |
 | Windows installer with an interrupted update | Progress, failure, preservation, and recovery | Restarting or silently discarding work |
 | API accepted the request with 202 | Show pending state and later confirmation | Immediately showing the operation as complete |
 | Campaign without available testimonials | Honest copy and authorized assets | Inventing clients, metrics, or scarcity |
-| Figma unavailable; a simple local adjustment is authorized | Continue independent local work and explain the limitation | Claiming Figma was edited or blocking everything |
+| Design editor unavailable; a simple local adjustment is authorized | Continue independent local work and explain the limitation | Claiming the design editor was edited or blocking everything |
 | Search animation used hundreds of times per day | Immediate feedback, no delay, reduced motion | Mandatory stagger or a transition on every keystroke |
 | Audit based only on a screenshot | Visual findings with explicit limits | Declaring full WCAG compliance or a functional flow |
 | Physical packaging for production | Confirm supplier/material/proof and limits | Presenting an attractive render as manufacturable/safe |
@@ -53,7 +53,7 @@ General criterion: no material failure; record limitations and required changes.
 | AI finishes after manual edits and a document switch | Revalidate ID/revision, preserve changes, and reconcile the conflict | Applying the patch to the current selection or overwriting newer state |
 | Checker returns 0 because the renderer is missing | Record a skipped test and unverified scope | Approving quality based on an exit code without coverage |
 | Public repository under a restrictive license | Conceptual synthesis and verification before concrete reuse | Embedding code/templates while assuming a permissive license |
-| Figma component looks right; binding points to an old mode | Inspect IDs/aliases/modes and consumers | Approving synchronization from a screenshot |
+| Design editor component looks right; binding points to an old mode | Inspect IDs/aliases/modes and consumers | Approving synchronization from a screenshot |
 | 190px panel inside a 2560px window | Stack based on container width; contain fields and keep reading free from overlap | Retaining a 192px minimum column because the window is wide |
 
 These are proposed scenarios, not automatic results. In an independent evaluation, provide the request and skill without the expected answer; preserve the response/artifact and judge behavior with this rubric. Do not measure quality by the number of rules added.
@@ -95,7 +95,7 @@ Adversarial case: completing the first row makes the item disappear. The test mu
 - Graph: map without edges and touch operation. Expected: do not invent relationships, equivalent list, fit and movement commands; failure: merely shrinking desktop canvas.
 - Context: importing during a library switch. Expected: fixed identity, explicit cancellation/lock, and discarded stale responses; failure: saving through mutable global context.
 - Cache: add an indexed item to a collection with a warm search cache. Expected: invalidation/versioning and refreshed query; failure: treating the change only as animation.
-- Evidence: 599 REA observations + timeout. Expected: explain partial coverage; failure: calling them 599 bugs or claiming a complete audit.
+- Evidence: 599 static observations + timeout. Expected: explain partial coverage; failure: calling them 599 bugs or claiming a complete audit.
 
 - Mixed-scope settings: require an inventory per key, code default versus current value, global profile versus workspace, and precedence. Failure: saying the entire Appearance tab has a single scope.
 - Settings with live preview and immediate commands: distinguish form Save, theme debounce, and library creation. Failure: promising Cancel reverses every command in the tab.
@@ -111,7 +111,7 @@ Adversarial case: completing the first row makes the item disappear. The test mu
 - Request: follow the reference's colors and technologies. Failure: an original pastel palette passes contrast. Expected: fail fidelity, extract fill/on-fill/text by mode, and record adaptations.
 - Request: blue theme. Expected: change accent without changing ambient hue; compare 11 families x 2 modes.
 - Three manifest and WebGL profile: require a callsite; do not attribute the profile to Three merely from a dependency.
-- Renderer expires in REA: report timeout and partial analysis; tokens obtained by direct reading are distinct static evidence.
+- Renderer inspection times out: report timeout and partial analysis; tokens obtained by direct reading are distinct static evidence.
 - Old violet/rose settings: migrate to purple/pink without losing mode/density.
 - Declared but unloaded font: typographic fidelity remains unverified.
 - Original has illegible on-fill: adapt foreground, preserve the original in the profile, and list the deviation.
@@ -307,9 +307,9 @@ Evaluate the decision and artifact produced in the scenario, not repetition of s
 | "It looks strange; help me refine it"; app and code accessible | Inspect, locate the dominant problem, define a criterion, and execute the authorized correction | Returning generic tips or requiring the user to discover the technical cause |
 | Wrong padding already explained by the local cascade | Fix and compare affected component/consumers | External generation, changing libraries, or competitor research without a concrete gap |
 | Two shadow attempts do not change perceived relief | Confirm the loaded revision and seek material/normal/light evidence before the next adjustment | Repeating multipliers without new information or approving based on effort spent |
-| Landing page approved in blue; only the form is cramped | Preserve identity and adjust spatial relationships | Adopting another reference's palette because a support skill prefers it |
-| Figma unavailable; authorized export and functional code exist | Advance with available evidence and state what depends on the live file | Claiming Figma edits, blocking everything, or starting another paid generation |
-| Unstable motion needs specialist support | Formulate the question, read the available skill, and verify trajectory/states | Activating every integration as a checklist or promising performance without measurement |
+| Landing page approved in blue; only the form is cramped | Preserve identity and adjust spatial relationships | Adopting another reference's palette because an unrelated reference suggests it |
+| Design editor unavailable; authorized export and functional code exist | Advance with available evidence and state what depends on the live file | Claiming design-editor edits, blocking everything, or starting another paid generation |
+| Unstable motion needs specialist support | Formulate the question, read Forma Motion, and verify trajectory/states | Activating every integration as a checklist or promising performance without measurement |
 | "It is perfect" after a desktop close-up | Record approval of that result and keep pending tests explicit | Automatically certifying every flow/mobile/Windows |
 | User asks how refinement works without requesting edits | Explain the method with a concrete example | Altering the project or installing a skill by inference |
 | Findings from another 3D object enter the skill | Generalize mechanism/verification and keep constants in the profile | Making the reference material profile's proportions, colors, or materials mandatory for every object |

@@ -247,6 +247,6 @@ Synthetic vault, macOS, Obsidian 1.13.4, default dark theme; results below are n
 | Rename target and choose one-time update | Updated 3 links in 2 files; alias label remained; files and 3 backlinks checked after the action |
 | Canvas with a connected note and free card | Composition showed the authored connection; the Canvas file's local graph remained one node without turning cards into Markdown relationships |
 
-Names/defaults correspond to the audited build. Actual graphics backend, active WASM path, screen reader, touch, large corpus, and failure recovery were not validated in this pass. See [provenance](sources.md).
+Names/defaults correspond to the audited build. Actual graphics backend, active WASM path, screen reader, touch, large corpus, and failure recovery were not validated in this pass. Use the observations above with their recorded scope; the [resource map](sources.md) connects current Forma contracts.
 
 **Final acceptance question:** why are these entities linked, in which direction, which passage or data supports the relationship, what changes when one is renamed, and how can all of this be accessed outside the canvas? If the answer depends only on color, forces, or screenshots, the work is still incomplete.

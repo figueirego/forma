@@ -6,7 +6,7 @@ The coordinator selects the specialty; this process connects diagnosis, construc
 
 For broad work, choose a playbook in [playbooks](playbooks.md) and use its minimum deliverables. For a small adjustment, work directly on the target. The goal is to reduce repeated decisions, not require a complete process for every edit.
 
-When the user asks for help refining an existing artifact, conduct diagnosis, the authorized correction and comparison. Choose other skills, tools or references according to the question they must resolve, following [integrations](integrations.md#choose-support-during-refinement). An explanation-only request remains an explanation; it does not turn a conceptual conversation into a project edit.
+When the user asks for help refining an existing artifact, conduct diagnosis, the authorized correction and comparison. Use the relevant Forma specialist and contract for the unresolved question; choose execution tools through the [capability map](integrations.md#choose-by-the-unresolved-question). An explanation-only request remains an explanation; it does not turn a conceptual conversation into a project edit.
 
 ### 1. Understand and establish the reference
 

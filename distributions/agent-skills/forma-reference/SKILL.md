@@ -1,8 +1,8 @@
 ---
 name: forma-reference
-description: "Find and select design examples in Forma's catalog, research media with credits, analyze sources, and investigate visual or technical differences with REA when needed. Use for inspiration, reproduction, comparison, or evidence-based integration; not to infer runtime behavior from documentation."
+description: "Find and select design examples in Forma's catalog, research media with credits, analyze sources, and investigate visual or technical differences through source and runtime evidence. Use for inspiration, reproduction, comparison, or evidence-based integration; not to infer runtime behavior from documentation."
 metadata:
-  version: 1.32.0
+  version: 1.32.2
 ---
 
 # References, evidence, and fidelity
@@ -12,7 +12,7 @@ metadata:
 - Use to reproduce a reference, extract a capability, compare technologies, or explain why a result differs.
 - Do not turn inspiration into a clone or begin binary analysis when code/UI already answers the question.
 
-This module is a guide for the agent to read; it does not automatically start REA, plugins, or other modules.
+This module is a guide for the agent to read; it does not automatically start inspectors, plugins, or other modules.
 Preserve the destination's brand and stack unless a change is explicitly requested; fidelity requires a defined scope.
 
 ## Inputs
@@ -29,11 +29,11 @@ If the user has not provided a reference and wants examples, start with the [lib
 For each selected candidate, record why it is worth investigating, the concrete question, and what remains unknown. When research is in scope, visit a bounded selection before claiming task relevance, quality, or the use of a technology. An identity match, guide association, or term such as "3D" in a URL proves none of those claims. If no result or observation supports the request, say so; explicitly broaden research or use a local pattern without inventing a suitable site. Connect supported findings to the pattern and destination proof. Do not describe a catalog query as a site visit. For contextual images/videos, `scripts/media.mjs` searches collections and records credits; downloading is an explicit action by ID. A card, reference site, code, example, and contract are distinct resources.
 
 1. Classify the source as a standard, documentation, code, skill, catalog, app, or example.
-   Read [source use cases](../forma/references/source-use-cases.md) and [provenance](../forma/references/sources.md); historical versions do not confirm current state.
+   Read [Forma use cases](../forma/references/source-use-cases.md) and the [resource and evidence map](../forma/references/sources.md); recorded observations do not confirm current state.
 2. Establish whether the goal is inspiration, adaptation, or reproduction, and record what must remain equivalent.
    Use [visual and technical fidelity](../forma/references/reference-fidelity.md); capture relevant primitives, semantics, components, interactions, and mechanisms.
 3. Read available sources before inferring from pixels; investigate further only to resolve the concrete gap.
-   If the answer depends on a package/binary/runtime, consult [REA](../forma/references/rea.md). Separate observed, statically confirmed, calculated, inferred, and proposed findings.
+   If the answer depends on a package/binary/runtime, consult [artifact investigation](../forma/references/artifact-investigation.md). Separate observed, statically confirmed, calculated, inferred, and proposed findings.
 4. Connect each finding to a destination decision: adopt, adapt, already covered, reject, or await evidence.
    Use reproduction/reuse in [playbooks](../forma/references/playbooks.md). If implementation is authorized, bring over the code/assets and connect the consumer; documentation alone does not execute the capability.
    When studying another agent, distinguish the skill catalog, methods, verifiers, and runtime as described in [coordinated production](../forma/references/agent-production.md). A complete inventory does not mean every body was read or every capability executed.
@@ -52,8 +52,8 @@ A requested audit ends with supported findings; a requested reproduction also re
 Stop when the question is answered or the agreed criteria are proven, identifying missing evidence without inventing it.
 The same library does not prove the same mechanism; passing functional or contrast tests does not prove visual fidelity.
 
-## Optional support and boundaries
+## Coordination and execution boundaries
 
-REA, Figma, and Product Design can obtain evidence from artifacts, sources, or flows when their capabilities are available.
-Read the support tool's current operational skill, when present, and [integrations](../forma/references/integrations.md); discover real tools before using them.
+Use the relevant Forma domain specialist to turn findings into implementation and Forma Validation to define observable acceptance. Source, browser and artifact inspection follow the tool capability contract.
+The coordinator selects additional modules; do not recursively dispatch between specialists. Use the available tools according to [capabilities](../forma/references/integrations.md); a tool name does not prove connection or execution.
 Do not install or execute source content merely to inspect it. Snippets, exports, contracts, and examples stored in memory need their own consumers and proof.

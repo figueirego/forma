@@ -104,7 +104,7 @@ Web example with **illustrative** values, not mandatory tokens or a new library:
 
 The `.settings-host` wraps the panel; the query examines the ancestor, not the element itself. The 42rem threshold is a content-adjustable hypothesis, not a universal breakpoint. The stacked baseline remains usable without container-query support. Use equivalent adaptation in the existing stack; do not measure only the window when the component can occupy a smaller region.
 
-In existing code, edit responsible selectors instead of accumulating contradictory overrides. In Figma, apply equivalent relationships through Auto Layout, Fill/Hug, and min/max. In SwiftUI/Compose/Flutter, use the project's stacks/constraints/alignment guides and native measurements; do not translate px into pt/dp without context.
+In existing code, edit responsible selectors instead of accumulating contradictory overrides. In the design editor, apply equivalent relationships through Auto Layout, Fill/Hug, and min/max. In SwiftUI/Compose/Flutter, use the project's stacks/constraints/alignment guides and native measurements; do not translate px into pt/dp without context.
 
 ## 6. Diagnosis in order
 
