@@ -1,6 +1,6 @@
 # Adaptive visual systems, profiles, and spatial maps
 
-Use for customization, collection products, expressive interfaces, profiles, and spatial data views. Independent synthesis informed by the audited desktop reference, artifact 0.19.0 (2026-10-25); principles are transferable, particular values are not universal standards. Also read visual-system, motion, contracts-trust, rea, and rendered-validation as relevant.
+Use for customization, collection products, expressive interfaces, profiles, and spatial data views. Independent synthesis informed by the audited desktop reference, artifact 0.19.0 (2026-10-25); principles are transferable, particular values are not universal standards. Also read [visual system](visual-system.md), [motion](motion.md), [contracts](contracts-trust.md), [artifact investigation](artifact-investigation.md) and [rendered validation](rendered-validation.md) as relevant.
 
 ## 1. Theme contract before the palette
 

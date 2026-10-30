@@ -2,7 +2,7 @@
 name: forma-product
 description: "Investigate user tasks, formulate hypotheses, organize information, and design product flows with proportionate research. Use when the question concerns needs, sequence, or understanding; not for isolated color adjustments or fabricated user evidence."
 metadata:
-  version: 1.19.0
+  version: 1.32.2
 ---
 
 # Product, research, and flows
@@ -41,8 +41,8 @@ If implementation was requested, deliver the flow in the product and confirm its
 Stop when the decision is supported by available data and the authorized deliverable is complete.
 If success depends on research that has not happened, mark the hypothesis as pending and do not invent personas, interviews, or metrics.
 
-## Optional support and boundaries
+## Coordination and execution boundaries
 
-Product Design, `ecc:product-lens`, and `ecc:click-path-audit` can support research, diagnosis, and flow analysis.
-When available and relevant, read their current `SKILL.md` and [integrations](../../references/integrations.md) before use. Availability does not authorize external contact.
+Use Forma Reference for bounded evidence gathering, Forma Interface for flow implementation, and Forma Validation for task checks. Research, hypotheses and flow analysis remain part of this module.
+The coordinator selects additional modules; do not recursively dispatch between specialists. Use the available tools according to [capabilities](../../references/integrations.md); a tool name does not prove connection or execution.
 Do not install methods or services for convenience; use synthetic data when sufficient and do not send personal data without a need and authorization.

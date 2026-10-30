@@ -140,7 +140,7 @@ unavailable/lost WebGL, texture failure, rapid switching, resize, hidden tab, an
 Verify mobile reading/CTA order; reserve product height in flow without covering controls.
 Record visual, technological, and functional parity in separate fields with explicit unknowns.
 
-REA parsed entries and a HeroScene slice as inert text, producing partial semantic graphs.
+Static analysis parsed entries and a HeroScene slice as inert text, producing partial semantic graphs.
 Profiles preserve URLs, hashes, scope, and unknown counts. Large libraries were not fully decomposed.
 A 403 on Kimi asset HEAD requests was not a browser-rendering failure; Soda's sourcemap remained unavailable.
 Do not distribute images, fonts, models, logos, or original code from these sites without appropriate licenses.

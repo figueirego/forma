@@ -58,4 +58,4 @@ Record the choice, reason, and preserved aspects in existing documentation. Conv
 
 A scanner helps locate inconsistencies; it neither chooses the direction nor proves fidelity. Zero warnings do not justify ignoring a clearly divergent composition. Preserve the initial capture and confirm affected states after correction.
 
-Conceptual basis: Huashu (comparison under fixed conditions), Oil UI (exploration and screenshot inspection), and Awesome Claude Design (families/remixes as a repertoire). Versions, differences, and limits are in [use cases](source-use-cases.md).
+Forma Brand owns the chosen direction; Foundations resolves shared visual relationships and Validation reviews the rendered result. Connect these roles through the [case map](source-use-cases.md).

@@ -7,7 +7,7 @@
 3. Record origins, consumers and exceptions. Classify them as preserve, consolidate or replace.
 4. Propose semantic aliases, migrate one flow and verify it before propagating within the authorized scope.
 
-The [example JSON](../assets/tokens.example.json) uses a simple custom format and does not claim DTCG/Figma compliance. Adapt it to the existing pipeline; do not replace that pipeline merely to use this example.
+The [example JSON](../assets/tokens.example.json) uses a simple custom format and does not claim DTCG or editor-native schema compliance. Adapt it to the existing pipeline; do not replace that pipeline merely to use this example.
 
 For the background/sidebar/panel/controls combination, the [clean interface foundation](clean-shell.md) provides concrete token consumers. Inspect the cascade and states too: a later navigation rule may change height, selection and typography; extracting only the first declaration or only `:root` does not reproduce the component.
 
@@ -42,11 +42,11 @@ CSS does not associate labels/inputs/help: implement the corresponding semantics
 
 For a component: anatomy, tokens, variants, events, focus and errors. For a flow: states/transitions and API dependencies. For an asset: path, dimensions, format, purpose, provenance/license and variant. For a screen: narrow/wide behavior and extreme content.
 
-The handoff may fit in the change description. Do not create redundant files if code and documentation already explain the decision. With Figma and code, map the component/variant/prop to its implementation and token without assuming synchronization.
+The handoff may fit in the change description. Do not create redundant files if code and documentation already explain the decision. With the design source and code, map the component/variant/prop to its implementation and token without assuming synchronization.
 
-Before reconciling Figma/code, declare authority by scope and revision. Record `role -> token/alias -> mode -> component/property -> consumer -> evidence`. Equal hex values do not prove binding: inspect IDs, aliases and resolved values in the relevant modes. Preserve valid instances and overrides; a name/ID change requires checking consumers. If authority cannot be inferred and the choice changes identity, obtain that decision before the dependent mutation.
+Before reconciling design-source/code, declare authority by scope and revision. Record `role -> token/alias -> mode -> component/property -> consumer -> evidence`. Equal hex values do not prove binding: inspect IDs, aliases and resolved values in the relevant modes. Preserve valid instances and overrides; a name/ID change requires checking consumers. If authority cannot be inferred and the choice changes identity, obtain that decision before the dependent mutation.
 
-Deliver editability and format-specific losses according to [artifacts](artifact-workflows.md). An image of a component in Figma or a chart in PPTX is not an editable component/chart.
+Deliver editability and format-specific losses according to [artifacts](artifact-workflows.md). An image of a component in a design editor or a chart in PPTX is not an editable component/chart.
 
 ## Evolution
 

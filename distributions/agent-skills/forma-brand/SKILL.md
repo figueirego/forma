@@ -2,7 +2,7 @@
 name: forma-brand
 description: "Create or adapt identities, campaigns, landing pages, graphics and marketing materials with a defined message, channel and export format. Use for brand communication; not to impose promotional styling on operational flows without a reason."
 metadata:
-  version: 1.26.1
+  version: 1.32.2
 ---
 
 # Brand and communication
@@ -45,10 +45,10 @@ Identify generated, licensed and pending assets; do not promise unverified right
 Stop when the message, action and channel/export requirements are met in the actual artifact.
 A moodboard does not complete an implemented landing page; an object image does not demonstrate a requested 3D mechanism.
 
-## Optional support and limits
+## Coordination and execution boundaries
 
-`ai-graphic-design:ai-graphic-design`, `imagegen` and Font Pairing can support production or direction depending on the artifact.
-If available, read the current `SKILL.md` and [integrations](../forma/references/integrations.md) before use; a list of supporting tools does not guarantee a connection or credits.
+Use Forma Foundations for typography and palette, Forma Motion for sequences, and Forma Handoff for editable production and export. Select a generation or canvas capability only when the deliverable requires it.
+The coordinator selects additional modules; do not recursively dispatch between specialists. Use the available tools according to [capabilities](../forma/references/integrations.md); a tool name does not prove connection or execution.
 Do not duplicate generations, install providers or publish merely to complete the workflow. The request's authorization determines the permitted external action.
 
 ## Clear PDF guides

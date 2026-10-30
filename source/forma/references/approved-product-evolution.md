@@ -47,13 +47,13 @@ Detailed contracts remain canonical in [settings](settings-modes.md), [material 
 
 With maintenance authorization, turn the correction into **trigger -> decision -> invariants -> proof -> limits**. First check whether it is already covered. Edit the canonical reference; add a local case only when it offers a new diagnosis. Preserve earlier evidence with its revision rather than relabeling it as current. Do not package document photos, real profiles, raw history or third-party assets merely because they appeared in the conversation.
 
-ECC `continuous-learning-v2`, when requested and available, helps distinguish project learning from transferable patterns. Reading the method does not require activating hooks, an observer or global rule promotion; authorization to refine Forma does not authorize changing another agent's configuration. Without independent executions, written scenarios are a rubric, not a completed behavioral evaluation.
+Keep project-specific learning separate from transferable patterns. Authorizing refinement of Forma does not authorize hooks, conversation observers or configuration changes in another agent. Without independent executions, written scenarios remain an evaluation rubric, not completed behavioral proof.
 
 Preserve approved mechanisms and resources, validate links and structure, inspect the diff and add scenarios that could detect the regression. File hashes prove identity; package tests prove their own scope; neither replaces operation in the consumer. Updating instructions does not train the model or guarantee automatic application in every chat.
 
 ## How to request reuse
 
-- "Use $forma with ECC to adapt this plan to the existing product. Reconcile approved decisions, map real and future states, and implement the first journey in the current stack."
+- "Use $forma to adapt this plan to the existing product. Reconcile approved decisions, map real and future states, and implement the first journey in the current stack."
 - "Use $forma to integrate the profile with the existing interactive object. Preserve the mechanism, use my domain data, and test preview, save failure, reopening and focus."
 - "Use $forma to fix these pages. Check their origin at the hinge, texture continuity and content on both sides, preserving the approved cover and gesture."
 

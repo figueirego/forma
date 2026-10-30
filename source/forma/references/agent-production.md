@@ -1,10 +1,10 @@
 # Coordinated production and agent integration
 
-Read this when a request involves a production agent, parallel jobs, resumption, media services or incorporating another agent's methods. A local layout adjustment does not need this flow. Reuse the existing process and tools; do not introduce a server to apply a design heuristic.
+Read this when a request involves a production agent, parallel jobs, resumption, media services or a separate execution runtime. A local layout adjustment does not need this flow. Reuse the existing process and tools; do not introduce a server to apply a design heuristic.
 
 ## Methods, runtime and services
 
-"Forma, create this page" can run through Codex: read the specialist instructions, edit, render and verify. This does not start a LangChain program. The `langchain-ai` organization, Design Agent instructions, LangChain framework, Deep Agents package and LangSmith services are distinct things. Deep Agents adds planning tools, file-based context and delegation; LangGraph supports stateful execution. An external service still requires its own installation, configuration and evidence.
+"Forma, create this page" runs through the current assistant: read the relevant Forma instructions, edit, render and verify. Planning, file-based context and coordination do not start a separate agent program. A persistent service, scheduler or model runtime requires its own implementation, configuration and execution evidence.
 
 Forma distributes instructions, references and the [explicitly available resources](resources.md). Including these methods does not select the host's model, install middleware, provide durable checkpoints, run a scheduler or expose an MCP server. When asked "does it use 100%?", answer separately: **relevant methods adopted, catalog mapped, mechanisms implemented and paths actually tested**. None of these dimensions guarantees the others or universal quality.
 
@@ -55,4 +55,4 @@ Revalidate affected layers without repeating paid production to inflate a test c
 
 Consider this only for a concrete need and an authorized request: a continuous service, dedicated channels, job persistence or operation outside the host. First choose an existing boundary - a CLI or authenticated API, where available - and define identity, files, states, timeout, cancellation and errors. Consuming MCP does not mean providing an MCP server for Codex. Do not invent commands or connectors.
 
-In the audited Design Agent, the keyless demo uses a scripted model and a real renderer, with its own environment/sandbox; a real-model test is a separate step. Managed hosting and Slack are optional. Before a future integration, check current documentation and version, license, dependencies, a compatible model and data/cost policy. Run an isolated smoke test followed by a bounded real case within the authorized scope. **This document neither installs nor proves that integration.** Consult the [review provenance](sources.md#complete-catalog-study-and-runtime-boundaries---1210).
+Before integrating a separate runtime, verify its current documentation, version, license, dependencies, model compatibility and data/cost policy. Run an isolated smoke test, then a bounded real case within the authorized scope. A scripted model can validate orchestration while leaving model judgment untested; a real renderer can validate a file while leaving the deployment untested. Record those layers separately. This document neither installs nor proves a runtime integration.

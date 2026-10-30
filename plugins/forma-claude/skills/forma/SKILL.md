@@ -2,7 +2,7 @@
 name: forma
 description: "Coordinate design specialists to create, refine, adapt, or audit interfaces, visual systems, and brand assets. Select the internal interface, color/layout, product, 3D, graphs, motion, platform, brand, reference, handoff, or validation skill for each case. Also use to reuse approved components in another project; not for isolated backend work."
 metadata:
-  version: 1.32.1
+  version: 1.32.2
 ---
 
 # Forma
@@ -32,7 +32,7 @@ For the approved closed book, route to [the complete book integration](../../ref
 
 Briefly state the specialty and reason: "I will use interface for the sidebar and foundations to align the insets." Do not turn this into a questionnaire or require the user to know module names. The coordinator retains context and resolves conflicts; specialists do not recursively call the coordinator. Reading a skill does not automatically create a subagent or execute a plugin.
 
-Read the chosen specialist in full; in canonical references, locate the relevant section and read enough context to apply the contract correctly. Do not recursively follow their links by default. For a local gap, this may limit reading to the spatial relationship and affected verification section; for a complete editor, include state and persistence contracts. Operational instructions for an explicitly activated external skill remain mandatory.
+Read the chosen specialist in full; in canonical references, locate the relevant section and read enough context to apply the contract correctly. Do not recursively follow their links by default. For a local gap, this may limit reading to the spatial relationship and affected verification section; for a complete editor, include state and persistence contracts.
 
 ## Internal skills by use case
 
@@ -48,17 +48,17 @@ Read the chosen specialist in full; in canonical references, locate the relevant
 | Identity, campaigns, marketing landing pages, assets, presentations, or print | [Forma Brand](../forma-brand/SKILL.md) | Message, composition, and deliverables for the requested channels |
 | Finding examples, selecting references, reverse engineering, technologies, or fidelity differences | [Forma Reference](../forma-reference/SKILL.md) | Contextual research, evidence separated from hypotheses, and transferable specifications |
 | Quality audits, accessibility, regression, or rendered acceptance | [Forma Validation](../forma-validation/SKILL.md) | Bounded findings/evidence and fixes when authorized |
-| Figma, editable artifacts, exports, libraries, design-to-code, or technical delivery | [Forma Handoff](../forma-handoff/SKILL.md) | Source, components, and output delivered and verified |
+| Editable design sources, exports, libraries, design-to-code, or technical delivery | [Forma Handoff](../forma-handoff/SKILL.md) | Source, components, and output delivered and verified |
 
 Identifiers follow `forma-<specialty>`, for example `/forma:forma-motion`, `/forma:forma-interface`, and `/forma:forma-objects-3d`. They can be called directly when the environment catalog offers them. The `/forma:forma` entry point still selects and reads modules through the paths above, without relying on discovery in every host. Do not invent an `invoke_skill` tool command: use the reading/invocation mechanism actually available in the environment.
 
-## External integrations on demand
+## Forma owns the workflow
 
-ECC, REA, Impeccable, Figma, graphic tools, and other skills provide optional support. Identify the gap, check the capability available in the session, and read the current operational skill before using it. Consult [integrations](../../references/integrations.md) to select support and understand its boundaries. Catalog names do not prove installation, connection, or execution; record unavailability and continue independent work without pretending to have called the service.
+All design decisions route through the internal specialists and canonical contracts above. Do not forward a design responsibility to a named external skill or make another plugin a prerequisite. For a missing method, use Reference to investigate, the relevant domain specialist to adapt it, and Validation to check the result. Preserve technical dependencies actually required by the implementation.
 
-Do not install plugins or start paid generation to complete a checklist. The system works with local references and tools. When delegating available, useful work, assign the question/files/acceptance criteria and avoid concurrent edits; delegation is not required for every task.
+Tools provide execution capabilities, not a replacement coordinator. Select an available file reader, browser, design canvas, renderer or artifact inspector through the [tool capability contract](../../references/integrations.md). Verify the real API, connection and result; the package does not contain or install those runtimes. Do not start paid generation merely to complete a checklist.
 
-Incorporating an agent's methods does not install its runtime. For production agents, jobs, resumption, or an explicitly requested LangChain/Deep Agents integration, read [coordinated production](../../references/agent-production.md). Check capabilities, revision, and result coverage; a described workflow does not prove execution. Local UI adjustments remain with the relevant specialist.
+For production jobs, resumption or an explicitly requested separate runtime, use [coordinated production](../../references/agent-production.md). A described workflow does not prove execution. When authorized delegation is useful, assign the question, files and acceptance criteria and avoid concurrent edits; it is not required for every task.
 
 ## Preserve approved mechanisms
 
@@ -94,6 +94,7 @@ Test the task, focus, extreme content, and affected states. Static/bundle analys
 - "Use /forma:forma to implement the complete lighting editor with pools, save/reopen behavior, and colors by context."
 - "Use /forma:forma to audit this flow; do not edit it yet."
 - "Use /forma:forma to create a campaign and deliver editable files."
+- "Use /forma:forma to create a clean PDF guide with cards and comparison tables. Preserve our branding and facts, deliver the PDF, and inspect every exported page."
 - "Use /forma:forma-motion to refine this interface's animations."
 - "Use /forma:forma-interface to apply the sidebar, clean background, and controls to my app."
 
@@ -103,6 +104,6 @@ Keep all Forma-authored package content in US English with ASCII editorial punct
 
 For new content, follow [authorship and integration](../../references/authorship.md): write a solution to a real problem, connect it to the resource, and verify it; renaming external content does not make it original. When replacing imported content, preserve the capabilities learned and verify where they belong in Forma's own contracts, including coordination, research, direction, and refinement. References, standards, dependencies, and media retain their origins.
 
-When improving this skill, keep the entry point small, give each specialist a distinct responsibility, and keep theory in its canonical reference. Preserve links, approved resources, and history in [sources](../../references/sources.md). Validate the structure and [decision scenarios](../../evals/scenarios.md), including [routing](../../evals/routing-scenarios.md). Reading, documentary evaluation, and product execution are not interchangeable proof.
+When improving this skill, keep the entry point small, give each specialist a distinct responsibility, and keep theory in its canonical reference. Keep each capability linked to its implementation, contract and evidence in the [resource map](../../references/sources.md). Validate the structure and [decision scenarios](../../evals/scenarios.md), including [routing](../../evals/routing-scenarios.md). Reading, documentary evaluation, and product execution are not interchangeable proof.
 
 To incorporate findings from a conversation or reconcile a new plan with approved design, use [approved product evolution](../../references/approved-product-evolution.md): distinguish local decisions, transferable mechanisms, and evidence. Do not copy entire conversations, personal data, or one product's requirements into universal defaults.

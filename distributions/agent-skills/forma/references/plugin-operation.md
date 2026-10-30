@@ -16,6 +16,8 @@ In the standalone distribution, select the skill named `forma`. In the plugin, t
 
 The package includes contracts, helpers, examples and the components declared in [resources](resources.md). The portable [AppearanceEditor and extracted NeuronPassport](reusable-components.md) now include executable code and a component lab; the plugin does not automatically inject them into any framework. Their adapters, persistence and fidelity still require destination integration. The primary passport now extracts the approved Neuron CSS engine. The earlier Three implementation remains a distinct legacy alternative. External plugins, keys, services, models and connections are not installed as implicit dependencies.
 
+Every skill's metadata.version identifies the distribution release, not the last edit date of that module. Keep the coordinator, all specialists and plugin manifests aligned; the package checker rejects missing, invalid or divergent versions. Historical audit revisions and component source hashes retain their original values.
+
 ## Repeatable verification
 
 Resolve the root containing `references/`, `assets/`, `scripts/` and `tests/`. In the plugin it also contains `.codex-plugin/` or `.claude-plugin/`; in the Agent Skills package it is `forma/`. Do not use a specialist's folder as the root. The variable `<package-root>` means the plugin or canonical source root; for Agent Skills, it is the folder **above `forma/`**, containing the 12 folders. This audit folder must contain only the Forma distribution, without other skills.
@@ -24,7 +26,7 @@ Resolve the root containing `references/`, `assets/`, `scripts/` and `tests/`. I
 python3 <forma-root>/scripts/check_package.py --root <package-root>
 ```
 
-The checker is local and read-only. It derives the catalog from the files and checks Markdown links/anchors, names, scalar metadata fields and, when a manifest exists, plugin paths and prompts. It is not a complete YAML parser, security scanner or meaning evaluator. Host frontmatter validation remains a separate step.
+The checker is local and read-only. It derives the catalog from the files and checks Markdown links/anchors, names, scalar metadata fields and aligned release versions across all skills. When a manifest exists, it also checks plugin paths, prompts and the manifest version. It is not a complete YAML parser, security scanner or meaning evaluator. Host frontmatter validation remains a separate step.
 
 When authoring/updating, add only the comparisons available:
 

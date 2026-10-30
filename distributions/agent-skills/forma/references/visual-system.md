@@ -59,7 +59,7 @@ Define roles: display, heading, body, label, supporting text and number. Start w
 
 Test with actual content: accents, descenders, italics, uppercase, tabular numbers and currencies. Adjust line height to font and size; no single value prevents all clipping. Avoid tiny essential text to fit a layout. On the web, prefer relative units and preserve zoom; in native apps, use system typographic scales.
 
-Font Pairing can help compare alternatives, but a trio does not require three families in production. Compare the same phrase at the same width and multiple sizes. Suggested commercial fonts do not imply an available license.
+Compare font candidates by their assigned roles; three roles do not require three families in production. Compare the same phrase at the same width and multiple sizes. Suggested commercial fonts do not imply an available license.
 
 ## Color, shape and material qualities
 
@@ -75,6 +75,6 @@ Define radius and elevation roles, not one mandatory radius for everything. Cont
 
 Every component should have anatomy, purpose, variants, states, content, behavior, accessibility and limits. Document platform differences by intent. Reuse before generalizing; extract an abstraction when there is actual recurring variation.
 
-For system changes, identify consumers, migration, compatibility and owner. In Figma, prefer variables, auto layout and instances; in code, existing tokens and components. Do not claim Figma/code synchronization without checking both.
+For system changes, identify consumers, migration, compatibility and owner. In the design editor, prefer variables, auto layout and instances; in code, existing tokens and components. Do not claim design-source/code synchronization without checking both.
 
 For a worked example of direction, spacing, CSS and migration, read [tokens and handoff](tokens-handoff.md). For anatomy and states, read [patterns](component-patterns.md). A numerical scale alone does not create hierarchy.

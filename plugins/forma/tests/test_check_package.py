@@ -34,7 +34,7 @@ class PackageTests(unittest.TestCase):
         self.addCleanup(self.tmp.cleanup)
         self.base = Path(self.tmp.name)
         self.source = self.base / "canonical"
-        write(self.source, "SKILL.md", '---\nname: forma\ndescription: "Synthetic fixture"\n---\n# Forma\n[Guide](references/guide.md#t\u00edtulo-\u00fatil)\n[Again](references/guide.md#repetido-1)\n')
+        write(self.source, "SKILL.md", '---\nname: forma\ndescription: "Synthetic fixture"\nmetadata:\n  version: 1.0.0\n---\n# Forma\n[Guide](references/guide.md#t\u00edtulo-\u00fatil)\n[Again](references/guide.md#repetido-1)\n')
         write(self.source, "references/guide.md", "# T\u00edtulo \u00fatil\n## Repetido\n## Repetido\n\n```markdown\n[Not a real link](absent.md)\n```\n")
         write(self.source, "agents/openai.yaml", 'interface:\n  default_prompt: "Use $forma for this fixture."\npolicy:\n  allow_implicit_invocation: true\n')
         write(self.source, "assets/icon.svg", '<svg viewBox="0 0 64 64"></svg>\n')
@@ -103,6 +103,40 @@ class PackageTests(unittest.TestCase):
         with (self.source / "SKILL.md").open("a", encoding="utf-8") as stream:
             stream.write('\n[Space](<references/a b.md#another> "title")\n[Named][ref]\n[ref]: references/guide.md#t\u00edtulo-\u00fatil\n')
         self.assertEqual(audit(self.source)["status"], "pass")
+
+    def test_specialist_release_version_must_match_coordinator(self):
+        path = "skills/objects-3d/SKILL.md"
+        header = '---\nname: forma-objects-3d\ndescription: "Synthetic specialist"\nmetadata:\n  version: {}\n---\n'
+        write(self.source, path, header.format("1.0.0"))
+        self.assertEqual(audit(self.source)["status"], "pass")
+        write(self.source, path, header.format("0.9.0"))
+        errors = audit(self.source)["errors"]
+        self.assertTrue(any(e["code"] == "skill-version" and e["path"] == path for e in errors), errors)
+
+    def test_missing_duplicate_or_body_only_version_cannot_pass(self):
+        base = '---\nname: forma\ndescription: "Synthetic fixture"\n{}---\n# Forma\n'
+        for metadata in ("", "metadata:\n  version: 1.0.0\n  version: 1.0.1\n", "metadata:\n  version: unknown\n"):
+            with self.subTest(metadata=metadata):
+                write(self.source, "SKILL.md", base.format(metadata) + "metadata:\n  version: 1.0.0\n")
+                self.assertIn("skill-version", self.codes(audit(self.source)))
+
+    def test_manifest_release_version_must_match_skill_metadata(self):
+        root = self.plugin()
+        path = root / ".codex-plugin/plugin.json"
+        manifest = json.loads(path.read_text())
+        manifest["version"] = "1.0.1"
+        path.write_text(json.dumps(manifest))
+        self.assertIn("skill-version", self.codes(audit(root)))
+
+    def test_flat_skill_distribution_enforces_versions_without_manifest(self):
+        root = self.base / "flat"
+        header = '---\nname: {}\ndescription: "Synthetic fixture"\nmetadata:\n  version: {}\n---\n'
+        write(root, "forma/SKILL.md", header.format("forma", "1.0.0"))
+        path = "forma-motion/SKILL.md"
+        write(root, path, header.format("forma-motion", "1.0.0"))
+        self.assertEqual(audit(root)["status"], "pass")
+        write(root, path, header.format("forma-motion", "0.9.0"))
+        self.assertIn("skill-version", self.codes(audit(root)))
 
     def test_broken_file_and_heading_fail_separately(self):
         with (self.source / "SKILL.md").open("a", encoding="utf-8") as stream:

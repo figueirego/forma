@@ -104,7 +104,7 @@ Transactions: the statically observed desktop reference writes with debounce and
 
 ## Icons are interface assets, not typographic characters
 
-REA of the desktop reference renderer identified **two paths**, not a single universal family:
+Inspection of the desktop reference renderer identified **two paths**, not a single universal family:
 
 - `Je` (`R@147501`): inline SVG, viewBox 24 x 24, currentColor, stroke 2, round linecap/linejoin, mask with an ID per instance, aria-hidden, and focusable false.
 - `Fs` (`R@280107`): `span.fig` with declared width/height and an asset in `--fig`; CSS paints `background:currentColor` through centered/contain/no-repeat mask/`-webkit-mask`. The editor mode selector uses Fs with size 14. Assets measuring 24 x 24 combine rounded stroke 2 with filled parts; converting them entirely to outlines changes the silhouette.

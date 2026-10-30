@@ -9,7 +9,7 @@ Use WCAG 2.2 AA as a web reference where applicable; legal and contractual requi
 - WCAG 2.2 AA, SC 2.5.8: a pointer target of at least 24 x 24 CSS px or an applicable exception, including the spacing rule. 44 x 44 CSS px is a useful enhanced target, not the universal AA minimum.
 - iOS/iPadOS: the HIG reviewed distinguishes a standard 44 x 44 pt control from a 28 x 28 pt minimum; start with the comfortable standard and assess spacing and context. Do not present 44 pt as a universal normative minimum. Android/Material: a 48 x 48 dp touch target. These are different units and ecosystems.
 
-Confirm exact requirements in the official source when auditing. Consult [sources](sources.md); do not shrink destructive controls below usable target sizes.
+Confirm exact requirements in the official source when auditing. Consult [WCAG 2.2](https://www.w3.org/TR/WCAG22/) and the [ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/); do not shrink destructive controls below usable target sizes.
 
 ## Functional checks
 

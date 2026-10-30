@@ -2,7 +2,7 @@
 name: forma-validation
 description: "Validate tasks, accessibility, rendering, states, and fidelity with proportionate evidence and reproducible findings. Use for QA and confirmation after changes; not to certify inaccessible areas or treat isolated builds/tests as visual proof."
 metadata:
-  version: 1.32.1
+  version: 1.32.2
 ---
 
 # Validation and quality
@@ -46,8 +46,8 @@ Helper scripts verify their input contracts; passing them does not replace obser
 Stop when relevant criteria have evidence and no material blocker remains, or conclude the audit with clearly open failures.
 Without runtime access, state what static analysis confirms and what remains untested; do not treat a limitation as approval.
 
-## Optional support and boundaries
+## Coordination and execution boundaries
 
-`accessibility`, `ecc:browser-qa`, `e2e-testing`, and `ecc:click-path-audit` can support a concrete gap.
-Read the available support skill's current `SKILL.md` and [integrations](../../references/integrations.md) before use; a skill name does not prove that a runner is connected.
+Consult the relevant Forma domain specialist to interpret evidence. Browser, accessibility and end-to-end checks remain this module's responsibility, using the available runner and existing project tests.
+The coordinator selects additional modules; do not recursively dispatch between specialists. Use the available tools according to [capabilities](../../references/integrations.md); a tool name does not prove connection or execution.
 Do not create suites that merely mirror the implementation. Test evidence, visual inspection, and task validation answer different questions.

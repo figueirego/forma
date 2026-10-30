@@ -2,7 +2,7 @@
 name: forma-objects-3d
 description: "Integrate or refine reusable material objects, BookObject, books, covers and 2D/3D mascots, including geometry, materials, gestures and lifecycle. Use for object mechanisms and fidelity; not to add decorative 3D to every interface."
 metadata:
-  version: 1.32.0
+  version: 1.32.2
 ---
 
 # Objects, material and 3D
@@ -41,8 +41,8 @@ Record what was integrated, adapted, replaced or not tested; a library compariso
 Stop when the consumer exercises the requested mechanism and views, gestures and material meet the established acceptance criteria.
 If only the fallback works, do not conclude that the primary volume/renderer was validated. State the concrete remaining dependency.
 
-## Optional support and limits
+## Coordination and execution boundaries
 
-REA can clarify an unknown mechanism; `design-motion-principles` can support gestures; `ecc:blender-motion-state-inspection` applies only when a Blender context exists.
-Check availability and read the current operational `SKILL.md`, when present, as described in [integrations](../../references/integrations.md); do not assume tools from a name.
+Use Forma Reference to investigate an unknown mechanism, Forma Motion for gestures, and Forma Validation for controlled rendered comparisons. Geometry, materials and renderer decisions remain in this module.
+The coordinator selects additional modules; do not recursively dispatch between specialists. Use the available tools according to [capabilities](../../references/integrations.md); a tool name does not prove connection or execution.
 Do not install engines or change the stack by visual association. Materiality, image generation and executable geometry are distinct deliverables.

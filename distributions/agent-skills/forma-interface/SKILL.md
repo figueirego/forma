@@ -2,7 +2,7 @@
 name: forma-interface
 description: "Build or refine operational interfaces, clean shells, forms, navigation, search, settings, appearance editors and material profiles. Use for usable components and states; not for broad research, campaigns or 3D geometry implementation."
 metadata:
-  version: 1.32.1
+  version: 1.32.2
 ---
 
 # Interface and states
@@ -49,8 +49,8 @@ Identify simulated data, in-memory-only changes and integrations that are still 
 Stop when the distinguishing operation works in the consumer and affected states have no relevant regressions.
 A toast does not prove saving; changing colors does not prove composition reuse; focusing an input does not prove a command palette.
 
-## Optional support and limits
+## Coordination and execution boundaries
 
-`ecc:click-path-audit`, `ecc:design-system`, Impeccable and `accessibility` can support handler diagnosis, consistency and access.
-Read each available supporting skill's current `SKILL.md` before use, as described in [integrations](../forma/references/integrations.md); do not assume tools from a name.
+Use Forma Foundations for unresolved tokens, Forma Motion for gestures and transitions, and Forma Validation for task and access checks. Keep handler diagnosis and control integration in this module.
+The coordinator selects additional modules; do not recursively dispatch between specialists. Use the available tools according to [capabilities](../forma/references/integrations.md); a tool name does not prove connection or execution.
 Do not replace requested volume/interaction with an image or merely tilted plane. Previously approved articulated CSS 3D remains a valid mechanism; do not replace it with WebGL by association. Keep each capability's implementation boundary visible in the delivery.

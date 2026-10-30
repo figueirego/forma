@@ -1,9 +1,14 @@
 # Changelog
 
-## Unreleased
+## 1.32.2 - 2026-10-30
 
-- Add an optional clear PDF guide reference and neutral print specimen for situation/choice cards, alternating-row tables and concise copy. Connect Brand, Foundations and artifact export guidance, with long-content and evidence-boundary scenarios.
+- Add an optional clear PDF guide and neutral print specimen for situation/choice cards, alternating-row tables and concise copy. Connect Brand, Foundations, Handoff, routing and usage guides, with long-content and export-verification scenarios.
 
+- Keep design routing inside Forma's coordinator and eleven specialists. Replace the external skill directory with a capability-based tool contract and a provider-neutral artifact investigation workflow.
+- Align all skill metadata with the package version and reject stale or missing skill versions during package validation.
+- Preserve the approved book/passport mechanisms, reusable refinement contracts, dependencies and source/license records.
+- Limit third-party notices to incorporated reference indexes and rendering dependencies; keep research history separate from presentation.
+- Replace distributed plugin-study diaries with Forma capability, coordination and use-case maps. Preserve approved components and website/portfolio reference data.
 
 ## 1.32.1 - 2026-10-29
 

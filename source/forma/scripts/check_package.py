@@ -14,7 +14,7 @@ from zipfile import BadZipFile, ZipFile
 
 LIMITS = [
     "Structural validation only: no target code, model, network or product UI is executed.",
-    "YAML validation is limited to single-line name, description and interface.default_prompt scalars; not a full YAML parser.",
+    "YAML validation is limited to single-line name, description, metadata.version and interface.default_prompt scalars; not a full YAML parser.",
     "Markdown checks inline links/images and reference definitions outside fenced code; heading anchors approximate GitHub ATX headings, not full CommonMark/HTML rendering.",
     "External URLs and fragments in non-Markdown files are not validated.",
     "Hashes compare bytes, not authorship or trust. Source hashes are verified only with --source.",
@@ -193,6 +193,29 @@ def frontmatter(text, path, errors):
         error(errors, "skill-name", path, "Name must use lowercase letters, digits and single hyphens")
         return None
     return fields["name"]
+
+
+def skill_versions(files, skills, manifest, errors):
+    """A Forma distribution has one release version across all entry points."""
+    versions = {}
+    for item in skills:
+        path = item["path"]
+        text = decode(files[path], path)
+        header = re.match(r"\A---\r?\n(.*?)\r?\n---(?:\r?\n|\Z)", text, re.S)
+        sections = re.findall(r"^metadata:[ \t]*\n((?:[ \t]+[^\n]*\n|\n)*)",
+                              (header.group(1) + "\n") if header else "", re.M)
+        values = re.findall(r"^[ \t]+version:[ \t]*([^\r\n]*)$", sections[0], re.M) if len(sections) == 1 else []
+        version = scalar(values[0]) if len(values) == 1 else None
+        if version is None or not re.fullmatch(r"\d+\.\d+\.\d+", version):
+            error(errors, "skill-version", path, "Expected one metadata.version release scalar (major.minor.patch)")
+        else:
+            versions[path] = version
+    coordinator = next((item["path"] for item in skills if item["name"] == "forma"), None)
+    expected = manifest.get("version") if manifest else versions.get(coordinator)
+    if expected is not None:
+        for path, version in versions.items():
+            if version != expected:
+                error(errors, "skill-version", path, "Skill version {} differs from release {}".format(version, expected))
 
 
 def catalog(files, manifest, roots, errors):
@@ -418,6 +441,7 @@ def audit(root, installed=None, archive=None, source=None):
     root, files = inventory(root, errors, "root")
     manifest, roots = plugin_manifest(files, errors)
     skills = catalog(files, manifest, roots, errors)
+    skill_versions(files, skills, manifest, errors)
     recorded_catalog(files, skills, manifest, errors)
     markdown_count, link_count = markdown_links(root, files, errors)
     source_files = inventory(source, errors, "source")[1] if source is not None else None

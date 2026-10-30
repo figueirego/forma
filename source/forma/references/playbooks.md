@@ -8,7 +8,7 @@ Use the smallest workflow that meets the request. Keep the existing product, fil
 
 1. Reproduce the reported state; locate styles, tokens and consumers. Preserve a baseline with the actual revision, content, state and size. For "it does not look good" without a stated cause, examine the artifact and identify the main observable problem; do not require the user to perform the technical diagnosis.
 2. Define what should improve and how to check it: for example, "the heading and field share the inset, and a long name does not push Save away." Separate defects, reference discrepancies and aesthetic preferences. Prioritize task completion, access and data, then structure, consistency and polish; keep the user's specific complaint as the round's focus.
-3. Form a causal hypothesis and choose evidence that distinguishes it from other causes. Measure the container/cascade before replacing tokens; confirm the rendering path before adjusting a shader. If relevant capability or knowledge is missing, use [support selection](integrations.md#choose-support-during-refinement). Do not start external research for an error already explained by local code.
+3. Form a causal hypothesis and choose evidence that distinguishes it from other causes. Measure the container/cascade before replacing tokens; confirm the rendering path before adjusting a shader. If relevant capability or knowledge is missing, use [tool capability selection](integrations.md#choose-by-the-unresolved-question). Do not start external research for an error already explained by local code.
 4. Make the smallest coherent change, isolating the hypothesis or a causal group of changes. Before changing a global token, check consumers; keep local exceptions local. Preserve the approved direction and user data. Keep the previous version recoverable while experimenting.
 5. Compare in the same context using the [rendered loop](rendered-validation.md), confirming the reported state, affected states, extreme content and relevant checks. Verify that the modified revision loaded. Accept the change when it meets the criterion without a relevant regression; revert an attempt that worsened the result and retain evidence of why.
 
@@ -48,7 +48,7 @@ When the request also includes improving this skill, record **symptom -> mechani
 3. Define tokens and contracts for the most recurring components. Use [tokens and handoff](tokens-handoff.md).
 4. Build a sample with a form, content and an adverse state. Migrate other consumers only after verifying the effects.
 
-**Delivery:** machine-readable tokens when useful, usage in the actual stack, a short component/state catalog and decisions. ECC's visual preview may be local HTML or the existing catalog; do not create Storybook merely to satisfy a format.
+**Delivery:** machine-readable tokens when useful, usage in the actual stack, a short component/state catalog and decisions. The visual preview may be local HTML or the existing catalog; do not create Storybook merely to satisfy a format.
 
 ## E. Desktop app and distribution
 
@@ -71,7 +71,7 @@ When the request also includes improving this skill, record **symptom -> mechani
 ## G. Reproduce or reconstruct from a reference
 
 1. Capture the source and identify what must be faithful: visuals, behavior or both.
-2. If Figma/code source is available, use it before inferring from pixels. For artifacts without source, apply [REA](rea.md).
+2. If design-source/code source is available, use it before inferring from pixels. For artifacts without source, apply [artifact investigation](artifact-investigation.md).
 3. Record gaps: images, inaccessible states, permissions, data, gestures and scales.
 4. Build and compare in the same context. Do not confuse a style reference with a clone request.
 

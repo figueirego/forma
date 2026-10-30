@@ -16,7 +16,7 @@ When the user selects an already approved implementation, it takes precedence ov
 4. **State:** CSS default, JS override, persisted preference, content context, resolved theme, high contrast and reduced motion. Do not confuse a static default with the final result.
 5. **Technology:** declared manifest, actually packaged version, resource callsite and observed execution. Three's presence does not prove all WebGL uses Three; an installed framework version is not measured runtime evidence.
 
-Extract the required tables and formulas, not an entire bundle dump. Identify character versus byte offsets. Partial REA, timeouts or truncated graphs must remain partial in the report. Use retained evidence and narrow the files; do not repeat broad analysis without changing scope. Direct token reading is independent static evidence, not retroactive AST success.
+Extract the required tables and formulas, not an entire bundle dump. Identify character versus byte offsets. Partial artifact inspection, timeouts or truncated graphs must remain partial in the report. Use retained evidence and narrow the files; do not repeat broad analysis without changing scope. Direct token reading is independent static evidence, not retroactive AST success.
 
 ## Traceable implementation
 

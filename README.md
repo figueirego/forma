@@ -28,6 +28,10 @@ Describe the outcome, the context, and what should stay unchanged. The coordinat
 
 > Use Forma to create a cover and a short presentation for this product. Use only documented benefits and deliver the requested editable formats.
 
+**Create a clear PDF guide**
+
+> Use Forma to turn this content into a clean PDF guide with situation/choice cards and comparison tables. Preserve our brand and all facts, deliver the PDF and editable source, and inspect every exported page.
+
 **Audit before changing**
 
 > Use Forma to review this flow on desktop and at mobile width. Show reproducible issues with evidence. Do not edit yet.
@@ -53,6 +57,8 @@ In Codex, invoke **`$forma:forma`**; in Claude Code, **`/forma:forma`**. In othe
 - [**Brand**](source/forma/skills/brand/SKILL.md) - identity, campaigns, presentations, and graphic assets.
 - [**Handoff**](source/forma/skills/handoff/SKILL.md) - editable artifacts, tokens, export, and integration.
 - [**Validation**](source/forma/skills/validation/SKILL.md) - accessibility, states, and quality checks within a defined scope.
+
+Start with the [use-case guide](source/forma/references/source-use-cases.md) and [resource map](source/forma/references/sources.md). For documents, see the [clear PDF guide](source/forma/references/clear-pdf-guides.md) and its [print specimen](source/forma/assets/clear-pdf-guide.html).
 
 Explore the [reusable resources](source/forma/references/resources.md), [evaluation scenarios](source/forma/evals/routing-scenarios.md), and [changelog](CHANGELOG.md).
 
@@ -138,7 +144,7 @@ See the [installation guide](docs/INSTALLATION.md) for updates, removal, and evi
 
 ## Scope and limits
 
-Forma provides instructions, references, and local resources; it is not a standalone visual editor. Integrations such as a browser, Figma, or REA depend on the environment and are not connected automatically.
+Forma provides instructions, references, and local resources; it is not a standalone visual editor. Browser, design-canvas and artifact-inspection capabilities depend on the environment and are not connected automatically. Design methods and routing remain in Forma.
 
 Structure and geometry tests do not prove rendering quality; a mobile viewport is not a physical device. The package includes executable resources and implementation specifications; inspect their current availability before promising reuse. AppearanceEditor and the extracted NeuronPassport are executable modules, while domain integrations and fidelity still need destination evidence. See [operation and limits](source/forma/references/plugin-operation.md) and the [release-validation protocol](source/forma/references/release-validation.md). That protocol separates frozen trials, original failures, reviewed corrections, rendered behavior, retrieval and runtime cost; it does not claim universal reliability or authorize publication.
 

@@ -2,7 +2,7 @@
 name: forma-graphs-data
 description: "Design knowledge graphs, maps, dashboards, time series and data exploration with verifiable identity, provenance and interaction. Use for relationships and analytical reading; not to turn fictional data or visual position into domain facts."
 metadata:
-  version: 1.17.1
+  version: 1.32.2
 ---
 
 # Graphs, maps and data
@@ -40,8 +40,8 @@ Include only scale, coverage and update limits actually measured, without invent
 Stop when a person can answer the question, inspect the source and obtain the expected result without losing context.
 A beautiful graph with incorrect relationships or a rendered map with incorrect totals does not meet acceptance criteria.
 
-## Optional support and limits
+## Coordination and execution boundaries
 
-`ecc:dashboard-builder`, `ecc:design-system` and `accessibility` can help with analytical composition, consistency and access.
-If present, read the current `SKILL.md` and [integrations](../../references/integrations.md) before use; do not assume a connection to data or tools.
+Use Forma Foundations for visual encoding, Forma Interface for controls, and Forma Validation for data and access checks. Trace the data source and relationship semantics before choosing a renderer.
+The coordinator selects additional modules; do not recursively dispatch between specialists. Use the available tools according to [capabilities](../../references/integrations.md); a tool name does not prove connection or execution.
 In-memory examples do not demonstrate persisted updates. Do not add a database, physics simulation, WebGL or geographic service without a concrete need.
