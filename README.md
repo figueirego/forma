@@ -64,7 +64,7 @@ Forma maintains its own instructions, pattern descriptions and tools. Each addit
 
 ## Reference library
 
-Forma includes a searchable library of patterns written for its reusable resources and implementation contracts, **202 external site references**, and **2,079 developer portfolios** from a pinned community listing. Patterns explain implementation; external collections provide candidates and Forma-authored questions to investigate. Explore them in the local selector or lightweight browser. A separate **observed-experiences collection currently covers five sources and nine bounded claims**, each with dates, conditions, evidence and caveats. This does not mean all 202 sites or 2,079 portfolios were studied.
+Forma includes searchable design patterns, website research candidates, developer portfolios, and a separate collection of observed design experiences. Browse them in the local selector or use the CLI:
 
 ```sh
 node <skill-dir>/scripts/references.mjs --portfolios --query "Joao" --limit 3 --json
@@ -72,13 +72,9 @@ node <skill-dir>/scripts/references.mjs --portfolios --case portfolio-project-st
 node <skill-dir>/scripts/references.mjs --observed --query "sticky navigation" --json
 ```
 
-Observed lookup matches specific features within the same supporting claim. Unsupported queries return no observed match; untested caveats and broad candidate guides do not count as feature evidence. It performs no fresh site visit. See [observed search](source/forma/references/reference-library.md#search-observed-experiences).
-
-The portfolio collection retains names, original URLs and source lines from [Developer Portfolios](https://github.com/emmabostian/developer-portfolios/tree/c2ee35d6363e7b2ee4c34f40accb478c0f828e4f). An [import receipt](source/forma/assets/reference-library/portfolio-import.json) records full README coverage, a stale feed and one quarantined malformed URL. No portfolio code, images or descriptions are included; the source snapshot has no explicit license, and individual websites retain their own rights.
-
 > Use Forma to find three references for this project, explain what fits our content, preserve the approved brand, and inspect the selected sites before implementing.
 
-The media helper searches Openverse, Wikimedia Commons, the Art Institute of Chicago, and the Met, and downloads only an explicitly selected result with its attribution record. See the [reference and media guide](source/forma/references/reference-library.md). Pattern guidance, use-case questions and tools are maintained by Forma. External sites, the historical inventory and media retain their provenance; imported descriptions and aesthetic scores are not presented as Forma-authored work.
+The media helper searches Openverse, Wikimedia Commons, the Art Institute of Chicago, and the Met. See the [reference and media guide](source/forma/references/reference-library.md).
 
 ## Reusable components
 
@@ -162,10 +158,4 @@ Plugins, catalogs, and Agent Skills are generated and versioned; CI checks that 
 
 ## License
 
-[MIT](LICENSE). ECC informed part of the organizational approach; Forma is independent and does not install ECC or LangChain. See the [provenance and third-party notices](source/forma/THIRD_PARTY_NOTICES.md). External references retain their own rights and licenses.
-
-### Learning from references
-
-Forma keeps site candidates separate from verified experience. The [experience workflow](source/forma/references/experience-library.md) connects observations, implementation techniques, licenses, adaptation decisions and tests. [Dated source studies](source/forma/references/site-experiences.md) support the observed collection's five sources and nine claims. Neither that subset nor the 202-site and 2,079-portfolio indexes claim that every destination was audited or copied.
-
-Coordination also covers websites: select relevant sources, assign concrete research questions, reconcile findings into one design direction, hand decisions to the appropriate specialists, then implement and verify the destination when requested. The assistant carries out this workflow with available tools; the reference browser itself is a selector, not an autonomous crawler.
+[MIT](LICENSE).
