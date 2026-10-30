@@ -50,3 +50,7 @@ A moodboard does not complete an implemented landing page; an object image does 
 `ai-graphic-design:ai-graphic-design`, `imagegen` and Font Pairing can support production or direction depending on the artifact.
 If available, read the current `SKILL.md` and [integrations](../../references/integrations.md) before use; a list of supporting tools does not guarantee a connection or credits.
 Do not duplicate generations, install providers or publish merely to complete the workflow. The request's authorization determines the permitted external action.
+
+## Clear PDF guides
+
+For clean PDF guides with situation/choice cards, resource tables and short copy, use [clear PDF guides](../../references/clear-pdf-guides.md). Adapt the optional profile to the consumer; inspect the exported PDF, not only the source.

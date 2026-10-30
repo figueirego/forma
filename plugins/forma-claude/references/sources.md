@@ -432,3 +432,7 @@ The [observed index](../assets/reference-library/observed-experiences.json) cont
 The 202 website candidates and 2,079 portfolio identities remain factual indexes with their existing provenance. This small observed subset does not imply that all entries were visited, tested or studied. No external site code, images, fonts or complete prose was imported. A lookup performs no network visit and grants no rights to reuse external assets.
 
 Component state, real Three geometry, controller lifecycle and retrieval regressions are supplied alongside the implementation. Their execution and any rendered observations belong to the delivery record for the actual source/output hashes, not to this provenance entry. Package integrity, local tests, live rendering, hardware identity, CPU/GPU cost, emulated input, physical devices, cross-engine coverage and publication remain separate evidence. Independent original outputs and post-review corrections must retain separate records under the new protocol.
+
+## Clear PDF guide reference
+
+The [clear-guide profile](clear-pdf-guides.md) extracts an approved October 2026 document composition into original neutral material: situation/choice cards, alternating-row tables and concise copy. The original nine-page PDF was visually inspected; personal paths, private links and franchise content are excluded. The packaged HTML is a separate specimen, not evidence of universal usability or accessible PDF export.

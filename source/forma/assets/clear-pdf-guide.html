@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clear guide - print specimen</title>
+<style>
+:root { color-scheme: light; --navy:#132338; --teal:#086d73; --ink:#24364a; }
+* { box-sizing:border-box; }
+body { margin:0; background:#fff; color:var(--ink); font:12pt/1.35 Arial,sans-serif; }
+main { max-width:176mm; margin:17mm auto; }
+h1 { font-size:29pt; line-height:1.15; color:var(--navy); margin:0 0 12pt; }
+h2 { color:var(--navy); font-size:20pt; margin:28pt 0 14pt; }
+p { margin:0; }
+.intro { margin-bottom:22pt; }
+.card { background:#f0f4f5; border-left:4pt solid var(--teal); padding:16pt; margin:0 0 12pt; break-inside:avoid; }
+.card header { display:flex; gap:12pt; justify-content:space-between; flex-wrap:wrap; align-items:baseline; }
+h3 { font-size:16pt; color:var(--navy); margin:0; }
+.category { color:var(--teal); font-size:10pt; font-weight:bold; }
+.situation { margin-top:12pt; }
+.choice { color:var(--teal); margin-top:18pt; }
+table { border-collapse:collapse; width:100%; }
+caption { text-align:left; font-weight:bold; margin-bottom:12pt; }
+thead { display:table-header-group; background:var(--navy); color:white; }
+th,td { text-align:left; padding:14pt; vertical-align:top; overflow-wrap:anywhere; }
+tbody th { width:32%; color:var(--teal); }
+tbody tr:nth-child(odd) { background:#eaf3f3; }
+tbody tr:nth-child(even) { background:#f5f6f6; }
+tr { break-inside:avoid; }
+.note { margin-top:18pt; font-size:10.5pt; color:#526476; }
+@page { size:A4; margin:17mm; }
+@media print { main { margin:0; max-width:none; } body { print-color-adjust:exact; -webkit-print-color-adjust:exact; } }
+@media screen and (max-width:700px) { main { margin:24px; } th,td { padding:12px; } }
+</style>
+<main>
+<h1>Prepare a shared workspace</h1>
+<p class="intro">A neutral specimen for clear situations, choices and resource definitions.</p>
+<section aria-labelledby="choices">
+<h2 id="choices">Choose the next action</h2>
+<article class="card">
+<header><h3>Meeting room</h3><span class="category">PREPARATION</span></header>
+<p class="situation">The room is available, but the seating layout is not ready.</p>
+<p class="choice"><strong>You choose:</strong> arrange the seats now or reserve another room.</p>
+</article>
+<article class="card">
+<header><h3>Shared equipment</h3><span class="category">AVAILABILITY</span></header>
+<p class="situation">One team needs a display that another team has already reserved.</p>
+<p class="choice"><strong>You choose:</strong> agree on a different time or use the available alternative.</p>
+</article>
+</section>
+<h2>Know what each resource means</h2>
+<table>
+<caption>Resources for planning the session</caption>
+<thead><tr><th scope="col">Resource</th><th scope="col">Purpose</th></tr></thead>
+<tbody>
+<tr><th scope="row">Room</th><td>The space reserved for the session.</td></tr>
+<tr><th scope="row">Equipment</th><td>The tools available at the agreed time.</td></tr>
+<tr><th scope="row">Preparation time</th><td>The interval needed to make the space ready.</td></tr>
+</tbody>
+</table>
+<p class="note">Illustrative content. This HTML is a print source; inspect the exported PDF before delivery.</p>
+</main>
+</html>
