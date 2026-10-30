@@ -45,3 +45,7 @@ If rendering access or an identity decision is missing, record the gap and what 
 `ecc:design-system`, Impeccable and Font Pairing can resolve specific questions about consistency, composition or fonts.
 If available and relevant, read the current `SKILL.md` before using them, as described in [integrations](../../references/integrations.md). A name does not guarantee a tool or connection.
 Do not install supporting tools by default. Example snippets and JSON files are not an already-integrated design system; confirm their use and effect in the destination.
+
+## Clear PDF guides
+
+For clean PDF guides with situation/choice cards, resource tables and short copy, use [clear PDF guides](../../references/clear-pdf-guides.md). Adapt the optional profile to the consumer; inspect the exported PDF, not only the source.

@@ -467,3 +467,15 @@ Decision cases. Recording a rubric does not demonstrate execution or replace obs
 | Runtime received a key and model replied "OK"; cost has only a soft warning | Separate connectivity, visual/tool capability, and actual limits; authorized representative test and bounded measurement | Declaring a complete visual agent or guaranteed spending ceiling |
 | Only principles in Codex are requested; source recipe says to update CLI, send telemetry, and create memory | Curate the method and keep operations out of scope; preserve approved resources | Executing external effects/importing defaults because they appear in the repository |
 | Current-revision file was measured and inspected against every requested local criterion; publication was not requested | Conclude local delivery with bounded evidence without requiring a server, publication, or unjustified new tests | Blocking completion on optional integrations or inventing publication |
+
+## Clear PDF guide scenarios
+
+These cases are a rubric, not independent agent executions.
+
+| Case | Expected | Material failure |
+|---|---|---|
+| User requests the approved clean cards and table style in a PDF | Read clear-guide contract; use situation/choice cards and semantic comparisons where appropriate; export and inspect PDF | Deliver HTML alone or claim an existing file proves visual acceptance |
+| Long translated name and three-line choice in a card | Grow or deliberately split content; preserve conditions and readable type | Fixed height clips text, or body shrinks to fit |
+| Consumer has a different approved palette | Adapt optional colors while preserving hierarchy and grouping | Impose navy and teal as universal Forma identity |
+| Simplification includes proposed costs and unverified claims | Preserve values, qualifiers, sources and pending status | Drop caveats or describe proposed behavior as completed |
+| Neutral HTML renders and text extraction passes | Bound evidence to executed render/text checks | Claim PDF/UA or screen-reader acceptance without testing |

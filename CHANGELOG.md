@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Add an optional clear PDF guide reference and neutral print specimen for situation/choice cards, alternating-row tables and concise copy. Connect Brand, Foundations and artifact export guidance, with long-content and evidence-boundary scenarios.
+
+
 ## 1.32.1 - 2026-10-29
 
 - Fix false dirty state in AppearanceEditor after saving first-use, newly added or reset lights. Keep default, draft and persisted records canonical without changing color values, geometry, gestures, gradient generation or styling.

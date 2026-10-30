@@ -110,6 +110,12 @@
       "packaged_sha256": "c29b0ef74b33438e147584aef478e4ac58db414c057720ad6072108f8430913c"
     },
     {
+      "source": "assets/clear-pdf-guide.html",
+      "packaged": "assets/clear-pdf-guide.html",
+      "source_sha256": "a08e95fbdab07a2334b9421fc68d24fb8f26a04b633ce653363638a59456dd71",
+      "packaged_sha256": "a08e95fbdab07a2334b9421fc68d24fb8f26a04b633ce653363638a59456dd71"
+    },
+    {
       "source": "assets/components-lab.css",
       "packaged": "assets/components-lab.css",
       "source_sha256": "d6cbf5528eb8eebb73c9fd1b483f06f3deedc61326417f106c0a86445b255422",
@@ -466,8 +472,8 @@
     {
       "source": "evals/scenarios.md",
       "packaged": "evals/scenarios.md",
-      "source_sha256": "452efab1b4109238e715e9857fb7508730c98b5358acb790369a5b1ba178a0b9",
-      "packaged_sha256": "cd60a86232c5b46a2f06d32c57b7b4fe6337268f43d9594cba4412189a60326d"
+      "source_sha256": "758ea3245831aceae51bd611d7e7fd5f707cd48adb140453e44d890a47a66455",
+      "packaged_sha256": "52ff09b958acdb59ff658cd7e9b168266d284dde34d738bd3ac1f0c65cf848e0"
     },
     {
       "source": "references/3d-reference-fidelity.md",
@@ -502,8 +508,8 @@
     {
       "source": "references/artifact-workflows.md",
       "packaged": "references/artifact-workflows.md",
-      "source_sha256": "8a5a3a17b1b2c8fe2b54aefa566f5a71bff887ac5e8accbb80f4c8ca32746148",
-      "packaged_sha256": "8a5a3a17b1b2c8fe2b54aefa566f5a71bff887ac5e8accbb80f4c8ca32746148"
+      "source_sha256": "e43c4ab36497838bfd08bf52d7b62acda94f1cb6e91b079d4615798833233f87",
+      "packaged_sha256": "e43c4ab36497838bfd08bf52d7b62acda94f1cb6e91b079d4615798833233f87"
     },
     {
       "source": "references/authorship.md",
@@ -534,6 +540,12 @@
       "packaged": "references/clean-shell.md",
       "source_sha256": "ed051db37c38629b9656b0b94b340d6278041bea7fa5431f01ff6c36ec90b523",
       "packaged_sha256": "3f8a2a285c07b11db1c8e1f88e1635d2102e36f538d57b3782ee714240f7ceda"
+    },
+    {
+      "source": "references/clear-pdf-guides.md",
+      "packaged": "references/clear-pdf-guides.md",
+      "source_sha256": "b7a3c31c64bf71b014d7b2d49981474584284d76a6e7de021b8049c811f3af31",
+      "packaged_sha256": "b7a3c31c64bf71b014d7b2d49981474584284d76a6e7de021b8049c811f3af31"
     },
     {
       "source": "references/color-refinement.md",
@@ -760,8 +772,8 @@
     {
       "source": "references/sources.md",
       "packaged": "references/sources.md",
-      "source_sha256": "a7961d8d4df8084c75cc546c065dc1eb19e7ae5d7808907929430bbe9c6bd5fd",
-      "packaged_sha256": "29f3bad00a6768d30766504f25b9abdf649ba3b0d8a0b3eb3e374526a1e00a9e"
+      "source_sha256": "48ed506a91ae36a40693a4ddd4fe9d23225a5509a7f066c4f68358d96c0b73d6",
+      "packaged_sha256": "0978b4c4a252e8948579c479d5ef45ce19d50eeaa17e0ab21cccf3ac6623063e"
     },
     {
       "source": "references/specialized-surfaces.md",
@@ -868,8 +880,8 @@
     {
       "source": "skills/brand/SKILL.md",
       "packaged": "skills/forma-brand/SKILL.md",
-      "source_sha256": "977a95b6dea5ecbb65f0dbb0812ff5d098729dd7d22942f60f7b582e0075db82",
-      "packaged_sha256": "cea638d0e4915645e516fc6c54b8c7342d316a1c461445134f5165772f6bb6a0"
+      "source_sha256": "c980aefe0e6e6ab1a28b30ba44a42aba36eff024d4f1a4bcc6c4fcfc688d357a",
+      "packaged_sha256": "a9d215d11f23e1421f15cfc4444eada062588dbb47a4a0563a521959a0c7c0f6"
     },
     {
       "source": "skills/brand/agents/openai.yaml",
@@ -880,8 +892,8 @@
     {
       "source": "skills/foundations/SKILL.md",
       "packaged": "skills/forma-foundations/SKILL.md",
-      "source_sha256": "9029c730c8f9e78a51ac497aa96c5e0ff8ee84a2052cec0df6d87fdaa2de6a25",
-      "packaged_sha256": "9029c730c8f9e78a51ac497aa96c5e0ff8ee84a2052cec0df6d87fdaa2de6a25"
+      "source_sha256": "09e88936526174b74ac87f47a9f40ff07f72b4a2380feae1aef01b7891ef5ea8",
+      "packaged_sha256": "09e88936526174b74ac87f47a9f40ff07f72b4a2380feae1aef01b7891ef5ea8"
     },
     {
       "source": "skills/foundations/agents/openai.yaml",
