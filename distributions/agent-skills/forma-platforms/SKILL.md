@@ -2,7 +2,7 @@
 name: forma-platforms
 description: "Adapt experiences to web, mobile, desktop, distribution and specialized surfaces, respecting actual input, navigation and runtime behavior. Use for platform differences and installers; not to choose a framework only by appearance or file extension."
 metadata:
-  version: 1.32.2
+  version: 1.34.0
 ---
 
 # Platforms and distribution

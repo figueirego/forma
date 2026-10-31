@@ -84,7 +84,8 @@ test('appearance record preserves the canonical third-pool group-drag fixture, n
 
 test('Portuguese aliases retrieve the intended component and explain the literal match', () => {
   const board = api.searchCatalog(catalog, { query: 'barra lateral', origin: 'forma', kind: 'interface' });
-  assert.deepEqual(ids(board), ['forma-clean-shell']);
+  assert.ok(ids(board).includes('forma-clean-shell'));
+  assert.ok(ids(board).includes('forma-soft-glass'));
   assert.equal(board.results[0].match.matchedTerms[0].term, 'sidebar');
   assert.deepEqual(board.results[0].match.filters, { kind: 'interface', origin: 'forma' });
   assert.equal(ids(api.searchCatalog(catalog, { query: 'ilumina\u00e7\u00e3o', origin: 'forma' }))[0], 'forma-lighting-editor');
@@ -110,6 +111,21 @@ test('literal subject wins an alias tie without replacing field relevance or rel
     higherField.entries.find(entry => entry.id === 'forma-adaptive-list-detail')];
   higherField.entries[1].name = 'Navigation detail';
   assert.equal(ids(api.searchCatalog(higherField, { query: 'sidebar' }))[0], 'forma-adaptive-list-detail');
+});
+
+test('Soft Glass lookup returns the portable visual kit with its renderable resources', () => {
+  const result = api.searchCatalog(catalog, { query: 'soft glass', origin: 'forma' });
+  assert.equal(ids(result)[0], 'forma-soft-glass');
+  const entry = result.results[0].entry;
+  const paths = entry.resources.map(item => item.path);
+  assert.ok(paths.includes('assets/soft-glass/preview.html'));
+  assert.ok(paths.includes('assets/soft-glass/soft-glass.css'));
+  assert.ok(paths.includes('references/soft-glass.md'));
+  // The compact controls specimen must not substitute for the complete page.
+  assert.ok(paths.includes('assets/soft-glass/landing.html'));
+  assert.ok(paths.includes('assets/soft-glass/landing-profile.json'));
+  assert.ok(paths.includes('assets/soft-glass/landing-validation.json'));
+  assert.equal(ids(api.searchCatalog(catalog, { query: 'soft glass landing', origin: 'forma' }))[0], 'forma-soft-glass');
 });
 
 test('profile lookup selects the editable profile instead of unrelated brand identity', () => {

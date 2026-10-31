@@ -27,7 +27,7 @@ function plainASCII(value, location) {
 // This is an encoding and language-contract regression, not a grammar checker.
 // Editorial English still requires reading the copy in its interface context.
 test('all authored reference records use plain ASCII, without rewriting external names', () => {
-  assert.equal(patterns.entries.length, 21);
+  assert.equal(patterns.entries.length, 22);
   assert.equal(sites.cases.length, 16);
   assert.equal(portfolios.cases.length, 3);
   visitStrings(patterns, 'patterns', plainASCII);

@@ -1,6 +1,6 @@
 # Clean interface: reusable application foundation
 
-Use when the request is to reuse the combined clean background, sidebar, buttons, search, and inputs. The activation name is **clean interface foundation**; it does not depend on naming another product. It is an optional recipe for operational surfaces, not a mandatory identity or a theme for every landing page.
+Use when the request is to reuse the combined clean background, sidebar, buttons, search, and inputs. The activation name is **clean interface foundation**; it does not depend on naming another product. It is an optional recipe for operational surfaces, not a mandatory identity or a theme for every landing page. For a more expressive warm colored sidebar, diagonal glass buttons, dotted texture and matching landing, use the separate [Soft Glass preset](soft-glass.md); preserve the chosen recipe instead of combining their defaults accidentally.
 
 The resource includes [portable CSS](../assets/clean-shell.css), an [HTML example](../assets/clean-shell.html), and [demonstration behavior](../assets/clean-shell.js). The CSS uses `.dc-shell` and `--dc-*` tokens; the example allows composition and states to be inspected before adaptation. It is an original implementation with synthetic content, not code or branding extracted from third parties. Do not confuse this foundation with the complete lighting editor, material profile, semantic search, or BookObject: these are independent capabilities.
 

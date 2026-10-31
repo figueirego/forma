@@ -15,6 +15,7 @@ The `forma` entry chooses and reads an internal specialist, which selects canoni
 
 | Request | Primary | Conditional support and acceptance |
 |---|---|---|
+| Refine a design prompt or resolve a materially incomplete request | Product | [Progressive brief](progressive-brief.md): one unresolved question at a time; native controls or numbered text; shared decisions and consolidated prompt. Then deliver the requested prompt, plan, audit or implementation |
 | Fix a gap, padding or alignment in an existing component | Foundations | Inspect styles/boxes and change locally; interface only if composition/state problems extend beyond geometry |
 | Reapply a clean background, sidebar, buttons and fields | Interface | Foundations if tokens/relationships need adaptation; connect actual components and routes, without imposing 3D or a pool editor |
 | Theme editor with pools, grain, context and save/reopen | Interface | Foundations for the color pipeline; motion only for gesture/transition; test drafts, persistence and discard. The contract requires implementation; the theme demo is insufficient |
@@ -37,6 +38,8 @@ The `forma` entry chooses and reads an internal specialist, which selects canoni
 The names above correspond to the coordinator's table. The identifiers are `forma-foundations`, `forma-interface`, `forma-product`, `forma-objects-3d`, `forma-graphs-data`, `forma-motion`, `forma-platforms`, `forma-brand`, `forma-reference`, `forma-validation` and `forma-handoff`. Use a specialist directly when announced in the catalog; `$forma:forma` is the coordinating entry and also works when the host does not discover nested modules. Inside the package, module references use `../../references/`. Do not add absolute versioned plugin paths to the portable contract.
 
 ## One shared contract
+
+Product owns progressive alignment when needed. Existing complete briefs and clear local edits bypass it. Reuse project documentation, or for substantial authorized work use `docs/forma/brief.md` and `DESIGN.md` under the [brief](progressive-brief.md) and [specification](design-specification.md) contracts. Every specialist receives the same approved answers, unresolved dependencies and scope. Do not run parallel interviews or infer a reply from a skipped, preselected or expired question. Resolve dependent work only after a real answer, evidence, or an explicitly allowed assumption.
 
 For a useful specialist handoff or delegation, pass only:
 

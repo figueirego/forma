@@ -14,6 +14,10 @@ Read local instructions and inspect relevant files, flows, tokens, assets, depen
 
 For new products, define the task, audience, context, content, channels, constraints and success. For a misaligned button, do not start an entire product discovery process.
 
+Use Product and the [progressive brief](progressive-brief.md) when a missing choice materially changes the result. Read existing answers first, ask one unresolved question, and update the shared record after an actual answer. Native controls and numbered text use the same decisions; no question widget is required. Skip the interview for clear requests. When alignment is complete, summarize and execute within the original scope without a new mandatory approval step.
+
+For substantial authorized project work, reuse equivalent documentation or create `docs/forma/brief.md` and `DESIGN.md`. The brief records scope, approved choices, pending questions, dependencies and the consolidated prompt; the [design specification](design-specification.md) records visual decisions and their evidence. All specialists and subsequent assistants read the same project records. A correction reopens only dependent decisions. Do not create project files during a read-only audit or explanation merely to satisfy this protocol.
+
 When several sources are supplied, classify capability, evidence and license before combining their recommendations. A catalog, prompt, component and application do not have the same authority. Separate adopt, adapt, already covered, reject and pending; read [use cases](source-use-cases.md). If the direction is open, compare alternatives under equivalent conditions in [directions](design-directions.md); do not require variants for a choice already made.
 
 ### 2. Design flows and states before polish
@@ -25,6 +29,8 @@ For a new composition or layout defect, read [spatial contracts](layout-spatial-
 For graphs and links, read [graphs and knowledge](knowledge-graphs.md) before choosing the renderer. Define identity, provenance, direction, resolution, counts and updates after rename/delete. Separate actual relationships, semantic suggestions, groups and visual position. The interface must let users explain and open the source of each relationship.
 
 For new systems or broad changes, record the direction in existing documentation; create DESIGN.md only if useful and no equivalent exists. Use semantic tokens and components with states. Optional expression, motion and density dials support communication; they do not mandate effects.
+
+For design-only work, describe visual states and presentation behavior without expanding into authentication, backend actions or business workflows. Follow the [design specification](design-specification.md) to distinguish observed evidence from proposed tokens and to resolve contradictions in imported specifications. Document purposeful motion and reduced-motion behavior for interactive designs; 3D remains optional.
 
 ### 3. Build on the right platform
 

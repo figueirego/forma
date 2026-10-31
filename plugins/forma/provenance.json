@@ -1,5 +1,5 @@
 {
-  "version": "1.32.2",
+  "version": "1.34.0",
   "source": "canonical Forma skill",
   "transformations": [
     "Flatten skill directories",
@@ -17,8 +17,8 @@
     {
       "source": "SKILL.md",
       "packaged": "skills/forma/SKILL.md",
-      "source_sha256": "f3e0123d2b0a56f7e72d34b9ffb09fc35f185729215456664bc26fac4260781f",
-      "packaged_sha256": "f4c69d6e9dccede45259d3e47403e289a2ac0056653877013f2e6bbf8f951342"
+      "source_sha256": "9e557de5e26a4e5d646520c5339bbea4c17ff517b4c85a43cc7953f588835e67",
+      "packaged_sha256": "f5b71b7d22ebc3e60afe562440e919a0f2940b8623aac22c090f67f55edc5130"
     },
     {
       "source": "THIRD_PARTY_NOTICES.md",
@@ -389,8 +389,8 @@
     {
       "source": "assets/reference-library/catalog.json",
       "packaged": "assets/reference-library/catalog.json",
-      "source_sha256": "ec9b74520c42836f8f50a3b45c433ccc0fa49c5ddbc74164e5905e27f980cab7",
-      "packaged_sha256": "ec9b74520c42836f8f50a3b45c433ccc0fa49c5ddbc74164e5905e27f980cab7"
+      "source_sha256": "80b61790145b8605750edc455ab33c00e8f8a118eaee8782ffee0e5c9a46a3b3",
+      "packaged_sha256": "80b61790145b8605750edc455ab33c00e8f8a118eaee8782ffee0e5c9a46a3b3"
     },
     {
       "source": "assets/reference-library/observed-experiences.json",
@@ -453,10 +453,340 @@
       "packaged_sha256": "3294818889e502fcc93d7494300c803405c120d428a9d56dff33b07e029ac7cb"
     },
     {
+      "source": "assets/soft-glass/README.md",
+      "packaged": "assets/soft-glass/README.md",
+      "source_sha256": "6ca85048f55719abdd94b1787fa3fef7cba362d30958b86e42d911d7fb034151",
+      "packaged_sha256": "6ca85048f55719abdd94b1787fa3fef7cba362d30958b86e42d911d7fb034151"
+    },
+    {
+      "source": "assets/soft-glass/captures/controls-dark-1440.png",
+      "packaged": "assets/soft-glass/captures/controls-dark-1440.png",
+      "source_sha256": "929cbffa112473139c7a9dc74a685332084ccf59c9bc78a8ebe269e6b926a36c",
+      "packaged_sha256": "929cbffa112473139c7a9dc74a685332084ccf59c9bc78a8ebe269e6b926a36c"
+    },
+    {
+      "source": "assets/soft-glass/captures/controls-dark-390.png",
+      "packaged": "assets/soft-glass/captures/controls-dark-390.png",
+      "source_sha256": "4fa46769c6e7a17e62933a2b6dd371a80e7335b5a3b86532a28745031b89e30b",
+      "packaged_sha256": "4fa46769c6e7a17e62933a2b6dd371a80e7335b5a3b86532a28745031b89e30b"
+    },
+    {
+      "source": "assets/soft-glass/captures/controls-dark-focus.png",
+      "packaged": "assets/soft-glass/captures/controls-dark-focus.png",
+      "source_sha256": "8f7562968b1341e4ed58de484aa01c6b40239c0a315a2bcf9b638d9b1a64336c",
+      "packaged_sha256": "8f7562968b1341e4ed58de484aa01c6b40239c0a315a2bcf9b638d9b1a64336c"
+    },
+    {
+      "source": "assets/soft-glass/captures/controls-dark-hover.png",
+      "packaged": "assets/soft-glass/captures/controls-dark-hover.png",
+      "source_sha256": "a575b332bf36da876273c61ea63df02e926f09c2ebfb065f524cabbcacf258ce",
+      "packaged_sha256": "a575b332bf36da876273c61ea63df02e926f09c2ebfb065f524cabbcacf258ce"
+    },
+    {
+      "source": "assets/soft-glass/captures/controls-dark-pressed.png",
+      "packaged": "assets/soft-glass/captures/controls-dark-pressed.png",
+      "source_sha256": "57fc304f20dc91a2f01abfdda82b43aaa51b1524dfd88ebca48aa53d590ed7ea",
+      "packaged_sha256": "57fc304f20dc91a2f01abfdda82b43aaa51b1524dfd88ebca48aa53d590ed7ea"
+    },
+    {
+      "source": "assets/soft-glass/captures/controls-light-1440.png",
+      "packaged": "assets/soft-glass/captures/controls-light-1440.png",
+      "source_sha256": "0d1fb7ff148bd2e806ee9233480061330afa30db90548213e0fef1b13fb6128e",
+      "packaged_sha256": "0d1fb7ff148bd2e806ee9233480061330afa30db90548213e0fef1b13fb6128e"
+    },
+    {
+      "source": "assets/soft-glass/captures/controls-light-390.png",
+      "packaged": "assets/soft-glass/captures/controls-light-390.png",
+      "source_sha256": "0563d8df547c958cae266f2cbd906daa6ce68fdc02c677cea2655cca846914e1",
+      "packaged_sha256": "0563d8df547c958cae266f2cbd906daa6ce68fdc02c677cea2655cca846914e1"
+    },
+    {
+      "source": "assets/soft-glass/captures/controls-light-focus.png",
+      "packaged": "assets/soft-glass/captures/controls-light-focus.png",
+      "source_sha256": "540be17fff861facdeca5fb6e6f32a6c23937aebbf4e7d0278a82d6b6d437d15",
+      "packaged_sha256": "540be17fff861facdeca5fb6e6f32a6c23937aebbf4e7d0278a82d6b6d437d15"
+    },
+    {
+      "source": "assets/soft-glass/captures/controls-light-hover.png",
+      "packaged": "assets/soft-glass/captures/controls-light-hover.png",
+      "source_sha256": "553caf4ffba2c63c9edf2b8e3597925382a69cd90052561084976c7f22b161ea",
+      "packaged_sha256": "553caf4ffba2c63c9edf2b8e3597925382a69cd90052561084976c7f22b161ea"
+    },
+    {
+      "source": "assets/soft-glass/captures/controls-light-pressed.png",
+      "packaged": "assets/soft-glass/captures/controls-light-pressed.png",
+      "source_sha256": "d4911fb8b5e6db2c7541f45e988abfa8962d97ea2f89648fdfc79e50827a531f",
+      "packaged_sha256": "d4911fb8b5e6db2c7541f45e988abfa8962d97ea2f89648fdfc79e50827a531f"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/1440-dark-audience.png",
+      "packaged": "assets/soft-glass/captures/landing/1440-dark-audience.png",
+      "source_sha256": "d4c0fdbb82a9704b3c7be8cf583a6ed9cef0b0bb5e7b5e2ba8eb1e08998c70d6",
+      "packaged_sha256": "d4c0fdbb82a9704b3c7be8cf583a6ed9cef0b0bb5e7b5e2ba8eb1e08998c70d6"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/1440-dark-contact.png",
+      "packaged": "assets/soft-glass/captures/landing/1440-dark-contact.png",
+      "source_sha256": "4875006b71f019cdc82e6b8bb428a43c37c4f28511480c2af9939d1a70ce6212",
+      "packaged_sha256": "4875006b71f019cdc82e6b8bb428a43c37c4f28511480c2af9939d1a70ce6212"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/1440-dark-features.png",
+      "packaged": "assets/soft-glass/captures/landing/1440-dark-features.png",
+      "source_sha256": "b5f6634ede912a106d423bc80ac26c0d6261fb223f68ebdbd2a24e4cee98e7e1",
+      "packaged_sha256": "b5f6634ede912a106d423bc80ac26c0d6261fb223f68ebdbd2a24e4cee98e7e1"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/1440-dark-footer.png",
+      "packaged": "assets/soft-glass/captures/landing/1440-dark-footer.png",
+      "source_sha256": "8648df668760b67704901e4b4c98a2e53b04f146cce11e652b08fa8859c8ab1f",
+      "packaged_sha256": "8648df668760b67704901e4b4c98a2e53b04f146cce11e652b08fa8859c8ab1f"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/1440-dark-hero.png",
+      "packaged": "assets/soft-glass/captures/landing/1440-dark-hero.png",
+      "source_sha256": "a6c7823353ad51c7894017f45bb7541604989ff80ffc25764346c0af8943c840",
+      "packaged_sha256": "a6c7823353ad51c7894017f45bb7541604989ff80ffc25764346c0af8943c840"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/1440-dark-how.png",
+      "packaged": "assets/soft-glass/captures/landing/1440-dark-how.png",
+      "source_sha256": "03f17d9719370258a28588131adf31cd20ac01a089a595cdae674e9453f0d70a",
+      "packaged_sha256": "03f17d9719370258a28588131adf31cd20ac01a089a595cdae674e9453f0d70a"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/1440-light-audience.png",
+      "packaged": "assets/soft-glass/captures/landing/1440-light-audience.png",
+      "source_sha256": "680af8e99f6710500f7a2232a4321d73d45348eb96ce0a1eb1f16e3073168025",
+      "packaged_sha256": "680af8e99f6710500f7a2232a4321d73d45348eb96ce0a1eb1f16e3073168025"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/1440-light-contact.png",
+      "packaged": "assets/soft-glass/captures/landing/1440-light-contact.png",
+      "source_sha256": "66248aff1f073d45baaf0e8adb8ce0f99713bdea521c29698f59ecf1e257f493",
+      "packaged_sha256": "66248aff1f073d45baaf0e8adb8ce0f99713bdea521c29698f59ecf1e257f493"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/1440-light-features.png",
+      "packaged": "assets/soft-glass/captures/landing/1440-light-features.png",
+      "source_sha256": "c5f0c519e5ee75da16cb51f53d37494909b2d209cbde7ccd2531c2cba72762cf",
+      "packaged_sha256": "c5f0c519e5ee75da16cb51f53d37494909b2d209cbde7ccd2531c2cba72762cf"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/1440-light-footer.png",
+      "packaged": "assets/soft-glass/captures/landing/1440-light-footer.png",
+      "source_sha256": "a2ce5238c0e55a6d26d2175ef39040b57f35b912f83d5c35bcb1881b70e47e0d",
+      "packaged_sha256": "a2ce5238c0e55a6d26d2175ef39040b57f35b912f83d5c35bcb1881b70e47e0d"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/1440-light-hero.png",
+      "packaged": "assets/soft-glass/captures/landing/1440-light-hero.png",
+      "source_sha256": "bcaa9a1dac219f777cd3e3a6a9974087ac3e5e19ad532305350cb9fdce980c89",
+      "packaged_sha256": "bcaa9a1dac219f777cd3e3a6a9974087ac3e5e19ad532305350cb9fdce980c89"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/1440-light-how.png",
+      "packaged": "assets/soft-glass/captures/landing/1440-light-how.png",
+      "source_sha256": "d2e91f42729b9ccc1d38fc0d7eb3b41170fb419f6daa6b88b7385f12e212ba72",
+      "packaged_sha256": "d2e91f42729b9ccc1d38fc0d7eb3b41170fb419f6daa6b88b7385f12e212ba72"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/390-dark-audience.png",
+      "packaged": "assets/soft-glass/captures/landing/390-dark-audience.png",
+      "source_sha256": "d6d6d1ff439aabf81116ecd479260d85a9e0e0f3174be75312dbb945e4521052",
+      "packaged_sha256": "d6d6d1ff439aabf81116ecd479260d85a9e0e0f3174be75312dbb945e4521052"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/390-dark-contact.png",
+      "packaged": "assets/soft-glass/captures/landing/390-dark-contact.png",
+      "source_sha256": "880a09465380724f22ab711b8e4624000cd109578fab13a6e45c9c5bb56af527",
+      "packaged_sha256": "880a09465380724f22ab711b8e4624000cd109578fab13a6e45c9c5bb56af527"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/390-dark-features.png",
+      "packaged": "assets/soft-glass/captures/landing/390-dark-features.png",
+      "source_sha256": "3baf17d3b138d3a0f26fe5cbb322a6d0e288df5e4f98b7e36aab5bed077f81a0",
+      "packaged_sha256": "3baf17d3b138d3a0f26fe5cbb322a6d0e288df5e4f98b7e36aab5bed077f81a0"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/390-dark-footer.png",
+      "packaged": "assets/soft-glass/captures/landing/390-dark-footer.png",
+      "source_sha256": "d72fc565105cc61d50a3ca0e16c0bc3924fc75497d58ed2c11f667ae3c455594",
+      "packaged_sha256": "d72fc565105cc61d50a3ca0e16c0bc3924fc75497d58ed2c11f667ae3c455594"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/390-dark-hero.png",
+      "packaged": "assets/soft-glass/captures/landing/390-dark-hero.png",
+      "source_sha256": "0157ff57a98e3e6120e3b211f18ec7af020dfbce2d462c3a4a1c1c4b14c21c5f",
+      "packaged_sha256": "0157ff57a98e3e6120e3b211f18ec7af020dfbce2d462c3a4a1c1c4b14c21c5f"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/390-dark-how.png",
+      "packaged": "assets/soft-glass/captures/landing/390-dark-how.png",
+      "source_sha256": "212721aaf0b6cf023dc758fad127225fec10e4fb379450a7bae690507b6dedf4",
+      "packaged_sha256": "212721aaf0b6cf023dc758fad127225fec10e4fb379450a7bae690507b6dedf4"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/390-light-audience.png",
+      "packaged": "assets/soft-glass/captures/landing/390-light-audience.png",
+      "source_sha256": "976cdaa91328bfa5f46ab0005255d9612bb1bb7b10d1a8c9dacdb17871c0bf44",
+      "packaged_sha256": "976cdaa91328bfa5f46ab0005255d9612bb1bb7b10d1a8c9dacdb17871c0bf44"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/390-light-contact.png",
+      "packaged": "assets/soft-glass/captures/landing/390-light-contact.png",
+      "source_sha256": "864bb2a6d52f4dfbc36db07741135bad11526a047b4b66c8ec95c79c60f15d87",
+      "packaged_sha256": "864bb2a6d52f4dfbc36db07741135bad11526a047b4b66c8ec95c79c60f15d87"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/390-light-features.png",
+      "packaged": "assets/soft-glass/captures/landing/390-light-features.png",
+      "source_sha256": "1aaed00724d9c5d195a6c671797d23bd0da0e95b5dd5e34afd886abec31f7a5e",
+      "packaged_sha256": "1aaed00724d9c5d195a6c671797d23bd0da0e95b5dd5e34afd886abec31f7a5e"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/390-light-footer.png",
+      "packaged": "assets/soft-glass/captures/landing/390-light-footer.png",
+      "source_sha256": "8e22cfffd0d31f1c15ba0e546e23773949fe6611e6eb3bb124e4147e6f35c939",
+      "packaged_sha256": "8e22cfffd0d31f1c15ba0e546e23773949fe6611e6eb3bb124e4147e6f35c939"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/390-light-hero.png",
+      "packaged": "assets/soft-glass/captures/landing/390-light-hero.png",
+      "source_sha256": "e26ca2d2c2fc0df0ec0a141439db10d0f20306f4d1d7bf7b73721b1f383fd77d",
+      "packaged_sha256": "e26ca2d2c2fc0df0ec0a141439db10d0f20306f4d1d7bf7b73721b1f383fd77d"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing/390-light-how.png",
+      "packaged": "assets/soft-glass/captures/landing/390-light-how.png",
+      "source_sha256": "eff12db4f0668f2073cbd714929a0ab662aedb1e97a5b7f61c331ea5f0808e8b",
+      "packaged_sha256": "eff12db4f0668f2073cbd714929a0ab662aedb1e97a5b7f61c331ea5f0808e8b"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing-dark-1440.png",
+      "packaged": "assets/soft-glass/captures/landing-dark-1440.png",
+      "source_sha256": "c6e47acdbc9c1cdd62518491ef9094c2ae7cd5d1a1acd7d29c3ff5cd47739930",
+      "packaged_sha256": "c6e47acdbc9c1cdd62518491ef9094c2ae7cd5d1a1acd7d29c3ff5cd47739930"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing-dark-390.png",
+      "packaged": "assets/soft-glass/captures/landing-dark-390.png",
+      "source_sha256": "7c934afae1e52dd5aa5807ce4e0406f731c3ade38bb0e59d05bb5f9a9778140e",
+      "packaged_sha256": "7c934afae1e52dd5aa5807ce4e0406f731c3ade38bb0e59d05bb5f9a9778140e"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing-light-1440.png",
+      "packaged": "assets/soft-glass/captures/landing-light-1440.png",
+      "source_sha256": "b35664ee5444a2f89c3b819ab5c62c107b9b919796d7cec3d64e2ba490cc8c9d",
+      "packaged_sha256": "b35664ee5444a2f89c3b819ab5c62c107b9b919796d7cec3d64e2ba490cc8c9d"
+    },
+    {
+      "source": "assets/soft-glass/captures/landing-light-390.png",
+      "packaged": "assets/soft-glass/captures/landing-light-390.png",
+      "source_sha256": "ee764eea44bf297615e3ae446e6d41cf1a8d3d212c2e42edf38dcd9705dc18b9",
+      "packaged_sha256": "ee764eea44bf297615e3ae446e6d41cf1a8d3d212c2e42edf38dcd9705dc18b9"
+    },
+    {
+      "source": "assets/soft-glass/captures/workspace-dark-1440.png",
+      "packaged": "assets/soft-glass/captures/workspace-dark-1440.png",
+      "source_sha256": "c5da37c9ec17032690759cf9383e34b19aca64402c7956727cedaf117ec2d289",
+      "packaged_sha256": "c5da37c9ec17032690759cf9383e34b19aca64402c7956727cedaf117ec2d289"
+    },
+    {
+      "source": "assets/soft-glass/captures/workspace-dark-390.png",
+      "packaged": "assets/soft-glass/captures/workspace-dark-390.png",
+      "source_sha256": "307f7fc00c749a123bcb40bdccfd4fe14134f0112fb57f24ea9473bae21768d1",
+      "packaged_sha256": "307f7fc00c749a123bcb40bdccfd4fe14134f0112fb57f24ea9473bae21768d1"
+    },
+    {
+      "source": "assets/soft-glass/captures/workspace-light-1440.png",
+      "packaged": "assets/soft-glass/captures/workspace-light-1440.png",
+      "source_sha256": "7393eeb0c81a3c3fdad2995a6f558895ab04c76e89b8bd90f0027aded124c80d",
+      "packaged_sha256": "7393eeb0c81a3c3fdad2995a6f558895ab04c76e89b8bd90f0027aded124c80d"
+    },
+    {
+      "source": "assets/soft-glass/captures/workspace-light-390.png",
+      "packaged": "assets/soft-glass/captures/workspace-light-390.png",
+      "source_sha256": "dab642f5dfadf83eceab591bf8eb5a00d3c17aa5bf98cc6c88f6de7e24236b4a",
+      "packaged_sha256": "dab642f5dfadf83eceab591bf8eb5a00d3c17aa5bf98cc6c88f6de7e24236b4a"
+    },
+    {
+      "source": "assets/soft-glass/landing-README.md",
+      "packaged": "assets/soft-glass/landing-README.md",
+      "source_sha256": "0c6e968783881533b7c2e8ac8ed954a601cc782afe604a34af00e07113f9d607",
+      "packaged_sha256": "0c6e968783881533b7c2e8ac8ed954a601cc782afe604a34af00e07113f9d607"
+    },
+    {
+      "source": "assets/soft-glass/landing-profile.json",
+      "packaged": "assets/soft-glass/landing-profile.json",
+      "source_sha256": "e25766a2ac366ba55bccca0041bf7c2f4e0c517ab4826e6d953d8a56bb2dbb5f",
+      "packaged_sha256": "e25766a2ac366ba55bccca0041bf7c2f4e0c517ab4826e6d953d8a56bb2dbb5f"
+    },
+    {
+      "source": "assets/soft-glass/landing-validation.json",
+      "packaged": "assets/soft-glass/landing-validation.json",
+      "source_sha256": "fd2bee1f6b3400a0a181892157e786fac308946ac860d17ecb20248437c88500",
+      "packaged_sha256": "fd2bee1f6b3400a0a181892157e786fac308946ac860d17ecb20248437c88500"
+    },
+    {
+      "source": "assets/soft-glass/landing.css",
+      "packaged": "assets/soft-glass/landing.css",
+      "source_sha256": "523e567bdebd5f7326e43f27d0e7dc9935dd626d383eb83afefc6a46c47f0f47",
+      "packaged_sha256": "523e567bdebd5f7326e43f27d0e7dc9935dd626d383eb83afefc6a46c47f0f47"
+    },
+    {
+      "source": "assets/soft-glass/landing.html",
+      "packaged": "assets/soft-glass/landing.html",
+      "source_sha256": "d247f0f2a783a335cbee2d29cca3e1d0b178fb0429f655dee6240471d4a1b8c9",
+      "packaged_sha256": "d247f0f2a783a335cbee2d29cca3e1d0b178fb0429f655dee6240471d4a1b8c9"
+    },
+    {
+      "source": "assets/soft-glass/landing.js",
+      "packaged": "assets/soft-glass/landing.js",
+      "source_sha256": "f3974697fb8e082b1aef5a7e2038347a75151c955491e71ff014a62cdbfe29e4",
+      "packaged_sha256": "f3974697fb8e082b1aef5a7e2038347a75151c955491e71ff014a62cdbfe29e4"
+    },
+    {
+      "source": "assets/soft-glass/preview.html",
+      "packaged": "assets/soft-glass/preview.html",
+      "source_sha256": "52f19f2a85c27e274b9261c1290b996871a647f4fc2995c5ec0036f27dce372c",
+      "packaged_sha256": "52f19f2a85c27e274b9261c1290b996871a647f4fc2995c5ec0036f27dce372c"
+    },
+    {
+      "source": "assets/soft-glass/preview.js",
+      "packaged": "assets/soft-glass/preview.js",
+      "source_sha256": "9fdf02435d3b1c8b66d6e79666714944603867425a602a634a98eb8c3fd64ebc",
+      "packaged_sha256": "9fdf02435d3b1c8b66d6e79666714944603867425a602a634a98eb8c3fd64ebc"
+    },
+    {
+      "source": "assets/soft-glass/soft-glass.css",
+      "packaged": "assets/soft-glass/soft-glass.css",
+      "source_sha256": "b436cfce6a1f46b336b9b9a56171e0ae2a2bda6bb7ecdaba7093b6bcb8bcdc75",
+      "packaged_sha256": "b436cfce6a1f46b336b9b9a56171e0ae2a2bda6bb7ecdaba7093b6bcb8bcdc75"
+    },
+    {
+      "source": "assets/soft-glass/tokens.json",
+      "packaged": "assets/soft-glass/tokens.json",
+      "source_sha256": "f9f9a5845b71925d1532148972a0d1f1751360421ed533b1958805e3ec344ca3",
+      "packaged_sha256": "f9f9a5845b71925d1532148972a0d1f1751360421ed533b1958805e3ec344ca3"
+    },
+    {
+      "source": "assets/soft-glass/validation.json",
+      "packaged": "assets/soft-glass/validation.json",
+      "source_sha256": "35ed99de62171fa56781457a4f254acf1adbbbc5390cf9d87a47b3912707d0fc",
+      "packaged_sha256": "35ed99de62171fa56781457a4f254acf1adbbbc5390cf9d87a47b3912707d0fc"
+    },
+    {
       "source": "assets/tokens.example.json",
       "packaged": "assets/tokens.example.json",
       "source_sha256": "23afb3ebe077289c8177051665ea3100ed8cc3ca51bd7d31d0bec6545c077a34",
       "packaged_sha256": "23afb3ebe077289c8177051665ea3100ed8cc3ca51bd7d31d0bec6545c077a34"
+    },
+    {
+      "source": "evals/progressive-brief-scenarios.md",
+      "packaged": "evals/progressive-brief-scenarios.md",
+      "source_sha256": "74ad65ffddc702d1aaf1b2d97bcdf43fd6b65211bb9fe3f8baa3b36a8d4814b1",
+      "packaged_sha256": "74ad65ffddc702d1aaf1b2d97bcdf43fd6b65211bb9fe3f8baa3b36a8d4814b1"
     },
     {
       "source": "evals/release-validation.md",
@@ -467,8 +797,8 @@
     {
       "source": "evals/routing-scenarios.md",
       "packaged": "evals/routing-scenarios.md",
-      "source_sha256": "21e438e88298dbe776f258d123692d6002e1ff8fe92ca045945396284c6fcc5e",
-      "packaged_sha256": "21e438e88298dbe776f258d123692d6002e1ff8fe92ca045945396284c6fcc5e"
+      "source_sha256": "06ff16cd17165ce97171d19bf6be829ac4d805cf627632394a374495a7a2a72b",
+      "packaged_sha256": "06ff16cd17165ce97171d19bf6be829ac4d805cf627632394a374495a7a2a72b"
     },
     {
       "source": "evals/scenarios.md",
@@ -545,8 +875,8 @@
     {
       "source": "references/clean-shell.md",
       "packaged": "references/clean-shell.md",
-      "source_sha256": "ed051db37c38629b9656b0b94b340d6278041bea7fa5431f01ff6c36ec90b523",
-      "packaged_sha256": "14da76a2a0523df040779af4f26c5d265270c5b825ba3951fa70ce533c9b81b2"
+      "source_sha256": "43770daa9fb4593d0b9751c31cb3e0280a0a75f6b145508e0c6e9393ff1d13de",
+      "packaged_sha256": "dd90daece9ce4428a39b126d1fbd380c5a7681283e7f75b6810639977f921abc"
     },
     {
       "source": "references/clear-pdf-guides.md",
@@ -591,6 +921,12 @@
       "packaged_sha256": "274574c94b2715759dfc2cf25e54ca14fba9caa10ea52fe8df4454e667261796"
     },
     {
+      "source": "references/design-specification.md",
+      "packaged": "references/design-specification.md",
+      "source_sha256": "1bc0174c4d2fe5feb9d12917c6089aae1538df1eddbc1134d1a293e1b408d22a",
+      "packaged_sha256": "1bc0174c4d2fe5feb9d12917c6089aae1538df1eddbc1134d1a293e1b408d22a"
+    },
+    {
       "source": "references/desktop-distribution.md",
       "packaged": "references/desktop-distribution.md",
       "source_sha256": "e11c6739eff99d3e9466af7220c0a4079f309347f939f7ae4847a6992ed16709",
@@ -617,8 +953,8 @@
     {
       "source": "references/integrations.md",
       "packaged": "references/integrations.md",
-      "source_sha256": "61a0d198511149a28be2e0830b37c4034ce4c701b1bf7a8e330c437811f17c64",
-      "packaged_sha256": "61a0d198511149a28be2e0830b37c4034ce4c701b1bf7a8e330c437811f17c64"
+      "source_sha256": "995f5957d003304bd2cf2ad7650e37801b983df0d5e5491a1d03fe1f1ebdf3c9",
+      "packaged_sha256": "995f5957d003304bd2cf2ad7650e37801b983df0d5e5491a1d03fe1f1ebdf3c9"
     },
     {
       "source": "references/interaction-content.md",
@@ -693,6 +1029,12 @@
       "packaged_sha256": "2692246c4584d65efa6e5ebcc9872ed5b8cc81396f7a6e73271c7bb0469b3b5d"
     },
     {
+      "source": "references/progressive-brief.md",
+      "packaged": "references/progressive-brief.md",
+      "source_sha256": "970e87c7698229d8fc617a75dcf8954ea95e050ec6121d3cc36d4589c807ac49",
+      "packaged_sha256": "970e87c7698229d8fc617a75dcf8954ea95e050ec6121d3cc36d4589c807ac49"
+    },
+    {
       "source": "references/reference-fidelity.md",
       "packaged": "references/reference-fidelity.md",
       "source_sha256": "9358fde33d34dd6e14e56ce55e74e59d715a2e1f90dd6f385cb2de3816f94657",
@@ -725,8 +1067,8 @@
     {
       "source": "references/resources.md",
       "packaged": "references/resources.md",
-      "source_sha256": "3c35ea0931034c208c4e91b63113df4ae21da8829c684538f8094276a719244f",
-      "packaged_sha256": "65e3227a8cca732f38df8d3adf6e7b81bea93615458da9567bf09fdbf4b4e072"
+      "source_sha256": "dc3778f78d9704ce5d81844ada64be3484420c7247558fd1e8c91c52abc7cbc0",
+      "packaged_sha256": "d49a41dd74592adf0f8ef21d0dc605603348b1a47be7ee6334cb0d491df51089"
     },
     {
       "source": "references/reusable-components.md",
@@ -743,8 +1085,8 @@
     {
       "source": "references/routing.md",
       "packaged": "references/routing.md",
-      "source_sha256": "54feb728c31be5f799c6719155ad982422ebd848d9a27a335733e0452a6deda5",
-      "packaged_sha256": "5c98af1b1071a30ed9392c16760248e217b022592434b08c50108e5e0156844f"
+      "source_sha256": "31dc021a1bbb22c5bf034650aeb9e052668350dc149f7de91650de469e1b1d5c",
+      "packaged_sha256": "aaddce80d1f28cf3c450cddaa00946af1b8d91311d9c36ce4a44f5d735491f59"
     },
     {
       "source": "references/search-discovery.md",
@@ -765,6 +1107,18 @@
       "packaged_sha256": "175c7a5b525ee0b1aeb930851c2b2a0e90d131d7e3418b1e7f3ac26cf8d1d016"
     },
     {
+      "source": "references/soft-glass-integral.md",
+      "packaged": "references/soft-glass-integral.md",
+      "source_sha256": "716825ccd4aeae70d3d1dd3cfdd53c7bb2c6a7d268757b7d9247911188ced173",
+      "packaged_sha256": "716825ccd4aeae70d3d1dd3cfdd53c7bb2c6a7d268757b7d9247911188ced173"
+    },
+    {
+      "source": "references/soft-glass.md",
+      "packaged": "references/soft-glass.md",
+      "source_sha256": "9f2f5a491528989aa66642ed5a759e74ca464a1af0de2babfeef573c1239a729",
+      "packaged_sha256": "9f2f5a491528989aa66642ed5a759e74ca464a1af0de2babfeef573c1239a729"
+    },
+    {
       "source": "references/source-use-cases.md",
       "packaged": "references/source-use-cases.md",
       "source_sha256": "b4c31e4464b034e8a9e3ac43413f5bd35d317b693fde66e5a67ee93b9ca6e468",
@@ -773,8 +1127,8 @@
     {
       "source": "references/sources.md",
       "packaged": "references/sources.md",
-      "source_sha256": "b3483d00e14c7daa6ea953fc48a124b88280f4a60e2b9b72133fe4395b898d7b",
-      "packaged_sha256": "f140bf2aded8b3600194c6a8802be02a570b8d0f92813dc63eb4c6cda037d1cc"
+      "source_sha256": "20a7907abecb1d2020a2992342822a75146b0c77f28d8687f0e27787d90ac430",
+      "packaged_sha256": "0d62899ee9e378cdcf65e375615d3d01d9306409af5f50590765840b2857b80f"
     },
     {
       "source": "references/specialized-surfaces.md",
@@ -785,8 +1139,8 @@
     {
       "source": "references/templates.md",
       "packaged": "references/templates.md",
-      "source_sha256": "53211cd7c457c37f46296610ee79c0173b4019222d469aabfe85c727eed8298d",
-      "packaged_sha256": "53211cd7c457c37f46296610ee79c0173b4019222d469aabfe85c727eed8298d"
+      "source_sha256": "b49b0e9725de5086c4bc6e7959a887d5c561f25254994aadbf1d78b978f6bd06",
+      "packaged_sha256": "b49b0e9725de5086c4bc6e7959a887d5c561f25254994aadbf1d78b978f6bd06"
     },
     {
       "source": "references/tokens-handoff.md",
@@ -821,8 +1175,8 @@
     {
       "source": "references/workflow.md",
       "packaged": "references/workflow.md",
-      "source_sha256": "7065c8b76e0f620368264bc4fa010836239c20f9bf12a65e91e4b54d317faa8f",
-      "packaged_sha256": "7065c8b76e0f620368264bc4fa010836239c20f9bf12a65e91e4b54d317faa8f"
+      "source_sha256": "d86efd697494c1ae67ff0a72a43e2c1ae263234eb83deed9cb21aec7423e6a23",
+      "packaged_sha256": "d86efd697494c1ae67ff0a72a43e2c1ae263234eb83deed9cb21aec7423e6a23"
     },
     {
       "source": "scripts/check_contrast.py",
@@ -881,8 +1235,8 @@
     {
       "source": "skills/brand/SKILL.md",
       "packaged": "skills/forma-brand/SKILL.md",
-      "source_sha256": "72d8940e4921560bed1863353e1760cef62afc21732cda9a358ef66f32680e7c",
-      "packaged_sha256": "9243e006e9aaf05dec0f119466263e30c19be7000e9d293a24da261c5be34d01"
+      "source_sha256": "2344331a0d439031f569792f439302da2bd55a0e1c81ca03c40bddabd976063d",
+      "packaged_sha256": "28c43d13da7c1a34598e8e7aa3af5ed79e857124bba9a1da4eb4a1e5dbedd20e"
     },
     {
       "source": "skills/brand/agents/openai.yaml",
@@ -893,8 +1247,8 @@
     {
       "source": "skills/foundations/SKILL.md",
       "packaged": "skills/forma-foundations/SKILL.md",
-      "source_sha256": "293c789d3efd1c20c12af8e32ad8cf5efa40cf662a74d6be83d363065be095bb",
-      "packaged_sha256": "293c789d3efd1c20c12af8e32ad8cf5efa40cf662a74d6be83d363065be095bb"
+      "source_sha256": "ebcd5c60108205aa00b54c839eddb5f31f4a224687c0eee474f260733533d391",
+      "packaged_sha256": "ebcd5c60108205aa00b54c839eddb5f31f4a224687c0eee474f260733533d391"
     },
     {
       "source": "skills/foundations/agents/openai.yaml",
@@ -905,8 +1259,8 @@
     {
       "source": "skills/graphs-data/SKILL.md",
       "packaged": "skills/forma-graphs-data/SKILL.md",
-      "source_sha256": "71769432e4c5e295168f9e27d6b1240449c04ec9d75752fd532091a79bb78387",
-      "packaged_sha256": "71769432e4c5e295168f9e27d6b1240449c04ec9d75752fd532091a79bb78387"
+      "source_sha256": "32e1586ba97f8db70d06de7bb8b44178cfba374d84b3fd162c66343a52c02071",
+      "packaged_sha256": "32e1586ba97f8db70d06de7bb8b44178cfba374d84b3fd162c66343a52c02071"
     },
     {
       "source": "skills/graphs-data/agents/openai.yaml",
@@ -917,8 +1271,8 @@
     {
       "source": "skills/handoff/SKILL.md",
       "packaged": "skills/forma-handoff/SKILL.md",
-      "source_sha256": "bf7de6e4a08fb3df2c37d888ecd7c6c32233de0ebb92a1c8219e62be369f6391",
-      "packaged_sha256": "bf7de6e4a08fb3df2c37d888ecd7c6c32233de0ebb92a1c8219e62be369f6391"
+      "source_sha256": "304065ee5a3e22ef7530f0298571a499229862e54d5454231dfffb039dac0321",
+      "packaged_sha256": "304065ee5a3e22ef7530f0298571a499229862e54d5454231dfffb039dac0321"
     },
     {
       "source": "skills/handoff/agents/openai.yaml",
@@ -929,8 +1283,8 @@
     {
       "source": "skills/interface/SKILL.md",
       "packaged": "skills/forma-interface/SKILL.md",
-      "source_sha256": "2a4f2bc0e8eeca8ecb524309d14efa14577871ca51ac0dde3a8af917e44433e2",
-      "packaged_sha256": "000927448d0351f336eabe6c121e191cc94177e2aa6513af2b5ed512815f3c20"
+      "source_sha256": "21cf58a057b322ad03006bd3aafd4ac10a370f0893065bb8f292880a200ba085",
+      "packaged_sha256": "0c6add9e2d2acdc44aa52458f94c31d6d7e61ecb84996f9be9f77e760d056fd9"
     },
     {
       "source": "skills/interface/agents/openai.yaml",
@@ -941,8 +1295,8 @@
     {
       "source": "skills/motion/SKILL.md",
       "packaged": "skills/forma-motion/SKILL.md",
-      "source_sha256": "1b6a6560e5faa1f50c8cb3a5ab0a595efea35fa5415549b623905f87cff62d71",
-      "packaged_sha256": "1b6a6560e5faa1f50c8cb3a5ab0a595efea35fa5415549b623905f87cff62d71"
+      "source_sha256": "1ae0668f9ea8bd4c8e2c80b6abb8a36ad28980d6a95aa44e131d5f41fc45945f",
+      "packaged_sha256": "1ae0668f9ea8bd4c8e2c80b6abb8a36ad28980d6a95aa44e131d5f41fc45945f"
     },
     {
       "source": "skills/motion/agents/openai.yaml",
@@ -953,8 +1307,8 @@
     {
       "source": "skills/objects-3d/SKILL.md",
       "packaged": "skills/forma-objects-3d/SKILL.md",
-      "source_sha256": "82d8fda7123c55845e9179e66915f1b78b489d9ca2d15a3d1f541e472b8db456",
-      "packaged_sha256": "82d8fda7123c55845e9179e66915f1b78b489d9ca2d15a3d1f541e472b8db456"
+      "source_sha256": "1046f02622ba2de53200914add29e15e9dcd43a1f77d435af54ff31e6c42ad64",
+      "packaged_sha256": "1046f02622ba2de53200914add29e15e9dcd43a1f77d435af54ff31e6c42ad64"
     },
     {
       "source": "skills/objects-3d/agents/openai.yaml",
@@ -965,8 +1319,8 @@
     {
       "source": "skills/platforms/SKILL.md",
       "packaged": "skills/forma-platforms/SKILL.md",
-      "source_sha256": "64d52bef29e9dcf99b3b4b95c8266fe97294d3fb326cbc0ed248dea8dc71a3a4",
-      "packaged_sha256": "64d52bef29e9dcf99b3b4b95c8266fe97294d3fb326cbc0ed248dea8dc71a3a4"
+      "source_sha256": "3528aee8a5e65b35780fb8adda859eab2774ceadd74abfe710ea5e8113663edf",
+      "packaged_sha256": "3528aee8a5e65b35780fb8adda859eab2774ceadd74abfe710ea5e8113663edf"
     },
     {
       "source": "skills/platforms/agents/openai.yaml",
@@ -977,8 +1331,8 @@
     {
       "source": "skills/product/SKILL.md",
       "packaged": "skills/forma-product/SKILL.md",
-      "source_sha256": "df3473e685740ae374570215c925d1a1d9f56b9215e23b2f48b45e17600d042c",
-      "packaged_sha256": "df3473e685740ae374570215c925d1a1d9f56b9215e23b2f48b45e17600d042c"
+      "source_sha256": "b12bc0625e2e858dec243145c0448a621f48c19c6b34e8192889e0f54a44df15",
+      "packaged_sha256": "b12bc0625e2e858dec243145c0448a621f48c19c6b34e8192889e0f54a44df15"
     },
     {
       "source": "skills/product/agents/openai.yaml",
@@ -989,8 +1343,8 @@
     {
       "source": "skills/reference/SKILL.md",
       "packaged": "skills/forma-reference/SKILL.md",
-      "source_sha256": "ddf42ec92276739877ba23d0c73648744fc6c9482f8ffd9449dd9d84f0dd6f92",
-      "packaged_sha256": "ddf42ec92276739877ba23d0c73648744fc6c9482f8ffd9449dd9d84f0dd6f92"
+      "source_sha256": "20a5c44af5d84833cb82be8550e4951d579d7e3f0c52f79b6377f898c6027a4c",
+      "packaged_sha256": "20a5c44af5d84833cb82be8550e4951d579d7e3f0c52f79b6377f898c6027a4c"
     },
     {
       "source": "skills/reference/agents/openai.yaml",
@@ -1001,8 +1355,8 @@
     {
       "source": "skills/validation/SKILL.md",
       "packaged": "skills/forma-validation/SKILL.md",
-      "source_sha256": "ab26d9e243ae002a698af55ff8215e3e6f4439a8111b3de12d669d3413b634cd",
-      "packaged_sha256": "ab26d9e243ae002a698af55ff8215e3e6f4439a8111b3de12d669d3413b634cd"
+      "source_sha256": "5915b94a0505da3fc11e81fb0bec50123a4d447dcda9613ecc9626b1965213f0",
+      "packaged_sha256": "5915b94a0505da3fc11e81fb0bec50123a4d447dcda9613ecc9626b1965213f0"
     },
     {
       "source": "skills/validation/agents/openai.yaml",
@@ -1079,8 +1433,8 @@
     {
       "source": "tests/reference-copy.test.cjs",
       "packaged": "tests/reference-copy.test.cjs",
-      "source_sha256": "9f8db54ea1e1dd2a58b14136497677bd354aa0e46ad9f61603bdddec5bf06881",
-      "packaged_sha256": "9f8db54ea1e1dd2a58b14136497677bd354aa0e46ad9f61603bdddec5bf06881"
+      "source_sha256": "13e2e55a009db781308eeb507a1ecda82030e70c8b9f0330cf19ceb8b9165ba2",
+      "packaged_sha256": "13e2e55a009db781308eeb507a1ecda82030e70c8b9f0330cf19ceb8b9165ba2"
     },
     {
       "source": "tests/references-observed.test.cjs",
@@ -1091,8 +1445,8 @@
     {
       "source": "tests/references-portfolios.test.cjs",
       "packaged": "tests/references-portfolios.test.cjs",
-      "source_sha256": "3d84076a19a6105bc42b7428ecb0309367a72a5e3a87131143b175acdf677230",
-      "packaged_sha256": "3d84076a19a6105bc42b7428ecb0309367a72a5e3a87131143b175acdf677230"
+      "source_sha256": "a76dbaf1240ad2deb184c6e9956c580ffdc3afcb98e4ee986b63cb4af7560083",
+      "packaged_sha256": "a76dbaf1240ad2deb184c6e9956c580ffdc3afcb98e4ee986b63cb4af7560083"
     },
     {
       "source": "tests/references-sites.test.cjs",
@@ -1103,8 +1457,8 @@
     {
       "source": "tests/references.test.cjs",
       "packaged": "tests/references.test.cjs",
-      "source_sha256": "09ea5d7430a42dd17a474626ea4de65334fe3084c068a6b610b676be26f5328e",
-      "packaged_sha256": "09ea5d7430a42dd17a474626ea4de65334fe3084c068a6b610b676be26f5328e"
+      "source_sha256": "1aaaa9fa2fabc4a14ea66efcdb0867b384f2cac1b37a7100268cba3dcc87a0e3",
+      "packaged_sha256": "1aaaa9fa2fabc4a14ea66efcdb0867b384f2cac1b37a7100268cba3dcc87a0e3"
     },
     {
       "source": "tests/test_check_fidelity.py",

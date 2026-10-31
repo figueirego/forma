@@ -2,7 +2,7 @@
 name: forma-validation
 description: "Validate tasks, accessibility, rendering, states, and fidelity with proportionate evidence and reproducible findings. Use for QA and confirmation after changes; not to certify inaccessible areas or treat isolated builds/tests as visual proof."
 metadata:
-  version: 1.32.2
+  version: 1.34.0
 ---
 
 # Validation and quality

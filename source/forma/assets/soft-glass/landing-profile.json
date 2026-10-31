@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "id": "soft-glass-full-landing",
+  "recordedAt": "2026-10-31T04:17:05.289124+00:00",
+  "packageVersion": "1.33.1",
+  "source": {
+    "type": "approved-local-visual-study",
+    "page": "index.html",
+    "publicReference": "https://www.trendlyapp.com.br/",
+    "capturedLocalOrigin": "http://127.0.0.1:4200/",
+    "sha256": {
+      "index.html": "9a04e4188a294a52f80bb5f9e925f2c729608be8b7d8ea402b7ad607a55ed416",
+      "landing.css": "e4ad53253f9760a45f35e1ad95eeb0910bb85d281a48845fd3d742d66865ab54",
+      "landing.js": "aa1c56cf82635a85739e67bcf059006362ef5ba1bc0537e04331b9b3ba457547"
+    },
+    "authority": "The approved local landing, not the earlier compact Forma specimen."
+  },
+  "coverage": {
+    "sections": [
+      {
+        "id": "hero",
+        "anatomy": "Centered title, two actions, framed product preview, front/back halftone landscape"
+      },
+      {
+        "id": "trust",
+        "anatomy": "Four customer-mark slots and one supporting-evidence slot"
+      },
+      {
+        "id": "problem",
+        "anatomy": "Eight-column illustrative chart, four issue cards and closing statement"
+      },
+      {
+        "id": "how",
+        "anatomy": "Four numbered steps with sticky desktop media and inline narrow media"
+      },
+      {
+        "id": "modes",
+        "anatomy": "Always-dark two-mode island, central phone preview and benefit columns"
+      },
+      {
+        "id": "audience",
+        "anatomy": "Six audience tabs and a matched example panel"
+      },
+      {
+        "id": "features",
+        "anatomy": "Eight tool cards consolidate into six feature views"
+      },
+      {
+        "id": "faq",
+        "anatomy": "Four categories and native expandable answers"
+      },
+      {
+        "id": "contact",
+        "anatomy": "Three process steps beside a static form card"
+      }
+    ],
+    "footer": "Brand message, grouped links, terrain and final metadata row"
+  },
+  "observed": {
+    "fonts": {
+      "display": "Bricolage Grotesque",
+      "body": "Plus Jakarta Sans",
+      "control": "Inter"
+    },
+    "light": {
+      "ground": "#f3e3d3",
+      "surface": "#f9f6f2",
+      "surfaceAlt": "#f1ece4",
+      "ink": "#141414",
+      "inkSecondary": "#3f3a35",
+      "muted": "#665c54",
+      "line": "#e9e4dd",
+      "accent": "#ff5000",
+      "accentText": "#d63f00",
+      "accentSoft": "#ffe9dc"
+    },
+    "dark": {
+      "surface": "#1b1c1a",
+      "surfaceAlt": "#2c2d29",
+      "ink": "#eeeae1",
+      "inkSecondary": "#d6d0c6",
+      "muted": "#b0aaa0",
+      "line": "#373932",
+      "accent": "#ff6a2b",
+      "accentText": "#ff8a55",
+      "accentSoft": "#422e23"
+    },
+    "geometry": {
+      "desktopInset": 20,
+      "desktopSectionGap": 20,
+      "desktopSectionRadius": 28,
+      "mobileInset": 10,
+      "mobileSectionGap": 10,
+      "mobileSectionRadius": 22,
+      "heroHeight": "max(640px, calc(100svh - 40px))",
+      "heroMobileHeight": "max(640px, calc(100svh - 20px))",
+      "heroPreviewMaxWidth": 1040,
+      "heroPreviewRadius": [
+        14,
+        10
+      ],
+      "desktopPreviewAspect": "1440 / 600",
+      "mobilePreviewAspect": "1440 / 620",
+      "headlineSize": "clamp(38px, min(5.2vw, 8vh), 76px)",
+      "headlineTracking": "-0.055em",
+      "headlineLineHeight": 1,
+      "sectionHeadingSize": "clamp(34px, 4.4vw, 60px)",
+      "sectionHeadingTracking": "-0.05em",
+      "sectionHeadingLineHeight": 1.02,
+      "leadSize": 17,
+      "leadLineHeight": 1.6,
+      "leadMaxWidth": 720,
+      "ctaMinHeight": 52,
+      "ctaPaddingInline": 24,
+      "ctaRadius": 999
+    },
+    "narrative": {
+      "steps": 4,
+      "maxWidth": 1240,
+      "columnRatio": [
+        0.82,
+        1.18
+      ],
+      "gap": 56,
+      "stepMinHeight": "62vh",
+      "stageHeight": 560,
+      "stageTop": "calc(50vh - 280px)",
+      "inlineBreakpoint": 960
+    },
+    "floatingNavigation": {
+      "maxWidth": 1180,
+      "desktopTop": 12,
+      "mobileTop": 10,
+      "radius": 99,
+      "blur": 16,
+      "saturation": 1.3,
+      "themeHidesAt": 1080,
+      "entryActionHidesAt": 860
+    },
+    "specialCases": [
+      "The two-mode section remains dark under both global themes.",
+      "The local source keeps a peach outer frame in dark mode because its body-descendant selector does not match.",
+      "The source contains branded media, automatic timed demos and mascot motion that are not automatically part of an original portable implementation."
+    ]
+  },
+  "implementation": {
+    "entry": "landing.html",
+    "styles": "landing.css",
+    "visualRuntime": "landing.js",
+    "notes": "landing-README.md",
+    "ownership": "Original implementation and neutral sample content maintained by Forma; observed measurements are not an authorship claim over the studied site.",
+    "adaptations": [
+      "System-font fallbacks with explicit consumer font roles.",
+      "Original product and decorative media replace branded screenshots, mascot, logos and videos.",
+      "Static contact specimen with no submission, storage or success simulation.",
+      "Dark ground uses an intentional paired color rather than carrying the source selector defect.",
+      "Visual tabs, anchors and FAQ are presentation states; automatic source video, narration and mascot sequences are not claimed reproduced."
+    ]
+  },
+  "acceptance": {
+    "requiredSections": [
+      "hero",
+      "trust",
+      "problem",
+      "how",
+      "modes",
+      "audience",
+      "features",
+      "faq",
+      "contact"
+    ],
+    "requiredFooter": true,
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "viewportWidths": [
+      1440,
+      768,
+      390
+    ],
+    "horizontalOverflow": false,
+    "businessRequests": false,
+    "storageWrites": false,
+    "compareAgainst": "Frozen approved source, with font/content/artwork differences explicitly recorded.",
+    "notClaimed": [
+      "Pixel-identical source art or typography",
+      "Product functionality",
+      "Physical phone validation",
+      "Uniform browser parity"
+    ]
+  }
+}

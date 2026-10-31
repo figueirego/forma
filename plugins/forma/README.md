@@ -1,4 +1,4 @@
-# Forma 1.32.2
+# Forma 1.34.0
 
 A community design plugin for Codex, distributed under the MIT license: one coordinator and 11 specialists. It requires no server, API key, hooks or separate authentication. Codex usage remains subject to the user's plan. External integrations are optional and may only be used when available and authorized.
 
@@ -6,7 +6,9 @@ Select **Forma** in the plugin catalog or invoke `$forma:forma`. Example: "Use F
 
 The coordinator is at [skills/forma/SKILL.md](skills/forma/SKILL.md). The shared root contains `references/`, `assets/`, `scripts/`, `tests/` and `evals/`. Example paths using `<forma-root>` point to this root, including when the skill is in the installed cache.
 
-This package preserves Forma 1.32.2's executable resources; `provenance.json` records source and packaged files. BookObject, AppearanceEditor and the extracted NeuronPassport have reusable implementations and documented adapters or dependencies. The legacy Three passport is separate from the approved CSS mechanism. Consumer integration still needs its own validation. Design methods and routing are internal to Forma; host tools and required rendering dependencies remain separate.
+[Progressive briefing](references/progressive-brief.md) resolves material gaps one question at a time, using native controls or numbered text. Product shares the same project brief and [design specification](references/design-specification.md) with every specialist. Complete requests proceed directly; prompt-only and design-only scopes remain bounded. This protocol is shared across Forma distributions, not a Codex-only runtime.
+
+This package preserves Forma 1.34.0's executable resources; `provenance.json` records source and packaged files. BookObject, AppearanceEditor and the extracted NeuronPassport have reusable implementations and documented adapters or dependencies. The legacy Three passport is separate from the approved CSS mechanism. Consumer integration still needs its own validation. Design methods and routing are internal to Forma; host tools and required rendering dependencies remain separate.
 
 Build: edit `source/forma/` in the [public repository](https://github.com/figueirego/forma), run `npm run build`, then `npm run check`. This directory is generated; do not edit a second copy of the principles here. Marketplace installation copies a snapshot; later source changes require rebuilding and updating the plugin. The standalone skill is a separate distribution.
 

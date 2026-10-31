@@ -2,6 +2,8 @@
 
 These are proposed cases for evaluating the coordinator. They are not product execution or automatic results. See also the [domain scenarios](scenarios.md).
 
+For ambiguous prompts, native/text question equivalence, correction and cross-assistant resumption, run the separate [progressive brief scenarios](progressive-brief-scenarios.md). Packaging checks do not establish that an assistant followed those cases.
+
 ## Protocol
 
 Use a session/evaluator without the expected answer. Provide the request from the input column, the skill path, and available conditions. Ask it to read the entry point, follow the route, and record consulted files, decision, action/artifact, and evidence. Give the judge this rubric only after the response. In a simulation without a project, evaluate selection and boundaries without pretending implementation occurred; with an executable fixture, also evaluate the resulting change.
@@ -151,3 +153,28 @@ Decision and artifact criteria, not executed results. Follow the comparison prot
 | R63: "Fix only the extra padding inside this button. Keep the current light-only design." Source and tokens available | Foundations or Interface inspects the spacing owner, applies a local correction, and checks affected states/consumers | Running a full direction exercise, adding dark mode, changing the palette/radii/icons, or loading unrelated specialists to satisfy the broad foundation contract |
 | R64: "The colors pass contrast, but this screen feels inconsistent. Audit it without edits using Forma." Source and renders of both supported modes available | Validation applies the internal visual-system and verification contracts to color roles, spacing, shape, icons and states; report actionable findings with mode/consumer evidence | Treating contrast as proof of coherence, imposing a new style or editing during an audit-only request |
 | R65: "Build this playful product marketing landing page with an interactive 3D object and an animated reveal." Approved object, content, and stack available | Brand coordinates expression and shared foundations; Objects 3D and Motion preserve the requested mechanisms, accessible content, fallback, and relevant runtime acceptance | Removing requested volume/animation as gratuitous by default, adding unrelated effects, changing the surrounding UI's roles per specialist, or approving the primary renderer from fallback evidence |
+
+## Soft Glass design-only reuse - R66-R68
+
+Decision rubric, not executed agent behavior. Render validation is recorded separately in the kit.
+
+| Case | Expected decision | Material failure |
+|---|---|---|
+| R66: "Use the approved warm glass sidebar, rounded panel, account footer and landing. Design only, light and dark, mobile too." | Interface + Brand use the Soft Glass contract and executable kit; retain the continuous inset panel, dot/film layers and state styling; inspect both surfaces and themes at requested sizes | Delivering only a palette, adding chat/auth/save simulations, substituting disconnected cards or omitting mobile |
+| R67: "Only make the sidebar dots a little stronger; everything else is approved." | Distinguish the regular texture, selected-row dot and lower decoration; change the relevant token locally and inspect light/dark without shifting content | Redesigning the palette/layout, animating random DOM dots, or increasing every shadow |
+| R68: "Apply Soft Glass to our green brand in this existing app, no backend changes." | Map the semantic palette and dark counterpart together, keep existing font/routes, reuse scoped CSS and inspect hover/focus/press and text contrast | Loading standalone preview JS as app logic, imposing the specimen brand, or replacing one accent hex while leaving inconsistent state roles |
+
+## Complete landing coverage - R69
+
+| Input | Expected decision and evidence | Reject |
+|---|---|---|
+| R69: "I mean the full approved landing, not the app preview. Add that for later design-only projects." | Brand opens the full landing resource and profile, maps all nine sections plus footer, keeps the workspace intact, records font/media adaptations and checks both themes at desktop/narrow widths | Calling a hero plus cards the complete landing, using current output as its own reference, omitting below-fold sections, adding lead submission or treating sampled fonts/art as automatically redistributable |
+
+
+## R70 - Integral local landing instead of an authored approximation
+
+Prompt: "Reproduce the complete approved Soft Glass landing with the same fonts, artwork and motion, design only, so I can reuse it."
+
+Expected: Reference + Brand locate the separate `soft-glass-approved/manifest.json` using the integral kit contract; verify copied files and dependencies, then render the new consumer under comparable conditions. Interface is used only for the linked workspace. A missing kit is reported and its location requested. The bundled neutral landing and short specimen are never silently substituted. Preserve the source locale, media, theme and breakpoint behavior before authorized customization.
+
+Fail: claiming exactness while replacing fonts or artwork, calling the portable adaptation approved source, assuming a fresh plugin install includes a local kit, copying only the hero, or adding business services to a design-only transfer.

@@ -1,0 +1,220 @@
+/* Forma soft glass: portable visual primitives. All selectors are scoped. */
+.forma-soft-glass {
+  --sg-page: #f8f6f2;
+  --sg-surface: #fff9f2;
+  --sg-ink: #42382e;
+  --sg-muted: #807567;
+  --sg-faint: #f8f4ec;
+  --sg-line: #ded9d2;
+  --sg-sidebar: #f6440f;
+  --sg-side-ink: #fff8ed;
+  --sg-side-muted: #ffead8;
+  --sg-side-selected: #db3c0a85;
+  --sg-side-line: #ffffff36;
+  --sg-side-field: #db400d42;
+  --sg-account-bg: #e9430cd9;
+  --sg-indicator: #ffd1ac;
+  --sg-lower-wash: #fbd285;
+  --sg-lower-dots: #fff6d4;
+  --sg-lower-opacity: .26;
+  --sg-cta: #f64a06;
+  --sg-cta-ink: #331e10;
+  --sg-dot: #fff7d3;
+  --sg-dot-opacity: .12;
+  --sg-glass: #ffffff0c;
+  --sg-film: linear-gradient(118deg, #ffffff18 0%, #ffffff08 44%, #ffffff28 45%, #ffffff0d 64%, #b2230b0d 65%);
+  --sg-glass-shadow: inset 0 1px 0 #ffffff60, inset 1px 0 0 #ffffff2a, inset 0 -1px 0 #7e240a22, 0 6px 10px -5px #862b0740;
+  --sg-focus: #3d3a32;
+  --sg-space-1: 4px;
+  --sg-space-2: 8px;
+  --sg-space-3: 12px;
+  --sg-space-4: 16px;
+  --sg-space-6: 24px;
+  --sg-space-8: 32px;
+  --sg-side-width: 226px;
+  --sg-shell-gap: 15px;
+  --sg-shell-pad: 16px;
+  --sg-side-radius: 28px;
+  --sg-panel-radius: 26px;
+  --sg-control-radius: 12px;
+  --sg-motion: 180ms;
+  color-scheme: light;
+  color: var(--sg-ink);
+  background: var(--sg-page);
+  font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.forma-soft-glass[data-theme="dark"] {
+  --sg-page: #1b1c1a;
+  --sg-surface: #292a24;
+  --sg-ink: #eeeee5;
+  --sg-muted: #b3b2a1;
+  --sg-faint: #22261f;
+  --sg-line: #34342e;
+  --sg-sidebar: #25231f;
+  --sg-side-ink: #ecebdf;
+  --sg-side-muted: #d4d3c4;
+  --sg-side-selected: #29271fde;
+  --sg-side-line: #ffffff14;
+  --sg-side-field: #ffffff02;
+  --sg-account-bg: #3b3225c9;
+  --sg-indicator: #ffd1ac;
+  --sg-lower-wash: #c49135;
+  --sg-lower-dots: #c49135;
+  --sg-lower-opacity: .11;
+  --sg-cta: #fc945a;
+  --sg-cta-ink: #3a2415;
+  --sg-dot: #fff7d3;
+  --sg-dot-opacity: .045;
+  --sg-glass: #ffffff04;
+  --sg-film: linear-gradient(118deg, #ffffff0a 0%, #ffffff03 44%, #ffffff0d 45%, #ffffff03 64%, #00000004 65%);
+  --sg-glass-shadow: inset 0 1px 0 #ffffff36, inset 1px 0 0 #ffffff0d, inset 0 -1px 0 #0005, 0 6px 10px -5px #0006;
+  --sg-focus: #fcd5b9;
+  color-scheme: dark;
+}
+.forma-soft-glass *, .forma-soft-glass *::before, .forma-soft-glass *::after { box-sizing: border-box; }
+.forma-soft-glass :where(button, input, textarea, select) { font: inherit; color: inherit; }
+.forma-soft-glass :where(button, a) { -webkit-tap-highlight-color: transparent; }
+.forma-soft-glass button { cursor: pointer; }
+.forma-soft-glass button:disabled { cursor: default; opacity: .45; }
+.forma-soft-glass a { color: inherit; text-decoration: none; }
+.forma-soft-glass :focus-visible { outline: 2px solid var(--sg-focus); outline-offset: 4px; }
+.forma-soft-glass .sg-icon { width: 18px; height: 18px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.forma-soft-glass .sg-muted { color: var(--sg-muted); }
+.forma-soft-glass .sg-workspace { display: flex; gap: var(--sg-shell-gap); padding: var(--sg-shell-pad); min-height: 800px; min-height: min(900px, 100dvh); }
+.forma-soft-glass .sg-sidebar { position: relative; isolation: isolate; display: flex; flex-direction: column; flex: 0 0 var(--sg-side-width); min-width: 0; overflow: hidden; padding: 24px 17px; border: 1px solid var(--sg-side-line); border-radius: var(--sg-side-radius); color: var(--sg-side-ink); background: var(--sg-sidebar); }
+.forma-soft-glass .sg-sidebar::before { content: ""; position: absolute; z-index: -1; inset: 0; pointer-events: none; background: radial-gradient(circle, var(--sg-dot) .75px, transparent 1px) 0 0/7px 7px; opacity: var(--sg-dot-opacity); mask-image: linear-gradient(#000, #000 18%, transparent 50%); }
+.forma-soft-glass .sg-sidebar::after { content: ""; pointer-events: none; position: absolute; z-index: -1; inset: 58% 0 0; opacity: var(--sg-lower-opacity); background: radial-gradient(ellipse at 70% 85%, var(--sg-lower-wash) 0%, transparent 65%), radial-gradient(circle, var(--sg-lower-dots) .65px, transparent 1px) 0 0/4px 4px; mask-image: linear-gradient(transparent, #000 55%, transparent); }
+.forma-soft-glass .sg-side-header { display: flex; align-items: center; justify-content: space-between; height: 43px; padding: 0 8px; }
+.forma-soft-glass .sg-brand { font-size: 25px; font-weight: 800; letter-spacing: -1.05px; line-height: 32px; }
+.forma-soft-glass .sg-brand-short { display: none; }
+.forma-soft-glass .sg-glass { border: 1px solid var(--sg-side-line); background-color: var(--sg-glass); background-image: var(--sg-film); box-shadow: var(--sg-glass-shadow); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.forma-soft-glass .sg-icon-button { display: inline-flex; justify-content: center; align-items: center; width: 34px; height: 34px; padding: 0; border-radius: 12px; }
+.forma-soft-glass .sg-side-nav { display: grid; gap: 5px; margin-top: 18px; }
+.forma-soft-glass .sg-nav-item { display: flex; align-items: center; gap: 10px; width: 100%; height: 44px; padding: 0 10px; border: 1px solid transparent; border-radius: 12px; background: transparent; text-align: left; color: var(--sg-side-ink); font-size: 14px; font-weight: 600; }
+.forma-soft-glass .sg-nav-item .sg-icon { width: 20px; height: 20px; }
+.forma-soft-glass .sg-nav-item[aria-current="page"] { border-color: #ffffff38; background: linear-gradient(118deg, #ffffff26 0%, #ffffff14 44%, transparent 45%), var(--sg-side-selected); box-shadow: inset 0 1px 0 #ffffff60, inset 1px 0 0 #ffffff1c, inset 0 -1px 0 #84250a25, 0 6px 10px -4px #a6311255; }
+.forma-soft-glass[data-theme="dark"] .sg-nav-item[aria-current="page"] { border-color: #ffffff20; background: linear-gradient(118deg, #ffffff13 0%, #ffffff08 44%, transparent 45%), var(--sg-side-selected); box-shadow: inset 0 1px 0 #ffffff30, inset 1px 0 0 #ffffff12, inset 0 -1px 0 #0005, 0 7px 10px -4px #0005; }
+.forma-soft-glass .sg-active-dot { width: 6px; height: 6px; flex: 0 0 6px; border-radius: 50%; background: var(--sg-indicator); margin-left: auto; }
+.forma-soft-glass .sg-side-divider { width: 68px; height: 1px; margin: 26px 7px 21px; background: linear-gradient(90deg, #ffffff22, transparent); }
+.forma-soft-glass .sg-context-heading { display: flex; align-items: center; justify-content: space-between; padding: 0 9px; margin-bottom: 10px; font-size: 12px; font-weight: 650; }
+.forma-soft-glass .sg-search { display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 13px; border: 1px solid var(--sg-line); border-radius: 99px; background: var(--sg-surface); box-shadow: 0 1px 2px #3325150a; }
+.forma-soft-glass .sg-search input { width: 100%; min-width: 0; padding: 0; border: 0; outline: none; background: none; }
+.forma-soft-glass .sg-search:focus-within { outline: 2px solid var(--sg-focus); outline-offset: 3px; }
+.forma-soft-glass .sg-search input::placeholder { color: var(--sg-muted); }
+.forma-soft-glass .sg-sidebar .sg-search { min-height: 35px; border-radius: 10px; padding: 0 10px; border-color: var(--sg-side-line); background: var(--sg-side-field); font-size: 11px; }
+.forma-soft-glass .sg-sidebar .sg-search input::placeholder { color: var(--sg-side-muted); }
+.forma-soft-glass .sg-context-list { display: grid; gap: 3px; margin-top: 12px; }
+.forma-soft-glass .sg-context { display: flex; align-items: center; gap: 8px; min-height: 41px; padding: 0 10px; border: 0; border-radius: 10px; font-size: 11px; background: transparent; text-align: left; }
+.forma-soft-glass .sg-context.is-selected { background: #00000015; }
+.forma-soft-glass .sg-context .sg-icon { width: 14px; height: 14px; }
+.forma-soft-glass .sg-account { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 63px; margin-top: auto; padding: 9px; border-radius: 17px; text-align: left; background-color: var(--sg-account-bg); background-image: linear-gradient(118deg, #ffffff26, #ffffff14 45%, transparent 46%); backdrop-filter: blur(9px); -webkit-backdrop-filter: blur(9px); }
+.forma-soft-glass[data-theme="dark"] .sg-account { background-color: var(--sg-account-bg); background-image: linear-gradient(118deg, #ffffff13, #ffffff08 45%, transparent 46%); }
+.forma-soft-glass .sg-avatar { display: grid; place-items: center; width: 36px; height: 36px; flex: 0 0 36px; border-radius: 12px; border: 1px solid #ffffff3d; background: #ffffff12; box-shadow: inset 0 1px #ffffff45; }
+.forma-soft-glass .sg-account-copy { display: grid; font-size: 12px; line-height: 1.5; }
+.forma-soft-glass .sg-account-copy small { font-size: 11px; color: var(--sg-side-muted); }
+.forma-soft-glass .sg-account > .sg-icon { margin-left: auto; width: 15px; }
+.forma-soft-glass .sg-panel { display: flex; flex-direction: column; flex: 1; min-width: 0; overflow: hidden; padding: 28px 23px 0; border: 1px solid #ffffff04; border-radius: var(--sg-panel-radius); background: var(--sg-surface); box-shadow: 0 8px 25px -15px #6d553426; }
+.forma-soft-glass[data-theme="dark"] .sg-panel { background: linear-gradient(150deg, #282824, #292a24 65%, #2a2b26); }
+.forma-soft-glass .sg-panel-header { display: flex; justify-content: space-between; align-items: start; gap: 16px; }
+.forma-soft-glass .sg-panel-header small { color: var(--sg-muted); font-size: 11px; }
+.forma-soft-glass h1, .forma-soft-glass h2, .forma-soft-glass h3, .forma-soft-glass p { margin: 0; }
+.forma-soft-glass .sg-panel-title { font-size: 25px; line-height: 1.2; letter-spacing: -.9px; margin-top: 5px; }
+.forma-soft-glass .sg-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.forma-soft-glass .sg-button { display: inline-flex; justify-content: center; align-items: center; gap: 8px; min-height: 42px; padding: 0 16px; border: 1px solid var(--sg-line); border-radius: 25px; background: var(--sg-faint); color: var(--sg-ink); font-size: 12px; font-weight: 500; box-shadow: inset 0 1px #ffffff25, 0 2px 4px #33251508; }
+.forma-soft-glass .sg-button.sg-primary { background-color: var(--sg-cta); border-color: #ffffff36; color: var(--sg-cta-ink); background-image: var(--sg-film); box-shadow: var(--sg-glass-shadow); }
+.forma-soft-glass .sg-button.sg-square { border-radius: 12px; }
+.forma-soft-glass .sg-button.sg-round { width: 42px; padding: 0; }
+.forma-soft-glass .sg-button.sg-quiet { background: transparent; box-shadow: none; border-color: transparent; }
+.forma-soft-glass .sg-toolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin: 48px 0 28px; }
+.forma-soft-glass .sg-toolbar .sg-search { min-width: 230px; }
+.forma-soft-glass .sg-scene { padding: 0 0 34px; }
+.forma-soft-glass .sg-scene-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; color: var(--sg-muted); font-size: 11px; }
+.forma-soft-glass .sg-scene p { line-height: 1.8; }
+.forma-soft-glass .sg-scene-tag { display: flex; align-items: center; gap: 6px; margin-top: 28px; font-size: 11px; color: var(--sg-muted); }
+.forma-soft-glass .sg-panel-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: auto; padding: 16px 0 20px; border-top: 1px solid var(--sg-line); color: var(--sg-muted); font-size: 11px; }
+.forma-soft-glass .sg-panel-footer .sg-button { border-radius: 11px; }
+.forma-soft-glass .sg-landing { padding: 16px 20px 24px; background: #f4e3d2; }
+.forma-soft-glass[data-theme="dark"] .sg-landing { background: #151613; }
+.forma-soft-glass .sg-floating-nav { position: relative; z-index: 1; display: flex; align-items: center; gap: 14px; width: min(1180px, 100%); margin: 0 auto -32px; padding: 7px 7px 7px 22px; border: 1px solid #e9e4ddcc; border-radius: 99px; background: #fffaf2db; box-shadow: inset 0 1px #fff, 0 18px 40px -24px #8a3a1466; backdrop-filter: blur(16px) saturate(1.3); -webkit-backdrop-filter: blur(16px) saturate(1.3); }
+.forma-soft-glass[data-theme="dark"] .sg-floating-nav { border-color: #ffffff14; background: #1b1c1ae0; box-shadow: inset 0 1px #ffffff12, 0 18px 40px -24px #000; }
+.forma-soft-glass .sg-floating-nav .sg-brand { color: var(--sg-cta); margin-right: auto; font-size: 23px; }
+.forma-soft-glass .sg-nav-links { display: flex; align-items: center; gap: 2px; }
+.forma-soft-glass .sg-nav-links a { padding: 11px 15px; border-radius: 99px; }
+.forma-soft-glass .sg-nav-links a[aria-current="page"] { background: var(--sg-ink); color: var(--sg-page); }
+.forma-soft-glass .sg-landing-section { border-radius: 30px; background: var(--sg-page); padding: 120px max(30px, calc((100% - 1240px)/2)) 80px; }
+.forma-soft-glass .sg-eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--sg-cta); font-size: 12px; font-weight: 650; letter-spacing: 1.6px; text-transform: uppercase; }
+.forma-soft-glass .sg-eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.forma-soft-glass .sg-landing-heading { text-align: center; }
+.forma-soft-glass .sg-hero-title { max-width: 900px; margin: 24px auto 64px; font-size: clamp(38px, 5.4vw, 66px); font-weight: 780; letter-spacing: -.065em; line-height: 1.08; color: var(--sg-ink); }
+.forma-soft-glass .sg-hero-title span { display: block; color: var(--sg-cta); }
+.forma-soft-glass .sg-feature { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 48px; }
+.forma-soft-glass .sg-feature h2 { margin: 14px 0 20px; font-size: clamp(26px, 3vw, 38px); letter-spacing: -.045em; line-height: 1.15; }
+.forma-soft-glass .sg-feature p { color: var(--sg-muted); font-size: 16px; line-height: 1.8; }
+.forma-soft-glass .sg-feature .sg-actions { margin-top: 24px; }
+.forma-soft-glass .sg-artboard { padding: 13px; border: 1px solid var(--sg-line); border-radius: 27px; background: var(--sg-surface); box-shadow: 0 30px 60px -34px #8a3a1475; }
+.forma-soft-glass .sg-artboard-content { position: relative; overflow: hidden; display: grid; min-height: 330px; place-content: center; padding: 30px; border-radius: 18px; background: var(--sg-faint); }
+.forma-soft-glass .sg-artboard-content::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 15% 100%, #ff7c3c42, transparent 60%), radial-gradient(circle, var(--sg-cta) .7px, transparent 1px) 0 0/7px 7px; opacity: .24; mask-image: linear-gradient(transparent 20%, #000); }
+.forma-soft-glass .sg-composer { position: relative; padding: 0 3px 3px; border-radius: 24px; background: #494c42; box-shadow: 0 16px 30px -18px #3b24154d; }
+.forma-soft-glass .sg-composer-label { display: block; padding: 8px 17px; color: #eeeee5; font-size: 10px; }
+.forma-soft-glass .sg-composer-body { display: grid; gap: 38px; padding: 20px 15px 13px; border: 2px solid var(--sg-cta); border-radius: 22px; background: var(--sg-surface); }
+.forma-soft-glass .sg-composer-body p { color: var(--sg-ink); font-size: 14px; }
+.forma-soft-glass .sg-composer .sg-button { padding: 0 11px; }
+.forma-soft-glass .sg-specimens { max-width: 1040px; margin: auto; padding: 40px 24px; }
+.forma-soft-glass .sg-specimens > h1 { font-size: 32px; letter-spacing: -.04em; }
+.forma-soft-glass .sg-specimen-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 28px; }
+.forma-soft-glass .sg-specimen { padding: 24px; border: 1px solid var(--sg-line); border-radius: 26px; background: var(--sg-surface); }
+.forma-soft-glass .sg-specimen h2 { font-size: 15px; margin-bottom: 18px; }
+.forma-soft-glass .sg-specimen p { margin-top: 18px; color: var(--sg-muted); font-size: 12px; }
+.forma-soft-glass :where(.sg-button, .sg-icon-button, .sg-nav-item, .sg-account, .sg-context, .sg-nav-links a) { transition: transform var(--sg-motion) ease, box-shadow var(--sg-motion) ease, background-color var(--sg-motion) ease; }
+@media (hover: hover) and (pointer: fine) {
+  .forma-soft-glass :where(.sg-button, .sg-icon-button, .sg-account):not(:disabled):hover { transform: translateY(-1px); filter: brightness(1.04); }
+  .forma-soft-glass .sg-nav-item:not([aria-current]):hover, .forma-soft-glass .sg-context:hover { background-color: #ffffff0f; }
+  .forma-soft-glass .sg-nav-links a:not([aria-current]):hover { background: var(--sg-faint); }
+}
+.forma-soft-glass :where(.sg-button, .sg-icon-button, .sg-nav-item, .sg-account):not(:disabled):active { transform: translateY(1px); }
+@media (max-width: 980px) {
+  .forma-soft-glass .sg-nav-links { display: none; }
+  .forma-soft-glass .sg-feature { gap: 24px; }
+}
+@media (max-width: 760px) {
+  .forma-soft-glass { --sg-side-width: 56px; --sg-side-radius: 16px; --sg-panel-radius: 16px; --sg-shell-gap: 8px; --sg-shell-pad: 8px; }
+  .forma-soft-glass .sg-workspace { min-height: 100dvh; }
+  .forma-soft-glass .sg-sidebar { padding: 14px 5px; }
+  .forma-soft-glass .sg-side-header { height: 29px; padding: 0; justify-content: center; }
+  .forma-soft-glass .sg-brand-long, .forma-soft-glass .sg-side-header .sg-icon-button, .forma-soft-glass .sg-nav-label, .forma-soft-glass .sg-contexts, .forma-soft-glass .sg-side-divider, .forma-soft-glass .sg-account-copy, .forma-soft-glass .sg-account > .sg-icon { display: none; }
+  .forma-soft-glass .sg-brand-short { display: inline; }
+  .forma-soft-glass .sg-nav-item { width: 44px; padding: 0; justify-content: center; position: relative; }
+  .forma-soft-glass .sg-active-dot { position: absolute; right: 4px; top: 5px; width: 6px; height: 6px; }
+  .forma-soft-glass .sg-account { width: 44px; min-height: 44px; padding: 4px; border-radius: 12px; }
+  .forma-soft-glass .sg-avatar { width: 32px; height: 32px; flex-basis: 32px; }
+  .forma-soft-glass .sg-panel { padding: 20px 14px 0; }
+  .forma-soft-glass .sg-panel-title { font-size: 22px; }
+  .forma-soft-glass .sg-panel-header { gap: 4px; }
+  .forma-soft-glass .sg-panel-header .sg-actions { flex-wrap: nowrap; gap: 0; }
+  .forma-soft-glass .sg-toolbar { margin-top: 26px; gap: 12px; }
+  .forma-soft-glass .sg-toolbar .sg-search { min-width: 0; width: 100%; }
+  .forma-soft-glass .sg-toolbar .sg-actions { gap: 4px; }
+  .forma-soft-glass .sg-toolbar .sg-button { padding: 0 9px; font-size: 11px; }
+  .forma-soft-glass .sg-scene { padding-bottom: 28px; }
+  .forma-soft-glass .sg-scene p { font-size: 13px; }
+  .forma-soft-glass .sg-panel-footer { align-items: start; flex-direction: column; }
+  .forma-soft-glass .sg-panel-footer .sg-button { width: 100%; }
+  .forma-soft-glass .sg-landing { padding: 10px; }
+  .forma-soft-glass .sg-floating-nav { padding-left: 16px; gap: 6px; }
+  .forma-soft-glass .sg-floating-nav .sg-button { padding: 0 12px; }
+  .forma-soft-glass .sg-floating-nav .sg-nav-secondary { display: none; }
+  .forma-soft-glass .sg-landing-section { padding: 90px 20px 40px; border-radius: 24px; }
+  .forma-soft-glass .sg-hero-title { margin-bottom: 40px; font-size: 38px; }
+  .forma-soft-glass .sg-feature { grid-template-columns: 1fr; }
+  .forma-soft-glass .sg-artboard { padding: 8px; border-radius: 22px; }
+  .forma-soft-glass .sg-artboard-content { padding: 14px; min-height: 300px; }
+  .forma-soft-glass .sg-composer-body { padding: 16px 10px 10px; }
+  .forma-soft-glass .sg-composer .sg-button { min-height: 40px; font-size: 11px; }
+  .forma-soft-glass .sg-specimens { padding: 24px 16px; }
+  .forma-soft-glass .sg-specimen-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .forma-soft-glass *, .forma-soft-glass *::before, .forma-soft-glass *::after { transition: none !important; animation: none !important; }
+  .forma-soft-glass :where(.sg-button, .sg-icon-button, .sg-nav-item, .sg-account):not(:disabled):hover, .forma-soft-glass :where(.sg-button, .sg-icon-button, .sg-nav-item, .sg-account):not(:disabled):active { transform: none; }
+}

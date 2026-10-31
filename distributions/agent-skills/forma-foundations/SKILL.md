@@ -2,7 +2,7 @@
 name: forma-foundations
 description: "Define or refine hierarchy, typography, color, layout, spacing and visual-system tokens. Use for composition or foundation inconsistencies; not to redesign product flows or reproduce a 3D mechanism."
 metadata:
-  version: 1.32.2
+  version: 1.34.0
 ---
 
 # Visual foundations
@@ -24,6 +24,7 @@ Preserve the brand, stack and approved decisions. A local correction does not au
 
 1. Inspect the target and establish a baseline, source of truth and observable criterion.
    Use the relevant [playbooks](../forma/references/playbooks.md) section if broad work needs structure; read the [shared visual foundation](../forma/references/visual-system.md#coordinate-the-foundation) for new surfaces, broad refinement, or token consolidation. Connect palette/modes, spacing, shape, and icon roles through existing consumers. A local gap can go directly to the spatial contract.
+   For an aligned brief or imported system, use [design specifications from evidence](../forma/references/design-specification.md). Preserve resolved Product decisions and distinguish source measurements from derived modes and destination proposals. Reuse existing design documentation; maintain a project DESIGN.md only when substantial authorized work benefits from it, not for every local fix.
 2. If the problem is composition, declare the container, axes, insets, groups and adaptation rule.
    Read [spatial contracts](../forma/references/layout-spatial-contracts.md); measure the cascade and content before changing the global scale.
 3. If color is involved, separate action, text, surface, ambient color and states.

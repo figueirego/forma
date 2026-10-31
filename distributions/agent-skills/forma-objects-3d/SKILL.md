@@ -2,7 +2,7 @@
 name: forma-objects-3d
 description: "Integrate or refine reusable material objects, BookObject, books, covers and 2D/3D mascots, including geometry, materials, gestures and lifecycle. Use for object mechanisms and fidelity; not to add decorative 3D to every interface."
 metadata:
-  version: 1.32.2
+  version: 1.34.0
 ---
 
 # Objects, material and 3D

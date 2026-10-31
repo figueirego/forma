@@ -1337,6 +1337,115 @@
         "notes": "Original editorial record authored for Forma, distributed under the package MIT license.",
         "scope": "Linked resources retain their stated provenance and dependency requirements. This record does not claim invention of the underlying design principles or grant rights to consumer assets."
       }
+    },
+    {
+      "id": "forma-soft-glass",
+      "name": "Soft Glass landing and workspace",
+      "origin": "forma",
+      "kind": "interface",
+      "useCases": [
+        "sidebar",
+        "landing",
+        "glass",
+        "account-footer",
+        "visual-only"
+      ],
+      "tags": [
+        "desktop",
+        "mobile",
+        "light",
+        "dark",
+        "rounded-panel",
+        "dotted-texture",
+        "hover",
+        "focus",
+        "pressed",
+        "warm",
+        "halftone",
+        "floating-navigation",
+        "sticky-story",
+        "faq"
+      ],
+      "idea": "A colored navigation slab and a quiet inset panel share subtle glass edges, rounded controls and a controlled dotted texture.",
+      "whenToUse": "A landing page and application need the approved warm Soft Glass direction, including visual states, without implementing product features.",
+      "structure": [
+        "Keep the sidebar and continuous inset work surface separate, with stable shared spacing.",
+        "Use diagonal highlight film, edge light and a shallow shadow on selected controls and the account footer.",
+        "Keep regular dots, the active-item indicator and lower texture independently adjustable.",
+        "For the complete landing, keep hero, trust, problem, four-step narrative, two modes, six audiences, feature consolidation, four FAQ categories, contact and footer."
+      ],
+      "adapt": [
+        "For integral reproduction, verify the separate soft-glass-approved local kit manifest; the bundled neutral landing is an adaptation, not a fidelity baseline.",
+        "Reuse the scoped CSS and semantic light/dark tokens in the existing stack.",
+        "Replace specimen content and font with the destination identity; maintain panel/control radius hierarchy.",
+        "Use the specimen to inspect desktop and mobile, not as production behavior."
+      ],
+      "avoid": [
+        "Do not add authentication, generation, persistence or fake success behavior to a design-only request.",
+        "Do not impose this visual preset on every project or copy the specimen theme switch into an existing provider.",
+        "Do not treat the kit as a distribution of reference artwork, mascots or fonts.",
+        "Do not substitute the compact control-specimen landing for the approved complete marketing page."
+      ],
+      "verify": [
+        "Inspect landing and workspace in light/dark at desktop and narrow widths.",
+        "Capture hover, keyboard focus and press; verify labels, account footer and continuous panel remain reachable.",
+        "Confirm the preview changes only its surface/theme and does not claim a backend action."
+      ],
+      "resources": [
+        {
+          "label": "Visual contract",
+          "path": "references/soft-glass.md"
+        },
+        {
+          "label": "Runnable specimen",
+          "path": "assets/soft-glass/preview.html"
+        },
+        {
+          "label": "Scoped styles",
+          "path": "assets/soft-glass/soft-glass.css"
+        },
+        {
+          "label": "Tokens",
+          "path": "assets/soft-glass/tokens.json"
+        },
+        {
+          "label": "Render validation scope",
+          "path": "assets/soft-glass/validation.json"
+        },
+        {
+          "label": "Complete landing",
+          "path": "assets/soft-glass/landing.html"
+        },
+        {
+          "label": "Measured section profile",
+          "path": "assets/soft-glass/landing-profile.json"
+        },
+        {
+          "label": "Landing integration",
+          "path": "assets/soft-glass/landing-README.md"
+        },
+        {
+          "label": "Landing render checks",
+          "path": "assets/soft-glass/landing-validation.json"
+        },
+        {
+          "label": "Integral local reproduction contract",
+          "path": "references/soft-glass-integral.md"
+        }
+      ],
+      "evidence": {
+        "type": "executable-demo",
+        "liveVerified": false,
+        "capture": null,
+        "limits": [
+          "The dated local render record describes the tested specimen; consumer integration and physical-device behavior remain separate checks.",
+          "Neutral content and system typography are portable adaptations, not pixel-identical reference artwork."
+        ]
+      },
+      "rights": {
+        "notes": "Original editorial record and portable CSS authored for Forma, distributed under the package MIT license.",
+        "scope": "A visual study informs the palette and composition. External assets retain their provenance and rights; external identities and artwork are not included in this kit."
+      }
     }
   ]
 }

@@ -2,7 +2,7 @@
 name: forma-brand
 description: "Create or adapt identities, campaigns, landing pages, graphics and marketing materials with a defined message, channel and export format. Use for brand communication; not to impose promotional styling on operational flows without a reason."
 metadata:
-  version: 1.32.2
+  version: 1.34.0
 ---
 
 # Brand and communication
@@ -33,6 +33,8 @@ Classify the surface before choosing a direction: a communication page organizes
    Read [artifacts and editing](../../references/artifact-workflows.md); for a 2.5D/3D campaign, read [immersive web](../../references/immersive-web-tech.md), without imposing a stack based on the reference.
    When restyling, preserve the editorial contract; for a film or animated deck, use [temporal production](../../references/motion.md#films-and-rendered-sequences). The project's identity package records approved facts, not the preferences of the generation tool.
 4. Adapt composition and copy to the authorized channels, preserving hierarchy and consistency with the destination.
+   When the requested direction is the warm rounded landing with a matching glass workspace, use [Soft Glass](../../references/soft-glass.md). Brand owns the page composition and Interface owns the app excerpt; share roles while keeping their surface tokens distinct. For integral reproduction, first locate the separate [approved local kit](../../references/soft-glass-integral.md) and verify its assets. For an authored adaptation, read the section map and use `assets/soft-glass/landing.html`; the short landing inside the workspace/control specimen is not equivalent. A design-only brief permits theme/state previews, not simulated business actions or persistence.
+   Its shared catalog record has kind `interface`: query `soft glass landing` without a `brand` kind filter and select the full landing resource. The full landing uses `.forma-soft-glass-landing` and `--sgl-*`; the workspace uses `.forma-soft-glass` and `--sg-*`.
    For a new surface or broad visual refinement, apply the [shared visual foundation](../../references/visual-system.md#coordinate-the-foundation), including any product fragments. Use only the roles relevant to the medium; a static graphic does not require interface states or a theme switch. Consult [color](../../references/color-refinement.md) for palette decisions; keep text editable when required by the delivery contract.
    New interactive pages include [Motion](../forma-motion/SKILL.md) and its [default layer](../../references/motion.md#default-motion-for-new-interactive-designs), preserving the same concept and foundation. Consider hover, theme changes when supported, and restrained scroll reveals; 3D remains conditional on the brief and message.
 5. Review claims, links, cropping, readability and the exported file at its actual usage size.

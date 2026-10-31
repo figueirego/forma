@@ -2,6 +2,16 @@
 
 The same source generates three formats: a Codex plugin, a Claude Code plugin and Agent Skills. Choose **one format per host** to avoid duplicate entries. This package provides instructions, references and local resources; it does not include a model, standalone visual editor, subscription or automatic connection to external tools.
 
+## One briefing protocol across hosts
+
+When Forma is active, Product uses the same [progressive brief](../source/forma/references/progressive-brief.md) in Codex, Claude Code and the portable Agent Skills package. Activation differs by distribution; design decisions and question semantics do not. The assistant uses a native choice control only if its current environment exposes one. Otherwise it asks the same single question with numbered choices, a recommendation and free text. No additional plugin, global rule edit or provider setup is required for this flow.
+
+Complete requests go directly to work. For incomplete requests, only actual answers resolve material questions; default selections, skips and timeouts do not. After alignment, Forma continues the requested task without an extra mandatory confirmation. Prompt-only and design-only scopes remain intact.
+
+To continue in another assistant, make the project and its existing brief/design documents available there. For substantial authorized work without equivalents, the defaults are `docs/forma/brief.md` and `DESIGN.md`. The new assistant reads decisions and pending questions before continuing. Forma does not transfer hidden conversation memory or activate itself in an assistant where it is not installed.
+
+Generated packages and link checks establish distribution integrity. Conversational simulations, headless CLI trials, native question UI trials and real product work are separate evidence; report which actually ran.
+
 ## Download
 
 Clone `https://github.com/figueirego/forma.git` or choose **Code > Download ZIP** in the repository and extract everything. The `plugins/` and `distributions/` directories are already generated. Node and development dependencies are needed only to rebuild the packages or run repository tests. The optional installer uses Python 3.12+ and only the standard library.

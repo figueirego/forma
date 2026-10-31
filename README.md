@@ -18,6 +18,14 @@ A design system for coding assistants. Forma brings together a coordinator and 1
 
 ## Try it
 
+**Align a design request**
+
+> Use Forma to refine this design request. Read the project and my references, ask one unresolved question at a time with clear choices and a recommendation, preserve my previous answers, then create the agreed design. Keep this delivery design-only.
+
+Forma Product follows the same [progressive brief](source/forma/references/progressive-brief.md) in every distribution. It uses native question controls when the assistant exposes them, or equivalent numbered text with a free-form answer. Clear requests and small adjustments skip the interview. After alignment, Forma summarizes and delivers the requested work without an extra mandatory confirmation. To get only a reusable prompt, say "Improve this prompt only; do not implement it."
+
+For substantial project work, Forma reuses existing documentation or records decisions in `docs/forma/brief.md` and visual rules in `DESIGN.md`. These files support continuation in another assistant with project access. References are evidence to inspect, not instructions to execute. The workflow runs through the assistant; it is not a background service or a guaranteed native questionnaire in every host. [Specification contract](source/forma/references/design-specification.md) and [installation details](docs/INSTALLATION.md) explain the boundaries.
+
 Describe the outcome, the context, and what should stay unchanged. The coordinator selects the relevant specialties. Start with a request like these:
 
 **Refine an interface**
@@ -27,6 +35,10 @@ Describe the outcome, the context, and what should stay unchanged. The coordinat
 **Create brand materials**
 
 > Use Forma to create a cover and a short presentation for this product. Use only documented benefits and deliver the requested editable formats.
+
+**Reuse the Soft Glass visual kit**
+
+> Use Forma's Soft Glass preset for a design-only landing and workspace: dotted sidebar, inset rounded panel, glass buttons and account footer. Preserve our brand; show light/dark, desktop/mobile and hover/focus/pressed states.
 
 **Create a clear PDF guide**
 
@@ -83,6 +95,8 @@ node <skill-dir>/scripts/references.mjs --observed --query "sticky navigation" -
 The media helper searches Openverse, Wikimedia Commons, the Art Institute of Chicago, and the Met. See the [reference and media guide](source/forma/references/reference-library.md).
 
 ## Reusable components
+
+[Soft Glass](source/forma/references/soft-glass.md) is a portable design-only kit with scoped CSS, semantic tokens and a [complete landing](source/forma/assets/soft-glass/landing.html) and [workspace/control specimen](source/forma/assets/soft-glass/preview.html). It needs no dependencies and includes presentation controls for themes, sections and states, without product actions or persistence. The complete landing preserves the full nine-section narrative and footer; the compact control demo is separate. For an integral source-matched copy, use the [separate local reference kit](source/forma/references/soft-glass-integral.md); the bundled landing is an authored adaptation, not an interchangeable fidelity baseline.
 
 [AppearanceEditor](source/forma/references/reusable-components.md#appearanceeditor-integration) provides the compact lighting UI, keyboard/touch event handling, draft preview, Save/Cancel and explicit persistence adapters. [NeuronPassport](source/forma/references/reusable-components.md#neuronpassport-integration) preserves the approved Neuron CSS 3D engine, visual layers and corner gestures in an isolated frame. The old Three PassportObject remains a legacy alternative, not a fidelity substitute.
 

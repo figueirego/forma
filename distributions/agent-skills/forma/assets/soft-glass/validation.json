@@ -1,0 +1,422 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-31T03:53:13.443Z",
+  "release": "1.33.0",
+  "scope": "Design-only specimen served over HTTP; no business functionality",
+  "browser": "156.0.8078.74",
+  "devicePixelRatio": 1,
+  "renderer": "CSS and inline SVG",
+  "cases": [
+    {
+      "screen": "workspace",
+      "theme": "light",
+      "width": 1440,
+      "height": 900,
+      "touchEmulated": false,
+      "geometry": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "sidebar": {
+          "x": 16,
+          "y": 77,
+          "width": 226,
+          "height": 868,
+          "radius": "28px",
+          "background": "rgb(246, 68, 15)"
+        },
+        "panel": {
+          "x": 257,
+          "y": 77,
+          "width": 1167,
+          "height": 868,
+          "radius": "26px",
+          "background": "rgb(255, 249, 242)"
+        },
+        "dotOpacity": "0.12",
+        "theme": "light",
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "pageErrors": [],
+      "externalRequests": [],
+      "httpErrors": [],
+      "capture": "captures/workspace-light-1440.png"
+    },
+    {
+      "screen": "landing",
+      "theme": "light",
+      "width": 1440,
+      "height": 900,
+      "touchEmulated": false,
+      "geometry": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "sidebar": null,
+        "panel": null,
+        "dotOpacity": null,
+        "theme": "light",
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "pageErrors": [],
+      "externalRequests": [],
+      "httpErrors": [],
+      "capture": "captures/landing-light-1440.png"
+    },
+    {
+      "screen": "controls",
+      "theme": "light",
+      "width": 1440,
+      "height": 900,
+      "touchEmulated": false,
+      "geometry": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "sidebar": null,
+        "panel": null,
+        "dotOpacity": null,
+        "theme": "light",
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "pageErrors": [],
+      "externalRequests": [],
+      "httpErrors": [],
+      "capture": "captures/controls-light-1440.png"
+    },
+    {
+      "screen": "workspace",
+      "theme": "dark",
+      "width": 1440,
+      "height": 900,
+      "touchEmulated": false,
+      "geometry": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "sidebar": {
+          "x": 16,
+          "y": 77,
+          "width": 226,
+          "height": 868,
+          "radius": "28px",
+          "background": "rgb(37, 35, 31)"
+        },
+        "panel": {
+          "x": 257,
+          "y": 77,
+          "width": 1167,
+          "height": 868,
+          "radius": "26px",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "dotOpacity": "0.045",
+        "theme": "dark",
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "pageErrors": [],
+      "externalRequests": [],
+      "httpErrors": [],
+      "capture": "captures/workspace-dark-1440.png"
+    },
+    {
+      "screen": "landing",
+      "theme": "dark",
+      "width": 1440,
+      "height": 900,
+      "touchEmulated": false,
+      "geometry": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "sidebar": null,
+        "panel": null,
+        "dotOpacity": null,
+        "theme": "dark",
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "pageErrors": [],
+      "externalRequests": [],
+      "httpErrors": [],
+      "capture": "captures/landing-dark-1440.png"
+    },
+    {
+      "screen": "controls",
+      "theme": "dark",
+      "width": 1440,
+      "height": 900,
+      "touchEmulated": false,
+      "geometry": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "sidebar": null,
+        "panel": null,
+        "dotOpacity": null,
+        "theme": "dark",
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "pageErrors": [],
+      "externalRequests": [],
+      "httpErrors": [],
+      "capture": "captures/controls-dark-1440.png"
+    },
+    {
+      "screen": "workspace",
+      "theme": "light",
+      "width": 390,
+      "height": 900,
+      "touchEmulated": true,
+      "geometry": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "sidebar": {
+          "x": 8,
+          "y": 99,
+          "width": 56,
+          "height": 884,
+          "radius": "16px",
+          "background": "rgb(246, 68, 15)"
+        },
+        "panel": {
+          "x": 72,
+          "y": 99,
+          "width": 310,
+          "height": 884,
+          "radius": "16px",
+          "background": "rgb(255, 249, 242)"
+        },
+        "dotOpacity": "0.12",
+        "theme": "light",
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "pageErrors": [],
+      "externalRequests": [],
+      "httpErrors": [],
+      "capture": "captures/workspace-light-390.png"
+    },
+    {
+      "screen": "landing",
+      "theme": "light",
+      "width": 390,
+      "height": 900,
+      "touchEmulated": true,
+      "geometry": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "sidebar": null,
+        "panel": null,
+        "dotOpacity": null,
+        "theme": "light",
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "pageErrors": [],
+      "externalRequests": [],
+      "httpErrors": [],
+      "capture": "captures/landing-light-390.png"
+    },
+    {
+      "screen": "controls",
+      "theme": "light",
+      "width": 390,
+      "height": 900,
+      "touchEmulated": true,
+      "geometry": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "sidebar": null,
+        "panel": null,
+        "dotOpacity": null,
+        "theme": "light",
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "pageErrors": [],
+      "externalRequests": [],
+      "httpErrors": [],
+      "capture": "captures/controls-light-390.png"
+    },
+    {
+      "screen": "workspace",
+      "theme": "dark",
+      "width": 390,
+      "height": 900,
+      "touchEmulated": true,
+      "geometry": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "sidebar": {
+          "x": 8,
+          "y": 99,
+          "width": 56,
+          "height": 884,
+          "radius": "16px",
+          "background": "rgb(37, 35, 31)"
+        },
+        "panel": {
+          "x": 72,
+          "y": 99,
+          "width": 310,
+          "height": 884,
+          "radius": "16px",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "dotOpacity": "0.045",
+        "theme": "dark",
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "pageErrors": [],
+      "externalRequests": [],
+      "httpErrors": [],
+      "capture": "captures/workspace-dark-390.png"
+    },
+    {
+      "screen": "landing",
+      "theme": "dark",
+      "width": 390,
+      "height": 900,
+      "touchEmulated": true,
+      "geometry": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "sidebar": null,
+        "panel": null,
+        "dotOpacity": null,
+        "theme": "dark",
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "pageErrors": [],
+      "externalRequests": [],
+      "httpErrors": [],
+      "capture": "captures/landing-dark-390.png"
+    },
+    {
+      "screen": "controls",
+      "theme": "dark",
+      "width": 390,
+      "height": 900,
+      "touchEmulated": true,
+      "geometry": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "sidebar": null,
+        "panel": null,
+        "dotOpacity": null,
+        "theme": "dark",
+        "localStorage": 0,
+        "sessionStorage": 0
+      },
+      "pageErrors": [],
+      "externalRequests": [],
+      "httpErrors": [],
+      "capture": "captures/controls-dark-390.png"
+    }
+  ],
+  "interactionStates": [
+    {
+      "theme": "light",
+      "hover": "matrix(1, 0, 0, 1, 0, -1)",
+      "pressed": "matrix(1, 0, 0, 1, 0, 1)",
+      "focus": {
+        "active": true,
+        "visible": true,
+        "outline": "2px"
+      },
+      "reducedMotion": {
+        "transform": "none",
+        "transition": "0s"
+      },
+      "previewThemeSwitch": true
+    },
+    {
+      "theme": "dark",
+      "hover": "matrix(1, 0, 0, 1, 0, -1)",
+      "pressed": "matrix(1, 0, 0, 1, 0, 1)",
+      "focus": {
+        "active": true,
+        "visible": true,
+        "outline": "2px"
+      },
+      "reducedMotion": {
+        "transform": "none",
+        "transition": "0s"
+      },
+      "previewThemeSwitch": true
+    }
+  ],
+  "limitations": [
+    "This is a dated local Chrome check, not a claim of all-browser or physical-device parity.",
+    "Touch was emulated. Screen-reader testing was not performed.",
+    "Neutral content, system typography and CSS artwork are portable adaptations, not pixel-identical source assets.",
+    "Preserved light sidebar text/background ratio is approximately 3.46:1; this specimen does not meet AA for all normal text.",
+    "No business actions, persistence or server operations are implemented."
+  ],
+  "adaptationChecks": [
+    {
+      "theme": "light",
+      "accountBackground": "rgb(33, 73, 54)"
+    },
+    {
+      "theme": "dark",
+      "accountBackground": "rgb(33, 73, 54)"
+    }
+  ],
+  "boundaryChecks": [
+    {
+      "width": 320,
+      "inner": 320,
+      "scroll": 320,
+      "sidebar": 56
+    },
+    {
+      "width": 760,
+      "inner": 760,
+      "scroll": 760,
+      "sidebar": 56
+    },
+    {
+      "width": 761,
+      "inner": 761,
+      "scroll": 761,
+      "sidebar": 226
+    },
+    {
+      "width": 768,
+      "inner": 768,
+      "scroll": 768,
+      "sidebar": 226
+    },
+    {
+      "width": 980,
+      "inner": 980,
+      "scroll": 980,
+      "sidebar": 226
+    }
+  ],
+  "files": {
+    "soft-glass.css": "b436cfce6a1f46b336b9b9a56171e0ae2a2bda6bb7ecdaba7093b6bcb8bcdc75",
+    "tokens.json": "f9f9a5845b71925d1532148972a0d1f1751360421ed533b1958805e3ec344ca3",
+    "preview.html": "52f19f2a85c27e274b9261c1290b996871a647f4fc2995c5ec0036f27dce372c",
+    "preview.js": "9fdf02435d3b1c8b66d6e79666714944603867425a602a634a98eb8c3fd64ebc",
+    "README.md": "6ca85048f55719abdd94b1787fa3fef7cba362d30958b86e42d911d7fb034151"
+  },
+  "captureHashes": {
+    "captures/workspace-light-1440.png": "7393eeb0c81a3c3fdad2995a6f558895ab04c76e89b8bd90f0027aded124c80d",
+    "captures/landing-light-1440.png": "b35664ee5444a2f89c3b819ab5c62c107b9b919796d7cec3d64e2ba490cc8c9d",
+    "captures/controls-light-1440.png": "0d1fb7ff148bd2e806ee9233480061330afa30db90548213e0fef1b13fb6128e",
+    "captures/workspace-dark-1440.png": "c5da37c9ec17032690759cf9383e34b19aca64402c7956727cedaf117ec2d289",
+    "captures/landing-dark-1440.png": "c6e47acdbc9c1cdd62518491ef9094c2ae7cd5d1a1acd7d29c3ff5cd47739930",
+    "captures/controls-dark-1440.png": "929cbffa112473139c7a9dc74a685332084ccf59c9bc78a8ebe269e6b926a36c",
+    "captures/workspace-light-390.png": "dab642f5dfadf83eceab591bf8eb5a00d3c17aa5bf98cc6c88f6de7e24236b4a",
+    "captures/landing-light-390.png": "ee764eea44bf297615e3ae446e6d41cf1a8d3d212c2e42edf38dcd9705dc18b9",
+    "captures/controls-light-390.png": "0563d8df547c958cae266f2cbd906daa6ce68fdc02c677cea2655cca846914e1",
+    "captures/workspace-dark-390.png": "307f7fc00c749a123bcb40bdccfd4fe14134f0112fb57f24ea9473bae21768d1",
+    "captures/landing-dark-390.png": "7c934afae1e52dd5aa5807ce4e0406f731c3ade38bb0e59d05bb5f9a9778140e",
+    "captures/controls-dark-390.png": "4fa46769c6e7a17e62933a2b6dd371a80e7335b5a3b86532a28745031b89e30b"
+  },
+  "result": "passed within the listed scope"
+}

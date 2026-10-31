@@ -2,7 +2,7 @@
 name: forma-interface
 description: "Build or refine operational interfaces, clean shells, forms, navigation, search, settings, appearance editors and material profiles. Use for usable components and states; not for broad research, campaigns or 3D geometry implementation."
 metadata:
-  version: 1.32.2
+  version: 1.34.0
 ---
 
 # Interface and states
@@ -27,6 +27,7 @@ An operational screen organizes work: objects, scope, data and the next action. 
 1. Walk through entry, action, success and recovery; identify the owners of state and persistence.
    Read [interaction and content](../../references/interaction-content.md) and, when data/permissions are involved, [contracts and trust](../../references/contracts-trust.md). Identify objects, units, usage frequency and the decision the screen supports. Repeated values use the same source and scope; totals and deltas follow the domain's calculation and rounding, without adjustments to improve the image. If the direction is open, use [directions and comparison](../../references/design-directions.md); do not import a hero recipe into an approved dashboard.
 2. For the background/sidebar/panel/control system, read [clean shell](../../references/clean-shell.md).
+   For the approved warm colored sidebar, diagonal glass controls, dots and inset panel, use [Soft Glass](../../references/soft-glass.md) and its portable specimen. A design-only request stops at static content, visual states and responsive/theme previews; do not add product handlers, persistence or fake success messages. Apply steps about data and recovery only when behavior is requested.
    For a new screen or broad visual refinement, first apply the [shared visual foundation](../../references/visual-system.md#coordinate-the-foundation) to these components together. Resolve supported themes, spacing, radius roles, and icon language. For new interactive designs, include [Motion](../motion/SKILL.md) with the shared context and implement its [default layer](../../references/motion.md#default-motion-for-new-interactive-designs); a local fix uses only its affected contract.
    Inspect the indicated assets and adapt consumers/events to the stack. For fields, navigation and tables, use [component patterns](../../references/component-patterns.md).
 3. Read only the contracts for the requested capability: [search](../../references/search-discovery.md), [settings](../../references/settings-modes.md), [appearance editor](../../references/lighting-editors-icons.md) or [material profile](../../references/adaptive-visual-systems.md).
