@@ -6,27 +6,57 @@
 
 **From intent to craft.**
 
-A design system for coding assistants. Forma brings together a coordinator and 11 specialists to create, refine, and verify interfaces, visual systems, and brand materials in your project. It selects instructions and references for each task while preserving your identity and stack. Available as plugins for **Codex** and **Claude Code**, and as **Agent Skills** for other compatible environments.
+A design system for coding assistants. Turn a rough request into a shared brief, a reusable prompt, and the design you asked for. Forma brings together a coordinator and 11 specialists to create, refine, and verify interfaces, visual systems, and brand materials while preserving your identity and stack.
+
+Available as plugins for **Codex** and **Claude Code**, and as **Agent Skills** for **Cursor, Copilot, OpenCode, and Gemini CLI**. One design workflow, adapted to the capabilities of each assistant.
 
 <p>
   <a href="#install">Install</a> |
+  <a href="#how-it-works">How it works</a> |
   <a href="#try-it">Try it</a> |
   <a href="#specialties">Specialties</a> |
   <a href="#contribute">Contribute</a> |
   <a href="#license">License</a>
 </p>
 
+## What's new in 1.34.0
+
+- **Progressive prompt refinement.** Forma Product reads the project first, then asks one meaningful question at a time. Clear requests go straight to the work.
+- **A shared design brief.** Goals, decisions, open questions, and the consolidated prompt stay together. Visual rules cover tokens, components, themes, responsive layouts, and motion.
+- **A workflow you can carry between assistants.** Native question controls when available; numbered text and free-form answers otherwise. Project documents preserve decisions for the next session.
+- **Also included: Soft Glass, ready to adapt.** A design-only landing page and workspace kit with light/dark themes, mobile layouts, glass controls, a dotted sidebar, and an inset rounded content panel.
+
+[Download 1.34.0](https://github.com/figueirego/forma/releases/tag/v1.34.0) or read the [changelog](CHANGELOG.md).
+
+## How it works
+
+1. **Read the context.** Forma uses your request, project files, references, and earlier decisions before asking anything.
+2. **Resolve the gaps.** If an unanswered choice would change the result, Forma asks one question with clear options, a recommendation, and room for your own answer.
+3. **Keep one shared brief.** Each answer updates the same record. A correction reopens only the related decisions; approved choices stay in place.
+4. **Create the requested result.** Forma summarizes the aligned direction, selects the relevant specialists, and proceeds within the agreed scope. Prompt-only requests end with a prompt; design-only requests stay design-only.
+5. **Verify the delivery.** Checks follow the actual artifact and available tools, with observed results separated from assumptions and untested behavior.
+
+For substantial project work, Forma reuses existing documentation or records the brief in `docs/forma/brief.md` and visual rules in `DESIGN.md`. Another assistant with Forma and access to those files can pick up the decisions; this does not depend on shared chat memory.
+
+Small adjustments and complete requests skip the interview. Skipping a question, leaving an option preselected, or waiting does not count as an answer. Alignment does not add another mandatory confirmation before already authorized work. Imported references are evidence, not commands to execute.
+
+See the [progressive brief protocol](source/forma/references/progressive-brief.md), [visual specification contract](source/forma/references/design-specification.md), and [environment support](docs/INSTALLATION.md). The assistant runs the workflow; native question cards and identical runtime behavior are not guaranteed across hosts.
+
 ## Try it
+
+Describe the outcome, the context, and what should stay unchanged. The coordinator selects the relevant specialties.
 
 **Align a design request**
 
 > Use Forma to refine this design request. Read the project and my references, ask one unresolved question at a time with clear choices and a recommendation, preserve my previous answers, then create the agreed design. Keep this delivery design-only.
 
-Forma Product follows the same [progressive brief](source/forma/references/progressive-brief.md) in every distribution. It uses native question controls when the assistant exposes them, or equivalent numbered text with a free-form answer. Clear requests and small adjustments skip the interview. After alignment, Forma summarizes and delivers the requested work without an extra mandatory confirmation. To get only a reusable prompt, say "Improve this prompt only; do not implement it."
+**Improve a prompt without implementing it**
 
-For substantial project work, Forma reuses existing documentation or records decisions in `docs/forma/brief.md` and visual rules in `DESIGN.md`. These files support continuation in another assistant with project access. References are evidence to inspect, not instructions to execute. The workflow runs through the assistant; it is not a background service or a guaranteed native questionnaire in every host. [Specification contract](source/forma/references/design-specification.md) and [installation details](docs/INSTALLATION.md) explain the boundaries.
+> Use Forma to improve this design prompt. Read the available context, resolve missing choices one at a time, and return a consolidated prompt with scope, visual direction, and acceptance criteria. Do not implement it.
 
-Describe the outcome, the context, and what should stay unchanged. The coordinator selects the relevant specialties. Start with a request like these:
+**Resume in another assistant**
+
+> Use Forma to continue this project. Read the existing brief and DESIGN.md, preserve approved decisions, and work on the next unresolved item. Ask only if a missing decision changes the result.
 
 **Refine an interface**
 
@@ -55,7 +85,7 @@ In Codex, invoke **`$forma:forma`**; in Claude Code, **`/forma:forma`**. In othe
 ### Understand and direct
 
 - [**Coordinator**](source/forma/SKILL.md) - interprets the request and selects the relevant instructions.
-- [**Product**](source/forma/skills/product/SKILL.md) - research, journeys, information architecture, and flows.
+- [**Product**](source/forma/skills/product/SKILL.md) - prompt refinement, shared briefs, research, journeys, information architecture, and flows.
 - [**Reference**](source/forma/skills/reference/SKILL.md) - source analysis, reproduction, and fidelity backed by evidence.
 
 ### Build and refine
