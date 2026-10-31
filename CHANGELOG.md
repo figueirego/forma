@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.34.0 - 2026-10-31
+
+- Add progressive prompt refinement through Forma Product: inspect context, ask one material question at a time, record actual answers, consolidate the prompt and deliver within scope. Clear requests bypass the interview.
+- Share one protocol across Codex and Claude Code plugins and portable Agent Skills. Use native choice controls when available or equivalent numbered text, without external plugins or global configuration changes.
+- Preserve decisions across corrections, specialist handoffs and assistant changes through existing project records or `docs/forma/brief.md` and `DESIGN.md` for substantial authorized work.
+- Add an evidence-based design specification contract for imported URLs, screenshots and documents, including token/prose contradictions and explicit observed, derived, proposed and unknown states.
+- Add distribution regressions and conversational evaluation scenarios. Distinguish packaging checks, simulations and actual host trials; none alone proves universal behavior or visual quality.
+
+## 1.33.2 - 2026-10-31
+
+- Distinguish integral local Soft Glass reproduction from the authored portable adaptation. Route through the approved kit manifest before copying fonts, media and visual behavior.
+- Document full-kit reuse, visual-only boundaries and controlled fidelity checks; original reference assets remain in the separate local archive.
+
+## 1.33.1 - 2026-10-31
+
+- Correct Soft Glass landing coverage: add the complete nine-section composition and footer, a measured reference profile and an original portable implementation. Keep the shorter control specimen explicitly separate.
+- Preserve the application shell, stronger sidebar dots and all previously approved components. Record media/font adaptations and visual-only behavior instead of claiming exact artwork parity.
+
+## 1.33.0 - 2026-10-31
+
+- Add the optional Soft Glass visual kit: scoped CSS, semantic light/dark tokens, landing/workspace specimens, rounded inset panel, glass controls, dotted sidebar and account footer, with a compact mobile rail.
+- Route design-only requests through Interface and Brand without adding product actions, persistence or simulated success. Link the kit to the local reference catalog, use-case rubric and dated render checks.
+- Preserve the approved book, passport, appearance editor and clean-shell implementations. Soft Glass is a separate visual preset with neutral sample content and documented font/artwork adaptations.
+
 ## 1.32.2 - 2026-10-30
 
 - Add an optional clear PDF guide and neutral print specimen for situation/choice cards, alternating-row tables and concise copy. Connect Brand, Foundations, Handoff, routing and usage guides, with long-content and export-verification scenarios.

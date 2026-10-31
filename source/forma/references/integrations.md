@@ -6,6 +6,7 @@ Forma owns design coordination, investigation, implementation decisions and acce
 
 | Need | Responsible Forma module | Capability and required evidence |
 |---|---|---|
+| Resolve a material design choice | Product | Available native question control or numbered text; actual reply mapped to the shared brief, with recommendation separate from selection |
 | Tokens, colors, typography, layout or consistency | Foundations | Source and computed-style inspection; roles, consumers and rendered comparison |
 | Controls, settings, profiles or task flows | Interface / Product | Source, UI and event inspection; input, state, effect and persistence |
 | Motion, interruption or gesture continuity | Motion | Browser/native input and frame capture; before, during and after the interaction |
@@ -26,6 +27,14 @@ Use the relationship: evidence gap -> Forma owner -> available capability -> obs
 3. Preserve the target, revision and approved context. Prefer existing project tools and assets.
 4. Execute only within the user's scope. Do not install services, subscribe, upload private files or start paid generation as a routing side effect.
 5. Inspect the result in the destination. Reading instructions does not prove invocation, a saved file does not prove rendering, and a render does not prove persistence.
+
+## Questions across assistants
+
+The [progressive brief](progressive-brief.md) is a host-independent instruction protocol executed by the assistant, not a background service or a universal tool API. Activate Forma using the installed distribution's instructions. Inspect the capabilities and restrictions of the current host and mode before presenting a native question. Never assume another assistant's API exists or enable a mode, plugin or global setting just to obtain a widget.
+
+Use one question with two or three meaningful choices, a recommendation and free text when supported. If the host has no native control, use the same question and numbered choices in text and accept a free-form reply. Keep a single pending question. With asynchronous controls, continue only independent work while waiting; do not queue another design question or execute work depending on its answer. Without asynchronous controls, yield for the reply.
+
+Record actual replies in the project brief, not private assistant memory. A default selection, dismissal, skipped question or elapsed time is not an answer. A correction updates the affected decision and its dependents; switching assistants must not restart resolved choices. Document native-host trials, headless-host trials and simulations separately. Equivalent packaging alone does not prove conversational behavior.
 
 ## Design canvas and code
 

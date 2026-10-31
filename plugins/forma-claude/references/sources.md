@@ -8,6 +8,8 @@ Use this map to locate Forma's implementation, contracts, reference collections 
 
 | Task | Forma owner | Working reference |
 |---|---|---|
+| Design prompt refinement and cross-assistant continuation | Product | [Progressive brief](progressive-brief.md), [decision template](templates.md#progressive-brief), [decision scenarios](../evals/progressive-brief-scenarios.md) |
+| Import references into a coherent visual contract | Reference, Foundations and Handoff | [Design specification](design-specification.md); reconcile evidence, decisions and consumers |
 | Color, type, spacing, radius and icons | Foundations | [Visual system](visual-system.md), [color refinement](color-refinement.md), [layout](layout-spatial-contracts.md) |
 | Navigation, controls, profiles and settings | Interface | [Clean shell](clean-shell.md), [settings](settings-modes.md), [components](reusable-components.md) |
 | Journeys, scope and product decisions | Product | [Product research](product-research.md), [playbooks](playbooks.md) |
@@ -29,6 +31,7 @@ Use this map to locate Forma's implementation, contracts, reference collections 
 | Articulated passport | [NeuronPassport](reusable-components.md#neuronpassport-integration) preserves the approved CSS mechanism and host adapters | [Passport refinement](passport-polish-case-study.md) and [source manifest](../assets/neuron-passport/source-manifest.json) |
 | Appearance editor | [AppearanceEditor](reusable-components.md#appearanceeditor-integration) provides scoped UI, editable lights and save/cancel adapters | [Lighting contract](lighting-editors-icons.md) and [compact profile](../assets/reference-profiles/compact-appearance-v1.json) |
 | Clean workspace | [Clean shell](clean-shell.md) provides the reusable sidebar, content surface and control foundation | Its runnable example and the [layout contract](layout-spatial-contracts.md) |
+| Soft Glass visual kit | [Visual preset](soft-glass.md) links portable CSS, tokens, the complete landing and a design-only workspace | [Full landing](../assets/soft-glass/landing.html), [landing checks](../assets/soft-glass/landing-validation.json), [workspace specimen](../assets/soft-glass/preview.html) and [workspace checks](../assets/soft-glass/validation.json); presentation-only behavior |
 
 For another object, transfer the investigation and refinement method. Choose geometry, materials and behavior appropriate to that object. Do not assume that a book engine is a general model of every physical product.
 

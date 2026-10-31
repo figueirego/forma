@@ -39,7 +39,7 @@ test('portfolio collection preserves every source row, including the quarantined
 });
 
 test('CLI keeps portfolios, sites and patterns as explicit independent collections', () => {
-  for (const [args, total] of [[['--portfolios'], 2079], [['--sites'], 202], [[], 21]]) {
+  for (const [args, total] of [[['--portfolios'], 2079], [['--sites'], 202], [[], 22]]) {
     const result = cli(...args, '--list', '--json');
     assert.equal(result.status, 0, result.stderr);
     assert.equal(JSON.parse(result.stdout).total, total);
@@ -290,11 +290,11 @@ test('browser switches case collections, preserves focus and never links the qua
 
 test('a missing portfolio inventory does not disable sites or patterns', async () => {
   const page = await browserHarness({ missingPortfolio: true });
-  assert.match(page.nodes.get('status').textContent, /^21 patterns/);
+  assert.match(page.nodes.get('status').textContent, /^22 patterns/);
   page.change('collection', 'portfolios');
   assert.match(page.nodes.get('status').textContent, /Portfolio index unavailable/);
   page.change('collection', 'sites'); assert.match(page.nodes.get('status').textContent, /^202 websites/);
-  page.change('collection', 'patterns'); assert.match(page.nodes.get('status').textContent, /^21 patterns/);
+  page.change('collection', 'patterns'); assert.match(page.nodes.get('status').textContent, /^22 patterns/);
 });
 
 test('browser separates guide suggestions from identity results and makes candidate browsing explicit', async () => {
@@ -359,13 +359,13 @@ test('browser observed collection filters supporting claims and displays conditi
 test('missing observed data or evidence keeps existing browser collections available', async () => {
   for (const failure of [{ missingObserved: true }, { missingObservedEvidence: true }]) {
     const page = await browserHarness(failure);
-    assert.match(page.nodes.get('status').textContent, /^21 patterns/);
+    assert.match(page.nodes.get('status').textContent, /^22 patterns/);
     page.change('collection', 'observed');
     assert.match(page.nodes.get('status').textContent, /Search unavailable:/);
     assert.equal(page.nodes.get('cards').children.length, 0);
     page.change('collection', 'sites'); assert.match(page.nodes.get('status').textContent, /^202 websites/);
     page.change('collection', 'portfolios'); assert.match(page.nodes.get('status').textContent, /^2079 portfolios/);
-    page.change('collection', 'patterns'); assert.match(page.nodes.get('status').textContent, /^21 patterns/);
+    page.change('collection', 'patterns'); assert.match(page.nodes.get('status').textContent, /^22 patterns/);
   }
 });
 

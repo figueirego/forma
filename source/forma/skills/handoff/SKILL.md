@@ -2,7 +2,7 @@
 name: forma-handoff
 description: "Prepare and verify the handoff between design and implementation: editable design sources, artifacts, tokens, components, export and consumer integration. Use to deliver the required format; not to replace requested functionality with documentation or a screenshot."
 metadata:
-  version: 1.32.2
+  version: 1.34.0
 ---
 
 # Artifacts, tokens and handoff
@@ -24,6 +24,7 @@ Preserve the existing brand, stack, IDs and source of truth; deliver the format 
 
 1. Establish the source of truth, production route and type of delivery: specification, editable source, code or final file.
    Read [artifacts and editing](../../references/artifact-workflows.md); inventory actual IDs and dependencies to avoid duplication and invented links.
+   For an aligned prompt or design-system document, follow [design specifications from evidence](../../references/design-specification.md). Compile the standalone prompt from the same [progressive brief](../../references/progressive-brief.md), preserve its revision and pending decisions, and check that prompt, specification and requested scope agree. Another assistant must be able to resume from project artifacts without relying on the previous chat or a host-specific tool.
 2. For a connected design service, follow the [tool capability contract](../../references/integrations.md) and inspect its available API before using tools.
    Inspect existing context, render, components and bindings. Generated code remains a reference until adapted, integrated and verified.
 3. For tokens/components, read [tokens and handoff](../../references/tokens-handoff.md).

@@ -2,7 +2,7 @@
 name: forma-graphs-data
 description: "Design knowledge graphs, maps, dashboards, time series and data exploration with verifiable identity, provenance and interaction. Use for relationships and analytical reading; not to turn fictional data or visual position into domain facts."
 metadata:
-  version: 1.32.2
+  version: 1.34.0
 ---
 
 # Graphs, maps and data

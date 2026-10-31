@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "forma",
-      "version": "1.32.2",
+      "version": "1.34.0",
       "source": {
         "source": "local",
         "path": "./plugins/forma"

@@ -87,6 +87,7 @@ The community marketplace is at the repository root: `claude plugin marketplace 
 To try this checkout: `claude --plugin-dir ./plugins/forma-claude` from the repository root.
 
 [Coordinator](skills/forma/SKILL.md), [catalog](catalog.json) and [operation](references/plugin-operation.md).
+[Progressive briefing](references/progressive-brief.md) uses one material question at a time through available native controls or numbered text, with a shared project brief and [design specification](references/design-specification.md). Complete requests skip the interview; alignment continues into the requested delivery without an extra mandatory confirmation.
 The `agents/openai.yaml` presentation files are preserved for provenance; Claude Code does not depend on them.
 This package does not install browser tools, models, services or hooks. Design methods and routing remain in Forma. Check your host's capabilities and permissions.
 AppearanceEditor is a reusable module with integration contracts; it is not automatically installed in products.
