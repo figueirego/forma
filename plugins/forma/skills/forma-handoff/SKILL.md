@@ -2,7 +2,7 @@
 name: forma-handoff
 description: "Prepare and verify the handoff between design and implementation: editable design sources, artifacts, tokens, components, export and consumer integration. Use to deliver the required format; not to replace requested functionality with documentation or a screenshot."
 metadata:
-  version: 1.34.0
+  version: 1.35.1
 ---
 
 # Artifacts, tokens and handoff

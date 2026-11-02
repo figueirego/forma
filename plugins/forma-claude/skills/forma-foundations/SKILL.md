@@ -2,7 +2,7 @@
 name: forma-foundations
 description: "Define or refine hierarchy, typography, color, layout, spacing and visual-system tokens. Use for composition or foundation inconsistencies; not to redesign product flows or reproduce a 3D mechanism."
 metadata:
-  version: 1.34.0
+  version: 1.35.1
 ---
 
 # Visual foundations

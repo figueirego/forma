@@ -106,3 +106,7 @@ Freeze the requested palette, font, content, viewport, device pixel ratio, theme
 For design-only requests, prove that controls remain previews and no network request/storage write claims a product operation. Theme switches in the specimen change only its theme. Record unavailable physical-device, browser or assistive-technology checks as unverified. The [dated validation record](../assets/soft-glass/validation.json) identifies the tested files, viewport/state coverage and limits. Package checks prove inclusion/routing, not visual fidelity or automatic integration into future projects.
 
 The [full-landing validation record](../assets/soft-glass/landing-validation.json) is separate from the workspace/control record. It lists rendered coverage, asset adaptations and limits; neither record proves visual identity for an unobserved consumer.
+
+## Optional brand entry and texture scales
+
+The [halftone entry kit](halftone-entry.md) adds a separate executable splash-to-navigation specimen and fine/coarse procedural reticles. Reuse the mechanism without replacing the approved landing or its artwork.

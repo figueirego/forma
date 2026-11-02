@@ -2,7 +2,7 @@
 name: forma-interface
 description: "Build or refine operational interfaces, clean shells, forms, navigation, search, settings, appearance editors and material profiles. Use for usable components and states; not for broad research, campaigns or 3D geometry implementation."
 metadata:
-  version: 1.34.0
+  version: 1.35.1
 ---
 
 # Interface and states

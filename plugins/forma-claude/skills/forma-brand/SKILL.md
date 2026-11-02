@@ -2,7 +2,7 @@
 name: forma-brand
 description: "Create or adapt identities, campaigns, landing pages, graphics and marketing materials with a defined message, channel and export format. Use for brand communication; not to impose promotional styling on operational flows without a reason."
 metadata:
-  version: 1.34.0
+  version: 1.35.1
 ---
 
 # Brand and communication

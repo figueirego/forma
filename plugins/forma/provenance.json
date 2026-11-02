@@ -1,5 +1,5 @@
 {
-  "version": "1.34.0",
+  "version": "1.35.1",
   "source": "canonical Forma skill",
   "transformations": [
     "Flatten skill directories",
@@ -17,8 +17,8 @@
     {
       "source": "SKILL.md",
       "packaged": "skills/forma/SKILL.md",
-      "source_sha256": "9e557de5e26a4e5d646520c5339bbea4c17ff517b4c85a43cc7953f588835e67",
-      "packaged_sha256": "f5b71b7d22ebc3e60afe562440e919a0f2940b8623aac22c090f67f55edc5130"
+      "source_sha256": "c8bdcd77cde574e89d86a1ae98f8a4773cbc7e7fd220ba36d1302ba5e6e10e2f",
+      "packaged_sha256": "55c317f1f987dab68a0c4ee5416d18253dfa4637772a676efb417d79a4f34ad4"
     },
     {
       "source": "THIRD_PARTY_NOTICES.md",
@@ -151,6 +151,24 @@
       "packaged": "assets/fonts/inter-latin-opsz-normal.woff2",
       "source_sha256": "2c295d99e26dcf357d4d01bcf270fd6924b600c9a13dd8c363ef114f4c6976fa",
       "packaged_sha256": "2c295d99e26dcf357d4d01bcf270fd6924b600c9a13dd8c363ef114f4c6976fa"
+    },
+    {
+      "source": "assets/halftone-entry/entry.css",
+      "packaged": "assets/halftone-entry/entry.css",
+      "source_sha256": "91fcf9ea593c37383ac95289dfba434db06a2b215361a152df785cc20bf1ceb0",
+      "packaged_sha256": "91fcf9ea593c37383ac95289dfba434db06a2b215361a152df785cc20bf1ceb0"
+    },
+    {
+      "source": "assets/halftone-entry/entry.js",
+      "packaged": "assets/halftone-entry/entry.js",
+      "source_sha256": "a10ef28a048cdcbd6e33bb489b5edaef10cd8b09dc71e4411f10b0a4f43d6183",
+      "packaged_sha256": "a10ef28a048cdcbd6e33bb489b5edaef10cd8b09dc71e4411f10b0a4f43d6183"
+    },
+    {
+      "source": "assets/halftone-entry/preview.html",
+      "packaged": "assets/halftone-entry/preview.html",
+      "source_sha256": "823f59b355684de175e99249b289a8ed153a89df93dde55dc877caeeedc4ceca",
+      "packaged_sha256": "823f59b355684de175e99249b289a8ed153a89df93dde55dc877caeeedc4ceca"
     },
     {
       "source": "assets/layout.example.json",
@@ -389,8 +407,8 @@
     {
       "source": "assets/reference-library/catalog.json",
       "packaged": "assets/reference-library/catalog.json",
-      "source_sha256": "80b61790145b8605750edc455ab33c00e8f8a118eaee8782ffee0e5c9a46a3b3",
-      "packaged_sha256": "80b61790145b8605750edc455ab33c00e8f8a118eaee8782ffee0e5c9a46a3b3"
+      "source_sha256": "30e073d408dea3c2693f2a6fe78b4c3306f959b6262d97ff8d316c63144b4677",
+      "packaged_sha256": "30e073d408dea3c2693f2a6fe78b4c3306f959b6262d97ff8d316c63144b4677"
     },
     {
       "source": "assets/reference-library/observed-experiences.json",
@@ -803,8 +821,8 @@
     {
       "source": "evals/scenarios.md",
       "packaged": "evals/scenarios.md",
-      "source_sha256": "bc581321c86f2a52365c21217ca2d3022b96ed805a7d4af06a4d31cd1508034d",
-      "packaged_sha256": "1795a21aa8923adcdc43e3f0c6c78c6452ef5f5cc38aaa2f025a81712861a3e1"
+      "source_sha256": "40caf3187211939a1b618d92d19ff7130425087e7aba93c808a3cab678390091",
+      "packaged_sha256": "bac1438eecb54094d3168a4ed923e7102d3abeb5f2e7216bbd0a5361da8a7a80"
     },
     {
       "source": "references/3d-reference-fidelity.md",
@@ -945,6 +963,12 @@
       "packaged_sha256": "966cdece27641bb700d1a45d2cbf2c413918cab2cffa76709b49a40ae078b4b7"
     },
     {
+      "source": "references/halftone-entry.md",
+      "packaged": "references/halftone-entry.md",
+      "source_sha256": "c0d8887086eaed983af2f16959e561a8a9e834bca309bbc662407b19202a3734",
+      "packaged_sha256": "c0d8887086eaed983af2f16959e561a8a9e834bca309bbc662407b19202a3734"
+    },
+    {
       "source": "references/immersive-web-tech.md",
       "packaged": "references/immersive-web-tech.md",
       "source_sha256": "e6efc2b4d699a1eecf7c5405703fe10338337b321db2064eede7a338a5a8d093",
@@ -995,8 +1019,8 @@
     {
       "source": "references/motion.md",
       "packaged": "references/motion.md",
-      "source_sha256": "9fa6317efb647dae1c426d3f4e041bed2d80f6baa9e972d62de1508125c47752",
-      "packaged_sha256": "9fa6317efb647dae1c426d3f4e041bed2d80f6baa9e972d62de1508125c47752"
+      "source_sha256": "c111b34823c55acd09ba8fb21f1a1e5ec1738a8feaa41b879e4ba324fa16784e",
+      "packaged_sha256": "c111b34823c55acd09ba8fb21f1a1e5ec1738a8feaa41b879e4ba324fa16784e"
     },
     {
       "source": "references/passport-polish-case-study.md",
@@ -1085,8 +1109,8 @@
     {
       "source": "references/routing.md",
       "packaged": "references/routing.md",
-      "source_sha256": "31dc021a1bbb22c5bf034650aeb9e052668350dc149f7de91650de469e1b1d5c",
-      "packaged_sha256": "aaddce80d1f28cf3c450cddaa00946af1b8d91311d9c36ce4a44f5d735491f59"
+      "source_sha256": "8e3f459731ea4fce8338a35f5701b2a86c853c503f6f57efa6dab5e7f35d1429",
+      "packaged_sha256": "c6392148887608aebe9e9cb05795e2eaacd1456196c0f610cd3f058cbd10f349"
     },
     {
       "source": "references/search-discovery.md",
@@ -1115,8 +1139,8 @@
     {
       "source": "references/soft-glass.md",
       "packaged": "references/soft-glass.md",
-      "source_sha256": "9f2f5a491528989aa66642ed5a759e74ca464a1af0de2babfeef573c1239a729",
-      "packaged_sha256": "9f2f5a491528989aa66642ed5a759e74ca464a1af0de2babfeef573c1239a729"
+      "source_sha256": "739d9d4c4de7cf8d4c8134c331bf1cd5939d40aa54837f40fefac8818c430d7e",
+      "packaged_sha256": "739d9d4c4de7cf8d4c8134c331bf1cd5939d40aa54837f40fefac8818c430d7e"
     },
     {
       "source": "references/source-use-cases.md",
@@ -1127,8 +1151,8 @@
     {
       "source": "references/sources.md",
       "packaged": "references/sources.md",
-      "source_sha256": "20a7907abecb1d2020a2992342822a75146b0c77f28d8687f0e27787d90ac430",
-      "packaged_sha256": "0d62899ee9e378cdcf65e375615d3d01d9306409af5f50590765840b2857b80f"
+      "source_sha256": "bba898eb640d41a64400fb76f8dc560b3e906f832231d98c4df678dbb70269ce",
+      "packaged_sha256": "75f41a375f8f5889f5eb1bbf0fff737f5a8a4cfc3ef43a541687ee38d6f7ac2c"
     },
     {
       "source": "references/specialized-surfaces.md",
@@ -1235,8 +1259,8 @@
     {
       "source": "skills/brand/SKILL.md",
       "packaged": "skills/forma-brand/SKILL.md",
-      "source_sha256": "2344331a0d439031f569792f439302da2bd55a0e1c81ca03c40bddabd976063d",
-      "packaged_sha256": "28c43d13da7c1a34598e8e7aa3af5ed79e857124bba9a1da4eb4a1e5dbedd20e"
+      "source_sha256": "4f33babbd1db375b1cae4b05f1415296bb82db46bbb05151d24c3eeec9b48b79",
+      "packaged_sha256": "e0071720d1fd2f6ac4a6d2bfb09cc1fae8c6cc7c54f148ff8a622990ac070f2d"
     },
     {
       "source": "skills/brand/agents/openai.yaml",
@@ -1247,8 +1271,8 @@
     {
       "source": "skills/foundations/SKILL.md",
       "packaged": "skills/forma-foundations/SKILL.md",
-      "source_sha256": "ebcd5c60108205aa00b54c839eddb5f31f4a224687c0eee474f260733533d391",
-      "packaged_sha256": "ebcd5c60108205aa00b54c839eddb5f31f4a224687c0eee474f260733533d391"
+      "source_sha256": "bee01ef14beb5e534e8e5f8dcd9ecd5f269cab7f7b4a55728fbca038a9a207e4",
+      "packaged_sha256": "bee01ef14beb5e534e8e5f8dcd9ecd5f269cab7f7b4a55728fbca038a9a207e4"
     },
     {
       "source": "skills/foundations/agents/openai.yaml",
@@ -1259,8 +1283,8 @@
     {
       "source": "skills/graphs-data/SKILL.md",
       "packaged": "skills/forma-graphs-data/SKILL.md",
-      "source_sha256": "32e1586ba97f8db70d06de7bb8b44178cfba374d84b3fd162c66343a52c02071",
-      "packaged_sha256": "32e1586ba97f8db70d06de7bb8b44178cfba374d84b3fd162c66343a52c02071"
+      "source_sha256": "e037beaa7969e55c1079e87de0b1fb37c3b444975c84cf23e1d7672db34b329c",
+      "packaged_sha256": "e037beaa7969e55c1079e87de0b1fb37c3b444975c84cf23e1d7672db34b329c"
     },
     {
       "source": "skills/graphs-data/agents/openai.yaml",
@@ -1271,8 +1295,8 @@
     {
       "source": "skills/handoff/SKILL.md",
       "packaged": "skills/forma-handoff/SKILL.md",
-      "source_sha256": "304065ee5a3e22ef7530f0298571a499229862e54d5454231dfffb039dac0321",
-      "packaged_sha256": "304065ee5a3e22ef7530f0298571a499229862e54d5454231dfffb039dac0321"
+      "source_sha256": "d10fec2ab7d96976c0b13c8162df9854edc3477f2b1fcca8957d31cf9e252591",
+      "packaged_sha256": "d10fec2ab7d96976c0b13c8162df9854edc3477f2b1fcca8957d31cf9e252591"
     },
     {
       "source": "skills/handoff/agents/openai.yaml",
@@ -1283,8 +1307,8 @@
     {
       "source": "skills/interface/SKILL.md",
       "packaged": "skills/forma-interface/SKILL.md",
-      "source_sha256": "21cf58a057b322ad03006bd3aafd4ac10a370f0893065bb8f292880a200ba085",
-      "packaged_sha256": "0c6add9e2d2acdc44aa52458f94c31d6d7e61ecb84996f9be9f77e760d056fd9"
+      "source_sha256": "cb0bbcc5186813f3ed3053ac04652c725a97e9b9f15f5d695e1f0f46b5f849dd",
+      "packaged_sha256": "3f4e433cf3b626dd0b2556cec4b8871b9eaf455d9faddf8a2561a394ba6cffa0"
     },
     {
       "source": "skills/interface/agents/openai.yaml",
@@ -1295,8 +1319,8 @@
     {
       "source": "skills/motion/SKILL.md",
       "packaged": "skills/forma-motion/SKILL.md",
-      "source_sha256": "1ae0668f9ea8bd4c8e2c80b6abb8a36ad28980d6a95aa44e131d5f41fc45945f",
-      "packaged_sha256": "1ae0668f9ea8bd4c8e2c80b6abb8a36ad28980d6a95aa44e131d5f41fc45945f"
+      "source_sha256": "ca348ef518870236a2c56f96c9f1fe597d5c996ec798d96097fc1049601f054e",
+      "packaged_sha256": "ca348ef518870236a2c56f96c9f1fe597d5c996ec798d96097fc1049601f054e"
     },
     {
       "source": "skills/motion/agents/openai.yaml",
@@ -1307,8 +1331,8 @@
     {
       "source": "skills/objects-3d/SKILL.md",
       "packaged": "skills/forma-objects-3d/SKILL.md",
-      "source_sha256": "1046f02622ba2de53200914add29e15e9dcd43a1f77d435af54ff31e6c42ad64",
-      "packaged_sha256": "1046f02622ba2de53200914add29e15e9dcd43a1f77d435af54ff31e6c42ad64"
+      "source_sha256": "19c023a5ddee31a3ea491073ae9ecbc96456cd914eb70a9eeb21961623063d60",
+      "packaged_sha256": "19c023a5ddee31a3ea491073ae9ecbc96456cd914eb70a9eeb21961623063d60"
     },
     {
       "source": "skills/objects-3d/agents/openai.yaml",
@@ -1319,8 +1343,8 @@
     {
       "source": "skills/platforms/SKILL.md",
       "packaged": "skills/forma-platforms/SKILL.md",
-      "source_sha256": "3528aee8a5e65b35780fb8adda859eab2774ceadd74abfe710ea5e8113663edf",
-      "packaged_sha256": "3528aee8a5e65b35780fb8adda859eab2774ceadd74abfe710ea5e8113663edf"
+      "source_sha256": "eef130ae7848bbdb94fe17aea59aef97cb42fe2e710b9bfa6575dd374e9ef26d",
+      "packaged_sha256": "eef130ae7848bbdb94fe17aea59aef97cb42fe2e710b9bfa6575dd374e9ef26d"
     },
     {
       "source": "skills/platforms/agents/openai.yaml",
@@ -1331,8 +1355,8 @@
     {
       "source": "skills/product/SKILL.md",
       "packaged": "skills/forma-product/SKILL.md",
-      "source_sha256": "b12bc0625e2e858dec243145c0448a621f48c19c6b34e8192889e0f54a44df15",
-      "packaged_sha256": "b12bc0625e2e858dec243145c0448a621f48c19c6b34e8192889e0f54a44df15"
+      "source_sha256": "1a64109231cb8818f7d3d73f63bf38a681be6985b6d7728f6eaff02e05a70d28",
+      "packaged_sha256": "1a64109231cb8818f7d3d73f63bf38a681be6985b6d7728f6eaff02e05a70d28"
     },
     {
       "source": "skills/product/agents/openai.yaml",
@@ -1343,8 +1367,8 @@
     {
       "source": "skills/reference/SKILL.md",
       "packaged": "skills/forma-reference/SKILL.md",
-      "source_sha256": "20a5c44af5d84833cb82be8550e4951d579d7e3f0c52f79b6377f898c6027a4c",
-      "packaged_sha256": "20a5c44af5d84833cb82be8550e4951d579d7e3f0c52f79b6377f898c6027a4c"
+      "source_sha256": "3b74a293e5d9b7c286e4ebff2eb3871a6f866f96236635d4d6077286141a02d6",
+      "packaged_sha256": "3b74a293e5d9b7c286e4ebff2eb3871a6f866f96236635d4d6077286141a02d6"
     },
     {
       "source": "skills/reference/agents/openai.yaml",
@@ -1355,8 +1379,8 @@
     {
       "source": "skills/validation/SKILL.md",
       "packaged": "skills/forma-validation/SKILL.md",
-      "source_sha256": "5915b94a0505da3fc11e81fb0bec50123a4d447dcda9613ecc9626b1965213f0",
-      "packaged_sha256": "5915b94a0505da3fc11e81fb0bec50123a4d447dcda9613ecc9626b1965213f0"
+      "source_sha256": "7d502d3659d7b740c090d7b76c952ed4a6d3ed23b438d3887b651880ccc993e4",
+      "packaged_sha256": "7d502d3659d7b740c090d7b76c952ed4a6d3ed23b438d3887b651880ccc993e4"
     },
     {
       "source": "skills/validation/agents/openai.yaml",
@@ -1407,6 +1431,12 @@
       "packaged_sha256": "a237727dc0d038c25a13f4345661fc69701591d69d325bcb16a84758f47263b7"
     },
     {
+      "source": "tests/halftone-entry.test.cjs",
+      "packaged": "tests/halftone-entry.test.cjs",
+      "source_sha256": "b0eafce7551544aba127f549755677622144a2c56bb2ca73c84e1fca17e2f6ac",
+      "packaged_sha256": "b0eafce7551544aba127f549755677622144a2c56bb2ca73c84e1fca17e2f6ac"
+    },
+    {
       "source": "tests/library-colors.test.cjs",
       "packaged": "tests/library-colors.test.cjs",
       "source_sha256": "e1d67a1527fca3a5087b9bb70a1c08f23ad8adde57e82455c0302f0b215d80f5",
@@ -1433,8 +1463,8 @@
     {
       "source": "tests/reference-copy.test.cjs",
       "packaged": "tests/reference-copy.test.cjs",
-      "source_sha256": "13e2e55a009db781308eeb507a1ecda82030e70c8b9f0330cf19ceb8b9165ba2",
-      "packaged_sha256": "13e2e55a009db781308eeb507a1ecda82030e70c8b9f0330cf19ceb8b9165ba2"
+      "source_sha256": "d32b277311cbad1c2755b2ce3a8f93b294e0ec02a2b51a60943105790e5b838d",
+      "packaged_sha256": "d32b277311cbad1c2755b2ce3a8f93b294e0ec02a2b51a60943105790e5b838d"
     },
     {
       "source": "tests/references-observed.test.cjs",
@@ -1445,8 +1475,8 @@
     {
       "source": "tests/references-portfolios.test.cjs",
       "packaged": "tests/references-portfolios.test.cjs",
-      "source_sha256": "a76dbaf1240ad2deb184c6e9956c580ffdc3afcb98e4ee986b63cb4af7560083",
-      "packaged_sha256": "a76dbaf1240ad2deb184c6e9956c580ffdc3afcb98e4ee986b63cb4af7560083"
+      "source_sha256": "eaf625a12b11731b4de17f4129182bf42f05608a2b79d138286ce4410b22d864",
+      "packaged_sha256": "eaf625a12b11731b4de17f4129182bf42f05608a2b79d138286ce4410b22d864"
     },
     {
       "source": "tests/references-sites.test.cjs",

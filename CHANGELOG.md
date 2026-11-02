@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.35.1
+
+- Define independent reuse, brand/theme adaptation and contextual suggestions for the halftone entry kit, with scope and declined-suggestion boundaries.
+
+## 1.35.0
+
+- Add an original splash-to-navigation specimen with independent wordmark motion, interruption and reduced-motion handling.
+- Add fine landscape and coarse circular halftone modes, searchable routing and source-evidence limits.
+
 ## 1.34.0 - 2026-10-31
 
 - Add progressive prompt refinement through Forma Product: inspect context, ask one material question at a time, record actual answers, consolidate the prompt and deliver within scope. Clear requests bypass the interview.

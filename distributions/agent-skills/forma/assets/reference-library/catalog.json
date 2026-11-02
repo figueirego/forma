@@ -1446,6 +1446,70 @@
         "notes": "Original editorial record and portable CSS authored for Forma, distributed under the package MIT license.",
         "scope": "A visual study informs the palette and composition. External assets retain their provenance and rights; external identities and artwork are not included in this kit."
       }
+    },
+    {
+      "id": "forma-halftone-entry",
+      "name": "Halftone brand entry",
+      "origin": "forma",
+      "kind": "interface",
+      "useCases": [
+        "splash",
+        "halftone",
+        "motion",
+        "texture"
+      ],
+      "tags": [
+        "fine",
+        "coarse",
+        "waves",
+        "landscape",
+        "reduced-motion",
+        "light",
+        "dark"
+      ],
+      "idea": "Resolve a full brand panel into the navigation edge while preserving wordmark proportions.",
+      "whenToUse": "An explicitly requested brand entry or print texture; optionally suggest for a compatible new creative workspace or expressive visual direction, without imposing it.",
+      "structure": [
+        "Independent panel and wordmark animation.",
+        "Fine landscape and coarse circular wave modes.",
+        "The full splash resolves into a sidebar on desktop or compact top navigation on mobile."
+      ],
+      "adapt": [
+        "Choose entry, fine texture, coarse waves, or their combination independently.",
+        "Map panel, paper, text, ink and shadow colors to destination theme tokens; adapt typography, wordmark, geometry and content.",
+        "Preserve usable final state, interruption, reduced motion and real destination routes."
+      ],
+      "avoid": [
+        "Do not simulate loading progress or replay on every route.",
+        "Do not impose the specimen palette or suggest it during unrelated fixes.",
+        "Do not repeat a declined suggestion or add a splash merely to reuse a static texture."
+      ],
+      "verify": [
+        "Replay, skip, resize, keyboard, live reduced motion and no-JS.",
+        "Inspect both textures and themes at desktop/mobile widths."
+      ],
+      "resources": [
+        {
+          "label": "Contract",
+          "path": "references/halftone-entry.md"
+        },
+        {
+          "label": "Runnable specimen",
+          "path": "assets/halftone-entry/preview.html"
+        }
+      ],
+      "evidence": {
+        "type": "executable-demo",
+        "liveVerified": false,
+        "capture": null,
+        "limits": [
+          "Independent adaptation from supplied stills; source runtime and exact timing unverified."
+        ]
+      },
+      "rights": {
+        "notes": "Original Forma code and procedural artwork under the package MIT license.",
+        "scope": "Visual provenance is documented in the contract. Reference screenshots and third-party branding are not redistributed."
+      }
     }
   ]
 }

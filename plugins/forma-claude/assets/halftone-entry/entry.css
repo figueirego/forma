@@ -1,0 +1,18 @@
+.forma-entry { --entry-ink: #ac3909; --entry-paper: #fff9ee; --entry-text: #322d25; position: relative; isolation: isolate; background: var(--entry-paper); color: var(--entry-text); border-radius: 24px; min-height: 640px; display: grid; grid-template-columns: 230px minmax(0,1fr); gap: 16px; padding: 12px; overflow: hidden; font-family: system-ui,sans-serif; }
+.forma-entry[data-theme="dark"] { --entry-paper: #20221e; --entry-text: #fff6e7; --entry-ink: #983707; }
+.forma-entry * { box-sizing: border-box; }
+.forma-entry [data-entry-panel] { position:absolute; left:0; top:0; width:254px; height:100%; background:var(--entry-ink); border-radius:24px; z-index:2; pointer-events:none; background-image:radial-gradient(#ffffff18 .7px,transparent 1px); background-size:5px 5px; }
+.forma-entry aside { position:relative; z-index:3; padding:24px 16px; color:white; display:flex; flex-direction:column; gap:28px; }
+.forma-entry [data-entry-brand] { display:block; font-size:30px; font-weight:750; transform-origin:center; width:max-content; }
+.forma-entry nav { display:grid; gap:12px; }
+.forma-entry a { color:inherit; text-decoration:none; padding:12px; border:1px solid #ffffff50; border-radius:14px; }
+.forma-entry aside footer { margin-top:auto; }
+.forma-entry main { padding:30px; position:relative; display:grid; align-content:center; min-width:0; }
+.forma-entry h1 { font-size:clamp(26px,3vw,42px); letter-spacing:-.04em; max-width:18ch; }
+.forma-entry main > :not(canvas) { position:relative; z-index:1; }
+.forma-entry canvas { position:absolute; bottom:0; left:0; width:100%; height:55%; pointer-events:none; opacity:.55; }
+.forma-entry label { font-weight:600; display:block; }
+.forma-entry textarea { width:100%; min-height:130px; margin-top:10px; background:var(--entry-paper); color:var(--entry-text); border:2px solid currentColor; border-radius:18px; padding:20px; font:inherit; }
+.forma-entry :focus-visible { outline:3px solid currentColor; outline-offset:4px; }
+@media(max-width:640px) { .forma-entry {grid-template-columns:1fr; min-height:720px;} .forma-entry [data-entry-panel] {width:100%; height:190px;} .forma-entry aside {padding:12px; gap:16px;} .forma-entry nav {display:flex; flex-wrap:wrap; gap:8px;} .forma-entry aside footer {display:none;} .forma-entry main {padding:16px; min-height:480px;} }
+@media(prefers-reduced-motion:reduce) { .forma-entry * {scroll-behavior:auto;} }

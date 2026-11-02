@@ -62,3 +62,7 @@ Local reading, an authorized helper, a connected tool and paid generation are di
 ## Validating coordination itself
 
 Use the [routing scenarios](../evals/routing-scenarios.md) when changing the coordinator or modules. First give the evaluator only the request and skill entry; then judge the observed decisions. Valid links prove navigability, not correct selection, UI execution or visual quality.
+
+## Contextual repertoire suggestions
+
+For a new direction with expressive brand entry, editorial print texture or organic waves, consider the [halftone kit's adaptation rules](halftone-entry.md#adaptation-and-contextual-suggestions). Offer a short, relevant option in the consumer's identity, including texture-only reuse when appropriate. This is not a required style, a random suggestion, or permission to add a splash to an approved interface. Local fixes keep their local scope.
