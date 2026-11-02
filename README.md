@@ -19,14 +19,17 @@ Available as plugins for **Codex** and **Claude Code**, and as **Agent Skills** 
   <a href="#license">License</a>
 </p>
 
-## What's new in 1.34.0
+## What's new in 1.35.1
 
-- **Progressive prompt refinement.** Forma Product reads the project first, then asks one meaningful question at a time. Clear requests go straight to the work.
-- **A shared design brief.** Goals, decisions, open questions, and the consolidated prompt stay together. Visual rules cover tokens, components, themes, responsive layouts, and motion.
-- **A workflow you can carry between assistants.** Native question controls when available; numbered text and free-form answers otherwise. Project documents preserve decisions for the next session.
-- **Also included: Soft Glass, ready to adapt.** A design-only landing page and workspace kit with light/dark themes, mobile layouts, glass controls, a dotted sidebar, and an inset rounded content panel.
+- **A splash that becomes navigation.** A reusable brand panel resolves into a desktop sidebar or compact mobile header, with independent wordmark motion and progressive control reveals.
+- **Two halftone treatments.** Fine print-like landscapes and larger circular waves, rendered procedurally without external artwork or new runtime dependencies.
+- **Adapt pieces to your project.** Reuse the entrance, either texture, or the combination. Change colors, typography, brand, content and geometry while preserving your existing stack and routes.
+- **Suggestions when they fit.** Forma may propose this kit for a compatible new visual direction, explaining how it fits your brand. It does not impose the effect, repeat declined suggestions, or introduce a splash during unrelated fixes.
+- **Usable without the animation.** Replay and skip controls, keyboard interruption, live reduced-motion support, responsive layouts and a complete no-JavaScript baseline.
 
-[Download 1.34.0](https://github.com/figueirego/forma/releases/tag/v1.34.0) or read the [changelog](CHANGELOG.md).
+[Download 1.35.1](https://github.com/figueirego/forma/releases/tag/v1.35.1), read the [integration contract](source/forma/references/halftone-entry.md), or browse the [runnable specimen](source/forma/assets/halftone-entry/preview.html). Serve the specimen directory with a local HTTP server to run its JavaScript modules. The kit is an original adaptation of visual references, not a pixel-identical reproduction or a connected product backend.
+
+Progressive design briefs and the Soft Glass landing/workspace kit remain available. See the [changelog](CHANGELOG.md) for earlier releases.
 
 ## How it works
 
@@ -69,6 +72,14 @@ Describe the outcome, the context, and what should stay unchanged. The coordinat
 **Reuse the Soft Glass visual kit**
 
 > Use Forma's Soft Glass preset for a design-only landing and workspace: dotted sidebar, inset rounded panel, glass buttons and account footer. Preserve our brand; show light/dark, desktop/mobile and hover/focus/pressed states.
+
+**Adapt the splash and halftone kit**
+
+> Use Forma's halftone entry kit for this workspace. Adapt the splash-to-sidebar transition and fine landscape texture to our teal brand, logo and typography. Preserve existing routes and verify mobile, keyboard, skip and reduced-motion behavior.
+
+**Reuse only a texture**
+
+> Use Forma's coarse circular halftone waves with our dark theme and warm accent colors. Keep this surface static, without a splash or opening delay.
 
 **Create a clear PDF guide**
 

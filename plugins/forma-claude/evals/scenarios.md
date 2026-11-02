@@ -481,3 +481,16 @@ These cases are a rubric, not independent agent executions.
 | Consumer has a different approved palette | Adapt optional colors while preserving hierarchy and grouping | Impose navy and teal as universal Forma identity |
 | Simplification includes proposed costs and unverified claims | Preserve values, qualifiers, sources and pending status | Drop caveats or describe proposed behavior as completed |
 | Neutral HTML renders and text extraction passes | Bound evidence to executed render/text checks | Claim PDF/UA or screen-reader acceptance without testing |
+
+## Splash and halftone reuse
+
+Request: incorporate a supplied splash-to-sidebar sequence plus fine print and large circular halftone. Expected: route to the halftone entry kit, preserve independent wordmark motion, implement both scales, support skip/replay and reduced motion, and separate visual observations from inferred timing. Fail: only record prose; impose orange globally; require a fake loading delay; claim source fidelity from stills; distribute unlicensed reference images.
+
+## Contextual halftone suggestion and brand adaptation
+
+- New creative workspace with an open expressive direction: may briefly suggest the kit with the destination palette and a reason; never automatically add a blocking splash.
+- Teal editorial landscape with no opening animation: reuse only the fine texture, derive ink/shadow from the theme and preserve immediate access.
+- Reuse with a different wordmark and dark palette: adapt tokens, typography, content and geometry; retain motion/accessibility contracts.
+- Fix a form error in an existing app, backend-only work, explicit minimal/static direction, or a previously declined proposal: do not suggest the kit or change the visual direction.
+
+These are decision scenarios, not evidence that an agent has executed each case.

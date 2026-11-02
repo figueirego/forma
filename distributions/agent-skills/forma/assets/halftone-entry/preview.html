@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Forma | Halftone entry</title>
+<link rel="stylesheet" href="entry.css">
+<style>body{margin:0;padding:clamp(16px,4vw,64px);background:#e9e4db;font:16px system-ui} .controls{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}button,select{font:inherit;padding:10px 16px;border:1px solid #777;border-radius:12px;background:#fff} .forma-entry{max-width:1300px;margin:auto}p{max-width:65ch;line-height:1.6}</style>
+<div class="controls"><button id="replay">Replay entrance</button><button id="skip">Skip entrance</button><button id="theme" aria-pressed="false">Dark theme</button><label>Texture <select id="texture"><option value="fine">Fine print landscape</option><option value="coarse">Large circular waves</option></select></label></div>
+<section class="forma-entry" data-theme="light" data-entry-state="ready" aria-label="Workspace example">
+<div data-entry-panel aria-hidden="true"></div><aside><span data-entry-brand>studio</span><nav aria-label="Example navigation"><a href="#workspace" data-entry-item>Workspace</a><a href="#about" data-entry-item>About this example</a></nav><footer data-entry-item>Your creative space</footer></aside>
+<main id="workspace"><canvas aria-hidden="true"></canvas><h1>Give your next idea a place to begin.</h1><p>A quiet canvas, a familiar navigation edge, and room to create.</p><label>Your idea<textarea placeholder="Write here..."></textarea></label></main></section>
+<p id="about">An original, reusable Forma example inspired by a supplied splash-to-sidebar sequence. The artwork is procedural. This is a visual and motion specimen, not a connected content-generation product. Without JavaScript, the complete workspace remains available.</p>
+<script type="module">
+import {mountEntry,drawHalftone} from './entry.js';
+const root=document.querySelector('.forma-entry'), canvas=root.querySelector('canvas'), controller=mountEntry(root);
+const texture=document.querySelector('#texture');
+const draw=()=>drawHalftone(canvas,{mode:texture.value,ink:root.dataset.theme==='dark'?'#ff6c28':'#dd521e'});
+const observer=new ResizeObserver(draw); observer.observe(canvas);
+document.querySelector('#replay').onclick=()=>controller.play();
+document.querySelector('#skip').onclick=()=>controller.skip();
+document.querySelector('#theme').onclick=event=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';event.currentTarget.setAttribute('aria-pressed',String(root.dataset.theme==='dark'));draw()};
+texture.onchange=draw;draw();controller.play();
+window.addEventListener('pagehide',()=>{controller.destroy();observer.disconnect()},{once:true});
+</script></html>

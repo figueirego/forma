@@ -2,7 +2,7 @@
 name: forma
 description: "Coordinate design specialists to create, refine, adapt, or audit interfaces, visual systems, and brand assets. Refine unclear design prompts through progressive questions and a shared brief. Select the internal interface, color/layout, product, 3D, graphs, motion, platform, brand, reference, handoff, or validation skill for each case. Also use to reuse approved components in another project; not for isolated backend work."
 metadata:
-  version: 1.34.0
+  version: 1.35.1
 ---
 
 # Forma
@@ -116,3 +116,5 @@ For new content, follow [authorship and integration](references/authorship.md): 
 When improving this skill, keep the entry point small, give each specialist a distinct responsibility, and keep theory in its canonical reference. Keep each capability linked to its implementation, contract and evidence in the [resource map](references/sources.md). Validate the structure and [decision scenarios](evals/scenarios.md), including [routing](evals/routing-scenarios.md) and [progressive briefing](evals/progressive-brief-scenarios.md). Reading, documentary evaluation, and product execution are not interchangeable proof.
 
 To incorporate findings from a conversation or reconcile a new plan with approved design, use [approved product evolution](references/approved-product-evolution.md): distinguish local decisions, transferable mechanisms, and evidence. Do not copy entire conversations, personal data, or one product's requirements into universal defaults.
+
+For splash-to-sidebar entry and fine/coarse halftone textures, use Motion + Reference and the [halftone entry kit](references/halftone-entry.md). This is an opt-in reusable adaptation, not a default loading screen. When a new visual direction calls for expressive brand entry, print texture or an organic landscape, briefly suggest this kit as one contextual option using the [adaptation and suggestion rules](references/halftone-entry.md#adaptation-and-contextual-suggestions). Preserve the destination identity and do not repeat a declined suggestion.

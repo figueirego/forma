@@ -52,3 +52,7 @@ Keep these states distinct: documented contract, static code finding, runtime ob
 For a correction, use the [refinement loop](rendered-validation.md): identify the mismatch, isolate its cause, change the relevant layer, compare under controlled conditions and verify the affected consumer. [Fidelity contracts](fidelity-contracts.md) freeze acceptance before reproduction work. A passing package test does not establish GPU, browser, device or interaction parity.
 
 Use [release validation](release-validation.md) for distribution checks and [approved product evolution](approved-product-evolution.md) when adding reusable findings. Keep implementation, verification and publication status separate.
+
+## Halftone entry adaptation
+
+[Contract and visual-source limits](halftone-entry.md): user-supplied stills inform an original procedural texture and splash-to-navigation implementation. No third-party screenshot or brand asset is distributed.

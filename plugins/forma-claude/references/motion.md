@@ -86,3 +86,7 @@ When scope includes a scroll-driven scene, define the information it communicate
 Inspect before/during/after pinning, intermediate points and reverse traversal. A contact sheet helps locate cuts and overlap, but does not prove continuity between samples: actually traverse the scene. Confirm resize, return to the route and disposal of listeners/observers/timelines when applicable; repositioning the page must not leave content stuck or invisible.
 
 At narrow widths, with touch or reduced motion, prioritize access to content and actions. Choose a static sequence or simple transition when spatial travel does not help; without JavaScript, keep essential content readable when that fallback is part of the deliverable. Do not use autoplay, long pins or a minimum number of animated elements to prove polish. Use a payload, duration and rendering-cost budget suited to the target and measure where risk exists. The review records continuity, interruption, a reduced alternative and content access as separate criteria.
+
+## Splash-to-navigation entry
+
+Use the [halftone entry contract](halftone-entry.md) for a full brand panel that resolves into navigation, independent wordmark motion, staggered controls, interruption and reduced-motion behavior.
