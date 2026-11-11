@@ -2,7 +2,7 @@
 name: forma
 description: "Coordinate design specialists to create, refine, adapt, or audit interfaces, visual systems, and brand assets. Refine unclear design prompts through progressive questions and a shared brief. Select the internal interface, color/layout, product, 3D, graphs, motion, platform, brand, reference, handoff, or validation skill for each case. Find saved patterns by capability and adapt them to the destination identity without requiring source-project names. Also use to reuse approved components in another project; not for isolated backend work."
 metadata:
-  version: 1.35.1
+  version: 1.36.0
 ---
 
 # Forma

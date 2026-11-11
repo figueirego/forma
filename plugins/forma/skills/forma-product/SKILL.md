@@ -2,7 +2,7 @@
 name: forma-product
 description: "Refine ambiguous design requests into shared briefs and executable prompts, investigate user tasks, and design product flows with proportionate research. Use for unresolved intent, sequence, or understanding; not for isolated color adjustments or fabricated user evidence."
 metadata:
-  version: 1.35.1
+  version: 1.36.0
 ---
 
 # Product, research, and flows

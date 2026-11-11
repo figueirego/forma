@@ -2,7 +2,7 @@
 name: forma-motion
 description: "Create or audit feedback, gestures, animations and films with continuity, accessibility and execution cost in mind. Use for interactive motion or rendered sequences; not to animate every surface by default."
 metadata:
-  version: 1.35.1
+  version: 1.36.0
 ---
 
 # Motion and feedback

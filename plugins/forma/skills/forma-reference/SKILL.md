@@ -2,7 +2,7 @@
 name: forma-reference
 description: "Find and select design examples in Forma's catalog, research media with credits, analyze sources, and investigate visual or technical differences through source and runtime evidence. Use for inspiration, reproduction, comparison, or evidence-based integration; not to infer runtime behavior from documentation."
 metadata:
-  version: 1.35.1
+  version: 1.36.0
 ---
 
 # References, evidence, and fidelity

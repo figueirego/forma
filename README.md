@@ -19,17 +19,18 @@ Available as plugins for **Codex** and **Claude Code**, and as **Agent Skills** 
   <a href="#license">License</a>
 </p>
 
-## What's new in 1.35.1
+## What's new in 1.36.0
 
-- **A splash that becomes navigation.** A reusable brand panel resolves into a desktop sidebar or compact mobile header, with independent wordmark motion and progressive control reveals.
-- **Two halftone treatments.** Fine print-like landscapes and larger circular waves, rendered procedurally without external artwork or new runtime dependencies.
-- **Adapt pieces to your project.** Reuse the entrance, either texture, or the combination. Change colors, typography, brand, content and geometry while preserving your existing stack and routes.
-- **Suggestions when they fit.** Forma may propose this kit for a compatible new visual direction, explaining how it fits your brand. It does not impose the effect, repeat declined suggestions, or introduce a splash during unrelated fixes.
-- **Usable without the animation.** Replay and skip controls, keyboard interruption, live reduced-motion support, responsive layouts and a complete no-JavaScript baseline.
+- **Reuse by capability.** Ask for what you need, like `glass navigation`, `compact window` or `ink theme`, and Forma finds the matching saved pattern without you naming the project it came from. Patterns adapt to your colors, typography and components instead of copying another identity.
+- **Compact workspace.** A fixed desktop frame with a stable sidebar, an opaque toolbar and a single content scroller, plus an accessible mobile drawer.
+- **Calm glass navigation.** A quiet sidebar with persistent glass selection, a shared accent marker and integrated team/account context, with opaque fallbacks and contrast checked in both themes.
+- **Ink theme transition.** An interruptible light/dark reveal that spreads from the center of the screen, built on native View Transitions with no new dependencies, and honoring reduced motion.
+- **Diagonal glass controls and operational icons.** Subtle diagonal highlights for shell controls and a portable SVG icon sprite.
+- **Sharper workflow.** Refined progressive briefs, routing, templates and verification guidance, and CI now exercises previews in Chromium.
 
-[Download 1.35.1](https://github.com/figueirego/forma/releases/tag/v1.35.1), read the [integration contract](source/forma/references/halftone-entry.md), or browse the [runnable specimen](source/forma/assets/halftone-entry/preview.html). Serve the specimen directory with a local HTTP server to run its JavaScript modules. The kit is an original adaptation of visual references, not a pixel-identical reproduction or a connected product backend.
+[Download 1.36.0](https://github.com/figueirego/forma/releases/tag/v1.36.0) or read the [capability reuse guide](source/forma/references/capability-reuse.md), [compact workspace](source/forma/references/compact-workspace.md), [calm glass navigation](source/forma/references/calm-glass-navigation.md) and [ink theme transition](source/forma/references/ink-theme-transition.md) contracts.
 
-Progressive design briefs and the Soft Glass landing/workspace kit remain available. See the [changelog](CHANGELOG.md) for earlier releases.
+The halftone entry kit from 1.35.1, progressive design briefs and the Soft Glass landing/workspace kit remain available. See the [changelog](CHANGELOG.md) for earlier releases.
 
 ## How it works
 

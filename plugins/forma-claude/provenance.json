@@ -1,5 +1,5 @@
 {
-  "version": "1.35.1",
+  "version": "1.36.0",
   "source": "canonical Forma skill",
   "transformations": [
     "Flatten skill directories",
@@ -16,8 +16,8 @@
     {
       "source": "SKILL.md",
       "packaged": "skills/forma/SKILL.md",
-      "source_sha256": "b2794a56cd7cc6371597b31b78cad2dc15cce714f65e95b806b9523c6563a585",
-      "packaged_sha256": "8f487d0725d83cf25aaa130cfc710a3b12790876840994066876c1765c840467"
+      "source_sha256": "5806360a1b82f96296be21b116720f6b6b95ea5d80ac94cba5ad61fd15d8ae27",
+      "packaged_sha256": "6312ac997331f9ab415402a60ee2c0ebef6b3c395352b17dbdcb8da804c60da9"
     },
     {
       "source": "THIRD_PARTY_NOTICES.md",
@@ -1354,8 +1354,8 @@
     {
       "source": "skills/brand/SKILL.md",
       "packaged": "skills/forma-brand/SKILL.md",
-      "source_sha256": "32045b5c250ef9d15ea311876d10d6e7f8a40724ebc598b7c06bb03a3b8eb10d",
-      "packaged_sha256": "e948630cd0009149f8bf0d735e8ee1b4be209e2c31f9e9a597038259c79bd260"
+      "source_sha256": "77158ae7b792fbf3162e21dafe91d3739a81eea1feb18146175d90f172d0118a",
+      "packaged_sha256": "9f2d45da0a2b9f55ddcfdf5ed1b9dda2bd13e276df59a4fadba63a2befbca706"
     },
     {
       "source": "skills/brand/agents/openai.yaml",
@@ -1366,8 +1366,8 @@
     {
       "source": "skills/foundations/SKILL.md",
       "packaged": "skills/forma-foundations/SKILL.md",
-      "source_sha256": "4be90ae8eb1cf742a22e41d3cfb2e60a9fdc61c762696cab89f6c866844befa0",
-      "packaged_sha256": "4be90ae8eb1cf742a22e41d3cfb2e60a9fdc61c762696cab89f6c866844befa0"
+      "source_sha256": "772f0a71e5cf0501c0c49b3c999e8b1671f040b1b3f8c3d7ce9119c9c9c0a6d5",
+      "packaged_sha256": "772f0a71e5cf0501c0c49b3c999e8b1671f040b1b3f8c3d7ce9119c9c9c0a6d5"
     },
     {
       "source": "skills/foundations/agents/openai.yaml",
@@ -1378,8 +1378,8 @@
     {
       "source": "skills/graphs-data/SKILL.md",
       "packaged": "skills/forma-graphs-data/SKILL.md",
-      "source_sha256": "bc7e7bbb347c61f4aa79494045eb710a0fe07bc2c69c59cd000c376cdd845be4",
-      "packaged_sha256": "bc7e7bbb347c61f4aa79494045eb710a0fe07bc2c69c59cd000c376cdd845be4"
+      "source_sha256": "e6221855c5a9060202cae67c80876a83ebe715bc1b2a8d196d727dbadc10d092",
+      "packaged_sha256": "e6221855c5a9060202cae67c80876a83ebe715bc1b2a8d196d727dbadc10d092"
     },
     {
       "source": "skills/graphs-data/agents/openai.yaml",
@@ -1390,8 +1390,8 @@
     {
       "source": "skills/handoff/SKILL.md",
       "packaged": "skills/forma-handoff/SKILL.md",
-      "source_sha256": "f900d4f57a4f93be4feeb2e8b4ab74c9435e8c47c2b442efe4ccbf68053a1a4e",
-      "packaged_sha256": "f900d4f57a4f93be4feeb2e8b4ab74c9435e8c47c2b442efe4ccbf68053a1a4e"
+      "source_sha256": "00309c97a25df41fcae13454902bdcb4d13d0e3ffc8d58a77e9e314f251bd376",
+      "packaged_sha256": "00309c97a25df41fcae13454902bdcb4d13d0e3ffc8d58a77e9e314f251bd376"
     },
     {
       "source": "skills/handoff/agents/openai.yaml",
@@ -1402,8 +1402,8 @@
     {
       "source": "skills/interface/SKILL.md",
       "packaged": "skills/forma-interface/SKILL.md",
-      "source_sha256": "4b5ae7571162105715b9006eeffa1640023ca01203df119995c5b45d1873e87f",
-      "packaged_sha256": "06e27d86d96184577caaaa0c7b067cf79ca94e8c37546a0d1bbaf49fc75a3db9"
+      "source_sha256": "5e47b5cdfee50b70c47d1bf5dccc6a5dcdf45816b8a40cb9f3ff3c109cc854aa",
+      "packaged_sha256": "e97b56cf1aad8e56843fba8e96071af5412a3168b94b2258fa0a1522bd2006e9"
     },
     {
       "source": "skills/interface/agents/openai.yaml",
@@ -1414,8 +1414,8 @@
     {
       "source": "skills/motion/SKILL.md",
       "packaged": "skills/forma-motion/SKILL.md",
-      "source_sha256": "8fb5091288f41a4c1c48ead5c2871e48daab558bfe9a1f3e0042da6a3ac97fba",
-      "packaged_sha256": "8fb5091288f41a4c1c48ead5c2871e48daab558bfe9a1f3e0042da6a3ac97fba"
+      "source_sha256": "3027f9eae7d4bd567a5a083ac4880e804c36370651b117700b04d10f3503e930",
+      "packaged_sha256": "3027f9eae7d4bd567a5a083ac4880e804c36370651b117700b04d10f3503e930"
     },
     {
       "source": "skills/motion/agents/openai.yaml",
@@ -1426,8 +1426,8 @@
     {
       "source": "skills/objects-3d/SKILL.md",
       "packaged": "skills/forma-objects-3d/SKILL.md",
-      "source_sha256": "52ade44c52a4b978f6ed3d3e908453d5b36da0f8ceeff077ea11b0822a9c4713",
-      "packaged_sha256": "52ade44c52a4b978f6ed3d3e908453d5b36da0f8ceeff077ea11b0822a9c4713"
+      "source_sha256": "ce9bfc38afea3685a7196636210ac53350ce6eeca347e5202e125153e1eea0d8",
+      "packaged_sha256": "ce9bfc38afea3685a7196636210ac53350ce6eeca347e5202e125153e1eea0d8"
     },
     {
       "source": "skills/objects-3d/agents/openai.yaml",
@@ -1438,8 +1438,8 @@
     {
       "source": "skills/platforms/SKILL.md",
       "packaged": "skills/forma-platforms/SKILL.md",
-      "source_sha256": "7e97bb000b1d1503a71d9de475360abfab60071a360bcaabf2679d4969285c60",
-      "packaged_sha256": "7e97bb000b1d1503a71d9de475360abfab60071a360bcaabf2679d4969285c60"
+      "source_sha256": "b6efd94796264364a8dbcbb42988f89c06bc346f95383d2c84e49a0c0cb1ee54",
+      "packaged_sha256": "b6efd94796264364a8dbcbb42988f89c06bc346f95383d2c84e49a0c0cb1ee54"
     },
     {
       "source": "skills/platforms/agents/openai.yaml",
@@ -1450,8 +1450,8 @@
     {
       "source": "skills/product/SKILL.md",
       "packaged": "skills/forma-product/SKILL.md",
-      "source_sha256": "d83c98e080d7681d1f373ebf2490bfe7258b6016f3a985daeda36bdac59bbee0",
-      "packaged_sha256": "d83c98e080d7681d1f373ebf2490bfe7258b6016f3a985daeda36bdac59bbee0"
+      "source_sha256": "50e98019808478a0464b068d596a219c8419ab1390cce565eee4ee1a64276f05",
+      "packaged_sha256": "50e98019808478a0464b068d596a219c8419ab1390cce565eee4ee1a64276f05"
     },
     {
       "source": "skills/product/agents/openai.yaml",
@@ -1462,8 +1462,8 @@
     {
       "source": "skills/reference/SKILL.md",
       "packaged": "skills/forma-reference/SKILL.md",
-      "source_sha256": "fcfaef4ffa1c26e0b9e6359449e880f262ec3db491fa4339cc5036f4474a3bd4",
-      "packaged_sha256": "fcfaef4ffa1c26e0b9e6359449e880f262ec3db491fa4339cc5036f4474a3bd4"
+      "source_sha256": "a2493e487157d1d64303859d4597591baaa6707643c1f45b2845f336b6c8ab5e",
+      "packaged_sha256": "a2493e487157d1d64303859d4597591baaa6707643c1f45b2845f336b6c8ab5e"
     },
     {
       "source": "skills/reference/agents/openai.yaml",
@@ -1474,8 +1474,8 @@
     {
       "source": "skills/validation/SKILL.md",
       "packaged": "skills/forma-validation/SKILL.md",
-      "source_sha256": "9979f9b65168566f465e23a2312a6216176213ccd07ab720511af6ef2e4fd7d7",
-      "packaged_sha256": "9979f9b65168566f465e23a2312a6216176213ccd07ab720511af6ef2e4fd7d7"
+      "source_sha256": "c44fbf9f3aef04cde6f083da81f47a45c40e64c87f724429196d80fec53b6ce4",
+      "packaged_sha256": "c44fbf9f3aef04cde6f083da81f47a45c40e64c87f724429196d80fec53b6ce4"
     },
     {
       "source": "skills/validation/agents/openai.yaml",
