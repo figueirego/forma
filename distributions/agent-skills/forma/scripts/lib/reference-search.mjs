@@ -11,6 +11,18 @@ export function isSafePortfolioURL(value) { return safeURL(value, true); }
 const STOP = new Set('a as o os um uma uns umas de da das do dos e em no na nos nas com para por que eu quero quero the a an of and in with for to website websites site sites pagina paginas design'.split(' '));
 // Deliberately small vocabulary: aliases expand the literal query, never infer user intent.
 const ALIASES = {
+  janela: ['window'], compacta: ['compact'], compacto: ['compact'], fixa: ['fixed'], fixo: ['fixed'],
+  conteudo: ['content'], rolar: ['scroll'], painel: ['panel', 'dashboard'], paineis: ['panels', 'dashboards'],
+  vidro: ['glass'], selecao: ['selection'], marcador: ['marker'], icone: ['icon'], icones: ['icons', 'icon'],
+  operacional: ['operational'], operacionais: ['operational'],
+  contexto: ['context'], equipe: ['team'], papel: ['role'], papeis: ['roles'],
+  tinta: ['ink'], gota: ['drop'], liquido: ['liquid'], liquida: ['liquid'], revelacao: ['reveal'],
+  passaporte: ['passport'], articulado: ['articulated'], articulada: ['articulated'],
+  aparencia: ['appearance'], reticula: ['halftone'], textura: ['texture'],
+  guia: ['guide'], cartoes: ['cards'], tabela: ['table', 'tables'], comparacao: ['comparison'],
+  produto: ['product'], produtos: ['product', 'products'], variantes: ['variants'], variante: ['variant'],
+  configuravel: ['configurable'], cena: ['scene'], hibrida: ['hybrid'], hibrido: ['hybrid'],
+  geografico: ['geographic'], geografica: ['geographic'], historicos: ['historical'],
   sidebar: ['sidebar', 'navigation'], lateral: ['sidebar'], navegacao: ['navigation', 'sidebar'],
   botoes: ['buttons', 'button'], botao: ['button', 'buttons'], campos: ['inputs', 'forms'], campo: ['input', 'inputs'],
   perfil: ['profile'], identidade: ['identity'], configuracoes: ['settings', 'preferences'], configuracao: ['settings'],
@@ -24,7 +36,7 @@ const ALIASES = {
   espacamento: ['spacing', 'gap', 'insets'], espacamentos: ['spacing', 'gap', 'insets'], alinhamento: ['alignment'], centralizacao: ['centering'],
   formulario: ['forms', 'form'], formularios: ['forms', 'form'], form: ['forms'], forms: ['form'],
   inquiry: ['enquiry'], enquiry: ['inquiry'], erro: ['error', 'errors'], salvar: ['save'],
-  busca: ['search'], buscar: ['search'], filtro: ['filter', 'filters'], filtros: ['filters'], historico: ['history'],
+  busca: ['search'], buscar: ['search'], filtro: ['filter', 'filters'], filtros: ['filters'], historico: ['history', 'historical'],
   exportacao: ['export'], exportar: ['export'], acessibilidade: ['accessibility'], mascote: ['mascot'],
   restaurante: ['restaurant'], cafeteria: ['coffee', 'cafe', 'restaurant'], cafe: ['coffee', 'cafe'],
   tipografia: ['type', 'typography', 'typographic'], fonte: ['font', 'typeface'], fontes: ['fonts', 'typefaces'],

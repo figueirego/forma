@@ -68,6 +68,8 @@ The portable component adds Home/End range shortcuts, an outside-stage recovery 
 
 ## NeuronPassport integration
 
+For a generic articulated passport, this preserved CSS mechanism is also discoverable as `articulated passport` or `passaporte articulado`; no source name is required. Apply [capability reuse](capability-reuse.md), preserve the engine and use its documented content/policy inputs. The name identifies provenance. Source-specific typography and material are isolated in the frame, so unsupported identity changes need an explicit scoped extension and destination validation, not invented adapter options or global host overrides.
+
 Use the extracted mechanism whenever the reference is the Neuron passport. Copy `assets/neuron-passport.js` together with the complete adjacent `assets/neuron-passport/` directory and serve them over the same origin. The frame isolates original CSS, not a new visual renderer. Source colors, gradients, grain, glint and ground shadow remain in the original cascade and motion engine. There is no implicit Three, shader, font service, or image generator.
 
 ```javascript

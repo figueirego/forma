@@ -6,7 +6,7 @@ The `forma` entry chooses and reads an internal specialist, which selects canoni
 
 1. Preserve the request: explain, plan, audit or modify. Identify the concrete target, current state, platform, constraints and acceptance criteria. A document library, component library and code dependency are different targets.
 2. Choose the specialist that resolves the primary question. Read its `SKILL.md` through the available access mechanism. Do not consider a skill executed because its name appears in the response.
-3. Within it, open only the references matching the case. A spacing problem does not require complete color theory; an approved cover does not require restarting product research.
+3. Within it, apply [capability reuse](capability-reuse.md) to relevant saved mechanisms without waiting for a source-project name. Use a generic task query and preserve destination identity. Open only the references matching the case. A spacing problem does not require complete color theory; an approved cover does not require restarting product research.
 4. If a second independent question arises, add the appropriate specialist and provide the context already resolved. Do not restart the brief, stack, identity or tokens at every handoff. A broad request may involve several specialists; a local adjustment usually needs only one.
 5. Keep design responsibilities in Forma. Select an available execution capability only for a concrete gap and check its operating requirements. A missing tool does not authorize claiming its use, replacing the approved mechanism or stopping independent work.
 6. Execute what is authorized, verify it in the target and deliver. Stop when the defined acceptance criteria are satisfied; for a relevant gap, investigate or state the specific blocker. Selecting the module does not complete an implementation request.
@@ -48,6 +48,8 @@ For a useful specialist handoff or delegation, pass only:
 - approved decisions, mechanism to preserve and limits;
 - the unresolved question and owned files when editing;
 - expected output, acceptance criterion and available or pending proof.
+
+Keep the user informed through the [visible journey](workflow.md#visible-journey), separately from this internal payload. Explain the established result, next concrete action and reason in their language; a specialist name alone is not a useful handoff. Preserve the current question and answers instead of restarting alignment. Announce only routing or delegation that actually happens.
 
 The coordinator integrates the responses. Specialists do not reload the coordinator or call each other in a cycle. They may identify a gap; the coordinator decides whether another module is needed. Reuse evidence that remains valid and revalidate what changed. If two modules disagree, apply [precedence](conflicts.md) and target evidence without combining incompatible rules.
 

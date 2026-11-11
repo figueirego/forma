@@ -15,7 +15,11 @@ metadata:
 This module guides the agent reading it; it does not execute animations or call other modules.
 Preserve the brand, stack, interaction and platform expectations.
 
+For a relevant saved capability, use [reuse by capability](../../references/capability-reuse.md): search by the task, not the source project, and bind the mechanism to the destination's own identity and state owners. Read only the matching contract; do not expand a local fix into a redesign. Source names and exact profiles remain provenance or explicit fidelity targets.
+
 ## Inputs
+
+For a requested central ink/drop theme change, consult [Ink Theme Transition](../../references/ink-theme-transition.md) and its reusable native controller. Preserve latest-input-wins behavior; do not impose this effect on every theme switch or claim universal snapshot input passthrough.
 
 - Element, action/event, initial/final state, context/frequency and problem or desired effect.
 - Runtime, existing mechanism, devices/targets and expected behavior without motion.

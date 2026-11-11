@@ -12,12 +12,33 @@ Propose contributions through pull requests. Fork the repository, create a branc
 
 These commands require Python 3.12+ and Node 24+. Three.js is pinned in the lockfile for geometry tests. Installing test dependencies does not install a stack in projects served by Forma.
 
+## Browser regression
+
+After installing the locked dependencies, run `npx playwright install chromium` and
+`npm run test:browser`. The runner creates a temporary loopback server and fresh
+browser contexts; it never opens the user's browser profile or writes production
+data. CI installs Chromium with its Linux dependencies and executes the same command.
+
+The three scenarios exercise appearance save/reopen/reload/discard, passport page
+navigation, and library search/empty-state/dialog focus. Each run writes a unique
+directory in `artifacts/browser-regression/` with `report.json` and rendered
+screenshots, including the opened passport. Earlier runs remain intact. Page exceptions
+retain their stack; console errors, missing assets and unexpected outbound requests
+fail the run. No retries or ignored errors turn a failure into a pass.
+
+`tools/browser-regression.mjs` exports the scenarios separately from the CLI.
+Its optional third argument, `{ checkpoint: async name => { ... } }`, lets a host
+capture intermediate states before the scenario continues.
+A host browser adapter may run the same UI actions, but must record its own browser,
+captures and error evidence. One Chromium viewport is not a browser/device matrix,
+and these component tests do not evaluate an assistant's conversational decisions.
+
 ## Quality and evidence
 
 - Write Forma-authored content in US English with ASCII punctuation. Preserve original source names, URLs, copyright holders and multilingual behavior. `npm run check` includes `tools/check_editorial.py`; use `--json` to inventory every file. This guard catches encoding and known copy regressions, not every grammar error.
 - Visual changes: include captures without personal data, viewport/DPR, relevant states and exercised interactions.
 - Bugs: include a minimal reproduction and a regression test when practical.
-- Routing/instructions: include expected and adverse cases; state what was simulated and what was executed.
+- Routing/instructions: include expected and adverse cases; state what was simulated and what was executed. Follow [conversation evidence receipts](docs/CONVERSATION_EVALS.md) for captured trials, independent review and integrity checks.
 - External sources: preserve attribution and licensing. Do not copy code, private captures, trademarks, binaries or substantial content without redistribution rights.
 - Never include credentials, customer data, personal paths or private conversations.
 - Do not claim that a structural test proves visual perception, complete accessibility or universal fidelity.

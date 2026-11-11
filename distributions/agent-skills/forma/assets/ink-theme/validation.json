@@ -1,0 +1,231 @@
+{
+  "id": "ink-theme-transition",
+  "revision": "theme-ink-2-portable-1",
+  "recordedOn": "2026-11-10",
+  "status": "local-reference-not-production",
+  "contract": "../../references/ink-theme-transition.md",
+  "mechanism": {
+    "durationMs": 720,
+    "vertices": 64,
+    "keyframes": 21,
+    "origin": "viewport-center",
+    "repeat": "settle-to-latest-intent",
+    "engine": [
+      "View Transitions",
+      "Web Animations"
+    ]
+  },
+  "consumerEvidence": {
+    "consumer": "HelloUra local UX preview",
+    "revision": "theme-ink-2",
+    "files": [
+      {
+        "file": "app.js",
+        "sha256": "456c98d88ac495cbcb614a26605774795629038d8747fa8405aee73c1a87165d"
+      },
+      {
+        "file": "glass.css",
+        "sha256": "c9de46ca0e4c7846a650ed9c7c943f1703e9e0186c24bf6d43cc6321c6054055"
+      },
+      {
+        "file": "index.html",
+        "sha256": "1eda6ed5f1ec75a91d6ea1471c2abb234972766dc02a86b8db3ee63e22213381"
+      },
+      {
+        "file": "evidence/theme-ink-dark-reveal.png",
+        "sha256": "e6ce18d860ba4e12a0cc51271143418034995b4d14c0bf0149fcfd5129e7fcfd"
+      },
+      {
+        "file": "evidence/theme-ink-light-reveal.png",
+        "sha256": "f78700383625584158547cae615c7b7d1b8afd57c431b0c155f76826bbd780ee"
+      },
+      {
+        "file": "evidence/theme-ink-browser-checks.json",
+        "sha256": "5770d4319f38f57bf6b5ea30a358c1eacfcb1e5fdb45c26ab79e0f2a0968a094"
+      },
+      {
+        "file": "evidence/theme-ink-controller-checks.json",
+        "sha256": "057e22081bdd6e8ea982a7340e0e1533f3a409698f48ef69896ef977d9311be9"
+      }
+    ],
+    "controller": {
+      "scenarios": 9,
+      "passed": 9,
+      "rerunOn": "2026-11-10",
+      "type": "API-stub-regression"
+    },
+    "historicalBrowser": {
+      "surface": "Codex in-app browser",
+      "viewportCss": [
+        [
+          1280,
+          800
+        ],
+        [
+          480,
+          844
+        ]
+      ],
+      "recordedChecks": [
+        "both theme directions",
+        "eight consecutive clicks",
+        "double-click parity",
+        "keyboard activation",
+        "navigation during reveal",
+        "draft and scroll preservation",
+        "resize interruption"
+      ],
+      "notRerunByPackageCheck": true
+    }
+  },
+  "rea": {
+    "kind": "static-artifact-inspection",
+    "evidenceId": "ev_ff134a902d64839ba966380e12f07a5b1a88cc5aa35a4dfeed3157c62faabf72",
+    "summaryEvidenceId": "ev_bd14e48af596175ee7b3597e300d4c76e60dacdab253ff8e6e78512d8892c99d",
+    "artifactSha256": "57d50e441575f5458f59964e280d6fd324e9a3f084caaf7125b408e456791218",
+    "selectedSources": [
+      "app.js"
+    ],
+    "parsedJavascriptFiles": 1,
+    "parseFailures": 0,
+    "unselectedFiles": 17,
+    "applicationCoverage": "partial",
+    "semanticCoverage": "partial",
+    "semanticUnknowns": 1430,
+    "executed": false,
+    "bundleBundled": false
+  },
+  "portableAdapter": {
+    "controllerTests": {
+      "command": "node --test source/forma/tests/ink-theme.test.cjs",
+      "passed": 20,
+      "failed": 0,
+      "method": "Node VM with controlled browser-API stubs",
+      "previousRecordedPassed": 17,
+      "checkedOn": "2026-11-10",
+      "testFileSha256": "0d2352cb54ddc4c7ccacc4042d6366fe652e994eb750e66149419f0aa6fe4cee",
+      "limits": "Controller stubs only; this refresh does not rerun the historical browser matrix."
+    },
+    "browser": {
+      "status": "validated-within-scope",
+      "surface": "Codex in-app browser",
+      "checkedOn": "2026-11-10",
+      "viewportCss": [
+        [
+          2560,
+          1440
+        ],
+        [
+          480,
+          844
+        ]
+      ],
+      "checks": [
+        {
+          "draft": "Draft preserved while changing themes.",
+          "focus": "theme-toggle",
+          "motion": "idle",
+          "overflow": false,
+          "test": "ten-consecutive-clicks",
+          "theme": "dark",
+          "viewport": [
+            2560,
+            1440
+          ]
+        },
+        {
+          "draft": "Draft preserved while changing themes.",
+          "focus": "theme-toggle",
+          "test": "keyboard-theme-change",
+          "theme": "light"
+        },
+        {
+          "count": "1 actions",
+          "draft": "Draft preserved while changing themes.",
+          "motion": "idle",
+          "test": "second-action-during-reveal",
+          "theme": "dark"
+        },
+        {
+          "draft": "Draft preserved while changing themes.",
+          "motion": "idle",
+          "overflow": false,
+          "test": "mobile-double-click",
+          "theme": "dark",
+          "viewport": [
+            480,
+            844
+          ]
+        },
+        {
+          "motion": "idle",
+          "overflow": false,
+          "test": "desktop-light-reveal",
+          "theme": "light",
+          "viewport": [
+            1280,
+            800
+          ]
+        },
+        {
+          "motion": "idle",
+          "overflow": false,
+          "test": "native-size-settled",
+          "theme": "dark",
+          "viewport": [
+            2560,
+            1440
+          ]
+        }
+      ],
+      "consoleWarningsOrErrors": 0,
+      "evidenceFiles": [
+        {
+          "file": "forma-ink-reveal.png",
+          "sha256": "0df8a1e228e5df3e249089d1e22db7d0981ad333e2bcaa03ead362af095ac565"
+        },
+        {
+          "file": "forma-browser-checks.json",
+          "sha256": "956ccb2d300fe65446b37dd2cf9ff9242124f1bc1e87a467d3dc316b2c9b4bec"
+        }
+      ],
+      "limits": [
+        "Viewport override produced a misaligned intermediate snapshot; native-size reload rendered aligned. Narrow checks establish final layout and input only."
+      ]
+    },
+    "files": [
+      {
+        "file": "ink-theme.css",
+        "sha256": "84f2b6692bb4f15fcf0516a960094ad03721bdfb4070fbe9302b841d02d666b3"
+      },
+      {
+        "file": "ink-theme.js",
+        "sha256": "fc90c119489a60c203f8351ae18341d0b9ae9681637efe9d2036593088445727"
+      },
+      {
+        "file": "preview.css",
+        "sha256": "f02ce9f0298d4437a01d63df6485c0c28608e59eb5041d51a0a916d842e56335"
+      },
+      {
+        "file": "preview.html",
+        "sha256": "cf6898cf7b1ec4cff4e302c99f0cec4e12f59ae5ef1a684ba0d42cac2f17557c"
+      },
+      {
+        "file": "preview.js",
+        "sha256": "3ccf957c79dd0e5e1df924a6d4b6b47108b5a42dc1dd50924c51a30c8819c741"
+      }
+    ]
+  },
+  "limits": [
+    "No FPS or GPU measurements.",
+    "No physical-device, Safari or Firefox coverage.",
+    "Reduced-motion policy is covered by controller tests; OS preference not changed.",
+    "Native selects, drag, file pickers and arbitrary snapshot-intercepted link defaults are not validated.",
+    "Historical screenshots and private consumer source/REA bundle are not redistributed.",
+    "No production deployment or automatic application to other projects."
+  ],
+  "rights": {
+    "license": "MIT",
+    "scope": "Original Forma adapter and neutral specimen. Consumer artifact fingerprints document provenance without redistributing private assets."
+  }
+}

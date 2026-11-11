@@ -140,6 +140,8 @@ Existing files are accessible in every case. Network and external publication ar
 
 **User request:** Same as PB06.
 
+**Supplied context:** Shared fixture. The user has already defined the primary task: "Organize editorial tasks in All, Active and Done views using fictional content." Only the design-only versus functional delivery choice remains open.
+
 **Scripted reply after the material question:** "Choose for me. This is an early visual exploration; do not build product logic."
 
 **Observe:** Record the explicit delegation and its boundary, choose a visual direction and proceed. Do not attribute the specific aesthetic recommendation to a user selection that never occurred.

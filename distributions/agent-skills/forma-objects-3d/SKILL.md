@@ -15,6 +15,8 @@ metadata:
 This module guides execution after it is read; it does not start a renderer, generation or other modules by itself.
 Preserve the brand and stack. When the request includes actual 3D, tilted CSS does not meet that acceptance criterion.
 
+For a relevant saved capability, use [reuse by capability](../forma/references/capability-reuse.md): search by the task, not the source project, and bind the mechanism to the destination's own identity and state owners. Read only the matching contract; do not expand a local fix into a redesign. Source names and exact profiles remain provenance or explicit fidelity targets.
+
 ## Inputs
 
 - Object and destination consumer, requested mechanism, reference/version, relevant states and views.

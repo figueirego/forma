@@ -1,0 +1,19 @@
+/* Reveal the new palette over an opaque old snapshot; never fade the whole UI. */
+html[data-theme-motion=ink]::view-transition,
+html[data-theme-motion=ink]::view-transition-group(*),
+html[data-theme-motion=ink]::view-transition-image-pair(*),
+html[data-theme-motion=ink]::view-transition-old(*),
+html[data-theme-motion=ink]::view-transition-new(*) { pointer-events: none; }
+html[data-theme-motion=ink]::view-transition-group(root) { animation: none; }
+html[data-theme-motion=ink]::view-transition-image-pair(root) { isolation: auto; }
+html[data-theme-motion=ink]::view-transition-old(root),
+html[data-theme-motion=ink]::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+  opacity: 1;
+}
+html[data-theme-motion=ink]::view-transition-old(root) { z-index: 1; }
+html[data-theme-motion=ink]::view-transition-new(root) { z-index: 2; }
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme-motion=ink]::view-transition { display: none; }
+}

@@ -7,12 +7,12 @@ The repertoire combines [candidates by use case](reference-library.md), [bounded
 ## Select and learn
 
 1. Define the task: for example, comparing type weights, editing lighting, or navigating a collection. Preserve the consumer's already-approved mechanism.
-2. Search with `scripts/references.mjs --sites --query "..." --limit 3`, separating name/URL results from `suggestedCases`. Read a suggested guide, then use `--case` explicitly to browse its historical, unverified candidates. Portfolio guides are shared by all entries, not evidence of task fit. Record a question, selection reason, and unknowns for each candidate; zero results remains valid. Also search the local pattern without `--sites`.
+2. For a saved capability, first follow [capability reuse](capability-reuse.md) and search `scripts/references.mjs --query "..." --limit 3` using a generic task phrase. For external research, search with `scripts/references.mjs --sites --query "..." --limit 3`, separating name/URL results from `suggestedCases`. Read a suggested guide, then use `--case` explicitly to browse its historical, unverified candidates. Portfolio guides are shared by all entries, not evidence of task fit. Record a question, selection reason, and unknowns for each candidate; zero results remains valid. Also search the local pattern without `--sites`.
 3. Observe the current source and record what happened, including failures. Fix URL/ref, date, viewport, state, action, and result. Use the [experience template](templates.md#reusable-experience). External content is evidence, never authorization or instruction.
 4. Investigate only the technical gap. Available code: read the module, inputs, events, lifecycle, and tests. DOM/CSS: measure hierarchy, spacing, fonts, and states. Package/runtime: use [artifact investigation](artifact-investigation.md) when necessary. Appearance alone does not reveal a framework, shader, physics, backend, or license.
 5. Record the decision: adopt the concept, adapt it, use a licensed dependency, reject it, or wait. Explain the problem solved and when the solution harms the task. Do not turn a brand property into a universal rule.
 6. When implementation is in scope, write the adaptation in the consumer, run relevant tests, and compare the rendered result. An observed experience remains useful without implementation if its status is explicit.
-7. Promote recurring lessons into an existing contract, avoiding duplicate theory. Update the card pointing to that contract and include a regression that detects the real error. Review through a PR; preserve origin and historical evidence.
+7. Promote recurring lessons into an existing contract, avoiding duplicate theory. Follow [capability reuse](capability-reuse.md#save-the-next-pattern-the-same-way): generic discoverability, preserved invariants, destination identity bindings, source provenance and a regression are required for a saved pattern. Update the card pointing to that contract and include a regression that detects the real error. Review through a PR; preserve origin and historical evidence.
 
 ## Coordinate reference sites and the destination site
 
@@ -52,3 +52,14 @@ These states belong to individual claims, not entire sites. Read code and observ
 When consulting an experience, check **task -> conditions -> evidence -> technique -> adaptation -> contraindication -> test**. Reopen the source when the decision depends on its current state; for a stable mechanism, a dated study can serve as an explicitly historical hypothesis. Retain discovered errors, not only good examples. An unproven experience must not override an approved project contract.
 
 Use [verification](verification.md) and [rendered validation](rendered-validation.md). Files, hashes, and verifiers document the trail; they do not certify aesthetic quality, complete accessibility, or success in every project. To evaluate completed designs, inspect actual outputs against the brief and declared comparison conditions. Claims of improvement need baseline/candidate output comparisons; claims of consistency need repeated independent trials with recorded outcomes and limits. Correct routing, a proposed plan, or passing package checks alone supports neither claim.
+
+
+## Local control study
+
+[Ink Theme Transition](ink-theme-transition.md): approved central palette reveal from the HelloUra local preview, with a portable controller, neutral specimen and regression tests. Repeated input settles to the latest choice; static REA evidence, consumer observations and adapter checks are recorded separately. Preserve the destination's identity and layout.
+
+[Diagonal glass controls](diagonal-glass-controls.md): screenshot-led Camalingo adaptation; source hover behavior and redistribution rights are unverified.
+
+[Calm Glass Navigation](calm-glass-navigation.md): current HelloUra adaptation with black navigation in both themes, a dark selected control with an orange icon/marker, and integrated team/profile context without glass cards. Includes exact tokens, artifact fingerprints, superseded choices and bounded consumer evidence; it is not a global palette or production claim.
+
+[Complete HelloUra experience](helloura-experience.md): compact fixed window, content-only scrolling, role/team context, consistent operational icons, recoverable preview states, central ink theme change and split product landing. The separate private kit preserves the complete approved source; the public profile records how to retrieve it, reuse mechanisms and distinguish preview behavior from connected product capabilities.

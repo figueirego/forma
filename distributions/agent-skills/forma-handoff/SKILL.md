@@ -15,6 +15,8 @@ metadata:
 This module instructs the agent after it is read; it does not connect services, export files or call other modules automatically.
 Preserve the existing brand, stack, IDs and source of truth; deliver the format useful to the destination.
 
+For a relevant saved capability, use [reuse by capability](../forma/references/capability-reuse.md): search by the task, not the source project, and bind the mechanism to the destination's own identity and state owners. Read only the matching contract; do not expand a local fix into a redesign. Source names and exact profiles remain provenance or explicit fidelity targets.
+
 ## Inputs
 
 - Artifact/source, destination, requested format, editing scope and content/state requirements.

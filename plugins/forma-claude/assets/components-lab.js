@@ -3,7 +3,8 @@ const q=selector=>document.querySelector(selector);
 const errors=[];
 const recordError=error=>{errors.push({name:error.name,message:error.message});q('#lab-error').textContent=error.message;q('#lab-error').hidden=false;};
 let editor,passport,adapter,activeTheme='light',disposed=false,passportReady=false;
-const sampleState={profile:{name:'Alex Morgan',goal:'Entender v\u00eddeos do dia a dia',level:'zero'},passport:{country:'BR',nativeLanguage:'Portugu\u00eas',photo:null},profiles:{en:{goal:'Entender v\u00eddeos do dia a dia',level:'zero'}},language:'en'};
+// The original local cover keeps the initial lab usable without a remote image service.
+const sampleState={profile:{name:'Alex Morgan',goal:'Entender v\u00eddeos do dia a dia',level:'zero'},passport:{country:'',nativeLanguage:'Portugu\u00eas',photo:null},profiles:{en:{goal:'Entender v\u00eddeos do dia a dia',level:'zero'}},language:'en'};
 try{adapter=AppearanceEditor.createLocalStorageAdapter(localStorage,'forma.components-lab.appearance.v1');}catch(error){recordError(error);}
 function readSaved(){try{return adapter?.load();}catch(error){recordError(new Error('Stored appearance could not be read. The original is retained; saving is disabled until the data is repaired.'));adapter=null;return undefined;}}
 function syncPassportPreferences(){if(passport&&!disposed)passport.update({theme:activeTheme,motion:document.documentElement.dataset.motion==='reduced'?'reduced':'system'});}

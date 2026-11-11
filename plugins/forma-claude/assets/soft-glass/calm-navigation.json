@@ -1,0 +1,140 @@
+{
+  "id": "calm-glass-navigation",
+  "kind": "approved-consumer-material-profile",
+  "recordedOn": "2026-11-10",
+  "consumer": "HelloUra local UX preview",
+  "revision": "fixed-window-4-sidebar-context-3",
+  "status": "approved-preview-not-production",
+  "contract": "../../references/calm-glass-navigation.md",
+  "scope": "Optional adaptation of Soft Glass; not the baseline preset or an executable component.",
+  "navigation": {
+    "surface": "#1c1c1c",
+    "sameSurfaceInLightAndDark": true,
+    "ink": "#f4f4f2",
+    "muted": "#b1b1ae",
+    "brandAccent": "#ff8540",
+    "selectedFill": "rgb(255 255 255 / .055)",
+    "selectedInk": "#f4f4f2",
+    "selectedBorder": "rgb(255 255 255 / .12)",
+    "selectedOpaqueFallback": "#292929",
+    "controlFill": "rgb(255 255 255 / .035)",
+    "controlHoverFill": "rgb(255 255 255 / .065)",
+    "controlBorder": "rgb(255 255 255 / .10)",
+    "divider": "rgb(255 255 255 / .10)",
+    "controlBlur": "8px",
+    "controlRadius": "12px",
+    "controlShadow": "inset 0 1px 0 rgb(255 255 255 / .13), inset 1px 0 0 rgb(255 255 255 / .035), inset 0 -1px 0 rgb(0 0 0 / .22), 0 5px 9px -6px rgb(0 0 0 / .40)",
+    "selectedShadow": "inset 0 1px 0 rgb(255 255 255 / .13), inset 1px 0 0 rgb(255 255 255 / .035), inset 0 -1px 0 rgb(0 0 0 / .22), 0 5px 9px -6px rgb(0 0 0 / .40)",
+    "sidebarShadow": "0 10px 24px -18px rgb(0 0 0 / .24)",
+    "sidebarBlur": "none",
+    "neutralFocusInk": "#f4f4f2",
+    "selectedFocusInk": "#f4f4f2",
+    "selectedFocusOffset": "-4px",
+    "selectedIcon": "#ff8540",
+    "selectedIndicator": {
+      "width": "3px",
+      "height": "20px",
+      "color": "#ff8540",
+      "edge": "leading"
+    },
+    "itemGap": "8px",
+    "contextStyle": "integrated",
+    "contextFill": "transparent",
+    "contextHoverFill": "#272727",
+    "contextBlur": "none",
+    "contextShadow": "none",
+    "teamAvatarFill": "#423027",
+    "teamAvatarInk": "#ffb78f",
+    "accountAvatarFill": "#303030"
+  },
+  "workspace": {
+    "desktopRadius": "25px",
+    "narrowRadius": "21px",
+    "narrowMaxWidth": "760px",
+    "paneFilter": "blur(28px) saturate(110%)",
+    "paneShadow": "0 8px 24px -18px rgb(0 0 0 / .20)",
+    "light": {
+      "ground": "#e8e8e6",
+      "pane": "rgb(255 255 255 / .32)",
+      "paneBorder": "rgb(255 255 255 / .24)",
+      "card": "rgb(255 255 255 / .56)"
+    },
+    "dark": {
+      "ground": "#101010",
+      "pane": "rgb(24 24 24 / .34)",
+      "paneBorder": "rgb(255 255 255 / .055)",
+      "card": "rgb(37 37 37 / .42)"
+    },
+    "scrollOwner": ".content-scroll",
+    "documentScroll": false,
+    "toolbarPosition": "separate fixed row, outside scroll region",
+    "toolbarFill": "opaque theme surface",
+    "toolbarBlur": "none",
+    "navigationScroll": "none normally; whole sidebar may scroll below 700px desktop or 800px mobile",
+    "outerInset": "12px desktop / 8px narrow",
+    "surfaceGap": "12px",
+    "desktopToolbarHeight": "56px",
+    "narrowToolbarHeight": "62px"
+  },
+  "invariants": [
+    "Black sidebar in both themes; shallow dark glass on the selected destination, with a shared orange icon and leading marker.",
+    "Team and account are integrated identity rows without glass, bevels, border or shadow at rest.",
+    "No diagonal film across labels, split reflection, decorative ambient spotlight or strong large-pane rim.",
+    "Toolbar is opaque and outside the content scroller; it never blends scrolled text through itself.",
+    "Only the content and its footer scroll in the normal desktop frame. Preserve every navigation destination at short heights.",
+    "Preserve brand, routes, icon semantics, drafts, focus and actual authorization boundaries.",
+    "Independent material variation; do not turn consumer brand colors into Forma defaults."
+  ],
+  "evidence": {
+    "files": [
+      {
+        "file": "glass.css",
+        "sha256": "c9de46ca0e4c7846a650ed9c7c943f1703e9e0186c24bf6d43cc6321c6054055"
+      },
+      {
+        "file": "sidebar-context.css",
+        "sha256": "22742b4182d13c354e6e38d1e999dda75460243d0c0aab49bc00714fdd35a192"
+      },
+      {
+        "file": "styles.css",
+        "sha256": "5584a50ee5c3a73d5a078afdd4c6b3ea9f1b7b65eb660ad40a63f4e2957afa78"
+      },
+      {
+        "file": "SIDEBAR-QA.json",
+        "sha256": "fe78450b5832e85ecb75986c67eda4374abd54933798f0d817d755bdfd0f7ade"
+      },
+      {
+        "file": "QA.json",
+        "sha256": "b1b2ddf9265ac70679516fc5bc67a64f2c054f56cfa8e5d10708f572f687be0f"
+      },
+      {
+        "file": "evidence/fixed-window-contrast.json",
+        "sha256": "121051ef8c42923b3a06f15cd1674c0190681dd84b0e01cdb93adbd22c9918f2"
+      }
+    ],
+    "historicalBrowser": {
+      "viewports": [
+        "1280x720",
+        "1440x960",
+        "480x844"
+      ],
+      "status": "recorded-consumer-observations-not-rerun-by-profile-check"
+    },
+    "calculatedTextContrast": {
+      "selectedLabel": 13.3,
+      "selectedIconAndIndicator": 6.06
+    },
+    "limits": [
+      "Contrast is computed for stated composited colors, not whole-interface certification.",
+      "Captures remain in the private local kit, not the public package.",
+      "Consumer is a demonstrative preview; production, physical devices, full browser matrix and OS accessibility preferences are not established."
+    ]
+  },
+  "supersedes": [
+    {
+      "revision": "black-orange-1",
+      "reason": "Later approved dark selected row with orange icon/marker; integrated team and account rows replace raised glass context cards.",
+      "historicalStylesheetSha256": "dd3b210a18a5b69c0c3c710d1e31af33a3aa3b976324da03b478c1710d1bea66"
+    }
+  ]
+}

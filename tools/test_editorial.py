@@ -8,6 +8,18 @@ from check_editorial import audit, inspect_text, PRESERVED_NEURON
 
 
 class EditorialTests(unittest.TestCase):
+    def test_runtime_evidence_is_excluded_without_hiding_authored_artifacts(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / 'artifacts').mkdir()
+            (root / 'artifacts/report.json').write_text(json.dumps({'error': '\u00e1'}))
+            authored = root / 'source/artifacts'
+            authored.mkdir(parents=True)
+            (authored / 'README.md').write_text('\u00e1')
+            report = audit(root)
+            self.assertEqual([item['path'] for item in report['files']], ['source/artifacts/README.md'])
+            self.assertEqual(report['errors'][0]['path'], 'source/artifacts/README.md')
+
     def test_all_files_are_classified_and_unknown_types_fail(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

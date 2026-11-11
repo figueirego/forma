@@ -33,17 +33,27 @@
         "navigation",
         "operational",
         "light",
-        "dark"
+        "dark",
+        "helloura",
+        "compact",
+        "fixed-window",
+        "integrated-context",
+        "icons",
+        "fixed",
+        "content-scroll",
+        "desktop-material"
       ],
       "idea": "A stable navigation edge and a separate working surface let product content carry the visual emphasis.",
       "whenToUse": "An operational app needs a reusable starting point for its navigation, toolbar and content without changing its routes.",
       "structure": [
         "Keep navigation, work area and contextual actions in separate regions.",
-        "Use repeated insets to align the toolbar and content; allow the content track to shrink."
+        "Use repeated insets to align the toolbar and content; allow the content track to shrink.",
+        "Compact window with a separate toolbar and content scroll owner; integrated team and role context are adapted to the destination."
       ],
       "adapt": [
         "Start from the scoped shell CSS and demo behavior, then attach real data and routes.",
-        "Choose density from the actual list or form, rather than scaling the whole screen."
+        "Choose density from the actual list or form, rather than scaling the whole screen.",
+        "For the approved HelloUra workspace, verify the private helloura-approved kit. Preserve the fixed window, toolbar outside the content scroller, dark glass selected row with an accent icon/marker, and integrated team/account context."
       ],
       "avoid": [
         "Do not treat the demo's in-memory state as production persistence.",
@@ -69,6 +79,30 @@
         {
           "label": "Demo behavior",
           "path": "assets/clean-shell.js"
+        },
+        {
+          "label": "Complete HelloUra experience and private-kit contract",
+          "path": "references/helloura-experience.md"
+        },
+        {
+          "label": "Approved HelloUra geometry and evidence",
+          "path": "assets/reference-profiles/helloura-experience.json"
+        },
+        {
+          "label": "Operational icon family",
+          "path": "assets/operational-icons.svg"
+        },
+        {
+          "label": "Generic compact workspace contract",
+          "path": "references/compact-workspace.md"
+        },
+        {
+          "label": "Dated desktop material observations",
+          "path": "assets/reference-profiles/desktop-material-reference-v1.json"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -129,6 +163,10 @@
         {
           "label": "Settings semantics",
           "path": "references/settings-modes.md"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -188,6 +226,10 @@
         {
           "label": "Control behavior",
           "path": "references/component-patterns.md"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -221,14 +263,18 @@
         "light",
         "dark",
         "position",
-        "popover"
+        "popover",
+        "appearance",
+        "contextual",
+        "draft-commit"
       ],
       "idea": "A light-pool editor separates group positioning, local positioning with Alt and relative distance, while selection, color, intensity and grain retain independent state.",
       "whenToUse": "An approved appearance mechanism needs movable lights and per-context persistence, rather than a static palette.",
       "structure": [
         "Anchor the editor to the declared working region and keep its preview bounds stable.",
         "Dragging a pool's center normally translates every pool by the selected pool's delta; holding Alt when pointerdown occurs moves only the selected pool.",
-        "The distance ring keeps its selected anchor fixed and scales the other radial vectors; it is not a position control."
+        "The distance ring keeps its selected anchor fixed and scales the other radial vectors; it is not a position control.",
+        "Appearance editing separates draft, commit, cancel and contextual target ownership."
       ],
       "adapt": [
         "Mount the supplied AppearanceEditor with scoped styles, then connect preview, confirmed save, cancel and contextual color to the destination owners. The lab demonstrates local storage only.",
@@ -276,6 +322,10 @@
         {
           "label": "Fidelity measurements",
           "path": "assets/reference-profiles/compact-appearance-v1.fidelity.json"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -311,13 +361,16 @@
         "foil",
         "canvas",
         "webgl",
-        "three"
+        "three",
+        "preset",
+        "closed-volume"
       ],
       "idea": "The cover, binding and page block must form a continuous volume before material polish can make the book convincing.",
       "whenToUse": "A three-dimensional book must rotate while preserving legibility, thickness and material cues beyond its front view.",
       "structure": [
         "Treat front, back, binding and pages as coordinated geometry with declared dimensions.",
-        "Keep artwork, material response, camera pose and input behavior independently adjustable."
+        "Keep artwork, material response, camera pose and input behavior independently adjustable.",
+        "Book preset includes host stage, lighting, camera and reset boundaries; use the complete integration for the preserved mechanism."
       ],
       "adapt": [
         "Use BookObject with the consumer-supplied Three.js loader for volume rendering.",
@@ -343,6 +396,22 @@
         {
           "label": "Polish case and limits",
           "path": "references/book-polish-case-study.md"
+        },
+        {
+          "label": "Complete book integration",
+          "path": "references/book-integration.md"
+        },
+        {
+          "label": "BookPreset adapter",
+          "path": "assets/book-preset.js"
+        },
+        {
+          "label": "Executable book lab",
+          "path": "assets/book-lab.html"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -361,7 +430,7 @@
     },
     {
       "id": "forma-passport-object",
-      "name": "PassportObject: articulated cover and turning page",
+      "name": "PassportObject: legacy Three articulated cover and turning page",
       "origin": "forma",
       "kind": "3d",
       "useCases": [
@@ -381,7 +450,7 @@
         "lifecycle"
       ],
       "idea": "A hinged cover, page block and turning leaf share attached roots while their opening, materials and orientation remain independently adjustable.",
-      "whenToUse": "The destination needs a portable articulated object and accepts a simplified Three mechanism with its own validation, rather than requiring parity with an existing approved CSS passport.",
+      "whenToUse": "Maintain an existing simplified Three passport consumer or deliberately choose that mechanism. For the preserved articulated CSS passport, select the separate articulated-passport card; the two engines are not equivalent.",
       "structure": [
         "Separate the rotating assembly from the centered model so back and open views remain framed.",
         "Keep the cover hinge and turning leaf attached, limit page turning by cover opening, and retain a labeled static fallback."
@@ -425,6 +494,10 @@
         {
           "label": "Separate approved CSS passport case",
           "path": "references/passport-polish-case-study.md"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -486,6 +559,10 @@
         {
           "label": "Data semantics",
           "path": "references/data-dashboards.md"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -517,7 +594,9 @@
         "tokens",
         "light",
         "dark",
-        "semantic"
+        "semantic",
+        "desktop-material",
+        "semantic-tokens"
       ],
       "idea": "Brand, selection, semantic state, data series and ambient color can coexist without inheriting one another's meanings.",
       "whenToUse": "A palette looks coherent in isolation but becomes ambiguous or unreadable when actual states are combined.",
@@ -549,6 +628,14 @@
         {
           "label": "Object color helper",
           "path": "assets/library-colors.js"
+        },
+        {
+          "label": "Dated material role extraction",
+          "path": "assets/reference-profiles/desktop-material-reference-v1.json"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -580,7 +667,12 @@
         "animation",
         "reduced-motion",
         "mobile",
-        "continuity"
+        "continuity",
+        "ink",
+        "theme",
+        "liquid",
+        "reveal",
+        "rapid-input"
       ],
       "idea": "An animation is a state transition that must remain understandable when reversed, interrupted or disabled.",
       "whenToUse": "Movement should explain feedback, spatial continuity or a specific progression through content.",
@@ -590,7 +682,8 @@
       ],
       "adapt": [
         "Use the current stack and the simplest mechanism that meets the interaction requirements.",
-        "Define a reduced-motion alternative that preserves information and actions."
+        "Define a reduced-motion alternative that preserves information and actions.",
+        "For an approved central liquid theme reveal, use the optional ink-theme controller and contract; preserve the destination palette and delegated actions."
       ],
       "avoid": [
         "Do not add animated sections to satisfy a quota.",
@@ -598,7 +691,8 @@
       ],
       "verify": [
         "Interrupt and reverse the sequence at several points rather than testing only its endpoint.",
-        "Confirm static content and action availability under reduced motion and failed initialization."
+        "Confirm static content and action availability under reduced motion and failed initialization.",
+        "Ink theme: latest input wins before/during capture; verify keyboard, routing, reduced motion, resize, disposal and draft preservation in the destination."
       ],
       "resources": [
         {
@@ -608,6 +702,30 @@
         {
           "label": "Rendered review",
           "path": "references/rendered-validation.md"
+        },
+        {
+          "label": "Ink theme contract",
+          "path": "references/ink-theme-transition.md"
+        },
+        {
+          "label": "Ink theme controller",
+          "path": "assets/ink-theme/ink-theme.js"
+        },
+        {
+          "label": "Ink theme specimen",
+          "path": "assets/ink-theme/preview.html"
+        },
+        {
+          "label": "Ink theme evidence and limits",
+          "path": "assets/ink-theme/validation.json"
+        },
+        {
+          "label": "HelloUra consumer context and preservation boundaries",
+          "path": "references/helloura-experience.md"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -615,7 +733,7 @@
         "liveVerified": false,
         "capture": null,
         "limits": [
-          "This record describes an implementation contract; it does not include a working integration or a new rendered test."
+          "The general motion guidance is a contract. The optional ink-theme adapter has executable code and dated validation; this catalog entry does not establish a new consumer integration."
         ]
       },
       "rights": {
@@ -668,6 +786,10 @@
         {
           "label": "Layout measurement example",
           "path": "assets/layout.example.json"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -728,6 +850,10 @@
         {
           "label": "Token handoff",
           "path": "references/tokens-handoff.md"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -787,6 +913,10 @@
         {
           "label": "Async trust boundaries",
           "path": "references/contracts-trust.md"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -847,6 +977,10 @@
         {
           "label": "Interaction states",
           "path": "references/component-patterns.md"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -870,7 +1004,8 @@
       "useCases": [
         "dashboard",
         "charts",
-        "tables"
+        "tables",
+        "geographic-dashboard"
       ],
       "tags": [
         "data",
@@ -879,13 +1014,19 @@
         "null",
         "rounding",
         "comparison",
-        "finance"
+        "finance",
+        "geographic",
+        "live",
+        "historical",
+        "temporal",
+        "coherent-totals"
       ],
       "idea": "Values, marks, labels and accompanying copy should be different views of the same identified calculation.",
       "whenToUse": "A dashboard needs readable comparison and honest interpretation of missing, delayed or rounded data.",
       "structure": [
         "Declare the question, unit, range, series identity and data revision.",
-        "Keep annotations, the legend and the accessible alternative tied to the same metric."
+        "Keep annotations, the legend and the accessible alternative tied to the same metric.",
+        "Geographic dashboard with live and historical states: scope, selected time, URL and totals share one source."
       ],
       "adapt": [
         "Choose a chart from the comparison being made, not the visual style of the page.",
@@ -907,6 +1048,14 @@
         {
           "label": "Data trust",
           "path": "references/contracts-trust.md"
+        },
+        {
+          "label": "Dated dashboard study and limitations",
+          "path": "assets/reference-profiles/seuimposto-2026-10-25.json"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -967,6 +1116,10 @@
         {
           "label": "Platform adapters",
           "path": "references/platform-adapters.md"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -999,7 +1152,10 @@
         "photography",
         "photo",
         "identity",
-        "conversion"
+        "conversion",
+        "helloura",
+        "split-product-landing",
+        "conversation-cards"
       ],
       "idea": "A page earns its composition from what the product can demonstrate, rather than from a sequence of empty promotional sections.",
       "whenToUse": "A new marketing page needs a message, credible supporting material and a real next step.",
@@ -1009,7 +1165,8 @@
       ],
       "adapt": [
         "Use the brand's actual vocabulary, images and verified conditions.",
-        "Label demonstration data and distinguish a proposal from an existing product feature."
+        "Label demonstration data and distinguish a proposal from an existing product feature.",
+        "For the approved HelloUra split product landing, verify the private helloura-approved kit and preserve its full sections, card hierarchy, plain yellow field, user-driven demo and no-send form boundary. Do not substitute the Soft Glass landing."
       ],
       "avoid": [
         "Do not invent testimonials, usage metrics or prices to populate a layout.",
@@ -1027,6 +1184,18 @@
         {
           "label": "Direction decisions",
           "path": "references/design-directions.md"
+        },
+        {
+          "label": "Split product landing and integral source contract",
+          "path": "references/helloura-experience.md"
+        },
+        {
+          "label": "Approved landing composition and interaction profile",
+          "path": "assets/reference-profiles/helloura-experience.json"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -1087,6 +1256,10 @@
         {
           "label": "Identity contract",
           "path": "references/brand-marketing.md"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -1119,7 +1292,8 @@
         "alpha",
         "fonts",
         "round-trip",
-        "preview"
+        "preview",
+        "pdf-guide"
       ],
       "idea": "The delivered file must preserve the content and editability promised by the preview, with losses identified per layer.",
       "whenToUse": "A design becomes a document, presentation, image or other file that will be opened in another tool.",
@@ -1147,6 +1321,18 @@
         {
           "label": "Delivery formats",
           "path": "references/tokens-handoff.md"
+        },
+        {
+          "label": "Clear PDF guide contract",
+          "path": "references/clear-pdf-guides.md"
+        },
+        {
+          "label": "Neutral print specimen",
+          "path": "assets/clear-pdf-guide.html"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -1206,6 +1392,10 @@
         {
           "label": "Reference workflow",
           "path": "references/reference-fidelity.md"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -1266,6 +1456,10 @@
         {
           "label": "Evidence discipline",
           "path": "references/verification.md"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -1322,6 +1516,10 @@
         {
           "label": "Media workflow",
           "path": "references/reference-library.md"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -1364,7 +1562,16 @@
         "halftone",
         "floating-navigation",
         "sticky-story",
-        "faq"
+        "faq",
+        "calm-glass",
+        "black-sidebar",
+        "no-film",
+        "helloura",
+        "dark-selection",
+        "accent-marker",
+        "integrated-context",
+        "accordion",
+        "diagonal-controls"
       ],
       "idea": "A colored navigation slab and a quiet inset panel share subtle glass edges, rounded controls and a controlled dotted texture.",
       "whenToUse": "A landing page and application need the approved warm Soft Glass direction, including visual states, without implementing product features.",
@@ -1372,13 +1579,16 @@
         "Keep the sidebar and continuous inset work surface separate, with stable shared spacing.",
         "Use diagonal highlight film, edge light and a shallow shadow on selected controls and the account footer.",
         "Keep regular dots, the active-item indicator and lower texture independently adjustable.",
-        "For the complete landing, keep hero, trust, problem, four-step narrative, two modes, six audiences, feature consolidation, four FAQ categories, contact and footer."
+        "For the complete landing, keep hero, trust, problem, four-step narrative, two modes, six audiences, feature consolidation, four FAQ categories, contact and footer.",
+        "A complete landing uses feature tabs, an FAQ accordion and sticky story sections with reduced-motion alternatives.",
+        "A separate diagonal glass control study records a conditional highlight variation; it does not override calm navigation."
       ],
       "adapt": [
         "For integral reproduction, verify the separate soft-glass-approved local kit manifest; the bundled neutral landing is an adaptation, not a fidelity baseline.",
         "Reuse the scoped CSS and semantic light/dark tokens in the existing stack.",
         "Replace specimen content and font with the destination identity; maintain panel/control radius hierarchy.",
-        "Use the specimen to inspect desktop and mobile, not as production behavior."
+        "Use the specimen to inspect desktop and mobile, not as production behavior.",
+        "For explicitly approved black navigation, use the current Calm Glass Navigation contract: dark selection, accent icon/marker, integrated identity rows, no reflection film or ambient glow. Keep the original preset separate."
       ],
       "avoid": [
         "Do not add authentication, generation, persistence or fake success behavior to a design-only request.",
@@ -1431,6 +1641,30 @@
         {
           "label": "Integral local reproduction contract",
           "path": "references/soft-glass-integral.md"
+        },
+        {
+          "label": "Calm Glass Navigation contract (optional)",
+          "path": "references/calm-glass-navigation.md"
+        },
+        {
+          "label": "Approved calm navigation material profile",
+          "path": "assets/soft-glass/calm-navigation.json"
+        },
+        {
+          "label": "Complete HelloUra experience and private-kit contract",
+          "path": "references/helloura-experience.md"
+        },
+        {
+          "label": "Approved HelloUra workspace and landing profile",
+          "path": "assets/reference-profiles/helloura-experience.json"
+        },
+        {
+          "label": "Conditional diagonal highlight study",
+          "path": "references/diagonal-glass-controls.md"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -1496,6 +1730,10 @@
         {
           "label": "Runnable specimen",
           "path": "assets/halftone-entry/preview.html"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
         }
       ],
       "evidence": {
@@ -1509,6 +1747,547 @@
       "rights": {
         "notes": "Original Forma code and procedural artwork under the package MIT license.",
         "scope": "Visual provenance is documented in the contract. Reference screenshots and third-party branding are not redistributed."
+      }
+    },
+    {
+      "id": "forma-fixed-workspace",
+      "name": "Compact window with one content scroller",
+      "origin": "forma",
+      "kind": "interface",
+      "useCases": [
+        "compact-workspace",
+        "content-scroll"
+      ],
+      "tags": [
+        "compact",
+        "window",
+        "fixed",
+        "workspace",
+        "toolbar",
+        "content",
+        "scroll",
+        "team",
+        "role",
+        "context",
+        "desktop"
+      ],
+      "idea": "Separate stable app context from the scrolling task area in a compact desktop frame.",
+      "whenToUse": "A task-dense application needs a fixed workspace and reachable navigation while only working content scrolls.",
+      "structure": [
+        "Opaque toolbar in a separate row; content and footer share one scroll owner.",
+        "Integrated team/account context and reachable controls at short heights, zoom and on mobile."
+      ],
+      "adapt": [
+        "Bind surfaces, accent, typography, density, shape, routes and role boundaries to the destination.",
+        "Derive height and breakpoints from actual content; an embedded surface does not own the whole document."
+      ],
+      "avoid": [
+        "Clipping destinations to remove a scrollbar.",
+        "Treating the generic shell specimen as the complete private source."
+      ],
+      "verify": [
+        "Scroll content while header bounds stay stable.",
+        "Exercise short/narrow layouts, zoom, keyboard, drawer focus return and long labels."
+      ],
+      "resources": [
+        {
+          "label": "Generic compact workspace contract",
+          "path": "references/compact-workspace.md"
+        },
+        {
+          "label": "Starting shell specimen",
+          "path": "assets/clean-shell.html"
+        },
+        {
+          "label": "Source revision and limits",
+          "path": "assets/reference-profiles/helloura-experience.json"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
+        }
+      ],
+      "evidence": {
+        "type": "implementation-contract",
+        "liveVerified": false,
+        "capture": null,
+        "limits": [
+          "The public compact variation is a contract; the generic shell is a different starting specimen.",
+          "Exact source code is optional private-kit material; new consumer integration and rendered checks remain required."
+        ]
+      },
+      "rights": {
+        "notes": "Forma-authored synthesis and integration guidance. Source observations, mechanisms and dependencies retain their attribution; linked resources state their own redistribution limits.",
+        "scope": "Original pattern record; preserve package licensing, third-party notices and source provenance. No source brand or private asset rights are transferred."
+      }
+    },
+    {
+      "id": "forma-calm-glass",
+      "name": "Calm glass selection with an accent marker",
+      "origin": "forma",
+      "kind": "interface",
+      "useCases": [
+        "glass-navigation",
+        "integrated-context"
+      ],
+      "tags": [
+        "glass",
+        "navigation",
+        "selection",
+        "marker",
+        "icon",
+        "context",
+        "accent"
+      ],
+      "idea": "Selected destinations keep shallow material depth and one accent marker/icon while contextual identity stays integrated.",
+      "whenToUse": "A restrained navigation surface needs persistent selection, quiet context rows and readable controls.",
+      "structure": [
+        "Shared icon and leading marker accent with a separate readable label.",
+        "Fine edge, shallow depth and optional blur with solid fallback; integrated team/profile rows."
+      ],
+      "adapt": [
+        "Resolve navigation surface, selected fill, text, icon/marker accent, focus and typography from destination roles in each theme.",
+        "Keep coherent icons and actual destination semantics."
+      ],
+      "avoid": [
+        "Copying a source palette, strong rim or diagonal film through the label.",
+        "Turning context information into nonfunctional buttons."
+      ],
+      "verify": [
+        "Inspect composed contrast, keyboard focus, selected/hover/disabled states and fallback.",
+        "Preserve context reachability and selected semantics without color alone."
+      ],
+      "resources": [
+        {
+          "label": "Generic calm navigation and recorded instance",
+          "path": "references/calm-glass-navigation.md"
+        },
+        {
+          "label": "Optional generic operational icons",
+          "path": "assets/operational-icons.svg"
+        },
+        {
+          "label": "Source-specific material values",
+          "path": "assets/soft-glass/calm-navigation.json"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
+        }
+      ],
+      "evidence": {
+        "type": "implementation-contract",
+        "liveVerified": false,
+        "capture": null,
+        "limits": [
+          "Material values describe a recorded consumer; they are not brand-independent defaults.",
+          "No standalone navigation controller is bundled by this card."
+        ]
+      },
+      "rights": {
+        "notes": "Forma-authored synthesis and integration guidance. Source observations, mechanisms and dependencies retain their attribution; linked resources state their own redistribution limits.",
+        "scope": "Original pattern record; preserve package licensing, third-party notices and source provenance. No source brand or private asset rights are transferred."
+      }
+    },
+    {
+      "id": "forma-split-product-landing",
+      "name": "Split product landing with a dominant story card",
+      "origin": "forma",
+      "kind": "brand",
+      "useCases": [
+        "split-landing",
+        "product-story"
+      ],
+      "tags": [
+        "split",
+        "product",
+        "landing",
+        "cards",
+        "conversion"
+      ],
+      "idea": "A message/action column sits beside a dominant current-step card and quieter input/outcome cards.",
+      "whenToUse": "A product benefits from a concrete task narrative beside a clear conversion action.",
+      "structure": [
+        "Quiet product field, one dominant story card and two supporting cards.",
+        "Feature tabs, short steps, FAQ and an honest form boundary support the same task narrative."
+      ],
+      "adapt": [
+        "Use destination brand, fonts, product terminology, surfaces and real action destinations.",
+        "Choose card scale, column ratio and mobile order for actual content."
+      ],
+      "avoid": [
+        "Invented metrics, proof or commercial success.",
+        "Copying source colors, telephony fields or the complete private brand."
+      ],
+      "verify": [
+        "Check reading order, overlap, long copy, tabs by keyboard and narrow screens.",
+        "Verify the form actually submits or clearly retains a local-only draft."
+      ],
+      "resources": [
+        {
+          "label": "Generic split landing composition",
+          "path": "references/split-product-landing.md"
+        },
+        {
+          "label": "Source revision and boundary",
+          "path": "assets/reference-profiles/helloura-experience.json"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
+        }
+      ],
+      "evidence": {
+        "type": "implementation-contract",
+        "liveVerified": false,
+        "capture": null,
+        "limits": [
+          "The complete source landing is a private optional fidelity kit.",
+          "This generic composition needs a destination implementation and does not prove lead delivery."
+        ]
+      },
+      "rights": {
+        "notes": "Forma-authored synthesis and integration guidance. Source observations, mechanisms and dependencies retain their attribution; linked resources state their own redistribution limits.",
+        "scope": "Original pattern record; preserve package licensing, third-party notices and source provenance. No source brand or private asset rights are transferred."
+      }
+    },
+    {
+      "id": "forma-ink-theme",
+      "name": "Ink theme reveal with latest input priority",
+      "origin": "forma",
+      "kind": "motion",
+      "useCases": [
+        "ink-theme",
+        "theme-transition"
+      ],
+      "tags": [
+        "ink",
+        "theme",
+        "liquid",
+        "reveal",
+        "drop",
+        "central",
+        "interruptible",
+        "rapid-input"
+      ],
+      "idea": "A central organic reveal changes the host palette and safely settles repeated input to the latest requested theme.",
+      "whenToUse": "An explicitly suitable theme change needs a central liquid reveal without queued animations or lost actions.",
+      "structure": [
+        "One capture at a time; latest requested theme wins and interrupted work settles.",
+        "Host applyTheme callback owns tokens, accessible labels and persistence."
+      ],
+      "adapt": [
+        "Keep the destination colors, fonts, layout and state owners; the controller selects no palette.",
+        "Coordinate other root transitions and preserve reduced-motion/static behavior."
+      ],
+      "avoid": [
+        "Installing the effect on every screen change.",
+        "Assuming arbitrary native inputs work through every snapshot."
+      ],
+      "verify": [
+        "Test both directions, rapid input, interruption, resize, disposal and missing APIs.",
+        "Check draft, focus, scroll and actual host palette after settling."
+      ],
+      "resources": [
+        {
+          "label": "Theme reveal contract",
+          "path": "references/ink-theme-transition.md"
+        },
+        {
+          "label": "Executable controller",
+          "path": "assets/ink-theme/ink-theme.js"
+        },
+        {
+          "label": "Snapshot styles",
+          "path": "assets/ink-theme/ink-theme.css"
+        },
+        {
+          "label": "Neutral interactive specimen",
+          "path": "assets/ink-theme/preview.html"
+        },
+        {
+          "label": "Bounded source and adapter evidence",
+          "path": "assets/ink-theme/validation.json"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
+        }
+      ],
+      "evidence": {
+        "type": "reusable-component",
+        "liveVerified": false,
+        "capture": null,
+        "limits": [
+          "Requires consumer integration with a synchronous theme commit and coordinated lifecycle.",
+          "Prior tests are not new browser, frame-rate or accessibility certification."
+        ]
+      },
+      "rights": {
+        "notes": "Forma-authored synthesis and integration guidance. Source observations, mechanisms and dependencies retain their attribution; linked resources state their own redistribution limits.",
+        "scope": "Original pattern record; preserve package licensing, third-party notices and source provenance. No source brand or private asset rights are transferred."
+      }
+    },
+    {
+      "id": "forma-articulated-passport",
+      "name": "Articulated passport with a preserved CSS engine",
+      "origin": "forma",
+      "kind": "3d",
+      "useCases": [
+        "passport",
+        "articulated-passport"
+      ],
+      "tags": [
+        "passport",
+        "articulated",
+        "css",
+        "cover",
+        "turning",
+        "page",
+        "material"
+      ],
+      "idea": "Hinged covers, turning pages and material layers remain one preserved CSS mechanism inside an isolated frame.",
+      "whenToUse": "A passport-style identity object needs articulated pages, controllable pose and a preserved material response.",
+      "structure": [
+        "Copy the adapter with its complete companion directory; same-origin frame isolates the original renderer.",
+        "Host supplies supported content and ownership; frame readiness, updates and disposal remain explicit."
+      ],
+      "adapt": [
+        "Use documented content and material inputs, authorized assets and destination framing.",
+        "Inspect the public contract before extending typography or material controls; preserve the mechanism and validate changes."
+      ],
+      "avoid": [
+        "Substituting the legacy Three alternative or a tilted screenshot.",
+        "Assuming arbitrary renderer tokens or rights to country artwork."
+      ],
+      "verify": [
+        "Test closed/open/turned states, pose, focus, resize, content updates and disposal.",
+        "Verify authorized destination content and the real rendered materials separately from source hashes."
+      ],
+      "resources": [
+        {
+          "label": "Preserved engine integration",
+          "path": "references/reusable-components.md"
+        },
+        {
+          "label": "Articulated passport adapter",
+          "path": "assets/neuron-passport.js"
+        },
+        {
+          "label": "Required companion frame",
+          "path": "assets/neuron-passport/frame.html"
+        },
+        {
+          "label": "Source history and fidelity limits",
+          "path": "references/passport-polish-case-study.md"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
+        }
+      ],
+      "evidence": {
+        "type": "reusable-component",
+        "liveVerified": false,
+        "capture": null,
+        "limits": [
+          "The preserved engine has its own locale, styling and supported API; adaptation needs inspection, not an invented generic theming API.",
+          "Source evidence does not establish destination fidelity or license external artwork."
+        ]
+      },
+      "rights": {
+        "notes": "Forma-authored synthesis and integration guidance. Source observations, mechanisms and dependencies retain their attribution; linked resources state their own redistribution limits.",
+        "scope": "Original pattern record; preserve package licensing, third-party notices and source provenance. No source brand or private asset rights are transferred."
+      }
+    },
+    {
+      "id": "forma-clear-pdf-guide",
+      "name": "Clear PDF guide with cards and comparison tables",
+      "origin": "forma",
+      "kind": "brand",
+      "useCases": [
+        "pdf-guide",
+        "print-guide"
+      ],
+      "tags": [
+        "pdf",
+        "guide",
+        "cards",
+        "comparison",
+        "table",
+        "print"
+      ],
+      "idea": "Situation/choice cards and short comparison tables make a long guide easier to scan and export.",
+      "whenToUse": "A readable document needs concise explanations, structured cards and printable comparison tables.",
+      "structure": [
+        "Clear heading hierarchy, accent rail on situation cards and alternating table rows.",
+        "Neutral HTML print specimen separates source from the actual PDF export."
+      ],
+      "adapt": [
+        "Use destination font licenses, brand accent, page size, copy and required content.",
+        "Recalculate pagination and table widths for real text and export engine."
+      ],
+      "avoid": [
+        "Calling HTML a finished PDF.",
+        "Copying source academic or private content."
+      ],
+      "verify": [
+        "Render and inspect every exported page, line breaks, tables, links and margins.",
+        "Retain usable contrast and text structure at intended reading size."
+      ],
+      "resources": [
+        {
+          "label": "Clear PDF contract",
+          "path": "references/clear-pdf-guides.md"
+        },
+        {
+          "label": "Neutral printable specimen",
+          "path": "assets/clear-pdf-guide.html"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
+        }
+      ],
+      "evidence": {
+        "type": "executable-demo",
+        "liveVerified": false,
+        "capture": null,
+        "limits": [
+          "The HTML specimen is executable authoring material, not a pre-exported or tagged PDF.",
+          "New export and rendered review are required for every delivered document."
+        ]
+      },
+      "rights": {
+        "notes": "Forma-authored synthesis and integration guidance. Source observations, mechanisms and dependencies retain their attribution; linked resources state their own redistribution limits.",
+        "scope": "Original pattern record; preserve package licensing, third-party notices and source provenance. No source brand or private asset rights are transferred."
+      }
+    },
+    {
+      "id": "forma-product-variants",
+      "name": "Product variants with an atomic visual commit",
+      "origin": "forma",
+      "kind": "interaction",
+      "useCases": [
+        "product-variants",
+        "configurable-product"
+      ],
+      "tags": [
+        "product",
+        "variants",
+        "configurable",
+        "material",
+        "finish",
+        "selection"
+      ],
+      "idea": "Material, contextual colors and permitted decoration commit together after the latest selected variant is ready.",
+      "whenToUse": "A configurable product needs reliable finish or color selection while keeping the last valid state on error.",
+      "structure": [
+        "Latest-request guard, validated resource loading, atomic commit and rollback/retry.",
+        "Global readability tokens stay separate from contextual variant colors."
+      ],
+      "adapt": [
+        "Supply destination variant IDs, labels, licensed assets/posters and tokens.",
+        "Choose the smallest compatible renderer; a product variant is separate from light/dark theme."
+      ],
+      "avoid": [
+        "Copying reference models, textures or code without rights.",
+        "Reporting a visual selection before loading finishes."
+      ],
+      "verify": [
+        "Test rapid changes, asset failure, rollback, keyboard selection and accessible announcements.",
+        "Check each variant against the destination palette and static fallback."
+      ],
+      "resources": [
+        {
+          "label": "Original variant recipe and bounded study",
+          "path": "references/immersive-web-tech.md"
+        },
+        {
+          "label": "Dated variant source observations",
+          "path": "assets/reference-profiles/soda-2026-10-26.json"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
+        }
+      ],
+      "evidence": {
+        "type": "implementation-contract",
+        "liveVerified": false,
+        "capture": null,
+        "limits": [
+          "Original recipe from dated static/runtime observations; no product renderer is bundled.",
+          "New consumer implementation, rights checks and validation are required."
+        ]
+      },
+      "rights": {
+        "notes": "Forma-authored synthesis and integration guidance. Source observations, mechanisms and dependencies retain their attribution; linked resources state their own redistribution limits.",
+        "scope": "Original pattern record; preserve package licensing, third-party notices and source provenance. No source brand or private asset rights are transferred."
+      }
+    },
+    {
+      "id": "forma-hybrid-editorial-scene",
+      "name": "Hybrid editorial scene with a useful static fallback",
+      "origin": "forma",
+      "kind": "motion",
+      "useCases": [
+        "hybrid-scene",
+        "editorial-scene"
+      ],
+      "tags": [
+        "hybrid",
+        "editorial",
+        "scene",
+        "portrait",
+        "depth",
+        "reveal",
+        "poster"
+      ],
+      "idea": "A depth-mapped plane and optional volume support an editorial story while semantic content stays usable independently.",
+      "whenToUse": "A justified editorial or campaign scene needs apparent depth and an optional object, with clear loading and cost limits.",
+      "structure": [
+        "Semantic content and CTA remain outside the decorative scene.",
+        "Visibility/quality policy chooses poster, bounded input, lazy resources and explicit cleanup."
+      ],
+      "adapt": [
+        "Use destination brand, authorized maps/models/poster, text and quality budget.",
+        "Select CSS, 2.5D or a true mesh according to the actual visual requirement and existing stack."
+      ],
+      "avoid": [
+        "Inferring complete 3D geometry from apparent depth.",
+        "Importing source campaign colors, fonts, images or unsupported technology claims."
+      ],
+      "verify": [
+        "Test missing/lost WebGL, reduced motion, offscreen state, resize and remount.",
+        "Measure resource/frame costs before performance claims and verify CTA reachability."
+      ],
+      "resources": [
+        {
+          "label": "Original scene recipe and constraints",
+          "path": "references/immersive-web-tech.md"
+        },
+        {
+          "label": "Dated hybrid-scene observations",
+          "path": "assets/reference-profiles/kimi-2026-10-26.json"
+        },
+        {
+          "label": "Reuse in the destination identity",
+          "path": "references/capability-reuse.md"
+        }
+      ],
+      "evidence": {
+        "type": "implementation-contract",
+        "liveVerified": false,
+        "capture": null,
+        "limits": [
+          "No third-party scene, model or authored source bundle is redistributed.",
+          "Recorded source behavior and inferred tooling do not prove the destination implementation."
+        ]
+      },
+      "rights": {
+        "notes": "Forma-authored synthesis and integration guidance. Source observations, mechanisms and dependencies retain their attribution; linked resources state their own redistribution limits.",
+        "scope": "Original pattern record; preserve package licensing, third-party notices and source provenance. No source brand or private asset rights are transferred."
       }
     }
   ]

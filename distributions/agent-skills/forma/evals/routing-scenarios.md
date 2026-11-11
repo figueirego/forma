@@ -178,3 +178,48 @@ Prompt: "Reproduce the complete approved Soft Glass landing with the same fonts,
 Expected: Reference + Brand locate the separate `soft-glass-approved/manifest.json` using the integral kit contract; verify copied files and dependencies, then render the new consumer under comparable conditions. Interface is used only for the linked workspace. A missing kit is reported and its location requested. The bundled neutral landing and short specimen are never silently substituted. Preserve the source locale, media, theme and breakpoint behavior before authorized customization.
 
 Fail: claiming exactness while replacing fonts or artwork, calling the portable adaptation approved source, assuming a fresh plugin install includes a local kit, copying only the hero, or adding business services to a design-only transfer.
+
+## Calm Glass Navigation - R71-R72
+
+
+Decision rubric, not executed agent evaluations. Consumer evidence and limits remain in the [approved material profile](../references/calm-glass-navigation.md).
+
+| Case | Expected decision | Material failure |
+|---|---|---|
+| R71: "Save the approved black sidebar, dark glass selection and orange icon/bar; no diagonal reflection or glow." | Record the current mechanism and exact tokens; mark the older filled-orange row and raised team/profile cards superseded; validate links and generated distribution without altering the consumer | Restoring the older selection, reintroducing the rejected film, distributing private screenshots, or presenting preview approval as production deployment |
+| R72: "Adapt Calm Glass Navigation to our teal brand; keep the sidebar black in light and dark." | Reuse the dark selection; adapt icon/marker/edge/focus/fallback together; preserve integrated context, routes/fonts/icons and inspect composited states | Copying HelloUra branding, tinting the whole sidebar or entire active row, removing focus for thin borders, or claiming contrast from the orange sample without measuring teal |
+
+## Ink Theme Transition - R73-R74
+
+Decision rubric, not an executed agent evaluation. Use the [motion contract](../references/ink-theme-transition.md) and its bounded validation record.
+
+| Case | Expected decision | Failure |
+|---|---|---|
+| R73: "Save the approved central ink theme change in Forma; rapid clicks must not freeze." | Preserve geometry/timing, exclusive capture lifecycle, latest-intent settlement, fallbacks and source evidence; register reusable code and tests in the existing motion catalog | Only saving a screenshot, queueing clicks, duplicating product code/data or claiming full performance proof from static REA |
+| R74: "Reuse the liquid theme change in our existing app with our own colors." | Map the synchronous palette adapter, preserve layout and input ownership, inspect rapid/keyboard input, drafts, resize and reduced motion | Installing a new framework, imposing HelloUra branding, remounting forms or replaying synthetic clicks over native controls |
+
+## Complete HelloUra experience - R75-R78
+
+Decision rubrics, not executed agent evaluations. The [experience contract](../references/helloura-experience.md) separates public mechanisms, the private integral kit, historical evidence and current checks.
+
+| Request | Expected route and preservation | Failure signal |
+|---|---|---|
+| R75: "Save everything approved in the HelloUra design to Forma." | Inventory actual source with evidence, preserve the complete private workspace and landing with hashes, register reusable contracts/assets and final-vs-superseded choices, verify local installation | Saving only a screenshot or theme toggle; distributing customer assets/credentials; claiming a production deployment |
+| R76: "Reuse the compact HelloUra desktop window and operational icons." | Interface locates and verifies the private kit for exact reuse; retain content/footer scroll ownership, opaque toolbar, integrated context and coherent SVG family | Replacing the source with a generic shell, restoring a second menu scroller or translucent toolbar over titles, hiding destinations to fit |
+| R77: "Use the approved split HelloUra landing." | Brand verifies the correct private landing; preserve card hierarchy, plain yellow field, full sections, responsive tabs and explicit form destination boundary | Substituting the unrelated Soft Glass marketing page, restoring circles or claiming a submitted lead from a local toast |
+| R78: "Connect the approved wallet and campaign screens to our backend." | Treat preview states as design requirements; inspect real role/team ownership, provider contracts, payment/call confirmation and recovery before integration | Treating role simulation as authorization, a preview review as a real payment, or static evidence as end-to-end proof |
+
+## Capability-first reuse across identities - R79-R86
+
+Decision scenarios, not executed agent or visual-quality claims. Local retrieval and adapter tests cover narrower behavior in `tests/capability-reuse.test.cjs` and `tests/ink-theme.test.cjs`.
+
+| Case | Expected decision | Material failure |
+|---|---|---|
+| R79: "Build a compact workspace for our blue accounting app. Keep our fonts and components; only the content should scroll." No source project named | Query the generic compact-window capability; preserve scroll ownership and opaque toolbar, bind destination roles and integrate existing routes; inspect relevant sizes and input | Asking the user to name HelloUra, copying its black/orange/yellow palette or importing a private product as a dependency |
+| R80: "Use quiet glass selection with an icon and side marker in this green workspace." | Discover calm selection; bind selected fill, label, accent, edge and focus separately in supported modes; verify composite contrast and integrated context | Globally imposing a black sidebar, copying an old orange contrast result, importing rejected reflection bands or recoloring every action |
+| R81: "Use a central liquid theme switch in our serif editorial app." | Reuse the ink controller with the existing synchronous theme owner; preserve font, content, scroll and rapid-input behavior | Imposing a new palette/framework, mounting duplicate controllers or treating stub tests as browser-performance proof |
+| R82: "Add an articulated identity passport." No source name supplied | Find the generic preserved CSS mechanism and inspect its supported content/material policy and rights; distinguish the legacy Three alternative; verify actual integration | Picking the simplified legacy module silently, inventing a free theming API or copying source user data |
+| R83: "Create a PDF guide with comparison cards and our identity." | Discover clear PDF guide; use its generic structure and authorized destination fonts/colors/content; render and inspect the PDF | Requiring the old academic project name or delivering HTML as a finished PDF |
+| R84: "Let the product's finish change its material and backdrop. Keep our identity." | Find product variants; treat the dated study as a recipe, implement latest-request/atomic commit and recovery in the destination | Claiming a bundled renderer or external asset license, importing reference colors, or confusing product variants with app themes |
+| R85: "Save this newly approved pattern for all future projects." | Generic capability name/query, invariants, destination bindings, actual implementation boundary, source evidence and a meaningful regression; update an existing card where possible | Saving only a brand-named folder, leaving the profile unreachable, erasing provenance or promoting an unverified example to a ready component |
+| R86: "Only fix this button's padding; everything else is approved." Then compare with "Reproduce the exact approved source, including its colors." | First request stays local without activating repertoire styling. Second uses the explicitly frozen identity and fidelity scope; generic adaptation does not override it | Adding glass/motion during the padding fix or replacing explicitly requested source colors under a universal rebranding rule |

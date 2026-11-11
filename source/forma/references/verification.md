@@ -2,6 +2,12 @@
 
 Define criteria before judging. Separate **verified**, **inferred**, **untested** and **not applicable with a reason**. Do not score an area that was not accessed.
 
+## Available local checks
+
+Before invoking a validator, inspect the project's existing scripts and confirm its executable or module is actually installed locally; a package declaration alone does not establish availability. Prefer the verified local executable or an existing script whose invoked dependencies are present. `npx` and `npm exec`, including a refusal-to-install flag, are package-resolution commands that may contact a registry; they are not proof of offline operation and must not be used as availability probes under a no-network constraint.
+
+Honor explicit no-network and no-install boundaries. If a checker is absent, record it as unavailable and use relevant installed or built-in checks with their actual limits. Do not download or install another validator merely to satisfy a checklist. An unavailable checker is not a passed check, and a local source inspection is not rendered validation.
+
 ## Proportionate matrix
 
 | Dimension | Relevant minimum evidence |

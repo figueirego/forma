@@ -15,6 +15,8 @@ metadata:
 This module requires explicit reading; it does not start queries, pipelines or other modules automatically.
 Preserve the domain, brand, stack and source of truth; choose a renderer after understanding the data.
 
+For a relevant saved capability, use [reuse by capability](../../references/capability-reuse.md): search by the task, not the source project, and bind the mechanism to the destination's own identity and state owners. Read only the matching contract; do not expand a local fix into a redesign. Source names and exact profiles remain provenance or explicit fidelity targets.
+
 ## Inputs
 
 - The question the person needs to answer, dataset/source, units, period and expected operation.

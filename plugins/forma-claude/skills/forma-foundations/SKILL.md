@@ -15,6 +15,8 @@ metadata:
 This module guides the agent after explicit reading; it does not execute tools or call other modules.
 Preserve the brand, stack and approved decisions. A local correction does not authorize a new identity.
 
+For a relevant saved capability, use [reuse by capability](../../references/capability-reuse.md): search by the task, not the source project, and bind the mechanism to the destination's own identity and state owners. Read only the matching contract; do not expand a local fix into a redesign. Source names and exact profiles remain provenance or explicit fidelity targets.
+
 ## Inputs
 
 - Surface and observable problem, or an authorized new direction; representative content and sizes.
