@@ -1,0 +1,429 @@
+{
+  "schemaVersion": 1,
+  "id": "helloura-experience",
+  "recordedOn": "2026-11-10",
+  "status": "approved-local-design-reference",
+  "contract": "../../references/helloura-experience.md",
+  "localKit": {
+    "id": "helloura-approved",
+    "manifest": "~/.local/share/forma/reference-kits/helloura-approved/manifest.json",
+    "distributed": false,
+    "entrypoints": {
+      "workspace": "workspace/index.html#overview",
+      "landing": "landing/index.html"
+    },
+    "sourceFileCount": 101
+  },
+  "revisions": {
+    "workspace": [
+      "fixed-window-4",
+      "sidebar-context-3",
+      "theme-ink-2"
+    ],
+    "landing": "revision-03"
+  },
+  "theme": {
+    "sidebar": "#1c1c1c",
+    "accentOrange": "#ff8540",
+    "primaryYellow": "#ffd21c",
+    "lightGround": "#e8e8e6",
+    "darkGround": "#101010",
+    "fonts": [
+      "Nunito",
+      "Manrope (tabular numbers)"
+    ],
+    "brandPolicy": "Consumer-specific, not Forma defaults."
+  },
+  "layout": {
+    "mode": "fixed-window",
+    "viewport": "100dvh",
+    "outerInsetPx": 12,
+    "surfaceGapPx": 12,
+    "sidebarWidthPx": 232,
+    "collapsedSidebarWidthPx": 72,
+    "surfaceRadiusPx": 25,
+    "controlRadiusPx": 12,
+    "panelRadiusPx": 16,
+    "contentInsetPx": [
+      22,
+      24,
+      16
+    ],
+    "headerHeightPx": 56,
+    "headingSizePx": 26,
+    "metricSizePx": 30,
+    "chartHeightPx": 140,
+    "scroll": {
+      "document": false,
+      "toolbar": false,
+      "contentAndFooter": true,
+      "navigation": false,
+      "extremeHeightFallback": "whole-sidebar-scroll"
+    },
+    "narrow": {
+      "maxWidthPx": 760,
+      "outerInsetPx": 8,
+      "surfaceRadiusPx": 21,
+      "headerHeightPx": 62,
+      "minTargetPx": 44,
+      "navigation": "overlay drawer, not a squeezed rail"
+    },
+    "short": {
+      "maxHeightPx": 900,
+      "hideGroupCaptions": true,
+      "hideDemoStatus": true,
+      "rowHeightPx": 34,
+      "rowGapPx": 8,
+      "sidebarScrollBelowPx": 700,
+      "mobileSidebarScrollBelowPx": 800
+    },
+    "compactDesktop": {
+      "minWidthPx": 761,
+      "maxWidthPx": 1180,
+      "sidebarWidthPx": 224
+    }
+  },
+  "context": {
+    "approved": "integrated",
+    "alternative": "tonal (not selected)",
+    "raisedGlass": false,
+    "adminTeamAction": true,
+    "managerTeamAction": false,
+    "profileAction": true
+  },
+  "icons": {
+    "asset": "../operational-icons.svg",
+    "count": 45,
+    "viewBox": "0 0 24 24",
+    "strokeWidth": 1.6,
+    "linecap": "round",
+    "linejoin": "round",
+    "sizesPx": [
+      16,
+      18,
+      20
+    ],
+    "semantics": {
+      "phone-hangup": "End a call; horizontal handset, not phone-off.",
+      "message": "Generic conversation; not an official WhatsApp brand mark.",
+      "history": "History; return arrow meets the clock arc."
+    }
+  },
+  "motion": {
+    "contract": "../../references/ink-theme-transition.md",
+    "durationMs": 720,
+    "origin": "viewport-center",
+    "rapidInput": "latest-intent-settlement",
+    "preserve": [
+      "draft",
+      "scroll",
+      "focus",
+      "layout"
+    ],
+    "fallback": "immediate theme update"
+  },
+  "routes": {
+    "manager": [
+      "overview",
+      "campaigns",
+      "attendance",
+      "contacts",
+      "results",
+      "whatsapp",
+      "wallet",
+      "team",
+      "settings"
+    ],
+    "operator": [
+      "attendance",
+      "settings"
+    ],
+    "admin": "Manager routes plus visible team scope and permission controls.",
+    "boundary": "Visual simulation only. Server authorization must be independently enforced."
+  },
+  "landing": {
+    "heroColumnsPercent": [
+      37.25,
+      62.75
+    ],
+    "heroSurface": "flat yellow, no circles",
+    "foreground": "dark active conversation card",
+    "contextCards": [
+      "light contact list",
+      "light outcome record"
+    ],
+    "maxContentWidthPx": 1344,
+    "headline": {
+      "family": "Nunito",
+      "weight": 900,
+      "lineHeight": 1.035,
+      "letterSpacingEm": -0.032,
+      "desktopSize": "clamp(48px, 4.65vw, 86px)"
+    },
+    "featureColumnsPercent": [
+      35,
+      65
+    ],
+    "mobileTabs": {
+      "maxWidthPx": 600,
+      "columns": 2,
+      "rows": 2
+    },
+    "sections": [
+      "split hero",
+      "product features and tabs",
+      "three-step journey",
+      "FAQ",
+      "commercial demo form"
+    ],
+    "demoStates": [
+      "ready",
+      "audio",
+      "conversation",
+      "record"
+    ],
+    "waveMaxDurationMs": 1890,
+    "waveLoop": false,
+    "form": "Native validation and honest status. Empty configured destination retains fields and reports no submission.",
+    "seo": "Semantic title/description, canonical, social metadata, FAQ/application JSON-LD, robots and sitemap retained in the private source; current search ranking not tested."
+  },
+  "workflowPatterns": [
+    {
+      "id": "team-scope",
+      "decision": "Show selected team at configuration and confirmation; isolate changes by team.",
+      "evidence": "preview-code"
+    },
+    {
+      "id": "progress-and-uncertainty",
+      "decision": "Distinguish running, paused, completed and unconfirmed; offer review before retrying an uncertain action.",
+      "evidence": "preview-code"
+    },
+    {
+      "id": "operator-focus",
+      "decision": "Keep attendance and personal audio/profile available without management navigation.",
+      "evidence": "preview-code"
+    },
+    {
+      "id": "call-outcomes",
+      "decision": "Automatic unsuccessful-call outcomes and manual disposition for answered conversations remain product requirements; preview is not telephony proof.",
+      "evidence": "user-requirement-and-preview-boundary"
+    },
+    {
+      "id": "integrations",
+      "decision": "Separate permission to configure from connection state. Explain recovery and owner of permission.",
+      "evidence": "preview-code"
+    },
+    {
+      "id": "free-top-up",
+      "decision": "Partner chooses an amount; review team, amount and payment method before confirmation.",
+      "evidence": "preview-code-not-real-payment"
+    },
+    {
+      "id": "payer-and-tariffs",
+      "decision": "Admin selects an existing team; team owns payer, tariff and release configuration. Do not infer fiscal identity from a manager login.",
+      "evidence": "user-requirement-not-service-validation"
+    },
+    {
+      "id": "honest-conversion",
+      "decision": "Never claim a lead was sent, a call connected or a charge completed without actual confirmation.",
+      "evidence": "landing-code-and-preview-boundary"
+    }
+  ],
+  "rejectedOrSuperseded": [
+    {
+      "choice": "Full orange sidebar",
+      "status": "rejected",
+      "reason": "Too bright."
+    },
+    {
+      "choice": "Green-tinted black foundation",
+      "status": "rejected",
+      "reason": "Preserve neutral black."
+    },
+    {
+      "choice": "Diagonal/split reflection across controls",
+      "status": "rejected",
+      "reason": "Distracting highlight over content."
+    },
+    {
+      "choice": "Strong borders and ambient glow",
+      "status": "rejected",
+      "reason": "Too visually dominant."
+    },
+    {
+      "choice": "Fully orange selected row",
+      "status": "superseded",
+      "reason": "Dark glass with orange icon and marker is the later selection."
+    },
+    {
+      "choice": "Raised glass team/profile cards",
+      "status": "superseded",
+      "reason": "Integrated identity rows were selected."
+    },
+    {
+      "choice": "Tonal context rows",
+      "status": "not-selected",
+      "reason": "Retained only in the comparison."
+    },
+    {
+      "choice": "Sticky translucent toolbar over scrolling titles",
+      "status": "superseded",
+      "reason": "Opaque toolbar owns a separate row."
+    },
+    {
+      "choice": "Independent sidebar menu scroll",
+      "status": "superseded",
+      "reason": "Adaptive height fits destinations; whole-sidebar fallback at extreme height."
+    },
+    {
+      "choice": "Decorative landing circles",
+      "status": "rejected",
+      "reason": "Flat clean yellow was requested."
+    }
+  ],
+  "sourceEvidence": [
+    {
+      "surface": "workspace",
+      "file": "index.html",
+      "sha256": "1eda6ed5f1ec75a91d6ea1471c2abb234972766dc02a86b8db3ee63e22213381"
+    },
+    {
+      "surface": "workspace",
+      "file": "app.js",
+      "sha256": "456c98d88ac495cbcb614a26605774795629038d8747fa8405aee73c1a87165d"
+    },
+    {
+      "surface": "workspace",
+      "file": "styles.css",
+      "sha256": "5584a50ee5c3a73d5a078afdd4c6b3ea9f1b7b65eb660ad40a63f4e2957afa78"
+    },
+    {
+      "surface": "workspace",
+      "file": "glass.css",
+      "sha256": "c9de46ca0e4c7846a650ed9c7c943f1703e9e0186c24bf6d43cc6321c6054055"
+    },
+    {
+      "surface": "workspace",
+      "file": "sidebar-context.css",
+      "sha256": "22742b4182d13c354e6e38d1e999dda75460243d0c0aab49bc00714fdd35a192"
+    },
+    {
+      "surface": "workspace",
+      "file": "sidebar-context.js",
+      "sha256": "2064433920120c08bd7f8159ff5de2cd8115f77b6fdcb309524e6cf1238a41cd"
+    },
+    {
+      "surface": "workspace",
+      "file": "README.md",
+      "sha256": "bf6afa53d2f662030b0b4ac310317ca483a74ba667c2e1f975636813a30179e6"
+    },
+    {
+      "surface": "workspace",
+      "file": "QA.json",
+      "sha256": "b1b2ddf9265ac70679516fc5bc67a64f2c054f56cfa8e5d10708f572f687be0f"
+    },
+    {
+      "surface": "workspace",
+      "file": "SIDEBAR-QA.json",
+      "sha256": "fe78450b5832e85ecb75986c67eda4374abd54933798f0d817d755bdfd0f7ade"
+    },
+    {
+      "surface": "landing",
+      "file": "index.html",
+      "sha256": "ee9a8e5a12db5f4fe244e7e7298db4e9e4fe1fded3a9c07e2468ec55a3b48ad1"
+    },
+    {
+      "surface": "landing",
+      "file": "app.js",
+      "sha256": "e6b7bd35a2c1990c5b4195f8aeb73e3e85c37b293d421916bcef01ef98cdcffa"
+    },
+    {
+      "surface": "landing",
+      "file": "config.js",
+      "sha256": "cbe94480ba93de7207d391ee619f587cb81a247624a0e4f8bb76536883088f38"
+    },
+    {
+      "surface": "landing",
+      "file": "styles.css",
+      "sha256": "7bc84cb35fcc5f21dc6e3ac23c04459945e59aa80d123e12016a82dc767f9969"
+    },
+    {
+      "surface": "landing",
+      "file": "journey.css",
+      "sha256": "153171a67cc8c24168d24f5a1c95d22f7da0b1c4d4cce822f42ab51e9a4ec514"
+    },
+    {
+      "surface": "landing",
+      "file": "refinement-below.css",
+      "sha256": "7e3a7eb0b0319011feee9949fe59a0837746499e0cee79c2a5e8303503dbebd6"
+    },
+    {
+      "surface": "landing",
+      "file": "refinement-motion.css",
+      "sha256": "5cd23d7c3fc4ab615fb35f83de7b0f7ba9625a2dde24d769cf15963f42092d35"
+    },
+    {
+      "surface": "landing",
+      "file": "DESIGN.md",
+      "sha256": "795b68aac30c17f788d4bcaf992a5ef1518977369c0e68deb5bc5c05b2aa256d"
+    }
+  ],
+  "rea": {
+    "workspace": {
+      "parentEvidenceId": "ev_ff134a902d64839ba966380e12f07a5b1a88cc5aa35a4dfeed3157c62faabf72",
+      "selectedSources": [
+        "app.js"
+      ],
+      "parsed": 1,
+      "parseFailures": 0,
+      "semanticUnknowns": 1430
+    },
+    "landing": {
+      "parentEvidenceId": "ev_6939852c2012f4bdb7e3cb8b6efb7345443a22aebad1f5d84b7ce98df4441dab",
+      "selectedSources": [
+        "app.js",
+        "config.js"
+      ],
+      "parsed": 2,
+      "parseFailures": 0,
+      "semanticUnknowns": 322,
+      "unselectedFiles": 6
+    },
+    "scope": "Inert static source evidence; partial semantic/application graphs. Not runtime, access, security or completeness certification. Full records retained locally, not distributed."
+  },
+  "validation": {
+    "status": "source-copy-verified-with-bounded-local-browser-check",
+    "historicalWorkspaceViewports": [
+      "1440x960",
+      "1280x720",
+      "480x844"
+    ],
+    "controllerTests": {
+      "consumer": 9,
+      "portableInk": 17
+    },
+    "limits": [
+      "Production, remote API integrations, payments, telephony and Figma were not reverified.",
+      "No new physical-device, screen-reader, multi-browser or FPS proof.",
+      "Matching file hashes prove source transfer; recorded screenshots and tests retain their original scope.",
+      "Future agent routing is documented, not guaranteed by catalog retrieval."
+    ],
+    "currentCopyCheck": {
+      "date": "2026-11-10",
+      "sourceFiles": 101,
+      "integrity": "Every copied source file matches its original SHA-256.",
+      "browserViewport": "2560x1440 CSS pixels",
+      "checks": [
+        "Both workspace themes and black sidebar preserved.",
+        "Dark glass active row with 8px blur retained.",
+        "Three repeated theme clicks settle to the expected final palette.",
+        "Attendance draft survives theme change.",
+        "Overview/attendance navigation works without document scroll or horizontal overflow.",
+        "Landing fonts and images loaded; no horizontal overflow.",
+        "Landing advances through all four demonstration states.",
+        "No captured browser warning/error on either copied surface."
+      ],
+      "limitation": "Requested viewport override did not change the existing tab; no new compact/mobile rendered claim. Earlier small-window captures retain their recorded scope."
+    }
+  }
+}

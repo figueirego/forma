@@ -2,7 +2,7 @@
 name: forma-graphs-data
 description: "Design knowledge graphs, maps, dashboards, time series and data exploration with verifiable identity, provenance and interaction. Use for relationships and analytical reading; not to turn fictional data or visual position into domain facts."
 metadata:
-  version: 1.35.1
+  version: 1.36.0
 ---
 
 # Graphs, maps and data
@@ -14,6 +14,8 @@ metadata:
 
 This module requires explicit reading; it does not start queries, pipelines or other modules automatically.
 Preserve the domain, brand, stack and source of truth; choose a renderer after understanding the data.
+
+For a relevant saved capability, use [reuse by capability](../forma/references/capability-reuse.md): search by the task, not the source project, and bind the mechanism to the destination's own identity and state owners. Read only the matching contract; do not expand a local fix into a redesign. Source names and exact profiles remain provenance or explicit fidelity targets.
 
 ## Inputs
 

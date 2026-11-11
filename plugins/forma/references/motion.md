@@ -31,6 +31,8 @@ As a starting point, visual feedback may be instantaneous, small transitions may
 
 ## Specification
 
+For an explicitly requested central liquid theme reveal, use [Ink Theme Transition](ink-theme-transition.md). It records the approved 720 ms mechanism, native controller/specimen, latest-input-wins interruption, snapshot hit-testing limits and reduced-motion fallback. It is optional; preserve the consumer's theme provider, identity and navigation material.
+
 For each important motion, specify trigger, initial/final state, property, duration or spring parameters, easing, interruption, reversal, repetition and reduced alternative. Gestures should track the finger and allow cancellation. Rapid inputs must not queue animations or trigger duplicate actions.
 
 Reduced motion applies regardless of the chosen intensity. Replace parallax, broad zoom and rotation with a subtle transition or instantaneous change while retaining information. Do not depend on animationend to complete a business rule. Do not globally apply near-zero durations without checking initially hidden content.

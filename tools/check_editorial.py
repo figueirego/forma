@@ -91,6 +91,9 @@ def audit(root=ROOT):
     records, errors = [], []
     for path in sorted(root.rglob('*')):
         relative = path.relative_to(root).as_posix()
+        if relative == 'artifacts' or relative.startswith('artifacts/'):
+            # Browser receipts contain runtime messages, not package-authored copy.
+            continue
         if any(part in IGNORED for part in path.relative_to(root).parts) or path.name == '.DS_Store':
             continue
         if not path.is_file():

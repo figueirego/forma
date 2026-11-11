@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.36.0 - 2026-11-11
+
+- Add capability-based reuse: query saved patterns by what they do, without naming a source project, and bind them to the destination's tokens, typography and components.
+- Add compact workspace, calm glass navigation, diagonal glass controls and ink theme transition contracts, with portable assets, an operational icon sprite and tests.
+- Add the HelloUra experience profile as an optional, source-bounded reference; private source, screenshots and brand assets stay out of the public package.
+- Refine progressive brief, workflow, routing, templates and verification guidance.
+- Run preview interactions in Chromium during CI and keep browser evidence as an artifact.
+
 ## 1.35.1
 
 - Define independent reuse, brand/theme adaptation and contextual suggestions for the halftone entry kit, with scope and declined-suggestion boundaries.

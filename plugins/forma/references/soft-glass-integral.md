@@ -1,5 +1,7 @@
 # Integral Soft Glass reference kit
 
+For ordinary adaptation without a source-project name, use [capability reuse](capability-reuse.md). This record preserves the source and exact-reproduction boundary; it does not impose its identity on other projects.
+
 Use this route for the complete approved landing with the same fonts, artwork,
 textures and motion. The authored `assets/soft-glass/landing.html` is an
 adaptation and MUST NOT silently replace the approved source in that task.

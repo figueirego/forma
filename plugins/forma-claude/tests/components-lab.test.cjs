@@ -27,7 +27,7 @@ test('primary lab loads the Neuron adapter without Three, BookObject or generic 
  assert.doesNotMatch(html,/src="(?:passport-object|book-object)\.js"|id="(?:opening|page-turn|fit|material|cover-color)"/);
  assert.doesNotMatch(script,/node_modules|loadThree|PassportObject\.create|BookObject/);
  const f=labFixture({theme:'dark'});
- assert.equal(f.createConfig.interaction,'direct');assert.equal(f.createConfig.material,'dimensional');assert.equal(f.createConfig.theme,'dark');assert.equal(f.createConfig.state.passport.country,'BR');assert.equal(f.createConfig.state.language,'en');
+ assert.equal(f.createConfig.interaction,'direct');assert.equal(f.createConfig.material,'dimensional');assert.equal(f.createConfig.theme,'dark');assert.equal(f.createConfig.state.passport.country,'');assert.equal(f.createConfig.state.language,'en');
  assert.equal(f.node('#passport-skins').disabled,true);
 });
 

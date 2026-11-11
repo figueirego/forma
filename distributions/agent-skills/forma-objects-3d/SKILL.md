@@ -2,7 +2,7 @@
 name: forma-objects-3d
 description: "Integrate or refine reusable material objects, BookObject, books, covers and 2D/3D mascots, including geometry, materials, gestures and lifecycle. Use for object mechanisms and fidelity; not to add decorative 3D to every interface."
 metadata:
-  version: 1.35.1
+  version: 1.36.0
 ---
 
 # Objects, material and 3D
@@ -14,6 +14,8 @@ metadata:
 
 This module guides execution after it is read; it does not start a renderer, generation or other modules by itself.
 Preserve the brand and stack. When the request includes actual 3D, tilted CSS does not meet that acceptance criterion.
+
+For a relevant saved capability, use [reuse by capability](../forma/references/capability-reuse.md): search by the task, not the source project, and bind the mechanism to the destination's own identity and state owners. Read only the matching contract; do not expand a local fix into a redesign. Source names and exact profiles remain provenance or explicit fidelity targets.
 
 ## Inputs
 

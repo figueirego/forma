@@ -22,6 +22,8 @@ Use with [progressive alignment](progressive-brief.md) for substantial work with
 
 Keep explicit user choices, delegated routine choices and observed evidence identifiable per decision or scoped group. Do not relabel the user's approved palette, stack or themes as agent proposals merely because other values are newly selected.
 
+For work that spans several stages or sessions, include the optional [delivery checkpoint](#delivery-checkpoint) in this same brief. Do not create a second competing record or require it for a small edit.
+
 ```markdown
 # Design brief: <task>
 
@@ -50,7 +52,7 @@ Brand, content, data and approved mechanisms to preserve:
 
 ## Pending decision
 Question ID and text: <one unanswered question, or none>
-Options and recommendation: <when meaningful>
+Options and recommendation: <when meaningful; visibly invite a different answer in the user's own words>
 Why the answer matters:
 State: <awaiting answer / dismissed / unavailable / resolved>
 Actual response: <only if supplied; a preselection or timeout is not a response>
@@ -73,8 +75,26 @@ Acceptance checks and expected deliverables:
 Unverified assumptions or remaining evidence:
 
 ## Revision notes
-- <revision: changed decision IDs, reason, dependent decisions reconsidered>
+- <revision | decision ID | previous value -> replacement | reason/source | affected dependents>
+- <append further changes; preserve earlier entries instead of replacing them>
 ```
+
+## Delivery checkpoint
+
+Use within the existing project record when resumption or handoffs need it; keep it in the conversation for read-only work. Update only after an observed change. This records delivery progress, not alignment approval or durable background execution.
+
+```markdown
+## Delivery checkpoint
+Current stage: <alignment / creation / preview / validation / delivery; omit irrelevant stages>
+State: <active / waiting for answer / blocked / complete>
+Owner and current brief/input revision:
+Last valid artifact and revision: <path/URL/ID plus hash or revision; none if not created>
+Evidence: <check, target revision and observed result; skipped or unavailable checks stay not run>
+Next authorized action: <concrete action and prerequisite; none when complete>
+Pending dependency or limitation: <reference the existing pending decision, or none>
+```
+
+A material correction updates the input revision and invalidates only dependent artifacts/checks; preserve the previous decision and replacement in the brief's revision notes. Mark an older artifact as superseded before using it again. A preview exists only after its artifact is available; completion requires the agreed acceptance, not merely a ready brief. Confirm existing external effects before retrying an uncertain action. Before closing, reconcile this checkpoint with the final message: an unrun or failed promised check cannot become "validated" in the reply.
 
 ## Direction and content record
 
@@ -130,7 +150,10 @@ Verification performed:
 Use with [design experiences](experience-library.md). Fill in the existing research record; do not create documentation without a useful decision.
 
 ```markdown
-ID and task/use case:
+ID and generic task/use case (no source brand required):
+Generic retrieval phrases and expected catalog ID:
+Invariants to preserve; destination color/font/asset/content/state bindings:
+Available code/specimen/contract/private fidelity source; unsupported capabilities:
 Related site/pattern and investigated question:
 Source: initial/final URL, repository, commit/version, file and available lines:
 UTC date, tool, CSS viewport/DPR, state and content:

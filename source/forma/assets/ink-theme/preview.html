@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forma - Ink theme transition</title>
+  <link rel="stylesheet" href="ink-theme.css">
+  <link rel="stylesheet" href="preview.css">
+  <script type="module" src="preview.js"></script>
+</head>
+<body>
+  <header>
+    <a href="../../references/ink-theme-transition.md">Forma / Motion</a>
+    <button id="theme-toggle" type="button" disabled>Switch to dark theme</button>
+  </header>
+  <main id="main">
+    <p class="eyebrow">Optional motion study</p>
+    <h1>A drop of ink.<br>A change of theme.</h1>
+    <p>The new palette spreads from the center. Rapid input settles immediately to your latest choice.</p>
+    <section>
+      <h2>Your work stays in place</h2>
+      <label for="draft">Local draft</label>
+      <textarea id="draft" rows="4" placeholder="Type something, then switch themes."></textarea>
+      <p>No account, network operation or saved data. Reloading clears the example.</p>
+      <button type="button" data-action="count">Test a second action</button>
+      <output id="count" aria-live="polite">0 actions</output>
+    </section>
+    <section id="details">
+      <h2>Small mechanism, explicit limits</h2>
+      <p>Reduced motion or an unsupported browser applies the palette immediately. Resize, backgrounding and repeated input cancel decorative motion.</p>
+      <p>This example uses View Transitions and Web Animations. It is a reveal, not a fluid physics simulation or a native Liquid Glass effect.</p>
+    </section>
+    <noscript>The content is available. Theme switching requires JavaScript in this specimen.</noscript>
+  </main>
+</body>
+</html>

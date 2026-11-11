@@ -26,6 +26,8 @@ Keep stable project context - identity, constraints and approved mechanisms - an
 
 For composite work, add only what is needed to the existing record: current request, target, brief/input revision, source of truth, expected output, owner, state and evidence. A revision may be an editor ID, commit or hashes of affected files. Do not require a large manifest for a small change.
 
+Use the optional [delivery checkpoint](templates.md#delivery-checkpoint) inside that record instead of a parallel status document. Keep current stage, last valid artifact/revision, evidence and next authorized action together. Surface meaningful changes using the [visible journey](workflow.md#visible-journey); the user's messages and the internal record must describe the same state.
+
 A user correction updates this contract. Tell dependent workers what changed; reassess older results before integrating them. A helper can finish after the change: an existing file or well-formed response does not make it applicable to the new revision. Preserve local edits and node/document identities. [Artifacts and jobs](artifact-workflows.md#4-jobs-and-generation-context) define editing and retry contracts.
 
 When resuming, compare the plan/checkpoint, current files, processes/jobs and already-confirmed effects. An "I will render" message does not prove execution began; a saved transcript does not restore a dead process. Do not repeat an upload, generation or publication merely because the response was lost. Check the result/receipt where possible; if it remains unknown, state that uncertainty. Name outputs by revision when necessary to avoid overwriting different artifacts with the same basename.

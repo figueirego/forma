@@ -2,7 +2,7 @@
 name: forma-foundations
 description: "Define or refine hierarchy, typography, color, layout, spacing and visual-system tokens. Use for composition or foundation inconsistencies; not to redesign product flows or reproduce a 3D mechanism."
 metadata:
-  version: 1.35.1
+  version: 1.36.0
 ---
 
 # Visual foundations
@@ -14,6 +14,8 @@ metadata:
 
 This module guides the agent after explicit reading; it does not execute tools or call other modules.
 Preserve the brand, stack and approved decisions. A local correction does not authorize a new identity.
+
+For a relevant saved capability, use [reuse by capability](../../references/capability-reuse.md): search by the task, not the source project, and bind the mechanism to the destination's own identity and state owners. Read only the matching contract; do not expand a local fix into a redesign. Source names and exact profiles remain provenance or explicit fidelity targets.
 
 ## Inputs
 

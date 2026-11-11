@@ -2,6 +2,23 @@
 
 The coordinator selects the specialty; this process connects diagnosis, construction, verification and delivery when work requires multiple steps. For a small correction, read only the relevant section.
 
+## Visible journey
+
+Make the work understandable through short messages in the user's language. Before the first question or substantive action, name the next concrete work and its purpose. At a meaningful stage change, connect the result just established to the next action. Preserve the same brief; the user is not being sent to a new interview. Explain the work, not a list of internal modules or tool calls.
+
+| Actual milestone | What to communicate | Evidence required |
+|---|---|---|
+| Understanding the request | "I will resolve the delivery type first so the result matches your goal." | A material unanswered decision; skip this stage for a complete request |
+| Creating | "The direction is defined. I will build the preview with the approved colors and scope." | Current decisions and authorized creation; this message describes the next action, not an existing artifact |
+| Preview available | "The preview is available here. I will now check the layout and interactions." | Accessible artifact/link, confirmed current revision and a real preview; if rendering is unavailable, say so instead |
+| Validating | "The layout works at the tested size; I am checking saving and reopening next." | The stated check actually ran; distinguish passed, failed and pending checks |
+| Delivering | State the result, usable artifact, checks and remaining limitations. | Current artifact and acceptance evidence; partial delivery does not become global completion |
+| Waiting or blocked | State the specific missing answer/capability and what can continue independently. | A real dependency; silence, timeout and preselection are not approval |
+
+These are communication milestones, not mandatory steps or an executable progress service. A prompt-only task can go directly from the resolved answer to the final prompt; a small fix needs no stage narration. Update on meaningful changes or a user status request, not every tool call. Do not invent percentages, elapsed-time estimates, completed work or automatic continuation after the host closes. A correction reopens only affected work and invalidates the corresponding evidence.
+
+On an internal handoff, use one sentence with **established result -> next action -> reason**, for example: "The visual direction is settled; I will check keyboard access before handing over the preview." Keep ownership and technical routing in the shared record. Do not add a new approval step for work already authorized. If an actual product journey indicator is requested, bind it to real states and provide reduced-motion and interruption behavior; these messages alone do not implement that UI.
+
 ## A process proportionate to the work
 
 For broad work, choose a playbook in [playbooks](playbooks.md) and use its minimum deliverables. For a small adjustment, work directly on the target. The goal is to reduce repeated decisions, not require a complete process for every edit.
@@ -50,6 +67,8 @@ Use authorized content and assets. Identify mocks as demonstrations. Never inven
 
 Use [verification](verification.md) and, for implemented interfaces, the [rendered loop](rendered-validation.md). Run a grouped round across relevant states and devices, fix the issues found and confirm the changes. Stop polishing when criteria are satisfied. If relevant defects remain, continue the necessary functional correction or report the blocker; never turn a round limit into fictitious approval.
 
+Record the check, target revision and observed result. A zero exit code from a wrapper that skips unavailable tools or ignores failures is not a passed validation; inspect the checker's own output and result. For example, an optional HTML validator that was unavailable is "not run", not "HTML validated". A manual source inspection and a rendered test remain different evidence.
+
 Declare the surface actually tested: a mobile browser viewport is not a physical-device test, and a desktop layout is not native-application validation. Bundle inspection confirms mechanisms present, not their execution or pixel parity. When reusing a skill component, check the contract and revision actually distributed along with its tests. Also verify integration in the destination: route -> component -> state/renderer -> observed interaction. Asset, layout or contrast tests do not approve a replaced mechanism or one that never loaded.
 
 When incorporating an approved result, preserve its revision by hash, before/after comparison and known limits; confirm that source, installation and package carry the same asset. Human approval, an executed test, a skipped test and measured visual equivalence are different evidence.
@@ -57,6 +76,8 @@ When incorporating an approved result, preserve its revision by hash, before/aft
 ### 5. Deliver something usable
 
 Deliver the requested artifact, not just suggestions. State what changed, why, executed checks and material limitations. In audits, prioritize reproducible findings with target, impact and smallest correction. In plans, deliver implementable specifications without claiming implementation.
+
+Reconcile the current artifact and decision revision, acceptance evidence and any delivery checkpoint before writing the final message. Preserve pending or failed checks as such; do not promote them to success in the summary. If the agreed delivery is complete with an explicit evidence limitation, state both rather than inventing broader validation.
 
 ## Invariants
 

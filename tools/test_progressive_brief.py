@@ -25,6 +25,9 @@ SHARED = (
     'references/design-specification.md',
     'references/templates.md',
     'evals/progressive-brief-scenarios.md',
+    'references/workflow.md',
+    'references/routing.md',
+    'references/agent-production.md',
 )
 ENTRYPOINTS = (
     'SKILL.md',
@@ -168,6 +171,26 @@ class ProgressiveBriefPackageTests(unittest.TestCase):
             for relative in (*ENTRYPOINTS, *SHARED[:2]):
                 with self.subTest(host=host, resource=relative):
                     self.assertIsNone(tools.search(paths[relative].read_text()))
+
+    def test_scope_correction_journey_and_checkpoint_have_direct_portable_entrypoints(self):
+        # A reader should reach each shared contract from the affected entry,
+        # without guessing a source-project path or traversing the whole library.
+        routes = (
+            ('SKILL.md', 'references/progressive-brief.md', 'material-scope'),
+            ('SKILL.md', 'references/progressive-brief.md', 'correct-and-resume-without-restarting'),
+            ('SKILL.md', 'references/verification.md', 'available-local-checks'),
+            ('SKILL.md', 'references/workflow.md', 'visible-journey'),
+            ('references/routing.md', 'references/workflow.md', 'visible-journey'),
+            ('references/progressive-brief.md', 'references/templates.md', 'delivery-checkpoint'),
+            ('references/agent-production.md', 'references/templates.md', 'delivery-checkpoint'),
+        )
+        for host, paths in self.distributions.items():
+            for entry, target, fragment in routes:
+                with self.subTest(host=host, entry=entry, contract=fragment):
+                    links = {(path, parsed.fragment) for _, path, parsed in local_links(paths[entry])}
+                    self.assertIn((paths[target].resolve(), fragment), links)
+                    heading = '## ' + fragment.replace('-', ' ').capitalize()
+                    self.assertIn(heading, paths[target].read_text().splitlines())
 
     def test_generated_invocations_resolve_to_the_distributed_skill_catalog(self):
         for host, paths in self.distributions.items():

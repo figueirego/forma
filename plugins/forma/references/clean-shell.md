@@ -27,6 +27,8 @@ In the distributed preset, larger targets, the dark palette, narrow-layout adapt
 
 ## Structure and ownership of space
 
+For the approved compact fixed-window variant, see the [HelloUra experience](helloura-experience.md): opaque toolbar in its own row, one scrolling content/footer region, integrated identity context, and height-aware navigation. Its private kit is the source for exact reproduction; the general clean-shell demo is not a replacement.
+
 Build shell -> sidebar + panel -> toolbar + content. Define what scrolls and what stays visible. `min-width:0` and `min-height:0` let text and flex/grid regions shrink without pushing the screen outward. Panel inset, toolbar padding, and content padding are distinct roles; do not add parent/child margins to fix a local misalignment.
 
 In the sidebar, keep text flexible and counters independent, with tabular numbers. Long names may wrap/truncate according to the task while retaining accessible names; counts must not overlap labels. The footer profile must remain reachable in short windows, with scrolling assigned to the correct region and no `position:absolute` that covers navigation. Smaller within-group spacing than between-group spacing preserves proximity without multiplying dividers.

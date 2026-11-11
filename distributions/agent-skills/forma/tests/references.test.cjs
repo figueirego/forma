@@ -17,6 +17,40 @@ before(async () => {
 const cli = (...args) => spawnSync(process.execPath, [script, ...args], { encoding: 'utf8', timeout: 10000, cwd: os.tmpdir() });
 const ids = board => board.results.map(result => result.entry.id);
 
+test('HelloUra lookup exposes the complete private-kit contract through the relevant owners', () => {
+  const board = api.searchCatalog(catalog, { query: 'helloura', origin: 'forma', limit: 50 });
+  for (const id of ['forma-clean-shell', 'forma-soft-glass', 'forma-brand-argument']) {
+    const entry = board.results.find(result => result.entry.id === id)?.entry;
+    assert.ok(entry, id);
+    assert.ok(entry.resources.some(resource => resource.path === 'references/helloura-experience.md'));
+    assert.ok(entry.resources.some(resource => resource.path === 'assets/reference-profiles/helloura-experience.json'));
+  }
+  const brand = api.searchCatalog(catalog, { query: 'split product landing', origin: 'forma', kind: 'brand' });
+  assert.ok(ids(brand).includes('forma-brand-argument'));
+});
+
+test('compact-window and operational-icon searches expose the approved source, not only a generic demo', () => {
+  for (const query of ['compact window', 'operational icons']) {
+    const board = api.searchCatalog(catalog, { query, origin: 'forma', kind: 'interface' });
+    const entry = board.results.find(result => result.entry.id === 'forma-clean-shell')?.entry;
+    assert.ok(entry, query);
+    assert.ok(entry.resources.some(resource => resource.path === 'assets/operational-icons.svg'));
+    assert.ok(entry.resources.some(resource => resource.path === 'references/helloura-experience.md'));
+  }
+});
+
+test('ink theme queries retrieve the optional executable pattern with its integration limits', () => {
+  for (const query of ['ink theme', 'liquid reveal']) {
+    const board = api.searchCatalog(catalog, { query, origin: 'forma', kind: 'motion' });
+    const entry = board.results.find(result => result.entry.id === 'forma-purposeful-motion')?.entry;
+    assert.ok(entry, query);
+    assert.ok(entry.resources.some(resource => resource.path === 'references/ink-theme-transition.md'));
+    assert.ok(entry.resources.some(resource => resource.path === 'assets/ink-theme/ink-theme.js'));
+    assert.ok(entry.resources.some(resource => resource.path === 'assets/ink-theme/validation.json'));
+    assert.ok(entry.evidence.limits.some(limit => /consumer integration/.test(limit)));
+  }
+});
+
 // This validates the published contract, not whether prose is legally original or design is visually successful.
 test('catalog records are Forma-authored package patterns with explicit authorship limits', () => {
   assert.equal(catalog.schemaVersion, 2);
@@ -181,7 +215,7 @@ test('availability filter separates supplied code from implementation contracts'
   const result = cli('--evidence', 'reusable-component', '--json');
   assert.equal(result.status, 0, result.stderr);
   const board = JSON.parse(result.stdout);
-  assert.deepEqual(ids(board).sort(), ['forma-book-object', 'forma-lighting-editor', 'forma-passport-object']);
+  assert.deepEqual(ids(board).sort(), ['forma-articulated-passport', 'forma-book-object', 'forma-ink-theme', 'forma-lighting-editor', 'forma-passport-object']);
   assert.equal(board.request.evidenceType, 'reusable-component');
   assert.equal(board.results[0].match.filters.evidenceType, 'reusable-component');
   const contracts = api.searchCatalog(catalog, { evidenceType: 'implementation-contract', limit: 50 });
@@ -320,5 +354,5 @@ test('component lookup exposes executable assets and keeps the identity-card con
   assert.equal(profile.name, 'Editable identity card');
   assert.equal(profile.evidence.type, 'implementation-contract');
   assert.ok(!profile.resources.some(resource => resource.path === 'assets/passport-object.js'));
-  assert.equal(api.facets(catalog).evidenceTypes['reusable-component'], 3);
+  assert.equal(api.facets(catalog).evidenceTypes['reusable-component'], 5);
 });

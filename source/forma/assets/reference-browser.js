@@ -137,8 +137,8 @@ function updateSource() {
   el('filters').classList.toggle('site-filters', sites || observed);
   el('source-note').textContent = observed ? 'Dated observations / Claim-level evidence' : sites ? `${isPortfolios() ? 'External portfolios with source lines' : 'External website inventory'} / Forma research guides` : 'Written by Forma / Local search';
   el('query-label').textContent = observed ? 'Find an observed feature or use case' : sites ? 'Find a name or website address' : 'What do you want to create?';
-  el('query-help').textContent = observed ? 'Literal feature words must match the same observed claim. Untested limits and inferred ideas do not supply matches.' : sites ? 'Topics such as motion suggest research guides separately; they do not identify verified features.' : 'Find a local pattern for your design task.';
-  el('query').placeholder = observed ? 'Sticky navigation, biography, control preview...' : sites ? 'Name or URL; topics suggest guides...' : 'Sidebar, typography, profile...';
+  el('query-help').textContent = observed ? 'Literal feature words must match the same observed claim. Untested limits and inferred ideas do not supply matches.' : sites ? 'Topics such as motion suggest research guides separately; they do not identify verified features.' : 'Find a local capability, then adapt it to your project identity. No source-project name is needed.';
+  el('query').placeholder = observed ? 'Sticky navigation, biography, control preview...' : sites ? 'Name or URL; topics suggest guides...' : 'Compact window, ink theme, product variants...';
   el('more').textContent = observed ? 'Show more observed experiences' : isPortfolios() ? 'Show more portfolios' : sites ? 'Show more websites' : 'Show more patterns';
   el('empty').textContent = observed ? 'No observed claims match. No candidate, guide, or unrelated experience was substituted.' : sites ? 'No names or website addresses match. Try a name or URL, or explicitly browse candidates from a research guide.' : 'No patterns match these filters. Try another term or a broader context.';
   filter();

@@ -2,7 +2,7 @@
 name: forma-validation
 description: "Validate tasks, accessibility, rendering, states, and fidelity with proportionate evidence and reproducible findings. Use for QA and confirmation after changes; not to certify inaccessible areas or treat isolated builds/tests as visual proof."
 metadata:
-  version: 1.35.1
+  version: 1.36.0
 ---
 
 # Validation and quality
@@ -14,6 +14,8 @@ metadata:
 
 This module must be read by the agent; it does not trigger tests, fixes, or other modules by itself.
 Preserve scope, brand, and stack. Distinguish verified, inferred, untested, and not applicable, with a reason.
+
+For a relevant saved capability, use [reuse by capability](../../references/capability-reuse.md): search by the task, not the source project, and bind the mechanism to the destination's own identity and state owners. Read only the matching contract; do not expand a local fix into a redesign. Source names and exact profiles remain provenance or explicit fidelity targets.
 
 ## Inputs
 

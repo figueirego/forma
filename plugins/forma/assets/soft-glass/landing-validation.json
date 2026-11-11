@@ -376,12 +376,19 @@
     "landing.css": "523e567bdebd5f7326e43f27d0e7dc9935dd626d383eb83afefc6a46c47f0f47",
     "landing.js": "f3974697fb8e082b1aef5a7e2038347a75151c955491e71ff014a62cdbfe29e4",
     "landing-profile.json": "e25766a2ac366ba55bccca0041bf7c2f4e0c517ab4826e6d953d8a56bb2dbb5f",
-    "landing-README.md": "e4734b7a656c1755ac182bc8c5f8706359bf2ee35e29b38aae22e45797218923"
+    "landing-README.md": "0c6e968783881533b7c2e8ac8ed954a601cc782afe604a34af00e07113f9d607"
   },
   "limits": [
     "The neutral copy, original media and system font fallback differ from the approved source.",
     "Desktop browser with touch emulation; no physical device or cross-browser parity claimed.",
     "The 3-step feature detail is an original supplemental specimen; the source 8-to-6 consolidation is represented separately.",
     "Visual checks cover this specimen, not production conversion, assistive technology certification or contrast compliance."
-  ]
+  ],
+  "documentationRefresh": {
+    "checkedOn": "2026-11-10",
+    "file": "landing-README.md",
+    "previousSha256": "e4734b7a656c1755ac182bc8c5f8706359bf2ee35e29b38aae22e45797218923",
+    "currentSha256": "0c6e968783881533b7c2e8ac8ed954a601cc782afe604a34af00e07113f9d607",
+    "scope": "Documentation identity refreshed only. Implementation hashes remain unchanged; historical visual run and date preserved."
+  }
 }
